@@ -159,7 +159,7 @@ export function DesignCanvas({
 
   // Get active clipart icon component
   const renderClipart = (clipartId: string, color: string = "#000000") => {
-    const standardIcons: Record<string, React.ComponentType<{ className?: string; style?: React.CSSProperties }>> = Icons as any;
+    const standardIcons = Icons as unknown as Record<string, React.ComponentType<{ className?: string; style?: React.CSSProperties }>>;
     // Map kebab-case clipartId back to Lucide CamelCase
     const formattedId = clipartId
       .split("-")
@@ -206,7 +206,7 @@ export function DesignCanvas({
       const deltaPercentX = (deltaX / rect.width) * 100;
       const deltaPercentY = (deltaY / rect.height) * 100;
 
-      let updatedElements = [...elements];
+      const updatedElements = [...elements];
       const targetIdx = updatedElements.findIndex((el) => el.id === selectedElement.id);
       if (targetIdx === -1) return;
 

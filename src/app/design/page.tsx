@@ -114,7 +114,7 @@ const GRADIENTS = [
   { name: "Premium Slate", value: "linear-gradient(135deg, #1e293b 0%, #0f172a 100%)" }
 ];
 
-export default function DesignPage() {
+function DesignPageContent() {
   const searchParams = useSearchParams();
   const productId = searchParams.get("productId") || "51060";
   const urlWidth = searchParams.get("width");
@@ -320,7 +320,7 @@ export default function DesignPage() {
     }
   };
 
-  const loadTemplate = (tmpl: any) => {
+  const loadTemplate = (tmpl: { name: string; elements: CanvasElement[] }) => {
     // Confirm replacement
     if (window.confirm(`Load "${tmpl.name}" template? This will replace your current design.`)) {
       setElements([...tmpl.elements]);
@@ -1351,5 +1351,17 @@ export default function DesignPage() {
       )}
 
     </div>
+  );
+}
+
+export default function DesignPage() {
+  return (
+    <React.Suspense fallback={
+      <div className="flex h-screen w-screen items-center justify-center bg-slate-950 text-slate-200">
+        Loading designer...
+      </div>
+    }>
+      <DesignPageContent />
+    </React.Suspense>
   );
 }
