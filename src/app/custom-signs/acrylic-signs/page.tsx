@@ -7,7 +7,7 @@ export default function AcrylicSignsPage() {
       title: "Custom Acrylic Signs",
       subtitle: "Premium clear and colored acrylic signs for a sleek, modern, upscale look.",
       breadcrumb: "Signs",
-      breadcrumbHref: "/signs",
+      breadcrumbHref: "/custom-signs",
       promoText: "💎 Premium Acrylic Signs — Crystal-Clear Quality, Ships Next Day!",
       image: "https://ext.same-assets.com/1114826555/898075086.png",
       ratingScore: "4.9",

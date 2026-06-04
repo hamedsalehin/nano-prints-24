@@ -77,7 +77,7 @@ export default function CategoryPage({ params }: PageProps) {
                 {firstTwoProducts[0] && (
                   <Link
                     href={`/${decodedCategory}/${firstTwoProducts[0].id}`}
-                    className="bg-[#2CA960] hover:bg-[#258e51] text-white font-bold text-sm px-6 py-3 rounded-lg text-center transition-colors flex-1 shadow"
+                    className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold text-sm px-6 py-3 rounded-lg text-center transition-colors flex-1 shadow font-poppins"
                   >
                     {firstTwoProducts[0].name}
                   </Link>
@@ -85,7 +85,7 @@ export default function CategoryPage({ params }: PageProps) {
                 {firstTwoProducts[1] && (
                   <Link
                     href={`/${decodedCategory}/${firstTwoProducts[1].id}`}
-                    className="border-2 border-[#2CA960] text-[#2CA960] hover:bg-[#2ca9601a] font-bold text-sm px-6 py-3 rounded-lg text-center transition-colors flex-1"
+                    className="border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-bold text-sm px-6 py-3 rounded-lg text-center transition-colors flex-1 font-poppins"
                   >
                     {firstTwoProducts[1].name}
                   </Link>
@@ -107,7 +107,7 @@ export default function CategoryPage({ params }: PageProps) {
             {firstTwoProducts[0] && (
               <Link
                 href={`/${decodedCategory}/${firstTwoProducts[0].id}`}
-                className="bg-[#2CA960] hover:bg-[#258e51] text-white font-bold text-sm py-3 rounded-lg text-center transition-colors flex-1 shadow"
+                className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold text-sm py-3 rounded-lg text-center transition-colors flex-1 shadow font-poppins"
               >
                 {firstTwoProducts[0].name}
               </Link>
@@ -115,7 +115,7 @@ export default function CategoryPage({ params }: PageProps) {
             {firstTwoProducts[1] && (
               <Link
                 href={`/${decodedCategory}/${firstTwoProducts[1].id}`}
-                className="border-2 border-[#2CA960] text-[#2CA960] hover:bg-[#2ca9601a] font-bold text-sm py-3 rounded-lg text-center transition-colors flex-1"
+                className="border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-bold text-sm py-3 rounded-lg text-center transition-colors flex-1 font-poppins"
               >
                 {firstTwoProducts[1].name}
               </Link>
@@ -125,8 +125,8 @@ export default function CategoryPage({ params }: PageProps) {
 
         {/* Choose A Product Horizontal Bar */}
         <section className="max-w-7xl mx-auto px-4 py-6">
-          <div className="border border-dashed border-[#4A9D5F] bg-[#F6F6F6] rounded-xl p-4 lg:p-6 flex flex-col lg:flex-row items-center gap-4">
-            <span className="font-poppins font-semibold text-lg text-[#4A9D5F] whitespace-nowrap">
+          <div className="border border-dashed border-yellow-400 bg-[#F6F6F6] rounded-xl p-4 lg:p-6 flex flex-col lg:flex-row items-center gap-4">
+            <span className="font-poppins font-semibold text-lg text-yellow-600 whitespace-nowrap">
               Choose A Product:
             </span>
             <div className="flex flex-wrap justify-center lg:justify-start gap-2.5 overflow-x-auto w-full py-1">
@@ -134,7 +134,7 @@ export default function CategoryPage({ params }: PageProps) {
                 <Link
                   key={prod.id}
                   href={`/${decodedCategory}/${prod.id}`}
-                  className="bg-white border border-gray-200 hover:border-[#2CA960] hover:text-[#2CA960] text-gray-700 font-semibold px-4 py-2 rounded-lg text-sm transition-all whitespace-nowrap shadow-sm"
+                  className="bg-white border border-gray-200 hover:border-yellow-400 hover:text-yellow-600 text-gray-700 font-semibold px-4 py-2 rounded-lg text-sm transition-all whitespace-nowrap shadow-sm"
                 >
                   {prod.name}
                 </Link>
@@ -164,7 +164,7 @@ export default function CategoryPage({ params }: PageProps) {
                       className="max-h-full max-w-full object-contain transition-transform duration-350 ease-out group-hover:scale-105"
                     />
                   </div>
-                  <h3 className="text-base lg:text-lg font-bold text-gray-900 mt-4 leading-tight group-hover:text-[#2CA960] transition-colors">
+                  <h3 className="text-base lg:text-lg font-bold text-gray-900 mt-4 leading-tight group-hover:text-yellow-600 transition-colors">
                     {product.name}
                   </h3>
                   <span className="text-sm font-semibold text-gray-500 mt-1">

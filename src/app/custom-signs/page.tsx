@@ -9,7 +9,7 @@ const signProducts = [
     name: "Yard Signs",
     description: "Corrugated plastic signs perfect for lawns, events, and political campaigns.",
     image: "https://ext.same-assets.com/1114826555/1445363370.png",
-    href: "/signs/yard-signs",
+    href: "/custom-signs/yard-signs",
     price: "Starting at $3.99",
     badge: "Best Seller",
   },
@@ -17,7 +17,7 @@ const signProducts = [
     name: "Real Estate Signs",
     description: "Professional aluminum and coroplast signs for property listings.",
     image: "https://ext.same-assets.com/1114826555/3882498341.png",
-    href: "/signs/real-estate-signs",
+    href: "/custom-signs/real-estate-signs",
     price: "Starting at $12.99",
     badge: "Most Popular",
   },
@@ -25,7 +25,7 @@ const signProducts = [
     name: "Aluminum Signs",
     description: "Durable rust-proof aluminum signs for indoor and outdoor use.",
     image: "https://ext.same-assets.com/1114826555/1445363370.png",
-    href: "/signs/aluminum-signs",
+    href: "/custom-signs/aluminum-signs",
     price: "Starting at $8.99",
     badge: "Heavy Duty",
   },
@@ -33,7 +33,7 @@ const signProducts = [
     name: "A-Frame Signs",
     description: "Portable sandwich board signs ideal for sidewalk and event advertising.",
     image: "https://ext.same-assets.com/1114826555/2283645032.png",
-    href: "/signs/a-frame-signs",
+    href: "/custom-signs/a-frame-signs",
     price: "Starting at $89.99",
     badge: "Eye-Catching",
   },
@@ -41,7 +41,7 @@ const signProducts = [
     name: "Foam Board Signs",
     description: "Lightweight, professional indoor display signs for presentations and lobbies.",
     image: "https://ext.same-assets.com/1114826555/3799598245.png",
-    href: "/signs/foam-board-signs",
+    href: "/custom-signs/foam-board-signs",
     price: "Starting at $14.99",
     badge: "Indoor Favorite",
   },
@@ -49,7 +49,7 @@ const signProducts = [
     name: "Acrylic Signs",
     description: "Premium clear or colored acrylic for a polished, modern look.",
     image: "https://ext.same-assets.com/1114826555/898075086.png",
-    href: "/signs/acrylic-signs",
+    href: "/custom-signs/acrylic-signs",
     price: "Starting at $24.99",
     badge: "Premium",
   },
@@ -57,7 +57,7 @@ const signProducts = [
     name: "Coroplast Signs",
     description: "Waterproof corrugated plastic signs — the most versatile outdoor sign.",
     image: "https://ext.same-assets.com/1114826555/2401743055.png",
-    href: "/signs/coroplast-signs",
+    href: "/custom-signs/coroplast-signs",
     price: "Starting at $4.99",
     badge: "Waterproof",
   },
@@ -65,7 +65,7 @@ const signProducts = [
     name: "Window Signs",
     description: "Custom window clings, decals and perforated vinyl for storefronts.",
     image: "https://ext.same-assets.com/1114826555/2442714004.png",
-    href: "/signs/window-signs",
+    href: "/custom-signs/window-signs",
     price: "Starting at $9.99",
     badge: "Storefront",
   },
@@ -73,7 +73,7 @@ const signProducts = [
     name: "Parking Signs",
     description: "Regulatory and custom parking signs — aluminum or coroplast.",
     image: "https://ext.same-assets.com/1114826555/1286398033.png",
-    href: "/signs/parking-signs",
+    href: "/custom-signs/parking-signs",
     price: "Starting at $6.99",
     badge: "Ready to Ship",
   },
@@ -88,7 +88,7 @@ const whyUs = [
 
 export default function SignsPage() {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="min-h-screen bg-gray-50 flex flex-col font-sans">
       <Header />
 
       <main className="flex-grow">
@@ -108,14 +108,14 @@ export default function SignsPage() {
               <h1 className="text-4xl md:text-5xl font-bold font-poppins text-gray-900 mb-4 leading-tight">
                 Custom Signs for <br />Every Purpose
               </h1>
-              <p className="text-lg text-gray-500 max-w-xl mb-8">
+              <p className="text-lg text-gray-500 max-w-xl mb-8 leading-relaxed">
                 From yard signs to premium acrylic, we print stunning custom signs fast. Choose your product, upload your design, and we ship next day.
               </p>
               <div className="flex gap-4 flex-wrap">
-                <Link href="/signs/yard-signs" className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold px-7 py-3 rounded-full transition-all shadow-md">
+                <Link href="/custom-signs/yard-signs" className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold px-7 py-3 rounded-full transition-all shadow-md">
                   Shop Yard Signs →
                 </Link>
-                <Link href="/signs/aluminum-signs" className="border-2 border-gray-900 text-gray-900 font-bold px-7 py-3 rounded-full hover:bg-gray-900 hover:text-white transition-all">
+                <Link href="/custom-signs/aluminum-signs" className="border-2 border-gray-900 text-gray-900 font-bold px-7 py-3 rounded-full hover:bg-gray-900 hover:text-white transition-all font-poppins">
                   View Aluminum Signs
                 </Link>
               </div>
@@ -193,7 +193,7 @@ export default function SignsPage() {
           <div className="max-w-3xl mx-auto px-4">
             <h2 className="text-4xl font-bold font-poppins mb-4">Ready to make an impact?</h2>
             <p className="text-gray-400 text-lg mb-10">Custom signs printed fast, shipped fast, and designed to impress.</p>
-            <Link href="/signs/yard-signs" className="bg-yellow-400 text-black font-bold px-10 py-4 rounded-full hover:bg-yellow-500 transition-all shadow-xl text-lg inline-block">
+            <Link href="/custom-signs/yard-signs" className="bg-yellow-400 text-black font-bold px-10 py-4 rounded-full hover:bg-yellow-500 transition-all shadow-xl text-lg inline-block">
               Start Designing Today
             </Link>
           </div>

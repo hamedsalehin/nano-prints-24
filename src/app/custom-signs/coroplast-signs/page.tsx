@@ -7,7 +7,7 @@ export default function CoroplastSignsPage() {
       title: "Coroplast Signs",
       subtitle: "The most versatile waterproof outdoor sign — durable, colorful, and incredibly affordable.",
       breadcrumb: "Signs",
-      breadcrumbHref: "/signs",
+      breadcrumbHref: "/custom-signs",
       promoText: "💧 Waterproof Coroplast Signs — Weatherproof & Budget-Friendly. Ships Tomorrow!",
       image: "https://ext.same-assets.com/1114826555/2401743055.png",
       ratingScore: "4.8",

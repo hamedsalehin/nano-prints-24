@@ -11,7 +11,6 @@ const navItems = [
   { name: "Vehicle Signs", href: "/vehicle-signs" },
   { name: "Tradeshow", href: "/trade-show" },
   { name: "Stickers & Decals", href: "/custom-decals" },
-  { name: "Sign Holders", href: "/sign-accessories" },
   { name: "Marketing Materials", href: "/marketing-materials" },
   { name: "Promotional Products", href: "/promotional-products" },
   { name: "Gifts", href: "/gifts" },
@@ -119,14 +118,14 @@ export function Header() {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:block border-t bg-black">
-          <div className="max-w-7xl mx-auto px-4">
-            <ul className="flex items-center justify-center gap-1 py-2">
+        <nav className="hidden md:block border-t bg-black py-3">
+          <div className="w-full px-6 lg:px-12">
+            <ul className="flex items-center justify-between gap-x-4 lg:gap-x-6">
               {navItems.map((item) => (
-                <li key={item.name}>
+                <li key={item.name} className="text-center">
                   <a
                     href={item.href}
-                    className="px-3 py-2 text-sm font-medium text-white hover:text-yellow-400 transition-colors whitespace-nowrap"
+                    className="block py-1.5 text-[13px] lg:text-[14px] font-bold text-white hover:text-yellow-400 transition-colors whitespace-nowrap uppercase tracking-wider font-poppins"
                   >
                     {item.name}
                   </a>

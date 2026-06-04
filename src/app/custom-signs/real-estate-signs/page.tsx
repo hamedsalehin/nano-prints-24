@@ -7,7 +7,7 @@ export default function RealEstateSignsPage() {
       title: "Real Estate Signs",
       subtitle: "Professional-grade signs that get properties noticed — riders, posts, and full frames included.",
       breadcrumb: "Signs",
-      breadcrumbHref: "/signs",
+      breadcrumbHref: "/custom-signs",
       promoText: "🏠 Real Estate Signs — Next Day Delivery Available!",
       image: "https://ext.same-assets.com/1114826555/3882498341.png",
       ratingScore: "4.9",

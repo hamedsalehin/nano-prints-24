@@ -7,7 +7,7 @@ export default function ParkingSignsPage() {
       title: "Custom Parking Signs",
       subtitle: "Regulatory, reserved, and custom parking signs — aluminum or coroplast, ships next day.",
       breadcrumb: "Signs",
-      breadcrumbHref: "/signs",
+      breadcrumbHref: "/custom-signs",
       promoText: "🅿️ Custom Parking Signs — MUTCD-Compliant Reflective Available. Ships Tomorrow!",
       image: "https://ext.same-assets.com/1114826555/1286398033.png",
       ratingScore: "4.9",

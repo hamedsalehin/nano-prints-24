@@ -7,7 +7,7 @@ export default function AluminumSignsPage() {
       title: "Custom Aluminum Signs",
       subtitle: "Heavy-duty, rust-proof aluminum signs built to last years in any weather.",
       breadcrumb: "Signs",
-      breadcrumbHref: "/signs",
+      breadcrumbHref: "/custom-signs",
       promoText: "⚙️ Aluminum Signs — Rust-Proof, Fade-Proof, Weatherproof. Ships Next Day!",
       image: "https://ext.same-assets.com/1114826555/1445363370.png",
       ratingScore: "4.9",

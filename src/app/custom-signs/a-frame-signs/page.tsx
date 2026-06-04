@@ -7,7 +7,7 @@ export default function AFrameSignsPage() {
       title: "A-Frame Signs (Sandwich Boards)",
       subtitle: "Portable, double-sided sidewalk signs that grab foot traffic and drive customers through your door.",
       breadcrumb: "Signs",
-      breadcrumbHref: "/signs",
+      breadcrumbHref: "/custom-signs",
       promoText: "🪧 A-Frame Signs — Double-Sided, Portable, Ships Tomorrow!",
       image: "https://ext.same-assets.com/1114826555/2283645032.png",
       ratingScore: "4.8",

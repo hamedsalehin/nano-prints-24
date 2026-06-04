@@ -7,7 +7,7 @@ export default function WindowSignsPage() {
       title: "Window Signs & Clings",
       subtitle: "Custom window graphics, clings, perforated vinyl, and decals for storefronts and offices.",
       breadcrumb: "Signs",
-      breadcrumbHref: "/signs",
+      breadcrumbHref: "/custom-signs",
       promoText: "🪟 Window Signs That Turn Passersby Into Customers — Ships Next Day!",
       image: "https://ext.same-assets.com/1114826555/2442714004.png",
       ratingScore: "4.8",

@@ -7,7 +7,7 @@ export default function YardSignsPage() {
       title: "Custom Yard Signs",
       subtitle: "Corrugated plastic signs that weather any storm — perfect for campaigns, events, and businesses.",
       breadcrumb: "Signs",
-      breadcrumbHref: "/signs",
+      breadcrumbHref: "/custom-signs",
       promoText: "🏡 25% OFF Yard Signs + Free Shipping — Most Popular Sign in America!",
       image: "https://ext.same-assets.com/1114826555/1445363370.png",
       ratingScore: "4.9",

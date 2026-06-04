@@ -7,7 +7,7 @@ export default function FoamBoardSignsPage() {
       title: "Foam Board Signs",
       subtitle: "Lightweight and professional indoor display signs for presentations, lobbies, and events.",
       breadcrumb: "Signs",
-      breadcrumbHref: "/signs",
+      breadcrumbHref: "/custom-signs",
       promoText: "✨ Foam Board Signs — Ultra-Light, Ultra-Crisp. Perfect for Presentations!",
       image: "https://ext.same-assets.com/1114826555/3799598245.png",
       ratingScore: "4.8",

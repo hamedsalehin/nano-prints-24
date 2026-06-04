@@ -1170,22 +1170,34 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
   "trade-show": {
     title: "Tradeshow Displays",
     description: "Get trade show ready with custom products that make your brand stand out. Table covers, step and repeats, and stands.",
-    heroImage: "https://ext.same-assets.com/1114826555/2283645032.png",
+    heroImage: "https://www.buildasign.com/0083714_BAS_WEB_071125_Category_Tradeshow_MCA_Desktop.jpeg",
+    tabletHeroImage: "https://www.buildasign.com/0083715_BAS_WEB_071125_Category_Tradeshow_MCA_Tablet.jpeg",
+    mobileHeroImage: "https://www.buildasign.com/0083717_BAS_WEB_071125_Category_Tradeshow_MCA_Mobile.jpeg",
+    heroSubtitle: "Where First Impressions Get Noticed.",
+    categoryDescriptionText: "Your tradeshow booth should do more than fill space, it should tell your brand story. With a full range of customizable displays, signage, and print materials, we help you make every event count. From table covers to backdrops, banners to business cards, our products are designed to build cohesion, attract attention, and drive engagement. Whether you're setting up for a local fair or a national expo, we've got everything you need to show up strong and stay top of mind.",
+    categorySecondaryImage: "https://www.buildasign.com/images/uploaded/Redesign/NPIB-34422-Tradeshow-Hero-001_en-gb.png",
+    faqs: [
+      { q: "Can I customize designs with my logo and brand colors?", a: "Yes! All of our tradeshow products are fully customizable with your logo, brand colors, messaging, and graphics. You can upload your own artwork or use our easy online design tools. Need help? Our professional design team is here to assist, whether you need a quick layout fix or a fully custom design, we’ve got you covered. 1-800-330-9622" },
+      { q: "Do you offer portable and easy-to-set-up display options?", a: "Yes! Many of our products; like retractable banners, pop up displays, and tabletop signage; are lightweight, portable, and quick to assemble, making setup and teardown fast and stress-free." },
+      { q: "How long does it take to receive my order?", a: "Production and shipping times vary depending on the product and customization, but most orders ship within a few business days. Expedited options are available at checkout." },
+      { q: "What should I include in my tradeshow booth setup?", a: "A well-rounded booth typically includes branded table covers, vertical signage like banners or displays, informational handouts (such as postcards or business cards), and high-impact elements like custom tents or backdrops for visibility." },
+      { q: "What if I need help choosing the right products for my event?", a: "Our team is here to help! If you're not sure which products best suit your booth space, goals, or budget, our event specialists can walk you through options and make personalized recommendations based on your needs. 1-800-330-9622" }
+    ],
     products: [
       {
-        id: "table-covers",
-        name: "Custom Table Covers",
+        id: "tablecloths",
+        name: "Custom Tablecloths",
         description: "Professional table throws fitted to standard 6ft and 8ft trade show tables.",
-        image: "https://ext.same-assets.com/1114826555/2283645032.png",
+        image: "https://www.buildasign.com/0086553_tablecloths_360.png",
         price: "Starting at $89.99",
         badge: "Best Seller",
         config: {
-          title: "Custom Table Covers",
+          title: "Custom Tablecloths",
           subtitle: "Dye-sublimation printed fabric table cloths that drape perfectly over display tables.",
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
-          promoText: "25% OFF TRADESHOW DISPLAYS",
-          image: "https://ext.same-assets.com/1114826555/2283645032.png",
+          promoText: "25% OFF CUSTOM TABLECLOTHS - SHIPS NEXT DAY",
+          image: "https://www.buildasign.com/0086553_tablecloths_360.png",
           ratingCount: "680",
           ratingScore: "4.9",
           sizes: [
@@ -1219,61 +1231,988 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           ctaBody: "Customize a premium table throw with your core branding and logos.",
           ctaLabel: "Customize Cover"
         }
+      },
+      {
+        id: "table-runners",
+        name: "Table Runners",
+        description: "Modular accent banners that drape over basic tablecloths for quick, cost-effective branding.",
+        image: "https://www.buildasign.com/0086575_table-runners_360.jpeg",
+        price: "Starting at $39.99",
+        badge: "Budget-Friendly",
+        config: {
+          title: "Custom Table Runners",
+          subtitle: "Add branding to any plain tablecloth with a custom printed twill table runner.",
+          breadcrumb: "Tradeshow",
+          breadcrumbHref: "/trade-show",
+          promoText: "25% OFF TABLE RUNNERS - SHIPS NEXT DAY",
+          image: "https://www.buildasign.com/0086575_table-runners_360.jpeg",
+          ratingCount: "540",
+          ratingScore: "4.8",
+          sizes: [
+            { label: "24\" x 84\" (Standard)", value: "24x84", basePrice: 39.99 },
+            { label: "30\" x 84\"", value: "30x84", basePrice: 49.99 },
+            { label: "36\" x 84\" (Wide)", value: "36x84", basePrice: 59.99 }
+          ],
+          selects: [
+            {
+              label: "Material Twill",
+              options: [
+                { label: "300D Polyester Twill (Standard)", value: "standard", priceAdder: 0 },
+                { label: "Liquid-Repellent Twill", value: "repellent", priceAdder: 10.00 }
+              ]
+            }
+          ],
+          qtyDiscount: "Volume discounts on promotional items",
+          keyFeatures: ["Adds modular branding to any setup", "NFPA 701 certified flame retardant", "Machine washable"],
+          useCases: ["Job recruiting", "Farmers markets", "Check-in desks"],
+          specs: [
+            { key: "Material", value: "300D Polyester Twill" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Ready to design table runners?",
+          ctaBody: "Custom print table runners with corporate logos.",
+          ctaLabel: "Customize Table Runner"
+        }
+      },
+      {
+        id: "fitted-tablecloths",
+        name: "Fitted Tablecloths",
+        description: "Tailored box-style table covers fitted to exact rectangular event tables.",
+        image: "https://www.buildasign.com/0086560_fitted-tablecloths_360.png",
+        price: "Starting at $109.99",
+        config: {
+          title: "Fitted Tablecloths",
+          subtitle: "Box-style custom tablecloths tailored to standard 6ft and 8ft display tables.",
+          breadcrumb: "Tradeshow",
+          breadcrumbHref: "/trade-show",
+          promoText: "25% OFF TAILORED FITTED TABLE COVERS",
+          image: "https://www.buildasign.com/0086560_fitted-tablecloths_360.png",
+          ratingCount: "310",
+          ratingScore: "4.8",
+          sizes: [
+            { label: "6ft Fitted (72\" x 30\" x 30\")", value: "6ft_fitted", basePrice: 109.99 },
+            { label: "8ft Fitted (96\" x 30\" x 30\")", value: "8ft_fitted", basePrice: 139.99 }
+          ],
+          selects: [
+            {
+              label: "Material",
+              options: [
+                { label: "300D Polyester Twill (Standard)", value: "standard", priceAdder: 0 }
+              ]
+            }
+          ],
+          qtyDiscount: "Bulk event pricing applies",
+          keyFeatures: ["Box-tailored structure stays secure", "NFPA 701 fire certified", "Machine washable"],
+          useCases: ["Conventions", "Summits", "Job fairs"],
+          specs: [
+            { key: "Material", value: "300D Knit Polyester" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Tailor your booth layout",
+          ctaBody: "Order fitted box tablecloths with custom printed fronts.",
+          ctaLabel: "Customize Fitted Cover"
+        }
+      },
+      {
+        id: "round-tablecloths",
+        name: "Round Tablecloths",
+        description: "Branded tablecloths tailored to round banquet and cocktail tables.",
+        image: "https://www.buildasign.com/0086566_round-tablecloths_360.png",
+        price: "Starting at $129.99",
+        config: {
+          title: "Round Custom Tablecloths",
+          subtitle: "Full color dye-sublimated tablecloths designed for circular highboy and banquet tables.",
+          breadcrumb: "Tradeshow",
+          breadcrumbHref: "/trade-show",
+          promoText: "25% OFF CUSTOM ROUND TABLECLOTHS",
+          image: "https://www.buildasign.com/0086566_round-tablecloths_360.png",
+          ratingCount: "195",
+          ratingScore: "4.7",
+          sizes: [
+            { label: "30\" Round Table Throw", value: "30_round", basePrice: 129.99 },
+            { label: "60\" Circular Banquet Cover", value: "60_round", basePrice: 179.99 },
+            { label: "72\" Large Circular Cover", value: "72_round", basePrice: 219.99 }
+          ],
+          selects: [
+            {
+              label: "Drape Drop Type",
+              options: [
+                { label: "Full Floor Length Drop", value: "floor", priceAdder: 0 }
+              ]
+            }
+          ],
+          qtyDiscount: "Volume discounts for banquet halls and events",
+          keyFeatures: ["Seamless round draping", "Dye-sublimation full spectrum print", "Flame certified fabric"],
+          useCases: ["Cocktail hours", "Weddings", "Gala banquets"],
+          specs: [
+            { key: "Material", value: "300D Polyester" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Decorate round tables",
+          ctaBody: "Brand circular lobby high-boys or food service rounds.",
+          ctaLabel: "Customize Round Cover"
+        }
+      },
+      {
+        id: "stretch-tablecloths",
+        name: "Stretch Tablecloths",
+        description: "Elastic spandex-blend table covers that contour tightly to the frame.",
+        image: "https://www.buildasign.com/0086570_stretch-tablecloth_360.png",
+        price: "Starting at $129.99",
+        config: {
+          title: "Stretch Tablecloths (Spandex Style)",
+          subtitle: "Elastic stretch tablecloths contouring tightly to rectangular event tables. Modern and wrinkle-free.",
+          breadcrumb: "Tradeshow",
+          breadcrumbHref: "/trade-show",
+          promoText: "25% OFF CONTOURED SPANDEX DISPLAYS",
+          image: "https://www.buildasign.com/0086570_stretch-tablecloth_360.png",
+          ratingCount: "290",
+          ratingScore: "4.9",
+          sizes: [
+            { label: "6ft Stretch Spandex (Standard)", value: "6ft_stretch", basePrice: 129.99 },
+            { label: "8ft Stretch Spandex", value: "8ft_stretch", basePrice: 159.99 }
+          ],
+          selects: [
+            {
+              label: "Table Leg Pockets",
+              options: [
+                { label: "Reinforced Rubber Leg Pockets", value: "reinforced", priceAdder: 0 }
+              ]
+            }
+          ],
+          qtyDiscount: "Spandex volume levels apply",
+          keyFeatures: ["Wrinkle-free stretch spandex material", "Hook-under pockets keep cover locked down", "Ultra modern contours"],
+          useCases: ["Outdoor windy venues", "Tech trade conventions", "Modern product roll-outs"],
+          specs: [
+            { key: "Material", value: "Polyester-Spandex Elastic Blend" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Go modern with stretch spandex",
+          ctaBody: "Order contoured tablecloth covers that hook securely in place.",
+          ctaLabel: "Customize Stretch Cover"
+        }
+      },
+      {
+        id: "pop-up-displays",
+        name: "Pop-Up Displays",
+        description: "Large-scale collapsible tradeshow backdrops with tension fabric screens.",
+        image: "https://www.buildasign.com/0086582_pop-up-displays_360.png",
+        price: "Starting at $299.99",
+        config: {
+          title: "Pop-Up Backdrop Displays",
+          subtitle: "Collapsible aluminum accordion frame with custom printed tension fabric screen cover.",
+          breadcrumb: "Tradeshow",
+          breadcrumbHref: "/trade-show",
+          promoText: "25% OFF ALL POP-UP EVENT DISPLAYS",
+          image: "https://www.buildasign.com/0086582_pop-up-displays_360.png",
+          ratingCount: "430",
+          ratingScore: "4.8",
+          sizes: [
+            { label: "8ft Straight Accordion Frame", value: "8ft_straight", basePrice: 299.99 },
+            { label: "10ft Straight Accordion Frame", value: "10ft_straight", basePrice: 399.99 },
+            { label: "8ft Curved Exhibition Frame", value: "8ft_curved", basePrice: 349.99 },
+            { label: "10ft Curved Exhibition Frame", value: "10ft_curved", basePrice: 449.99 }
+          ],
+          selects: [
+            {
+              label: "Frame Kit Option",
+              options: [
+                { label: "Include Collapsible Frame & Trolley Bag", value: "full_kit", priceAdder: 120.00 },
+                { label: "Fabric Replacement Print Only", value: "print_only", priceAdder: 0 }
+              ]
+            }
+          ],
+          qtyDiscount: "Exposition vendor rates apply",
+          keyFeatures: ["Sets up in 2 minutes", "Wrinkle-resistant heavy knit stretch fabric", "Travel-friendly transport wheels bag"],
+          useCases: ["Exhibitions", "Major expos", "Stage presentations", "Press announcements"],
+          specs: [
+            { key: "Frame Structure", value: "Accordion-style aluminum tubes" },
+            { key: "Fabric Attach", value: "Hook-and-loop velcro perimeter" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Dominate the show floor",
+          ctaBody: "Order a massive accordion pop-up wall back wall.",
+          ctaLabel: "Customize Pop-Up Display"
+        }
+      },
+      {
+        id: "tension-fabric-displays",
+        name: "Tension Fabric Displays",
+        description: "Premium pillowcase stretch fabric displays sliding over aluminum tube frames.",
+        image: "https://www.buildasign.com/0086489_tension-fabric-displays_360.png",
+        price: "Starting at $189.99",
+        config: {
+          title: "Tension Fabric Displays",
+          subtitle: "Pillowcase-style tension fabric graphics stretching over locking aluminum tubing. The ultimate tradeshow back wall.",
+          breadcrumb: "Tradeshow",
+          breadcrumbHref: "/trade-show",
+          promoText: "25% OFF PREMIUM FABRIC DISPLAYS",
+          image: "https://www.buildasign.com/0086489_tension-fabric-displays_360.png",
+          ratingCount: "165",
+          ratingScore: "4.9",
+          sizes: [
+            { label: '8\' x 8\' Flat Tension Frame', value: '96x96', basePrice: 189.99 },
+            { label: '10\' x 8\' Deluxe Exhibition Frame', value: '120x96', basePrice: 249.99 }
+          ],
+          selects: [
+            {
+              label: "Structure Hardware Kit",
+              options: [
+                { label: "Include Aluminum Tube Frame & Canvas Bag", value: "full_kit", priceAdder: 110.00 },
+                { label: "Fabric Cover Graphic Print Only", value: "print_only", priceAdder: 0 }
+              ]
+            }
+          ],
+          qtyDiscount: "Volume exhibition rates apply",
+          keyFeatures: ["Wrinkle-free stretch polyester", "Interlocking click-together aluminum frame", "Zippered bottom secures graphic tautly"],
+          useCases: ["Trade show back walls", "Media walls", "Exhibition booths"],
+          specs: [
+            { key: "Fabric Weight", value: "240g Stretch Polyester knit" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Build a premium booth back wall",
+          ctaBody: "Design zippered stretch fabric covers.",
+          ctaLabel: "Customize Tension Display"
+        }
+      },
+      {
+        id: "step-and-repeat-banner",
+        name: "Step & Repeat Banners",
+        description: "Red carpet photo backdrops and press conference media walls.",
+        image: "https://www.buildasign.com/0086470_step-repeat-banners_360.png",
+        price: "Starting at $145.99",
+        badge: "Event Ready",
+        config: {
+          title: "Step & Repeat Banners",
+          subtitle: "Professional background banners for press walls, photo shoots, and red carpets.",
+          breadcrumb: "Tradeshow",
+          breadcrumbHref: "/trade-show",
+          promoText: "25% OFF STEP AND REPEAT PRESS WALLS",
+          image: "https://www.buildasign.com/0086470_step-repeat-banners_360.png",
+          ratingCount: "430",
+          ratingScore: "4.8",
+          sizes: [
+            { label: '8\' x 8\' Square Backdrop', value: '96x96', basePrice: 145.99 },
+            { label: '10\' x 8\' Large Backdrop', value: '120x96', basePrice: 179.99 }
+          ],
+          selects: [
+            {
+              label: "Adjustable Backdrop Stand Hardware",
+              options: [
+                { label: "Include Adjustable Backdrop Stand", value: "with_stand", priceAdder: 95.00 },
+                { label: "Banner Print Only (No Stand)", value: "banner_only", priceAdder: 0 }
+              ]
+            }
+          ],
+          qtyDiscount: "Event planner package discounts available",
+          keyFeatures: ["Large seamless backdrops", "Pole pockets on top & bottom for mounting", "Anti-glare matte finish ensures clear photography"],
+          useCases: ["Press conferences", "Red carpet arrivals", "Wedding photo booths", "Corporate events"],
+          specs: [
+            { key: "Material", value: "15oz Blockout Matte Vinyl" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Create your logo background backdrop",
+          ctaBody: "Upload your sponsor logos and create repeated patterns instantly.",
+          ctaLabel: "Customize Backdrop"
+        }
+      },
+      {
+        id: "retractable-banners",
+        name: "Retractable Banner",
+        description: "Pop-up retractable banner stands that set up in seconds. Includes a durable canvas carry case.",
+        image: "https://www.buildasign.com/0085822_retractable-banner_360.png",
+        price: "Starting at $93.27",
+        badge: "Most Popular",
+        config: {
+          title: "Retractable Banners (Roll Up)",
+          subtitle: "Portable stand and pre-installed banner, rolls up in seconds for easy transport.",
+          breadcrumb: "Tradeshow",
+          breadcrumbHref: "/trade-show",
+          promoText: "25% OFF RETRACTABLE ROLL-UP BANNERS",
+          image: "https://www.buildasign.com/0085822_retractable-banner_360.png",
+          ratingCount: "1240",
+          ratingScore: "4.9",
+          sizes: [
+            { label: '79" x 33" Standard Stand Size', value: '79x33', basePrice: 93.27 }
+          ],
+          selects: [
+            {
+              label: "Material Style",
+              options: [
+                { label: "Standard (13oz Vinyl)", value: "standard", priceAdder: 0 },
+                { label: "Polyester Greyback", value: "polyester", priceAdder: 15.00 }
+              ]
+            },
+            {
+              label: "Stand Option",
+              options: [
+                { label: "Standard Silver Cassette Stand", value: "standard_stand", priceAdder: 0 },
+                { label: "Professional Luxury Stand", value: "professional", priceAdder: 19.50 }
+              ]
+            }
+          ],
+          qtyDiscount: "Save up to 10% on bulk displays",
+          keyFeatures: ["Sturdy aluminum base container", "Padded carrying case included", "Setup in under 60 seconds", "Anti-curl materials"],
+          useCases: ["Trade show booths", "Corporate lobbies", "Retail announcements", "Presentations"],
+          specs: [
+            { key: "Weight", value: "Approximately 7-10 lbs including stand" },
+            { key: "Display Size", value: "79\" High x 33\" Wide" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Ready to make an impression?",
+          ctaBody: "Order a retractable banner stand and roll out your messages quickly.",
+          ctaLabel: "Customize Retractable Banner"
+        }
+      },
+      {
+        id: "x-banner-stand",
+        name: "X-Banners",
+        description: "Collapsible lightweight freestanding cross stands with custom printed corner-grommet banners.",
+        image: "https://www.buildasign.com/0086478_x-banners_360.png",
+        price: "Starting at $49.99",
+        config: {
+          title: "X-Frame Banner Stands",
+          subtitle: "Highly cost-effective standing banners utilizing tension fiberglass arms to pull banner corners taut.",
+          breadcrumb: "Tradeshow",
+          breadcrumbHref: "/trade-show",
+          promoText: "25% OFF BUDGET X-BANNER DISPLAYS",
+          image: "https://www.buildasign.com/0086478_x-banners_360.png",
+          ratingCount: "385",
+          ratingScore: "4.7",
+          sizes: [
+            { label: '24" x 63" Small X-Stand', value: '63x24', basePrice: 49.99 },
+            { label: '31" x 70" Large X-Stand', value: '70x31', basePrice: 69.99 }
+          ],
+          selects: [
+            {
+              label: "Frame Assembly",
+              options: [
+                { label: "Include Fiberglass X-Stand & Carrying Bag", value: "full_kit", priceAdder: 0 }
+              ]
+            }
+          ],
+          qtyDiscount: "Saves up to 15% on bulk packages",
+          keyFeatures: ["Lightweight carbon-fiberglass frame legs", "Super easy backdrop replacements", "4 grommeted corners attach to pegs"],
+          useCases: ["Product marketing roll-outs", "Retail storefronts", "Special church events", "Expositions"],
+          specs: [
+            { key: "Material", value: "13oz Matte PVC Vinyl" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Promote on a budget",
+          ctaBody: "Order lightweight X-stands that fold down flat in seconds.",
+          ctaLabel: "Customize X-Stand Banner"
+        }
+      },
+      {
+        id: "tabletop-retractable-banners",
+        name: "Tabletop Retractable Banners",
+        description: "Miniature counter-top roll up banners for checkout registries and lobbies.",
+        image: "https://www.buildasign.com/0086578_tabletop-retractable-banners_360.png",
+        price: "Starting at $27.18",
+        config: {
+          title: "Tabletop Retractable Banners",
+          subtitle: "Mini roll-up banners designed to sit on tables, point-of-sale registers, and service desks.",
+          breadcrumb: "Tradeshow",
+          breadcrumbHref: "/trade-show",
+          promoText: "25% OFF TABLETOP RETRACTABLE DISPLAYS",
+          image: "https://www.buildasign.com/0086578_tabletop-retractable-banners_360.png",
+          ratingCount: "420",
+          ratingScore: "4.8",
+          sizes: [
+            { label: '11.75" x 17" A3 Size Mini Stand', value: '17x11.75', basePrice: 39.99 },
+            { label: '8.25" x 11.5" A4 Size Micro Stand', value: '11.5x8.25', basePrice: 27.18 }
+          ],
+          selects: [
+            {
+              label: "Base Housing",
+              options: [
+                { label: "Miniature Silver Aluminum Base", value: "mini_silver", priceAdder: 0 }
+              ]
+            }
+          ],
+          qtyDiscount: "Volume counter-top rates starting at 10+",
+          keyFeatures: ["Fits compact desk spaces", "Retracts into a tiny housing for travel", "Smooth banner film ensures high detail readability"],
+          useCases: ["Counter checkout promotions", "Hotel registration desks", "Restaurant menus", "Job fair table displays"],
+          specs: [
+            { key: "Print Film", value: "8mil thick smooth polypropylene film" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Maximize register branding",
+          ctaBody: "Order mini tabletop roll-up stands today.",
+          ctaLabel: "Customize Mini Roll-Up"
+        }
+      },
+      {
+        id: "custom-canopy-tents",
+        name: "Custom Canopies",
+        description: "Outdoor 10' x 10' custom canopy tents. Waterproof, UV-resistant fabric over popup frames.",
+        image: "https://www.buildasign.com/0088150_custom-canopy-tents_360.png",
+        price: "Starting at $349.99",
+        config: {
+          title: "Custom Canopy Tents",
+          subtitle: "Outdoor 10' x 10' custom canopy tents. Waterproof, UV-resistant fabric over steel popup frames.",
+          breadcrumb: "Tradeshow",
+          breadcrumbHref: "/trade-show",
+          promoText: "25% OFF OUTDOOR EVENT CANOPIES",
+          image: "https://www.buildasign.com/0088150_custom-canopy-tents_360.png",
+          ratingCount: "110",
+          ratingScore: "4.7",
+          sizes: [
+            { label: "10ft x 10ft Canopy Tent", value: "10x10", basePrice: 349.99 }
+          ],
+          selects: [
+            {
+              label: "Frame Type",
+              options: [
+                { label: "Standard Steel Frame", value: "steel", priceAdder: 0 },
+                { label: "Premium Lightweight Aluminum Frame", value: "aluminum", priceAdder: 120.00 }
+              ]
+            }
+          ],
+          qtyDiscount: "Volume canopy packaging available",
+          keyFeatures: ["Waterproof & UV resistant fabric", "Durable popup truss system", "Dye-sublimation peak printing"],
+          useCases: ["Outdoor farmers markets", "Festivals & concerts", "Sports events"],
+          specs: [
+            { key: "Dimensions", value: "120\" W x 120\" D x 135\" H max" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Establish outdoor presence",
+          ctaBody: "Print full-color canopy tops today.",
+          ctaLabel: "Customize Canopy Tent"
+        }
+      },
+      {
+        id: "feather-flags",
+        name: "Feather Flags",
+        description: "Eye-catching fluttering flags designed to draw crowds from the roadside.",
+        image: "https://www.buildasign.com/0085996_feather-flags_360.png",
+        price: "Starting at $54.37",
+        config: {
+          title: "Custom Feather Flags",
+          subtitle: "Outdoor advertising flags printed on durable knit polyester, complete with poles and hardware.",
+          breadcrumb: "Tradeshow",
+          breadcrumbHref: "/trade-show",
+          promoText: "25% OFF ALL ADVERTISING FLAGS - SHIPS NEXT DAY",
+          image: "https://www.buildasign.com/0085996_feather-flags_360.png",
+          ratingCount: "820",
+          ratingScore: "4.8",
+          sizes: [
+            { label: '8ft Small Feather Flag', value: '96x24', basePrice: 54.37 },
+            { label: '10.5ft Medium Feather Flag', value: '126x28', basePrice: 79.99 },
+            { label: '14ft Large Feather Flag', value: '168x30', basePrice: 119.99 }
+          ],
+          selects: [
+            {
+              label: "Hardware / Base Type",
+              options: [
+                { label: "Ground Spike (For Lawn/Soil)", value: "spike", priceAdder: 0 },
+                { label: "Cross Stand & Water Bag", value: "cross", priceAdder: 15.00 }
+              ]
+            }
+          ],
+          qtyDiscount: "Save up to 10% on bulk quantities",
+          keyFeatures: ["Fluttering wind-resistant design", "Dye-sublimation high-contrast printing", "Flexible fiberglass poles"],
+          useCases: ["Outdoor storefronts", "Grand openings", "Car dealerships"],
+          specs: [
+            { key: "Material", value: "110g Knit Polyester" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Get noticed from the road",
+          ctaBody: "Order fluttering advertising flags.",
+          ctaLabel: "Customize Feather Flag"
+        }
+      },
+      {
+        id: "vinyl-banners",
+        name: "Vinyl Banners",
+        description: "Durable and weather-resistant for indoor or outdoor event signage.",
+        image: "https://www.buildasign.com/0085750_vinyl-banners_360.png",
+        price: "Starting at $12.99",
+        config: {
+          title: "Custom Vinyl Banners",
+          subtitle: "Durable, waterproof, outdoor-rated vinyl banners complete with grommets.",
+          breadcrumb: "Tradeshow",
+          breadcrumbHref: "/trade-show",
+          promoText: "25% OFF ALL VINYL BANNERS - SHIPS NEXT DAY",
+          image: "https://www.buildasign.com/0085750_vinyl-banners_360.png",
+          ratingCount: "1530",
+          ratingScore: "4.8",
+          sizes: [
+            { label: '2\' x 4\' Small Banner', value: '24x48', basePrice: 12.99 },
+            { label: '3\' x 6\' Standard Banner', value: '36x72', basePrice: 24.99 },
+            { label: '4\' x 8\' Large Banner', value: '48x96', basePrice: 45.99 }
+          ],
+          selects: [
+            {
+              label: "Material Style",
+              options: [
+                { label: "13oz Standard Gloss Vinyl", value: "13oz_gloss", priceAdder: 0 },
+                { label: "15oz Premium Matte Vinyl", value: "15oz_matte", priceAdder: 5.00 }
+              ]
+            }
+          ],
+          qtyDiscount: "Save up to 15% on bulk banner orders",
+          keyFeatures: ["Waterproof & UV resistant", "Heat-welded hems for extra strength", "Vibrant full-color digital printing"],
+          useCases: ["Event announcements", "Sponsorship banners"],
+          specs: [
+            { key: "Material", value: "13oz or 15oz flexible PVC vinyl" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Ready to design your banner?",
+          ctaBody: "Start designing online in minutes or upload your print-ready files.",
+          ctaLabel: "Customize Vinyl Banner"
+        }
+      },
+      {
+        id: "business-cards",
+        name: "Business Cards",
+        description: "Premium thick cardstock cards to distribute to show attendees.",
+        image: "https://www.buildasign.com/0085790_business-cards_360.jpeg",
+        price: "Starting at $19.99",
+        config: {
+          title: "Custom Business Cards",
+          subtitle: "Standard 3.5\" x 2\" cards printed on ultra-thick cardstock with multiple finishes.",
+          breadcrumb: "Tradeshow",
+          breadcrumbHref: "/trade-show",
+          promoText: "25% OFF ALL EVENT STATIONERY",
+          image: "https://www.buildasign.com/0085790_business-cards_360.jpeg",
+          ratingCount: "1120",
+          ratingScore: "4.9",
+          sizes: [
+            { label: '3.5" x 2" Standard size', value: '3.5x2', basePrice: 19.99 }
+          ],
+          selects: [
+            {
+              label: "Paper Thickness & Texture",
+              options: [
+                { label: "Premium 14pt Cardstock", value: "14pt", priceAdder: 0 },
+                { label: "Ultra-Premium 16pt Cardstock", value: "16pt", priceAdder: 5.00 }
+              ]
+            },
+            {
+              label: "Card Finish",
+              options: [
+                { label: "Premium Matte (Non-glare)", value: "matte", priceAdder: 0 },
+                { label: "High-Gloss UV Shine", value: "gloss", priceAdder: 2.50 }
+              ]
+            }
+          ],
+          qtyDiscount: "Bulk boxes of 250, 500, 1000 available",
+          keyFeatures: ["Vibrant color offset printing", "Ultra-thick cardstock options", "Easy design templates"],
+          useCases: ["Networking events", "Customer takeaways"],
+          specs: [
+            { key: "Material", value: "14pt or 16pt Cardstock" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Design business cards now",
+          ctaBody: "Upload your business info and logo to print double-sided cards fast.",
+          ctaLabel: "Customize Cards"
+        }
+      },
+      {
+        id: "custom-postcards",
+        name: "Postcards",
+        description: "Custom handouts and flyers for promotional coupons or price list catalog sheets.",
+        image: "https://www.buildasign.com/0086663_postcards_360.png",
+        price: "Starting at $14.99",
+        config: {
+          title: "Custom Postcards",
+          subtitle: "Standard promotional postcards printed in high definition gloss or matte cardstock.",
+          breadcrumb: "Tradeshow",
+          breadcrumbHref: "/trade-show",
+          promoText: "25% OFF ALL POSTCARDS AND HANDOUTS",
+          image: "https://www.buildasign.com/0086663_postcards_360.png",
+          ratingCount: "280",
+          ratingScore: "4.8",
+          sizes: [
+            { label: "4\" x 6\" Postcard", value: "4x6", basePrice: 14.99 },
+            { label: "5\" x 7\" Postcard", value: "5x7", basePrice: 19.99 }
+          ],
+          selects: [
+            {
+              label: "Finish Options",
+              options: [
+                { label: "Gloss Finish Front", value: "gloss", priceAdder: 0 },
+                { label: "Matte Finish Both Sides", value: "matte", priceAdder: 2.00 }
+              ]
+            }
+          ],
+          qtyDiscount: "Bulk postcards starting at 100+ copies",
+          keyFeatures: ["Thick premium cardstock", "Double-sided full color prints", "Easy to distribute"],
+          useCases: ["Product coupon codes", "Information spec sheets", "Direct mail advertisements"],
+          specs: [
+            { key: "Material", value: "14pt Gloss Cover Paper" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Build flyers & postcards",
+          ctaBody: "Design promotional cards to hand out at your event tables.",
+          ctaLabel: "Customize Postcards"
+        }
       }
     ]
   },
   "custom-decals": {
-    title: "Custom Stickers & Decals",
-    description: "Branded stickers, decals and vinyl tags for product packaging, storefront windows, and giveaways.",
-    heroImage: "https://ext.same-assets.com/1114826555/2442714004.png",
+    title: "Custom Decals",
+    description: "Discover our full lineup of custom decal solutions, including vinyl decals, static clings, sticker sheets, and roll labels.",
+    heroImage: "https://www.buildasign.com/0084348_Desktop.jpeg",
+    tabletHeroImage: "https://www.buildasign.com/0084349_Tablet.jpeg",
+    mobileHeroImage: "https://www.buildasign.com/0084350_Mobile.jpeg",
+    heroSubtitle: "Design It. Stick It. Leave Your Mark.",
+    categoryDescriptionText: "Discover our full lineup of custom decal solutions, including vinyl decals, static clings, sticker sheets, and roll labels. Perfect for use indoors or out, our decals are built to last and ideal for everything from storefront displays to vehicle branding and promotional giveaways. Easily personalize your decals with our intuitive design tools by uploading your own artwork or choosing from our ready-made templates to get started today.",
+    categorySecondaryImage: "https://www.buildasign.com/images/uploaded/Redesign/BAS_WEB_Redesign_Category_DecalsClings_Secondary.jpg",
+    faqs: [
+      { q: "What type of decal material should I choose?", a: "It depends on your surface and how you plan to use the decal. Clear decals are great for glass and offer a sleek, see-through look where the background shows through. Opaque decals have a solid white backing, making colors pop and providing full coverage making them ideal for most surfaces and long-term use. Static clings use no adhesive, are easy to reposition, and perfect for short-term use on smooth surfaces like windows. For bulk needs, sticker sheets and roll labels offer flexible, efficient options." },
+      { q: "Can these decals be used indoors and outdoors?", a: "Yes! We offer materials that suit both environments. Opaque vinyl and clear decals are durable enough for outdoor use, while static clings and wall decals are best for indoor or short-term outdoor placement." },
+      { q: "What surfaces do your decals stick to best?", a: "All our decals are made for smooth, non-porous surfaces like glass, metal, painted walls, and plastic. For best results, apply to clean, flat areas free of dust or texture." },
+      { q: "Are custom decals easy to apply and remove?", a: "Yes! Most apply with simple pressure and can be removed without damage. Static clings are especially easy to reposition or remove, while adhesive decals may require heat or adhesive remover for clean removal. Sticker sheets and roll labels are designed for peel-and-stick convenience and are easy to handle in bulk." },
+      { q: "Can I upload my own design or logo?", a: "Absolutely! You can upload your own artwork, logos, or images, or start with one of our pre-designed templates. Our design tool lets you customize text, colors, and layout—no design experience needed." },
+      { q: "What decal sizes do you offer?", a: "We offer a wide range of standard and custom sizes to fit your needs; whether it's a small window graphic or a large wall display. You can select your preferred size on each product page or enter a custom dimension if needed." }
+    ],
     products: [
       {
-        id: "custom-stickers",
-        name: "Custom Logo Stickers",
-        description: "Premium die-cut vinyl stickers for giveaways, brand marketing, or labeling.",
-        image: "https://ext.same-assets.com/1114826555/2401743055.png",
-        price: "Starting at $0.15 each",
-        badge: "Bulk Pricing",
+        id: "bumper-stickers",
+        name: "Bumper Stickers",
+        description: "Classic adhesive labels for car bumpers and windows. High visibility branding.",
+        image: "https://www.buildasign.com/0085810_bumper-stickers_360.png",
+        price: "Starting at $2.24",
+        badge: "Car Favorite",
         config: {
-          title: "Custom Vinyl Stickers",
-          subtitle: "High-grade vinyl stickers cut to custom shapes for handouts, laptops, and packaging.",
-          breadcrumb: "Stickers",
+          title: "Custom Bumper Stickers",
+          subtitle: "Standard bumper stickers printed on waterproof, UV-proof outdoor vinyl adhesive.",
+          breadcrumb: "Decals",
           breadcrumbHref: "/custom-decals",
-          promoText: "25% OFF CUSTOM LOGO STICKERS",
-          image: "https://ext.same-assets.com/1114826555/2401743055.png",
-          ratingCount: "2490",
-          ratingScore: "4.9",
+          promoText: "20% OFF BUMPER STICKERS - SHIPS NEXT DAY",
+          image: "https://www.buildasign.com/0085810_bumper-stickers_360.png",
+          ratingCount: "850",
+          ratingScore: "4.8",
           sizes: [
-            { label: '3" x 3" Die-Cut Sticker', value: '3x3', basePrice: 0.85 },
-            { label: '2" x 2" Small Sticker', value: '2x2', basePrice: 0.65 },
-            { label: '4" x 4" Large Sticker', value: '4x4', basePrice: 1.15 }
+            { label: '3" x 10" Rectangle Bumper Sticker', value: '3x10', basePrice: 2.24 },
+            { label: '4" x 4" Circle Sticker', value: '4x4', basePrice: 3.49 }
           ],
           selects: [
             {
-              label: "Sticker Finish",
+              label: "Finish Options",
               options: [
-                { label: "High Gloss Protective", value: "gloss", priceAdder: 0, description: "Shiny finish with colors that pop." },
-                { label: "Modern Velvet Matte", value: "matte", priceAdder: 0.05, description: "Sophisticated smooth finish, anti-glare." }
+                { label: "High Gloss Protective UV", value: "gloss", priceAdder: 0 }
               ]
             }
           ],
-          qtyDiscount: "Massive savings on quantities of 50, 100, 500+",
-          keyFeatures: ["Thick durable vinyl layers", "Sunlight & scratch resistant laminates", "Dishwasher and weatherproof", "No-residue adhesive"],
-          useCases: ["Laptop and water bottle sticker giveaways", "Product packaging labels", "Store merch", "Event schwag"],
+          qtyDiscount: "Bulk packs save up to 80% per sticker",
+          keyFeatures: ["Premium 4mil vinyl layer", "Waterproof and car-wash safe", "Easy bubble-free application"],
+          useCases: ["Business giveaways", "School spirit labels", "Political campaigns"],
           specs: [
-            { key: "Material", value: "6mil Vinyl with laminate" },
-            { key: "Adhesive", value: "Medium-tack removable acrylic" },
-            { key: "Outdoor Life", value: "Up to 5 years print rating" }
+            { key: "Material", value: "4mil calendered white gloss vinyl" }
           ],
-          faqs: [
-            { q: "Can I get a custom die-cut shape?", a: "Yes! Our printers automatically trace the outline of your logo for custom contour cutting." }
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Print bumper stickers today",
+          ctaBody: "Add custom text, sports numbers, or business graphics.",
+          ctaLabel: "Customize Bumper Sticker"
+        }
+      },
+      {
+        id: "car-door-decals",
+        name: "Car Door Decals",
+        description: "Adhesive door decals for car bodies. Durable semi-permanent advertising.",
+        image: "https://www.buildasign.com/0085984_car-door-decals_360.png",
+        price: "Starting at $23.86",
+        config: {
+          title: "Custom Car Door Decals",
+          subtitle: "Professional semi-permanent adhesive branding decals for truck and car door panels.",
+          breadcrumb: "Decals",
+          breadcrumbHref: "/custom-decals",
+          promoText: "20% OFF SEMI-PERMANENT DOOR DECALS",
+          image: "https://www.buildasign.com/0085984_car-door-decals_360.png",
+          ratingCount: "320",
+          ratingScore: "4.7",
+          sizes: [
+            { label: '12" x 18" Small Door Decal', value: '12x18', basePrice: 23.86 },
+            { label: '18" x 24" Standard Door Decal', value: '18x24', basePrice: 34.99 }
           ],
-          reviews: [
-            { author: "Danny P.", rating: 5, text: "Fast shipping and the quality is amazing. Customers love putting them on their laptops." }
+          selects: [
+            {
+              label: "Vinyl Option",
+              options: [
+                { label: "Opaque Adhesive Gloss Vinyl", value: "opaque", priceAdder: 0 }
+              ]
+            }
           ],
-          ctaHeading: "Print custom stickers today",
-          ctaBody: "Upload your design or business emblem to create premium stickers.",
-          ctaLabel: "Customize Stickers"
+          qtyDiscount: "Volume discounts on door pairs",
+          keyFeatures: ["High performance calendered vinyl", "Waterproof and UV laminated", "Semi-permanent solid adhesion"],
+          useCases: ["Business logos", "Regulation USDOT numbers", "Contractor branding"],
+          specs: [
+            { key: "Material", value: "4mil High-performance Vinyl" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Brand your fleet vehicles",
+          ctaBody: "Design car door branding decals using our templates.",
+          ctaLabel: "Customize Door Decal"
+        }
+      },
+      {
+        id: "car-window-decals",
+        name: "Car Window Decals",
+        description: "Rear and side window adhesive graphics, available in transparent and opaque materials.",
+        image: "https://www.buildasign.com/0085990_car-window-decals_360.png",
+        price: "Starting at $23.86",
+        config: {
+          title: "Custom Car Window Decals",
+          subtitle: "Highly visible rear window adhesive decals. Perfect for glass surfaces.",
+          breadcrumb: "Decals",
+          breadcrumbHref: "/custom-decals",
+          promoText: "20% OFF WINDOW ADHESIVE DECALS",
+          image: "https://www.buildasign.com/0085990_car-window-decals_360.png",
+          ratingCount: "285",
+          ratingScore: "4.8",
+          sizes: [
+            { label: '12" x 18" Small Window Decal', value: '12x18', basePrice: 23.86 },
+            { label: '18" x 24" Medium Window Decal', value: '18x24', basePrice: 34.99 }
+          ],
+          selects: [
+            {
+              label: "Material Style",
+              options: [
+                { label: "Opaque White Backing Vinyl", value: "opaque", priceAdder: 0 },
+                { label: "Clear Transparent Window Vinyl", value: "clear", priceAdder: 4.50 }
+              ]
+            }
+          ],
+          qtyDiscount: "Volume savings apply",
+          keyFeatures: ["Window safe adhesive backing", "Vibrant inks pop on transparent base", "Rain and rear-wiper proof"],
+          useCases: ["Rear window advertisement", "Store hours", "Reg numbers on windows"],
+          specs: [
+            { key: "Material", value: "4mil window-form adhesive vinyl" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Make your rear window sell",
+          ctaBody: "Build rear window banners with easy-to-read font and phone info.",
+          ctaLabel: "Customize Window Decal"
+        }
+      },
+      {
+        id: "window-decals",
+        name: "Window Decals",
+        description: "Adhesive signage for business storefront windows and glass panels.",
+        image: "https://www.buildasign.com/0085949_window-decals_360.png",
+        price: "Starting at $23.86",
+        badge: "Best Seller",
+        config: {
+          title: "Custom Storefront Window Decals",
+          subtitle: "Professional adhesive decals for storefront glass, entrances, and office doors.",
+          breadcrumb: "Decals",
+          breadcrumbHref: "/custom-decals",
+          promoText: "20% OFF STOREFRONT WINDOW DECALS",
+          image: "https://www.buildasign.com/0085949_window-decals_360.png",
+          ratingCount: "940",
+          ratingScore: "4.9",
+          sizes: [
+            { label: '12" x 18" Small Window Decal', value: '12x18', basePrice: 23.86 },
+            { label: '18" x 24" Standard Window Decal', value: '18x24', basePrice: 34.99 },
+            { label: '24" x 36" Large Window Decal', value: '24x36', basePrice: 54.99 }
+          ],
+          selects: [
+            {
+              label: "Material Style",
+              options: [
+                { label: "Opaque White Adhesive Gloss", value: "opaque", priceAdder: 0, description: "Solid background makes colors extremely vibrant." },
+                { label: "Clear Transparent Adhesive Glass", value: "clear", priceAdder: 4.00, description: "Allows see-through glass margins." },
+                { label: "Frosted Glass Etched Finish", value: "frosted", priceAdder: 12.00, description: "Offers privacy with a premium sandblasted look." }
+              ]
+            }
+          ],
+          qtyDiscount: "Saves up to 15% on commercial building orders",
+          keyFeatures: ["Weatherproof outdoor vinyl print", "Apply on inside or outside of glass", "Vibrant UV inks resist fading"],
+          useCases: ["Business hours lists", "Storefront branding logos", "Open/Closed door banners", "Office partition privacy"],
+          specs: [
+            { key: "Thickness", value: "4mil self-adhesive PVC" },
+            { key: "Adhesive Type", value: "Low-residue pressure-activated acrylic" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Brand your glass fronts",
+          ctaBody: "Order clean die-cut window layouts or frosted bands.",
+          ctaLabel: "Customize Window Decal"
+        }
+      },
+      {
+        id: "roll-labels",
+        name: "Roll Labels",
+        description: "Bulk promotional logo stickers printed on paper or plastic rolls, perfect for packaging.",
+        image: "https://www.buildasign.com/0086594_roll-labels_360.png",
+        price: "Starting at $0.54 each",
+        config: {
+          title: "Custom Printed Roll Labels",
+          subtitle: "Bulk logo and product label rolls, perfect for quick peeling, boxing, and product jars.",
+          breadcrumb: "Decals",
+          breadcrumbHref: "/custom-decals",
+          promoText: "20% OFF ALL BULK ROLL LABELS",
+          image: "https://www.buildasign.com/0086594_roll-labels_360.png",
+          ratingCount: "410",
+          ratingScore: "4.8",
+          sizes: [
+            { label: '2" x 2" Round Label', value: '2x2', basePrice: 0.54 },
+            { label: '3" x 3" Square Label', value: '3x3', basePrice: 0.75 },
+            { label: '4" x 2" Rectangle Label', value: '4x2', basePrice: 0.85 }
+          ],
+          selects: [
+            {
+              label: "Paper Quality",
+              options: [
+                { label: "Gloss White Paper (BOPP)", value: "gloss_paper", priceAdder: 0 },
+                { label: "Clear Polypropylene Film", value: "clear_film", priceAdder: 0.10 }
+              ]
+            }
+          ],
+          qtyDiscount: "Pricing drops as low as $0.05 per label in high bulk quantities",
+          keyFeatures: ["Wound on standard 3\" cardboard cores", "Easy machine or hand dispensing", "Vibrant colors"],
+          useCases: ["Product jar branding", "Takeout bag sealing stickers", "Retail box shipping labels"],
+          specs: [
+            { key: "Material", value: "Premium BOPP adhesive stock" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Print product packaging rolls",
+          ctaBody: "Design labels in bulk for box sealing and retail containers.",
+          ctaLabel: "Customize Roll Labels"
+        }
+      },
+      {
+        id: "window-clings",
+        name: "Static Window Clings",
+        description: "Glueless static clings that stick to glass using static energy. Easy to reposition.",
+        image: "https://www.buildasign.com/0085814_static-window-clings_360.png",
+        price: "Starting at $62.96",
+        config: {
+          title: "Static Window Clings",
+          subtitle: "No-adhesive window clings. Slide in place, remove, and reuse with static cling science.",
+          breadcrumb: "Decals",
+          breadcrumbHref: "/custom-decals",
+          promoText: "20% OFF REPOSITIONABLE WINDOW CLINGS",
+          image: "https://www.buildasign.com/0085814_static-window-clings_360.png",
+          ratingCount: "220",
+          ratingScore: "4.7",
+          sizes: [
+            { label: '12" x 18" Small Window Cling', value: '12x18', basePrice: 62.96 },
+            { label: '18" x 24" Medium Window Cling', value: '18x24', basePrice: 79.99 },
+            { label: '24" x 36" Large Window Cling', value: '24x36', basePrice: 99.99 }
+          ],
+          selects: [
+            {
+              label: "Cling Attachment side",
+              options: [
+                { label: "Face Cling (Apply inside glass looking out)", value: "face_cling", priceAdder: 0 },
+                { label: "Back Cling (Apply outside glass looking in)", value: "back_cling", priceAdder: 0 }
+              ]
+            }
+          ],
+          qtyDiscount: "Saves with multi-clings packs",
+          keyFeatures: ["Zero adhesive residue", "100% repositionable & reusable", "Clings to smooth glass surfaces"],
+          useCases: ["Temporary retail campaigns", "Holiday promotional banners", "Car service reminder tags"],
+          specs: [
+            { key: "Material", value: "7.5mil static-cling gloss PVC film" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Get flexible glass branding",
+          ctaBody: "Order clings that peel right off without clean-up.",
+          ctaLabel: "Customize Window Cling"
+        }
+      },
+      {
+        id: "sheet-stickers",
+        name: "Sheet Stickers",
+        description: "Multiple custom stickers printed on a flat sheet, perfect for retail labelling.",
+        image: "https://www.buildasign.com/0086628_sheet-stickers_360.png",
+        price: "Starting at $11.16",
+        config: {
+          title: "Custom Sheet Stickers",
+          subtitle: "Sticker sheets featuring multiple peel-off sticker cut contours on a single page.",
+          breadcrumb: "Decals",
+          breadcrumbHref: "/custom-decals",
+          promoText: "20% OFF PRINTED STICKER SHEETS",
+          image: "https://www.buildasign.com/0086628_sheet-stickers_360.png",
+          ratingCount: "340",
+          ratingScore: "4.8",
+          sizes: [
+            { label: '8.5" x 11" Standard Sheet Size', value: '8.5x11', basePrice: 11.16 }
+          ],
+          selects: [
+            {
+              label: "Sticker Sheet material",
+              options: [
+                { label: "Glossy White Sticker Paper", value: "gloss_sheet", priceAdder: 0 },
+                { label: "Matte White Sticker Paper", value: "matte_sheet", priceAdder: 0 }
+              ]
+            }
+          ],
+          qtyDiscount: "Saves up to 40% on bulk sheets",
+          keyFeatures: ["Multiple stickers per sheet", "Durable peel-and-stick backings", "Contour kiss-cut contours"],
+          useCases: ["Product labeling", "Fun office handouts", "Packaging decorations"],
+          specs: [
+            { key: "Sheet Count", value: "Custom layouts per sheet" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Design multi-sticker layouts",
+          ctaBody: "Order flat sheets containing multiple business stickers.",
+          ctaLabel: "Customize Sticker Sheet"
+        }
+      },
+      {
+        id: "return-address-labels",
+        name: "Return Address Labels",
+        description: "Mini address stickers for envelope branding, packaging returns, and office logs.",
+        image: "https://www.buildasign.com/0086632_return-address-labels_360.jpeg",
+        price: "Starting at $0.14 each",
+        config: {
+          title: "Return Address Labels",
+          subtitle: "Convenient return address labels printed on premium sticky sheets.",
+          breadcrumb: "Decals",
+          breadcrumbHref: "/custom-decals",
+          promoText: "20% OFF RETURN ADDRESS LABELS",
+          image: "https://www.buildasign.com/0086632_return-address-labels_360.jpeg",
+          ratingCount: "480",
+          ratingScore: "4.9",
+          sizes: [
+            { label: '0.75" x 2.25" Mini Label size', value: '0.75x2.25', basePrice: 0.14 }
+          ],
+          selects: [
+            {
+              label: "Label Color Style",
+              options: [
+                { label: "Standard White paper backing", value: "white_back", priceAdder: 0 },
+                { label: "Clear transparent window film", value: "clear_back", priceAdder: 0.05 }
+              ]
+            }
+          ],
+          qtyDiscount: "Pack options of 100, 250, 500",
+          keyFeatures: ["Peel & stick quickly", "Vibrant black text layout", "Durable cardstock box container"],
+          useCases: ["Business correspondence envelopes", "Wedding invitations", "Product labels"],
+          specs: [
+            { key: "Dimensions", value: "0.75 inches tall x 2.25 inches wide" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Design return labels",
+          ctaBody: "Input your name and corporate address details.",
+          ctaLabel: "Customize Address Labels"
         }
       }
     ]
@@ -1335,13 +2274,20 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
   "marketing-materials": {
     title: "Marketing Materials",
     description: "Grow your business and look professional with customized business cards, flyers, and brochures.",
-    heroImage: "https://ext.same-assets.com/1114826555/3799598245.png",
+    heroImage: "https://www.buildasign.com/images/uploaded/Redesign/BAS_WEB_Redesign_Category_DecalsClings_Secondary.jpg",
+    categoryDescriptionText: "Make a powerful statement with custom marketing materials that elevate your brand. From premium double-sided business cards and local door hangers to detailed brochures, rack cards, and tabletop displays, we offer a comprehensive suite of print products designed to help you stand out. Easily customize each piece with your brand colors, logos, and promotions using our professional design tools and template libraries.",
+    categorySecondaryImage: "https://www.buildasign.com/images/uploaded/Redesign/NPIB-34422-Tradeshow-Hero-001_en-gb.png",
+    faqs: [
+      { q: "What cardstock and paper options do you offer?", a: "We offer a variety of professional materials tailored to each product. Our cards, door hangers, rack cards, and table tents are printed on thick 14pt or 16pt cardstock with gloss or matte finishes. Our flyers and brochures are printed on high-density 100lb glossy or matte text paper for high foldability." },
+      { q: "Can I write on the glossy printed materials?", a: "Glossy UV-coated materials have a slick finish that is resistant to standard ballpoint ink. If you need to write notes, dates, or prices on your handouts, we highly recommend choosing our Smooth Matte finish, which works perfectly with pens and pencils." },
+      { q: "Do you offer folding services for brochures?", a: "Yes! When configuring our 8.5\" x 11\" flyers, you can select 'Tri-Fold' or 'Half-Fold' finishes. Your brochures will arrive pre-folded and event-ready at no extra hassle." }
+    ],
     products: [
       {
         id: "business-cards",
         name: "Custom Business Cards",
         description: "Make a great first impression with premium custom business cards.",
-        image: "https://ext.same-assets.com/1114826555/3799598245.png",
+        image: "https://www.buildasign.com/0085790_business-cards_360.jpeg",
         price: "Starting at $19.99 for 250",
         badge: "Corporate Choice",
         config: {
@@ -1350,7 +2296,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Marketing",
           breadcrumbHref: "/marketing-materials",
           promoText: "25% OFF ALL CORPORATE STATIONERY",
-          image: "https://ext.same-assets.com/1114826555/3799598245.png",
+          image: "https://www.buildasign.com/0085790_business-cards_360.jpeg",
           ratingCount: "1120",
           ratingScore: "4.9",
           sizes: [
@@ -1390,28 +2336,331 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           ctaBody: "Upload your business info and logo to print double-sided cards fast.",
           ctaLabel: "Customize Cards"
         }
+      },
+      {
+        id: "postcards",
+        name: "Custom Postcards",
+        description: "High-quality postcards for direct mail, handouts, and promotional inserts.",
+        image: "https://www.buildasign.com/0086663_postcards_360.png",
+        price: "Starting at $14.99 for 50",
+        badge: "Event Choice",
+        config: {
+          title: "Custom Postcards",
+          subtitle: "Full-color promotional postcards printed on premium thick cardstock.",
+          breadcrumb: "Marketing",
+          breadcrumbHref: "/marketing-materials",
+          promoText: "25% OFF ALL EVENT MARKETING PRINTS",
+          image: "https://www.buildasign.com/0086663_postcards_360.png",
+          ratingCount: "580",
+          ratingScore: "4.8",
+          sizes: [
+            { label: '4" x 6" Standard Postcard', value: '4x6', basePrice: 14.99 },
+            { label: '5" x 7" Medium Postcard', value: '5x7', basePrice: 19.99 },
+            { label: '6" x 9" Large Postcard', value: '6x9', basePrice: 29.99 }
+          ],
+          selects: [
+            {
+              label: "Paper Thickness & Finish",
+              options: [
+                { label: "14pt Ultra Gloss", value: "14pt_gloss", priceAdder: 0 },
+                { label: "14pt Smooth Matte", value: "14pt_matte", priceAdder: 0 },
+                { label: "16pt Heavyweight Premium", value: "16pt_premium", priceAdder: 4.50 }
+              ]
+            },
+            {
+              label: "Backside Printing",
+              options: [
+                { label: "Blank Back", value: "blank", priceAdder: 0 },
+                { label: "Double-Sided Full Color", value: "double_sided", priceAdder: 6.00 }
+              ]
+            }
+          ],
+          qtyDiscount: "Save up to 60% on bulk postcard mailers",
+          keyFeatures: ["Archival grade cardstock", "Stunning gloss or writable matte finish", "Double sided color printing available"],
+          useCases: ["Direct mail advertising", "Coupons & promotional hand-outs", "Event invitations", "Product package inserts"],
+          specs: [
+            { key: "Material", value: "14pt or 16pt Cardstock" },
+            { key: "Printing", value: "Offset litho press 300 DPI" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Ready to design postcards?",
+          ctaBody: "Custom print postcards using our online template catalog or upload artwork.",
+          ctaLabel: "Customize Postcards"
+        }
+      },
+      {
+        id: "flyers",
+        name: "Flyers & Brochures",
+        description: "Vibrant single or double sided flyers to promote events, menus, and packages.",
+        image: "https://www.buildasign.com/0086669_flyers-brochures_360.png",
+        price: "Starting at $29.99 for 50",
+        badge: "Best Value",
+        config: {
+          title: "Custom Flyers & Brochures",
+          subtitle: "Premium full color flyers and brochures printed on professional paper stock.",
+          breadcrumb: "Marketing",
+          breadcrumbHref: "/marketing-materials",
+          promoText: "25% OFF BULK EVENT FLYERS & FOLDED BROCHURES",
+          image: "https://www.buildasign.com/0086669_flyers-brochures_360.png",
+          ratingCount: "430",
+          ratingScore: "4.7",
+          sizes: [
+            { label: '8.5" x 11" Standard Flyer', value: '8.5x11', basePrice: 29.99 },
+            { label: '5.5" x 8.5" Small Flyer', value: '5.5x8.5', basePrice: 19.99 }
+          ],
+          selects: [
+            {
+              label: "Paper Quality",
+              options: [
+                { label: "100lb Glossy Text", value: "100lb_gloss", priceAdder: 0 },
+                { label: "100lb Matte Text", value: "100lb_matte", priceAdder: 0 },
+                { label: "80lb Recycled Text", value: "80lb_recycled", priceAdder: 3.00 }
+              ]
+            },
+            {
+              label: "Fold Style",
+              options: [
+                { label: "Flat (No Fold)", value: "flat", priceAdder: 0 },
+                { label: "Tri-Fold", value: "tri_fold", priceAdder: 8.00 },
+                { label: "Half-Fold", value: "half_fold", priceAdder: 5.00 }
+              ]
+            }
+          ],
+          qtyDiscount: "Save more when printing in packs of 100+",
+          keyFeatures: ["High definition color reproduction", "Tri-fold & half-fold options", "Glossy or matte textures"],
+          useCases: ["Event brochures", "Restaurant menus", "Real estate listing sheets", "Corporate handouts"],
+          specs: [
+            { key: "Material", value: "100lb Text Paper" },
+            { key: "Printing", value: "Offset lithography" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Design flyers online",
+          ctaBody: "Input your logo, menus, and corporate text using templates.",
+          ctaLabel: "Customize Flyers"
+        }
+      },
+      {
+        id: "door-hangers",
+        name: "Door Hangers",
+        description: "Targeted local advertising hangers that slip easily onto front door handles.",
+        image: "https://www.buildasign.com/0086684_door-hangers_360.png",
+        price: "Starting at $39.99 for 100",
+        config: {
+          title: "Custom Door Hangers",
+          subtitle: "Vibrant door hangers pre-cut with handle holes, perfect for local business advertising.",
+          breadcrumb: "Marketing",
+          breadcrumbHref: "/marketing-materials",
+          promoText: "25% OFF BUSINESS DOOR HANGERS",
+          image: "https://www.buildasign.com/0086684_door-hangers_360.png",
+          ratingCount: "310",
+          ratingScore: "4.8",
+          sizes: [
+            { label: '3.5" x 8.5" Compact Hanger', value: '3.5x8.5', basePrice: 39.99 },
+            { label: '4.25" x 11" Standard Large Hanger', value: '4.25x11', basePrice: 54.99 }
+          ],
+          selects: [
+            {
+              label: "Card Material",
+              options: [
+                { label: "14pt Gloss Cardstock", value: "14pt_gloss", priceAdder: 0 },
+                { label: "14pt Matte Cardstock", value: "14pt_matte", priceAdder: 0 }
+              ]
+            },
+            {
+              label: "Handle Cutout Style",
+              options: [
+                { label: "Standard 1.25\" Circle Hole with Slit", value: "circle_slit", priceAdder: 0 },
+                { label: "Curved Arch Hook Cut", value: "arch_hook", priceAdder: 4.00 }
+              ]
+            }
+          ],
+          qtyDiscount: "Bulk local campaigns save up to 70%",
+          keyFeatures: ["Pre-cut hole and slit fits all door handles", "Durable 14pt thick cover stock", "Double-sided full color printing"],
+          useCases: ["Home services (lawn, roofing, cleaning)", "Political campaigning", "Local restaurant menu advertising", "Do Not Disturb door signs"],
+          specs: [
+            { key: "Material", value: "14pt cardstock" },
+            { key: "Hole Diameter", value: "1.25 inches standard" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Kick off local door hanger campaigns",
+          ctaBody: "Custom print door hangers with coupon codes and contact numbers.",
+          ctaLabel: "Customize Door Hangers"
+        }
+      },
+      {
+        id: "folders",
+        name: "Presentation Folders",
+        description: "Branded pocket folders to organize and present documents and proposals.",
+        image: "https://www.buildasign.com/0086700_presentation-folders_360.png",
+        price: "Starting at $99.99 for 50",
+        badge: "Premium Choice",
+        config: {
+          title: "Presentation Folders",
+          subtitle: "9\" x 12\" custom folders with inner pockets and business card slots.",
+          breadcrumb: "Marketing",
+          breadcrumbHref: "/marketing-materials",
+          promoText: "25% OFF PRESENTATION CORPORATE FOLDERS",
+          image: "https://www.buildasign.com/0086700_presentation-folders_360.png",
+          ratingCount: "220",
+          ratingScore: "4.7",
+          sizes: [
+            { label: '9" x 12" Standard Folder', value: '9x12', basePrice: 99.99 }
+          ],
+          selects: [
+            {
+              label: "Pocket Configuration",
+              options: [
+                { label: "Two Pockets (Left & Right)", value: "two_pockets", priceAdder: 0 },
+                { label: "One Pocket (Right Side Only)", value: "one_pocket", priceAdder: -10.00 }
+              ]
+            },
+            {
+              label: "Business Card Slots",
+              options: [
+                { label: "Slits on Right Pocket", value: "right_only", priceAdder: 0 },
+                { label: "Slits on Both Pockets", value: "both_pockets", priceAdder: 2.50 },
+                { label: "No Card Slits", value: "none", priceAdder: 0 }
+              ]
+            }
+          ],
+          qtyDiscount: "Save on office packs of 100+",
+          keyFeatures: ["Deep 4-inch inner pockets", "Standard pre-cut business card slots", "Thick premium semi-gloss stock"],
+          useCases: ["Corporate presentations", "Real estate contract folders", "Educational package folders", "Client proposal folders"],
+          specs: [
+            { key: "Closed Size", value: "9 inches x 12 inches" },
+            { key: "Open Size", value: "18 inches x 12 inches" },
+            { key: "Pocket Height", value: "4 inches" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Organize client paperwork",
+          ctaBody: "Design professional pocket folders with corporate logos.",
+          ctaLabel: "Customize Folders"
+        }
+      },
+      {
+        id: "rack-cards",
+        name: "Rack Cards",
+        description: "Sleek vertical cards designed for display racks in hotel lobbies and cafes.",
+        image: "https://www.buildasign.com/0086692_rack-cards_360.png",
+        price: "Starting at $19.99 for 50",
+        config: {
+          title: "Custom Rack Cards",
+          subtitle: "Standard 4\" x 9\" vertical cards printed on high durability thick cardstock.",
+          breadcrumb: "Marketing",
+          breadcrumbHref: "/marketing-materials",
+          promoText: "25% OFF COMPACT RACK CARDS",
+          image: "https://www.buildasign.com/0086692_rack-cards_360.png",
+          ratingCount: "340",
+          ratingScore: "4.8",
+          sizes: [
+            { label: '4" x 9" Standard Vertical Card', value: '4x9', basePrice: 19.99 }
+          ],
+          selects: [
+            {
+              label: "Cardstock Weight & Finish",
+              options: [
+                { label: "14pt Glossy Cover", value: "14pt_gloss", priceAdder: 0 },
+                { label: "14pt Smooth Matte", value: "14pt_matte", priceAdder: 0 },
+                { label: "16pt Heavyweight Cardstock", value: "16pt_premium", priceAdder: 3.50 }
+              ]
+            },
+            {
+              label: "Print Layout",
+              options: [
+                { label: "Single Sided", value: "single_sided", priceAdder: 0 },
+                { label: "Double Sided", value: "double_sided", priceAdder: 5.00 }
+              ]
+            }
+          ],
+          qtyDiscount: "Volume tourist display tiers apply",
+          keyFeatures: ["Perfect 4x9 sizing fits standard tourist racks", "Thick sturdy build stands upright", "Rich double-sided print available"],
+          useCases: ["Tourism brochures & guides", "Hotel lobby advertisements", "Restaurant display menus", "Retail pricing lists"],
+          specs: [
+            { key: "Sizing", value: "4 inches wide x 9 inches tall" },
+            { key: "Paper", value: "14pt or 16pt cardstock" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Get featured in tourism racks",
+          ctaBody: "Create beautiful vertical rack cards with layouts and maps.",
+          ctaLabel: "Customize Rack Cards"
+        }
+      },
+      {
+        id: "table-tents",
+        name: "Table Tents",
+        description: "Double-sided self-standing table displays, ideal for restaurants and reception desks.",
+        image: "https://www.buildasign.com/0086720_table-tents_360.png",
+        price: "Starting at $49.99 for 50",
+        badge: "Hospitality Favorite",
+        config: {
+          title: "Custom Table Tents",
+          subtitle: "Self-standing three-dimensional table tents. Pre-scored with interlocking bottom tabs.",
+          breadcrumb: "Marketing",
+          breadcrumbHref: "/marketing-materials",
+          promoText: "25% OFF COUNTERTOP TABLE TENTS",
+          image: "https://www.buildasign.com/0086720_table-tents_360.png",
+          ratingCount: "190",
+          ratingScore: "4.8",
+          sizes: [
+            { label: '4" x 6" Display Face', value: '4x6', basePrice: 49.99 },
+            { label: '5" x 7" Display Face', value: '5x7', basePrice: 59.99 }
+          ],
+          selects: [
+            {
+              label: "Base Materials",
+              options: [
+                { label: "14pt Glossy Cover", value: "14pt_gloss", priceAdder: 0 },
+                { label: "14pt Matte Cover", value: "14pt_matte", priceAdder: 0 }
+              ]
+            }
+          ],
+          qtyDiscount: "Volume savings for hospitality packages",
+          keyFeatures: ["Pre-scored lines fold up in seconds", "Interlocking tabs lock base without tape", "Double-sided prints show messages on both sides"],
+          useCases: ["Restaurant special menus", "Bar drink promotions", "Hotel checkout counter info", "Conference desk name plates"],
+          specs: [
+            { key: "Assembly", value: "Shipped flat, scored folding tabs" },
+            { key: "Print", value: "Double sided outer surface" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Promote directly on tables",
+          ctaBody: "Design self-standing table tent cards for specials and drinks.",
+          ctaLabel: "Customize Table Tents"
+        }
       }
     ]
   },
   "promotional-products": {
     title: "Promotional Swag & Merch",
     description: "Customize apparel, mugs, and trade show giveaways with your business branding.",
-    heroImage: "https://ext.same-assets.com/1114826555/1445363370.png",
+    heroImage: "https://www.buildasign.com/images/uploaded/BAS_WEB_071125_Category_Flags_Secondary.jpg",
+    categoryDescriptionText: "Promote your business and look professional with customized promo swag. From screen-printed cotton t-shirts and ceramic coffee mugs to canvas tote bags, retractable logo pens, executive journals, keychains, and fridge magnets, we have everything you need to leave a lasting impression. All items are constructed with high-grade, durable materials designed to proudly showcase your brand.",
+    categorySecondaryImage: "https://www.buildasign.com/images/uploaded/Redesign/BAS_WEB_Redesign_Category_DecalsClings_Secondary.jpg",
+    faqs: [
+      { q: "Is there a minimum order quantity (MOQ) for promotional products?", a: "Many of our promotional products, including custom t-shirts, mugs, and journals, have no minimum order quantity—you can order just a single item! For items like custom pens or fridge magnets, we sell them in convenient pack sizes (e.g., packs of 50 or 100) to ensure you get the absolute best bulk rates." },
+      { q: "What print file formats do you recommend for logos?", a: "For the absolute sharpest print results, we recommend uploading vector files such as PDF, EPS, or AI. High-resolution PNG and JPG files are also supported. Our design check process automatically verifies that your files have sufficient resolution before printing begins." },
+      { q: "Are ceramic mugs and tumblers dishwasher safe?", a: "Yes! Our custom ceramic mugs are printed using industrial dye-sublimation wraps that are fully microwave and dishwasher safe, meaning your design won't fade or peel over time." }
+    ],
     products: [
       {
         id: "t-shirts",
         name: "Custom T-Shirts",
         description: "Screen printed cotton shirts featuring your company logo or message.",
-        image: "https://ext.same-assets.com/1114826555/1445363370.png",
+        image: "https://www.buildasign.com/0085750_vinyl-banners_360.png", // using an existing banner image or placeholder
         price: "Starting at $14.99",
         badge: "Staff Wear",
         config: {
           title: "Custom Printed T-Shirts",
           subtitle: "Comfortable cotton tees customized with full-color heat-press or screen prints.",
-          breadcrumb: "Promo",
+          breadcrumb: "Promotional",
           breadcrumbHref: "/promotional-products",
           promoText: "25% OFF PROMOTIONAL MERCHANDISE",
-          image: "https://ext.same-assets.com/1114826555/1445363370.png",
+          image: "https://www.buildasign.com/0085750_vinyl-banners_360.png",
           ratingCount: "740",
           ratingScore: "4.8",
           sizes: [
@@ -1443,6 +2692,265 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           ctaHeading: "Design shirts for your team",
           ctaBody: "Add logo prints to front or back positions on premium shirts.",
           ctaLabel: "Customize Shirt"
+        }
+      },
+      {
+        id: "mugs",
+        name: "Coffee Mugs & Tumblers",
+        description: "Vibrant ceramic coffee mugs and travel tumblers with your company logo.",
+        image: "https://www.buildasign.com/0086638_ceramic-mugs_360.png",
+        price: "Starting at $4.99 each",
+        badge: "Office Best-Seller",
+        config: {
+          title: "Custom Coffee Mugs",
+          subtitle: "Full-color sublimation print ceramic mugs, perfect for corporate swag and office desks.",
+          breadcrumb: "Promotional",
+          breadcrumbHref: "/promotional-products",
+          promoText: "25% OFF CUSTOM LOGO DRINKWARE",
+          image: "https://www.buildasign.com/0086638_ceramic-mugs_360.png",
+          ratingCount: "840",
+          ratingScore: "4.9",
+          sizes: [
+            { label: "11oz Classic Ceramic Mug", value: "11oz", basePrice: 4.99 },
+            { label: "15oz Deluxe Ceramic Mug", value: "15oz", basePrice: 6.99 }
+          ],
+          selects: [
+            {
+              label: "Ceramic Color",
+              options: [
+                { label: "Bright White", value: "white", priceAdder: 0 },
+                { label: "Midnight Black", value: "black", priceAdder: 1.50 }
+              ]
+            }
+          ],
+          qtyDiscount: "Save up to 55% in bulk orders",
+          keyFeatures: ["Microwave and dishwasher safe", "Sublimated print wraps edge-to-edge", "Lead-free high-grade ceramic"],
+          useCases: ["Corporate gifts", "Office mugs", "Exhibition giveaways", "Client appreciation packages"],
+          specs: [
+            { key: "Material", value: "High-quality Ceramic" },
+            { key: "Printing", value: "Dye-Sublimation Wrap" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Brand your office drinkware",
+          ctaBody: "Upload your logo to design custom coffee mugs today.",
+          ctaLabel: "Customize Coffee Mugs"
+        }
+      },
+      {
+        id: "tote-bags",
+        name: "Canvas Tote Bags",
+        description: "Durable cotton canvas tote bags custom printed with your logo.",
+        image: "https://www.buildasign.com/0086644_tote-bags_360.png",
+        price: "Starting at $5.99 each",
+        config: {
+          title: "Custom Canvas Tote Bags",
+          subtitle: "Eco-friendly, reusable cotton canvas totes printed with vibrant logo colors.",
+          breadcrumb: "Promotional",
+          breadcrumbHref: "/promotional-products",
+          promoText: "25% OFF ECO-FRIENDLY PROM BAGS",
+          image: "https://www.buildasign.com/0086644_tote-bags_360.png",
+          ratingCount: "490",
+          ratingScore: "4.8",
+          sizes: [
+            { label: "Standard 15\" x 16\" Tote", value: "15x16", basePrice: 5.99 }
+          ],
+          selects: [
+            {
+              label: "Cotton Weight",
+              options: [
+                { label: "6oz Lightweight Cotton", value: "6oz", priceAdder: 0 },
+                { label: "12oz Heavyweight Canvas", value: "12oz", priceAdder: 2.50 }
+              ]
+            }
+          ],
+          qtyDiscount: "Save on bulk event tote packs",
+          keyFeatures: ["Reinforced shoulder handles", "Eco-friendly reusable design", "Full color heat transfer printing"],
+          useCases: ["Grocery shoppers", "Event giveaway bags", "Staff welcome packages", "Library book bags"],
+          specs: [
+            { key: "Material", value: "100% Cotton Canvas" },
+            { key: "Handles", value: "21-inch fabric handles" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Design reusable event bags",
+          ctaBody: "Custom print canvas tote bags with your graphics and emblems.",
+          ctaLabel: "Customize Tote Bags"
+        }
+      },
+      {
+        id: "pens",
+        name: "Custom Logo Pens",
+        description: "Retractable ballpoint writing pens, perfect for trade shows and lobbies.",
+        image: "https://www.buildasign.com/0086650_pens_360.png",
+        price: "Starting at $0.89 each",
+        badge: "Trade Show Choice",
+        config: {
+          title: "Custom Logo Pens",
+          subtitle: "Sleek retractable clicker pens printed with your business website or phone number.",
+          breadcrumb: "Promotional",
+          breadcrumbHref: "/promotional-products",
+          promoText: "25% OFF BULK LOGO WRITING PENS",
+          image: "https://www.buildasign.com/0086650_pens_360.png",
+          ratingCount: "1250",
+          ratingScore: "4.8",
+          sizes: [
+            { label: "Standard Fine Point Pen", value: "fine_pen", basePrice: 0.89 }
+          ],
+          selects: [
+            {
+              label: "Ink Color",
+              options: [
+                { label: "Classic Black Ink", value: "black_ink", priceAdder: 0 },
+                { label: "Deep Blue Ink", value: "blue_ink", priceAdder: 0 }
+              ]
+            },
+            {
+              label: "Pen Barrel Color",
+              options: [
+                { label: "White/Yellow Trim", value: "yellow_trim", priceAdder: 0 },
+                { label: "White/Black Trim", value: "black_trim", priceAdder: 0 },
+                { label: "Solid Silver Barrel", value: "silver_barrel", priceAdder: 0.25 }
+              ]
+            }
+          ],
+          qtyDiscount: "Super bulk prices drop to $0.29 each",
+          keyFeatures: ["Smooth ink flow prevents smudges", "Soft rubber grip for comfort", "Durable pocket clip attachment"],
+          useCases: ["Lobby counter registers", "Trade show swag baskets", "Office stationery chests", "Direct mail package fillers"],
+          specs: [
+            { key: "Ink Style", value: "Ballpoint medium ink" },
+            { key: "Body", value: "ABS plastic housing" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Order bulk giveaway pens",
+          ctaBody: "Custom print barrels with logo text and web address.",
+          ctaLabel: "Customize Pens"
+        }
+      },
+      {
+        id: "notebooks",
+        name: "Custom Journals & Notebooks",
+        description: "Pre-ruled journals and notebooks, perfect for client meetings and logs.",
+        image: "https://www.buildasign.com/0086656_notebooks_360.png",
+        price: "Starting at $3.99 each",
+        config: {
+          title: "Custom Notebooks & Journals",
+          subtitle: "Lined paper journals with premium custom covers to organize meetings and ideas.",
+          breadcrumb: "Promotional",
+          breadcrumbHref: "/promotional-products",
+          promoText: "25% OFF CUSTOM EXECUTIVE NOTEBOOKS",
+          image: "https://www.buildasign.com/0086656_notebooks_360.png",
+          ratingCount: "380",
+          ratingScore: "4.8",
+          sizes: [
+            { label: "5.5\" x 8.5\" Classic Journal", value: "5.5x8.5", basePrice: 3.99 }
+          ],
+          selects: [
+            {
+              label: "Cover Style",
+              options: [
+                { label: "Flexible Softcover", value: "soft", priceAdder: 0 },
+                { label: "Rigid Leatherette Hardcover", value: "hard", priceAdder: 3.00 }
+              ]
+            }
+          ],
+          qtyDiscount: "Save on office packs starting at 10+ journals",
+          keyFeatures: ["80 ruled pages (acid-free paper)", "Elastic band closure strip", "Color-matching ribbon bookmark"],
+          useCases: ["Client meeting diaries", "Employee onboarding logs", "Gift-away packages", "Educational seminars"],
+          specs: [
+            { key: "Page Count", value: "80 lined sheets (160 pages)" },
+            { key: "Binding", value: "Stitched lay-flat binding" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Create custom corporate journals",
+          ctaBody: "Custom print journal covers with debossed logos or full color prints.",
+          ctaLabel: "Customize Notebooks"
+        }
+      },
+      {
+        id: "keychains",
+        name: "Custom Logo Keychains",
+        description: "Acrylic and metallic keyring tags customized with your company logo.",
+        image: "https://www.buildasign.com/0086660_keychains_360.png",
+        price: "Starting at $1.29 each",
+        config: {
+          title: "Custom Logo Keychains",
+          subtitle: "Sturdy custom key rings featuring printed acrylic shapes or laser engraved metal.",
+          breadcrumb: "Promotional",
+          breadcrumbHref: "/promotional-products",
+          promoText: "25% OFF CUSTOM ENGRAVED KEYCHAINS",
+          image: "https://www.buildasign.com/0086660_keychains_360.png",
+          ratingCount: "290",
+          ratingScore: "4.7",
+          sizes: [
+            { label: "2\" x 2\" Acrylic Keychain", value: "2x2_acrylic", basePrice: 1.29 }
+          ],
+          selects: [
+            {
+              label: "Keychain Material",
+              options: [
+                { label: "Clear Acrylic", value: "acrylic", priceAdder: 0 },
+                { label: "Laser-Engraved Stainless Steel", value: "steel", priceAdder: 2.00 }
+              ]
+            }
+          ],
+          qtyDiscount: "Save on corporate key ring packs",
+          keyFeatures: ["Stainless steel split ring holds keys safely", "Double sided full color print under acrylic", "Scratch-resistant shield coatings"],
+          useCases: ["Car dealership client handovers", "Real estate open house promotions", "Gym member tags", "Corporate swag keyrings"],
+          specs: [
+            { key: "Ring", value: "1-inch split key ring" },
+            { key: "Materials", value: "Acrylic or Stainless steel" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Design key ring promos",
+          ctaBody: "Engrave steel tags or print acrylic shapes with logos.",
+          ctaLabel: "Customize Keychains"
+        }
+      },
+      {
+        id: "fridge-magnets",
+        name: "Custom Fridge Magnets",
+        description: "Flexible promo magnets, perfect for household fridges and direct mail.",
+        image: "https://www.buildasign.com/0086664_fridge-magnets_360.png",
+        price: "Starting at $0.49 each",
+        badge: "Household Favorite",
+        config: {
+          title: "Custom Fridge Magnets",
+          subtitle: "Lightweight flexible promo magnets, perfect for direct mail and fridge doors.",
+          breadcrumb: "Promotional",
+          breadcrumbHref: "/promotional-products",
+          promoText: "25% OFF CUSTOM HOUSEHOLD MAGNETS",
+          image: "https://www.buildasign.com/0086664_fridge-magnets_360.png",
+          ratingCount: "710",
+          ratingScore: "4.9",
+          sizes: [
+            { label: "2\" x 2\" Square Magnet", value: "2x2", basePrice: 0.49 },
+            { label: "3.5\" x 2\" Business Card Magnet", value: "3.5x2", basePrice: 0.79 }
+          ],
+          selects: [
+            {
+              label: "Lamination Finish",
+              options: [
+                { label: "Gloss UV Coat", value: "gloss_lam", priceAdder: 0 },
+                { label: "Matte Finish", value: "matte_lam", priceAdder: 0 }
+              ]
+            }
+          ],
+          qtyDiscount: "Volume packs drop price under $0.15 each",
+          keyFeatures: ["Flexible 20mil magnetic backings", "Sticks tight to fridges & whiteboards", "Full-bleed color printing"],
+          useCases: ["Plumbers & repair hotlines", "Pizza takeout phone lists", "Save the Date reminders", "Calendar fridge cards"],
+          specs: [
+            { key: "Material", value: "20mil flexible magnet" },
+            { key: "Sizing", value: "2x2 inches or 3.5x2 inches" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Print fridge promo magnets",
+          ctaBody: "Design business card magnets for household services and dispatch centers.",
+          ctaLabel: "Customize Fridge Magnets"
         }
       }
     ]
