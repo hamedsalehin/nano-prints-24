@@ -58,7 +58,7 @@ export function CategoryCarousel() {
 
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
-      const scrollAmount = 300;
+      const scrollAmount = scrollRef.current.clientWidth * 0.75;
       scrollRef.current.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
@@ -67,9 +67,9 @@ export function CategoryCarousel() {
   };
 
   return (
-    <section className="py-10 bg-white">
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="font-poppins text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+    <section className="py-14 bg-white border-b border-gray-100">
+      <div className="w-full px-6 md:px-16 lg:px-24 xl:px-32">
+        <h2 className="font-poppins text-3xl md:text-4xl font-extrabold text-gray-900 mb-8 tracking-tight">
           Custom Signs for Every Need
         </h2>
 
@@ -78,50 +78,54 @@ export function CategoryCarousel() {
           <button
             type="button"
             onClick={() => scroll("left")}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-yellow-400 shadow-lg rounded-full p-2 hover:bg-yellow-500 transition-colors -ml-4"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white border border-gray-200 text-black shadow-xl rounded-full p-3 hover:bg-yellow-400 transition-colors -ml-5 focus:outline-none"
+            aria-label="Scroll left"
           >
-            <ChevronLeft className="w-6 h-6 text-black" />
+            <ChevronLeft className="w-6 h-6" />
           </button>
 
           <button
             type="button"
             onClick={() => scroll("right")}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-yellow-400 shadow-lg rounded-full p-2 hover:bg-yellow-500 transition-colors -mr-4"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white border border-gray-200 text-black shadow-xl rounded-full p-3 hover:bg-yellow-400 transition-colors -mr-5 focus:outline-none"
+            aria-label="Scroll right"
           >
-            <ChevronRight className="w-6 h-6 text-black" />
+            <ChevronRight className="w-6 h-6" />
           </button>
 
           {/* Carousel */}
           <div
             ref={scrollRef}
-            className="flex gap-4 overflow-x-auto hide-scrollbar pb-4"
+            className="flex gap-6 overflow-x-auto hide-scrollbar pb-6 px-1"
           >
             {categories.map((category) => (
               <Link
                 key={category.name}
                 href={category.href}
-                className="flex-shrink-0 w-40 md:w-48 group"
+                className="flex-shrink-0 w-48 md:w-64 group"
               >
-                <div className="bg-gray-50 rounded-lg p-4 mb-3 group-hover:shadow-md group-hover:border-yellow-400 border-2 border-transparent transition-all h-36 flex items-center justify-center">
-                  <Image
-                    src={category.image}
-                    alt={category.name}
-                    width={160}
-                    height={120}
-                    className="w-full h-full object-contain"
-                  />
+                <div className="bg-[#F8F9FA] rounded-2xl p-6 mb-4 group-hover:shadow-2xl group-hover:border-yellow-400 border-2 border-transparent transition-all duration-300 ease-in-out aspect-square flex items-center justify-center overflow-hidden bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.8),transparent)]">
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={category.image}
+                      alt={category.name}
+                      fill
+                      sizes="(max-width: 768px) 192px, 256px"
+                      className="object-contain transition-transform duration-500 ease-out group-hover:scale-110"
+                    />
+                  </div>
                 </div>
-                <p className="text-center font-medium text-gray-800 group-hover:text-yellow-600 transition-colors">
+                <p className="text-center font-bold text-gray-900 group-hover:text-yellow-600 transition-colors font-poppins text-base md:text-lg leading-tight">
                   {category.name}
                 </p>
               </Link>
             ))}
           </div>
 
-          {/* Progress indicator */}
-          <div className="mt-4 flex justify-center gap-1">
-            <div className="w-16 h-1 bg-yellow-400 rounded" />
-            <div className="w-16 h-1 bg-gray-200 rounded" />
+          {/* Progress bar */}
+          <div className="mt-2 flex justify-center gap-1.5">
+            <div className="w-20 h-1.5 bg-yellow-400 rounded-full" />
+            <div className="w-20 h-1.5 bg-gray-150 rounded-full" />
           </div>
         </div>
       </div>
