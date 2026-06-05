@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Search, ShoppingCart, User, Phone, MessageCircle, HelpCircle, Package, Menu, X, ChevronDown } from "lucide-react";
 
 const navItems = [
@@ -23,21 +24,21 @@ export function Header() {
   return (
     <header className="w-full">
       {/* Top utility bar */}
-      <div className="bg-black text-white text-sm py-2">
+      <div className="text-white text-sm py-2" style={{background: 'linear-gradient(90deg, #00d4ff 0%, #39ff14 40%, #ff00ff 70%, #ffea00 100%)'}}>
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-end gap-4 md:gap-6">
-          <a href="#" className="flex items-center gap-1.5 hover:text-yellow-400 transition-colors">
+          <a href="#" className="flex items-center gap-1.5 text-gray-900 font-semibold hover:text-white transition-colors">
             <Package className="w-4 h-4" />
             <span className="hidden sm:inline">Order Status</span>
           </a>
-          <a href="mailto:nanosign1@gmail.com" className="flex items-center gap-1.5 hover:text-yellow-400 transition-colors">
+          <a href="mailto:nanosign1@gmail.com" className="flex items-center gap-1.5 text-gray-900 font-semibold hover:text-white transition-colors">
             <MessageCircle className="w-4 h-4" />
             <span className="hidden sm:inline">nanosign1@gmail.com</span>
           </a>
-          <a href="#" className="flex items-center gap-1.5 hover:text-yellow-400 transition-colors">
+          <a href="#" className="flex items-center gap-1.5 text-gray-900 font-semibold hover:text-white transition-colors">
             <HelpCircle className="w-4 h-4" />
             <span className="hidden sm:inline">Help Center</span>
           </a>
-          <a href="tel:305-967-1005" className="flex items-center gap-1.5 hover:text-yellow-400 transition-colors">
+          <a href="tel:305-967-1005" className="flex items-center gap-1.5 text-gray-900 font-semibold hover:text-white transition-colors">
             <Phone className="w-4 h-4" />
             <span className="hidden sm:inline">305-967-1005</span>
           </a>
@@ -50,11 +51,14 @@ export function Header() {
           <div className="flex items-center justify-between gap-4">
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
-              <div className="flex items-center">
-                <div className="bg-yellow-400 text-black font-poppins font-bold text-xl px-3 py-1.5 rounded">
-                  Nano Signs
-                </div>
-              </div>
+              <Image
+                src="/images/nano-print-logo.png"
+                alt="Nano Prints Logo"
+                width={180}
+                height={70}
+                className="h-14 w-auto object-contain"
+                priority
+              />
             </Link>
 
             {/* Search bar */}
@@ -155,9 +159,9 @@ export function Header() {
       </div>
 
       {/* Promo banner */}
-      <div className="bg-yellow-400 text-black py-2.5 text-center">
-        <p className="text-sm font-bold">
-          Custom Signs & Banners - Fast Turnaround!{" "}
+      <div className="py-2.5 text-center" style={{background: 'linear-gradient(90deg, #ffea00 0%, #39ff14 25%, #00d4ff 50%, #ff00ff 75%, #ffea00 100%)'}}>
+        <p className="text-sm font-bold text-gray-900">
+          Custom Printing & Signage — Fast Turnaround!{" "}
           <a href="tel:305-967-1005" className="underline hover:no-underline">
             Call 305-967-1005
           </a>
