@@ -17,18 +17,26 @@ export interface RegistryCategory {
   tabletHeroImage?: string;
   mobileHeroImage?: string;
   heroSubtitle?: string;
+  breadcrumbLabel?: string;
   products: RegistryProduct[];
   categoryDescriptionText?: string;
   categorySecondaryImage?: string;
   faqs?: { q: string; a: string }[];
+  reviewRating?: string;
+  reviewCount?: string;
+  reviewQuote?: string;
 }
 
 export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
   "custom-banners": {
     title: "Custom Banners",
+    breadcrumbLabel: "Custom Banners",
     heroSubtitle: "Big Impact. Quick Production. Durable.",
     description: "High-quality custom banners for any occasion. From outdoor vinyl to professional retractable displays, we have the perfect solution for your business or event.",
     heroImage: "https://www.buildasign.com/images/uploaded/Banner/BAS_WEB_01292025_Nav_Megamenu_Banner_V5.jpg",
+    reviewRating: "4.9",
+    reviewCount: "2,680",
+    reviewQuote: "The vinyl banner quality blew us away — vivid colors, sturdy grommets, and it arrived the next day. Already reordering for our next event!",
     categoryDescriptionText: "Discover high-impact custom banners designed to capture attention in any setting. Whether you need heavy-duty outdoor vinyl banners to weather the elements, mesh banners for high-wind fences, premium fabric banners for trade shows, or retractable roll-up displays for quick events, we have you covered. All banners are printed using state-of-the-art printers with vibrant, fade-resistant UV inks.",
     categorySecondaryImage: "https://ext.same-assets.com/1114826555/3799598245.png",
     faqs: [
@@ -566,12 +574,16 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
   },
   "custom-flags": {
     title: "Custom Flags",
+    breadcrumbLabel: "Custom Flags",
     heroSubtitle: "All-Weather. Quick Production. Affordable.",
     description: "Catch the attention of passing traffic with high-impact outdoor flags. Perfect for grand openings, store front promotions, and events.",
     heroImage: "https://www.buildasign.com/0083264_Flags_Desktop.jpeg",
     tabletHeroImage: "https://www.buildasign.com/0083259_Flags_Tablet.jpeg",
     mobileHeroImage: "https://www.buildasign.com/0083260_Flags_Mobile.jpeg",
-    categoryDescriptionText: "Discover custom flags that make your message stand tall or fly high. From feather, teardrop, and garden flags to standard hanging flags and pennants, we offer styles for every setting. Each flag is fully customizable and built for durability, whether displayed indoors or out. Enhance your display with our selection of bases and mounting accessories, including drive-over stands, handheld flagpoles, and adjustable brackets. With simple design tools and fast production, it’s easy to create flags that get noticed.",
+    reviewRating: "4.8",
+    reviewCount: "1,920",
+    reviewQuote: "The feather flags are so vibrant and eye-catching! Setup was effortless and they've survived multiple rainstorms without any fading.",
+    categoryDescriptionText: "Discover custom flags that make your message stand tall or fly high. From feather, teardrop, and garden flags to standard hanging flags and pennants, we offer styles for every setting. Each flag is fully customizable and built for durability, whether displayed indoors or out. Enhance your display with our selection of bases and mounting accessories, including drive-over stands, handheld flagpoles, and adjustable brackets. With simple design tools and fast production, it's easy to create flags that get noticed.",
     categorySecondaryImage: "https://www.buildasign.com/images/uploaded/BAS_WEB_071125_Category_Flags_Secondary.jpg",
     faqs: [
       { q: "What types of custom flags do you offer?", a: "We offer a wide range of custom flags to suit any need, including standing styles like feather flags, teardrop flags, straight flags, garden flags, and stick flags, as well as hanging options like standard flags, nylon flags, and pennant flags." },
@@ -903,11 +915,15 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
   },
   "vehicle-signs": {
     title: "Custom Vehicle Signs",
+    breadcrumbLabel: "Vehicle Signs",
     heroSubtitle: "Every Mile is an Opportunity.",
     description: "Turn any vehicle into a mobile billboard. Promote your business on the go with custom car magnets, decals, and truck lettering.",
     heroImage: "https://www.buildasign.com/0084325_Desktop.jpeg",
     tabletHeroImage: "https://www.buildasign.com/0084326_Tablet.jpeg",
     mobileHeroImage: "https://www.buildasign.com/0084327_Mobile.jpeg",
+    reviewRating: "4.9",
+    reviewCount: "2,150",
+    reviewQuote: "Our fleet car magnets look incredibly professional. They stick perfectly at highway speeds and the print quality is showroom-grade.",
     categoryDescriptionText: "Make every commute count with durable vehicle signs custom-built to stand out. BuildASign provides the options you need, from removable vehicle magnets and regulation door decals to bumper stickers and license plates. All vehicle products are constructed from high-grade vinyl and magnetic sheeting designed to hold tight at highway speeds and resist sun damage.",
     categorySecondaryImage: "https://www.buildasign.com/images/uploaded/BAS_WEB_071125_Category_Vehicle_Secondary.jpg",
     faqs: [
@@ -1169,11 +1185,15 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
   },
   "trade-show": {
     title: "Tradeshow Displays",
+    breadcrumbLabel: "Tradeshow",
     description: "Get trade show ready with custom products that make your brand stand out. Table covers, step and repeats, and stands.",
     heroImage: "https://www.buildasign.com/0083714_BAS_WEB_071125_Category_Tradeshow_MCA_Desktop.jpeg",
     tabletHeroImage: "https://www.buildasign.com/0083715_BAS_WEB_071125_Category_Tradeshow_MCA_Tablet.jpeg",
     mobileHeroImage: "https://www.buildasign.com/0083717_BAS_WEB_071125_Category_Tradeshow_MCA_Mobile.jpeg",
     heroSubtitle: "Where First Impressions Get Noticed.",
+    reviewRating: "4.9",
+    reviewCount: "3,240",
+    reviewQuote: "The table cover and pop-up backdrop banner printed beautifully! Setup took seconds and our logo colors matched perfectly.",
     categoryDescriptionText: "Your tradeshow booth should do more than fill space, it should tell your brand story. With a full range of customizable displays, signage, and print materials, we help you make every event count. From table covers to backdrops, banners to business cards, our products are designed to build cohesion, attract attention, and drive engagement. Whether you're setting up for a local fair or a national expo, we've got everything you need to show up strong and stay top of mind.",
     categorySecondaryImage: "https://www.buildasign.com/images/uploaded/Redesign/NPIB-34422-Tradeshow-Hero-001_en-gb.png",
     faqs: [
@@ -1868,11 +1888,15 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
   },
   "custom-decals": {
     title: "Custom Decals",
+    breadcrumbLabel: "Custom Decals",
     description: "Discover our full lineup of custom decal solutions, including vinyl decals, static clings, sticker sheets, and roll labels.",
     heroImage: "https://www.buildasign.com/0084348_Desktop.jpeg",
     tabletHeroImage: "https://www.buildasign.com/0084349_Tablet.jpeg",
     mobileHeroImage: "https://www.buildasign.com/0084350_Mobile.jpeg",
     heroSubtitle: "Design It. Stick It. Leave Your Mark.",
+    reviewRating: "4.9",
+    reviewCount: "1,840",
+    reviewQuote: "The custom window decals turned out perfectly! Extremely easy to apply without bubbles, and the resolution is incredibly sharp. Will buy again!",
     categoryDescriptionText: "Discover our full lineup of custom decal solutions, including vinyl decals, static clings, sticker sheets, and roll labels. Perfect for use indoors or out, our decals are built to last and ideal for everything from storefront displays to vehicle branding and promotional giveaways. Easily personalize your decals with our intuitive design tools by uploading your own artwork or choosing from our ready-made templates to get started today.",
     categorySecondaryImage: "https://www.buildasign.com/images/uploaded/Redesign/BAS_WEB_Redesign_Category_DecalsClings_Secondary.jpg",
     faqs: [
@@ -2219,8 +2243,12 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
   },
   "sign-accessories": {
     title: "Stands & Sign Holders",
+    breadcrumbLabel: "Sign Accessories",
     description: "Premium stakes, frames and heavy duty steel mounts to hold your yard signs, outdoor notices, and trade show displays.",
     heroImage: "https://ext.same-assets.com/1114826555/1286398033.png",
+    reviewRating: "4.8",
+    reviewCount: "980",
+    reviewQuote: "The H-frame stakes are rock solid. Held our yard signs through a nasty storm without budging an inch.",
     products: [
       {
         id: "h-frames",
@@ -2273,8 +2301,13 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
   },
   "marketing-materials": {
     title: "Marketing Materials",
+    breadcrumbLabel: "Marketing Materials",
+    heroSubtitle: "Professional Print. Promoted Brand.",
     description: "Grow your business and look professional with customized business cards, flyers, and brochures.",
     heroImage: "https://www.buildasign.com/images/uploaded/Redesign/BAS_WEB_Redesign_Category_DecalsClings_Secondary.jpg",
+    reviewRating: "4.9",
+    reviewCount: "1,150",
+    reviewQuote: "The flyers and folded menus turned out absolutely gorgeous! Perfect color alignment with our corporate branding guidelines and the paper quality is very thick.",
     categoryDescriptionText: "Make a powerful statement with custom marketing materials that elevate your brand. From premium double-sided business cards and local door hangers to detailed brochures, rack cards, and tabletop displays, we offer a comprehensive suite of print products designed to help you stand out. Easily customize each piece with your brand colors, logos, and promotions using our professional design tools and template libraries.",
     categorySecondaryImage: "https://www.buildasign.com/images/uploaded/Redesign/NPIB-34422-Tradeshow-Hero-001_en-gb.png",
     faqs: [
@@ -2637,8 +2670,13 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
   },
   "promotional-products": {
     title: "Promotional Swag & Merch",
+    breadcrumbLabel: "Promotional Products",
+    heroSubtitle: "Brand It. Share It. Grow It.",
     description: "Customize apparel, mugs, and trade show giveaways with your business branding.",
     heroImage: "https://www.buildasign.com/images/uploaded/BAS_WEB_071125_Category_Flags_Secondary.jpg",
+    reviewRating: "4.9",
+    reviewCount: "1,480",
+    reviewQuote: "We ordered 500 custom logo pens and a couple dozen ceramic mugs for our annual summit giveaway bags. The logo resolution is incredibly sharp and the mugs look amazing.",
     categoryDescriptionText: "Promote your business and look professional with customized promo swag. From screen-printed cotton t-shirts and ceramic coffee mugs to canvas tote bags, retractable logo pens, executive journals, keychains, and fridge magnets, we have everything you need to leave a lasting impression. All items are constructed with high-grade, durable materials designed to proudly showcase your brand.",
     categorySecondaryImage: "https://www.buildasign.com/images/uploaded/Redesign/BAS_WEB_Redesign_Category_DecalsClings_Secondary.jpg",
     faqs: [
@@ -2955,57 +2993,356 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
       }
     ]
   },
-  "gifts": {
-    title: "Custom Canvas Prints & Photo Gifts",
-    description: "Premium poly-cotton canvas wraps stretched on sturdy wooden frames. Perfect gifts for homes, lobbies, and workspaces.",
-    heroImage: "https://ext.same-assets.com/1114826555/898075086.png",
+  "custom-signs": {
+    title: "Custom Signs",
+    breadcrumbLabel: "Signs",
+    heroSubtitle: "Built to Stand Out. Built to Last.",
+    description: "From yard signs to premium acrylic, we print stunning custom signs fast. Choose your product, upload your design, and we ship next day.",
+    heroImage: "https://www.buildasign.com/images/uploaded/Banner/BAS_WEB_01292025_Nav_Megamenu_Banner_V5.jpg",
+    reviewRating: "4.9",
+    reviewCount: "8,420",
+    reviewQuote: "Ordered 200 yard signs for a local election campaign. They arrived the next day and looked exactly like the proof!",
+    categoryDescriptionText: "Discover our complete lineup of custom sign solutions. From lightweight corrugated plastic yard signs that withstand any weather to premium acrylic and aluminum signs built for permanent installations. Whether you need a single sign for your business or thousands for a nationwide campaign, we deliver vibrant, full-color prints with next-day shipping.",
+    categorySecondaryImage: "https://ext.same-assets.com/1114826555/3799598245.png",
+    faqs: [
+      { q: "What sign materials do you offer?", a: "We offer a variety of materials including corrugated plastic (Coroplast), aluminum, foam board, acrylic, and PVC. Each material has unique benefits suited for different indoor and outdoor applications." },
+      { q: "How long will signs last outdoors?", a: "Corrugated plastic signs typically last 6–12 months outdoors. Aluminum signs can last 5+ years. All signs feature UV-resistant inks that resist fading in direct sunlight." },
+      { q: "Do you offer sign stakes and mounting hardware?", a: "Yes! We offer H-frame wire stakes, step stakes, grommets, and various mounting accessories. You can add these during the product configuration process." },
+      { q: "Can I order just one sign?", a: "Absolutely! We have no minimum order quantity. Whether you need 1 sign or 10,000, we print and ship with the same speed and quality." },
+      { q: "What file formats do you accept for sign artwork?", a: "We accept PDF, AI, EPS, PNG, JPG, and TIFF files. For best results, upload vector files at 300 DPI with 0.125\" bleed on all sides." }
+    ],
     products: [
       {
-        id: "canvas-prints",
-        name: "Stretched Canvas Prints",
-        description: "Turn your favorite pictures or designs into premium home canvas wraps.",
-        image: "https://ext.same-assets.com/1114826555/898075086.png",
-        price: "Starting at $24.99",
+        id: "yard-signs",
+        name: "Yard Signs",
+        description: "Corrugated plastic signs perfect for lawns, events, and political campaigns.",
+        image: "https://ext.same-assets.com/1114826555/1445363370.png",
+        price: "Starting at $3.99",
+        badge: "Best Seller",
         config: {
-          title: "Stretched Canvas Prints",
-          subtitle: "Premium photo gallery canvas stretched on thick wooden frames, ready to hang.",
-          breadcrumb: "Gifts",
-          breadcrumbHref: "/gifts",
-          promoText: "25% OFF HOLIDAY CANVAS PHOTO GIFTS",
-          image: "https://ext.same-assets.com/1114826555/898075086.png",
-          ratingCount: "1820",
+          title: "Custom Yard Signs",
+          subtitle: "Corrugated plastic signs that weather any storm.",
+          breadcrumb: "Signs",
+          breadcrumbHref: "/custom-signs",
+          promoText: "25% OFF Yard Signs + Free Shipping",
+          image: "https://ext.same-assets.com/1114826555/1445363370.png",
           ratingScore: "4.9",
+          ratingCount: "8,420",
           sizes: [
-            { label: '16" x 20" Gallery Standard', value: '16x20', basePrice: 34.99 },
-            { label: '8" x 10" Small Frame', value: '8x10', basePrice: 24.99 },
-            { label: '24" x 36" Large Centerpiece', value: '24x36', basePrice: 59.99 }
+            { label: "12\" x 18\" (Standard)", value: "12x18", basePrice: 3.99 },
+            { label: "18\" x 24\"", value: "18x24", basePrice: 6.99 },
+            { label: "24\" x 36\"", value: "24x36", basePrice: 13.99 }
           ],
           selects: [
             {
-              label: "Frame Wrap Style",
+              label: "Material",
               options: [
-                { label: "1.5-inch Deep Stretched Frame", value: "thick", priceAdder: 0, description: "Classic thick gallery presentation wrapper." },
-                { label: "0.75-inch Standard Wrap", value: "thin", priceAdder: -5.00, description: "Perfect if you plan to mount it in custom frames." }
+                { label: "4mm Corrugated Plastic (Standard)", value: "4mm", priceAdder: 0 },
+                { label: "6mm Heavy-Duty Coroplast", value: "6mm", priceAdder: 1.5 }
               ]
             }
           ],
-          qtyDiscount: "Save 10% on multi-canvas packs",
-          keyFeatures: ["Sturdy hand-stretched pine wood frames", "High quality poly-cotton canvas weave", "Fade resistant museum pigment inks", "Built-in saw-tooth hanger"],
-          useCases: ["Family photo displays", "Art galleries", "Office lobbies and boardroom art", "Unique wedding gifts"],
+          qtyDiscount: "Volume discounts on bulk lawn signs",
+          keyFeatures: ["Weather-resistant corrugated plastic", "Full-color edge-to-edge printing", "Ships in as fast as 1 business day"],
+          useCases: ["Political Campaigns", "Real Estate", "Business Promotions", "Events"],
           specs: [
-            { key: "Canvas Grade", value: "400gsm Archival Grade" },
-            { key: "Wood Frame", value: "Sustainably-sourced kiln-dried pine wood" },
-            { key: "Inks", value: "HP latex eco-friendly prints" }
+            { key: "Material", value: "4mm Corrugated Plastic" },
+            { key: "Print Resolution", value: "720 x 1440 dpi" }
           ],
-          faqs: [
-            { q: "Is the hanging hardware included?", a: "Yes, every canvas wrap arrives with a pre-installed saw-tooth hanger on the back frame." }
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Get Your Signs Out There",
+          ctaBody: "Order by 5 PM and your custom yard signs ship tomorrow.",
+          ctaLabel: "Order Yard Signs Now"
+        }
+      },
+      {
+        id: "real-estate-signs",
+        name: "Real Estate Signs",
+        description: "Professional aluminum and coroplast signs for property listings.",
+        image: "https://ext.same-assets.com/1114826555/3882498341.png",
+        price: "Starting at $12.99",
+        badge: "Most Popular",
+        config: {
+          title: "Custom Real Estate Signs",
+          subtitle: "Professional-grade signs for property listings and open houses.",
+          breadcrumb: "Signs",
+          breadcrumbHref: "/custom-signs",
+          promoText: "FREE SHIPPING on Real Estate Sign Orders",
+          image: "https://ext.same-assets.com/1114826555/3882498341.png",
+          ratingScore: "4.9",
+          ratingCount: "3,200",
+          sizes: [
+            { label: "18\" x 24\" (Standard)", value: "18x24", basePrice: 12.99 },
+            { label: "24\" x 36\"", value: "24x36", basePrice: 22.99 }
           ],
-          reviews: [
-            { author: "Kathy R.", rating: 5, text: "Simply gorgeous. The photo of our wedding came out incredibly sharp and fits perfectly on the wall." }
+          selects: [
+            {
+              label: "Material",
+              options: [
+                { label: "4mm Coroplast", value: "coroplast", priceAdder: 0 },
+                { label: "Aluminum", value: "aluminum", priceAdder: 8 }
+              ]
+            }
           ],
-          ctaHeading: "Turn memories into art",
-          ctaBody: "Stitch together high resolution digital assets to print stunning frames.",
-          ctaLabel: "Customize Canvas"
+          qtyDiscount: "Save on real estate packages",
+          keyFeatures: ["Professional real estate layouts", "Durable outdoor materials", "Rider slot compatible"],
+          useCases: ["For Sale", "Open House", "For Rent", "Sold"],
+          specs: [
+            { key: "Material", value: "Coroplast or Aluminum" },
+            { key: "Turnaround", value: "Next Business Day" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "List Properties With Impact",
+          ctaBody: "Professional real estate signs shipped next day.",
+          ctaLabel: "Order Real Estate Signs"
+        }
+      },
+      {
+        id: "aluminum-signs",
+        name: "Aluminum Signs",
+        description: "Durable rust-proof aluminum signs for indoor and outdoor use.",
+        image: "https://ext.same-assets.com/1114826555/1445363370.png",
+        price: "Starting at $8.99",
+        badge: "Heavy Duty",
+        config: {
+          title: "Custom Aluminum Signs",
+          subtitle: "Rigid, rust-proof aluminum signs built for permanent installations.",
+          breadcrumb: "Signs",
+          breadcrumbHref: "/custom-signs",
+          promoText: "20% OFF Aluminum Signs",
+          image: "https://ext.same-assets.com/1114826555/1445363370.png",
+          ratingScore: "4.8",
+          ratingCount: "1,450",
+          sizes: [
+            { label: "12\" x 18\"", value: "12x18", basePrice: 8.99 },
+            { label: "18\" x 24\"", value: "18x24", basePrice: 16.99 },
+            { label: "24\" x 36\"", value: "24x36", basePrice: 29.99 }
+          ],
+          selects: [],
+          qtyDiscount: "Volume discounts on mounting orders",
+          keyFeatures: ["Rust-proof aluminum", "UV-resistant inks", "Pre-drilled mounting holes"],
+          useCases: ["Parking Signs", "Warning Signs", "Business Signs", "Directional Signs"],
+          specs: [
+            { key: "Material", value: ".040\" Aluminum" },
+            { key: "Corners", value: "Rounded or Square" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Built to Last Outdoors",
+          ctaBody: "Aluminum signs that resist rust, fading, and harsh weather.",
+          ctaLabel: "Order Aluminum Signs"
+        }
+      },
+      {
+        id: "a-frame-signs",
+        name: "A-Frame Signs",
+        description: "Portable sandwich board signs ideal for sidewalk and event advertising.",
+        image: "https://ext.same-assets.com/1114826555/2283645032.png",
+        price: "Starting at $89.99",
+        badge: "Eye-Catching",
+        config: {
+          title: "Custom A-Frame Signs",
+          subtitle: "Double-sided sidewalk signs that fold flat for easy transport.",
+          breadcrumb: "Signs",
+          breadcrumbHref: "/custom-signs",
+          promoText: "FREE SHIPPING on A-Frame Signs",
+          image: "https://ext.same-assets.com/1114826555/2283645032.png",
+          ratingScore: "4.7",
+          ratingCount: "620",
+          sizes: [
+            { label: "24\" x 36\" (Standard)", value: "24x36", basePrice: 89.99 }
+          ],
+          selects: [],
+          qtyDiscount: "Bulk event pricing applies",
+          keyFeatures: ["Double-sided display", "Folds flat for storage", "Heavy-duty plastic frame"],
+          useCases: ["Sidewalk Advertising", "Cafe Menus", "Open House", "Events"],
+          specs: [
+            { key: "Frame", value: "Heavy-duty plastic" },
+            { key: "Insert", value: "Corrugated plastic" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Sidewalk Advertising Made Easy",
+          ctaBody: "Portable A-frame signs that grab foot traffic attention.",
+          ctaLabel: "Order A-Frame Signs"
+        }
+      },
+      {
+        id: "foam-board-signs",
+        name: "Foam Board Signs",
+        description: "Lightweight, professional indoor display signs for presentations and lobbies.",
+        image: "https://ext.same-assets.com/1114826555/3799598245.png",
+        price: "Starting at $14.99",
+        badge: "Indoor Favorite",
+        config: {
+          title: "Custom Foam Board Signs",
+          subtitle: "Lightweight foam core signs perfect for indoor displays and presentations.",
+          breadcrumb: "Signs",
+          breadcrumbHref: "/custom-signs",
+          promoText: "25% OFF Foam Board Signs",
+          image: "https://ext.same-assets.com/1114826555/3799598245.png",
+          ratingScore: "4.8",
+          ratingCount: "890",
+          sizes: [
+            { label: "18\" x 24\"", value: "18x24", basePrice: 14.99 },
+            { label: "24\" x 36\"", value: "24x36", basePrice: 24.99 }
+          ],
+          selects: [],
+          qtyDiscount: "Save on bulk presentation boards",
+          keyFeatures: ["Lightweight foam core", "Sharp full-color printing", "Self-standing with easel back"],
+          useCases: ["Lobby Displays", "Presentations", "Trade Shows", "Photo Boards"],
+          specs: [
+            { key: "Material", value: "3/16\" Foam Core" },
+            { key: "Finish", value: "Matte or Gloss Laminate" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Professional Indoor Displays",
+          ctaBody: "Foam board signs that make your message pop in any indoor space.",
+          ctaLabel: "Order Foam Board Signs"
+        }
+      },
+      {
+        id: "acrylic-signs",
+        name: "Acrylic Signs",
+        description: "Premium clear or colored acrylic for a polished, modern look.",
+        image: "https://ext.same-assets.com/1114826555/898075086.png",
+        price: "Starting at $24.99",
+        badge: "Premium",
+        config: {
+          title: "Custom Acrylic Signs",
+          subtitle: "Crystal-clear or frosted acrylic signs for a premium, modern aesthetic.",
+          breadcrumb: "Signs",
+          breadcrumbHref: "/custom-signs",
+          promoText: "NEW - Premium Acrylic Signs Now Available",
+          image: "https://ext.same-assets.com/1114826555/898075086.png",
+          ratingScore: "4.9",
+          ratingCount: "540",
+          sizes: [
+            { label: "8\" x 10\"", value: "8x10", basePrice: 24.99 },
+            { label: "12\" x 18\"", value: "12x18", basePrice: 44.99 }
+          ],
+          selects: [],
+          qtyDiscount: "Office bulk rates apply",
+          keyFeatures: ["Crystal-clear acrylic", "UV-printed graphics", "Standoff mounting hardware included"],
+          useCases: ["Office Signs", "Reception Areas", "Room Numbers", "Wayfinding"],
+          specs: [
+            { key: "Material", value: "1/4\" Cast Acrylic" },
+            { key: "Print", value: "Direct UV Printing" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Premium Office Signage",
+          ctaBody: "Acrylic signs that elevate any professional space.",
+          ctaLabel: "Order Acrylic Signs"
+        }
+      },
+      {
+        id: "coroplast-signs",
+        name: "Coroplast Signs",
+        description: "Waterproof corrugated plastic signs — the most versatile outdoor sign.",
+        image: "https://ext.same-assets.com/1114826555/2401743055.png",
+        price: "Starting at $4.99",
+        badge: "Waterproof",
+        config: {
+          title: "Custom Coroplast Signs",
+          subtitle: "Versatile corrugated plastic signs for any indoor or outdoor application.",
+          breadcrumb: "Signs",
+          breadcrumbHref: "/custom-signs",
+          promoText: "BULK DISCOUNTS on Coroplast Signs",
+          image: "https://ext.same-assets.com/1114826555/2401743055.png",
+          ratingScore: "4.8",
+          ratingCount: "2,100",
+          sizes: [
+            { label: "12\" x 18\"", value: "12x18", basePrice: 4.99 },
+            { label: "18\" x 24\"", value: "18x24", basePrice: 8.99 },
+            { label: "24\" x 36\"", value: "24x36", basePrice: 14.99 }
+          ],
+          selects: [],
+          qtyDiscount: "Pricing drops on bulk corrugated plastic",
+          keyFeatures: ["100% waterproof", "Lightweight and durable", "Full-color single or double-sided"],
+          useCases: ["Construction Sites", "Directional Signs", "Event Signs", "Temporary Notices"],
+          specs: [
+            { key: "Material", value: "4mm Corrugated Plastic" },
+            { key: "Weight", value: "Ultra-lightweight" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Versatile Outdoor Signs",
+          ctaBody: "Waterproof coroplast signs at the best bulk prices.",
+          ctaLabel: "Order Coroplast Signs"
+        }
+      },
+      {
+        id: "window-signs",
+        name: "Window Signs",
+        description: "Custom window clings, decals and perforated vinyl for storefronts.",
+        image: "https://ext.same-assets.com/1114826555/2442714004.png",
+        price: "Starting at $9.99",
+        badge: "Storefront",
+        config: {
+          title: "Custom Window Signs",
+          subtitle: "Window graphics and perforated vinyl for storefront advertising.",
+          breadcrumb: "Signs",
+          breadcrumbHref: "/custom-signs",
+          promoText: "20% OFF Window Signs",
+          image: "https://ext.same-assets.com/1114826555/2442714004.png",
+          ratingScore: "4.8",
+          ratingCount: "760",
+          sizes: [
+            { label: "12\" x 18\"", value: "12x18", basePrice: 9.99 },
+            { label: "24\" x 36\"", value: "24x36", basePrice: 19.99 }
+          ],
+          selects: [],
+          qtyDiscount: "Storefront branding discounts available",
+          keyFeatures: ["See-through perforated vinyl option", "Easy peel-and-stick application", "Removable without residue"],
+          useCases: ["Storefront Windows", "Restaurant Specials", "Sale Announcements", "Privacy Glass"],
+          specs: [
+            { key: "Material", value: "Perforated Vinyl or Static Cling" },
+            { key: "Application", value: "Interior or Exterior Mount" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Storefront Advertising",
+          ctaBody: "Turn your windows into eye-catching advertising space.",
+          ctaLabel: "Order Window Signs"
+        }
+      },
+      {
+        id: "parking-signs",
+        name: "Parking Signs",
+        description: "Regulatory and custom parking signs — aluminum or coroplast.",
+        image: "https://ext.same-assets.com/1114826555/1286398033.png",
+        price: "Starting at $6.99",
+        badge: "Ready to Ship",
+        config: {
+          title: "Custom Parking Signs",
+          subtitle: "Regulatory and custom parking lot signs on durable aluminum.",
+          breadcrumb: "Signs",
+          breadcrumbHref: "/custom-signs",
+          promoText: "FREE SHIPPING on Parking Signs",
+          image: "https://ext.same-assets.com/1114826555/1286398033.png",
+          ratingScore: "4.7",
+          ratingCount: "430",
+          sizes: [
+            { label: "12\" x 18\" (Standard)", value: "12x18", basePrice: 6.99 },
+            { label: "18\" x 24\"", value: "18x24", basePrice: 12.99 }
+          ],
+          selects: [],
+          qtyDiscount: "Bulk rates on parking signs",
+          keyFeatures: ["Regulatory-compliant designs", "Reflective option available", "Pre-drilled mounting holes"],
+          useCases: ["Reserved Parking", "No Parking", "Handicap Parking", "Visitor Parking"],
+          specs: [
+            { key: "Material", value: ".040\" Aluminum" },
+            { key: "Reflectivity", value: "Engineer Grade (optional)" }
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Parking Lot Management",
+          ctaBody: "Professional parking signs that meet regulatory standards.",
+          ctaLabel: "Order Parking Signs"
         }
       }
     ]

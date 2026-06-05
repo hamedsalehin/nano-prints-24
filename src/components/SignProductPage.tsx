@@ -166,18 +166,30 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
     const dims = selectedSize.label.match(/\d+(\.\d+)?/g)?.map(Number);
     if (!dims || dims.length < 2) return 4 / 3;
     const [d1, d2] = dims;
-    if (cfg.title.toLowerCase().includes("parking")) {
-      // Parking signs are standard vertical (portrait)
+    
+    // Check if vertical orientation is selected in selects or toggle values
+    let isVertical = false;
+    const orientSelect = Object.entries(selectValues).find(([k]) => k.toLowerCase().includes("orientation"));
+    if (orientSelect && orientSelect[1].value.toLowerCase().includes("vertical")) {
+      isVertical = true;
+    }
+    const orientToggle = Object.entries(toggleValues).find(([k]) => k.toLowerCase().includes("orientation"));
+    if (orientToggle && orientToggle[1].id.toLowerCase().includes("vertical")) {
+      isVertical = true;
+    }
+
+    if (cfg.title.toLowerCase().includes("parking") || isVertical) {
+      // Parking signs and products with selected vertical orientation are portrait
       const w = Math.min(d1, d2);
       const h = Math.max(d1, d2);
       return w / h;
     } else {
-      // Most other signs are horizontal (landscape)
+      // Most other products are landscape by default
       const w = Math.max(d1, d2);
       const h = Math.min(d1, d2);
       return w / h;
     }
-  }, [selectedSize.label, cfg.title]);
+  }, [selectedSize.label, cfg.title, selectValues, toggleValues]);
 
   const hasRoundedCorners = useMemo(() => {
     const cornerToggle = Object.entries(toggleValues).find(([k]) => k.toLowerCase().includes("corner"));

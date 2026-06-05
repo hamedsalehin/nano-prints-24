@@ -13,7 +13,6 @@ const navItems = [
   { name: "Stickers & Decals", href: "/custom-decals" },
   { name: "Marketing Materials", href: "/marketing-materials" },
   { name: "Promotional Products", href: "/promotional-products" },
-  { name: "Gifts", href: "/gifts" },
 ];
 
 export function Header() {
