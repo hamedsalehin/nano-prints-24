@@ -1,35 +1,33 @@
-"use client";
-
-import React, { useState, use } from "react";
+import React from "react";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, ChevronUp } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PRODUCTS_REGISTRY } from "@/lib/productsRegistry";
+import { FaqAccordion } from "./FaqAccordion";
 
 interface PageProps {
   params: Promise<{ category: string }>;
 }
 
-export default function CategoryPage({ params }: PageProps) {
-  const { category } = use(params);
+export async function generateStaticParams() {
+  const categories = Object.keys(PRODUCTS_REGISTRY);
+  return categories.map((category) => ({
+    category: category,
+  }));
+}
+
+export default async function CategoryPage({ params }: PageProps) {
+  const { category } = await params;
   const decodedCategory = decodeURIComponent(category);
   const categoryData = PRODUCTS_REGISTRY[decodedCategory];
-
-  // State for FAQ accordion
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   if (!categoryData) {
     notFound();
   }
 
-  const toggleFaq = (index: number) => {
-    setOpenFaqIndex(openFaqIndex === index ? null : index);
-  };
-
   const firstTwoProducts = categoryData.products.slice(0, 2);
+
 
   return (
     <div className="min-h-screen bg-white flex flex-col font-sans">
@@ -212,33 +210,7 @@ export default function CategoryPage({ params }: PageProps) {
               <h2 className="font-poppins font-bold text-2xl lg:text-3xl text-gray-900 text-center mb-8">
                 Frequently Asked Questions
               </h2>
-              <div className="space-y-4">
-                {categoryData.faqs.map((faq, index) => {
-                  const isOpen = openFaqIndex === index;
-                  return (
-                    <div key={index} className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
-                      <button
-                        onClick={() => toggleFaq(index)}
-                        className="w-full flex items-center justify-between p-5 text-left font-bold text-base lg:text-lg text-gray-900 hover:bg-gray-50 transition-colors"
-                      >
-                        <span>{faq.q}</span>
-                        {isOpen ? (
-                          <ChevronUp className="w-5 h-5 text-gray-500 shrink-0" />
-                        ) : (
-                          <ChevronDown className="w-5 h-5 text-gray-500 shrink-0" />
-                        )}
-                      </button>
-                      {isOpen && (
-                        <div className="p-5 border-t border-gray-100 bg-gray-50/50">
-                          <p className="text-gray-650 leading-relaxed text-sm lg:text-base font-medium">
-                            {faq.a}
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
+              <FaqAccordion faqs={categoryData.faqs} />
             </div>
           </section>
         )}

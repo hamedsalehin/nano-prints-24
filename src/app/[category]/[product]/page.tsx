@@ -10,6 +10,20 @@ interface PageProps {
   }>;
 }
 
+export async function generateStaticParams() {
+  const paths: { category: string; product: string }[] = [];
+  for (const category of Object.keys(PRODUCTS_REGISTRY)) {
+    const categoryData = PRODUCTS_REGISTRY[category];
+    for (const product of categoryData.products) {
+      paths.push({
+        category: category,
+        product: product.id,
+      });
+    }
+  }
+  return paths;
+}
+
 export default async function ProductConfiguratorPage({ params }: PageProps) {
   const { category, product } = await params;
   const decodedCategory = decodeURIComponent(category);
