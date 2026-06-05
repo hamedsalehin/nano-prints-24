@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Facebook, Twitter, Linkedin, Youtube, MessageCircle, MapPin, Mail, Phone } from "lucide-react";
 
 const footerLinks = {
@@ -49,53 +50,52 @@ export function Footer() {
     <footer className="bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-          {/* Brand and Contact */}
+          {/* Brand logo */}
           <div className="lg:col-span-2">
-            <div className="bg-yellow-400 text-black font-poppins font-bold text-xl px-3 py-1.5 rounded inline-block mb-4">
-              Nano Signs
+            <div className="mb-4">
+              <Image src="/images/nano-print-logo.png" alt="Nano Prints" width={160} height={60} className="h-12 w-auto object-contain" />
             </div>
             <p className="text-gray-300 text-sm mb-4">
               Your trusted custom signs expert in Oakland Park, FL. Quality signs, banners, and more.
             </p>
 
             <div className="space-y-3 mb-6">
-              <a href="tel:305-967-1005" className="flex items-center gap-2 text-gray-300 hover:text-yellow-400 transition-colors">
-                <Phone className="w-4 h-4 text-yellow-400" />
+              <a href="tel:305-967-1005" className="flex items-center gap-2 text-gray-300 hover:text-[#ffea00] transition-colors">
+                <Phone className="w-4 h-4" style={{ color: "#ffea00" }} />
                 <span>305-967-1005</span>
               </a>
-              <a href="tel:305-967-9654" className="flex items-center gap-2 text-gray-300 hover:text-yellow-400 transition-colors">
-                <Phone className="w-4 h-4 text-yellow-400" />
+              <a href="tel:305-967-9654" className="flex items-center gap-2 text-gray-300 hover:text-[#ffea00] transition-colors">
+                <Phone className="w-4 h-4" style={{ color: "#ffea00" }} />
                 <span>305-967-9654</span>
               </a>
-              <a href="mailto:nanosign1@gmail.com" className="flex items-center gap-2 text-gray-300 hover:text-yellow-400 transition-colors">
-                <Mail className="w-4 h-4 text-yellow-400" />
+              <a href="mailto:nanosign1@gmail.com" className="flex items-center gap-2 text-gray-300 hover:text-[#00d4ff] transition-colors">
+                <Mail className="w-4 h-4" style={{ color: "#00d4ff" }} />
                 <span>nanosign1@gmail.com</span>
               </a>
               <div className="flex items-start gap-2 text-gray-300">
-                <MapPin className="w-4 h-4 text-yellow-400 mt-0.5 flex-shrink-0" />
+                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "#39ff14" }} />
                 <span>4567 Powerline Rd, Oakland Park, FL 33309</span>
               </div>
             </div>
 
             <div className="flex gap-3">
-              <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-yellow-400 hover:text-black transition-colors">
+              <a href="#" className="bg-gray-800 p-2 rounded-full transition-colors" onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background='#00d4ff'; (e.currentTarget as HTMLElement).style.color='#000'; }} onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background=''; (e.currentTarget as HTMLElement).style.color=''; }}>
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-yellow-400 hover:text-black transition-colors">
+              <a href="#" className="bg-gray-800 p-2 rounded-full transition-colors" onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background='#39ff14'; (e.currentTarget as HTMLElement).style.color='#000'; }} onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background=''; (e.currentTarget as HTMLElement).style.color=''; }}>
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-yellow-400 hover:text-black transition-colors">
+              <a href="#" className="bg-gray-800 p-2 rounded-full transition-colors" onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background='#ff00ff'; (e.currentTarget as HTMLElement).style.color='#000'; }} onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background=''; (e.currentTarget as HTMLElement).style.color=''; }}>
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-yellow-400 hover:text-black transition-colors">
+              <a href="#" className="bg-gray-800 p-2 rounded-full transition-colors" onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background='#ffea00'; (e.currentTarget as HTMLElement).style.color='#000'; }} onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background=''; (e.currentTarget as HTMLElement).style.color=''; }}>
                 <Youtube className="w-5 h-5" />
               </a>
             </div>
           </div>
 
-          {/* Help Center */}
-          <div>
-            <h3 className="font-poppins font-bold text-yellow-400 mb-4">
+            {/* Help Center — Cyan heading */}
+            <h3 className="font-poppins font-bold mb-4" style={{ color: "#00d4ff" }}>
               {footerLinks.helpCenter.title}
             </h3>
             <ul className="space-y-2">
@@ -103,7 +103,7 @@ export function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-300 hover:text-yellow-400 transition-colors text-sm"
+                    className="text-gray-300 hover:text-[#00d4ff] transition-colors text-sm"
                   >
                     {link.name}
                   </a>
@@ -112,9 +112,8 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Company */}
-          <div>
-            <h3 className="font-poppins font-bold text-yellow-400 mb-4">
+            {/* Company — Lime heading */}
+            <h3 className="font-poppins font-bold mb-4" style={{ color: "#39ff14" }}>
               {footerLinks.company.title}
             </h3>
             <ul className="space-y-2">
@@ -122,7 +121,7 @@ export function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-300 hover:text-yellow-400 transition-colors text-sm"
+                    className="text-gray-300 hover:text-[#39ff14] transition-colors text-sm"
                   >
                     {link.name}
                   </a>
@@ -131,9 +130,8 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Products */}
-          <div>
-            <h3 className="font-poppins font-bold text-yellow-400 mb-4">
+            {/* Products — Magenta heading */}
+            <h3 className="font-poppins font-bold mb-4" style={{ color: "#ff00ff" }}>
               {footerLinks.products.title}
             </h3>
             <ul className="space-y-2">
@@ -141,7 +139,7 @@ export function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-300 hover:text-yellow-400 transition-colors text-sm"
+                    className="text-gray-300 hover:text-[#ff00ff] transition-colors text-sm"
                   >
                     {link.name}
                   </a>
@@ -175,14 +173,14 @@ export function Footer() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-gray-400 hover:text-yellow-400 transition-colors text-sm"
+                  className="text-gray-400 hover:text-[#ffea00] transition-colors text-sm"
                 >
                   {link.name}
                 </a>
               ))}
             </div>
             <p className="text-gray-500 text-sm">
-              Copyright 2025 Nano Signs. All rights reserved.
+              Copyright 2025 Nano Prints. All rights reserved.
             </p>
           </div>
         </div>
