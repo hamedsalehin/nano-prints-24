@@ -125,7 +125,7 @@ export function Header() {
                 <li key={item.name} className="relative text-center flex-grow flex-shrink-0 basis-auto">
                   <Link
                     href={item.href}
-                    className="block w-full h-full relative px-5 py-2 font-semibold text-white hover:text-yellow-400 transition-colors duration-200 font-poppins text-[15px] lg:text-[16px] after:content-[''] after:absolute after:h-[3px] after:bg-yellow-400 after:bottom-0 after:left-0 after:w-full after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-200"
+                    className="block w-full h-full relative px-5 py-2 font-semibold text-white hover:text-yellow-400 transition-colors duration-200 font-poppins text-[16px] lg:text-[17px] after:content-[''] after:absolute after:h-[3px] after:bg-yellow-400 after:bottom-0 after:left-0 after:w-full after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-200"
                   >
                     {item.name}
                   </Link>
