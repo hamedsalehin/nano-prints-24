@@ -11,6 +11,7 @@ const navItems = [
   { name: "Vehicle Signs", href: "/vehicle-signs" },
   { name: "Tradeshow", href: "/trade-show" },
   { name: "Stickers & Decals", href: "/custom-decals" },
+  { name: "Sign Holders", href: "/sign-accessories" },
   { name: "Marketing Materials", href: "/marketing-materials" },
   { name: "Promotional Products", href: "/promotional-products" },
 ];
@@ -117,14 +118,14 @@ export function Header() {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:block border-t bg-black py-3">
-          <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-            <ul className="flex items-center justify-between gap-x-2">
+        <nav className="hidden md:block bg-black">
+          <div className="max-w-[1400px] mx-auto w-full px-8 lg:px-20">
+            <ul className="flex w-full justify-between items-center">
               {navItems.map((item) => (
-                <li key={item.name} className="text-center">
+                <li key={item.name} className="relative text-center flex-grow flex-shrink-0 basis-auto">
                   <Link
                     href={item.href}
-                    className="block px-4 py-2 text-[12.5px] lg:text-[13.5px] font-bold text-white hover:text-yellow-400 transition-colors whitespace-nowrap uppercase tracking-[0.08em] font-poppins"
+                    className="block w-full h-full relative px-3 py-4 font-semibold text-white hover:text-yellow-400 transition-colors duration-200 font-poppins text-[15px] lg:text-[16px] 2xl:text-[17px] after:content-[''] after:absolute after:h-[3px] after:bg-yellow-400 after:bottom-0 after:left-0 after:w-full after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-200"
                   >
                     {item.name}
                   </Link>
