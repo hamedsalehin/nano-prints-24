@@ -12,7 +12,6 @@ const navItems = [
   { name: "Vehicle Signs", href: "/vehicle-signs" },
   { name: "Tradeshow", href: "/trade-show" },
   { name: "Stickers & Decals", href: "/custom-decals" },
-  { name: "Sign Holders", href: "/sign-accessories" },
   { name: "Marketing Materials", href: "/marketing-materials" },
   { name: "Promotional Products", href: "/promotional-products" },
 ];
