@@ -124,7 +124,7 @@ export function Header() {
                 <li key={item.name} className="text-center">
                   <Link
                     href={item.href}
-                    className="block py-1.5 text-[11px] lg:text-[12.5px] font-bold text-white hover:text-yellow-400 transition-colors whitespace-nowrap uppercase tracking-wider font-poppins"
+                    className="block py-1.5 text-[12.5px] lg:text-[13.5px] font-bold text-white hover:text-yellow-400 transition-colors whitespace-nowrap uppercase tracking-wider font-poppins"
                   >
                     {item.name}
                   </Link>
