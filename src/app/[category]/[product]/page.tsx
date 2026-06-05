@@ -32,6 +32,9 @@ export async function generateStaticParams() {
   return paths;
 }
 
+export const dynamicParams = false;
+
+
 export default async function ProductConfiguratorPage({ params }: PageProps) {
   const { category, product } = await params;
   const decodedCategory = decodeURIComponent(category);

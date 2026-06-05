@@ -14,6 +14,9 @@ export async function generateStaticParams() {
   }));
 }
 
+export const dynamicParams = false;
+
+
 export default async function CategoryPage({ params }: PageProps) {
   const { category } = await params;
   const decodedCategory = decodeURIComponent(category);
