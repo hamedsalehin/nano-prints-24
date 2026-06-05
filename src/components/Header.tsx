@@ -119,7 +119,7 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:block bg-black w-full">
-          <div className="w-full px-6 lg:px-16 xl:px-24">
+          <div className="w-full px-12 lg:px-28 xl:px-40">
             <ul className="flex w-full justify-between items-center">
               {navItems.map((item) => (
                 <li key={item.name} className="relative text-center flex-grow flex-shrink-0 basis-auto">
