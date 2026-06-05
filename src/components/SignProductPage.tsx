@@ -51,6 +51,7 @@ export interface ProductPageConfig {
   ctaBody: string;
   ctaLabel: string;
   uniqueCallout?: { icon: ReactNode; heading: string; body: string; color: string };
+  description?: string;
 }
 
 function StarRating({ rating }: { rating: number }) {
@@ -418,6 +419,11 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
 
             {activeTab === "overview" && (
               <div className="space-y-6">
+                {cfg.description && (
+                  <p className="text-gray-600 text-sm leading-relaxed mb-6 font-opensans border-b border-gray-150 pb-6 whitespace-pre-line">
+                    {cfg.description}
+                  </p>
+                )}
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
                     <h3 className="font-bold mb-3">Key Features</h3>

@@ -1207,7 +1207,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
       {
         id: "tablecloths",
         name: "Custom Tablecloths",
-        description: "Professional table throws fitted to standard 6ft and 8ft trade show tables.",
+        description: "Transform any standard folding table into a highly professional promotional display with our Custom Tablecloths. Printed using advanced dye-sublimation on premium 300D polyester twill, these covers feature a vibrant, scratch-resistant print that won't crack or peel. They are completely machine washable, flame-retardant (meeting NFPA 701 safety certifications), and designed to stay wrinkle-free throughout long events. Available in standard 6ft and 8ft sizes in both 4-sided (closed back) and 3-sided (open back) configurations for convenient under-table storage access.",
         image: "https://www.buildasign.com/0086553_tablecloths_360.png",
         price: "Starting at $89.99",
         badge: "Best Seller",
@@ -1255,7 +1255,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
       {
         id: "table-runners",
         name: "Table Runners",
-        description: "Modular accent banners that drape over basic tablecloths for quick, cost-effective branding.",
+        description: "For a versatile, portable, and budget-friendly branding solution, our Custom Table Runners are the perfect choice. Drape one over a plain solid-colored tablecloth to instantly elevate your booth's look without the cost of a full tablecloth. Made from durable 300D polyester twill with optional liquid-repellent coatings, our table runners roll down flat, fit easily in any travel bag, and wash clean in the machine. Choose from multiple standard widths to display your company logo prominently.",
         image: "https://www.buildasign.com/0086575_table-runners_360.jpeg",
         price: "Starting at $39.99",
         badge: "Budget-Friendly",
@@ -1298,7 +1298,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
       {
         id: "fitted-tablecloths",
         name: "Fitted Tablecloths",
-        description: "Tailored box-style table covers fitted to exact rectangular event tables.",
+        description: "Give your display tables a clean, sharp, box-tailored look with Fitted Tablecloths. Custom-tailored to slip perfectly over standard 6ft and 8ft rectangular tables, these covers stay securely in place without hanging or pooling on the floor, making them excellent for busy outdoor venues or professional recruiting events. Constructed from flame-retardant 300D knit polyester twill, they are machine-washable, wrinkle-resistant, and built to withstand repeated setups.",
         image: "https://www.buildasign.com/0086560_fitted-tablecloths_360.png",
         price: "Starting at $109.99",
         config: {
@@ -1338,7 +1338,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
       {
         id: "round-tablecloths",
         name: "Round Tablecloths",
-        description: "Branded tablecloths tailored to round banquet and cocktail tables.",
+        description: "Elevate your round banquet, registry, or cocktail tables with our Round Custom Tablecloths. Specially hemmed for standard circular table sizes, they drape elegantly to the floor in a seamless design. Using full-spectrum dye-sublimation printing, your custom colors, patterns, and logos will appear bright and clear, providing a premium aesthetic for weddings, evening galas, corporate fundraisers, and hotel lobbies.",
         image: "https://www.buildasign.com/0086566_round-tablecloths_360.png",
         price: "Starting at $129.99",
         config: {
@@ -1379,7 +1379,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
       {
         id: "stretch-tablecloths",
         name: "Stretch Tablecloths",
-        description: "Elastic spandex-blend table covers that contour tightly to the frame.",
+        description: "Achieve a sleek, modern, and high-impact look with our contoured Stretch Tablecloths. Made from an elastic polyester-spandex blend, these covers stretch tightly over your table frame and secure into place using reinforced rubber leg pockets, preventing any flapping or shifting in windy outdoor conditions. The tight tension naturally pulls out all folds and wrinkles, ensuring a perfectly smooth, professional surface for tech conferences, outdoor festivals, and modern brand exhibitions.",
         image: "https://www.buildasign.com/0086570_stretch-tablecloth_360.png",
         price: "Starting at $129.99",
         config: {
@@ -1419,7 +1419,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
       {
         id: "pop-up-displays",
         name: "Pop-Up Displays",
-        description: "Large-scale collapsible tradeshow backdrops with tension fabric screens.",
+        description: "Make a massive impression on the trade show floor with our premium Pop-Up Backdrop Displays. Featuring a lightweight accordion-style aluminum frame that snaps open in under two minutes, this backdrop utilizes a large, high-definition tension fabric graphic that attaches securely around the perimeter with heavy-duty hook-and-loop velcro. It packs down into a compact trolley bag with rolling wheels for effortless travel and setup.",
         image: "https://www.buildasign.com/0086582_pop-up-displays_360.png",
         price: "Starting at $299.99",
         config: {
@@ -1463,7 +1463,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
       {
         id: "tension-fabric-displays",
         name: "Tension Fabric Displays",
-        description: "Premium pillowcase stretch fabric displays sliding over aluminum tube frames.",
+        description: "Our Tension Fabric Displays represent the gold standard of modern exhibition back walls. Utilizing an interlocking, lightweight aluminum tube frame that clicks together without tools, the graphic slides over the frame like a pillowcase and zips shut at the bottom for a perfectly tight, seamless, and wrinkle-free display. Printed via dye-sublimation on premium stretch polyester knit, it ensures your artwork looks spectacular and eliminates any glare under bright convention hall lights.",
         image: "https://www.buildasign.com/0086489_tension-fabric-displays_360.png",
         price: "Starting at $189.99",
         config: {
@@ -1504,7 +1504,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
       {
         id: "step-and-repeat-banner",
         name: "Step & Repeat Banners",
-        description: "Red carpet photo backdrops and press conference media walls.",
+        description: "Create the perfect photo opportunity at red carpets, press conferences, weddings, and corporate summits with our Step & Repeat Banners. Designed to display repeated logos in a clean grid layout, the glare-free matte finish of our heavy-duty blockout vinyl ensures beautiful, flash-friendly photography. The package comes with an optional adjustable backdrop stand and top/bottom pole pockets for fast mounting.",
         image: "https://www.buildasign.com/0086470_step-repeat-banners_360.png",
         price: "Starting at $145.99",
         badge: "Event Ready",
@@ -1546,7 +1546,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
       {
         id: "retractable-banners",
         name: "Retractable Banner",
-        description: "Pop-up retractable banner stands that set up in seconds. Includes a durable canvas carry case.",
+        description: "Our Retractable Banners (Roll Up Stands) are the ultimate standalone banner display for trade shows, retail checkouts, and office lobbies. The banner graphic pulls up from an anodized aluminum base stand in seconds and secures with a vertical support rod. Each kit includes a padded carrying bag, making transport and setup incredibly simple. Printed on premium curl-resistant polyester film or standard 13oz vinyl to maintain a clean, flat presentation.",
         image: "https://www.buildasign.com/0085822_retractable-banner_360.png",
         price: "Starting at $93.27",
         badge: "Most Popular",
@@ -1595,7 +1595,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
       {
         id: "x-banner-stand",
         name: "X-Banners",
-        description: "Collapsible lightweight freestanding cross stands with custom printed corner-grommet banners.",
+        description: "The X-Frame Banner Stand is a highly cost-effective, portable freestanding banner solution. By utilizing flexible composite fiberglass arms connected to a central hinge, the stand pulls a custom corner-grommeted banner taut, keeping your graphic perfectly flat and readable. Because the banner attaches simply via grommets, you can order replacement prints and swap graphics in seconds without needing to buy new stands.",
         image: "https://www.buildasign.com/0086478_x-banners_360.png",
         price: "Starting at $49.99",
         config: {
@@ -1635,7 +1635,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
       {
         id: "tabletop-retractable-banners",
         name: "Tabletop Retractable Banners",
-        description: "Miniature counter-top roll up banners for checkout registries and lobbies.",
+        description: "Bring high-impact branding to counter-tops, checkout registers, hotel lobbies, and registration desks with Tabletop Retractable Banners. These miniature versions of our full-sized roll-up stands feature a compact aluminum base housing that pulls up and retracts in seconds. Printed on smooth, high-resolution polypropylene film, they ensure small details and text are clear and easy to read from a close distance.",
         image: "https://www.buildasign.com/0086578_tabletop-retractable-banners_360.png",
         price: "Starting at $27.18",
         config: {
@@ -1675,7 +1675,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
       {
         id: "custom-canopy-tents",
         name: "Custom Canopies",
-        description: "Outdoor 10' x 10' custom canopy tents. Waterproof, UV-resistant fabric over popup frames.",
+        description: "Stand out at outdoor events, farmers markets, sporting events, and street fairs with our 10' x 10' Custom Canopy Tents. The canopy top is made from heavy-duty, waterproof, and UV-resistant fabric printed in rich full-color dye-sublimation. The popup frame features a commercial-grade steel or aluminum truss system with adjustable height settings, popping up in minutes for instant shade and high-visibility branding.",
         image: "https://www.buildasign.com/0088150_custom-canopy-tents_360.png",
         price: "Starting at $349.99",
         config: {
@@ -1715,7 +1715,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
       {
         id: "feather-flags",
         name: "Feather Flags",
-        description: "Eye-catching fluttering flags designed to draw crowds from the roadside.",
+        description: "Draw customers in from the roadside with our best-selling Custom Feather Flags. Designed to flutter in the wind and turn heads, these tall advertising flags are printed on premium open-weave knit polyester to reduce wind load stress. Supported by composite fiberglass poles and a rotating ground spike or cross stand, they rotate 360 degrees to remain visible from any traffic direction.",
         image: "https://www.buildasign.com/0085996_feather-flags_360.png",
         price: "Starting at $54.37",
         config: {
@@ -1757,7 +1757,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
       {
         id: "vinyl-banners",
         name: "Vinyl Banners",
-        description: "Durable and weather-resistant for indoor or outdoor event signage.",
+        description: "Our Custom Vinyl Banners are a versatile, heavy-duty signage solution for indoor and outdoor advertising. Constructed from durable 13oz gloss or 15oz premium matte PVC vinyl with heat-welded hems, they are fully waterproof and UV-resistant to survive the elements. Complete with pre-installed brass grommets or pole pockets for easy hanging, they are perfect for storefront openings, construction fences, and event banners.",
         image: "https://www.buildasign.com/0085750_vinyl-banners_360.png",
         price: "Starting at $12.99",
         config: {
@@ -1799,7 +1799,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
       {
         id: "business-cards",
         name: "Business Cards",
-        description: "Premium thick cardstock cards to distribute to show attendees.",
+        description: "Leave a lasting impression with premium Custom Business Cards. Printed on ultra-thick 14pt or 16pt cardstock with offset high-resolution printing, these standard 3.5\" x 2\" cards represent your business with absolute quality. Customize your finish with professional non-glare matte or high-gloss UV sheen, and choose single or double-sided layouts to distribute to tradeshow attendees, recruits, and new leads.",
         image: "https://www.buildasign.com/0085790_business-cards_360.jpeg",
         price: "Starting at $19.99",
         config: {
@@ -1846,7 +1846,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
       {
         id: "custom-postcards",
         name: "Postcards",
-        description: "Custom handouts and flyers for promotional coupons or price list catalog sheets.",
+        description: "Hand out rich, full-color Custom Postcards at your event table to advertise promotions, catalog your services, or distribute coupons. Printed in high definition on heavy 14pt gloss cover paper, they feel substantial and professional. Choose between matte or high-gloss front finishes and custom sizes to create flyers, handouts, or mailers that prompt action from potential clients.",
         image: "https://www.buildasign.com/0086663_postcards_360.png",
         price: "Starting at $14.99",
         config: {

@@ -12,7 +12,7 @@ interface PageProps {
 
 // Categories that have their own static product sub-pages (e.g. custom-signs/yard-signs/page.tsx)
 // These must be excluded from generateStaticParams to avoid route conflicts.
-const STATIC_PRODUCT_CATEGORIES = new Set(["trade-show", "custom-signs"]);
+const STATIC_PRODUCT_CATEGORIES = new Set(["custom-signs"]);
 
 export async function generateStaticParams() {
   const paths: { category: string; product: string }[] = [];
@@ -50,6 +50,11 @@ export default async function ProductConfiguratorPage({ params }: PageProps) {
     notFound();
   }
 
-  // Render the pre-configured product layout page
-  return <SignProductPage cfg={productData.config} />;
+  // Render the pre-configured product layout page with dynamic description
+  const configWithDesc = {
+    ...productData.config,
+    description: productData.config.description || productData.description
+  };
+
+  return <SignProductPage cfg={configWithDesc} />;
 }
