@@ -119,8 +119,8 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:block border-t bg-black py-2.5">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <ul className="flex items-center justify-between gap-x-4">
+          <div className="max-w-5xl mx-auto px-8 lg:px-16">
+            <ul className="flex items-center justify-between gap-x-4 lg:gap-x-6">
               {navItems.map((item) => (
                 <li key={item.name} className="text-center">
                   <a
