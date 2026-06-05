@@ -2956,56 +2956,381 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     ]
   },
   "gifts": {
-    title: "Custom Canvas Prints & Photo Gifts",
-    description: "Premium poly-cotton canvas wraps stretched on sturdy wooden frames. Perfect gifts for homes, lobbies, and workspaces.",
-    heroImage: "https://ext.same-assets.com/1114826555/898075086.png",
+    title: "Custom Home Gifts",
+    description: "Give the gift of memories with personalized creations that speak from the heart. Turning moments into art.",
+    heroImage: "https://www.buildasign.com/0084307_Desktop.jpeg",
     products: [
       {
-        id: "canvas-prints",
-        name: "Stretched Canvas Prints",
-        description: "Turn your favorite pictures or designs into premium home canvas wraps.",
-        image: "https://ext.same-assets.com/1114826555/898075086.png",
-        price: "Starting at $24.99",
+        id: "metal-prints",
+        name: "Metal Prints",
+        description: "Vibrant high-definition photo prints on durable, lightweight aluminum panels.",
+        image: "https://www.buildasign.com/0086744_metal-prints_360.png",
+        price: "Starting at $28.51",
         config: {
-          title: "Stretched Canvas Prints",
-          subtitle: "Premium photo gallery canvas stretched on thick wooden frames, ready to hang.",
+          title: "Custom Metal Prints",
+          subtitle: "Infuse your photos directly into specially-coated aluminum panels for a clean, modern look.",
           breadcrumb: "Gifts",
           breadcrumbHref: "/gifts",
-          promoText: "25% OFF HOLIDAY CANVAS PHOTO GIFTS",
-          image: "https://ext.same-assets.com/1114826555/898075086.png",
-          ratingCount: "1820",
+          promoText: "🎁 Holiday Sale: 25% OFF Custom Metal Prints! Ships in 2 Days.",
+          image: "https://www.buildasign.com/0086744_metal-prints_360.png",
+          ratingCount: "820",
           ratingScore: "4.9",
           sizes: [
-            { label: '16" x 20" Gallery Standard', value: '16x20', basePrice: 34.99 },
-            { label: '8" x 10" Small Frame', value: '8x10', basePrice: 24.99 },
-            { label: '24" x 36" Large Centerpiece', value: '24x36', basePrice: 59.99 }
+            { label: "8\" x 10\" Tabletop Print", value: "8x10", basePrice: 28.51 },
+            { label: "11\" x 14\" Accent Print", value: "11x14", basePrice: 39.99 },
+            { label: "16\" x 20\" Gallery Size", value: "16x20", basePrice: 59.99 },
+            { label: "20\" x 30\" Statement Print", value: "20x30", basePrice: 89.99 }
           ],
           selects: [
             {
-              label: "Frame Wrap Style",
+              label: "Metal Finish",
               options: [
-                { label: "1.5-inch Deep Stretched Frame", value: "thick", priceAdder: 0, description: "Classic thick gallery presentation wrapper." },
-                { label: "0.75-inch Standard Wrap", value: "thin", priceAdder: -5.00, description: "Perfect if you plan to mount it in custom frames." }
+                { label: "Gloss White (Vibrant & Shiny)", value: "gloss_white", priceAdder: 0, description: "Our most popular finish. High-gloss coating that makes colors pop." },
+                { label: "Matte White (Satin & Non-Glare)", value: "matte_white", priceAdder: 0, description: "Minimal reflection. Perfect for rooms with bright overhead lighting." },
+                { label: "Gloss Silver (Clear Metal Base)", value: "gloss_silver", priceAdder: 5.50, description: "The silver aluminum shows through the white areas of your photo." }
               ]
             }
           ],
-          qtyDiscount: "Save 10% on multi-canvas packs",
-          keyFeatures: ["Sturdy hand-stretched pine wood frames", "High quality poly-cotton canvas weave", "Fade resistant museum pigment inks", "Built-in saw-tooth hanger"],
-          useCases: ["Family photo displays", "Art galleries", "Office lobbies and boardroom art", "Unique wedding gifts"],
+          toggleGroups: [
+            {
+              label: "Mounting Option",
+              options: [
+                { id: "none", label: "Easel Back (Small Sizes Only)", priceAdder: 0, description: "Fold-out easel stand for desks and shelves." },
+                { id: "float", label: "Float Mount Hanger", priceAdder: 9.99, description: "Hidden wooden block with hanger floats print 1/2\" off the wall." },
+                { id: "standoffs", label: "Stainless Standoffs (x4)", priceAdder: 19.99, description: "Requires pre-drilled holes in the metal corners." }
+              ]
+            }
+          ],
+          qtyDiscount: "Volume discounts for photographers — save up to 10% on 3+ prints",
+          keyFeatures: [
+            "HD sublimation print directly onto metal",
+            "Durable 0.045\" aluminum sheet",
+            "Scratch and moisture resistant, easy to wipe clean",
+            "Rust-proof structure handles high-humidity areas"
+          ],
+          useCases: ["Family photo walls", "High-contrast landscapes", "Modern office wall art", "Unique anniversary gifts"],
           specs: [
-            { key: "Canvas Grade", value: "400gsm Archival Grade" },
-            { key: "Wood Frame", value: "Sustainably-sourced kiln-dried pine wood" },
-            { key: "Inks", value: "HP latex eco-friendly prints" }
+            { key: "Material", value: "0.045\" Recycled ChromaLuxe Aluminum" },
+            { key: "Print Process", value: "Dye-Sublimation Thermal Infusion" },
+            { key: "Care", value: "Clean with non-ammonia glass cleaner and soft cloth" }
           ],
           faqs: [
-            { q: "Is the hanging hardware included?", a: "Yes, every canvas wrap arrives with a pre-installed saw-tooth hanger on the back frame." }
+            { q: "What is a metal print?", a: "It is a photo printed by infusing dyes directly into the surface of an aluminum sheet. The result is a vibrant, durable print that is scratch-resistant and waterproof." },
+            { q: "Can I hang metal prints outdoors?", a: "They are highly moisture-resistant, making them great for bathrooms and kitchens. However, direct long-term sunlight will cause the dyes to fade over time." }
           ],
           reviews: [
-            { author: "Kathy R.", rating: 5, text: "Simply gorgeous. The photo of our wedding came out incredibly sharp and fits perfectly on the wall." }
+            { author: "Marcus K.", rating: 5, text: "The detail is unbelievable. Colors are so deep it looks almost 3D on the wall." }
           ],
-          ctaHeading: "Turn memories into art",
-          ctaBody: "Stitch together high resolution digital assets to print stunning frames.",
-          ctaLabel: "Customize Canvas"
+          ctaHeading: "Vibrant Metal Photo Art",
+          ctaBody: "Upload your favorite memories to print a high-definition metal masterpiece.",
+          ctaLabel: "Design Metal Print"
+        }
+      },
+      {
+        id: "acrylic-prints",
+        name: "Acrylic Prints",
+        description: "Premium photos printed behind polished clear acrylic for a brilliant glass effect.",
+        image: "https://www.buildasign.com/0086741_acrylic-prints_360.png",
+        price: "Starting at $39.91",
+        config: {
+          title: "Custom Acrylic Prints",
+          subtitle: "Polished optical-grade acrylic panels that capture light and add depth to your photos.",
+          breadcrumb: "Gifts",
+          breadcrumbHref: "/gifts",
+          promoText: "💎 Premium Glossy Finish: 25% OFF Acrylic Prints!",
+          image: "https://www.buildasign.com/0086741_acrylic-prints_360.png",
+          ratingCount: "640",
+          ratingScore: "4.8",
+          sizes: [
+            { label: "8\" x 10\" Tabletop Size", value: "8x10", basePrice: 39.91 },
+            { label: "11\" x 14\" Accent Size", value: "11x14", basePrice: 54.99 },
+            { label: "16\" x 20\" Gallery Size", value: "16x20", basePrice: 84.99 },
+            { label: "20\" x 30\" Gallery Centerpiece", value: "20x30", basePrice: 129.99 }
+          ],
+          selects: [
+            {
+              label: "Acrylic Thickness",
+              options: [
+                { label: "1/8\" (3mm) Standard", value: "3mm", priceAdder: 0, description: "Lightweight and sleek — perfect for all mounting types." },
+                { label: "1/4\" (6mm) Heavy Premium", value: "6mm", priceAdder: 15.00, description: " command extra depth, weight and a glass-like feel." }
+              ]
+            }
+          ],
+          toggleGroups: [
+            {
+              label: "Mounting Option",
+              options: [
+                { id: "float", label: "French Cleat Float Hanger", priceAdder: 10.00, description: "Floats the print cleanly 1/2\" off the wall with no visible hardware." },
+                { id: "standoffs", label: "Brushed Metal Standoffs (x4)", priceAdder: 19.99, description: "Cmd screws float the print. Requires pre-drilled corner holes." }
+              ]
+            }
+          ],
+          qtyDiscount: "Volume discounts apply — save up to 10% on office setups",
+          keyFeatures: [
+            "Optically clear cast acrylic base",
+            "Polished, flame-fused edges for seamless refraction",
+            "White opacity backing layer protects colors",
+            "Includes heavy-duty wall hangers"
+          ],
+          useCases: ["Corporate receptions", "High-end portrait prints", "Upscale hotel lobbies", "Modern house warming gifts"],
+          specs: [
+            { key: "Base Material", value: "Cast PMMA Acrylic (UV-resistant)" },
+            { key: "Printing Method", value: "Second-surface direct UV digital print" }
+          ],
+          faqs: [
+            { q: "How is it printed?", a: "We print your photo directly onto the back of the clear acrylic sheet (second-surface printing). We then seal it with a white protective backing." }
+          ],
+          reviews: [
+            { author: "Serena B.", rating: 5, text: "Looks like a piece in an art museum. The edges are perfectly polished and catch the light beautifully." }
+          ],
+          ctaHeading: "Modern Glass-Effect Prints",
+          ctaBody: "Polished optical acrylic prints that float off your walls with stunning detail.",
+          ctaLabel: "Design Acrylic Print"
+        }
+      },
+      {
+        id: "custom-mugs",
+        name: "Custom Mugs",
+        description: "Personalized ceramic mugs printed with your favorite photos, microwave and dishwasher safe.",
+        image: "https://www.buildasign.com/0086754_custom-mugs_360.jpeg",
+        price: "Starting at $14.24",
+        config: {
+          title: "Custom Photo Mugs",
+          subtitle: "Vibrant custom printing on durable ceramic mugs, safe for warm and cold drinks.",
+          breadcrumb: "Gifts",
+          breadcrumbHref: "/gifts",
+          promoText: "☕ Coffee Mugs — High definition full wrap prints, microwave safe!",
+          image: "https://www.buildasign.com/0086754_custom-mugs_360.jpeg",
+          ratingCount: "1150",
+          ratingScore: "4.9",
+          sizes: [
+            { label: "11oz Classic Mug", value: "11oz", basePrice: 14.24 },
+            { label: "15oz Large Mug", value: "15oz", basePrice: 17.99 }
+          ],
+          selects: [
+            {
+              label: "Interior & Handle Color",
+              options: [
+                { label: "Classic All-White Ceramic", value: "white", priceAdder: 0 },
+                { label: "Color Accent Handle & Interior (Black)", value: "accent_black", priceAdder: 2.00 },
+                { label: "Color Accent Handle & Interior (Red)", value: "accent_red", priceAdder: 2.00 },
+                { label: "Color Accent Handle & Interior (Blue)", value: "accent_blue", priceAdder: 2.00 }
+              ]
+            }
+          ],
+          toggleGroups: [
+            {
+              label: "Print Coverage",
+              options: [
+                { id: "two_sided", label: "Double-Sided Print (Front & Back)", priceAdder: 0, description: "Same image or text printed on both sides of the handle." },
+                { id: "full_wrap", label: "Full Photo Wrap-Around", priceAdder: 1.50, description: "Panoramic wrap-around photo format covering the entire body." }
+              ]
+            }
+          ],
+          qtyDiscount: "Volume discounts for offices — save up to 40% on bulk packs",
+          keyFeatures: [
+            "High-gloss industrial grade ceramic body",
+            "Dishwasher and microwave safe prints",
+            "Dye-sublimation ink fusion prevents fading or peeling",
+            "Comfortable C-handle grip"
+          ],
+          useCases: ["Holiday gifts", "Custom desk cups", "Promotional office branding", "Reunion giveaway mugs"],
+          specs: [
+            { key: "Material", value: "High-grade glazed ceramic" },
+            { key: "Care", value: "Dishwasher safe (top rack recommended)" }
+          ],
+          faqs: [
+            { q: "Is the print dishwasher safe?", a: "Yes. Our mugs are printed using commercial dye-sublimation wraps that cook the ink directly into the ceramic glaze. They are fully dishwasher and microwave safe." }
+          ],
+          reviews: [
+            { author: "Gregory P.", rating: 5, text: "Ordered 12 mugs with family holiday pictures. The printing is bright and they've gone through the dishwasher dozen times with zero fading." }
+          ],
+          ctaHeading: "Start Your Morning with Memories",
+          ctaBody: "Personalized photo mugs that are durable, dishwasher-safe, and perfect for gifting.",
+          ctaLabel: "Customize Mug"
+        }
+      },
+      {
+        id: "custom-photo-pillows",
+        name: "Photo Pillows",
+        description: "Soft, custom-printed pillows featuring your photos on durable canvas or velveteen.",
+        image: "https://www.buildasign.com/0086762_photo-pillows_360.png",
+        price: "Starting at $29.99",
+        config: {
+          title: "Custom Photo Pillows",
+          subtitle: "Cozy throw pillows custom-printed with your favorite photos or text layouts.",
+          breadcrumb: "Gifts",
+          breadcrumbHref: "/gifts",
+          promoText: "🛋️ Custom Pillows — Plush polyfill insert included. Dye-sub print!",
+          image: "https://www.buildasign.com/0086762_photo-pillows_360.png",
+          ratingCount: "410",
+          ratingScore: "4.7",
+          sizes: [
+            { label: "14\" x 14\" Accent Pillow", value: "14x14", basePrice: 29.99 },
+            { label: "18\" x 18\" Cozy Sofa Pillow", value: "18x18", basePrice: 38.99 }
+          ],
+          selects: [
+            {
+              label: "Fabric Choice",
+              options: [
+                { label: "Smooth Canvas (Durable & Textured)", value: "canvas", priceAdder: 0, description: "Tightly woven canvas cover — highly durable and classic." },
+                { label: "Soft Velveteen (Silky & Cozy)", value: "velveteen", priceAdder: 4.50, description: "Luxurious brushed texture — feels incredibly soft to the touch." }
+              ]
+            }
+          ],
+          toggleGroups: [
+            {
+              label: "Backing Style",
+              options: [
+                { id: "white_back", label: "Solid White Backing", priceAdder: 0, description: "The photo is printed on the front, with a clean white back." },
+                { id: "double_sided", label: "Double-Sided Photo Printing", priceAdder: 7.99, description: "Your photo or design printed on both the front and back covers." }
+              ]
+            }
+          ],
+          qtyDiscount: "Volume discounts for design studios — buy 3+ and save 8%",
+          keyFeatures: [
+            "Full-color edge-to-edge sublimation print",
+            "Hidden zipper closure allows cover removal for washing",
+            "Plush polyester fiberfill insert included",
+            "Machine-washable cover"
+          ],
+          useCases: ["Sofa accent cushions", "Memorial photo gifts", "Custom kids bedroom cushions", "Corporate lobby chairs"],
+          specs: [
+            { key: "Cover Material", value: "100% Polyester Canvas or Velveteen" },
+            { key: "Fill Material", value: "100% Hypoallergenic Polyester Fiberfill" },
+            { key: "Care", value: "Remove cover, machine wash cold, air dry" }
+          ],
+          faqs: [
+            { q: "Does the pillow come with the stuffing?", a: "Yes, all of our custom photo pillows include both the printed cover and the plush polyfill stuffing insert." }
+          ],
+          reviews: [
+            { author: "Leah J.", rating: 5, text: "The velveteen cover is so soft! The picture of our dog looks so clear and the colors are spot on." }
+          ],
+          ctaHeading: "Snuggle Up with Favorite Photos",
+          ctaBody: "Custom printed throw pillows with hypoallergenic inserts. Soft, cozy, and washable.",
+          ctaLabel: "Design Pillow"
+        }
+      },
+      {
+        id: "custom-mouse-pads",
+        name: "Custom Mouse Pad",
+        description: "High-quality cloth mouse pads customized with your photos, soft rubber backing.",
+        image: "https://www.buildasign.com/0086759_custom-mouse-pad_360.png",
+        price: "Starting at $16.49",
+        config: {
+          title: "Custom Mouse Pads",
+          subtitle: "Smooth tracking cloth mouse pads with personalized prints and non-slip rubber backs.",
+          breadcrumb: "Gifts",
+          breadcrumbHref: "/gifts",
+          promoText: "🖱️ Personalized Desk Pads — Smooth fabric glide, steady rubber base!",
+          image: "https://www.buildasign.com/0086759_custom-mouse-pad_360.png",
+          ratingCount: "350",
+          ratingScore: "4.8",
+          sizes: [
+            { label: "7.75\" x 9.25\" Standard Mouse Pad", value: "standard", basePrice: 16.49 },
+            { label: "12\" x 18\" Deluxe Desk Pad", value: "desk_pad", basePrice: 29.99 }
+          ],
+          selects: [
+            {
+              label: "Edging Treatment",
+              options: [
+                { label: "Standard Flat Edge", value: "flat", priceAdder: 0, description: "Classic clean-cut flat edge profile." },
+                { label: "Premium Stitched Border (Black)", value: "stitched", priceAdder: 2.50, description: "Thick woven border stitching prevents fraying of the cloth top." }
+              ]
+            }
+          ],
+          toggleGroups: [
+            {
+              label: "Rubber Cushion Base",
+              options: [
+                { id: "3mm", label: "1/8\" (3mm) Standard Cushion", priceAdder: 0, description: "Lightweight and flexible desktop padding." },
+                { id: "6mm", label: "1/4\" (6mm) Extra Comfort Pad", priceAdder: 3.50, description: "Double-thick rubber padding, highly comfortable for wrists." }
+              ]
+            }
+          ],
+          qtyDiscount: "Volume discounts for office supplies — save up to 15% on bulk orders",
+          keyFeatures: [
+            "Premium fine-weave polyester fabric top",
+            "Anti-slip textured neoprene rubber backing",
+            "Vibrant, fade-proof direct dye-sub prints",
+            "Compatible with optical and laser mice"
+          ],
+          useCases: ["Office desk branding", "Gamers accessories", "Client promotional giveaways", "Personalized graduation gifts"],
+          specs: [
+            { key: "Surface Material", value: "Fine-Weave Glide Polyester Cloth" },
+            { key: "Base Material", value: "Non-slip Natural Neoprene Rubber" }
+          ],
+          faqs: [
+            { q: "Is the mouse pad washable?", a: "Yes, you can hand wash the mouse pad with mild dish soap and warm water, then lay flat to air dry." }
+          ],
+          reviews: [
+            { author: "Daniel T.", rating: 5, text: "The stitched edges are great, very heavy duty. My mouse tracking is perfect and the photo print is very clean." }
+          ],
+          ctaHeading: "Personalize Your Workspace",
+          ctaBody: "Custom cloth mouse pads printed with your photos. Neoprene backing prevents sliding.",
+          ctaLabel: "Design Mouse Pad"
+        }
+      },
+      {
+        id: "photo-blankets",
+        name: "Photo Blankets",
+        description: "Warm and cozy customized fleece and sherpa blankets featuring your photo memories.",
+        image: "https://www.buildasign.com/0086766_photo-blankets_360.png",
+        price: "Starting at $48.99",
+        config: {
+          title: "Custom Photo Blankets",
+          subtitle: "Edge-to-edge photo printing on ultra-soft fleece or luxurious faux sherpa blankets.",
+          breadcrumb: "Gifts",
+          breadcrumbHref: "/gifts",
+          promoText: "❄️ Custom Photo Blankets — Cozy Polar Fleece & Sherpa styles. Ships in 3 Days!",
+          image: "https://www.buildasign.com/0086766_photo-blankets_360.png",
+          ratingCount: "1480",
+          ratingScore: "4.9",
+          sizes: [
+            { label: "50\" x 60\" Standard Throw Blanket", value: "50x60", basePrice: 48.99 },
+            { label: "60\" x 80\" Twin Bed Size Blanket", value: "60x80", basePrice: 64.99 }
+          ],
+          selects: [
+            {
+              label: "Fabric Choice",
+              options: [
+                { label: "Cozy Polar Fleece (Soft & Thin)", value: "polar_fleece", priceAdder: 0, description: "Classic lightweight soft polar fleece. Great for drafty evenings." },
+                { label: "Plush Minky (Premium & Silky)", value: "minky", priceAdder: 10.00, description: "Thicker fleece with a silky, brushed micro-plush feel. Very popular." },
+                { label: "Luxurious Sherpa Backing (Ultra Warm)", value: "sherpa", priceAdder: 20.00, description: "Your photo on smooth minky top, with a thick, fluffy faux-sheepskin backing." }
+              ]
+            }
+          ],
+          toggleGroups: [
+            {
+              label: "Print Format Layout",
+              options: [
+                { id: "single", label: "Single Large Image", priceAdder: 0, description: "One high-resolution photo covering the entire blanket." },
+                { id: "collage", label: "Multi-Photo Grid Collage", priceAdder: 5.00, description: "Select from our templates to print a multi-picture photo grid." }
+              ]
+            }
+          ],
+          qtyDiscount: "Volume discounts for family gifts — buy 2+ and save 7%",
+          keyFeatures: [
+            "Vibrant, full-color dye sublimation print",
+            "Hemmed double-needle finished border edges",
+            "Machine washable, fade-resistant fabrics",
+            "Incredibly soft, warm, and cozy"
+          ],
+          useCases: ["Holiday family gifts", "Grandparents memory blankets", "Cozy sofa throws", "Personalized baby blankets"],
+          specs: [
+            { key: "Fabric Weight", value: "300gsm–450gsm depending on material choice" },
+            { key: "Material", value: "100% Premium Hypoallergenic Polyester" },
+            { key: "Care", value: "Machine wash cold separately, tumble dry low" }
+          ],
+          faqs: [
+            { q: "Will the blanket fade in the laundry?", a: "No. The dye sublimation printing embeds the dye deep into the polyester fibers under heat. It won't fade, crack, or peel, even after dozens of machine washes." }
+          ],
+          reviews: [
+            { author: "Miriam E.", rating: 5, text: "I bought the sherpa-backed blanket for my grandmother with pictures of the grandkids. She absolutely cried and wraps herself in it every day. Highly recommend the sherpa upgrade!" }
+          ],
+          ctaHeading: "Wrap Yourself in Memories",
+          ctaBody: "Custom-printed ultra-soft throw blankets. Machine-washable, fade-resistant, and incredibly cozy.",
+          ctaLabel: "Design Blanket"
         }
       }
     ]
