@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { Facebook, Twitter, Linkedin, Youtube, MapPin, Mail, Phone } from "lucide-react";
 
@@ -37,6 +35,8 @@ const paymentMethods = [
   { name: "Visa", icon: "https://ext.same-assets.com/1114826555/794747697.svg" },
   { name: "Discover", icon: "https://ext.same-assets.com/1114826555/3085012672.svg" },
   { name: "PayPal", icon: "https://ext.same-assets.com/1114826555/4065183383.svg" },
+  { name: "American Express", icon: "https://ext.same-assets.com/1114826555/1149552964.svg" },
+  { name: "Apple Pay", icon: "https://ext.same-assets.com/1114826555/936547833.svg" },
 ];
 
 const bottomLinks = [
@@ -50,8 +50,7 @@ export function Footer() {
     <footer className="bg-black text-white">
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-
-          {/* Brand & Contact — col span 2 */}
+          {/* Brand and Contact */}
           <div className="lg:col-span-2">
             <div className="mb-4">
               <Image
@@ -67,61 +66,52 @@ export function Footer() {
             </p>
 
             <div className="space-y-3 mb-6">
-              {/* Phone — Yellow */}
-              <a href="tel:305-967-1005" className="flex items-center gap-2 text-gray-300 hover:text-[#ffea00] transition-colors">
-                <Phone className="w-4 h-4" style={{ color: "#ffea00" }} />
+              <a href="tel:305-967-1005" className="flex items-center gap-2 text-gray-300 hover:text-yellow-400 transition-colors">
+                <Phone className="w-4 h-4 text-yellow-400" />
                 <span>305-967-1005</span>
               </a>
-              <a href="tel:305-967-9654" className="flex items-center gap-2 text-gray-300 hover:text-[#ffea00] transition-colors">
-                <Phone className="w-4 h-4" style={{ color: "#ffea00" }} />
+              <a href="tel:305-967-9654" className="flex items-center gap-2 text-gray-300 hover:text-yellow-400 transition-colors">
+                <Phone className="w-4 h-4 text-yellow-400" />
                 <span>305-967-9654</span>
               </a>
-              {/* Email — Cyan */}
-              <a href="mailto:nanosign1@gmail.com" className="flex items-center gap-2 text-gray-300 hover:text-[#00d4ff] transition-colors">
-                <Mail className="w-4 h-4" style={{ color: "#00d4ff" }} />
+              <a href="mailto:nanosign1@gmail.com" className="flex items-center gap-2 text-gray-300 hover:text-yellow-400 transition-colors">
+                <Mail className="w-4 h-4 text-yellow-400" />
                 <span>nanosign1@gmail.com</span>
               </a>
-              {/* Address — Lime */}
               <div className="flex items-start gap-2 text-gray-300">
-                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "#39ff14" }} />
+                <MapPin className="w-4 h-4 text-yellow-400 mt-0.5 flex-shrink-0" />
                 <span>4567 Powerline Rd, Oakland Park, FL 33309</span>
               </div>
             </div>
 
-            {/* Social icons — each brand colour on hover */}
             <div className="flex gap-3">
-              <a href="#" className="bg-gray-800 p-2 rounded-full text-white transition-all"
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "#00d4ff"; (e.currentTarget as HTMLElement).style.color = "#000"; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = ""; (e.currentTarget as HTMLElement).style.color = ""; }}>
+              <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-yellow-400 hover:text-black transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="bg-gray-800 p-2 rounded-full text-white transition-all"
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "#39ff14"; (e.currentTarget as HTMLElement).style.color = "#000"; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = ""; (e.currentTarget as HTMLElement).style.color = ""; }}>
-                <Youtube className="w-5 h-5" />
+              <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-yellow-400 hover:text-black transition-colors">
+                <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="bg-gray-800 p-2 rounded-full text-white transition-all"
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "#ff00ff"; (e.currentTarget as HTMLElement).style.color = "#000"; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = ""; (e.currentTarget as HTMLElement).style.color = ""; }}>
+              <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-yellow-400 hover:text-black transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="bg-gray-800 p-2 rounded-full text-white transition-all"
-                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "#ffea00"; (e.currentTarget as HTMLElement).style.color = "#000"; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = ""; (e.currentTarget as HTMLElement).style.color = ""; }}>
-                <Mail className="w-5 h-5" />
+              <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-yellow-400 hover:text-black transition-colors">
+                <Youtube className="w-5 h-5" />
               </a>
             </div>
           </div>
 
-          {/* Help Center — Cyan heading */}
+          {/* Help Center */}
           <div>
-            <h3 className="font-poppins font-bold mb-4" style={{ color: "#00d4ff" }}>
+            <h3 className="font-poppins font-bold text-yellow-400 mb-4">
               {footerLinks.helpCenter.title}
             </h3>
             <ul className="space-y-2">
               {footerLinks.helpCenter.links.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-gray-300 hover:text-[#00d4ff] transition-colors text-sm">
+                  <a
+                    href={link.href}
+                    className="text-gray-300 hover:text-yellow-400 transition-colors text-sm"
+                  >
                     {link.name}
                   </a>
                 </li>
@@ -129,15 +119,18 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Company — Lime heading */}
+          {/* Company */}
           <div>
-            <h3 className="font-poppins font-bold mb-4" style={{ color: "#39ff14" }}>
+            <h3 className="font-poppins font-bold text-yellow-400 mb-4">
               {footerLinks.company.title}
             </h3>
             <ul className="space-y-2">
               {footerLinks.company.links.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-gray-300 hover:text-[#39ff14] transition-colors text-sm">
+                  <a
+                    href={link.href}
+                    className="text-gray-300 hover:text-yellow-400 transition-colors text-sm"
+                  >
                     {link.name}
                   </a>
                 </li>
@@ -145,15 +138,18 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Products — Magenta heading */}
+          {/* Products */}
           <div>
-            <h3 className="font-poppins font-bold mb-4" style={{ color: "#ff00ff" }}>
+            <h3 className="font-poppins font-bold text-yellow-400 mb-4">
               {footerLinks.products.title}
             </h3>
             <ul className="space-y-2">
               {footerLinks.products.links.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-gray-300 hover:text-[#ff00ff] transition-colors text-sm">
+                  <a
+                    href={link.href}
+                    className="text-gray-300 hover:text-yellow-400 transition-colors text-sm"
+                  >
                     {link.name}
                   </a>
                 </li>
@@ -163,7 +159,7 @@ export function Footer() {
             <div className="mt-6">
               <p className="text-sm text-gray-400 mb-2">We accept:</p>
               <div className="flex flex-wrap gap-2">
-                {paymentMethods.map((method) => (
+                {paymentMethods.slice(0, 4).map((method) => (
                   <img
                     key={method.name}
                     src={method.icon}
@@ -174,7 +170,6 @@ export function Footer() {
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
@@ -187,7 +182,7 @@ export function Footer() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-gray-400 hover:text-[#ffea00] transition-colors text-sm"
+                  className="text-gray-400 hover:text-yellow-400 transition-colors text-sm"
                 >
                   {link.name}
                 </a>

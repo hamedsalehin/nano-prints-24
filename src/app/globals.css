@@ -4,39 +4,29 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── Brand gradient palette ───────────────────────────────────────── */
-:root {
-  --cyan:    #00d4ff;
-  --lime:    #39ff14;
-  --magenta: #ff00ff;
-  --yellow:  #ffea00;
-
-  /* Gradient going cyan → lime → magenta → yellow */
-  --brand-gradient: linear-gradient(90deg, #00d4ff 0%, #39ff14 33%, #ff00ff 66%, #ffea00 100%);
-  /* Diagonal variant for backgrounds */
-  --brand-gradient-diag: linear-gradient(135deg, #00d4ff 0%, #39ff14 30%, #ff00ff 65%, #ffea00 100%);
-
-  /* Theme tokens */
-  --background: 0 0% 100%;
-  --foreground: 0 0% 10%;
-  --card: 0 0% 100%;
-  --card-foreground: 0 0% 10%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 10%;
-  --primary: 185 100% 50%;        /* cyan-ish */
-  --primary-foreground: 0 0% 0%;
-  --secondary: 0 0% 96%;
-  --secondary-foreground: 0 0% 10%;
-  --muted: 0 0% 96%;
-  --muted-foreground: 0 0% 45%;
-  --accent: 185 100% 50%;
-  --accent-foreground: 0 0% 0%;
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 0 0% 100%;
-  --border: 0 0% 88%;
-  --input: 0 0% 88%;
-  --ring: 185 100% 50%;
-  --radius: 0.5rem;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 50 100% 50%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 50 100% 50%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 50 100% 50%;
+    --radius: 0.5rem;
+  }
 }
 
 @layer base {
@@ -44,7 +34,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-white text-gray-900;
+    @apply bg-background text-foreground font-sans;
     font-family: 'Open Sans', sans-serif;
   }
   h1, h2, h3, h4, h5, h6 {
@@ -52,62 +42,24 @@
   }
 }
 
-/* ── Utility classes ──────────────────────────────────────────────── */
-.font-poppins  { font-family: 'Poppins', sans-serif; }
-.font-opensans { font-family: 'Open Sans', sans-serif; }
-
-/* Brand gradient text */
-.brand-gradient-text {
-  background: var(--brand-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Brand gradient background */
-.brand-gradient-bg {
-  background: var(--brand-gradient);
+.font-opensans {
+  font-family: 'Open Sans', sans-serif;
 }
 
-/* Gradient border helper (use as wrapper) */
-.brand-gradient-border {
-  background: var(--brand-gradient);
-  padding: 2px;
-  border-radius: 0.5rem;
+/* Custom scrollbar for carousels */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }
-
-/* Subtle animated shimmer on promo elements */
-@keyframes shimmer {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-.brand-shimmer {
-  background: linear-gradient(90deg, #00d4ff, #39ff14, #ff00ff, #ffea00, #00d4ff);
-  background-size: 300% 300%;
-  animation: shimmer 4s ease infinite;
-}
-
-/* Custom scrollbar */
-.hide-scrollbar::-webkit-scrollbar { display: none; }
 .hide-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
 /* Star ratings */
-.star-rating { color: #f59e0b; }
-
-/* CTA buttons */
-.btn-primary {
-  background: var(--brand-gradient);
-  color: #111;
-  font-weight: 700;
-  border-radius: 9999px;
-  padding: 0.65rem 1.75rem;
-  transition: opacity 0.2s, transform 0.2s;
-}
-.btn-primary:hover {
-  opacity: 0.88;
-  transform: translateY(-1px);
+.star-rating {
+  color: #f59e0b;
 }

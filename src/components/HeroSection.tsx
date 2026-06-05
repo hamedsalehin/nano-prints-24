@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export function HeroSection() {
   return (
-    <section className="relative bg-white">
+    <section className="relative bg-gradient-to-r from-yellow-50 via-white to-yellow-50">
       <div className="relative overflow-hidden min-h-[400px] md:min-h-[500px]">
-        {/* Background image */}
+        {/* Background with gradient overlay */}
         <div className="absolute inset-0">
           <Image
             src="https://ext.same-assets.com/1114826555/2245761263.jpeg"
@@ -26,24 +26,20 @@ export function HeroSection() {
               <p className="font-poppins text-xl md:text-2xl font-bold text-gray-900 mb-1">
                 Your Custom Printing Expert
               </p>
-              <p className="font-poppins text-lg md:text-xl font-semibold text-gray-600 mb-6">
+              <p className="font-poppins text-lg md:text-xl font-semibold text-gray-700 mb-6">
                 Fast. Reliable. Built to Last.
               </p>
 
               <div className="flex flex-wrap gap-3">
-                {/* Primary CTA — Bright Yellow */}
                 <a
                   href="/custom-signs"
-                  className="inline-flex items-center justify-center px-8 py-3 font-bold rounded-full shadow-lg transition-opacity hover:opacity-85"
-                  style={{ background: "#ffea00", color: "#111" }}
+                  className="inline-flex items-center justify-center px-8 py-3 bg-yellow-400 text-black font-bold rounded-full hover:bg-yellow-500 transition-colors shadow-lg"
                 >
                   Shop Signs
                 </a>
-                {/* Secondary CTA — Bright Lime */}
                 <a
                   href="/custom-banners"
-                  className="inline-flex items-center justify-center px-8 py-3 font-bold rounded-full shadow-lg transition-opacity hover:opacity-85"
-                  style={{ background: "#39ff14", color: "#111" }}
+                  className="inline-flex items-center justify-center px-8 py-3 border-2 border-black text-black font-bold rounded-full hover:bg-black hover:text-yellow-400 transition-colors bg-white"
                 >
                   Shop Banners
                 </a>
@@ -52,19 +48,16 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Side badge — stays dark/clean */}
+        {/* Side badge */}
         <div className="hidden lg:block absolute right-20 top-1/2 -translate-y-1/2 z-10">
-          <div className="bg-black text-white px-6 py-8 rounded-xl text-center shadow-xl">
-            {/* Cyan accent border */}
-            <div className="px-3 py-1 text-xs mb-2 inline-block rounded font-bold" style={{ border: "1px solid #00d4ff", color: "#00d4ff" }}>
+          <div className="bg-black text-white px-6 py-8 rounded-lg text-center shadow-xl">
+            <div className="border border-yellow-400 px-3 py-1 text-xs mb-2 inline-block rounded text-yellow-400">
               Nano Prints
             </div>
-            {/* Magenta highlight */}
-            <p className="font-poppins font-bold text-2xl mb-1" style={{ color: "#ff00ff" }}>Oakland Park</p>
-            <p className="text-sm text-gray-300">Florida</p>
-            <p className="text-sm mb-4 text-gray-300">Local Business</p>
-            {/* Yellow phone */}
-            <p className="font-bold" style={{ color: "#ffea00" }}>305-967-1005</p>
+            <p className="font-poppins font-bold text-2xl mb-1 text-yellow-400">Oakland Park</p>
+            <p className="text-sm">Florida</p>
+            <p className="text-sm mb-4">Local Business</p>
+            <p className="text-yellow-400 font-bold">305-967-1005</p>
           </div>
         </div>
       </div>
