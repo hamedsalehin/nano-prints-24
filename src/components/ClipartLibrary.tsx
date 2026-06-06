@@ -87,7 +87,7 @@ export function ClipartLibrary({ onSelect }: ClipartLibraryProps) {
             placeholder="Search clipart..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-9 pr-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent transition-all"
+            className="w-full pl-9 pr-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-sm text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#ff2d78] focus:border-transparent transition-all"
           />
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
         </div>
@@ -101,7 +101,7 @@ export function ClipartLibrary({ onSelect }: ClipartLibraryProps) {
             onClick={() => setSelectedCategory(cat)}
             className={`px-3 py-1 text-xs font-semibold rounded-full whitespace-nowrap transition-all ${
               selectedCategory === cat
-                ? "bg-yellow-400 text-slate-950 shadow-sm"
+                ? "bg-[#ff2d78] text-slate-950 shadow-sm"
                 : "bg-slate-800 text-slate-300 hover:bg-slate-750"
             }`}
           >
@@ -120,9 +120,9 @@ export function ClipartLibrary({ onSelect }: ClipartLibraryProps) {
                 key={item.id}
                 onClick={() => onSelect(item)}
                 title={item.name}
-                className="aspect-square bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 hover:border-yellow-400/50 rounded-xl p-2.5 flex flex-col items-center justify-center gap-1.5 transition-all group hover:scale-[1.03] active:scale-[0.98]"
+                className="aspect-square bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 hover:border-[#ff2d78]/50 rounded-xl p-2.5 flex flex-col items-center justify-center gap-1.5 transition-all group hover:scale-[1.03] active:scale-[0.98]"
               >
-                <IconComponent className="w-7 h-7 text-slate-300 group-hover:text-yellow-400 transition-colors" />
+                <IconComponent className="w-7 h-7 text-slate-300 group-hover:text-[#ff2d78] transition-colors" />
                 <span className="text-[10px] text-slate-400 font-medium truncate max-w-full text-center group-hover:text-slate-200">
                   {item.name}
                 </span>

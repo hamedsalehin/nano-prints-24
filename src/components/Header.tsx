@@ -22,30 +22,30 @@ export function Header() {
 
   return (
     <header className="w-full">
-      {/* Top utility bar */}
-      <div className="bg-black text-white text-sm py-2">
+      {/* Top utility bar — deep dark with pink/cyan accents */}
+      <div className="bg-gray-950 text-white text-sm py-2">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-end gap-4 md:gap-6">
-          <a href="#" className="flex items-center gap-1.5 hover:text-yellow-400 transition-colors">
+          <a href="#" className="flex items-center gap-1.5 hover:text-[#00e5ff] transition-colors duration-200">
             <Package className="w-4 h-4" />
             <span className="hidden sm:inline">Order Status</span>
           </a>
-          <a href="mailto:nanosign1@gmail.com" className="flex items-center gap-1.5 hover:text-yellow-400 transition-colors">
+          <a href="mailto:nanosign1@gmail.com" className="flex items-center gap-1.5 hover:text-[#00e5ff] transition-colors duration-200">
             <MessageCircle className="w-4 h-4" />
             <span className="hidden sm:inline">nanosign1@gmail.com</span>
           </a>
-          <a href="#" className="flex items-center gap-1.5 hover:text-yellow-400 transition-colors">
+          <a href="#" className="flex items-center gap-1.5 hover:text-[#00e5ff] transition-colors duration-200">
             <HelpCircle className="w-4 h-4" />
             <span className="hidden sm:inline">Help Center</span>
           </a>
-          <a href="tel:305-967-1005" className="flex items-center gap-1.5 hover:text-yellow-400 transition-colors">
+          <a href="tel:305-967-1005" className="flex items-center gap-1.5 hover:text-[#00e5ff] transition-colors duration-200">
             <Phone className="w-4 h-4" />
             <span className="hidden sm:inline">305-967-1005</span>
           </a>
         </div>
       </div>
 
-      {/* Main header */}
-      <div className="bg-white border-b border-gray-200">
+      {/* Main header — white with pink/cyan search accents */}
+      <div className="bg-white border-b border-pink-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between gap-4">
             {/* Logo */}
@@ -65,12 +65,15 @@ export function Header() {
               <div className="relative w-full">
                 <input
                   type="text"
-                  placeholder="Search"
+                  placeholder="Search products..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+                  className="w-full px-4 py-2.5 border-2 border-gray-200 rounded-full focus:outline-none focus:border-[#ff2d78] transition-colors duration-200"
                 />
-                <button type="button" className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-yellow-500 transition-colors">
+                <button
+                  type="button"
+                  className="absolute right-0 top-0 h-full px-5 rounded-r-full text-white font-semibold text-sm brand-gradient hover:opacity-90 transition-opacity"
+                >
                   <Search className="w-5 h-5" />
                 </button>
               </div>
@@ -78,16 +81,19 @@ export function Header() {
 
             {/* Right side actions */}
             <div className="flex items-center gap-4">
-              <a href="#" className="hidden sm:flex items-center gap-2 text-gray-700 hover:text-yellow-500 transition-colors">
+              <a href="#" className="hidden sm:flex items-center gap-2 text-gray-700 hover:text-[#ff2d78] transition-colors duration-200">
                 <User className="w-5 h-5" />
                 <span className="text-sm font-medium">Sign In</span>
                 <ChevronDown className="w-4 h-4" />
               </a>
 
-              <a href="#" className="relative flex items-center gap-2 text-gray-700 hover:text-yellow-500 transition-colors">
+              <a href="#" className="relative flex items-center gap-2 text-gray-700 hover:text-[#ff2d78] transition-colors duration-200">
                 <div className="relative">
                   <ShoppingCart className="w-5 h-5" />
-                  <span className="absolute -top-2 -right-2 bg-yellow-400 text-black text-xs w-4 h-4 rounded-full flex items-center justify-center font-bold">
+                  <span
+                    className="absolute -top-2 -right-2 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center font-bold"
+                    style={{ background: "linear-gradient(135deg, #ff2d78, #00e5ff)" }}
+                  >
                     0
                   </span>
                 </div>
@@ -97,7 +103,7 @@ export function Header() {
               {/* Mobile menu button */}
               <button
                 type="button"
-                className="md:hidden p-2"
+                className="md:hidden p-2 text-gray-700 hover:text-[#ff2d78] transition-colors"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -110,25 +116,25 @@ export function Header() {
             <div className="relative">
               <input
                 type="text"
-                placeholder="Search"
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-transparent"
+                placeholder="Search products..."
+                className="w-full px-4 py-2.5 border-2 border-gray-200 rounded-full focus:outline-none focus:border-[#ff2d78] transition-colors"
               />
-              <button type="button" className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
+              <button type="button" className="absolute right-3 top-1/2 -translate-y-1/2 text-[#ff2d78]">
                 <Search className="w-5 h-5" />
               </button>
             </div>
           </div>
         </div>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:block bg-black w-full">
+        {/* Desktop Navigation — animated pink→purple→cyan gradient */}
+        <nav className="hidden md:block w-full brand-gradient-animated">
           <div className="w-full px-12 lg:px-28 xl:px-40">
             <ul className="flex w-full justify-between items-center">
               {navItems.map((item) => (
                 <li key={item.name} className="relative text-center flex-grow flex-shrink-0 basis-auto">
                   <Link
                     href={item.href}
-                    className="block w-full h-full relative px-5 py-2 font-semibold text-white hover:text-yellow-400 transition-colors duration-200 font-poppins text-[16px] lg:text-[17px] after:content-[''] after:absolute after:h-[3px] after:bg-yellow-400 after:bottom-0 after:left-0 after:w-full after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-200"
+                    className="block w-full h-full relative px-5 py-2.5 font-semibold text-white hover:text-[#00e5ff] transition-colors duration-200 font-poppins text-[16px] lg:text-[17px] after:content-[''] after:absolute after:h-[3px] after:bg-[#00e5ff] after:bottom-0 after:left-0 after:w-full after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-200"
                   >
                     {item.name}
                   </Link>
@@ -140,13 +146,13 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav className="md:hidden border-t bg-black">
+          <nav className="md:hidden border-t brand-gradient-animated">
             <ul className="py-2">
               {navItems.map((item) => (
                 <li key={item.name}>
                   <a
                     href={item.href}
-                    className="block px-4 py-3 text-sm font-medium text-white hover:bg-gray-900 hover:text-yellow-400 transition-colors"
+                    className="block px-4 py-3 text-sm font-medium text-white hover:text-[#00e5ff] hover:bg-white/10 transition-colors"
                   >
                     {item.name}
                   </a>
@@ -157,11 +163,14 @@ export function Header() {
         )}
       </div>
 
-      {/* Promo banner */}
-      <div className="bg-yellow-400 text-black py-2.5 text-center">
-        <p className="text-sm font-bold">
-          Custom Printing &amp; Signage - Fast Turnaround!{" "}
-          <a href="tel:305-967-1005" className="underline hover:no-underline">
+      {/* Promo banner — pink gradient with white text */}
+      <div
+        className="py-2.5 text-center"
+        style={{ background: "linear-gradient(90deg, #ff2d78 0%, #b020ff 50%, #00e5ff 100%)" }}
+      >
+        <p className="text-sm font-bold text-white tracking-wide">
+          ✨ Custom Printing &amp; Signage — Fast Turnaround!{" "}
+          <a href="tel:305-967-1005" className="underline hover:no-underline hover:text-[#00e5ff] transition-colors">
             Call 305-967-1005
           </a>
         </p>

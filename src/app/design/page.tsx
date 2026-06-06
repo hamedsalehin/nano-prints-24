@@ -393,7 +393,7 @@ function DesignPageContent() {
           </Link>
           <div className="h-4 w-px bg-slate-800" />
           <div className="flex items-center gap-2">
-            <span className="text-yellow-400 font-extrabold font-poppins text-lg tracking-wider">NANO</span>
+            <span className="text-[#ff2d78] font-extrabold font-poppins text-lg tracking-wider">NANO</span>
             <span className="font-semibold text-slate-200 text-sm bg-slate-800 px-2 py-0.5 rounded uppercase tracking-wide">Design Studio</span>
           </div>
         </div>
@@ -421,14 +421,14 @@ function DesignPageContent() {
 
           <button
             onClick={() => setShowGrid(!showGrid)}
-            className={`p-2 rounded-lg transition-colors ${showGrid ? "bg-yellow-400 text-slate-950 font-bold" : "text-slate-350 hover:bg-slate-800"}`}
+            className={`p-2 rounded-lg transition-colors ${showGrid ? "bg-[#ff2d78] text-slate-950 font-bold" : "text-slate-350 hover:bg-slate-800"}`}
             title="Toggle Grid"
           >
             <Grid className="w-4 h-4" />
           </button>
           <button
             onClick={() => setSnapToGrid(!snapToGrid)}
-            className={`p-2 rounded-lg transition-all text-xs font-bold ${snapToGrid ? "bg-slate-800 text-yellow-400 border border-yellow-400/40" : "text-slate-400 hover:bg-slate-800 border border-transparent"}`}
+            className={`p-2 rounded-lg transition-all text-xs font-bold ${snapToGrid ? "bg-slate-800 text-[#ff2d78] border border-[#ff2d78]/40" : "text-slate-400 hover:bg-slate-800 border border-transparent"}`}
             title="Snap to Grid (5% increments)"
           >
             Snap
@@ -473,14 +473,14 @@ function DesignPageContent() {
         <div className="flex items-center gap-3">
           <div className="text-right hidden md:block">
             <span className="text-xs text-slate-400">Estimated Total:</span>
-            <div className="text-base font-bold text-yellow-400">${calculatedPrice.total}</div>
+            <div className="text-base font-bold text-[#ff2d78]">${calculatedPrice.total}</div>
           </div>
           <button
             onClick={() => {
               setCheckoutStep("review");
               setIsCheckoutOpen(true);
             }}
-            className="bg-yellow-400 hover:bg-yellow-500 text-slate-950 font-bold px-6 py-2.5 rounded-xl shadow-lg hover:shadow-yellow-400/10 flex items-center gap-2 transition-all active:scale-[0.98]"
+            className="bg-[#ff2d78] hover:opacity-90 text-slate-950 font-bold px-6 py-2.5 rounded-xl shadow-lg hover:shadow-pink-500\/20 flex items-center gap-2 transition-all active:scale-[0.98]"
           >
             <ShoppingCart className="w-4 h-4" />
             Checkout Design
@@ -510,7 +510,7 @@ function DesignPageContent() {
                   onClick={() => setActiveTab(tab)}
                   className={`py-3 flex flex-col items-center justify-center border-b-2 transition-all ${
                     activeTab === tab
-                      ? "border-yellow-400 text-yellow-400 bg-slate-800/40"
+                      ? "border-[#ff2d78] text-[#ff2d78] bg-slate-800/40"
                       : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-850/20"
                   }`}
                   title={tab.charAt(0).toUpperCase() + tab.slice(1)}
@@ -532,13 +532,13 @@ function DesignPageContent() {
                     <button
                       key={tmpl.id}
                       onClick={() => loadTemplate(tmpl)}
-                      className="w-full text-left bg-slate-800/80 hover:bg-slate-750 border border-slate-700 hover:border-yellow-400/45 rounded-xl p-3.5 flex items-center justify-between transition-all group shadow-sm hover:translate-x-0.5"
+                      className="w-full text-left bg-slate-800/80 hover:bg-slate-750 border border-slate-700 hover:border-[#ff2d78]/45 rounded-xl p-3.5 flex items-center justify-between transition-all group shadow-sm hover:translate-x-0.5"
                     >
                       <div>
-                        <div className="font-bold text-slate-200 group-hover:text-yellow-400 transition-colors text-sm">{tmpl.name}</div>
+                        <div className="font-bold text-slate-200 group-hover:text-[#ff2d78] transition-colors text-sm">{tmpl.name}</div>
                         <div className="text-[10px] text-slate-400 mt-1">{tmpl.elements.length} layout elements</div>
                       </div>
-                      <ChevronRight className="w-4 h-4 text-slate-500 group-hover:text-yellow-400 transition-colors" />
+                      <ChevronRight className="w-4 h-4 text-slate-500 group-hover:text-[#ff2d78] transition-colors" />
                     </button>
                   ))}
                 </div>
@@ -551,7 +551,7 @@ function DesignPageContent() {
                 <p className="text-xs text-slate-450 leading-relaxed">Add high-contrast typography elements to ensure signs are legible from distance.</p>
                 <button
                   onClick={addTextElement}
-                  className="w-full bg-slate-800 hover:bg-slate-750 border-2 border-dashed border-slate-700 hover:border-yellow-400 text-yellow-400 font-bold py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 transition-all active:scale-[0.98]"
+                  className="w-full bg-slate-800 hover:bg-slate-750 border-2 border-dashed border-slate-700 hover:border-[#ff2d78] text-[#ff2d78] font-bold py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 transition-all active:scale-[0.98]"
                 >
                   <Type className="w-5 h-5" />
                   Add Custom Text Line
@@ -573,7 +573,7 @@ function DesignPageContent() {
                     <button
                       key={sh.type}
                       onClick={() => addShapeElement(sh.type)}
-                      className="bg-slate-800 hover:bg-slate-700/80 border border-slate-700 hover:border-yellow-400/40 rounded-xl p-3 flex flex-col items-center justify-center gap-2 text-slate-200 transition-all hover:scale-[1.02] active:scale-[0.97]"
+                      className="bg-slate-800 hover:bg-slate-700/80 border border-slate-700 hover:border-[#ff2d78]/40 rounded-xl p-3 flex flex-col items-center justify-center gap-2 text-slate-200 transition-all hover:scale-[1.02] active:scale-[0.97]"
                     >
                       {sh.icon}
                       <span className="text-xs font-semibold">{sh.label}</span>
@@ -597,7 +597,7 @@ function DesignPageContent() {
                 <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider">Upload Assets</h3>
                 <div
                   onClick={() => fileInputRef.current?.click()}
-                  className="border-2 border-dashed border-slate-700 hover:border-yellow-400 rounded-xl p-6 text-center cursor-pointer bg-slate-800/40 hover:bg-slate-800/85 transition-all group"
+                  className="border-2 border-dashed border-slate-700 hover:border-[#ff2d78] rounded-xl p-6 text-center cursor-pointer bg-slate-800/40 hover:bg-slate-800/85 transition-all group"
                 >
                   <input
                     ref={fileInputRef}
@@ -606,12 +606,12 @@ function DesignPageContent() {
                     onChange={handleImageUpload}
                     className="hidden"
                   />
-                  <ImageIcon className="w-8 h-8 text-slate-500 group-hover:text-yellow-400 mx-auto mb-2 transition-colors" />
+                  <ImageIcon className="w-8 h-8 text-slate-500 group-hover:text-[#ff2d78] mx-auto mb-2 transition-colors" />
                   <span className="block text-sm font-bold text-slate-350 group-hover:text-slate-200">Select Logo or Artwork</span>
                   <span className="block text-[10px] text-slate-500 mt-1">Supports PNG, JPG, SVG up to 10MB</span>
                 </div>
                 <div className="bg-slate-950/45 p-3 rounded-lg border border-slate-800">
-                  <h4 className="text-[11px] font-bold text-yellow-400 flex items-center gap-1 mb-1">
+                  <h4 className="text-[11px] font-bold text-[#ff2d78] flex items-center gap-1 mb-1">
                     <ShieldCheck className="w-3.5 h-3.5" /> High-Resolution Printing
                   </h4>
                   <p className="text-[10px] text-slate-400 leading-normal">
@@ -635,7 +635,7 @@ function DesignPageContent() {
                           historyPush(elements);
                         }}
                         className={`w-full aspect-square rounded-lg border border-slate-700 relative flex items-center justify-center transition-transform hover:scale-105 ${
-                          bgColor === c.value && !bgGradient ? "ring-2 ring-yellow-400" : ""
+                          bgColor === c.value && !bgGradient ? "ring-2 ring-[#ff2d78]" : ""
                         }`}
                         style={{ backgroundColor: c.value }}
                         title={c.name}
@@ -659,7 +659,7 @@ function DesignPageContent() {
                           historyPush(elements);
                         }}
                         className={`h-10 rounded-lg border border-slate-700 relative text-left p-2 flex items-center justify-between transition-all hover:border-slate-500 overflow-hidden ${
-                          bgGradient === g.value ? "ring-2 ring-yellow-400 font-bold" : ""
+                          bgGradient === g.value ? "ring-2 ring-[#ff2d78] font-bold" : ""
                         }`}
                         style={{ background: g.value || "rgb(30, 41, 59)" }}
                       >
@@ -716,7 +716,7 @@ function DesignPageContent() {
             {selectedEl ? (
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-bold text-yellow-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <span className="text-xs font-bold text-[#ff2d78] uppercase tracking-wider flex items-center gap-1.5">
                     <Sparkles className="w-3.5 h-3.5" />
                     Modify {selectedEl.type}
                   </span>
@@ -764,7 +764,7 @@ function DesignPageContent() {
                         value={selectedEl.content || ""}
                         onChange={(e) => updateSelectedElement({ content: e.target.value })}
                         onBlur={commitPropertyChange}
-                        className="w-full bg-slate-800 border border-slate-700 rounded-lg p-2 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                        className="w-full bg-slate-800 border border-slate-700 rounded-lg p-2 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#ff2d78]"
                         rows={3}
                       />
                     </div>
@@ -779,7 +779,7 @@ function DesignPageContent() {
                             updateSelectedElement({ fontFamily: e.target.value });
                             commitPropertyChange();
                           }}
-                          className="w-full bg-slate-800 border border-slate-700 rounded-lg p-2 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                          className="w-full bg-slate-800 border border-slate-700 rounded-lg p-2 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#ff2d78]"
                         >
                           {FONTS.map((font) => (
                             <option key={font} value={font}>{font}</option>
@@ -793,7 +793,7 @@ function DesignPageContent() {
                           value={selectedEl.fontSize || 24}
                           onChange={(e) => updateSelectedElement({ fontSize: Math.max(8, parseInt(e.target.value) || 12) })}
                           onBlur={commitPropertyChange}
-                          className="w-full bg-slate-800 border border-slate-700 rounded-lg p-2 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                          className="w-full bg-slate-800 border border-slate-700 rounded-lg p-2 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#ff2d78]"
                         />
                       </div>
                     </div>
@@ -808,7 +808,7 @@ function DesignPageContent() {
                             commitPropertyChange();
                           }}
                           className={`flex-1 py-1.5 text-xs font-bold rounded-lg border transition-all ${
-                            selectedEl.bold ? "bg-yellow-400 border-yellow-400 text-slate-950" : "bg-slate-850 border-slate-700 text-slate-350 hover:bg-slate-800"
+                            selectedEl.bold ? "bg-[#ff2d78] border-[#ff2d78] text-slate-950" : "bg-slate-850 border-slate-700 text-slate-350 hover:bg-slate-800"
                           }`}
                         >
                           B
@@ -819,7 +819,7 @@ function DesignPageContent() {
                             commitPropertyChange();
                           }}
                           className={`flex-1 py-1.5 text-xs italic rounded-lg border transition-all ${
-                            selectedEl.italic ? "bg-yellow-400 border-yellow-400 text-slate-950" : "bg-slate-850 border-slate-700 text-slate-350 hover:bg-slate-800"
+                            selectedEl.italic ? "bg-[#ff2d78] border-[#ff2d78] text-slate-950" : "bg-slate-850 border-slate-700 text-slate-350 hover:bg-slate-800"
                           }`}
                         >
                           I
@@ -830,7 +830,7 @@ function DesignPageContent() {
                             commitPropertyChange();
                           }}
                           className={`flex-1 py-1.5 text-xs underline rounded-lg border transition-all ${
-                            selectedEl.underline ? "bg-yellow-400 border-yellow-400 text-slate-950" : "bg-slate-850 border-slate-700 text-slate-350 hover:bg-slate-800"
+                            selectedEl.underline ? "bg-[#ff2d78] border-[#ff2d78] text-slate-950" : "bg-slate-850 border-slate-700 text-slate-350 hover:bg-slate-800"
                           }`}
                         >
                           U
@@ -850,7 +850,7 @@ function DesignPageContent() {
                               commitPropertyChange();
                             }}
                             className={`py-1.5 rounded flex items-center justify-center transition-all ${
-                              selectedEl.align === al ? "bg-slate-800 text-yellow-400" : "text-slate-400 hover:text-slate-200"
+                              selectedEl.align === al ? "bg-slate-800 text-[#ff2d78]" : "text-slate-400 hover:text-slate-200"
                             }`}
                           >
                             <AlignCenter className="w-3.5 h-3.5" />
@@ -970,7 +970,7 @@ function DesignPageContent() {
                         </div>
                       )}
                       {selectedEl.resolutionQuality === "good" && (
-                        <div className="text-yellow-400 font-bold flex items-center gap-1">
+                        <div className="text-[#ff2d78] font-bold flex items-center gap-1">
                           <ShieldCheck className="w-3.5 h-3.5" /> Good Quality
                         </div>
                       )}
@@ -1031,7 +1031,7 @@ function DesignPageContent() {
                         const found = BOARD_SIZES.find((s) => s.label === e.target.value);
                         if (found) setCanvasSize(found);
                       }}
-                      className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                      className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#ff2d78]"
                     >
                       {BOARD_SIZES.map((sz) => (
                         <option key={sz.label} value={sz.label}>
@@ -1051,7 +1051,7 @@ function DesignPageContent() {
                       const found = availableMaterials.find((m) => m.value === e.target.value);
                       if (found) setMaterial(found);
                     }}
-                    className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                    className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#ff2d78]"
                   >
                     {availableMaterials.map((m) => (
                       <option key={m.value} value={m.value}>{m.label}</option>
@@ -1068,7 +1068,7 @@ function DesignPageContent() {
                   </div>
                   <button
                     onClick={() => setDoubleSided(!doubleSided)}
-                    className={`w-11 h-6 rounded-full relative transition-colors ${doubleSided ? "bg-yellow-400" : "bg-slate-700"}`}
+                    className={`w-11 h-6 rounded-full relative transition-colors ${doubleSided ? "bg-[#ff2d78]" : "bg-slate-700"}`}
                   >
                     <div className={`w-4 h-4 bg-slate-950 rounded-full absolute top-1 transition-transform ${doubleSided ? "left-6" : "left-1"}`} />
                   </button>
@@ -1125,7 +1125,7 @@ function DesignPageContent() {
                 <div className="h-px bg-slate-800 my-1" />
                 <div className="flex justify-between items-baseline">
                   <span className="text-xs font-bold text-slate-350">Final Subtotal:</span>
-                  <span className="text-xl font-bold text-yellow-400">${calculatedPrice.total}</span>
+                  <span className="text-xl font-bold text-[#ff2d78]">${calculatedPrice.total}</span>
                 </div>
               </div>
 
@@ -1135,7 +1135,7 @@ function DesignPageContent() {
                   setCheckoutStep("review");
                   setIsCheckoutOpen(true);
                 }}
-                className="w-full bg-yellow-400 hover:bg-yellow-500 text-slate-950 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all active:scale-[0.98] shadow-lg hover:shadow-yellow-400/5"
+                className="w-full bg-[#ff2d78] hover:opacity-90 text-slate-950 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all active:scale-[0.98] shadow-lg hover:shadow-pink-500\/10"
               >
                 Proceed to Checkout
               </button>
@@ -1262,11 +1262,11 @@ function DesignPageContent() {
                   <div className="pt-2">
                     <div className="flex justify-between text-sm mb-1.5">
                       <span className="text-slate-400">Total Price:</span>
-                      <span className="font-bold text-yellow-400">${calculatedPrice.total}</span>
+                      <span className="font-bold text-[#ff2d78]">${calculatedPrice.total}</span>
                     </div>
                     <button
                       onClick={() => setCheckoutStep("shipping")}
-                      className="w-full bg-yellow-400 hover:bg-yellow-500 text-slate-950 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wide transition-all shadow-md"
+                      className="w-full bg-[#ff2d78] hover:opacity-90 text-slate-950 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wide transition-all shadow-md"
                     >
                       Submit To Printing
                     </button>
@@ -1301,7 +1301,7 @@ function DesignPageContent() {
                   <div className="pt-4 border-t border-slate-800">
                     <button
                       onClick={() => setCheckoutStep("success")}
-                      className="w-full bg-yellow-400 hover:bg-yellow-500 text-slate-950 font-bold py-3 rounded-xl text-xs uppercase tracking-wide transition-all shadow-md"
+                      className="w-full bg-[#ff2d78] hover:opacity-90 text-slate-950 font-bold py-3 rounded-xl text-xs uppercase tracking-wide transition-all shadow-md"
                     >
                       Place Order
                     </button>
@@ -1329,7 +1329,7 @@ function DesignPageContent() {
 
                   <div className="bg-slate-950/60 p-4 rounded-xl border border-slate-800 text-left text-xs">
                     <div className="flex justify-between mb-1.5"><span className="text-slate-400">Order ID:</span><span className="font-mono text-slate-200">#NS-9048-26</span></div>
-                    <div className="flex justify-between"><span className="text-slate-400">Expected Delivery:</span><span className="font-semibold text-yellow-400">Next Business Day</span></div>
+                    <div className="flex justify-between"><span className="text-slate-400">Expected Delivery:</span><span className="font-semibold text-[#ff2d78]">Next Business Day</span></div>
                   </div>
 
                   <button

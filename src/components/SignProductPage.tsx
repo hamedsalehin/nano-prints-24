@@ -58,7 +58,7 @@ function StarRating({ rating }: { rating: number }) {
   return (
     <div className="flex gap-0.5">
       {[1,2,3,4,5].map(s => (
-        <Star key={s} className={`w-4 h-4 ${s <= rating ? "fill-yellow-400 text-yellow-400" : "text-gray-300"}`} />
+        <Star key={s} className={`w-4 h-4 ${s <= rating ? "fill-[#ff2d78] text-[#ff2d78]" : "text-gray-300"}`} />
       ))}
     </div>
   );
@@ -240,16 +240,16 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
       {/* Breadcrumb */}
       <div className="bg-gray-50 border-b text-sm">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center gap-2 text-gray-500">
-          <Link href="/" className="hover:text-yellow-600">Home</Link>
+          <Link href="/" className="hover:text-[#ff2d78] transition-colors">Home</Link>
           <span>/</span>
-          <Link href={cfg.breadcrumbHref} className="hover:text-yellow-600">{cfg.breadcrumb}</Link>
+          <Link href={cfg.breadcrumbHref} className="hover:text-[#ff2d78] transition-colors">{cfg.breadcrumb}</Link>
           <span>/</span>
           <span className="text-gray-900 font-medium">{cfg.title}</span>
         </div>
       </div>
 
       {/* Promo */}
-      <div className="bg-yellow-400 text-black text-center py-2 text-sm font-bold tracking-wide">
+      <div className="text-white text-center py-2 text-sm font-bold tracking-wide" style={{ background: "linear-gradient(90deg, #ff2d78, #b020ff, #00e5ff)" }}>
         {cfg.promoText}
       </div>
 
@@ -373,7 +373,7 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
 
             <div className="flex gap-3 mb-8">
               {[1,2,3,4].map(i => (
-                <div key={i} className="w-16 h-16 rounded-lg border-2 border-gray-100 hover:border-yellow-400 cursor-pointer p-1 bg-gray-50 transition-colors">
+                <div key={i} className="w-16 h-16 rounded-lg border-2 border-gray-100 hover:border-[#ff2d78] cursor-pointer p-1 bg-gray-50 transition-colors">
                   <Image src={cfg.image} alt="" width={64} height={64} className="w-full h-full object-contain" />
                 </div>
               ))}
@@ -393,10 +393,10 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
             {/* Trust badges */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
               {[
-                { icon: <Truck className="w-5 h-5 text-yellow-500" />, t: "Next Day Ship", s: "Order by 5 PM" },
-                { icon: <ShieldCheck className="w-5 h-5 text-yellow-500" />, t: "100% Guarantee", s: "Love it or reprint" },
-                { icon: <CheckCircle2 className="w-5 h-5 text-yellow-500" />, t: "Free Proof", s: "Before we print" },
-                { icon: <Star className="w-5 h-5 text-yellow-500" />, t: "Top Rated", s: cfg.ratingScore + " stars" },
+                { icon: <Truck className="w-5 h-5 text-[#ff2d78]" />, t: "Next Day Ship", s: "Order by 5 PM" },
+                { icon: <ShieldCheck className="w-5 h-5 text-[#00e5ff]" />, t: "100% Guarantee", s: "Love it or reprint" },
+                { icon: <CheckCircle2 className="w-5 h-5 text-[#ff2d78]" />, t: "Free Proof", s: "Before we print" },
+                { icon: <Star className="w-5 h-5 text-[#00e5ff]" />, t: "Top Rated", s: cfg.ratingScore + " stars" },
               ].map(b => (
                 <div key={b.t} className="flex items-center gap-3 bg-gray-50 rounded-xl p-3">
                   {b.icon}
@@ -410,7 +410,7 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
               <div className="flex overflow-x-auto">
                 {["overview","specs","faqs","reviews"].map(tab => (
                   <button key={tab} onClick={() => setActiveTab(tab)}
-                    className={`px-5 py-3 text-sm font-bold capitalize whitespace-nowrap border-b-2 -mb-px transition-colors ${activeTab === tab ? "border-yellow-400 text-yellow-600" : "border-transparent text-gray-500 hover:text-gray-800"}`}>
+                    className={`px-5 py-3 text-sm font-bold capitalize whitespace-nowrap border-b-2 -mb-px transition-colors ${activeTab === tab ? "border-[#ff2d78] text-[#ff2d78]" : "border-transparent text-gray-500 hover:text-gray-800"}`}>
                     {tab === "faqs" ? "FAQs" : tab.charAt(0).toUpperCase() + tab.slice(1)}
                   </button>
                 ))}
@@ -430,12 +430,12 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
                     <ul className="space-y-2">
                       {cfg.keyFeatures.map(f => (
                         <li key={f} className="flex items-center gap-2 text-sm text-gray-600">
-                          <CheckCircle2 className="w-4 h-4 text-yellow-500 shrink-0" />{f}
+                          <CheckCircle2 className="w-4 h-4 text-[#ff2d78] shrink-0" />{f}
                         </li>
                       ))}
                     </ul>
                   </div>
-                  <div className="bg-yellow-50 rounded-xl p-5">
+                  <div className="rounded-xl p-5" style={{ background: "linear-gradient(135deg, rgba(255,45,120,0.06), rgba(0,229,255,0.06))" }}>
                     <h3 className="font-bold mb-3">Great For</h3>
                     <div className="flex flex-wrap gap-2">
                       {cfg.useCases.map(t => (
@@ -511,7 +511,7 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
                   <label className="block text-sm font-bold mb-2">Size</label>
                   <div className="relative">
                     <select value={selectedSize.value} onChange={e => setSelectedSize(cfg.sizes.find(s => s.value === e.target.value)!)}
-                      className="w-full appearance-none bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 cursor-pointer font-semibold">
+                      className="w-full appearance-none bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-[#ff2d78] cursor-pointer font-semibold">
                       {cfg.sizes.map(s => <option key={s.value} value={s.value}>{s.label}</option>)}
                     </select>
                     <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
@@ -529,7 +529,7 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
                           const found = sel.options.find(o => o.value === e.target.value);
                           if (found) setSelectValues(prev => ({ ...prev, [sel.label]: found }));
                         }}
-                        className="w-full appearance-none bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 cursor-pointer font-semibold">
+                        className="w-full appearance-none bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-[#ff2d78] cursor-pointer font-semibold">
                         {sel.options.map(o => <option key={o.value} value={o.value}>{o.label}{o.priceAdder > 0 ? ` (+$${o.priceAdder.toFixed(2)})` : ""}</option>)}
                       </select>
                       <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
@@ -549,7 +549,7 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
                     <div className="grid grid-cols-2 gap-2">
                       {grp.options.map(o => (
                         <button key={o.id} onClick={() => setToggleValues(prev => ({ ...prev, [grp.label]: o }))}
-                          className={`p-3 text-left rounded-xl border-2 transition-all duration-200 ${toggleValues[grp.label]?.id === o.id ? "border-yellow-400 bg-yellow-50" : "border-gray-200 hover:border-gray-300 bg-white"}`}>
+                          className={`p-3 text-left rounded-xl border-2 transition-all duration-200 ${toggleValues[grp.label]?.id === o.id ? "border-[#ff2d78] bg-pink-50" : "border-gray-200 hover:border-gray-300 bg-white"}`}>
                           <span className="block text-xs font-bold text-gray-900">{o.label}</span>
                           {o.priceAdder > 0 && <span className="text-[10px] text-gray-500 font-semibold">+${o.priceAdder.toFixed(2)}</span>}
                           {o.description && <span className="block text-[10px] text-gray-400 mt-0.5 leading-normal">{o.description}</span>}
@@ -590,7 +590,7 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
               </div>
 
               <div className="space-y-3 mt-4">
-                <Link href={customizeUrl} className="w-full block text-center bg-yellow-400 hover:bg-yellow-500 active:scale-[0.98] text-black font-extrabold py-4 rounded-xl transition-all text-sm uppercase tracking-wider shadow-md font-poppins">
+                <Link href={customizeUrl} className="w-full block text-center active:scale-[0.98] text-white font-extrabold py-4 rounded-xl transition-all text-sm uppercase tracking-wider shadow-md font-poppins hover:opacity-90" style={{ background: "linear-gradient(135deg, #ff2d78, #b020ff, #00e5ff)", boxShadow: "0 0 20px rgba(255,45,120,0.4)" }}>
                   Customize & Upload Artwork
                 </Link>
                 <button className="w-full bg-black hover:bg-gray-900 active:scale-[0.98] text-white font-extrabold py-4 rounded-xl transition-all text-sm uppercase tracking-wider shadow-md font-poppins">
@@ -608,7 +608,7 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-4xl font-bold font-poppins mb-4">{cfg.ctaHeading}</h2>
           <p className="text-gray-400 text-lg mb-8">{cfg.ctaBody}</p>
-          <Link href={customizeUrl} className="inline-block bg-yellow-400 text-black font-bold px-10 py-4 rounded-full hover:bg-yellow-500 transition-all shadow-xl text-lg font-poppins">
+          <Link href={customizeUrl} className="inline-block text-white font-bold px-10 py-4 rounded-full hover:opacity-90 transition-all text-lg font-poppins" style={{ background: "linear-gradient(135deg, #ff2d78, #b020ff, #00e5ff)", boxShadow: "0 0 24px rgba(255,45,120,0.4)" }}>
             {cfg.ctaLabel}
           </Link>
         </div>

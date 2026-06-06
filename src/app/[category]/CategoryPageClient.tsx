@@ -68,7 +68,7 @@ export function CategoryPageClient({
         {/* Breadcrumb */}
         <div className="bg-white border-b">
           <div className="max-w-7xl mx-auto px-[20px] lg:px-[48px] 3xl:px-[96px] py-3 flex items-center gap-2 text-sm text-gray-500 font-['Open_Sans']">
-            <Link href="/" className="hover:text-yellow-650 transition-colors">Home</Link>
+            <Link href="/" className="hover:text-[#ff2d78] transition-colors">Home</Link>
             <span>/</span>
             <span className="font-semibold text-gray-900">{breadcrumbLabel}</span>
           </div>
@@ -110,7 +110,7 @@ export function CategoryPageClient({
                   {ctaProduct1 && (
                     <Link
                       href={ctaProduct1.href}
-                      className="flex-1 bg-yellow-400 hover:bg-yellow-500 text-black font-extrabold px-5 py-3.5 rounded-lg text-center transition-colors text-sm font-poppins shadow-md"
+                      className="flex-1 text-white font-extrabold px-5 py-3.5 rounded-lg text-center text-sm font-poppins shadow-md hover:opacity-90 transition-opacity" style={{ background: "linear-gradient(135deg, #ff2d78, #b020ff)" }}
                     >
                       {ctaProduct1.name}
                     </Link>
@@ -118,7 +118,7 @@ export function CategoryPageClient({
                   {ctaProduct2 && (
                     <Link
                       href={ctaProduct2.href}
-                      className="flex-1 border-2 border-yellow-500 hover:bg-yellow-50/50 text-yellow-600 font-extrabold px-5 py-3.5 rounded-lg text-center transition-colors text-sm font-poppins"
+                      className="flex-1 border-2 font-extrabold px-5 py-3.5 rounded-lg text-center transition-colors text-sm font-poppins" style={{ borderColor: "#00e5ff", color: "#00e5ff" }}
                     >
                       {ctaProduct2.name}
                     </Link>
@@ -138,7 +138,7 @@ export function CategoryPageClient({
               {ctaProduct1 && (
                 <Link
                   href={ctaProduct1.href}
-                  className="flex-1 bg-yellow-400 hover:bg-yellow-500 text-black font-bold px-4 py-3 rounded-lg text-center transition-colors text-sm font-poppins shadow"
+                  className="flex-1 text-white font-bold px-4 py-3 rounded-lg text-center text-sm font-poppins shadow hover:opacity-90 transition-opacity" style={{ background: "linear-gradient(135deg, #ff2d78, #b020ff)" }}
                 >
                   {ctaProduct1.name}
                 </Link>
@@ -146,7 +146,7 @@ export function CategoryPageClient({
               {ctaProduct2 && (
                 <Link
                   href={ctaProduct2.href}
-                  className="flex-1 border-2 border-yellow-500 hover:bg-yellow-50/30 text-yellow-600 font-bold px-4 py-3 rounded-lg text-center transition-colors text-sm font-poppins"
+                  className="flex-1 border-2 font-bold px-4 py-3 rounded-lg text-center transition-colors text-sm font-poppins" style={{ borderColor: "#00e5ff", color: "#00e5ff" }}
                 >
                   {ctaProduct2.name}
                 </Link>
@@ -171,7 +171,7 @@ export function CategoryPageClient({
                 className="flex flex-col items-center justify-start group text-center cursor-pointer"
               >
                 {/* Image Container with Yellow background on hover */}
-                <div className="relative w-full aspect-square p-[15px] bg-[#F6F6F6] rounded-xl transition-all duration-300 ease-in-out group-hover:bg-yellow-400 border border-gray-100 flex items-center justify-center overflow-hidden">
+                <div className="browse-item-hover relative w-full aspect-square p-[15px] rounded-xl transition-all duration-300 ease-in-out flex items-center justify-center overflow-hidden">
                   <img
                     alt={p.name}
                     src={p.image}
@@ -180,7 +180,7 @@ export function CategoryPageClient({
                 </div>
                 {/* Product Name */}
                 <div className="mt-3 flex items-center justify-center min-h-[40px]">
-                  <h3 className="text-base font-bold text-gray-900 leading-snug group-hover:text-yellow-600 transition-colors">
+                  <h3 className="text-base font-bold text-gray-900 leading-snug group-hover:text-[#ff2d78] transition-colors">
                     {p.name}
                   </h3>
                 </div>
@@ -266,7 +266,7 @@ export function CategoryPageClient({
                 {[1, 2, 3, 4, 5].map((star) => (
                   <svg
                     key={star}
-                    className="w-5 h-5 text-yellow-400 fill-current"
+                    className="w-5 h-5 text-[#ff2d78] fill-current"
                     viewBox="0 0 20 20"
                   >
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />

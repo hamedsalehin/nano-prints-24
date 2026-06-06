@@ -316,14 +316,14 @@ export function DesignCanvas({
     const handles = ["nw", "ne", "se", "sw", "n", "e", "s", "w"];
 
     return (
-      <div className="absolute inset-0 border-2 border-yellow-400 pointer-events-none select-none">
+      <div className="absolute inset-0 border-2 border-[#ff2d78] pointer-events-none select-none">
         {/* Rotation Handle */}
         <div
           className="absolute left-1/2 -top-9 -translate-x-1/2 flex flex-col items-center cursor-alias pointer-events-auto"
           onMouseDown={(e) => handleInteractionStart(e, "rotate")}
         >
-          <div className="w-0.5 h-5 bg-yellow-400" />
-          <div className="w-3.5 h-3.5 bg-yellow-400 hover:bg-yellow-300 rounded-full border-2 border-slate-900 shadow-md transition-colors" />
+          <div className="w-0.5 h-5 bg-[#ff2d78]" />
+          <div className="w-3.5 h-3.5 bg-[#ff2d78] hover:bg-yellow-300 rounded-full border-2 border-slate-900 shadow-md transition-colors" />
         </div>
 
         {/* Quick Toolbar overlay */}
@@ -429,7 +429,7 @@ export function DesignCanvas({
           return (
             <div
               key={h}
-              className={`absolute w-3 h-3 bg-white border-2 border-yellow-400 pointer-events-auto rounded-full shadow-md z-40 transition-transform hover:scale-125 ${posClass}`}
+              className={`absolute w-3 h-3 bg-white border-2 border-[#ff2d78] pointer-events-auto rounded-full shadow-md z-40 transition-transform hover:scale-125 ${posClass}`}
               onMouseDown={(e) => handleInteractionStart(e, "resize", h)}
             />
           );
