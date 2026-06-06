@@ -130,7 +130,7 @@ export function Header() {
 
         {/* Desktop Navigation — static cyan to pink gradient */}
         <nav className="hidden md:block w-full brand-gradient-static">
-          <div className="w-full px-4 lg:px-10 xl:px-16">
+          <div className="max-w-[1100px] mx-auto px-4">
             <ul className="flex w-full justify-between items-center">
               {navItems.map((item) => (
                 <li key={item.name} className="relative text-center flex-grow flex-shrink-0 basis-auto">
@@ -139,14 +139,14 @@ export function Header() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block w-full h-full relative px-2 py-2 font-bold text-white hover:text-[#00e5ff] transition-colors duration-200 font-poppins text-[13.5px] lg:text-[14.5px] xl:text-[15.5px] after:content-[''] after:absolute after:h-[3px] after:bg-[#00e5ff] after:bottom-0 after:left-0 after:w-full after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-200"
+                      className="block w-full h-full relative px-1.5 py-2 font-bold text-white hover:text-[#00e5ff] transition-colors duration-200 font-poppins text-[13px] lg:text-[14px] xl:text-[15.5px] after:content-[''] after:absolute after:h-[3px] after:bg-[#00e5ff] after:bottom-0 after:left-0 after:w-full after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-200"
                     >
                       {item.name}
                     </a>
                   ) : (
                     <Link
                       href={item.href}
-                      className="block w-full h-full relative px-2 py-2 font-bold text-white hover:text-[#00e5ff] transition-colors duration-200 font-poppins text-[13.5px] lg:text-[14.5px] xl:text-[15.5px] after:content-[''] after:absolute after:h-[3px] after:bg-[#00e5ff] after:bottom-0 after:left-0 after:w-full after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-200"
+                      className="block w-full h-full relative px-1.5 py-2 font-bold text-white hover:text-[#00e5ff] transition-colors duration-200 font-poppins text-[13px] lg:text-[14px] xl:text-[15.5px] after:content-[''] after:absolute after:h-[3px] after:bg-[#00e5ff] after:bottom-0 after:left-0 after:w-full after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-200"
                     >
                       {item.name}
                     </Link>
