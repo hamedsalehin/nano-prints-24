@@ -25,7 +25,7 @@ export function Header() {
   return (
     <header className="w-full">
       {/* Top utility bar — simple white */}
-      <div className="bg-white border-b border-gray-150 text-gray-500 text-sm py-2 font-medium">
+      <div className="bg-white border-b border-gray-150 text-gray-500 text-xs py-1.5 font-medium">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-end gap-4 md:gap-6">
           <a href="#" className="flex items-center gap-1.5 hover:text-[#ff2d78] transition-colors duration-200">
             <Package className="w-4 h-4" />
@@ -48,7 +48,7 @@ export function Header() {
 
       {/* Main header — white with pink/cyan search accents */}
       <div className="bg-white border-b border-pink-100 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-3">
+        <div className="max-w-7xl mx-auto px-4 pt-2.5 pb-2">
           <div className="flex items-center justify-between gap-4">
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
@@ -139,14 +139,14 @@ export function Header() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block w-full h-full relative px-2.5 py-2.5 font-semibold text-white hover:text-[#00e5ff] transition-colors duration-200 font-poppins text-[13px] lg:text-[14px] xl:text-[15px] after:content-[''] after:absolute after:h-[3px] after:bg-[#00e5ff] after:bottom-0 after:left-0 after:w-full after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-200"
+                      className="block w-full h-full relative px-2 py-2 font-bold text-white hover:text-[#00e5ff] transition-colors duration-200 font-poppins text-[13.5px] lg:text-[14.5px] xl:text-[15.5px] after:content-[''] after:absolute after:h-[3px] after:bg-[#00e5ff] after:bottom-0 after:left-0 after:w-full after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-200"
                     >
                       {item.name}
                     </a>
                   ) : (
                     <Link
                       href={item.href}
-                      className="block w-full h-full relative px-2.5 py-2.5 font-semibold text-white hover:text-[#00e5ff] transition-colors duration-200 font-poppins text-[13px] lg:text-[14px] xl:text-[15px] after:content-[''] after:absolute after:h-[3px] after:bg-[#00e5ff] after:bottom-0 after:left-0 after:w-full after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-200"
+                      className="block w-full h-full relative px-2 py-2 font-bold text-white hover:text-[#00e5ff] transition-colors duration-200 font-poppins text-[13.5px] lg:text-[14.5px] xl:text-[15.5px] after:content-[''] after:absolute after:h-[3px] after:bg-[#00e5ff] after:bottom-0 after:left-0 after:w-full after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-200"
                     >
                       {item.name}
                     </Link>
@@ -189,7 +189,7 @@ export function Header() {
 
       {/* Promo banner — white with pink text */}
       <div
-        className="py-2.5 text-center bg-white border-b border-pink-100"
+        className="py-1.5 text-center bg-white border-b border-pink-100"
       >
         <p className="text-sm font-bold text-[#ff2d78] tracking-wide">
           ✨ Custom Printing &amp; Signage — Fast Turnaround!{" "}
