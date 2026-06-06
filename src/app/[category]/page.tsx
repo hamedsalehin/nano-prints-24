@@ -41,6 +41,7 @@ export default async function CategoryPage({ params }: PageProps) {
         id: p.id,
         name: p.name,
         image: p.image,
+        hoverImage: p.hoverImage,
       }))}
       categoryDescriptionText={categoryData.categoryDescriptionText}
       categorySecondaryImage={categoryData.categorySecondaryImage}

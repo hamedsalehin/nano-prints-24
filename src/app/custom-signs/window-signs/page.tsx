@@ -9,7 +9,7 @@ export default function WindowSignsPage() {
       breadcrumb: "Signs",
       breadcrumbHref: "/custom-signs",
       promoText: "🪟 Window Signs That Turn Passersby Into Customers — Ships Next Day!",
-      image: "https://ext.same-assets.com/1114826555/2442714004.png",
+      image: "/images/products/wind_sign_std.png",
       ratingScore: "4.8",
       ratingCount: "1,940",
       sizes: [

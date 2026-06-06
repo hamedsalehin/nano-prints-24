@@ -5,6 +5,7 @@ export interface RegistryProduct {
   name: string;
   description: string;
   image: string;
+  hoverImage?: string;
   price: string;
   badge?: string;
   config: ProductPageConfig;
@@ -3016,7 +3017,8 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         id: "yard-signs",
         name: "Yard Signs",
         description: "Corrugated plastic signs perfect for lawns, events, and political campaigns.",
-        image: "https://ext.same-assets.com/1114826555/1445363370.png",
+        image: "/images/products/yard_sign_std.svg",
+        hoverImage: "/images/products/yard_sign_hover.png",
         price: "Starting at $3.99",
         badge: "Best Seller",
         config: {
@@ -3025,7 +3027,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
           promoText: "25% OFF Yard Signs + Free Shipping",
-          image: "https://ext.same-assets.com/1114826555/1445363370.png",
+          image: "/images/products/yard_sign_std.png",
           ratingScore: "4.9",
           ratingCount: "8,420",
           sizes: [
@@ -3060,7 +3062,8 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         id: "real-estate-signs",
         name: "Real Estate Signs",
         description: "Professional aluminum and coroplast signs for property listings.",
-        image: "https://ext.same-assets.com/1114826555/3882498341.png",
+        image: "/images/products/re_sign_std.svg",
+        hoverImage: "/images/products/re_sign_hover.png",
         price: "Starting at $12.99",
         badge: "Most Popular",
         config: {
@@ -3069,7 +3072,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
           promoText: "FREE SHIPPING on Real Estate Sign Orders",
-          image: "https://ext.same-assets.com/1114826555/3882498341.png",
+          image: "/images/products/re_sign_std.png",
           ratingScore: "4.9",
           ratingCount: "3,200",
           sizes: [
@@ -3103,7 +3106,8 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         id: "aluminum-signs",
         name: "Aluminum Signs",
         description: "Durable rust-proof aluminum signs for indoor and outdoor use.",
-        image: "https://ext.same-assets.com/1114826555/1445363370.png",
+        image: "/images/products/alum_sign_std.svg",
+        hoverImage: "/images/products/alum_sign_hover.png",
         price: "Starting at $8.99",
         badge: "Heavy Duty",
         config: {
@@ -3112,7 +3116,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
           promoText: "20% OFF Aluminum Signs",
-          image: "https://ext.same-assets.com/1114826555/1445363370.png",
+          image: "/images/products/alum_sign_std.png",
           ratingScore: "4.8",
           ratingCount: "1,450",
           sizes: [
@@ -3139,7 +3143,8 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         id: "a-frame-signs",
         name: "A-Frame Signs",
         description: "Portable sandwich board signs ideal for sidewalk and event advertising.",
-        image: "https://ext.same-assets.com/1114826555/2283645032.png",
+        image: "/images/products/aframe_sign_std.svg",
+        hoverImage: "/images/products/aframe_sign_hover.png",
         price: "Starting at $89.99",
         badge: "Eye-Catching",
         config: {
@@ -3148,7 +3153,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
           promoText: "FREE SHIPPING on A-Frame Signs",
-          image: "https://ext.same-assets.com/1114826555/2283645032.png",
+          image: "/images/products/aframe_sign_std.png",
           ratingScore: "4.7",
           ratingCount: "620",
           sizes: [
@@ -3173,7 +3178,8 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         id: "foam-board-signs",
         name: "Foam Board Signs",
         description: "Lightweight, professional indoor display signs for presentations and lobbies.",
-        image: "https://ext.same-assets.com/1114826555/3799598245.png",
+        image: "/images/products/foam_sign_std.svg",
+        hoverImage: "/images/products/foam_sign_hover.png",
         price: "Starting at $14.99",
         badge: "Indoor Favorite",
         config: {
@@ -3182,7 +3188,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
           promoText: "25% OFF Foam Board Signs",
-          image: "https://ext.same-assets.com/1114826555/3799598245.png",
+          image: "/images/products/foam_sign_std.png",
           ratingScore: "4.8",
           ratingCount: "890",
           sizes: [
@@ -3208,7 +3214,8 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         id: "acrylic-signs",
         name: "Acrylic Signs",
         description: "Premium clear or colored acrylic for a polished, modern look.",
-        image: "https://ext.same-assets.com/1114826555/898075086.png",
+        image: "/images/products/acryl_sign_std.svg",
+        hoverImage: "/images/products/acryl_sign_hover.png",
         price: "Starting at $24.99",
         badge: "Premium",
         config: {
@@ -3217,7 +3224,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
           promoText: "NEW - Premium Acrylic Signs Now Available",
-          image: "https://ext.same-assets.com/1114826555/898075086.png",
+          image: "/images/products/acryl_sign_std.png",
           ratingScore: "4.9",
           ratingCount: "540",
           sizes: [
@@ -3243,7 +3250,8 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         id: "coroplast-signs",
         name: "Coroplast Signs",
         description: "Waterproof corrugated plastic signs — the most versatile outdoor sign.",
-        image: "https://ext.same-assets.com/1114826555/2401743055.png",
+        image: "/images/products/coro_sign_std.svg",
+        hoverImage: "/images/products/coro_sign_hover.png",
         price: "Starting at $4.99",
         badge: "Waterproof",
         config: {
@@ -3252,7 +3260,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
           promoText: "BULK DISCOUNTS on Coroplast Signs",
-          image: "https://ext.same-assets.com/1114826555/2401743055.png",
+          image: "/images/products/coro_sign_std.png",
           ratingScore: "4.8",
           ratingCount: "2,100",
           sizes: [
@@ -3279,7 +3287,8 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         id: "window-signs",
         name: "Window Signs",
         description: "Custom window clings, decals and perforated vinyl for storefronts.",
-        image: "https://ext.same-assets.com/1114826555/2442714004.png",
+        image: "/images/products/wind_sign_std.svg",
+        hoverImage: "/images/products/wind_sign_hover.png",
         price: "Starting at $9.99",
         badge: "Storefront",
         config: {
@@ -3288,7 +3297,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
           promoText: "20% OFF Window Signs",
-          image: "https://ext.same-assets.com/1114826555/2442714004.png",
+          image: "/images/products/wind_sign_std.png",
           ratingScore: "4.8",
           ratingCount: "760",
           sizes: [
@@ -3314,7 +3323,8 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         id: "parking-signs",
         name: "Parking Signs",
         description: "Regulatory and custom parking signs — aluminum or coroplast.",
-        image: "https://ext.same-assets.com/1114826555/1286398033.png",
+        image: "/images/products/park_sign_std.svg",
+        hoverImage: "/images/products/park_sign_hover.png",
         price: "Starting at $6.99",
         badge: "Ready to Ship",
         config: {
@@ -3323,7 +3333,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
           promoText: "FREE SHIPPING on Parking Signs",
-          image: "https://ext.same-assets.com/1114826555/1286398033.png",
+          image: "/images/products/park_sign_std.png",
           ratingScore: "4.7",
           ratingCount: "430",
           sizes: [

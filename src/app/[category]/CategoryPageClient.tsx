@@ -10,6 +10,7 @@ interface ProductItem {
   id: string;
   name: string;
   image: string;
+  hoverImage?: string;
 }
 
 interface FaqItem {
@@ -171,12 +172,25 @@ export function CategoryPageClient({
                 className="flex flex-col items-center justify-start group text-center cursor-pointer"
               >
                 {/* Image Container with Yellow background on hover */}
-                <div className="browse-item-hover relative w-full aspect-square p-[15px] rounded-xl transition-all duration-300 ease-in-out flex items-center justify-center overflow-hidden">
-                  <img
-                    alt={p.name}
-                    src={p.image}
-                    className="max-h-full max-w-full object-contain transition-transform duration-300 ease-in-out group-hover:scale-105"
-                  />
+                <div className="browse-item-hover relative w-full aspect-square rounded-xl transition-all duration-300 ease-in-out flex items-center justify-center overflow-hidden">
+                  {p.hoverImage ? (
+                    <img
+                      alt={p.name}
+                      src={p.hoverImage}
+                      className="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:opacity-0"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-slate-100 animate-pulse"></div>
+                  )}
+                  
+                  {/* Hover State: High-Fidelity SVG Product Mockup with Stand */}
+                  <div className="absolute inset-0 flex items-center justify-center p-[20px] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out z-10">
+                    <img
+                      alt={`${p.name} Cutout`}
+                      src={p.image}
+                      className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
                 </div>
                 {/* Product Name */}
                 <div className="mt-3 flex items-center justify-center min-h-[40px]">

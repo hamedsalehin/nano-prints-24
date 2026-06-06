@@ -9,7 +9,7 @@ export default function CoroplastSignsPage() {
       breadcrumb: "Signs",
       breadcrumbHref: "/custom-signs",
       promoText: "💧 Waterproof Coroplast Signs — Weatherproof & Budget-Friendly. Ships Tomorrow!",
-      image: "https://ext.same-assets.com/1114826555/2401743055.png",
+      image: "/images/products/coro_sign_std.png",
       ratingScore: "4.8",
       ratingCount: "5,620",
       sizes: [

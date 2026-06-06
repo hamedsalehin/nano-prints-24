@@ -9,7 +9,7 @@ export default function FoamBoardSignsPage() {
       breadcrumb: "Signs",
       breadcrumbHref: "/custom-signs",
       promoText: "✨ Foam Board Signs — Ultra-Light, Ultra-Crisp. Perfect for Presentations!",
-      image: "https://ext.same-assets.com/1114826555/3799598245.png",
+      image: "/images/products/foam_sign_std.png",
       ratingScore: "4.8",
       ratingCount: "1,280",
       sizes: [

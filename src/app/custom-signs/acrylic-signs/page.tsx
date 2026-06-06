@@ -9,7 +9,7 @@ export default function AcrylicSignsPage() {
       breadcrumb: "Signs",
       breadcrumbHref: "/custom-signs",
       promoText: "💎 Premium Acrylic Signs — Crystal-Clear Quality, Ships Next Day!",
-      image: "https://ext.same-assets.com/1114826555/898075086.png",
+      image: "/images/products/acryl_sign_std.png",
       ratingScore: "4.9",
       ratingCount: "980",
       sizes: [
