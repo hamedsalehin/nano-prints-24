@@ -22,22 +22,25 @@ export function Header() {
 
   return (
     <header className="w-full">
-      {/* Top utility bar — deep dark with pink/cyan accents */}
-      <div className="bg-gray-950 text-white text-sm py-2">
+      {/* Top utility bar — pink/purple gradient with cyan text */}
+      <div 
+        className="text-[#00e5ff] text-sm py-2 font-medium"
+        style={{ background: "linear-gradient(90deg, #ff2d78 0%, #b020ff 100%)" }}
+      >
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-end gap-4 md:gap-6">
-          <a href="#" className="flex items-center gap-1.5 hover:text-[#00e5ff] transition-colors duration-200">
+          <a href="#" className="flex items-center gap-1.5 hover:text-white transition-colors duration-200">
             <Package className="w-4 h-4" />
             <span className="hidden sm:inline">Order Status</span>
           </a>
-          <a href="mailto:nanosign1@gmail.com" className="flex items-center gap-1.5 hover:text-[#00e5ff] transition-colors duration-200">
+          <a href="mailto:nanosign1@gmail.com" className="flex items-center gap-1.5 hover:text-white transition-colors duration-200">
             <MessageCircle className="w-4 h-4" />
             <span className="hidden sm:inline">nanosign1@gmail.com</span>
           </a>
-          <a href="#" className="flex items-center gap-1.5 hover:text-[#00e5ff] transition-colors duration-200">
+          <a href="#" className="flex items-center gap-1.5 hover:text-white transition-colors duration-200">
             <HelpCircle className="w-4 h-4" />
             <span className="hidden sm:inline">Help Center</span>
           </a>
-          <a href="tel:305-967-1005" className="flex items-center gap-1.5 hover:text-[#00e5ff] transition-colors duration-200">
+          <a href="tel:305-967-1005" className="flex items-center gap-1.5 hover:text-white transition-colors duration-200">
             <Phone className="w-4 h-4" />
             <span className="hidden sm:inline">305-967-1005</span>
           </a>
@@ -163,14 +166,13 @@ export function Header() {
         )}
       </div>
 
-      {/* Promo banner — pink gradient with white text */}
+      {/* Promo banner — white with pink text */}
       <div
-        className="py-2.5 text-center"
-        style={{ background: "linear-gradient(90deg, #ff2d78 0%, #b020ff 50%, #00e5ff 100%)" }}
+        className="py-2.5 text-center bg-white border-b border-pink-100"
       >
-        <p className="text-sm font-bold text-white tracking-wide">
+        <p className="text-sm font-bold text-[#ff2d78] tracking-wide">
           ✨ Custom Printing &amp; Signage — Fast Turnaround!{" "}
-          <a href="tel:305-967-1005" className="underline hover:no-underline hover:text-[#00e5ff] transition-colors">
+          <a href="tel:305-967-1005" className="underline hover:no-underline hover:text-[#b020ff] transition-colors">
             Call 305-967-1005
           </a>
         </p>
