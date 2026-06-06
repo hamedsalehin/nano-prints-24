@@ -15,7 +15,7 @@ const navItems = [
   { name: "Marketing Materials", href: "/marketing-materials" },
   { name: "Promotional Products", href: "/promotional-products" },
   { name: "Neon Signs", href: "https://neonFL.com", isExternal: true },
-  { name: "programmable LED sign", href: "https://led.rgbsigns.com", isExternal: true },
+  { name: "Programmable LED Signs", href: "https://led.rgbsigns.com", isExternal: true },
 ];
 
 export function Header() {
@@ -129,24 +129,24 @@ export function Header() {
         </div>
 
         {/* Desktop Navigation — static cyan to pink gradient */}
-        <nav className="hidden md:block w-full brand-gradient-static">
-          <div className="max-w-7xl mx-auto px-4 flex justify-center">
-            <ul className="flex justify-center items-center gap-x-1 lg:gap-x-2.5 xl:gap-x-4 2xl:gap-x-5.5">
+        <nav className="hidden md:block w-full brand-gradient">
+          <div className="max-w-7xl mx-auto px-4">
+            <ul className="flex justify-center items-center">
               {navItems.map((item) => (
-                <li key={item.name} className="relative text-center">
+                <li key={item.name} className="relative text-center flex-shrink-0">
                   {item.isExternal ? (
                     <a
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block w-full h-full relative px-2 lg:px-3 xl:px-4 py-2.5 font-bold text-white hover:text-[#00e5ff] transition-colors duration-200 font-poppins text-[11px] lg:text-[13px] xl:text-[15px] 2xl:text-[16px] after:content-[''] after:absolute after:h-[3px] after:bg-[#00e5ff] after:bottom-0 after:left-0 after:w-full after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-200"
+                      className="block w-full h-full relative px-1.5 lg:px-2.5 xl:px-3.5 py-2 font-bold text-white hover:text-[#00e5ff] transition-colors duration-200 font-poppins text-[12px] lg:text-[14px] xl:text-[15.5px] whitespace-nowrap after:content-[''] after:absolute after:h-[3px] after:bg-[#00e5ff] after:bottom-0 after:left-0 after:w-full after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-200"
                     >
                       {item.name}
                     </a>
                   ) : (
                     <Link
                       href={item.href}
-                      className="block w-full h-full relative px-2 lg:px-3 xl:px-4 py-2.5 font-bold text-white hover:text-[#00e5ff] transition-colors duration-200 font-poppins text-[11px] lg:text-[13px] xl:text-[15px] 2xl:text-[16px] after:content-[''] after:absolute after:h-[3px] after:bg-[#00e5ff] after:bottom-0 after:left-0 after:w-full after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-200"
+                      className="block w-full h-full relative px-1.5 lg:px-2.5 xl:px-3.5 py-2 font-bold text-white hover:text-[#00e5ff] transition-colors duration-200 font-poppins text-[12px] lg:text-[14px] xl:text-[15.5px] whitespace-nowrap after:content-[''] after:absolute after:h-[3px] after:bg-[#00e5ff] after:bottom-0 after:left-0 after:w-full after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-200"
                     >
                       {item.name}
                     </Link>
@@ -159,7 +159,7 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav className="md:hidden border-t brand-gradient-static">
+          <nav className="md:hidden border-t brand-gradient">
             <ul className="py-2">
               {navItems.map((item) => (
                 <li key={item.name}>
