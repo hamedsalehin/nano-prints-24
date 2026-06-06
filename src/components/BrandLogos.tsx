@@ -13,9 +13,9 @@ const brands = [
 
 export function BrandLogos() {
   return (
-    <section className="py-12 bg-white">
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="font-poppins text-xl md:text-2xl font-bold text-gray-900 mb-8">
+    <section className="py-14 bg-white">
+      <div className="w-full px-6 md:px-16 lg:px-24 xl:px-32">
+        <h2 className="font-poppins text-3xl md:text-4xl font-extrabold mb-8 tracking-tight pink-cyan-text">
           Brands That Trust Us
         </h2>
 

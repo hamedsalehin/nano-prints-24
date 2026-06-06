@@ -49,22 +49,19 @@ const customerPhotos = [
 export function CustomerHighlights() {
   return (
     <section
-      className="py-12"
+      className="py-14"
       style={{ background: "linear-gradient(160deg, #f9f0ff 0%, #e0faff 100%)" }}
     >
-      <div className="max-w-7xl mx-auto px-4">
-        <h2
-          className="font-poppins text-xl md:text-2xl font-bold mb-6 text-transparent bg-clip-text"
-          style={{ backgroundImage: "linear-gradient(135deg, #ff2d78, #b020ff, #00e5ff)" }}
-        >
+      <div className="w-full px-6 md:px-16 lg:px-24 xl:px-32">
+        <h2 className="font-poppins text-3xl md:text-4xl font-extrabold mb-8 tracking-tight pink-cyan-text">
           Customer Highlights
         </h2>
 
-        <div className="grid grid-cols-3 md:grid-cols-3 gap-1 md:gap-2">
+        <div className="grid grid-cols-3 gap-4 md:gap-6">
           {customerPhotos.map((photo, index) => (
             <div
               key={index}
-              className="relative aspect-square overflow-hidden group cursor-pointer rounded-lg"
+              className="relative aspect-square overflow-hidden group cursor-pointer rounded-2xl shadow-md"
             >
               <img
                 src={photo.image}
