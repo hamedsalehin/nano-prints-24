@@ -22,7 +22,7 @@ export function HeroSection() {
             <div className="max-w-7xl mx-auto px-6 md:px-12 w-full">
               <div className="max-w-lg rounded-2xl px-8 py-8 bg-white shadow-xl border border-gray-100">
                 <h1 className="font-poppins text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-2">
-                  Nano Prints
+                  Nano Signs
                 </h1>
                 <p className="font-poppins text-xl md:text-2xl font-bold text-gray-700 mb-1">
                   Your Custom Printing Expert

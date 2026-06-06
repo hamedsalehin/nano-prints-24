@@ -64,7 +64,7 @@ export function Footer() {
             <div className="mb-4">
               <Image
                 src="/images/nano-print-logo.png"
-                alt="Nano Prints"
+                alt="Nano Signs"
                 width={160}
                 height={60}
                 className="h-12 w-auto object-contain"
@@ -178,7 +178,7 @@ export function Footer() {
                 </a>
               ))}
             </div>
-            <p className="text-gray-600 text-sm">Copyright 2025 Nano Prints. All rights reserved.</p>
+            <p className="text-gray-600 text-sm">Copyright 2025 Nano Signs. All rights reserved.</p>
           </div>
         </div>
       </div>

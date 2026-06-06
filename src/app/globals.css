@@ -76,6 +76,10 @@
   animation: gradientShift 6s ease infinite;
 }
 
+.brand-gradient-static {
+  background: linear-gradient(90deg, var(--cyan) 0%, var(--pink) 100%);
+}
+
 @keyframes gradientShift {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }

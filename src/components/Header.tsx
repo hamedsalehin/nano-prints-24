@@ -14,6 +14,8 @@ const navItems = [
   { name: "Stickers & Decals", href: "/custom-decals" },
   { name: "Marketing Materials", href: "/marketing-materials" },
   { name: "Promotional Products", href: "/promotional-products" },
+  { name: "Neon Signs", href: "https://neonFL.com", isExternal: true },
+  { name: "programmable LED sign", href: "https://led.rgbsigns.com", isExternal: true },
 ];
 
 export function Header() {
@@ -22,25 +24,22 @@ export function Header() {
 
   return (
     <header className="w-full">
-      {/* Top utility bar — pink/purple gradient with cyan text */}
-      <div 
-        className="text-[#00e5ff] text-sm py-2 font-medium"
-        style={{ background: "linear-gradient(90deg, #ff2d78 0%, #b020ff 100%)" }}
-      >
+      {/* Top utility bar — simple white */}
+      <div className="bg-white border-b border-gray-150 text-gray-500 text-sm py-2 font-medium">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-end gap-4 md:gap-6">
-          <a href="#" className="flex items-center gap-1.5 hover:text-white transition-colors duration-200">
+          <a href="#" className="flex items-center gap-1.5 hover:text-[#ff2d78] transition-colors duration-200">
             <Package className="w-4 h-4" />
             <span className="hidden sm:inline">Order Status</span>
           </a>
-          <a href="mailto:nanosign1@gmail.com" className="flex items-center gap-1.5 hover:text-white transition-colors duration-200">
+          <a href="mailto:nanosign1@gmail.com" className="flex items-center gap-1.5 hover:text-[#ff2d78] transition-colors duration-200">
             <MessageCircle className="w-4 h-4" />
             <span className="hidden sm:inline">nanosign1@gmail.com</span>
           </a>
-          <a href="#" className="flex items-center gap-1.5 hover:text-white transition-colors duration-200">
+          <a href="#" className="flex items-center gap-1.5 hover:text-[#ff2d78] transition-colors duration-200">
             <HelpCircle className="w-4 h-4" />
             <span className="hidden sm:inline">Help Center</span>
           </a>
-          <a href="tel:305-967-1005" className="flex items-center gap-1.5 hover:text-white transition-colors duration-200">
+          <a href="tel:305-967-1005" className="flex items-center gap-1.5 hover:text-[#ff2d78] transition-colors duration-200">
             <Phone className="w-4 h-4" />
             <span className="hidden sm:inline">305-967-1005</span>
           </a>
@@ -55,7 +54,7 @@ export function Header() {
             <Link href="/" className="flex-shrink-0">
               <Image
                 src="/images/nano-print-logo.png"
-                alt="Nano Prints Logo"
+                alt="Nano Signs Logo"
                 width={180}
                 height={70}
                 className="h-14 w-auto object-contain"
@@ -129,18 +128,29 @@ export function Header() {
           </div>
         </div>
 
-        {/* Desktop Navigation — animated pink→purple→cyan gradient */}
-        <nav className="hidden md:block w-full brand-gradient-animated">
-          <div className="w-full px-12 lg:px-28 xl:px-40">
+        {/* Desktop Navigation — static cyan to pink gradient */}
+        <nav className="hidden md:block w-full brand-gradient-static">
+          <div className="w-full px-4 lg:px-10 xl:px-16">
             <ul className="flex w-full justify-between items-center">
               {navItems.map((item) => (
                 <li key={item.name} className="relative text-center flex-grow flex-shrink-0 basis-auto">
-                  <Link
-                    href={item.href}
-                    className="block w-full h-full relative px-5 py-2.5 font-semibold text-white hover:text-[#00e5ff] transition-colors duration-200 font-poppins text-[16px] lg:text-[17px] after:content-[''] after:absolute after:h-[3px] after:bg-[#00e5ff] after:bottom-0 after:left-0 after:w-full after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-200"
-                  >
-                    {item.name}
-                  </Link>
+                  {item.isExternal ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full h-full relative px-2.5 py-2.5 font-semibold text-white hover:text-[#00e5ff] transition-colors duration-200 font-poppins text-[13px] lg:text-[14px] xl:text-[15px] after:content-[''] after:absolute after:h-[3px] after:bg-[#00e5ff] after:bottom-0 after:left-0 after:w-full after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-200"
+                    >
+                      {item.name}
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="block w-full h-full relative px-2.5 py-2.5 font-semibold text-white hover:text-[#00e5ff] transition-colors duration-200 font-poppins text-[13px] lg:text-[14px] xl:text-[15px] after:content-[''] after:absolute after:h-[3px] after:bg-[#00e5ff] after:bottom-0 after:left-0 after:w-full after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-200"
+                    >
+                      {item.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
@@ -149,16 +159,27 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav className="md:hidden border-t brand-gradient-animated">
+          <nav className="md:hidden border-t brand-gradient-static">
             <ul className="py-2">
               {navItems.map((item) => (
                 <li key={item.name}>
-                  <a
-                    href={item.href}
-                    className="block px-4 py-3 text-sm font-medium text-white hover:text-[#00e5ff] hover:bg-white/10 transition-colors"
-                  >
-                    {item.name}
-                  </a>
+                  {item.isExternal ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block px-4 py-3 text-sm font-medium text-white hover:text-[#00e5ff] hover:bg-white/10 transition-colors"
+                    >
+                      {item.name}
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="block px-4 py-3 text-sm font-medium text-white hover:text-[#00e5ff] hover:bg-white/10 transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
