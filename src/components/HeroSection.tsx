@@ -16,9 +16,9 @@ export function HeroSection() {
       </div>
 
       {/* Content — white card, aligned to the side margin of Customer Favorites */}
-      <div className="relative z-10 flex items-center min-h-[420px] md:min-h-[540px] w-full px-6 md:px-16 lg:px-24 xl:px-32">
+      <div className="relative z-10 flex items-center min-h-[360px] sm:min-h-[440px] md:min-h-[540px] w-full px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32">
         <div
-          className="max-w-md rounded-2xl px-8 py-8 backdrop-blur-sm"
+          className="w-[85%] sm:w-[70%] md:w-[50%] lg:w-[42%] xl:w-[35%] max-w-[440px] rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 backdrop-blur-sm"
           style={{
             background: "rgba(255,255,255,0.88)",
             boxShadow: "0 8px 32px rgba(255,45,120,0.12), 0 2px 12px rgba(0,0,0,0.08)",
@@ -27,16 +27,16 @@ export function HeroSection() {
         >
           {/* Badge */}
           <div
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-white text-xs font-bold mb-5 tracking-wide uppercase"
+            className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full text-white text-[10px] sm:text-xs font-bold mb-3 sm:mb-5 tracking-wide uppercase"
             style={{
               background: "linear-gradient(135deg, #ff2d78, #b020ff, #00e5ff)",
               boxShadow: "0 0 16px rgba(255,45,120,0.35)",
             }}
           >
-            ✦ Oakland Park, FL · 20+ Years Happy Customers
+            ✦ Oakland Park, FL · 20+ Years Happy
           </div>
 
-          <h1 className="font-poppins text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-3 leading-tight">
+          <h1 className="font-poppins text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-gray-900 mb-2 sm:mb-3 leading-tight">
             With Us,{" "}
             <span
               style={{
@@ -50,16 +50,16 @@ export function HeroSection() {
             </span>
           </h1>
 
-          <p className="font-poppins text-base md:text-lg font-semibold text-gray-700 mb-8 leading-relaxed">
+          <p className="font-poppins text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-gray-700 mb-5 sm:mb-8 leading-relaxed">
             Custom banners, yard signs, vehicle wraps &amp; more —{" "}
             <span className="text-[#ff2d78] font-bold">fast turnaround</span> &amp; built to last.
           </p>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-2.5 sm:gap-4">
             {/* Primary CTA */}
             <Link
               href="/custom-signs"
-              className="inline-flex items-center justify-center px-8 py-3.5 font-bold rounded-full text-white transition-all duration-300 hover:scale-105"
+              className="inline-flex items-center justify-center px-4 py-2 sm:px-8 sm:py-3.5 text-xs sm:text-sm md:text-base font-bold rounded-full text-white transition-all duration-300 hover:scale-105"
               style={{
                 background: "linear-gradient(135deg, #ff2d78, #b020ff, #00e5ff)",
                 boxShadow: "0 0 24px rgba(255,45,120,0.45), 0 0 48px rgba(0,229,255,0.2)",
@@ -70,13 +70,13 @@ export function HeroSection() {
             {/* Secondary CTA */}
             <Link
               href="tel:305-967-1005"
-              className="inline-flex items-center justify-center px-8 py-3.5 border-2 font-bold rounded-full transition-all duration-300 hover:scale-105"
+              className="inline-flex items-center justify-center px-4 py-2 sm:px-8 sm:py-3.5 text-xs sm:text-sm md:text-base border-2 font-bold rounded-full transition-all duration-300 hover:scale-105"
               style={{
                 borderColor: "#ff2d78",
                 color: "#ff2d78",
               }}
             >
-              📞 Call Us Now
+              📞 Call Now
             </Link>
           </div>
         </div>
