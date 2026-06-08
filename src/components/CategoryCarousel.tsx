@@ -9,7 +9,7 @@ const categories = [
   { name: "Signs", href: "/custom-signs", image: "/images/products/main page/signs.png" },
   { name: "Real Estate Signs", href: "/custom-signs/real-estate-signs", image: "/images/products/main page/Real_estate_signs.png" },
   { name: "Banners", href: "/custom-banners", image: "/images/products/main page/fabric_banner.png" },
-  { name: "Retractable Banners", href: "/custom-banners/roll-up-banners", image: "https://ext.same-assets.com/1114826555/2401743055.png" },
+  { name: "Retractable Banners", href: "/custom-banners/roll-up-banners", image: "/images/products/main page/retractable_roll_up_banner.png" },
   { name: "Flags", href: "/custom-flags", image: "/images/products/main page/flags.png" },
   { name: "Magnets", href: "/vehicle-signs", image: "/images/products/main page/vehicle_magnets.png" },
   { name: "Tradeshow", href: "/trade-show", image: "/images/products/main page/event _tents.png" },

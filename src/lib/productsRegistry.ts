@@ -102,7 +102,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         id: "fabric-banners",
         name: "Fabric Banners",
         description: "Dye-sub polyester with a premium, wrinkle-free matte finish.",
-        image: "https://ext.same-assets.com/1114826555/1835265645.png",
+        image: "/images/products/main page/fabric_banner.png",
         price: "Starting at $45.99",
         badge: "Premium",
         config: {
@@ -111,7 +111,13 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Banners",
           breadcrumbHref: "/custom-banners",
           promoText: "20% OFF PREMIUM FABRIC BANNERS",
-          image: "https://ext.same-assets.com/1114826555/1835265645.png",
+          image: "/images/products/main page/fabric_banner.png",
+          images: [
+            "/images/products/main page/fabric_banner.png",
+            "/images/products/gallery/fabric_banner_use_1.png",
+            "/images/products/gallery/fabric_banner_use_1.png",
+            "/images/products/gallery/fabric_banner_use_1.png"
+          ],
           ratingCount: "980",
           ratingScore: "4.9",
           sizes: [
@@ -320,7 +326,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         id: "roll-up-banners",
         name: "Retractable Banners",
         description: "Portable and easy to set up for trade shows and events.",
-        image: "https://ext.same-assets.com/1114826555/898075086.png",
+        image: "/images/products/main page/retractable_roll_up_banner.png",
         price: "Starting at $93.27",
         badge: "Best Seller",
         config: {
@@ -329,7 +335,13 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Banners",
           breadcrumbHref: "/custom-banners",
           promoText: "20% OFF RETRACTABLE ROLL-UP BANNERS",
-          image: "https://ext.same-assets.com/1114826555/898075086.png",
+          image: "/images/products/main page/retractable_roll_up_banner.png",
+          images: [
+            "/images/products/main page/retractable_roll_up_banner.png",
+            "/images/products/gallery/retractable_use_1.png",
+            "/images/products/gallery/retractable_use_2.png",
+            "/images/products/gallery/retractable_use_3.png"
+          ],
           ratingCount: "1240",
           ratingScore: "4.9",
           sizes: [
@@ -412,7 +424,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         id: "step-and-repeat-banners",
         name: "Step & Repeat Banners",
         description: "Ideal for red carpet events, photo backdrops and press conferences.",
-        image: "https://ext.same-assets.com/1114826555/2684103585.png",
+        image: "/images/products/main page/backdrop_banners.png",
         price: "Starting at $145.99",
         badge: "Event Ready",
         config: {
@@ -421,7 +433,13 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Banners",
           breadcrumbHref: "/custom-banners",
           promoText: "20% OFF STEP AND REPEAT PRESS WALLS",
-          image: "https://ext.same-assets.com/1114826555/2684103585.png",
+          image: "/images/products/main page/backdrop_banners.png",
+          images: [
+            "/images/products/main page/backdrop_banners.png",
+            "/images/products/gallery/step_repeat_use_1.png",
+            "/images/products/gallery/step_repeat_use_2.png",
+            "/images/products/gallery/step_repeat_use_3.png"
+          ],
           ratingCount: "430",
           ratingScore: "4.8",
           sizes: [
@@ -754,7 +772,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         id: "flags",
         name: "Standard Flags",
         description: "Classic horizontal flags with brass grommets, perfect for flagpoles or hanging.",
-        image: "https://www.buildasign.com/0085940_standard-flags_360.png",
+        image: "/images/products/main page/flags.png",
         price: "Starting at $38.43",
         config: {
           title: "Standard Custom Flags",
@@ -762,7 +780,13 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Flags",
           breadcrumbHref: "/custom-flags",
           promoText: "20% OFF CUSTOM HANGING FLAGS",
-          image: "https://www.buildasign.com/0085940_standard-flags_360.png",
+          image: "/images/products/main page/flags.png",
+          images: [
+            "/images/products/main page/flags.png",
+            "/images/products/gallery/flag_use_1.png",
+            "/images/products/gallery/flag_use_1.png",
+            "/images/products/gallery/flag_use_1.png"
+          ],
           ratingCount: "612",
           ratingScore: "4.8",
           sizes: [
@@ -1015,7 +1039,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         id: "magnetic-signs",
         name: "Magnetic Car Signs",
         description: "Durable magnetic signs that attach to car doors and can be removed easily.",
-        image: "https://www.buildasign.com/0086082_magnetic-car-signs_360.png",
+        image: "/images/products/main page/vehicle_magnets.png",
         price: "Starting at $4.99",
         badge: "Most Popular",
         config: {
@@ -1024,7 +1048,13 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Vehicle Signs",
           breadcrumbHref: "/vehicle-signs",
           promoText: "25% OFF VEHICLE ADVERTISING - AUTO SHIPPED",
-          image: "https://www.buildasign.com/0086082_magnetic-car-signs_360.png",
+          image: "/images/products/main page/vehicle_magnets.png",
+          images: [
+            "/images/products/main page/vehicle_magnets.png",
+            "/images/products/gallery/magnet_use_1.png",
+            "/images/products/gallery/magnet_use_2.png",
+            "/images/products/gallery/magnet_use_3.png"
+          ],
           ratingCount: "1530",
           ratingScore: "4.9",
           sizes: [
@@ -1209,7 +1239,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         id: "tablecloths",
         name: "Custom Tablecloths",
         description: "Transform any standard folding table into a highly professional promotional display with our Custom Tablecloths. Printed using advanced dye-sublimation on premium 300D polyester twill, these covers feature a vibrant, scratch-resistant print that won't crack or peel. They are completely machine washable, flame-retardant (meeting NFPA 701 safety certifications), and designed to stay wrinkle-free throughout long events. Available in standard 6ft and 8ft sizes in both 4-sided (closed back) and 3-sided (open back) configurations for convenient under-table storage access.",
-        image: "https://www.buildasign.com/0086553_tablecloths_360.png",
+        image: "/images/products/main page/tablecloths.png",
         price: "Starting at $89.99",
         badge: "Best Seller",
         config: {
@@ -1218,7 +1248,13 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF CUSTOM TABLECLOTHS - SHIPS NEXT DAY",
-          image: "https://www.buildasign.com/0086553_tablecloths_360.png",
+          image: "/images/products/main page/tablecloths.png",
+          images: [
+            "/images/products/main page/tablecloths.png",
+            "/images/products/gallery/tablecloth_use_1.png",
+            "/images/products/gallery/tablecloth_use_2.png",
+            "/images/products/gallery/tablecloth_use_3.png"
+          ],
           ratingCount: "680",
           ratingScore: "4.9",
           sizes: [
@@ -1677,7 +1713,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         id: "custom-canopy-tents",
         name: "Custom Canopies",
         description: "Stand out at outdoor events, farmers markets, sporting events, and street fairs with our 10' x 10' Custom Canopy Tents. The canopy top is made from heavy-duty, waterproof, and UV-resistant fabric printed in rich full-color dye-sublimation. The popup frame features a commercial-grade steel or aluminum truss system with adjustable height settings, popping up in minutes for instant shade and high-visibility branding.",
-        image: "https://www.buildasign.com/0088150_custom-canopy-tents_360.png",
+        image: "/images/products/main page/event _tents.png",
         price: "Starting at $349.99",
         config: {
           title: "Custom Canopy Tents",
@@ -1685,7 +1721,13 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF OUTDOOR EVENT CANOPIES",
-          image: "https://www.buildasign.com/0088150_custom-canopy-tents_360.png",
+          image: "/images/products/main page/event _tents.png",
+          images: [
+            "/images/products/main page/event _tents.png",
+            "/images/products/gallery/canopy_tent_use_1.png",
+            "/images/products/gallery/canopy_tent_use_1.png",
+            "/images/products/gallery/canopy_tent_use_1.png"
+          ],
           ratingCount: "110",
           ratingScore: "4.7",
           sizes: [
@@ -1801,7 +1843,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         id: "business-cards",
         name: "Business Cards",
         description: "Leave a lasting impression with premium Custom Business Cards. Printed on ultra-thick 14pt or 16pt cardstock with offset high-resolution printing, these standard 3.5\" x 2\" cards represent your business with absolute quality. Customize your finish with professional non-glare matte or high-gloss UV sheen, and choose single or double-sided layouts to distribute to tradeshow attendees, recruits, and new leads.",
-        image: "https://www.buildasign.com/0085790_business-cards_360.jpeg",
+        image: "/images/products/main page/business_cards.png",
         price: "Starting at $19.99",
         config: {
           title: "Custom Business Cards",
@@ -1809,7 +1851,13 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF ALL EVENT STATIONERY",
-          image: "https://www.buildasign.com/0085790_business-cards_360.jpeg",
+          image: "/images/products/main page/business_cards.png",
+          images: [
+            "/images/products/main page/business_cards.png",
+            "/images/products/gallery/business_card_use_1.png",
+            "/images/products/gallery/business_card_use_1.png",
+            "/images/products/gallery/business_card_use_1.png"
+          ],
           ratingCount: "1120",
           ratingScore: "4.9",
           sizes: [
@@ -2035,7 +2083,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         id: "window-decals",
         name: "Window Decals",
         description: "Adhesive signage for business storefront windows and glass panels.",
-        image: "https://www.buildasign.com/0085949_window-decals_360.png",
+        image: "/images/products/main page/vinyl_sticker.png",
         price: "Starting at $23.86",
         badge: "Best Seller",
         config: {
@@ -2044,7 +2092,13 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Decals",
           breadcrumbHref: "/custom-decals",
           promoText: "20% OFF STOREFRONT WINDOW DECALS",
-          image: "https://www.buildasign.com/0085949_window-decals_360.png",
+          image: "/images/products/main page/vinyl_sticker.png",
+          images: [
+            "/images/products/main page/vinyl_sticker.png",
+            "/images/products/gallery/vinyl_decal_use_1.png",
+            "/images/products/gallery/vinyl_decal_use_1.png",
+            "/images/products/gallery/vinyl_decal_use_1.png"
+          ],
           ratingCount: "940",
           ratingScore: "4.9",
           sizes: [
@@ -2164,7 +2218,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         id: "sheet-stickers",
         name: "Sheet Stickers",
         description: "Multiple custom stickers printed on a flat sheet, perfect for retail labelling.",
-        image: "https://www.buildasign.com/0086628_sheet-stickers_360.png",
+        image: "/images/products/main page/sticker_and_labels.png",
         price: "Starting at $11.16",
         config: {
           title: "Custom Sheet Stickers",
@@ -2172,7 +2226,13 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Decals",
           breadcrumbHref: "/custom-decals",
           promoText: "20% OFF PRINTED STICKER SHEETS",
-          image: "https://www.buildasign.com/0086628_sheet-stickers_360.png",
+          image: "/images/products/main page/sticker_and_labels.png",
+          images: [
+            "/images/products/main page/sticker_and_labels.png",
+            "/images/products/gallery/sticker_use_1.png",
+            "/images/products/gallery/sticker_use_1.png",
+            "/images/products/gallery/sticker_use_1.png"
+          ],
           ratingCount: "340",
           ratingScore: "4.8",
           sizes: [

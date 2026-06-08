@@ -34,8 +34,8 @@ export interface ProductPageConfig {
   subtitle: string;
   breadcrumb: string;
   breadcrumbHref: string;
-  promoText: string;
   image: string;
+  images?: string[];
   ratingCount: string;
   ratingScore: string;
   sizes: SizeOption[];
@@ -123,6 +123,18 @@ function ShippingCountdown() {
 
 export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
   const [selectedSize, setSelectedSize] = useState(cfg.sizes[0]);
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+  const galleryImages = useMemo(() => {
+    if (cfg.images && cfg.images.length > 0) {
+      return cfg.images;
+    }
+    return [cfg.image, cfg.image, cfg.image, cfg.image];
+  }, [cfg.images, cfg.image]);
+
+  useEffect(() => {
+    setActiveImageIndex(0);
+  }, [cfg]);
   const [selectValues, setSelectValues] = useState<Record<string, SelectOption>>(() => {
     const init: Record<string, SelectOption> = {};
     cfg.selects?.forEach(s => { init[s.label] = s.options[0]; });
@@ -266,116 +278,140 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
             </div>
 
             {/* Dynamic Product Visual Configurator Preview */}
-            <div className="relative w-full flex items-center justify-center p-12 bg-slate-50 border border-slate-100 shadow-inner mb-6 rounded-2xl min-h-[420px] overflow-visible">
-              
-              {/* A-Frame visual shell */}
-              {isAFrame ? (
-                <div className={`relative p-5 pb-16 rounded-t-[2.5rem] border-8 shadow-2xl flex flex-col items-center justify-center max-w-[340px] w-full transition-colors duration-300 ${
-                  frameMaterial === "aluminum" ? "bg-slate-700 border-slate-800" : "bg-white border-slate-300"
-                }`}>
-                  {/* Hinge */}
-                  <div className="absolute top-0 w-1/3 h-3 bg-slate-800 rounded-t-lg -mt-3 shadow"></div>
-                  
-                  {/* Insert Container */}
-                  <div 
-                    style={{ aspectRatio: aspect }}
-                    className="relative w-full shadow-inner border border-gray-200 overflow-hidden bg-white"
-                  >
-                    <Image src={cfg.image} alt={cfg.title} fill className="object-contain p-2" />
-                  </div>
-                  
-                  {/* Stand feet */}
-                  <div className="absolute bottom-0 left-6 w-5 h-10 bg-slate-800 rounded-b-lg"></div>
-                  <div className="absolute bottom-0 right-6 w-5 h-10 bg-slate-800 rounded-b-lg"></div>
-                </div>
-              ) : isRealEstate && (accessoryType === "yard_arm") ? (
-                <div className="relative pt-20 pl-24 pr-8 pb-8 flex flex-col items-center justify-center w-full max-w-[420px]">
-                  {/* Gallows Post */}
-                  <div className="absolute top-0 left-10 w-5 h-full bg-slate-800 rounded-lg shadow-md z-0"></div>
-                  <div className="absolute top-2 left-10 w-[260px] h-5 bg-slate-800 rounded-lg shadow-md z-0"></div>
-                  {/* Hanging chains */}
-                  <div className="absolute top-7 left-24 w-1.5 h-14 bg-gradient-to-b from-slate-600 to-slate-400 z-0 rounded-full"></div>
-                  <div className="absolute top-7 left-[220px] w-1.5 h-14 bg-gradient-to-b from-slate-600 to-slate-400 z-0 rounded-full"></div>
-                  
-                  {/* Stretched Hanging Sign Canvas */}
-                  <div 
-                    style={{ aspectRatio: aspect }} 
-                    className={`relative w-full shadow-lg border border-gray-200 transition-all duration-300 z-10 ${
-                      hasRoundedCorners ? "rounded-3xl" : "rounded-none"
-                    } ${
-                      acrylicType === "clear"
-                        ? "bg-blue-50/10 backdrop-blur-[2px] border border-white/40 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"
-                        : "bg-white"
-                    }`}
-                  >
-                    <Image src={cfg.image} alt={cfg.title} fill className="object-contain p-4" />
-                    {hasGrommets && (
-                      <>
-                        <div className="absolute top-2.5 left-2.5 w-3.5 h-3.5 rounded-full bg-gradient-to-r from-gray-400 to-gray-300 border border-gray-500 flex items-center justify-center shadow-inner"><div className="w-1 h-1 rounded-full bg-white/70"></div></div>
-                        <div className="absolute top-2.5 right-2.5 w-3.5 h-3.5 rounded-full bg-gradient-to-r from-gray-400 to-gray-300 border border-gray-500 flex items-center justify-center shadow-inner"><div className="w-1 h-1 rounded-full bg-white/70"></div></div>
-                      </>
-                    )}
-                  </div>
-                </div>
-              ) : isRealEstate && (accessoryType === "full_frame") ? (
-                <div className="relative p-6 border-8 border-slate-900 bg-slate-100 rounded-lg flex flex-col items-center justify-center max-w-[380px] w-full shadow-2xl">
-                  <div 
-                    style={{ aspectRatio: aspect }}
-                    className="relative w-full shadow-inner border border-gray-200 overflow-hidden bg-white"
-                  >
-                    <Image src={cfg.image} alt={cfg.title} fill className="object-contain p-2" />
-                  </div>
+            <div className={`relative w-full flex items-center justify-center bg-slate-50 border border-slate-100 shadow-inner mb-6 rounded-2xl min-h-[420px] transition-all duration-300 ${
+              activeImageIndex > 0 ? "overflow-hidden p-0" : "overflow-visible p-12"
+            }`}>
+              {activeImageIndex > 0 ? (
+                <div className="relative w-full h-full min-h-[420px] self-stretch flex aspect-[4/3] max-h-[420px]">
+                  <Image
+                    src={galleryImages[activeImageIndex]}
+                    alt={`${cfg.title} in use`}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
                 </div>
               ) : (
-                /* Standard dynamic sign preview */
-                <div 
-                  style={{ aspectRatio: aspect }} 
-                  className={`relative w-full max-w-[380px] shadow-lg border transition-all duration-300 ${
-                    hasRoundedCorners ? "rounded-[2rem]" : "rounded-none"
-                  } ${
-                    cfg.title.toLowerCase().includes("acrylic")
-                      ? acrylicType === "clear"
-                        ? "bg-slate-100/20 backdrop-blur-[3px] border-white/50 shadow-[inset_0_1.5px_2px_rgba(255,255,255,0.4),0_8px_20px_rgba(0,0,0,0.06)] bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.3),transparent)]"
-                        : acrylicType === "frosted"
-                          ? "bg-white/40 backdrop-blur-[6px] border-white/70 shadow-[inset_0_1.5px_2.5px_rgba(255,255,255,0.6),0_8px_20px_rgba(0,0,0,0.06)]"
-                          : acrylicType === "black"
-                            ? "bg-slate-950 border-slate-900 text-white shadow-[inset_0_1.5px_2.5px_rgba(255,255,255,0.15),0_8px_24px_rgba(0,0,0,0.3)]"
-                            : "bg-white border-gray-200" // white acrylic
-                      : "bg-white border-gray-200"
-                  }`}
-                >
-                  <Image src={cfg.image} alt={cfg.title} fill className="object-contain p-6" />
+                /* Configurator visualizer elements */
+                <>
+                  {isAFrame ? (
+                    <div className={`relative p-5 pb-16 rounded-t-[2.5rem] border-8 shadow-2xl flex flex-col items-center justify-center max-w-[340px] w-full transition-colors duration-300 ${
+                      frameMaterial === "aluminum" ? "bg-slate-700 border-slate-800" : "bg-white border-slate-300"
+                    }`}>
+                      {/* Hinge */}
+                      <div className="absolute top-0 w-1/3 h-3 bg-slate-800 rounded-t-lg -mt-3 shadow"></div>
+                      
+                      {/* Insert Container */}
+                      <div 
+                        style={{ aspectRatio: aspect }}
+                        className="relative w-full shadow-inner border border-gray-200 overflow-hidden bg-white"
+                      >
+                        <Image src={galleryImages[0]} alt={cfg.title} fill className="object-contain p-2" />
+                      </div>
+                      
+                      {/* Stand feet */}
+                      <div className="absolute bottom-0 left-6 w-5 h-10 bg-slate-800 rounded-b-lg"></div>
+                      <div className="absolute bottom-0 right-6 w-5 h-10 bg-slate-800 rounded-b-lg"></div>
+                    </div>
+                  ) : isRealEstate && (accessoryType === "yard_arm") ? (
+                    <div className="relative pt-20 pl-24 pr-8 pb-8 flex flex-col items-center justify-center w-full max-w-[420px]">
+                      {/* Gallows Post */}
+                      <div className="absolute top-0 left-10 w-5 h-full bg-slate-800 rounded-lg shadow-md z-0"></div>
+                      <div className="absolute top-2 left-10 w-[260px] h-5 bg-slate-800 rounded-lg shadow-md z-0"></div>
+                      {/* Hanging chains */}
+                      <div className="absolute top-7 left-24 w-1.5 h-14 bg-gradient-to-b from-slate-600 to-slate-400 z-0 rounded-full"></div>
+                      <div className="absolute top-7 left-[220px] w-1.5 h-14 bg-gradient-to-b from-slate-600 to-slate-400 z-0 rounded-full"></div>
+                      
+                      {/* Stretched Hanging Sign Canvas */}
+                      <div 
+                        style={{ aspectRatio: aspect }} 
+                        className={`relative w-full shadow-lg border border-gray-200 transition-all duration-300 z-10 ${
+                          hasRoundedCorners ? "rounded-3xl" : "rounded-none"
+                        } ${
+                          acrylicType === "clear"
+                            ? "bg-blue-50/10 backdrop-blur-[2px] border border-white/40 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]"
+                            : "bg-white"
+                        }`}
+                      >
+                        <Image src={galleryImages[0]} alt={cfg.title} fill className="object-contain p-4" />
+                        {hasGrommets && (
+                          <>
+                            <div className="absolute top-2.5 left-2.5 w-3.5 h-3.5 rounded-full bg-gradient-to-r from-gray-400 to-gray-300 border border-gray-500 flex items-center justify-center shadow-inner"><div className="w-1 h-1 rounded-full bg-white/70"></div></div>
+                            <div className="absolute top-2.5 right-2.5 w-3.5 h-3.5 rounded-full bg-gradient-to-r from-gray-400 to-gray-300 border border-gray-500 flex items-center justify-center shadow-inner"><div className="w-1 h-1 rounded-full bg-white/70"></div></div>
+                          </>
+                        )}
+                      </div>
+                    </div>
+                  ) : isRealEstate && (accessoryType === "full_frame") ? (
+                    <div className="relative p-6 border-8 border-slate-900 bg-slate-100 rounded-lg flex flex-col items-center justify-center max-w-[380px] w-full shadow-2xl">
+                      <div 
+                        style={{ aspectRatio: aspect }}
+                        className="relative w-full shadow-inner border border-gray-200 overflow-hidden bg-white"
+                      >
+                        <Image src={galleryImages[0]} alt={cfg.title} fill className="object-contain p-2" />
+                      </div>
+                    </div>
+                  ) : (
+                    /* Standard dynamic sign preview */
+                    <div 
+                      style={{ aspectRatio: aspect }} 
+                      className={`relative w-full max-w-[380px] shadow-lg border transition-all duration-300 ${
+                        hasRoundedCorners ? "rounded-[2rem]" : "rounded-none"
+                      } ${
+                        cfg.title.toLowerCase().includes("acrylic")
+                          ? acrylicType === "clear"
+                            ? "bg-slate-100/20 backdrop-blur-[3px] border-white/50 shadow-[inset_0_1.5px_2px_rgba(255,255,255,0.4),0_8px_20px_rgba(0,0,0,0.06)] bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.3),transparent)]"
+                            : acrylicType === "frosted"
+                              ? "bg-white/40 backdrop-blur-[6px] border-white/70 shadow-[inset_0_1.5px_2.5px_rgba(255,255,255,0.6),0_8px_20px_rgba(0,0,0,0.06)]"
+                              : acrylicType === "black"
+                                ? "bg-slate-950 border-slate-900 text-white shadow-[inset_0_1.5px_2.5px_rgba(255,255,255,0.15),0_8px_24px_rgba(0,0,0,0.3)]"
+                                : "bg-white border-gray-200"
+                              : "bg-white border-gray-200"
+                          : "bg-white border-gray-200"
+                      }`}
+                    >
+                      <Image src={galleryImages[0]} alt={cfg.title} fill className="object-contain p-6" />
 
-                  {/* Grommets Overlay */}
-                  {hasGrommets && (
-                    <>
-                      <div className="absolute top-3 left-3 w-4 h-4 rounded-full bg-gradient-to-r from-gray-400 to-gray-300 border border-gray-500 flex items-center justify-center shadow-inner"><div className="w-1.5 h-1.5 rounded-full bg-white/70"></div></div>
-                      <div className="absolute top-3 right-3 w-4 h-4 rounded-full bg-gradient-to-r from-gray-400 to-gray-300 border border-gray-500 flex items-center justify-center shadow-inner"><div className="w-1.5 h-1.5 rounded-full bg-white/70"></div></div>
-                      <div className="absolute bottom-3 left-3 w-4 h-4 rounded-full bg-gradient-to-r from-gray-400 to-gray-300 border border-gray-500 flex items-center justify-center shadow-inner"><div className="w-1.5 h-1.5 rounded-full bg-white/70"></div></div>
-                      <div className="absolute bottom-3 right-3 w-4 h-4 rounded-full bg-gradient-to-r from-gray-400 to-gray-300 border border-gray-500 flex items-center justify-center shadow-inner"><div className="w-1.5 h-1.5 rounded-full bg-white/70"></div></div>
-                    </>
+                      {/* Grommets Overlay */}
+                      {hasGrommets && (
+                        <>
+                          <div className="absolute top-3 left-3 w-4 h-4 rounded-full bg-gradient-to-r from-gray-400 to-gray-300 border border-gray-500 flex items-center justify-center shadow-inner"><div className="w-1.5 h-1.5 rounded-full bg-white/70"></div></div>
+                          <div className="absolute top-3 right-3 w-4 h-4 rounded-full bg-gradient-to-r from-gray-400 to-gray-300 border border-gray-500 flex items-center justify-center shadow-inner"><div className="w-1.5 h-1.5 rounded-full bg-white/70"></div></div>
+                          <div className="absolute bottom-3 left-3 w-4 h-4 rounded-full bg-gradient-to-r from-gray-400 to-gray-300 border border-gray-500 flex items-center justify-center shadow-inner"><div className="w-1.5 h-1.5 rounded-full bg-white/70"></div></div>
+                          <div className="absolute bottom-3 right-3 w-4 h-4 rounded-full bg-gradient-to-r from-gray-400 to-gray-300 border border-gray-500 flex items-center justify-center shadow-inner"><div className="w-1.5 h-1.5 rounded-full bg-white/70"></div></div>
+                        </>
+                      )}
+                    </div>
                   )}
-                </div>
-              )}
 
-              {/* Wire Stakes (H-Frame) Overlay */}
-              {hasStakes && !isAFrame && !(isRealEstate && accessoryType !== "h_frame" && accessoryType !== "none") && (
-                <div className="absolute top-[calc(50%+40px)] left-1/2 -translate-x-1/2 w-[160px] h-[150px] pointer-events-none z-0 transition-all duration-300">
-                  <svg className="w-full h-full text-slate-400 drop-shadow" viewBox="0 0 100 120" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <line x1="20" y1="0" x2="20" y2="120" strokeLinecap="round" />
-                    <line x1="80" y1="0" x2="80" y2="120" strokeLinecap="round" />
-                    <line x1="20" y1="30" x2="80" y2="30" strokeLinecap="round" />
-                    <line x1="20" y1="80" x2="80" y2="80" strokeLinecap="round" />
-                  </svg>
-                </div>
+                  {/* Wire Stakes (H-Frame) Overlay */}
+                  {hasStakes && !isAFrame && !(isRealEstate && accessoryType !== "h_frame" && accessoryType !== "none") && (
+                    <div className="absolute top-[calc(50%+40px)] left-1/2 -translate-x-1/2 w-[160px] h-[150px] pointer-events-none z-0 transition-all duration-300">
+                      <svg className="w-full h-full text-slate-400 drop-shadow" viewBox="0 0 100 120" fill="none" stroke="currentColor" strokeWidth="2.5">
+                        <line x1="20" y1="0" x2="20" y2="120" strokeLinecap="round" />
+                        <line x1="80" y1="0" x2="80" y2="120" strokeLinecap="round" />
+                        <line x1="20" y1="30" x2="80" y2="30" strokeLinecap="round" />
+                        <line x1="20" y1="80" x2="80" y2="80" strokeLinecap="round" />
+                      </svg>
+                    </div>
+                  )}
+                </>
               )}
             </div>
 
-            <div className="flex gap-3 mb-8">
-              {[1,2,3,4].map(i => (
-                <div key={i} className="w-16 h-16 rounded-lg border-2 border-gray-100 hover:border-[#ff2d78] cursor-pointer p-1 bg-gray-50 transition-colors">
-                  <Image src={cfg.image} alt="" width={64} height={64} className="w-full h-full object-contain" />
-                </div>
+            <div className="flex gap-3 mb-8 overflow-x-auto pb-2">
+              {galleryImages.map((img, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setActiveImageIndex(idx)}
+                  className={`w-16 h-16 rounded-lg border-2 cursor-pointer p-1 bg-gray-50 transition-all ${
+                    activeImageIndex === idx ? "border-[#ff2d78] ring-2 ring-pink-100" : "border-gray-150 hover:border-gray-350"
+                  }`}
+                >
+                  <div className="relative w-full h-full">
+                    <Image src={img} alt="" fill className="object-contain" />
+                  </div>
+                </button>
               ))}
             </div>
 
