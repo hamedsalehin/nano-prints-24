@@ -12,6 +12,8 @@ const products = [
   { name: "Event Tents", image: "/images/products/main page/event _tents.png", href: "/trade-show/custom-canopy-tents" },
   { name: "Business Cards", image: "/images/products/main page/business_cards.png", href: "/marketing-materials/business-cards" },
   { name: "Labels and Stickers", image: "/images/products/main page/sticker_and_labels.png", href: "/custom-decals/sheet-stickers" },
+  { name: "Neon Sign", image: "/images/products/main page/neon_sign.jpeg", href: "https://neonfl.com" },
+  { name: "Programmable LED Sign", image: "/images/products/main page/programmable_led_sign.jpeg", href: "https://led.rgbsigns.com/" },
 ];
 
 export function ProductsGrid() {
@@ -26,22 +28,30 @@ export function ProductsGrid() {
         </h2>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
-          {products.map((product) => (
-            <Link key={product.name} href={product.href} className="group">
-              {/* Pure CSS hover via product-card-hover */}
-              <div className="product-card-hover bg-white rounded-xl p-4 mb-3 aspect-square flex items-center justify-center relative">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  fill
-                  className="object-contain p-6 group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <p className="text-center font-bold text-gray-800 text-base md:text-lg transition-all group-hover:pink-cyan-text">
-                {product.name}
-              </p>
-            </Link>
-          ))}
+          {products.map((product) => {
+            const isExternal = product.href.startsWith("http");
+            return (
+              <Link
+                key={product.name}
+                href={product.href}
+                className="group"
+                {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              >
+                {/* Pure CSS hover via product-card-hover */}
+                <div className="product-card-hover bg-white rounded-xl p-4 mb-3 aspect-square flex items-center justify-center relative">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    className="object-contain p-6 group-hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <p className="text-center font-bold text-gray-800 text-base md:text-lg transition-all group-hover:pink-cyan-text">
+                  {product.name}
+                </p>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>
