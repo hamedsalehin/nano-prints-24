@@ -10,6 +10,7 @@ export function ExpertsSection() {
           alt="Custom signs background"
           fill
           sizes="100vw"
+          quality={85}
           className="object-cover"
         />
         {/* Dark pink/cyan tinted overlay */}

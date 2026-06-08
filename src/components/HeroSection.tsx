@@ -10,6 +10,7 @@ export function HeroSection() {
           alt="Nano Signs — Custom banners, yard signs, roll-up displays and more"
           fill
           sizes="100vw"
+          quality={90}
           className="object-contain object-center"
           priority
         />

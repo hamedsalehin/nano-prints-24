@@ -178,6 +178,7 @@ export function CustomerHighlights() {
                 alt={`Customer highlight ${index + 1}`}
                 fill
                 sizes="(max-width: 640px) 33vw, (max-width: 1024px) 25vw, 200px"
+                quality={85}
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
               />
               {/* Pink/cyan gradient overlay on hover */}

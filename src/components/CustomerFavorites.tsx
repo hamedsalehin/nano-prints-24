@@ -41,6 +41,7 @@ export function CustomerFavorites() {
                   alt={item.name}
                   fill
                   sizes="(max-width: 768px) 192px, 256px"
+                  quality={85}
                   className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                 />
               </div>

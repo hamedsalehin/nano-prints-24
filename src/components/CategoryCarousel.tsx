@@ -69,6 +69,7 @@ export function CategoryCarousel() {
                       alt={category.name}
                       fill
                       sizes="(max-width: 768px) 192px, 256px"
+                      quality={85}
                       className="object-contain transition-transform duration-500 ease-out group-hover:scale-110"
                     />
                   </div>
