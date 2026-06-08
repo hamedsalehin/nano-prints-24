@@ -34,6 +34,7 @@ export interface ProductPageConfig {
   subtitle: string;
   breadcrumb: string;
   breadcrumbHref: string;
+  promoText: string;
   image: string;
   images?: string[];
   ratingCount: string;
@@ -366,7 +367,6 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
                               : acrylicType === "black"
                                 ? "bg-slate-950 border-slate-900 text-white shadow-[inset_0_1.5px_2.5px_rgba(255,255,255,0.15),0_8px_24px_rgba(0,0,0,0.3)]"
                                 : "bg-white border-gray-200"
-                              : "bg-white border-gray-200"
                           : "bg-white border-gray-200"
                       }`}
                     >
