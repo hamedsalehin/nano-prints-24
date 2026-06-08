@@ -53,7 +53,7 @@ export function Header() {
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
               <Image
-                src="/images/nano-print-logo.png"
+                src="/images/nano logo complete.png"
                 alt="Nano Signs Logo"
                 width={180}
                 height={70}

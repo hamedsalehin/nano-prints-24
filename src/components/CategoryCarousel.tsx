@@ -6,15 +6,15 @@ import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const categories = [
-  { name: "Signs", href: "/custom-signs", image: "https://ext.same-assets.com/1114826555/1445363370.png" },
-  { name: "Real Estate Signs", href: "/custom-signs/real-estate-signs", image: "https://ext.same-assets.com/1114826555/3882498341.png" },
-  { name: "Banners", href: "/custom-banners", image: "https://ext.same-assets.com/1114826555/3799598245.png" },
+  { name: "Signs", href: "/custom-signs", image: "/images/products/main page/signs.png" },
+  { name: "Real Estate Signs", href: "/custom-signs/real-estate-signs", image: "/images/products/main page/Real_estate_signs.png" },
+  { name: "Banners", href: "/custom-banners", image: "/images/products/main page/fabric_banner.png" },
   { name: "Retractable Banners", href: "/custom-banners/roll-up-banners", image: "https://ext.same-assets.com/1114826555/2401743055.png" },
-  { name: "Flags", href: "/custom-flags", image: "https://ext.same-assets.com/1114826555/1286398033.png" },
-  { name: "Magnets", href: "/vehicle-signs", image: "https://ext.same-assets.com/1114826555/851572100.png" },
-  { name: "Tradeshow", href: "/trade-show", image: "https://ext.same-assets.com/1114826555/2283645032.png" },
-  { name: "Custom Decals", href: "/custom-decals", image: "https://ext.same-assets.com/1114826555/2442714004.png" },
-  { name: "Business Cards", href: "/marketing-materials", image: "https://ext.same-assets.com/1114826555/4083306019.png" },
+  { name: "Flags", href: "/custom-flags", image: "/images/products/main page/flags.png" },
+  { name: "Magnets", href: "/vehicle-signs", image: "/images/products/main page/vehicle_magnets.png" },
+  { name: "Tradeshow", href: "/trade-show", image: "/images/products/main page/event _tents.png" },
+  { name: "Custom Decals", href: "/custom-decals", image: "/images/products/main page/sticker_and_labels.png" },
+  { name: "Business Cards", href: "/marketing-materials", image: "/images/products/main page/business_cards.png" },
 ];
 
 export function CategoryCarousel() {

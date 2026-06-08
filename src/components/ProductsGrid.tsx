@@ -1,16 +1,17 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const products = [
-  { name: "Tablecloths", image: "https://ext.same-assets.com/1114826555/1168034624.png" },
-  { name: "Magnets", image: "https://ext.same-assets.com/1114826555/2268709474.png" },
-  { name: "Retractable Banners", image: "https://ext.same-assets.com/1114826555/898075086.png" },
-  { name: "Step & Repeat Banners", image: "https://ext.same-assets.com/1114826555/2684103585.png" },
-  { name: "Vinyl Decals", image: "https://ext.same-assets.com/1114826555/1305703507.png" },
-  { name: "Flags", image: "https://ext.same-assets.com/1114826555/1691749293.png" },
-  { name: "Fabric Banners", image: "https://ext.same-assets.com/1114826555/1835265645.png" },
-  { name: "Event Tents", image: "https://ext.same-assets.com/1114826555/2283645032.png" },
-  { name: "Business Cards", image: "https://ext.same-assets.com/1114826555/4083306019.png" },
-  { name: "Labels and Stickers", image: "https://ext.same-assets.com/1114826555/2442714004.png" },
+  { name: "Tablecloths", image: "/images/products/main page/tablecloths.png", href: "/trade-show/tablecloths" },
+  { name: "Magnets", image: "/images/products/main page/vehicle_magnets.png", href: "/vehicle-signs/magnetic-signs" },
+  { name: "Retractable Banners", image: "/images/products/main page/retractable_roll_up_banner.png", href: "/custom-banners/roll-up-banners" },
+  { name: "Step & Repeat Banners", image: "/images/products/main page/backdrop_banners.png", href: "/custom-banners/step-and-repeat-banners" },
+  { name: "Vinyl Decals", image: "/images/products/main page/vinyl_sticker.png", href: "/custom-decals/window-decals" },
+  { name: "Flags", image: "/images/products/main page/flags.png", href: "/custom-flags/flags" },
+  { name: "Fabric Banners", image: "/images/products/main page/fabric_banner.png", href: "/custom-banners/fabric-banners" },
+  { name: "Event Tents", image: "/images/products/main page/event _tents.png", href: "/trade-show/custom-canopy-tents" },
+  { name: "Business Cards", image: "/images/products/main page/business_cards.png", href: "/marketing-materials/business-cards" },
+  { name: "Labels and Stickers", image: "/images/products/main page/sticker_and_labels.png", href: "/custom-decals/sheet-stickers" },
 ];
 
 export function ProductsGrid() {
@@ -26,7 +27,7 @@ export function ProductsGrid() {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
           {products.map((product) => (
-            <a key={product.name} href="#" className="group">
+            <Link key={product.name} href={product.href} className="group">
               {/* Pure CSS hover via product-card-hover */}
               <div className="product-card-hover bg-white rounded-xl p-4 mb-3 aspect-square flex items-center justify-center relative">
                 <Image
@@ -39,7 +40,7 @@ export function ProductsGrid() {
               <p className="text-center font-bold text-gray-800 text-base md:text-lg transition-all group-hover:pink-cyan-text">
                 {product.name}
               </p>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
