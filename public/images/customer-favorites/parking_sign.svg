@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#cbd5e1" />
+      <stop offset="50%" stop-color="#94a3b8" />
+      <stop offset="100%" stop-color="#64748b" />
+    </linearGradient>
+    <linearGradient id="signBgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f1f5f9" />
+    </linearGradient>
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff2d78" />
+      <stop offset="100%" stop-color="#00e5ff" />
+    </linearGradient>
+    <linearGradient id="shadowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(0,0,0,0.12)" />
+      <stop offset="100%" stop-color="transparent" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Background grid/ambient -->
+  <rect width="100%" height="100%" fill="#f8fafc" />
+  <ellipse cx="250" cy="450" rx="140" ry="18" fill="url(#shadowGrad)" />
+
+  <g transform="translate(0, 10)">
+    <!-- Metal Pole -->
+    <rect x="244" y="180" width="12" height="260" fill="url(#metalGrad)" />
+    <!-- Bolt holes on the pole -->
+    <circle cx="250" cy="220" r="2.5" fill="#475569" />
+    <circle cx="250" cy="300" r="2.5" fill="#475569" />
+    <circle cx="250" cy="380" r="2.5" fill="#475569" />
+
+    <!-- Sign Plate shadow and body -->
+    <rect x="150" y="70" width="200" height="280" rx="12" fill="none" filter="url(#shadow)" />
+    
+    <!-- Sign Border (Metal edge) -->
+    <rect x="150" y="70" width="200" height="280" rx="12" fill="url(#metalGrad)" />
+    <!-- Outer white inset -->
+    <rect x="154" y="74" width="192" height="272" rx="9" fill="#ffffff" />
+    <!-- Brand gradient inner border line -->
+    <rect x="160" y="80" width="180" height="260" rx="6" fill="none" stroke="url(#brandGrad)" stroke-width="4" />
+    <!-- Sign Face -->
+    <rect x="164" y="84" width="172" height="252" rx="4" fill="url(#signBgGrad)" />
+
+    <!-- Sign Content -->
+    <!-- Heading -->
+    <text x="250" y="115" text-anchor="middle" font-family="'Poppins', sans-serif" font-weight="800" font-size="12" fill="#ff2d78" letter-spacing="2">RESERVED</text>
+    <text x="250" y="132" text-anchor="middle" font-family="'Poppins', sans-serif" font-weight="800" font-size="12" fill="#ff2d78" letter-spacing="2">PARKING</text>
+
+    <!-- Parking Symbol "P" Container -->
+    <rect x="210" y="152" width="80" height="80" rx="40" fill="url(#brandGrad)" />
+    <text x="250" y="212" text-anchor="middle" font-family="'Poppins', sans-serif" font-weight="800" font-size="48" fill="#ffffff">P</text>
+
+    <!-- Sub-heading/Instructions -->
+    <text x="250" y="262" text-anchor="middle" font-family="'Poppins', sans-serif" font-weight="800" font-size="11" fill="#1e293b" letter-spacing="1">CUSTOMERS</text>
+    <text x="250" y="278" text-anchor="middle" font-family="'Poppins', sans-serif" font-weight="800" font-size="11" fill="#1e293b" letter-spacing="1">ONLY</text>
+
+    <!-- Footer decoration/warning -->
+    <rect x="180" y="294" width="140" height="2" fill="#cbd5e1" />
+    
+    <text x="250" y="312" text-anchor="middle" font-family="'Open Sans', sans-serif" font-weight="700" font-size="8" fill="#64748b">VIOLATORS WILL BE TOWED</text>
+
+    <!-- Screws mounting the sign to post -->
+    <circle cx="250" cy="95" r="4.5" fill="url(#metalGrad)" stroke="#64748b" stroke-width="0.5" />
+    <line x1="248" y1="95" x2="252" y2="95" stroke="#475569" stroke-width="1" />
+    
+    <circle cx="250" cy="325" r="4.5" fill="url(#metalGrad)" stroke="#64748b" stroke-width="0.5" />
+    <line x1="248" y1="325" x2="252" y2="325" stroke="#475569" stroke-width="1" />
+  </g>
+</svg>

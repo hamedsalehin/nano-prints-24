@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="woodGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7c2d12" />
+      <stop offset="50%" stop-color="#9a3412" />
+      <stop offset="100%" stop-color="#5b21b6" /> <!-- blending a bit of styling -->
+    </linearGradient>
+    <!-- Dark chalkboard texture -->
+    <linearGradient id="chalkboardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="shadowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(0,0,0,0.15)" />
+      <stop offset="100%" stop-color="transparent" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Background grid/ambient -->
+  <rect width="100%" height="100%" fill="#f8fafc" />
+  
+  <!-- Cast shadow -->
+  <ellipse cx="250" cy="450" rx="160" ry="20" fill="url(#shadowGrad)" />
+
+  <g transform="translate(0, 10)">
+    <!-- Back legs of A-frame (visible at the bottom) -->
+    <rect x="165" y="100" width="18" height="345" fill="#451a03" rx="4" transform="rotate(-6, 165, 100)" />
+    <rect x="317" y="100" width="18" height="345" fill="#451a03" rx="4" transform="rotate(6, 335, 100)" />
+    <!-- Hinge bracket link -->
+    <path d="M 175 250 L 325 250" stroke="#94a3b8" stroke-width="3" stroke-dasharray="4" />
+
+    <!-- Main Board A-frame with Shadow -->
+    <g filter="url(#shadow)">
+      <!-- Main wooden frame -->
+      <rect x="150" y="60" width="200" height="385" fill="url(#woodGrad)" rx="8" />
+      
+      <!-- Chalkboard face -->
+      <rect x="166" y="80" width="168" height="325" fill="url(#chalkboardGrad)" rx="3" />
+    </g>
+
+    <!-- Chalkboard content (Illustrating Cafe Chalkboard style) -->
+    
+    <!-- Top banner on board -->
+    <text x="250" y="115" text-anchor="middle" font-family="'Poppins', sans-serif" font-weight="800" font-size="12" fill="#00e5ff" letter-spacing="2">TODAY'S SPECIAL</text>
+    
+    <!-- Coffee cup illustration in chalk style -->
+    <path d="M 235 160 L 265 160 Q 265 180 250 180 Q 235 180 235 160 Z" fill="none" stroke="#ffffff" stroke-width="2.5" />
+    <!-- Handle -->
+    <path d="M 265 163 C 272 163 272 173 265 173" fill="none" stroke="#ffffff" stroke-width="2.5" />
+    <!-- Steam -->
+    <path d="M 242 150 Q 245 142 242 135" fill="none" stroke="#ff2d78" stroke-width="1.5" />
+    <path d="M 250 152 Q 253 144 250 137" fill="none" stroke="#ff2d78" stroke-width="1.5" />
+    <path d="M 258 150 Q 261 142 258 135" fill="none" stroke="#ff2d78" stroke-width="1.5" />
+
+    <!-- Chalk Text items -->
+    <text x="250" y="215" text-anchor="middle" font-family="'Open Sans', sans-serif" font-style="italic" font-weight="600" font-size="14" fill="#ffffff">Fresh Brewed</text>
+    <text x="250" y="240" text-anchor="middle" font-family="'Poppins', sans-serif" font-weight="800" font-size="18" fill="#ff2d78">COFFEE &amp; LATTES</text>
+
+    <!-- Divider -->
+    <path d="M 190 260 L 310 260" stroke="#ffffff" stroke-dasharray="3" stroke-width="1.5" opacity="0.5" />
+
+    <!-- Second item -->
+    <text x="250" y="295" text-anchor="middle" font-family="'Open Sans', sans-serif" font-style="italic" font-weight="600" font-size="13" fill="#ffffff">Artisan Baked</text>
+    <text x="250" y="320" text-anchor="middle" font-family="'Poppins', sans-serif" font-weight="800" font-size="18" fill="#00e5ff">PASTRIES</text>
+
+    <text x="250" y="350" text-anchor="middle" font-family="'Open Sans', sans-serif" font-weight="500" font-size="9" fill="#ffffff" opacity="0.6">MADE FRESH EVERY DAY</text>
+
+    <!-- Bottom frame reinforcement bar -->
+    <rect x="150" y="415" width="200" height="15" fill="#451a03" />
+  </g>
+</svg>
