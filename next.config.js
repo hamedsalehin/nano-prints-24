@@ -7,6 +7,7 @@ const nextConfig = {
       "images.unsplash.com",
       "ext.same-assets.com",
       "ugc.same-assets.com",
+      "wpbfwgwxxcplaclkdbzi.supabase.co",
     ],
     remotePatterns: [
       {
@@ -28,6 +29,11 @@ const nextConfig = {
         protocol: "https",
         hostname: "ugc.same-assets.com",
         pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "wpbfwgwxxcplaclkdbzi.supabase.co",
+        pathname: "/storage/v1/object/public/**",
       },
     ],
   },
