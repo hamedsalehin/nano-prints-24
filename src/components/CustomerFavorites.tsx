@@ -3,11 +3,11 @@ import Link from "next/link";
 import { Star } from "lucide-react";
 
 const favorites = [
-  { name: "Retractable Banners", image: "/images/products/gallery/retractable_use_1.png", href: "/custom-banners/roll-up-banners", rating: 4 },
-  { name: "Feather Flags", image: "/images/products/gallery/flag_use_1.png", href: "/custom-flags/feather-flags", rating: 5 },
-  { name: "Parking Signs", image: "/images/products/park_sign_hover.png", href: "/custom-signs/parking-signs", rating: 5 },
-  { name: "Real Estate Signs", image: "/images/products/re_sign_hover.png", href: "/custom-signs/real-estate-signs", rating: 5 },
-  { name: "Sandwich Boards", image: "/images/products/aframe_sign_hover.png", href: "/custom-signs/a-frame-signs", rating: 5 },
+  { name: "Retractable Banners", image: "/images/customer-favorites/retractable_banner.jpg", href: "/custom-banners/roll-up-banners", rating: 4 },
+  { name: "Feather Flags", image: "/images/customer-favorites/feather_flag.jpg", href: "/custom-flags/feather-flags", rating: 5 },
+  { name: "Parking Signs", image: "/images/customer-favorites/parking_sign.jpg", href: "/custom-signs/parking-signs", rating: 5 },
+  { name: "Real Estate Signs", image: "/images/customer-favorites/real_estate_sign.jpg", href: "/custom-signs/real-estate-signs", rating: 5 },
+  { name: "Sandwich Boards", image: "/images/customer-favorites/sandwich_board.jpg", href: "/custom-signs/a-frame-signs", rating: 5 },
 ];
 
 function StarRating({ rating }: { rating: number }) {
