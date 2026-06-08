@@ -27,19 +27,19 @@ export function Header() {
       {/* Top utility bar — simple white */}
       <div className="bg-white border-b border-gray-150 text-gray-500 text-xs py-1.5 font-medium">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-end gap-4 md:gap-6">
-          <a href="#" className="flex items-center gap-1.5 hover:text-[#ff2d78] transition-colors duration-200">
+          <a href="#" className="flex items-center gap-1.5 hover:text-[#ff2d78] transition-colors duration-200" aria-label="Order Status">
             <Package className="w-4 h-4" />
             <span className="hidden sm:inline">Order Status</span>
           </a>
-          <a href="mailto:nanosign1@gmail.com" className="flex items-center gap-1.5 hover:text-[#ff2d78] transition-colors duration-200">
+          <a href="mailto:nanosign1@gmail.com" className="flex items-center gap-1.5 hover:text-[#ff2d78] transition-colors duration-200" aria-label="Email support at nanosign1@gmail.com">
             <MessageCircle className="w-4 h-4" />
             <span className="hidden sm:inline">nanosign1@gmail.com</span>
           </a>
-          <a href="#" className="flex items-center gap-1.5 hover:text-[#ff2d78] transition-colors duration-200">
+          <a href="#" className="flex items-center gap-1.5 hover:text-[#ff2d78] transition-colors duration-200" aria-label="Help Center">
             <HelpCircle className="w-4 h-4" />
             <span className="hidden sm:inline">Help Center</span>
           </a>
-          <a href="tel:305-967-1005" className="flex items-center gap-1.5 hover:text-[#ff2d78] transition-colors duration-200">
+          <a href="tel:305-967-1005" className="flex items-center gap-1.5 hover:text-[#ff2d78] transition-colors duration-200" aria-label="Call support at 305-967-1005">
             <Phone className="w-4 h-4" />
             <span className="hidden sm:inline">305-967-1005</span>
           </a>
@@ -74,6 +74,7 @@ export function Header() {
                 />
                 <button
                   type="button"
+                  aria-label="Search"
                   className="absolute right-0 top-0 h-full px-5 rounded-r-full text-white font-semibold text-sm brand-gradient hover:opacity-90 transition-opacity"
                 >
                   <Search className="w-5 h-5" />
@@ -83,13 +84,13 @@ export function Header() {
 
             {/* Right side actions */}
             <div className="flex items-center gap-4">
-              <a href="#" className="hidden sm:flex items-center gap-2 text-gray-700 hover:text-[#ff2d78] transition-colors duration-200">
+              <a href="#" className="hidden sm:flex items-center gap-2 text-gray-700 hover:text-[#ff2d78] transition-colors duration-200" aria-label="Sign In">
                 <User className="w-5 h-5" />
                 <span className="text-sm font-medium">Sign In</span>
                 <ChevronDown className="w-4 h-4" />
               </a>
 
-              <a href="#" className="relative flex items-center gap-2 text-gray-700 hover:text-[#ff2d78] transition-colors duration-200">
+              <a href="#" className="relative flex items-center gap-2 text-gray-700 hover:text-[#ff2d78] transition-colors duration-200" aria-label="Shopping Cart">
                 <div className="relative">
                   <ShoppingCart className="w-5 h-5" />
                   <span
@@ -107,6 +108,7 @@ export function Header() {
                 type="button"
                 className="md:hidden p-2 text-gray-700 hover:text-[#ff2d78] transition-colors"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
@@ -121,7 +123,7 @@ export function Header() {
                 placeholder="Search products..."
                 className="w-full px-4 py-2.5 border-2 border-gray-200 rounded-full focus:outline-none focus:border-[#ff2d78] transition-colors"
               />
-              <button type="button" className="absolute right-3 top-1/2 -translate-y-1/2 text-[#ff2d78]">
+              <button type="button" className="absolute right-3 top-1/2 -translate-y-1/2 text-[#ff2d78]" aria-label="Search">
                 <Search className="w-5 h-5" />
               </button>
             </div>

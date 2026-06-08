@@ -1,6 +1,21 @@
 import type { Metadata } from "next";
+import { Open_Sans, Poppins } from "next/font/google";
 import "./globals.css";
 import { ClientBody } from "./ClientBody";
+
+const openSans = Open_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-open-sans",
+  display: "swap",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-poppins",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Nano Signs | Custom Signs, Banners & Flags | Oakland Park, FL",
@@ -17,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${openSans.variable} ${poppins.variable}`}>
       <ClientBody>{children}</ClientBody>
     </html>
   );

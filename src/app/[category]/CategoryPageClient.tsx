@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -95,6 +96,8 @@ export function CategoryPageClient({
                 className="w-full h-[168px] lg:h-[400px] object-cover object-top pointer-events-none"
                 src={mobileHeroImage || tabletHeroImage || heroImage}
                 alt={`${title} Banner`}
+                width={1200}
+                height={400}
               />
             </picture>
 
@@ -174,9 +177,11 @@ export function CategoryPageClient({
                 {/* Image Container with Yellow background on hover */}
                 <div className="browse-item-hover relative w-full aspect-square rounded-xl transition-all duration-300 ease-in-out flex items-center justify-center overflow-hidden">
                   {p.hoverImage ? (
-                    <img
+                    <Image
                       alt={p.name}
                       src={p.hoverImage}
+                      fill
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
                       className="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:opacity-0"
                     />
                   ) : (
@@ -185,9 +190,11 @@ export function CategoryPageClient({
                   
                   {/* Hover State: High-Fidelity SVG Product Mockup with Stand */}
                   <div className="absolute inset-0 flex items-center justify-center p-[20px] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out z-10">
-                    <img
+                    <Image
                       alt={`${p.name} Cutout`}
                       src={p.image}
+                      fill
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
                       className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
@@ -219,9 +226,11 @@ export function CategoryPageClient({
               {/* Secondary Image */}
               {categorySecondaryImage && (
                 <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-md max-w-[532px] w-full justify-self-center lg:justify-self-end">
-                  <img
+                  <Image
                     src={categorySecondaryImage}
                     alt={`${title} Visual Layout`}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 550px"
                     className="w-full h-full object-cover"
                   />
                 </div>

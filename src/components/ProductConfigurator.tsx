@@ -189,6 +189,7 @@ export function ProductConfigurator({
                 <button 
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
                   className="px-4 py-2 hover:bg-gray-100 transition-colors"
+                  aria-label="Decrease quantity"
                 > - </button>
                 <input 
                   type="number" 
@@ -199,6 +200,7 @@ export function ProductConfigurator({
                 <button 
                   onClick={() => setQuantity(quantity + 1)}
                   className="px-4 py-2 hover:bg-gray-100 transition-colors"
+                  aria-label="Increase quantity"
                 > + </button>
               </div>
               <span className="text-xs text-gray-500">Buy 5+ for 2% off, 10+ for 5% off</span>

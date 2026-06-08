@@ -43,7 +43,12 @@ const bottomLinks = [
   { name: "Accessibility", href: "#" },
 ];
 
-const socialIcons = [Facebook, Twitter, Linkedin, Youtube];
+const socialIcons = [
+  { Icon: Facebook, name: "Facebook" },
+  { Icon: Twitter, name: "Twitter" },
+  { Icon: Linkedin, name: "LinkedIn" },
+  { Icon: Youtube, name: "YouTube" }
+];
 
 export function Footer() {
   return (
@@ -95,9 +100,9 @@ export function Footer() {
 
             {/* Social icons — pure CSS hover via .social-icon-hover */}
             <div className="flex gap-3">
-              {socialIcons.map((Icon, i) => (
-                <a key={i} href="#" className="social-icon-hover p-2 rounded-full">
-                  <Icon className="w-5 h-5" />
+              {socialIcons.map((social, i) => (
+                <a key={i} href="#" className="social-icon-hover p-2 rounded-full" aria-label={social.name}>
+                  <social.Icon className="w-5 h-5" />
                 </a>
               ))}
             </div>
@@ -158,6 +163,8 @@ export function Footer() {
                     key={method.name}
                     src={method.icon}
                     alt={method.name}
+                    width={38}
+                    height={24}
                     className="h-6 bg-white rounded px-1"
                   />
                 ))}

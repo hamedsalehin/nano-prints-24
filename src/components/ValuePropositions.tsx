@@ -29,7 +29,7 @@ export function ValuePropositions() {
                     : "linear-gradient(135deg, rgba(0,229,255,0.12), rgba(176,32,255,0.08))",
                 }}
               >
-                <img src={prop.icon} alt="" className="w-8 h-8" />
+                <img src={prop.icon} alt="" width={32} height={32} className="w-8 h-8" />
               </div>
               <div>
                 <h3 className="font-poppins font-bold text-gray-900 mb-1.5">{prop.title}</h3>
@@ -38,7 +38,7 @@ export function ValuePropositions() {
                   {prop.link && (
                     <>
                       {" "}
-                      <a href="#" className="font-semibold hover:underline" style={{ color: "#ff2d78" }}>
+                      <a href="#" className="font-semibold hover:underline" style={{ color: "#ff2d78" }} aria-label={`${prop.link} about ${prop.title}`}>
                         {prop.link}
                       </a>
                     </>

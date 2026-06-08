@@ -288,6 +288,7 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
                     src={galleryImages[activeImageIndex]}
                     alt={`${cfg.title} in use`}
                     fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                     className="object-cover"
                     priority
                   />
@@ -307,7 +308,7 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
                         style={{ aspectRatio: aspect }}
                         className="relative w-full shadow-inner border border-gray-200 overflow-hidden bg-white"
                       >
-                        <Image src={galleryImages[0]} alt={cfg.title} fill className="object-contain p-2" />
+                        <Image src={galleryImages[0]} alt={cfg.title} fill sizes="(max-width: 768px) 100vw, 400px" className="object-contain p-2" />
                       </div>
                       
                       {/* Stand feet */}
@@ -334,7 +335,7 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
                             : "bg-white"
                         }`}
                       >
-                        <Image src={galleryImages[0]} alt={cfg.title} fill className="object-contain p-4" />
+                        <Image src={galleryImages[0]} alt={cfg.title} fill sizes="(max-width: 768px) 100vw, 400px" className="object-contain p-4" />
                         {hasGrommets && (
                           <>
                             <div className="absolute top-2.5 left-2.5 w-3.5 h-3.5 rounded-full bg-gradient-to-r from-gray-400 to-gray-300 border border-gray-500 flex items-center justify-center shadow-inner"><div className="w-1 h-1 rounded-full bg-white/70"></div></div>
@@ -349,7 +350,7 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
                         style={{ aspectRatio: aspect }}
                         className="relative w-full shadow-inner border border-gray-200 overflow-hidden bg-white"
                       >
-                        <Image src={galleryImages[0]} alt={cfg.title} fill className="object-contain p-2" />
+                        <Image src={galleryImages[0]} alt={cfg.title} fill sizes="(max-width: 768px) 100vw, 400px" className="object-contain p-2" />
                       </div>
                     </div>
                   ) : (
@@ -370,7 +371,7 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
                           : "bg-white border-gray-200"
                       }`}
                     >
-                      <Image src={galleryImages[0]} alt={cfg.title} fill className="object-contain p-6" />
+                      <Image src={galleryImages[0]} alt={cfg.title} fill sizes="(max-width: 768px) 100vw, 400px" className="object-contain p-6" />
 
                       {/* Grommets Overlay */}
                       {hasGrommets && (
@@ -407,9 +408,10 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
                   className={`w-16 h-16 rounded-lg border-2 cursor-pointer p-1 bg-gray-50 transition-all ${
                     activeImageIndex === idx ? "border-[#ff2d78] ring-2 ring-pink-100" : "border-gray-150 hover:border-gray-350"
                   }`}
+                  aria-label={`View product gallery image ${idx + 1}`}
                 >
                   <div className="relative w-full h-full">
-                    <Image src={img} alt="" fill className="object-contain" />
+                    <Image src={img} alt={`Product thumbnail ${idx + 1}`} fill sizes="64px" className="object-contain" />
                   </div>
                 </button>
               ))}

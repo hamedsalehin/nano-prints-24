@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import Image from "next/image";
 import { X, ZoomIn, ZoomOut, RotateCcw, ChevronLeft, ChevronRight } from "lucide-react";
 
 const customerPhotos = [
@@ -172,11 +173,12 @@ export function CustomerHighlights() {
               className="relative aspect-square overflow-hidden group cursor-pointer rounded-2xl shadow-md"
               onClick={() => setActivePhotoIndex(index)}
             >
-              <img
+              <Image
                 src={photo.image}
                 alt={`Customer highlight ${index + 1}`}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                loading="lazy"
+                fill
+                sizes="(max-width: 640px) 33vw, (max-width: 1024px) 25vw, 200px"
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
               />
               {/* Pink/cyan gradient overlay on hover */}
               <div
@@ -269,6 +271,8 @@ export function CustomerHighlights() {
                 ref={imageRef}
                 src={customerPhotos[activePhotoIndex].image}
                 alt={`Customer highlight ${activePhotoIndex + 1}`}
+                width={800}
+                height={600}
                 className="max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl pointer-events-none"
                 draggable={false}
               />
