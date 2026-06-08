@@ -6,7 +6,7 @@ export function HeroSection() {
     <section className="w-full">
       <div className="relative w-full aspect-[2164/727]">
         <Image
-          src="/images/hero-image.jpeg"
+          src="/images/hero-image.png"
           alt="Nano Signs — Custom banners, yard signs, roll-up displays and more"
           fill
           className="object-contain object-center"
