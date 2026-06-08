@@ -9,7 +9,7 @@ const products = [
   { name: "Vinyl Decals", image: "/images/products/main page/vinyl_sticker.png", href: "/custom-decals/window-decals" },
   { name: "Flags", image: "/images/products/main page/flags.png", href: "/custom-flags/flags" },
   { name: "Fabric Banners", image: "/images/products/main page/fabric_banner.png", href: "/custom-banners/fabric-banners" },
-  { name: "Event Tents", image: "/images/products/main page/event _tents.png", href: "/trade-show/custom-canopy-tents" },
+  { name: "Event Tents", image: "/images/products/main page/event_tents.png", href: "/trade-show/custom-canopy-tents" },
   { name: "Business Cards", image: "/images/products/main page/business_cards.png", href: "/marketing-materials/business-cards" },
   { name: "Labels and Stickers", image: "/images/products/main page/sticker_and_labels.png", href: "/custom-decals/sheet-stickers" },
   { name: "Neon Sign", image: "/images/products/main page/neon_sign.jpeg", href: "https://neonfl.com" },

@@ -12,7 +12,7 @@ const categories = [
   { name: "Retractable Banners", href: "/custom-banners/roll-up-banners", image: "/images/products/main page/retractable_roll_up_banner.png" },
   { name: "Flags", href: "/custom-flags", image: "/images/products/main page/flags.png" },
   { name: "Magnets", href: "/vehicle-signs", image: "/images/products/main page/vehicle_magnets.png" },
-  { name: "Tradeshow", href: "/trade-show", image: "/images/products/main page/event _tents.png" },
+  { name: "Tradeshow", href: "/trade-show", image: "/images/products/main page/event_tents.png" },
   { name: "Custom Decals", href: "/custom-decals", image: "/images/products/main page/sticker_and_labels.png" },
   { name: "Business Cards", href: "/marketing-materials", image: "/images/products/main page/business_cards.png" },
 ];

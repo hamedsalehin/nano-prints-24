@@ -1713,7 +1713,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         id: "custom-canopy-tents",
         name: "Custom Canopies",
         description: "Stand out at outdoor events, farmers markets, sporting events, and street fairs with our 10' x 10' Custom Canopy Tents. The canopy top is made from heavy-duty, waterproof, and UV-resistant fabric printed in rich full-color dye-sublimation. The popup frame features a commercial-grade steel or aluminum truss system with adjustable height settings, popping up in minutes for instant shade and high-visibility branding.",
-        image: "/images/products/main page/event _tents.png",
+        image: "/images/products/main page/event_tents.png",
         price: "Starting at $349.99",
         config: {
           title: "Custom Canopy Tents",
@@ -1721,9 +1721,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF OUTDOOR EVENT CANOPIES",
-          image: "/images/products/main page/event _tents.png",
+          image: "/images/products/main page/event_tents.png",
           images: [
-            "/images/products/main page/event _tents.png",
+            "/images/products/main page/event_tents.png",
             "/images/products/gallery/canopy_tent_use_1.png",
             "/images/products/gallery/canopy_tent_use_1.png",
             "/images/products/gallery/canopy_tent_use_1.png"
