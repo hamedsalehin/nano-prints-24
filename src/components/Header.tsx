@@ -4,6 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Search, ShoppingCart, User, Phone, MessageCircle, HelpCircle, Package, Menu, X, ChevronDown } from "lucide-react";
+import { useAuth } from "./AuthContext";
+import { useCart } from "./CartContext";
 
 const navItems = [
   { name: "Signs", href: "/custom-signs" },
@@ -21,6 +23,9 @@ const navItems = [
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const { user, signOut, setShowAuthModal } = useAuth();
+  const { items, setCartOpen } = useCart();
+  const [userDropdownOpen, setUserDropdownOpen] = useState(false);
 
   return (
     <header className="w-full">
@@ -84,24 +89,76 @@ export function Header() {
 
             {/* Right side actions */}
             <div className="flex items-center gap-4">
-              <a href="#" className="hidden sm:flex items-center gap-2 text-gray-700 hover:text-[#ff2d78] transition-colors duration-200" aria-label="Sign In">
-                <User className="w-5 h-5" />
-                <span className="text-sm font-medium">Sign In</span>
-                <ChevronDown className="w-4 h-4" />
-              </a>
+              {/* User Sign In / Account Dropdown */}
+              <div className="relative">
+                {user ? (
+                  <>
+                    <button
+                      onClick={() => setUserDropdownOpen(!userDropdownOpen)}
+                      className="hidden sm:flex items-center gap-2 text-gray-700 hover:text-[#ff2d78] transition-colors duration-200"
+                    >
+                      <User className="w-5 h-5" />
+                      <span className="text-sm font-medium truncate max-w-[100px]">
+                        {user.user_metadata?.full_name || user.email?.split("@")[0] || "Account"}
+                      </span>
+                      <ChevronDown className="w-4 h-4 transition-transform duration-200" style={{ transform: userDropdownOpen ? "rotate(180deg)" : "none" }} />
+                    </button>
 
-              <a href="#" className="relative flex items-center gap-2 text-gray-700 hover:text-[#ff2d78] transition-colors duration-200" aria-label="Shopping Cart">
+                    {userDropdownOpen && (
+                      <div className="absolute right-0 mt-2.5 w-56 rounded-2xl bg-white border border-pink-100 shadow-xl py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200 font-opensans">
+                        <div className="px-4 py-2 border-b border-gray-100 text-xs text-gray-500 font-semibold">
+                          Signed in as:
+                          <div className="text-gray-900 font-bold truncate mt-0.5">{user.email}</div>
+                        </div>
+                        <Link
+                          href="/account/orders"
+                          onClick={() => setUserDropdownOpen(false)}
+                          className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-slate-50 hover:text-[#ff2d78] font-semibold transition-colors"
+                        >
+                          My Orders
+                        </Link>
+                        <button
+                          onClick={() => {
+                            setUserDropdownOpen(false);
+                            signOut();
+                          }}
+                          className="w-full text-left block px-4 py-2.5 text-sm text-red-600 hover:bg-red-50 font-bold transition-colors"
+                        >
+                          Sign Out
+                        </button>
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <Link
+                    href="/login"
+                    className="hidden sm:flex items-center gap-2 text-gray-700 hover:text-[#ff2d78] transition-colors duration-200"
+                  >
+                    <User className="w-5 h-5" />
+                    <span className="text-sm font-medium">Sign In</span>
+                    <ChevronDown className="w-4 h-4" />
+                  </Link>
+                )}
+              </div>
+
+              <button
+                onClick={() => setCartOpen(true)}
+                className="relative flex items-center gap-2 text-gray-700 hover:text-[#ff2d78] transition-colors duration-200"
+                aria-label="Shopping Cart"
+              >
                 <div className="relative">
                   <ShoppingCart className="w-5 h-5" />
-                  <span
-                    className="absolute -top-2 -right-2 text-white text-xs w-4 h-4 rounded-full flex items-center justify-center font-bold"
-                    style={{ background: "linear-gradient(135deg, #ff2d78, #00e5ff)" }}
-                  >
-                    0
-                  </span>
+                  {items.length > 0 && (
+                    <span
+                      className="absolute -top-2 -right-2 text-white text-[10px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-extrabold animate-in zoom-in duration-300"
+                      style={{ background: "linear-gradient(135deg, #ff2d78, #00e5ff)" }}
+                    >
+                      {items.length}
+                    </span>
+                  )}
                 </div>
                 <span className="text-sm font-medium hidden sm:inline">Cart</span>
-              </a>
+              </button>
 
               {/* Mobile menu button */}
               <button
@@ -184,6 +241,41 @@ export function Header() {
                   )}
                 </li>
               ))}
+              
+              {/* Mobile Auth Items */}
+              <li className="border-t border-white/20 mt-2 pt-2">
+                {user ? (
+                  <>
+                    <div className="px-4 py-2 text-xs text-white/60 font-semibold truncate">
+                      Signed in: {user.email}
+                    </div>
+                    <Link
+                      href="/account/orders"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block px-4 py-3 text-sm font-bold text-white hover:text-[#00e5ff] hover:bg-white/10 transition-colors"
+                    >
+                      My Orders
+                    </Link>
+                    <button
+                      onClick={() => {
+                        setMobileMenuOpen(false);
+                        signOut();
+                      }}
+                      className="w-full text-left block px-4 py-3 text-sm font-bold text-red-200 hover:bg-white/10 transition-colors"
+                    >
+                      Sign Out
+                    </button>
+                  </>
+                ) : (
+                  <Link
+                    href="/login"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block px-4 py-3 text-sm font-bold text-white hover:text-[#00e5ff] hover:bg-white/10 transition-colors"
+                  >
+                    Sign In
+                  </Link>
+                )}
+              </li>
             </ul>
           </nav>
         )}

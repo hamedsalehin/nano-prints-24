@@ -5,12 +5,13 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import {
   Type, Square, Image as ImageIcon, Grid, Layers, ZoomIn, ZoomOut,
-  Undo2, Redo2, RotateCcw, AlertTriangle, ShieldCheck, ShoppingCart,
-  ChevronRight, ArrowLeft, Check, Sparkles, HelpCircle, Download, FileDown,
-  Trash2, Copy, AlignCenter, Maximize2, RefreshCw
+  Undo2, Redo2, AlertTriangle, ShieldCheck, ShoppingCart,
+  ChevronRight, ArrowLeft, Check, Sparkles, HelpCircle,
+  Trash2, Copy, RefreshCw, Upload, Loader2, Mail
 } from "lucide-react";
 import { DesignCanvas, CanvasElement } from "@/components/DesignCanvas";
 import { ClipartLibrary, ClipartItem } from "@/components/ClipartLibrary";
+import { useAuth } from "@/components/AuthContext";
 
 // Product templates
 const PRESET_TEMPLATES = [
@@ -198,9 +199,84 @@ function DesignPageContent() {
   const [snapToGrid, setSnapToGrid] = useState(true);
   const [zoomLevel, setZoomLevel] = useState(100);
 
+  // Auth
+  const { user } = useAuth();
+
   // Checkout modal
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [checkoutStep, setCheckoutStep] = useState<"review" | "shipping" | "success">("review");
+
+  // Shipping form state
+  const [shippingName, setShippingName] = useState("");
+  const [shippingAddress, setShippingAddress] = useState("");
+  const [shippingCity, setShippingCity] = useState("");
+  const [shippingPostal, setShippingPostal] = useState("");
+
+  // Finished design file upload (optional PDF/AI/EPS)
+  const finishedDesignRef = useRef<HTMLInputElement>(null);
+  const [finishedDesignFile, setFinishedDesignFile] = useState<File | null>(null);
+
+  // Order submission state
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [confirmedOrderId, setConfirmedOrderId] = useState<string | null>(null);
+  const [confirmedShortId, setConfirmedShortId] = useState<string | null>(null);
+
+  const handlePlaceOrder = async () => {
+    if (!user) {
+      setSubmitError("You must be signed in to place an order.");
+      return;
+    }
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const formData = new FormData();
+      formData.append("user_id", user.id);
+      formData.append("user_email", user.email ?? "");
+      formData.append("product_title", material.label);
+      formData.append("product_size", canvasSize.label);
+      formData.append("quantity", String(quantity));
+      formData.append("unit_price", calculatedPrice.unitPrice);
+      formData.append("total_price", calculatedPrice.total);
+      formData.append(
+        "custom_options",
+        JSON.stringify({
+          Material: material.label,
+          Size: canvasSize.label,
+          Sides: doubleSided ? "Double-sided" : "Single-sided",
+          Quantity: String(quantity),
+        })
+      );
+      formData.append("shipping_name", shippingName);
+      formData.append("shipping_address", shippingAddress);
+      formData.append("shipping_city", shippingCity);
+      formData.append("shipping_postal", shippingPostal);
+
+      if (finishedDesignFile) {
+        formData.append("design_file", finishedDesignFile);
+      }
+
+      const res = await fetch("/api/submit-order", {
+        method: "POST",
+        body: formData,
+      });
+
+      const json = await res.json();
+
+      if (!res.ok || json.error) {
+        throw new Error(json.error || "Order submission failed.");
+      }
+
+      setConfirmedOrderId(json.orderId);
+      setConfirmedShortId(json.shortId);
+      setCheckoutStep("success");
+    } catch (err) {
+      setSubmitError(err instanceof Error ? err.message : "An unexpected error occurred.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   // Push state to history
   const historyPush = (newElements: CanvasElement[]) => {
@@ -853,7 +929,7 @@ function DesignPageContent() {
                               selectedEl.align === al ? "bg-slate-800 text-[#ff2d78]" : "text-slate-400 hover:text-slate-200"
                             }`}
                           >
-                            <AlignCenter className="w-3.5 h-3.5" />
+                            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6" strokeWidth="2"/><line x1="6" y1="12" x2="18" y2="12" strokeWidth="2"/><line x1="3" y1="18" x2="21" y2="18" strokeWidth="2"/></svg>
                           </button>
                         ))}
                       </div>
@@ -1276,38 +1352,112 @@ function DesignPageContent() {
 
               {checkoutStep === "shipping" && (
                 <div className="space-y-4">
-                  <h2 className="text-lg font-bold text-slate-100 font-poppins">Enter Shipping Details</h2>
+                  <h2 className="text-lg font-bold text-slate-100 font-poppins">Shipping & Design</h2>
+
+                  {/* Finished design upload (optional) */}
+                  <div>
+                    <label className="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">Finished Design File (Optional)</label>
+                    <div
+                      onClick={() => finishedDesignRef.current?.click()}
+                      className="border border-dashed border-slate-700 hover:border-[#ff2d78] rounded-lg p-3 text-center cursor-pointer transition-colors group"
+                    >
+                      <input
+                        ref={finishedDesignRef}
+                        type="file"
+                        accept=".pdf,.ai,.eps,.png,.jpg,.svg"
+                        className="hidden"
+                        onChange={(e) => setFinishedDesignFile(e.target.files?.[0] ?? null)}
+                      />
+                      {finishedDesignFile ? (
+                        <div className="flex items-center gap-2 text-green-400 text-xs font-bold">
+                          <Check className="w-4 h-4 shrink-0" />
+                          <span className="truncate">{finishedDesignFile.name}</span>
+                        </div>
+                      ) : (
+                        <div className="flex flex-col items-center gap-1">
+                          <Upload className="w-5 h-5 text-slate-500 group-hover:text-[#ff2d78] transition-colors" />
+                          <span className="text-[10px] text-slate-500 group-hover:text-slate-300">Upload PDF / AI / EPS / PNG</span>
+                        </div>
+                      )}
+                    </div>
+                    <p className="text-[10px] text-slate-500 mt-1">Leave blank if you used the canvas editor above.</p>
+                  </div>
+
                   <div className="space-y-2.5 text-xs">
                     <div>
-                      <label className="block text-slate-400 mb-1">Full Name</label>
-                      <input type="text" placeholder="John Doe" className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2 text-slate-100 focus:outline-none" />
+                      <label className="block text-slate-400 mb-1">Full Name *</label>
+                      <input
+                        type="text"
+                        placeholder="John Doe"
+                        value={shippingName}
+                        onChange={(e) => setShippingName(e.target.value)}
+                        className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2 text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#ff2d78]"
+                      />
                     </div>
                     <div>
-                      <label className="block text-slate-400 mb-1">Shipping Address</label>
-                      <input type="text" placeholder="123 Main Street" className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2 text-slate-100 focus:outline-none" />
+                      <label className="block text-slate-400 mb-1">Shipping Address *</label>
+                      <input
+                        type="text"
+                        placeholder="123 Main Street"
+                        value={shippingAddress}
+                        onChange={(e) => setShippingAddress(e.target.value)}
+                        className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2 text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#ff2d78]"
+                      />
                     </div>
                     <div className="grid grid-cols-2 gap-2">
                       <div>
                         <label className="block text-slate-400 mb-1">City</label>
-                        <input type="text" placeholder="Austin" className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2 text-slate-100 focus:outline-none" />
+                        <input
+                          type="text"
+                          placeholder="Austin"
+                          value={shippingCity}
+                          onChange={(e) => setShippingCity(e.target.value)}
+                          className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2 text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#ff2d78]"
+                        />
                       </div>
                       <div>
                         <label className="block text-slate-400 mb-1">Postal Code</label>
-                        <input type="text" placeholder="78701" className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2 text-slate-100 focus:outline-none" />
+                        <input
+                          type="text"
+                          placeholder="78701"
+                          value={shippingPostal}
+                          onChange={(e) => setShippingPostal(e.target.value)}
+                          className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2 text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#ff2d78]"
+                        />
                       </div>
                     </div>
                   </div>
 
+                  {submitError && (
+                    <div className="bg-red-950/50 border border-red-800 rounded-lg p-3 text-xs text-red-300 flex items-start gap-2">
+                      <AlertTriangle className="w-4 h-4 shrink-0 mt-0.5 text-red-400" />
+                      <span>{submitError}</span>
+                    </div>
+                  )}
+
+                  {!user && (
+                    <div className="bg-amber-950/40 border border-amber-800 rounded-lg p-3 text-xs text-amber-300 flex items-start gap-2">
+                      <AlertTriangle className="w-4 h-4 shrink-0 mt-0.5" />
+                      <span>You must be <strong>signed in</strong> to place an order. Please log in first.</span>
+                    </div>
+                  )}
+
                   <div className="pt-4 border-t border-slate-800">
                     <button
-                      onClick={() => setCheckoutStep("success")}
-                      className="w-full bg-[#ff2d78] hover:opacity-90 text-slate-950 font-bold py-3 rounded-xl text-xs uppercase tracking-wide transition-all shadow-md"
+                      onClick={handlePlaceOrder}
+                      disabled={isSubmitting || !user || !shippingName || !shippingAddress}
+                      className="w-full bg-[#ff2d78] hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed text-slate-950 font-bold py-3 rounded-xl text-xs uppercase tracking-wide transition-all shadow-md flex items-center justify-center gap-2"
                     >
-                      Place Order
+                      {isSubmitting ? (
+                        <><Loader2 className="w-4 h-4 animate-spin" /> Placing Order...</>
+                      ) : (
+                        <><Mail className="w-4 h-4" /> Place Order & Send Confirmation</>
+                      )}
                     </button>
                     <button
-                      onClick={() => setCheckoutStep("review")}
-                      className="w-full text-slate-450 hover:text-white text-xs font-semibold py-2 mt-1 transition-colors"
+                      onClick={() => { setCheckoutStep("review"); setSubmitError(null); }}
+                      disabled={isSubmitting}
+                      className="w-full text-slate-450 hover:text-white text-xs font-semibold py-2 mt-1 transition-colors disabled:opacity-50"
                     >
                       ← Back to Review
                     </button>
@@ -1316,32 +1466,62 @@ function DesignPageContent() {
               )}
 
               {checkoutStep === "success" && (
-                <div className="space-y-5 text-center py-6">
-                  <div className="w-12 h-12 bg-green-950 border border-green-500 text-green-400 rounded-full flex items-center justify-center mx-auto shadow-lg shadow-green-500/10">
-                    <Check className="w-6 h-6" />
+                <div className="space-y-5 text-center py-4">
+                  <div className="w-14 h-14 bg-green-950 border-2 border-green-500 text-green-400 rounded-full flex items-center justify-center mx-auto shadow-lg shadow-green-500/10">
+                    <Check className="w-7 h-7" />
                   </div>
                   <div>
-                    <h2 className="text-base font-bold text-slate-100 font-poppins">Order Placed Successfully!</h2>
-                    <p className="text-xs text-slate-450 mt-1 leading-relaxed">
-                      Thank you for choosing Nano Signs! Our artwork review team is auditing your layout elements now.
+                    <h2 className="text-base font-bold text-slate-100 font-poppins">Order Confirmed! 🎉</h2>
+                    <p className="text-xs text-slate-400 mt-1.5 leading-relaxed">
+                      Thank you for choosing Nano Signs! A confirmation email has been sent to <strong className="text-slate-200">{user?.email}</strong>. Our artwork review team is auditing your design now.
                     </p>
                   </div>
 
-                  <div className="bg-slate-950/60 p-4 rounded-xl border border-slate-800 text-left text-xs">
-                    <div className="flex justify-between mb-1.5"><span className="text-slate-400">Order ID:</span><span className="font-mono text-slate-200">#NS-9048-26</span></div>
-                    <div className="flex justify-between"><span className="text-slate-400">Expected Delivery:</span><span className="font-semibold text-[#ff2d78]">Next Business Day</span></div>
+                  <div className="bg-slate-950/60 p-4 rounded-xl border border-slate-800 text-left text-xs space-y-2">
+                    <div className="flex justify-between">
+                      <span className="text-slate-400">Order ID:</span>
+                      <span className="font-mono text-green-400 font-bold">#{confirmedShortId}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-slate-400">Full ID:</span>
+                      <span className="font-mono text-slate-500 text-[10px] truncate max-w-[130px]">{confirmedOrderId}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-slate-400">Expected Delivery:</span>
+                      <span className="font-semibold text-[#ff2d78]">Next Business Day</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-slate-400">Emails Sent:</span>
+                      <span className="text-green-400 font-semibold flex items-center gap-1"><Mail className="w-3 h-3" /> Admin + Customer</span>
+                    </div>
                   </div>
 
-                  <button
-                    onClick={() => {
-                      setIsCheckoutOpen(false);
-                      setElements([]);
-                      historyPush([]);
-                    }}
-                    className="w-full bg-slate-800 hover:bg-slate-750 text-white font-bold py-2.5 rounded-xl text-xs uppercase transition-all"
-                  >
-                    Start New Design
-                  </button>
+                  <div className="flex gap-2 flex-col">
+                    <Link
+                      href="/account/orders"
+                      className="w-full bg-[#ff2d78] hover:opacity-90 text-slate-950 font-bold py-2.5 rounded-xl text-xs uppercase tracking-wide transition-all flex items-center justify-center gap-2"
+                    >
+                      View My Orders
+                    </Link>
+                    <button
+                      onClick={() => {
+                        setIsCheckoutOpen(false);
+                        setElements([]);
+                        historyPush([]);
+                        setShippingName("");
+                        setShippingAddress("");
+                        setShippingCity("");
+                        setShippingPostal("");
+                        setFinishedDesignFile(null);
+                        setConfirmedOrderId(null);
+                        setConfirmedShortId(null);
+                        setCheckoutStep("review");
+                      }}
+                      className="w-full bg-slate-800 hover:bg-slate-750 text-white font-bold py-2.5 rounded-xl text-xs uppercase transition-all"
+                    >
+                      Start New Design
+                    </button>
+                  </div>
                 </div>
               )}
 

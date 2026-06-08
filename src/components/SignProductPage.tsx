@@ -5,7 +5,9 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, CheckCircle2, Truck, ShieldCheck, Star, Info, Clock } from "lucide-react";
+import { ChevronDown, CheckCircle2, Truck, ShieldCheck, Star, Info, Clock, UploadCloud, Loader2 } from "lucide-react";
+import { useCart } from "./CartContext";
+import { supabase } from "@/lib/supabaseClient";
 
 /* ─── Generic Types ─────────────────────────────── */
 export interface SizeOption {
@@ -125,6 +127,79 @@ function ShippingCountdown() {
 export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
   const [selectedSize, setSelectedSize] = useState(cfg.sizes[0]);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const { addItem } = useCart();
+
+  const [pdfUploading, setPdfUploading] = useState(false);
+  const [pdfUrl, setPdfUrl] = useState<string | null>(null);
+  const [pdfName, setPdfName] = useState<string | null>(null);
+  const [pdfError, setPdfError] = useState<string | null>(null);
+
+  const handlePdfUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    const allowedTypes = ["application/pdf", "image/png", "image/jpeg", "image/jpg"];
+    if (!allowedTypes.includes(file.type)) {
+      setPdfError("Only PDF, PNG, or JPG files are accepted.");
+      return;
+    }
+
+    setPdfError(null);
+    setPdfUploading(true);
+
+    try {
+      const fileExt = file.name.split(".").pop();
+      const fileName = `${Date.now()}_${Math.random().toString(36).substring(2, 9)}.${fileExt}`;
+      const filePath = `designs/${fileName}`;
+
+      const { error: uploadError } = await supabase.storage
+        .from("designs")
+        .upload(filePath, file);
+
+      if (uploadError) {
+        throw uploadError;
+      }
+
+      const { data: { publicUrl } } = supabase.storage
+        .from("designs")
+        .getPublicUrl(filePath);
+
+      setPdfUrl(publicUrl);
+      setPdfName(file.name);
+    } catch (err) {
+      console.error("PDF upload failed:", err);
+      setPdfError(err instanceof Error ? err.message : "Failed to upload design file. Please try again.");
+    } finally {
+      setPdfUploading(false);
+    }
+  };
+
+  const handleRemovePdf = () => {
+    setPdfUrl(null);
+    setPdfName(null);
+    setPdfError(null);
+  };
+
+  const handleAddToCart = () => {
+    const customOptions: Record<string, string> = {};
+    Object.entries(selectValues).forEach(([k, v]) => {
+      customOptions[k] = v.label;
+    });
+    Object.entries(toggleValues).forEach(([k, v]) => {
+      customOptions[k] = v.label;
+    });
+
+    addItem({
+      productTitle: cfg.title,
+      size: selectedSize.label,
+      quantity,
+      unitPrice,
+      totalPrice: Number(totalPrice),
+      designUrl: pdfUrl || undefined,
+      designFilename: pdfName || undefined,
+      customOptions,
+    });
+  };
 
   const galleryImages = useMemo(() => {
     if (cfg.images && cfg.images.length > 0) {
@@ -629,10 +704,64 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
               </div>
 
               <div className="space-y-3 mt-4">
+                {/* Upload Finished Design Button */}
+                <div className="relative">
+                  <input
+                    type="file"
+                    accept=".pdf,.png,.jpg,.jpeg"
+                    onChange={handlePdfUpload}
+                    id="pdf-upload-input"
+                    className="hidden"
+                    disabled={pdfUploading}
+                  />
+                  {pdfUrl ? (
+                    <div className="bg-green-50 border border-green-200 rounded-xl p-3.5 flex items-center justify-between text-xs text-green-800 font-semibold animate-in fade-in duration-300">
+                      <div className="flex items-center gap-2 min-w-0">
+                        <CheckCircle2 className="w-4 h-4 text-green-600 shrink-0" />
+                        <span className="truncate block max-w-[220px]" title={pdfName || "Finished Design.pdf"}>
+                          {pdfName || "Finished Design.pdf"}
+                        </span>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={handleRemovePdf}
+                        className="text-red-500 hover:text-red-700 underline font-bold shrink-0 ml-2 cursor-pointer"
+                      >
+                        Remove
+                      </button>
+                    </div>
+                  ) : (
+                    <label
+                      htmlFor="pdf-upload-input"
+                      className="w-full cursor-pointer flex items-center justify-center gap-2 border-2 border-dashed border-pink-200 hover:border-[#ff2d78] text-gray-800 bg-pink-50/10 hover:bg-pink-50/30 active:scale-[0.98] font-bold py-3.5 rounded-xl transition-all text-xs uppercase tracking-wider font-poppins text-center"
+                    >
+                      {pdfUploading ? (
+                        <>
+                          <Loader2 className="w-4 h-4 animate-spin text-[#ff2d78]" />
+                          Uploading file...
+                        </>
+                      ) : (
+                        <>
+                          <UploadCloud className="w-4 h-4 text-[#ff2d78]" />
+                          Upload Your Own Finished Design (PDF, PNG, JPG)
+                        </>
+                      )}
+                    </label>
+                  )}
+                  {pdfError && (
+                    <p className="text-[11px] text-red-500 font-semibold mt-1 animate-in fade-in duration-250">
+                      ⚠️ {pdfError}
+                    </p>
+                  )}
+                </div>
+
                 <Link href={customizeUrl} className="w-full block text-center active:scale-[0.98] text-white font-extrabold py-4 rounded-xl transition-all text-sm uppercase tracking-wider shadow-md font-poppins hover:opacity-90" style={{ background: "linear-gradient(135deg, #ff2d78, #b020ff, #00e5ff)", boxShadow: "0 0 20px rgba(255,45,120,0.4)" }}>
                   Customize & Upload Artwork
                 </Link>
-                <button className="w-full bg-black hover:bg-gray-900 active:scale-[0.98] text-white font-extrabold py-4 rounded-xl transition-all text-sm uppercase tracking-wider shadow-md font-poppins">
+                <button 
+                  onClick={handleAddToCart}
+                  className="w-full bg-black hover:bg-gray-900 active:scale-[0.98] text-white font-extrabold py-4 rounded-xl transition-all text-sm uppercase tracking-wider shadow-md font-poppins"
+                >
                   Add to Cart
                 </button>
                 <p className="text-center text-xs text-gray-400 font-semibold pt-1">Free artwork check included with every order</p>
