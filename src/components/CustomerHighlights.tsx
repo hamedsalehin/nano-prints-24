@@ -176,6 +176,7 @@ export function CustomerHighlights() {
                 src={photo.image}
                 alt={`Customer highlight ${index + 1}`}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
               />
               {/* Pink/cyan gradient overlay on hover */}
               <div
