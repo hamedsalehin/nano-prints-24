@@ -5,7 +5,7 @@ import { Resend } from "resend";
 // ── Server-side Supabase client (uses service role to bypass RLS) ────────────
 const supabaseAdmin = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
+  process.env.SUPABASE_SERVICE_ROLE_KEY!,
 );
 
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -42,7 +42,7 @@ export async function POST(req: NextRequest) {
     if (!userId || !productTitle) {
       return NextResponse.json(
         { error: "Missing required fields: user_id and product_title" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -56,12 +56,13 @@ export async function POST(req: NextRequest) {
       const fileBytes = new Uint8Array(fileBuffer);
       const safeFileName = `${userId}/${Date.now()}-${designFile.name.replace(/[^a-zA-Z0-9._-]/g, "_")}`;
 
-      const { data: uploadData, error: uploadError } = await supabaseAdmin.storage
-        .from("designs")
-        .upload(safeFileName, fileBytes, {
-          contentType: designFile.type || "application/pdf",
-          upsert: false,
-        });
+      const { data: uploadData, error: uploadError } =
+        await supabaseAdmin.storage
+          .from("designs")
+          .upload(safeFileName, fileBytes, {
+            contentType: designFile.type || "application/pdf",
+            upsert: false,
+          });
 
       if (uploadError) {
         console.error("Storage upload error:", uploadError);
@@ -131,16 +132,23 @@ export async function POST(req: NextRequest) {
               </table>
             </div>
 
-            ${Object.keys(customOptions).length > 0 ? `
+            ${Object.keys(customOptions).length > 0
+            ? `
             <div style="background: #1e293b; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
               <h3 style="margin: 0 0 12px; font-size: 14px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em;">Custom Options</h3>
               <table style="width: 100%; font-size: 13px;">
-                ${Object.entries(customOptions).map(([k, v]) => `
+                ${Object.entries(customOptions)
+              .map(
+                ([k, v]) => `
                   <tr><td style="padding: 4px 0; color: #64748b; width: 40%;">${k}:</td><td style="color: #e2e8f0;">${v}</td></tr>
-                `).join("")}
+                `,
+              )
+              .join("")}
               </table>
             </div>
-            ` : ""}
+            `
+            : ""
+          }
 
             <div style="background: #1e293b; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
               <h3 style="margin: 0 0 12px; font-size: 14px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em;">Shipping Details</h3>
@@ -151,7 +159,8 @@ export async function POST(req: NextRequest) {
               </p>
             </div>
 
-            ${designUrl ? `
+            ${designUrl
+            ? `
             <div style="background: #1e293b; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
               <h3 style="margin: 0 0 12px; font-size: 14px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em;">Customer Artwork</h3>
               <p style="margin: 0 0 10px; font-size: 13px; color: #cbd5e1;">Filename: ${designFilename}</p>
@@ -159,11 +168,13 @@ export async function POST(req: NextRequest) {
                 Download Design File
               </a>
             </div>
-            ` : `
+            `
+            : `
             <div style="background: #1e293b; border-radius: 10px; padding: 20px; margin-bottom: 20px; border: 1px dashed #334155;">
               <p style="margin: 0; font-size: 13px; color: #64748b;">⚙️ Design was created via the online canvas editor — no file upload.</p>
             </div>
-            `}
+            `
+          }
 
             <div style="text-align: center; padding-top: 20px; border-top: 1px solid #1e293b;">
               <p style="font-size: 12px; color: #475569; margin: 0;">Customer: ${userEmail}</p>
@@ -222,14 +233,17 @@ export async function POST(req: NextRequest) {
                 </tr>
               </table>
 
-              ${shippingName ? `
+              ${shippingName
+            ? `
               <h2 style="font-size: 16px; color: #0f172a; margin: 0 0 12px;">Shipping To</h2>
               <div style="background: #f8fafc; border-radius: 8px; padding: 14px; font-size: 14px; color: #334155; line-height: 1.6; margin-bottom: 24px;">
                 <strong>${shippingName}</strong><br/>
                 ${shippingAddress || ""}<br/>
                 ${shippingCity || ""} ${shippingPostal || ""}
               </div>
-              ` : ""}
+              `
+            : ""
+          }
 
               <div style="background: #fef9ff; border: 1px solid #e9d5ff; border-radius: 10px; padding: 16px; margin-bottom: 24px;">
                 <p style="margin: 0; font-size: 13px; color: #7e22ce; font-weight: bold;">🎨 Free Artwork Review Included</p>
@@ -264,7 +278,7 @@ export async function POST(req: NextRequest) {
     console.error("submit-order error:", err);
     return NextResponse.json(
       { error: err instanceof Error ? err.message : "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

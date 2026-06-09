@@ -6,15 +6,51 @@ import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const categories = [
-  { name: "Signs", href: "/custom-signs", image: "/images/products/main page/signs.png" },
-  { name: "Real Estate Signs", href: "/custom-signs/real-estate-signs", image: "/images/products/main page/Real_estate_signs.png" },
-  { name: "Banners", href: "/custom-banners", image: "/images/products/main page/fabric_banner.png" },
-  { name: "Retractable Banners", href: "/custom-banners/roll-up-banners", image: "/images/products/main page/retractable_roll_up_banner.png" },
-  { name: "Flags", href: "/custom-flags", image: "/images/products/main page/flags.png" },
-  { name: "Magnets", href: "/vehicle-signs", image: "/images/products/main page/vehicle_magnets.png" },
-  { name: "Tradeshow", href: "/trade-show", image: "/images/products/main page/event_tents.png" },
-  { name: "Custom Decals", href: "/custom-decals", image: "/images/products/main page/sticker_and_labels.png" },
-  { name: "Business Cards", href: "/marketing-materials", image: "/images/products/main page/business_cards.png" },
+  {
+    name: "Signs",
+    href: "/custom-signs",
+    image: "/images/products/main page/signs.png",
+  },
+  {
+    name: "Real Estate Signs",
+    href: "/custom-signs/real-estate-signs",
+    image: "/images/products/main page/Real_estate_signs.png",
+  },
+  {
+    name: "Banners",
+    href: "/custom-banners",
+    image: "/images/products/main page/fabric_banner.png",
+  },
+  {
+    name: "Retractable Banners",
+    href: "/custom-banners/roll-up-banners",
+    image: "/images/products/main page/retractable_roll_up_banner.png",
+  },
+  {
+    name: "Flags",
+    href: "/custom-flags",
+    image: "/images/products/main page/flags.png",
+  },
+  {
+    name: "Magnets",
+    href: "/vehicle-signs",
+    image: "/images/products/main page/vehicle_magnets.png",
+  },
+  {
+    name: "Tradeshow",
+    href: "/trade-show",
+    image: "/images/products/main page/event_tents.png",
+  },
+  {
+    name: "Custom Decals",
+    href: "/custom-decals",
+    image: "/images/products/main page/sticker_and_labels.png",
+  },
+  {
+    name: "Business Cards",
+    href: "/marketing-materials",
+    image: "/images/products/main page/business_cards.png",
+  },
 ];
 
 export function CategoryCarousel() {
@@ -23,7 +59,10 @@ export function CategoryCarousel() {
   const scroll = (direction: "left" | "right") => {
     if (scrollRef.current) {
       const scrollAmount = scrollRef.current.clientWidth * 0.75;
-      scrollRef.current.scrollBy({ left: direction === "left" ? -scrollAmount : scrollAmount, behavior: "smooth" });
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
     }
   };
 
@@ -58,9 +97,16 @@ export function CategoryCarousel() {
           </button>
 
           {/* Carousel track */}
-          <div ref={scrollRef} className="flex gap-6 overflow-x-auto hide-scrollbar pb-6 px-1">
+          <div
+            ref={scrollRef}
+            className="flex gap-6 overflow-x-auto hide-scrollbar pb-6 px-1"
+          >
             {categories.map((category) => (
-              <Link key={category.name} href={category.href} className="flex-shrink-0 w-48 md:w-64 group">
+              <Link
+                key={category.name}
+                href={category.href}
+                className="flex-shrink-0 w-48 md:w-64 group"
+              >
                 {/* Pure CSS hover via card-pink-hover class */}
                 <div className="card-pink-hover rounded-2xl p-6 mb-4 aspect-square flex items-center justify-center overflow-hidden">
                   <div className="relative w-full h-full">
@@ -83,7 +129,10 @@ export function CategoryCarousel() {
 
           {/* Progress bar */}
           <div className="mt-2 flex justify-center gap-1.5">
-            <div className="w-20 h-1.5 rounded-full" style={{ background: "linear-gradient(90deg, #ff2d78, #00e5ff)" }} />
+            <div
+              className="w-20 h-1.5 rounded-full"
+              style={{ background: "linear-gradient(90deg, #ff2d78, #00e5ff)" }}
+            />
             <div className="w-20 h-1.5 bg-gray-200 rounded-full" />
           </div>
         </div>

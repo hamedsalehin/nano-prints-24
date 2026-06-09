@@ -6,7 +6,15 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { supabase } from "@/lib/supabaseClient";
 import { useRouter } from "next/navigation";
-import { Mail, Lock, User as UserIcon, Loader2, CheckCircle2, AlertCircle, ArrowRight } from "lucide-react";
+import {
+  Mail,
+  Lock,
+  User as UserIcon,
+  Loader2,
+  CheckCircle2,
+  AlertCircle,
+  ArrowRight,
+} from "lucide-react";
 import Link from "next/link";
 
 export default function LoginPage() {
@@ -49,9 +57,13 @@ export default function LoginPage() {
         if (error) throw error;
 
         if (data?.user?.identities?.length === 0) {
-          setError("An account with this email already exists. Try signing in.");
+          setError(
+            "An account with this email already exists. Try signing in.",
+          );
         } else {
-          setSuccess("Account created successfully! Check your email for a verification link.");
+          setSuccess(
+            "Account created successfully! Check your email for a verification link.",
+          );
           setEmail("");
           setPassword("");
           setFullName("");
@@ -64,11 +76,13 @@ export default function LoginPage() {
         });
 
         if (error) throw error;
-        
+
         router.push("/account/orders");
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : "An unexpected error occurred.");
+      setError(
+        err instanceof Error ? err.message : "An unexpected error occurred.",
+      );
     } finally {
       setLoading(false);
     }
@@ -81,7 +95,9 @@ export default function LoginPage() {
         <div className="flex-grow flex items-center justify-center py-24">
           <div className="text-center flex flex-col items-center gap-3">
             <Loader2 className="w-10 h-10 text-[#ff2d78] animate-spin" />
-            <p className="text-gray-500 font-semibold">Checking authentication status...</p>
+            <p className="text-gray-500 font-semibold">
+              Checking authentication status...
+            </p>
           </div>
         </div>
         <Footer />
@@ -97,17 +113,17 @@ export default function LoginPage() {
         <div className="relative bg-white rounded-3xl shadow-xl border border-pink-100 max-w-lg w-full overflow-hidden transform transition-all duration-300">
           {/* Accent Line */}
           <div className="h-2 w-full brand-gradient" />
-          
+
           <div className="p-8 md:p-10">
             <div className="text-center mb-8">
               <h1 className="text-3xl font-bold font-poppins text-gray-900">
                 {isSignUp ? "Create Account" : "Sign In"}
               </h1>
               <p className="text-sm text-gray-500 mt-2">
-                {isSignUp 
-                  ? "Sign up to start tracking orders and upload finished sign designs" 
-                  : "Sign in to manage your signs, orders, and details"
-                }</p>
+                {isSignUp
+                  ? "Sign up to start tracking orders and upload finished sign designs"
+                  : "Sign in to manage your signs, orders, and details"}
+              </p>
             </div>
 
             {error && (
@@ -125,7 +141,9 @@ export default function LoginPage() {
                 <CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
                 <div>
                   <p className="font-bold">Success</p>
-                  <p className="text-green-700 leading-normal mt-0.5">{success}</p>
+                  <p className="text-green-700 leading-normal mt-0.5">
+                    {success}
+                  </p>
                 </div>
               </div>
             )}
@@ -133,7 +151,9 @@ export default function LoginPage() {
             <form onSubmit={handleSubmit} className="space-y-5">
               {isSignUp && (
                 <div>
-                  <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Full Name</label>
+                  <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
+                    Full Name
+                  </label>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
                       <UserIcon className="w-4.5 h-4.5" />
@@ -152,7 +172,9 @@ export default function LoginPage() {
               )}
 
               <div>
-                <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Email Address</label>
+                <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
+                  Email Address
+                </label>
                 <div className="relative">
                   <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
                     <Mail className="w-4.5 h-4.5" />
@@ -170,7 +192,9 @@ export default function LoginPage() {
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Password</label>
+                <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
+                  Password
+                </label>
                 <div className="relative">
                   <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
                     <Lock className="w-4.5 h-4.5" />
@@ -191,7 +215,11 @@ export default function LoginPage() {
                 type="submit"
                 disabled={loading}
                 className="w-full active:scale-[0.98] text-white font-extrabold py-4 rounded-2xl transition-all text-sm uppercase tracking-wider shadow-md font-poppins flex items-center justify-center gap-2 hover:opacity-90 disabled:opacity-50"
-                style={{ background: "linear-gradient(135deg, #ff2d78, #b020ff, #00e5ff)", boxShadow: "0 4px 15px rgba(255,45,120,0.15)" }}
+                style={{
+                  background:
+                    "linear-gradient(135deg, #ff2d78, #b020ff, #00e5ff)",
+                  boxShadow: "0 4px 15px rgba(255,45,120,0.15)",
+                }}
               >
                 {loading ? (
                   <>
@@ -211,8 +239,12 @@ export default function LoginPage() {
               {isSignUp ? (
                 <p>
                   Already have an account?{" "}
-                  <button 
-                    onClick={() => { setIsSignUp(false); setError(null); setSuccess(null); }}
+                  <button
+                    onClick={() => {
+                      setIsSignUp(false);
+                      setError(null);
+                      setSuccess(null);
+                    }}
                     className="font-bold text-[#ff2d78] hover:underline transition-colors"
                   >
                     Sign In
@@ -221,8 +253,12 @@ export default function LoginPage() {
               ) : (
                 <p>
                   Don't have an account yet?{" "}
-                  <button 
-                    onClick={() => { setIsSignUp(true); setError(null); setSuccess(null); }}
+                  <button
+                    onClick={() => {
+                      setIsSignUp(true);
+                      setError(null);
+                      setSuccess(null);
+                    }}
                     className="font-bold text-[#ff2d78] hover:underline transition-colors"
                   >
                     Sign Up
@@ -230,7 +266,6 @@ export default function LoginPage() {
                 </p>
               )}
             </div>
-
           </div>
         </div>
       </main>

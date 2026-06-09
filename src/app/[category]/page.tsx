@@ -16,7 +16,6 @@ export async function generateStaticParams() {
 
 export const dynamicParams = false;
 
-
 export default async function CategoryPage({ params }: PageProps) {
   const { category } = await params;
   const decodedCategory = decodeURIComponent(category);
@@ -33,7 +32,10 @@ export default async function CategoryPage({ params }: PageProps) {
       categorySlug={decodedCategory}
       title={categoryData.title}
       breadcrumbLabel={categoryData.breadcrumbLabel || categoryData.title}
-      heroSubtitle={categoryData.heroSubtitle || "All-Weather. Quick Production. Affordable."}
+      heroSubtitle={
+        categoryData.heroSubtitle ||
+        "All-Weather. Quick Production. Affordable."
+      }
       heroImage={categoryData.heroImage}
       tabletHeroImage={categoryData.tabletHeroImage}
       mobileHeroImage={categoryData.mobileHeroImage}
@@ -49,8 +51,22 @@ export default async function CategoryPage({ params }: PageProps) {
       reviewRating={categoryData.reviewRating}
       reviewCount={categoryData.reviewCount}
       reviewQuote={categoryData.reviewQuote}
-      ctaProduct1={firstTwoProducts[0] ? { name: firstTwoProducts[0].name, href: `/${decodedCategory}/${firstTwoProducts[0].id}` } : undefined}
-      ctaProduct2={firstTwoProducts[1] ? { name: firstTwoProducts[1].name, href: `/${decodedCategory}/${firstTwoProducts[1].id}` } : undefined}
+      ctaProduct1={
+        firstTwoProducts[0]
+          ? {
+              name: firstTwoProducts[0].name,
+              href: `/${decodedCategory}/${firstTwoProducts[0].id}`,
+            }
+          : undefined
+      }
+      ctaProduct2={
+        firstTwoProducts[1]
+          ? {
+              name: firstTwoProducts[1].name,
+              href: `/${decodedCategory}/${firstTwoProducts[1].id}`,
+            }
+          : undefined
+      }
     />
   );
 }

@@ -2,11 +2,38 @@
 
 import { useState } from "react";
 import {
-  Search, ArrowUp, ArrowRight, ArrowDown, ArrowLeft, ArrowUpRight, ArrowUpLeft,
-  Phone, Mail, Globe, MapPin, Percent, DollarSign, Calendar, Clock,
-  ShoppingCart, ShieldAlert, Construction, TriangleAlert, Shield, CheckCircle2,
-  User, Award, Flame, Facebook, Instagram, MessageSquare,
-  Star, Heart, Smile, ThumbsUp, HelpCircle
+  Search,
+  ArrowUp,
+  ArrowRight,
+  ArrowDown,
+  ArrowLeft,
+  ArrowUpRight,
+  ArrowUpLeft,
+  Phone,
+  Mail,
+  Globe,
+  MapPin,
+  Percent,
+  DollarSign,
+  Calendar,
+  Clock,
+  ShoppingCart,
+  ShieldAlert,
+  Construction,
+  TriangleAlert,
+  Shield,
+  CheckCircle2,
+  User,
+  Award,
+  Flame,
+  Facebook,
+  Instagram,
+  MessageSquare,
+  Star,
+  Heart,
+  Smile,
+  ThumbsUp,
+  HelpCircle,
 } from "lucide-react";
 
 // Clipart definition
@@ -21,44 +48,149 @@ export interface ClipartItem {
 const CLIPART_ITEMS: ClipartItem[] = [
   // Arrows
   { id: "arrow-up", name: "Arrow Up", category: "Arrows", component: ArrowUp },
-  { id: "arrow-right", name: "Arrow Right", category: "Arrows", component: ArrowRight },
-  { id: "arrow-down", name: "Arrow Down", category: "Arrows", component: ArrowDown },
-  { id: "arrow-left", name: "Arrow Left", category: "Arrows", component: ArrowLeft },
-  { id: "arrow-up-right", name: "Arrow Diagonal Right", category: "Arrows", component: ArrowUpRight },
-  { id: "arrow-up-left", name: "Arrow Diagonal Left", category: "Arrows", component: ArrowUpLeft },
+  {
+    id: "arrow-right",
+    name: "Arrow Right",
+    category: "Arrows",
+    component: ArrowRight,
+  },
+  {
+    id: "arrow-down",
+    name: "Arrow Down",
+    category: "Arrows",
+    component: ArrowDown,
+  },
+  {
+    id: "arrow-left",
+    name: "Arrow Left",
+    category: "Arrows",
+    component: ArrowLeft,
+  },
+  {
+    id: "arrow-up-right",
+    name: "Arrow Diagonal Right",
+    category: "Arrows",
+    component: ArrowUpRight,
+  },
+  {
+    id: "arrow-up-left",
+    name: "Arrow Diagonal Left",
+    category: "Arrows",
+    component: ArrowUpLeft,
+  },
 
   // Business & Contact
   { id: "phone", name: "Phone", category: "Business", component: Phone },
   { id: "mail", name: "Email", category: "Business", component: Mail },
   { id: "globe", name: "Website", category: "Business", component: Globe },
-  { id: "map-pin", name: "Address Pin", category: "Business", component: MapPin },
-  { id: "percent", name: "Discount Percent", category: "Business", component: Percent },
-  { id: "dollar-sign", name: "Price Tag", category: "Business", component: DollarSign },
-  { id: "calendar", name: "Calendar Event", category: "Business", component: Calendar },
-  { id: "clock", name: "Business Hours", category: "Business", component: Clock },
-  { id: "shopping-cart", name: "Shopping Cart", category: "Business", component: ShoppingCart },
+  {
+    id: "map-pin",
+    name: "Address Pin",
+    category: "Business",
+    component: MapPin,
+  },
+  {
+    id: "percent",
+    name: "Discount Percent",
+    category: "Business",
+    component: Percent,
+  },
+  {
+    id: "dollar-sign",
+    name: "Price Tag",
+    category: "Business",
+    component: DollarSign,
+  },
+  {
+    id: "calendar",
+    name: "Calendar Event",
+    category: "Business",
+    component: Calendar,
+  },
+  {
+    id: "clock",
+    name: "Business Hours",
+    category: "Business",
+    component: Clock,
+  },
+  {
+    id: "shopping-cart",
+    name: "Shopping Cart",
+    category: "Business",
+    component: ShoppingCart,
+  },
 
   // Signs & Warnings
-  { id: "shield-alert", name: "Warning Shield", category: "Symbols", component: ShieldAlert },
-  { id: "construction", name: "Construction Cone", category: "Symbols", component: Construction },
-  { id: "triangle-alert", name: "Alert Sign", category: "Symbols", component: TriangleAlert },
-  { id: "shield", name: "Security Shield", category: "Symbols", component: Shield },
-  { id: "check-circle", name: "Verified Badge", category: "Symbols", component: CheckCircle2 },
+  {
+    id: "shield-alert",
+    name: "Warning Shield",
+    category: "Symbols",
+    component: ShieldAlert,
+  },
+  {
+    id: "construction",
+    name: "Construction Cone",
+    category: "Symbols",
+    component: Construction,
+  },
+  {
+    id: "triangle-alert",
+    name: "Alert Sign",
+    category: "Symbols",
+    component: TriangleAlert,
+  },
+  {
+    id: "shield",
+    name: "Security Shield",
+    category: "Symbols",
+    component: Shield,
+  },
+  {
+    id: "check-circle",
+    name: "Verified Badge",
+    category: "Symbols",
+    component: CheckCircle2,
+  },
   { id: "user", name: "Visitor Symbol", category: "Symbols", component: User },
   { id: "award", name: "Award Medal", category: "Symbols", component: Award },
   { id: "flame", name: "Fire Danger", category: "Symbols", component: Flame },
 
   // Social Media
-  { id: "facebook", name: "Facebook logo", category: "Social", component: Facebook },
-  { id: "instagram", name: "Instagram logo", category: "Social", component: Instagram },
-  { id: "message-square", name: "Chat bubble", category: "Social", component: MessageSquare },
+  {
+    id: "facebook",
+    name: "Facebook logo",
+    category: "Social",
+    component: Facebook,
+  },
+  {
+    id: "instagram",
+    name: "Instagram logo",
+    category: "Social",
+    component: Instagram,
+  },
+  {
+    id: "message-square",
+    name: "Chat bubble",
+    category: "Social",
+    component: MessageSquare,
+  },
 
   // Shapes / Extras
   { id: "star", name: "Star rating", category: "Shapes", component: Star },
   { id: "heart", name: "Heart shape", category: "Shapes", component: Heart },
   { id: "smile", name: "Happy Face", category: "Shapes", component: Smile },
-  { id: "thumbs-up", name: "Like Thumbs Up", category: "Shapes", component: ThumbsUp },
-  { id: "help-circle", name: "Question Icon", category: "Shapes", component: HelpCircle },
+  {
+    id: "thumbs-up",
+    name: "Like Thumbs Up",
+    category: "Shapes",
+    component: ThumbsUp,
+  },
+  {
+    id: "help-circle",
+    name: "Question Icon",
+    category: "Shapes",
+    component: HelpCircle,
+  },
 ];
 
 const CATEGORIES = ["All", "Arrows", "Business", "Symbols", "Social", "Shapes"];
@@ -72,8 +204,11 @@ export function ClipartLibrary({ onSelect }: ClipartLibraryProps) {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const filteredItems = CLIPART_ITEMS.filter((item) => {
-    const matchesSearch = item.name.toLowerCase().includes(search.toLowerCase());
-    const matchesCategory = selectedCategory === "All" || item.category === selectedCategory;
+    const matchesSearch = item.name
+      .toLowerCase()
+      .includes(search.toLowerCase());
+    const matchesCategory =
+      selectedCategory === "All" || item.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
 

@@ -23,7 +23,11 @@ interface CartContextType {
   clearCart: () => void;
   cartOpen: boolean;
   setCartOpen: (open: boolean) => void;
-  checkout: () => Promise<{ success: boolean; error?: string; orderIds?: string[] }>;
+  checkout: () => Promise<{
+    success: boolean;
+    error?: string;
+    orderIds?: string[];
+  }>;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -71,7 +75,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const checkout = async () => {
     if (!user) {
       setShowAuthModal(true);
-      return { success: false, error: "Please sign in or create an account to place your order." };
+      return {
+        success: false,
+        error: "Please sign in or create an account to place your order.",
+      };
     }
 
     if (items.length === 0) {
@@ -107,7 +114,13 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       return { success: true, orderIds };
     } catch (err) {
       console.error("Checkout failed:", err);
-      return { success: false, error: err instanceof Error ? err.message : "Failed to place order. Please try again." };
+      return {
+        success: false,
+        error:
+          err instanceof Error
+            ? err.message
+            : "Failed to place order. Please try again.",
+      };
     }
   };
 

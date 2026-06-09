@@ -1,7 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { X, Mail, Lock, User as UserIcon, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
+import {
+  X,
+  Mail,
+  Lock,
+  User as UserIcon,
+  Loader2,
+  CheckCircle2,
+  AlertCircle,
+} from "lucide-react";
 import { useAuth } from "./AuthContext";
 import { supabase } from "@/lib/supabaseClient";
 
@@ -49,9 +57,13 @@ export function AuthModal() {
 
         if (data?.user?.identities?.length === 0) {
           // User already exists
-          setError("An account with this email already exists. Try signing in.");
+          setError(
+            "An account with this email already exists. Try signing in.",
+          );
         } else {
-          setSuccess("Account created successfully! Check your email for a verification link.");
+          setSuccess(
+            "Account created successfully! Check your email for a verification link.",
+          );
           setTimeout(() => {
             setIsSignUp(false);
             setPassword("");
@@ -66,11 +78,13 @@ export function AuthModal() {
         });
 
         if (error) throw error;
-        
+
         handleClose();
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : "An unexpected error occurred.");
+      setError(
+        err instanceof Error ? err.message : "An unexpected error occurred.",
+      );
     } finally {
       setLoading(false);
     }
@@ -79,19 +93,18 @@ export function AuthModal() {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Backdrop */}
-      <div 
+      <div
         className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity duration-300"
         onClick={handleClose}
       />
 
       {/* Modal Content */}
       <div className="relative bg-white rounded-3xl shadow-2xl border border-pink-100 max-w-md w-full overflow-hidden z-10 transform transition-all duration-300 scale-100 animate-in fade-in zoom-in-95">
-        
         {/* Top Gradient Banner */}
         <div className="h-2 w-full brand-gradient" />
-        
+
         {/* Close button */}
-        <button 
+        <button
           onClick={handleClose}
           className="absolute top-4 right-4 p-2 text-gray-400 hover:text-gray-600 rounded-full hover:bg-gray-100 transition-colors"
           aria-label="Close modal"
@@ -105,7 +118,9 @@ export function AuthModal() {
               {isSignUp ? "Create Account" : "Welcome Back"}
             </h2>
             <p className="text-sm text-gray-500 mt-1.5 font-opensans">
-              {isSignUp ? "Sign up to track orders & upload custom designs" : "Sign in to manage your signs & orders"}
+              {isSignUp
+                ? "Sign up to track orders & upload custom designs"
+                : "Sign in to manage your signs & orders"}
             </p>
           </div>
 
@@ -124,7 +139,9 @@ export function AuthModal() {
               <CheckCircle2 className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
               <div>
                 <p className="font-bold">Success</p>
-                <p className="text-green-700 leading-normal mt-0.5">{success}</p>
+                <p className="text-green-700 leading-normal mt-0.5">
+                  {success}
+                </p>
               </div>
             </div>
           )}
@@ -132,9 +149,13 @@ export function AuthModal() {
           <form onSubmit={handleSubmit} className="space-y-4 font-opensans">
             {isSignUp && (
               <div>
-                <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Full Name</label>
+                <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
+                  Full Name
+                </label>
                 <div className="relative">
-                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"><UserIcon className="w-4 h-4" /></span>
+                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+                    <UserIcon className="w-4 h-4" />
+                  </span>
                   <input
                     type="text"
                     required
@@ -149,9 +170,13 @@ export function AuthModal() {
             )}
 
             <div>
-              <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Email Address</label>
+              <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
+                Email Address
+              </label>
               <div className="relative">
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"><Mail className="w-4 h-4" /></span>
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+                  <Mail className="w-4 h-4" />
+                </span>
                 <input
                   type="email"
                   required
@@ -165,9 +190,13 @@ export function AuthModal() {
             </div>
 
             <div>
-              <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">Password</label>
+              <label className="block text-xs font-bold text-gray-700 uppercase tracking-wider mb-2">
+                Password
+              </label>
               <div className="relative">
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"><Lock className="w-4 h-4" /></span>
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+                  <Lock className="w-4 h-4" />
+                </span>
                 <input
                   type="password"
                   required
@@ -184,15 +213,21 @@ export function AuthModal() {
               type="submit"
               disabled={loading}
               className="w-full active:scale-[0.98] text-white font-extrabold py-3.5 rounded-2xl transition-all text-sm uppercase tracking-wider shadow-md font-poppins flex items-center justify-center gap-2 hover:opacity-90 disabled:opacity-50"
-              style={{ background: "linear-gradient(135deg, #ff2d78, #b020ff, #00e5ff)", boxShadow: "0 4px 15px rgba(255,45,120,0.2)" }}
+              style={{
+                background:
+                  "linear-gradient(135deg, #ff2d78, #b020ff, #00e5ff)",
+                boxShadow: "0 4px 15px rgba(255,45,120,0.2)",
+              }}
             >
               {loading ? (
                 <>
                   <Loader2 className="w-4 h-4 animate-spin" />
                   Processing...
                 </>
+              ) : isSignUp ? (
+                "Sign Up"
               ) : (
-                isSignUp ? "Sign Up" : "Sign In"
+                "Sign In"
               )}
             </button>
           </form>
@@ -202,8 +237,11 @@ export function AuthModal() {
             {isSignUp ? (
               <p>
                 Already have an account?{" "}
-                <button 
-                  onClick={() => { setIsSignUp(false); setError(null); }}
+                <button
+                  onClick={() => {
+                    setIsSignUp(false);
+                    setError(null);
+                  }}
                   className="font-bold text-[#ff2d78] hover:underline transition-colors"
                 >
                   Sign In
@@ -212,8 +250,11 @@ export function AuthModal() {
             ) : (
               <p>
                 Don't have an account yet?{" "}
-                <button 
-                  onClick={() => { setIsSignUp(true); setError(null); }}
+                <button
+                  onClick={() => {
+                    setIsSignUp(true);
+                    setError(null);
+                  }}
                   className="font-bold text-[#ff2d78] hover:underline transition-colors"
                 >
                   Sign Up
@@ -221,7 +262,6 @@ export function AuthModal() {
               </p>
             )}
           </div>
-
         </div>
       </div>
     </div>

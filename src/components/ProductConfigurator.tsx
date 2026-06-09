@@ -57,12 +57,20 @@ export function ProductConfigurator({
 
     // Quantity discounts
     let discount = 1;
-    if (quantity >= 25) discount = 0.90;
+    if (quantity >= 25) discount = 0.9;
     else if (quantity >= 10) discount = 0.95;
     else if (quantity >= 5) discount = 0.98;
 
     return (price * quantity * discount).toFixed(2);
-  }, [basePrice, selectedSize, selectedMaterial, selectedSide, selectedCassette, selectedCoating, quantity]);
+  }, [
+    basePrice,
+    selectedSize,
+    selectedMaterial,
+    selectedSide,
+    selectedCassette,
+    selectedCoating,
+    quantity,
+  ]);
 
   const unitPrice = (parseFloat(totalPrice) / quantity).toFixed(2);
 
@@ -72,7 +80,9 @@ export function ProductConfigurator({
         {/* Price Display */}
         <div className="pb-6 border-b border-gray-100">
           <div className="flex items-end gap-2 mb-1">
-            <span className="text-3xl font-bold text-gray-900">${totalPrice}</span>
+            <span className="text-3xl font-bold text-gray-900">
+              ${totalPrice}
+            </span>
             <span className="text-gray-500 mb-1 text-sm">Total</span>
           </div>
           <div className="flex items-center justify-between text-sm">
@@ -89,15 +99,23 @@ export function ProductConfigurator({
         <div className="space-y-5">
           {/* Size */}
           <div>
-            <label className="block text-sm font-bold text-gray-700 mb-2">Size (H x W)</label>
+            <label className="block text-sm font-bold text-gray-700 mb-2">
+              Size (H x W)
+            </label>
             <div className="relative">
               <select
                 value={selectedSize.value}
-                onChange={(e) => setSelectedSize(sizes.find(s => s.value === e.target.value)!)}
+                onChange={(e) =>
+                  setSelectedSize(
+                    sizes.find((s) => s.value === e.target.value)!,
+                  )
+                }
                 className="w-full appearance-none bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-[#ff2d78] cursor-pointer text-sm"
               >
                 {sizes.map((s) => (
-                  <option key={s.value} value={s.value}>{s.label}</option>
+                  <option key={s.value} value={s.value}>
+                    {s.label}
+                  </option>
                 ))}
               </select>
               <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
@@ -106,15 +124,23 @@ export function ProductConfigurator({
 
           {/* Material */}
           <div>
-            <label className="block text-sm font-bold text-gray-700 mb-2">Material</label>
+            <label className="block text-sm font-bold text-gray-700 mb-2">
+              Material
+            </label>
             <div className="relative">
               <select
                 value={selectedMaterial.value}
-                onChange={(e) => setSelectedMaterial(materials.find(m => m.value === e.target.value)!)}
+                onChange={(e) =>
+                  setSelectedMaterial(
+                    materials.find((m) => m.value === e.target.value)!,
+                  )
+                }
                 className="w-full appearance-none bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-yellow-400 cursor-pointer text-sm"
               >
                 {materials.map((m) => (
-                  <option key={m.value} value={m.value}>{m.label}</option>
+                  <option key={m.value} value={m.value}>
+                    {m.label}
+                  </option>
                 ))}
               </select>
               <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
@@ -126,7 +152,9 @@ export function ProductConfigurator({
 
           {/* Sides */}
           <div>
-            <label className="block text-sm font-bold text-gray-700 mb-2">Sides</label>
+            <label className="block text-sm font-bold text-gray-700 mb-2">
+              Sides
+            </label>
             <div className="grid grid-cols-2 gap-3">
               {sides.map((option) => (
                 <button
@@ -146,15 +174,23 @@ export function ProductConfigurator({
 
           {/* Cassette */}
           <div>
-            <label className="block text-sm font-bold text-gray-700 mb-2">Cassette Type</label>
+            <label className="block text-sm font-bold text-gray-700 mb-2">
+              Cassette Type
+            </label>
             <div className="relative">
               <select
                 value={selectedCassette.value}
-                onChange={(e) => setSelectedCassette(cassettes.find(c => c.value === e.target.value)!)}
+                onChange={(e) =>
+                  setSelectedCassette(
+                    cassettes.find((c) => c.value === e.target.value)!,
+                  )
+                }
                 className="w-full appearance-none bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 pr-10 focus:outline-none focus:ring-2 focus:ring-yellow-400 cursor-pointer text-sm"
               >
                 {cassettes.map((c) => (
-                  <option key={c.value} value={c.value}>{c.label}</option>
+                  <option key={c.value} value={c.value}>
+                    {c.label}
+                  </option>
                 ))}
               </select>
               <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
@@ -163,7 +199,9 @@ export function ProductConfigurator({
 
           {/* Coating */}
           <div>
-            <label className="block text-sm font-bold text-gray-700 mb-2">Protective Coating</label>
+            <label className="block text-sm font-bold text-gray-700 mb-2">
+              Protective Coating
+            </label>
             <div className="grid grid-cols-2 gap-3">
               {coatings.map((option) => (
                 <button
@@ -183,34 +221,52 @@ export function ProductConfigurator({
 
           {/* Quantity */}
           <div>
-            <label className="block text-sm font-bold text-gray-700 mb-2">Quantity</label>
+            <label className="block text-sm font-bold text-gray-700 mb-2">
+              Quantity
+            </label>
             <div className="flex items-center gap-3">
               <div className="flex bg-gray-50 border border-gray-200 rounded-xl overflow-hidden">
-                <button 
+                <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
                   className="px-4 py-2 hover:bg-gray-100 transition-colors"
                   aria-label="Decrease quantity"
-                > - </button>
-                <input 
-                  type="number" 
+                >
+                  {" "}
+                  -{" "}
+                </button>
+                <input
+                  type="number"
                   value={quantity}
-                  onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
+                  onChange={(e) =>
+                    setQuantity(Math.max(1, parseInt(e.target.value) || 1))
+                  }
                   className="w-16 text-center bg-transparent focus:outline-none font-bold text-sm"
                 />
-                <button 
+                <button
                   onClick={() => setQuantity(quantity + 1)}
                   className="px-4 py-2 hover:bg-gray-100 transition-colors"
                   aria-label="Increase quantity"
-                > + </button>
+                >
+                  {" "}
+                  +{" "}
+                </button>
               </div>
-              <span className="text-xs text-gray-500">Buy 5+ for 2% off, 10+ for 5% off</span>
+              <span className="text-xs text-gray-500">
+                Buy 5+ for 2% off, 10+ for 5% off
+              </span>
             </div>
           </div>
         </div>
 
         {/* Buttons */}
         <div className="space-y-3 pt-4">
-          <Link href={customizeUrl} className="w-full block text-center text-white font-bold py-4 rounded-xl transition-all shadow-lg active:scale-[0.98] hover:opacity-90" style={{ background: "linear-gradient(135deg, #ff2d78, #b020ff, #00e5ff)" }}>
+          <Link
+            href={customizeUrl}
+            className="w-full block text-center text-white font-bold py-4 rounded-xl transition-all shadow-lg active:scale-[0.98] hover:opacity-90"
+            style={{
+              background: "linear-gradient(135deg, #ff2d78, #b020ff, #00e5ff)",
+            }}
+          >
             Customize Now
           </Link>
           <button className="w-full bg-black hover:bg-gray-900 text-white font-bold py-4 rounded-xl transition-all shadow-lg active:scale-[0.98]">
@@ -222,11 +278,15 @@ export function ProductConfigurator({
         <div className="grid grid-cols-2 gap-4 pt-6 border-t border-gray-100">
           <div className="flex flex-col items-center text-center gap-1">
             <Zap className="w-5 h-5 text-[#ff2d78]" />
-            <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400">Fast Ship</span>
+            <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400">
+              Fast Ship
+            </span>
           </div>
           <div className="flex flex-col items-center text-center gap-1">
             <ShieldCheck className="w-5 h-5 text-[#00e5ff]" />
-            <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400">Secure</span>
+            <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400">
+              Secure
+            </span>
           </div>
         </div>
       </div>

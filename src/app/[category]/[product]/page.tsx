@@ -34,7 +34,6 @@ export async function generateStaticParams() {
 
 export const dynamicParams = false;
 
-
 export default async function ProductConfiguratorPage({ params }: PageProps) {
   const { category, product } = await params;
   const decodedCategory = decodeURIComponent(category);
@@ -45,7 +44,9 @@ export default async function ProductConfiguratorPage({ params }: PageProps) {
     notFound();
   }
 
-  const productData = categoryData.products.find((p) => p.id === decodedProduct);
+  const productData = categoryData.products.find(
+    (p) => p.id === decodedProduct,
+  );
   if (!productData) {
     notFound();
   }
@@ -53,7 +54,7 @@ export default async function ProductConfiguratorPage({ params }: PageProps) {
   // Render the pre-configured product layout page with dynamic description
   const configWithDesc = {
     ...productData.config,
-    description: productData.config.description || productData.description
+    description: productData.config.description || productData.description,
   };
 
   return <SignProductPage cfg={configWithDesc} />;

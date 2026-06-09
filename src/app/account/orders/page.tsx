@@ -5,7 +5,19 @@ import { useAuth } from "@/components/AuthContext";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { supabase } from "@/lib/supabaseClient";
-import { FileText, Loader2, Calendar, ShoppingBag, ExternalLink, ArrowRight, UserPlus, CheckCircle, Package, Clock, ShieldAlert } from "lucide-react";
+import {
+  FileText,
+  Loader2,
+  Calendar,
+  ShoppingBag,
+  ExternalLink,
+  ArrowRight,
+  UserPlus,
+  CheckCircle,
+  Package,
+  Clock,
+  ShieldAlert,
+} from "lucide-react";
 import Link from "next/link";
 
 interface Order {
@@ -49,7 +61,11 @@ export default function OrdersPage() {
         setOrders(data || []);
       } catch (err) {
         console.error("Error fetching orders:", err);
-        setError(err instanceof Error ? err.message : "Failed to load orders. Please try again.");
+        setError(
+          err instanceof Error
+            ? err.message
+            : "Failed to load orders. Please try again.",
+        );
       } finally {
         setLoading(false);
       }
@@ -60,37 +76,50 @@ export default function OrdersPage() {
 
   // Formats date nicely
   const formatDate = (dateString: string) => {
-    const options: Intl.DateTimeFormatOptions = { year: "numeric", month: "long", day: "numeric" };
+    const options: Intl.DateTimeFormatOptions = {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    };
     return new Date(dateString).toLocaleDateString("en-US", options);
   };
 
   const getStatusBadge = (status: string) => {
-    const baseClasses = "px-3 py-1 rounded-full text-xs font-bold font-poppins capitalize flex items-center gap-1.5 w-fit";
+    const baseClasses =
+      "px-3 py-1 rounded-full text-xs font-bold font-poppins capitalize flex items-center gap-1.5 w-fit";
     switch (status.toLowerCase()) {
       case "completed":
         return (
-          <span className={`${baseClasses} bg-green-50 text-green-700 border border-green-200`}>
+          <span
+            className={`${baseClasses} bg-green-50 text-green-700 border border-green-200`}
+          >
             <CheckCircle className="w-3.5 h-3.5" />
             Completed
           </span>
         );
       case "shipped":
         return (
-          <span className={`${baseClasses} bg-blue-50 text-blue-700 border border-blue-200`}>
+          <span
+            className={`${baseClasses} bg-blue-50 text-blue-700 border border-blue-200`}
+          >
             <Package className="w-3.5 h-3.5" />
             Shipped
           </span>
         );
       case "processing":
         return (
-          <span className={`${baseClasses} bg-amber-50 text-amber-700 border border-amber-200`}>
+          <span
+            className={`${baseClasses} bg-amber-50 text-amber-700 border border-amber-200`}
+          >
             <Clock className="w-3.5 h-3.5 animate-pulse" />
             Processing
           </span>
         );
       default: // pending
         return (
-          <span className={`${baseClasses} bg-gray-50 text-gray-700 border border-gray-200`}>
+          <span
+            className={`${baseClasses} bg-gray-50 text-gray-700 border border-gray-200`}
+          >
             <Clock className="w-3.5 h-3.5" />
             Pending Check
           </span>
@@ -104,15 +133,21 @@ export default function OrdersPage() {
 
       <main className="flex-grow max-w-7xl mx-auto px-4 py-12 w-full font-opensans">
         <div className="mb-8">
-          <h1 className="text-3xl font-extrabold text-slate-950 font-poppins">My Account</h1>
-          <p className="text-gray-500 mt-1">Manage your printing orders and uploaded finished designs.</p>
+          <h1 className="text-3xl font-extrabold text-slate-950 font-poppins">
+            My Account
+          </h1>
+          <p className="text-gray-500 mt-1">
+            Manage your printing orders and uploaded finished designs.
+          </p>
         </div>
 
         {authLoading || (loading && user) ? (
           /* Loading State */
           <div className="py-24 text-center flex flex-col items-center justify-center space-y-4">
             <Loader2 className="w-10 h-10 text-[#ff2d78] animate-spin" />
-            <p className="text-gray-500 font-semibold">Loading your order history...</p>
+            <p className="text-gray-500 font-semibold">
+              Loading your order history...
+            </p>
           </div>
         ) : !user ? (
           /* Access Denied / Log In Prompt */
@@ -120,15 +155,22 @@ export default function OrdersPage() {
             <div className="w-16 h-16 bg-pink-50 text-[#ff2d78] rounded-full flex items-center justify-center mx-auto mb-6 border border-pink-100">
               <ShieldAlert className="w-8 h-8" />
             </div>
-            <h2 className="text-2xl font-bold font-poppins text-slate-950">Authentication Required</h2>
+            <h2 className="text-2xl font-bold font-poppins text-slate-950">
+              Authentication Required
+            </h2>
             <p className="text-sm text-gray-500 mt-2.5 leading-relaxed">
-              Please sign in to your account or create a new account to view your past printing orders and upload designs.
+              Please sign in to your account or create a new account to view
+              your past printing orders and upload designs.
             </p>
             <div className="mt-8 space-y-3">
               <button
                 onClick={() => setShowAuthModal(true)}
                 className="w-full active:scale-[0.98] text-white font-extrabold py-3.5 rounded-2xl transition-all text-sm uppercase tracking-wider shadow-md font-poppins flex items-center justify-center gap-2 hover:opacity-90"
-                style={{ background: "linear-gradient(135deg, #ff2d78, #b020ff, #00e5ff)", boxShadow: "0 4px 15px rgba(255,45,120,0.2)" }}
+                style={{
+                  background:
+                    "linear-gradient(135deg, #ff2d78, #b020ff, #00e5ff)",
+                  boxShadow: "0 4px 15px rgba(255,45,120,0.2)",
+                }}
               >
                 Sign In / Create Account
                 <ArrowRight className="w-4 h-4" />
@@ -153,15 +195,23 @@ export default function OrdersPage() {
             <div className="w-16 h-16 bg-slate-50 text-gray-400 rounded-full flex items-center justify-center mx-auto mb-6">
               <ShoppingBag className="w-8 h-8" />
             </div>
-            <h2 className="text-xl font-bold text-slate-950 font-poppins">No Orders Placed Yet</h2>
+            <h2 className="text-xl font-bold text-slate-950 font-poppins">
+              No Orders Placed Yet
+            </h2>
             <p className="text-sm text-gray-500 mt-2">
-              You haven't ordered any custom signs, banners, or flags yet. Customize a product and upload your finished design to get started!
+              You haven't ordered any custom signs, banners, or flags yet.
+              Customize a product and upload your finished design to get
+              started!
             </p>
             <div className="mt-8">
               <Link
                 href="/custom-signs"
                 className="inline-flex items-center gap-2 active:scale-[0.98] text-white font-extrabold px-8 py-3.5 rounded-2xl transition-all text-xs uppercase tracking-wider shadow-md font-poppins hover:opacity-90"
-                style={{ background: "linear-gradient(135deg, #ff2d78, #b020ff, #00e5ff)", boxShadow: "0 4px 15px rgba(255,45,120,0.2)" }}
+                style={{
+                  background:
+                    "linear-gradient(135deg, #ff2d78, #b020ff, #00e5ff)",
+                  boxShadow: "0 4px 15px rgba(255,45,120,0.2)",
+                }}
               >
                 Browse Signs
                 <ArrowRight className="w-4 h-4" />
@@ -172,36 +222,40 @@ export default function OrdersPage() {
           /* Orders List */
           <div className="grid gap-6">
             {orders.map((order) => (
-              <div 
-                key={order.id} 
+              <div
+                key={order.id}
                 className="bg-white rounded-3xl border border-gray-150 shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden animate-in fade-in duration-300"
               >
                 {/* Order Header / Card Top bar */}
                 <div className="bg-slate-50 border-b border-gray-100 px-6 py-4.5 flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-semibold text-gray-500">
                     <div>
-                      <span className="uppercase text-[10px] tracking-wider text-gray-400 block mb-0.5">Order Placed</span>
+                      <span className="uppercase text-[10px] tracking-wider text-gray-400 block mb-0.5">
+                        Order Placed
+                      </span>
                       <span className="text-slate-800 font-bold flex items-center gap-1.5">
                         <Calendar className="w-3.5 h-3.5 text-gray-400" />
                         {formatDate(order.created_at)}
                       </span>
                     </div>
                     <div>
-                      <span className="uppercase text-[10px] tracking-wider text-gray-400 block mb-0.5">Order Total</span>
+                      <span className="uppercase text-[10px] tracking-wider text-gray-400 block mb-0.5">
+                        Order Total
+                      </span>
                       <span className="text-slate-900 font-extrabold text-sm font-poppins">
                         ${order.total_price.toFixed(2)}
                       </span>
                     </div>
                     <div>
-                      <span className="uppercase text-[10px] tracking-wider text-gray-400 block mb-0.5">Order ID</span>
+                      <span className="uppercase text-[10px] tracking-wider text-gray-400 block mb-0.5">
+                        Order ID
+                      </span>
                       <code className="text-[11px] font-bold text-gray-600 bg-white border rounded-lg px-2 py-0.5">
                         {order.id}
                       </code>
                     </div>
                   </div>
-                  <div>
-                    {getStatusBadge(order.status)}
-                  </div>
+                  <div>{getStatusBadge(order.status)}</div>
                 </div>
 
                 {/* Order Body */}
@@ -212,35 +266,45 @@ export default function OrdersPage() {
                       {order.product_title}
                     </h3>
                     <p className="text-xs text-gray-500 font-semibold mt-1">
-                      Size: {order.product_size} • Quantity: {order.quantity} (${order.unit_price.toFixed(2)} each)
+                      Size: {order.product_size} • Quantity: {order.quantity} ($
+                      {order.unit_price.toFixed(2)} each)
                     </p>
 
                     {/* Specifications grid */}
                     {Object.keys(order.custom_options).length > 0 && (
                       <div className="mt-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 bg-slate-50/50 p-4 rounded-2xl border border-slate-100">
-                        {Object.entries(order.custom_options).map(([key, val]) => (
-                          <div key={key} className="text-xs">
-                            <span className="text-gray-400 font-semibold block uppercase text-[9px] tracking-wider">
-                              {key}
-                            </span>
-                            <span className="text-slate-800 font-bold block mt-0.5 leading-tight">
-                              {val}
-                            </span>
-                          </div>
-                        ))}
+                        {Object.entries(order.custom_options).map(
+                          ([key, val]) => (
+                            <div key={key} className="text-xs">
+                              <span className="text-gray-400 font-semibold block uppercase text-[9px] tracking-wider">
+                                {key}
+                              </span>
+                              <span className="text-slate-800 font-bold block mt-0.5 leading-tight">
+                                {val}
+                              </span>
+                            </div>
+                          ),
+                        )}
                       </div>
                     )}
                   </div>
 
                   {/* Artwork / Finished Design */}
                   <div className="md:w-64 shrink-0 flex flex-col justify-center gap-3 bg-slate-50 border border-slate-100 rounded-2xl p-5">
-                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider block">Customer Artwork</h4>
-                    
+                    <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider block">
+                      Customer Artwork
+                    </h4>
+
                     {order.design_url ? (
                       <div className="space-y-3">
                         <div className="flex items-center gap-2 text-xs text-green-800 font-bold bg-green-50 border border-green-200/50 rounded-xl p-2.5">
                           <FileText className="w-4 h-4 text-green-600 shrink-0" />
-                          <span className="truncate max-w-[150px]" title={order.design_filename || "Finished Design.pdf"}>
+                          <span
+                            className="truncate max-w-[150px]"
+                            title={
+                              order.design_filename || "Finished Design.pdf"
+                            }
+                          >
                             {order.design_filename || "Finished Design.pdf"}
                           </span>
                         </div>

@@ -1,5 +1,13 @@
 import Image from "next/image";
-import { Facebook, Twitter, Linkedin, Youtube, MapPin, Mail, Phone } from "lucide-react";
+import {
+  Facebook,
+  Twitter,
+  Linkedin,
+  Youtube,
+  MapPin,
+  Mail,
+  Phone,
+} from "lucide-react";
 
 const footerLinks = {
   helpCenter: {
@@ -31,10 +39,22 @@ const footerLinks = {
 };
 
 const paymentMethods = [
-  { name: "Mastercard", icon: "https://ext.same-assets.com/1114826555/2789702158.svg" },
-  { name: "Visa", icon: "https://ext.same-assets.com/1114826555/794747697.svg" },
-  { name: "Discover", icon: "https://ext.same-assets.com/1114826555/3085012672.svg" },
-  { name: "PayPal", icon: "https://ext.same-assets.com/1114826555/4065183383.svg" },
+  {
+    name: "Mastercard",
+    icon: "https://ext.same-assets.com/1114826555/2789702158.svg",
+  },
+  {
+    name: "Visa",
+    icon: "https://ext.same-assets.com/1114826555/794747697.svg",
+  },
+  {
+    name: "Discover",
+    icon: "https://ext.same-assets.com/1114826555/3085012672.svg",
+  },
+  {
+    name: "PayPal",
+    icon: "https://ext.same-assets.com/1114826555/4065183383.svg",
+  },
 ];
 
 const bottomLinks = [
@@ -47,19 +67,25 @@ const socialIcons = [
   { Icon: Facebook, name: "Facebook" },
   { Icon: Twitter, name: "Twitter" },
   { Icon: Linkedin, name: "LinkedIn" },
-  { Icon: Youtube, name: "YouTube" }
+  { Icon: Youtube, name: "YouTube" },
 ];
 
 export function Footer() {
   return (
     <footer
       className="text-white"
-      style={{ background: "linear-gradient(160deg, #0d0d1a 0%, #130a1f 50%, #001a22 100%)" }}
+      style={{
+        background:
+          "linear-gradient(160deg, #0d0d1a 0%, #130a1f 50%, #001a22 100%)",
+      }}
     >
       {/* Top gradient accent line */}
       <div
         className="h-1 w-full"
-        style={{ background: "linear-gradient(90deg, #ff2d78 0%, #b020ff 50%, #00e5ff 100%)" }}
+        style={{
+          background:
+            "linear-gradient(90deg, #ff2d78 0%, #b020ff 50%, #00e5ff 100%)",
+        }}
       />
 
       <div className="max-w-7xl mx-auto px-4 py-12">
@@ -76,24 +102,46 @@ export function Footer() {
               />
             </div>
             <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-              Your trusted custom printing expert in Oakland Park, FL. Quality signs, banners, and more.
+              Your trusted custom printing expert in Oakland Park, FL. Quality
+              signs, banners, and more.
             </p>
 
             <div className="space-y-3 mb-6">
-              <a href="tel:305-967-1005" className="flex items-center gap-2 text-gray-300 hover:text-[#ff2d78] transition-colors">
-                <Phone className="w-4 h-4 flex-shrink-0" style={{ color: "#ff2d78" }} />
+              <a
+                href="tel:305-967-1005"
+                className="flex items-center gap-2 text-gray-300 hover:text-[#ff2d78] transition-colors"
+              >
+                <Phone
+                  className="w-4 h-4 flex-shrink-0"
+                  style={{ color: "#ff2d78" }}
+                />
                 <span>305-967-1005</span>
               </a>
-              <a href="tel:305-967-9654" className="flex items-center gap-2 text-gray-300 hover:text-[#ff2d78] transition-colors">
-                <Phone className="w-4 h-4 flex-shrink-0" style={{ color: "#ff2d78" }} />
+              <a
+                href="tel:305-967-9654"
+                className="flex items-center gap-2 text-gray-300 hover:text-[#ff2d78] transition-colors"
+              >
+                <Phone
+                  className="w-4 h-4 flex-shrink-0"
+                  style={{ color: "#ff2d78" }}
+                />
                 <span>305-967-9654</span>
               </a>
-              <a href="mailto:nanosign1@gmail.com" className="flex items-center gap-2 text-gray-300 hover:text-[#00e5ff] transition-colors">
-                <Mail className="w-4 h-4 flex-shrink-0" style={{ color: "#00e5ff" }} />
+              <a
+                href="mailto:nanosign1@gmail.com"
+                className="flex items-center gap-2 text-gray-300 hover:text-[#00e5ff] transition-colors"
+              >
+                <Mail
+                  className="w-4 h-4 flex-shrink-0"
+                  style={{ color: "#00e5ff" }}
+                />
                 <span>nanosign1@gmail.com</span>
               </a>
               <div className="flex items-start gap-2 text-gray-300">
-                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "#00e5ff" }} />
+                <MapPin
+                  className="w-4 h-4 mt-0.5 flex-shrink-0"
+                  style={{ color: "#00e5ff" }}
+                />
                 <span>4567 Powerline Rd, Oakland Park, FL 33309</span>
               </div>
             </div>
@@ -101,7 +149,12 @@ export function Footer() {
             {/* Social icons — pure CSS hover via .social-icon-hover */}
             <div className="flex gap-3">
               {socialIcons.map((social, i) => (
-                <a key={i} href="#" className="social-icon-hover p-2 rounded-full" aria-label={social.name}>
+                <a
+                  key={i}
+                  href="#"
+                  className="social-icon-hover p-2 rounded-full"
+                  aria-label={social.name}
+                >
                   <social.Icon className="w-5 h-5" />
                 </a>
               ))}
@@ -116,7 +169,10 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.helpCenter.links.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-gray-400 hover:text-[#00e5ff] transition-colors text-sm">
+                  <a
+                    href={link.href}
+                    className="text-gray-400 hover:text-[#00e5ff] transition-colors text-sm"
+                  >
                     {link.name}
                   </a>
                 </li>
@@ -132,7 +188,10 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.company.links.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-gray-400 hover:text-[#00e5ff] transition-colors text-sm">
+                  <a
+                    href={link.href}
+                    className="text-gray-400 hover:text-[#00e5ff] transition-colors text-sm"
+                  >
                     {link.name}
                   </a>
                 </li>
@@ -148,7 +207,10 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.products.links.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-gray-400 hover:text-[#00e5ff] transition-colors text-sm">
+                  <a
+                    href={link.href}
+                    className="text-gray-400 hover:text-[#00e5ff] transition-colors text-sm"
+                  >
                     {link.name}
                   </a>
                 </li>
@@ -180,12 +242,18 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex flex-wrap justify-center gap-4">
               {bottomLinks.map((link) => (
-                <a key={link.name} href={link.href} className="text-gray-500 hover:text-[#ff2d78] transition-colors text-sm">
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-gray-500 hover:text-[#ff2d78] transition-colors text-sm"
+                >
                   {link.name}
                 </a>
               ))}
             </div>
-            <p className="text-gray-600 text-sm">Copyright 2025 Nano Signs. All rights reserved.</p>
+            <p className="text-gray-600 text-sm">
+              Copyright 2025 Nano Signs. All rights reserved.
+            </p>
           </div>
         </div>
       </div>

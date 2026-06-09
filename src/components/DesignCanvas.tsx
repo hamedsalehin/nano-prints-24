@@ -1,7 +1,16 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
-import { Trash2, Copy, MoveUp, MoveDown, RotateCcw, AlignLeft, AlignCenter, AlignRight } from "lucide-react";
+import {
+  Trash2,
+  Copy,
+  MoveUp,
+  MoveDown,
+  RotateCcw,
+  AlignLeft,
+  AlignCenter,
+  AlignRight,
+} from "lucide-react";
 import { ClipartItem } from "./ClipartLibrary";
 import * as Icons from "lucide-react";
 
@@ -159,7 +168,10 @@ export function DesignCanvas({
 
   // Get active clipart icon component
   const renderClipart = (clipartId: string, color: string = "#000000") => {
-    const standardIcons = Icons as unknown as Record<string, React.ComponentType<{ className?: string; style?: React.CSSProperties }>>;
+    const standardIcons = Icons as unknown as Record<
+      string,
+      React.ComponentType<{ className?: string; style?: React.CSSProperties }>
+    >;
     // Map kebab-case clipartId back to Lucide CamelCase
     const formattedId = clipartId
       .split("-")
@@ -174,7 +186,7 @@ export function DesignCanvas({
   const handleInteractionStart = (
     e: React.MouseEvent,
     type: "move" | "resize" | "rotate",
-    handle?: string
+    handle?: string,
   ) => {
     e.stopPropagation();
     e.preventDefault();
@@ -207,7 +219,9 @@ export function DesignCanvas({
       const deltaPercentY = (deltaY / rect.height) * 100;
 
       const updatedElements = [...elements];
-      const targetIdx = updatedElements.findIndex((el) => el.id === selectedElement.id);
+      const targetIdx = updatedElements.findIndex(
+        (el) => el.id === selectedElement.id,
+      );
       if (targetIdx === -1) return;
 
       const element = { ...updatedElements[targetIdx] };
@@ -269,7 +283,10 @@ export function DesignCanvas({
           y: rect.top + (element.y + element.height / 2) * (rect.height / 100),
         };
 
-        const angleRad = Math.atan2(e.clientY - elementCenterPx.y, e.clientX - elementCenterPx.x);
+        const angleRad = Math.atan2(
+          e.clientY - elementCenterPx.y,
+          e.clientX - elementCenterPx.x,
+        );
         let angleDeg = (angleRad * 180) / Math.PI + 90; // Add 90 offset because handle is pointing up
         if (angleDeg < 0) angleDeg += 360;
 
@@ -307,7 +324,14 @@ export function DesignCanvas({
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseup", handleMouseUp);
     };
-  }, [dragState, elements, selectedElement, snapToGrid, onElementsChange, historyPush]);
+  }, [
+    dragState,
+    elements,
+    selectedElement,
+    snapToGrid,
+    onElementsChange,
+    historyPush,
+  ]);
 
   // Render element borders and handles
   const renderSelectionFrame = (el: CanvasElement) => {
@@ -419,7 +443,8 @@ export function DesignCanvas({
               posClass = "top-1/2 -right-1.5 -translate-y-1/2 cursor-ew-resize";
               break;
             case "s":
-              posClass = "left-1/2 -bottom-1.5 -translate-x-1/2 cursor-ns-resize";
+              posClass =
+                "left-1/2 -bottom-1.5 -translate-x-1/2 cursor-ns-resize";
               break;
             case "w":
               posClass = "top-1/2 -left-1.5 -translate-y-1/2 cursor-ew-resize";
@@ -445,7 +470,9 @@ export function DesignCanvas({
       style={{
         aspectRatio: `${canvasSize.width} / ${canvasSize.height}`,
         backgroundColor: backgroundColor,
-        backgroundImage: backgroundGradient || (backgroundImage ? `url(${backgroundImage})` : "none"),
+        backgroundImage:
+          backgroundGradient ||
+          (backgroundImage ? `url(${backgroundImage})` : "none"),
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -479,7 +506,9 @@ export function DesignCanvas({
             }}
             onMouseDown={(e) => handleInteractionStart(e, "move")}
             className={`absolute flex items-center justify-center cursor-move transition-shadow ${
-              isSelected ? "z-30 select-all" : "z-10 hover:outline hover:outline-1 hover:outline-dashed hover:outline-yellow-400"
+              isSelected
+                ? "z-30 select-all"
+                : "z-10 hover:outline hover:outline-1 hover:outline-dashed hover:outline-yellow-400"
             }`}
             style={{
               left: `${el.x}%`,
@@ -509,8 +538,8 @@ export function DesignCanvas({
                       el.align === "left"
                         ? "flex-start"
                         : el.align === "right"
-                        ? "flex-end"
-                        : "center",
+                          ? "flex-end"
+                          : "center",
                     textAlign: el.align || "center",
                     fontSize: `${el.fontSize || 32}px`,
                     whiteSpace: "pre-wrap",
@@ -531,7 +560,9 @@ export function DesignCanvas({
                       className="w-full h-full"
                       style={{
                         backgroundColor: el.fillColor || "#3b82f6",
-                        border: el.borderWidth ? `${el.borderWidth}px solid ${el.borderColor || "#000"}` : "none",
+                        border: el.borderWidth
+                          ? `${el.borderWidth}px solid ${el.borderColor || "#000"}`
+                          : "none",
                         borderRadius: "2px",
                       }}
                     />
@@ -541,12 +572,18 @@ export function DesignCanvas({
                       className="w-full h-full rounded-full"
                       style={{
                         backgroundColor: el.fillColor || "#3b82f6",
-                        border: el.borderWidth ? `${el.borderWidth}px solid ${el.borderColor || "#000"}` : "none",
+                        border: el.borderWidth
+                          ? `${el.borderWidth}px solid ${el.borderColor || "#000"}`
+                          : "none",
                       }}
                     />
                   )}
                   {el.shapeType === "triangle" && (
-                    <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <svg
+                      className="w-full h-full"
+                      viewBox="0 0 100 100"
+                      preserveAspectRatio="none"
+                    >
                       <polygon
                         points="50,5 95,95 5,95"
                         fill={el.fillColor || "#3b82f6"}
@@ -556,7 +593,11 @@ export function DesignCanvas({
                     </svg>
                   )}
                   {el.shapeType === "star" && (
-                    <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <svg
+                      className="w-full h-full"
+                      viewBox="0 0 100 100"
+                      preserveAspectRatio="none"
+                    >
                       <polygon
                         points="50,2 64,36 100,36 71,57 81,95 50,72 19,95 29,57 0,36 36,36"
                         fill={el.fillColor || "#eab308"}

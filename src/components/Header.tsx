@@ -3,7 +3,18 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Search, ShoppingCart, User, Phone, MessageCircle, HelpCircle, Package, Menu, X, ChevronDown } from "lucide-react";
+import {
+  Search,
+  ShoppingCart,
+  User,
+  Phone,
+  MessageCircle,
+  HelpCircle,
+  Package,
+  Menu,
+  X,
+  ChevronDown,
+} from "lucide-react";
 import { useAuth } from "./AuthContext";
 import { useCart } from "./CartContext";
 
@@ -17,7 +28,11 @@ const navItems = [
   { name: "Marketing Materials", href: "/marketing-materials" },
   { name: "Promotional Products", href: "/promotional-products" },
   { name: "Neon Signs", href: "https://neonFL.com", isExternal: true },
-  { name: "Programmable LED Signs", href: "https://led.rgbsigns.com", isExternal: true },
+  {
+    name: "Programmable LED Signs",
+    href: "https://led.rgbsigns.com",
+    isExternal: true,
+  },
 ];
 
 export function Header() {
@@ -32,19 +47,35 @@ export function Header() {
       {/* Top utility bar — simple white */}
       <div className="bg-white border-b border-gray-150 text-gray-500 text-xs py-1.5 font-medium">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-end gap-4 md:gap-6">
-          <a href="#" className="flex items-center gap-1.5 hover:text-[#ff2d78] transition-colors duration-200" aria-label="Order Status">
+          <a
+            href="#"
+            className="flex items-center gap-1.5 hover:text-[#ff2d78] transition-colors duration-200"
+            aria-label="Order Status"
+          >
             <Package className="w-4 h-4" />
             <span className="hidden sm:inline">Order Status</span>
           </a>
-          <a href="mailto:nanosign1@gmail.com" className="flex items-center gap-1.5 hover:text-[#ff2d78] transition-colors duration-200" aria-label="Email support at nanosign1@gmail.com">
+          <a
+            href="mailto:nanosign1@gmail.com"
+            className="flex items-center gap-1.5 hover:text-[#ff2d78] transition-colors duration-200"
+            aria-label="Email support at nanosign1@gmail.com"
+          >
             <MessageCircle className="w-4 h-4" />
             <span className="hidden sm:inline">nanosign1@gmail.com</span>
           </a>
-          <a href="#" className="flex items-center gap-1.5 hover:text-[#ff2d78] transition-colors duration-200" aria-label="Help Center">
+          <a
+            href="#"
+            className="flex items-center gap-1.5 hover:text-[#ff2d78] transition-colors duration-200"
+            aria-label="Help Center"
+          >
             <HelpCircle className="w-4 h-4" />
             <span className="hidden sm:inline">Help Center</span>
           </a>
-          <a href="tel:305-967-1005" className="flex items-center gap-1.5 hover:text-[#ff2d78] transition-colors duration-200" aria-label="Call support at 305-967-1005">
+          <a
+            href="tel:305-967-1005"
+            className="flex items-center gap-1.5 hover:text-[#ff2d78] transition-colors duration-200"
+            aria-label="Call support at 305-967-1005"
+          >
             <Phone className="w-4 h-4" />
             <span className="hidden sm:inline">305-967-1005</span>
           </a>
@@ -99,16 +130,27 @@ export function Header() {
                     >
                       <User className="w-5 h-5" />
                       <span className="text-sm font-medium truncate max-w-[100px]">
-                        {user.user_metadata?.full_name || user.email?.split("@")[0] || "Account"}
+                        {user.user_metadata?.full_name ||
+                          user.email?.split("@")[0] ||
+                          "Account"}
                       </span>
-                      <ChevronDown className="w-4 h-4 transition-transform duration-200" style={{ transform: userDropdownOpen ? "rotate(180deg)" : "none" }} />
+                      <ChevronDown
+                        className="w-4 h-4 transition-transform duration-200"
+                        style={{
+                          transform: userDropdownOpen
+                            ? "rotate(180deg)"
+                            : "none",
+                        }}
+                      />
                     </button>
 
                     {userDropdownOpen && (
                       <div className="absolute right-0 mt-2.5 w-56 rounded-2xl bg-white border border-pink-100 shadow-xl py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200 font-opensans">
                         <div className="px-4 py-2 border-b border-gray-100 text-xs text-gray-500 font-semibold">
                           Signed in as:
-                          <div className="text-gray-900 font-bold truncate mt-0.5">{user.email}</div>
+                          <div className="text-gray-900 font-bold truncate mt-0.5">
+                            {user.email}
+                          </div>
                         </div>
                         <Link
                           href="/account/orders"
@@ -151,13 +193,17 @@ export function Header() {
                   {items.length > 0 && (
                     <span
                       className="absolute -top-2 -right-2 text-white text-[10px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-extrabold animate-in zoom-in duration-300"
-                      style={{ background: "linear-gradient(135deg, #ff2d78, #00e5ff)" }}
+                      style={{
+                        background: "linear-gradient(135deg, #ff2d78, #00e5ff)",
+                      }}
                     >
                       {items.length}
                     </span>
                   )}
                 </div>
-                <span className="text-sm font-medium hidden sm:inline">Cart</span>
+                <span className="text-sm font-medium hidden sm:inline">
+                  Cart
+                </span>
               </button>
 
               {/* Mobile menu button */}
@@ -167,7 +213,11 @@ export function Header() {
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               >
-                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                {mobileMenuOpen ? (
+                  <X className="w-6 h-6" />
+                ) : (
+                  <Menu className="w-6 h-6" />
+                )}
               </button>
             </div>
           </div>
@@ -180,7 +230,11 @@ export function Header() {
                 placeholder="Search products..."
                 className="w-full px-4 py-2.5 border-2 border-gray-200 rounded-full focus:outline-none focus:border-[#ff2d78] transition-colors"
               />
-              <button type="button" className="absolute right-3 top-1/2 -translate-y-1/2 text-[#ff2d78]" aria-label="Search">
+              <button
+                type="button"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-[#ff2d78]"
+                aria-label="Search"
+              >
                 <Search className="w-5 h-5" />
               </button>
             </div>
@@ -192,7 +246,10 @@ export function Header() {
           <div className="max-w-7xl mx-auto px-4">
             <ul className="flex justify-center items-center">
               {navItems.map((item) => (
-                <li key={item.name} className="relative text-center flex-shrink-0">
+                <li
+                  key={item.name}
+                  className="relative text-center flex-shrink-0"
+                >
                   {item.isExternal ? (
                     <a
                       href={item.href}
@@ -241,7 +298,7 @@ export function Header() {
                   )}
                 </li>
               ))}
-              
+
               {/* Mobile Auth Items */}
               <li className="border-t border-white/20 mt-2 pt-2">
                 {user ? (
@@ -282,12 +339,13 @@ export function Header() {
       </div>
 
       {/* Promo banner — white with pink text */}
-      <div
-        className="py-1.5 text-center bg-white border-b border-pink-100"
-      >
+      <div className="py-1.5 text-center bg-white border-b border-pink-100">
         <p className="text-sm font-bold text-[#ff2d78] tracking-wide">
           ✨ Custom Printing &amp; Signage — Fast Turnaround!{" "}
-          <a href="tel:305-967-1005" className="underline hover:no-underline hover:text-[#b020ff] transition-colors">
+          <a
+            href="tel:305-967-1005"
+            className="underline hover:no-underline hover:text-[#b020ff] transition-colors"
+          >
             Call 305-967-1005
           </a>
         </p>

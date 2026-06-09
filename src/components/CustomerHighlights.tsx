@@ -2,7 +2,14 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import Image from "next/image";
-import { X, ZoomIn, ZoomOut, RotateCcw, ChevronLeft, ChevronRight } from "lucide-react";
+import {
+  X,
+  ZoomIn,
+  ZoomOut,
+  RotateCcw,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 
 const customerPhotos = [
   { image: "/images/customer-highlights/highlight_1.jpeg" },
@@ -37,13 +44,19 @@ export function CustomerHighlights() {
 
   const handlePrev = useCallback(() => {
     if (activePhotoIndex === null) return;
-    setActivePhotoIndex((prev) => (prev !== null ? (prev - 1 + customerPhotos.length) % customerPhotos.length : null));
+    setActivePhotoIndex((prev) =>
+      prev !== null
+        ? (prev - 1 + customerPhotos.length) % customerPhotos.length
+        : null,
+    );
     resetZoom();
   }, [activePhotoIndex, resetZoom]);
 
   const handleNext = useCallback(() => {
     if (activePhotoIndex === null) return;
-    setActivePhotoIndex((prev) => (prev !== null ? (prev + 1) % customerPhotos.length : null));
+    setActivePhotoIndex((prev) =>
+      prev !== null ? (prev + 1) % customerPhotos.length : null,
+    );
     resetZoom();
   }, [activePhotoIndex, resetZoom]);
 
@@ -148,7 +161,10 @@ export function CustomerHighlights() {
     const zoomIntensity = 0.1;
     const direction = e.deltaY < 0 ? 1 : -1;
     setScale((prev) => {
-      const nextScale = Math.min(Math.max(prev + direction * zoomIntensity, 1), 5);
+      const nextScale = Math.min(
+        Math.max(prev + direction * zoomIntensity, 1),
+        5,
+      );
       if (nextScale === 1) {
         setOffset({ x: 0, y: 0 });
       }
@@ -159,7 +175,9 @@ export function CustomerHighlights() {
   return (
     <section
       className="py-14"
-      style={{ background: "linear-gradient(160deg, #f9f0ff 0%, #e0faff 100%)" }}
+      style={{
+        background: "linear-gradient(160deg, #f9f0ff 0%, #e0faff 100%)",
+      }}
     >
       <div className="w-full px-6 md:px-16 lg:px-24 xl:px-32">
         <h2 className="font-poppins text-3xl md:text-4xl font-extrabold mb-8 tracking-tight pink-cyan-text">
@@ -193,7 +211,9 @@ export function CustomerHighlights() {
                   <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm border border-white/30 group-hover:scale-110 transition-transform duration-300">
                     <ZoomIn className="w-5 h-5 text-white" />
                   </div>
-                  <p className="text-xs font-bold tracking-wide font-poppins uppercase">Click to Zoom</p>
+                  <p className="text-xs font-bold tracking-wide font-poppins uppercase">
+                    Click to Zoom
+                  </p>
                 </div>
               </div>
             </div>
@@ -258,7 +278,9 @@ export function CustomerHighlights() {
               }`}
               style={{
                 transform: `translate(${offset.x}px, ${offset.y}px) scale(${scale})`,
-                transition: isDragging ? "none" : "transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1)",
+                transition: isDragging
+                  ? "none"
+                  : "transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1)",
               }}
               onMouseDown={handleMouseDown}
               onMouseMove={handleMouseMove}

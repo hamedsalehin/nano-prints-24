@@ -70,9 +70,13 @@ export function CategoryPageClient({
         {/* Breadcrumb */}
         <div className="bg-white border-b">
           <div className="max-w-7xl mx-auto px-[20px] lg:px-[48px] 3xl:px-[96px] py-3 flex items-center gap-2 text-sm text-gray-500 font-['Open_Sans']">
-            <Link href="/" className="hover:text-[#ff2d78] transition-colors">Home</Link>
+            <Link href="/" className="hover:text-[#ff2d78] transition-colors">
+              Home
+            </Link>
             <span>/</span>
-            <span className="font-semibold text-gray-900">{breadcrumbLabel}</span>
+            <span className="font-semibold text-gray-900">
+              {breadcrumbLabel}
+            </span>
           </div>
         </div>
 
@@ -81,16 +85,10 @@ export function CategoryPageClient({
           <div className="relative overflow-hidden rounded-xl">
             <picture>
               {tabletHeroImage && (
-                <source
-                  srcSet={heroImage}
-                  media="(min-width: 992px)"
-                />
+                <source srcSet={heroImage} media="(min-width: 992px)" />
               )}
               {tabletHeroImage && (
-                <source
-                  srcSet={tabletHeroImage}
-                  media="(min-width: 481px)"
-                />
+                <source srcSet={tabletHeroImage} media="(min-width: 481px)" />
               )}
               <img
                 className="w-full h-[168px] lg:h-[400px] object-cover object-top pointer-events-none"
@@ -105,7 +103,9 @@ export function CategoryPageClient({
             <div className="hidden lg:block absolute top-1/2 transform -translate-y-1/2 left-[48px] z-10">
               <div className="bg-white rounded-xl shadow-xl p-10 flex flex-col items-center justify-center w-[450px] border border-gray-100">
                 <div className="text-center font-poppins mb-6">
-                  <h1 className="text-3xl font-extrabold text-gray-900 mb-2 leading-none">{title}</h1>
+                  <h1 className="text-3xl font-extrabold text-gray-900 mb-2 leading-none">
+                    {title}
+                  </h1>
                   <p className="text-lg text-gray-700 font-semibold leading-normal">
                     {heroSubtitle}
                   </p>
@@ -114,7 +114,10 @@ export function CategoryPageClient({
                   {ctaProduct1 && (
                     <Link
                       href={ctaProduct1.href}
-                      className="flex-1 text-white font-extrabold px-5 py-3.5 rounded-lg text-center text-sm font-poppins shadow-md hover:opacity-90 transition-opacity" style={{ background: "linear-gradient(135deg, #ff2d78, #b020ff)" }}
+                      className="flex-1 text-white font-extrabold px-5 py-3.5 rounded-lg text-center text-sm font-poppins shadow-md hover:opacity-90 transition-opacity"
+                      style={{
+                        background: "linear-gradient(135deg, #ff2d78, #b020ff)",
+                      }}
                     >
                       {ctaProduct1.name}
                     </Link>
@@ -122,7 +125,8 @@ export function CategoryPageClient({
                   {ctaProduct2 && (
                     <Link
                       href={ctaProduct2.href}
-                      className="flex-1 border-2 font-extrabold px-5 py-3.5 rounded-lg text-center transition-colors text-sm font-poppins" style={{ borderColor: "#00e5ff", color: "#00e5ff" }}
+                      className="flex-1 border-2 font-extrabold px-5 py-3.5 rounded-lg text-center transition-colors text-sm font-poppins"
+                      style={{ borderColor: "#00e5ff", color: "#00e5ff" }}
                     >
                       {ctaProduct2.name}
                     </Link>
@@ -134,7 +138,9 @@ export function CategoryPageClient({
 
           {/* Mobile Card Block (Underneath banner on mobile) */}
           <div className="lg:hidden w-full bg-white p-5 text-center border-b">
-            <h1 className="text-2xl font-bold font-poppins text-gray-900 mb-1">{title}</h1>
+            <h1 className="text-2xl font-bold font-poppins text-gray-900 mb-1">
+              {title}
+            </h1>
             <p className="text-base text-gray-600 font-semibold font-poppins mb-4">
               {heroSubtitle}
             </p>
@@ -142,7 +148,10 @@ export function CategoryPageClient({
               {ctaProduct1 && (
                 <Link
                   href={ctaProduct1.href}
-                  className="flex-1 text-white font-bold px-4 py-3 rounded-lg text-center text-sm font-poppins shadow hover:opacity-90 transition-opacity" style={{ background: "linear-gradient(135deg, #ff2d78, #b020ff)" }}
+                  className="flex-1 text-white font-bold px-4 py-3 rounded-lg text-center text-sm font-poppins shadow hover:opacity-90 transition-opacity"
+                  style={{
+                    background: "linear-gradient(135deg, #ff2d78, #b020ff)",
+                  }}
                 >
                   {ctaProduct1.name}
                 </Link>
@@ -150,7 +159,8 @@ export function CategoryPageClient({
               {ctaProduct2 && (
                 <Link
                   href={ctaProduct2.href}
-                  className="flex-1 border-2 font-bold px-4 py-3 rounded-lg text-center transition-colors text-sm font-poppins" style={{ borderColor: "#00e5ff", color: "#00e5ff" }}
+                  className="flex-1 border-2 font-bold px-4 py-3 rounded-lg text-center transition-colors text-sm font-poppins"
+                  style={{ borderColor: "#00e5ff", color: "#00e5ff" }}
                 >
                   {ctaProduct2.name}
                 </Link>
@@ -188,7 +198,7 @@ export function CategoryPageClient({
                   ) : (
                     <div className="absolute inset-0 bg-slate-100 animate-pulse"></div>
                   )}
-                  
+
                   {/* Hover State: High-Fidelity SVG Product Mockup with Stand */}
                   <div className="absolute inset-0 flex items-center justify-center p-[20px] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out z-10">
                     <Image
@@ -287,7 +297,9 @@ export function CategoryPageClient({
         {reviewRating && reviewCount && (
           <section className="py-10 px-[20px] lg:px-[48px] 3xl:px-[96px] bg-white text-center">
             <div className="max-w-3xl mx-auto">
-              <h3 className="text-2xl font-bold font-poppins mb-6">Customer Highlights</h3>
+              <h3 className="text-2xl font-bold font-poppins mb-6">
+                Customer Highlights
+              </h3>
               <div className="flex justify-center items-center gap-1.5 mb-2">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <svg
@@ -298,7 +310,9 @@ export function CategoryPageClient({
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
                 ))}
-                <span className="text-sm font-semibold text-gray-500 ml-2">{reviewRating} / 5 ({reviewCount} Reviews)</span>
+                <span className="text-sm font-semibold text-gray-500 ml-2">
+                  {reviewRating} / 5 ({reviewCount} Reviews)
+                </span>
               </div>
               {reviewQuote && (
                 <p className="text-gray-500 text-sm italic font-opensans">

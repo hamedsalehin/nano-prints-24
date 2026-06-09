@@ -3,11 +3,36 @@ import Link from "next/link";
 import { Star } from "lucide-react";
 
 const favorites = [
-  { name: "Retractable Banners", image: "/images/customer-favorites/retractable_banners.jpeg", href: "/custom-banners/roll-up-banners", rating: 4 },
-  { name: "Feather Flags", image: "/images/customer-favorites/Feather_flags.jpeg", href: "/custom-flags/feather-flags", rating: 5 },
-  { name: "Parking Signs", image: "/images/customer-favorites/parking_sign.jpeg", href: "/custom-signs/parking-signs", rating: 5 },
-  { name: "Real Estate Signs", image: "/images/customer-favorites/real_estate_signs.jpeg", href: "/custom-signs/real-estate-signs", rating: 5 },
-  { name: "Car Magnets", image: "/images/customer-favorites/car_magnet.jpeg", href: "/vehicle-signs/magnetic-signs", rating: 5 },
+  {
+    name: "Retractable Banners",
+    image: "/images/customer-favorites/retractable_banners.jpeg",
+    href: "/custom-banners/roll-up-banners",
+    rating: 4,
+  },
+  {
+    name: "Feather Flags",
+    image: "/images/customer-favorites/Feather_flags.jpeg",
+    href: "/custom-flags/feather-flags",
+    rating: 5,
+  },
+  {
+    name: "Parking Signs",
+    image: "/images/customer-favorites/parking_sign.jpeg",
+    href: "/custom-signs/parking-signs",
+    rating: 5,
+  },
+  {
+    name: "Real Estate Signs",
+    image: "/images/customer-favorites/real_estate_signs.jpeg",
+    href: "/custom-signs/real-estate-signs",
+    rating: 5,
+  },
+  {
+    name: "Car Magnets",
+    image: "/images/customer-favorites/car_magnet.jpeg",
+    href: "/vehicle-signs/magnetic-signs",
+    rating: 5,
+  },
 ];
 
 function StarRating({ rating }: { rating: number }) {
@@ -33,7 +58,11 @@ export function CustomerFavorites() {
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {favorites.map((item) => (
-            <Link key={item.name} href={item.href} className="group flex flex-col">
+            <Link
+              key={item.name}
+              href={item.href}
+              className="group flex flex-col"
+            >
               {/* Pure CSS hover via favorite-card-hover */}
               <div className="favorite-card-hover aspect-square rounded-2xl overflow-hidden mb-4 relative shadow-md">
                 <Image

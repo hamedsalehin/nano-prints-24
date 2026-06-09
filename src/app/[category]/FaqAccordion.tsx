@@ -24,7 +24,10 @@ export function FaqAccordion({ faqs }: FaqAccordionProps) {
       {faqs.map((faq, index) => {
         const isOpen = openFaqIndex === index;
         return (
-          <div key={index} className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
+          <div
+            key={index}
+            className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm"
+          >
             <button
               onClick={() => toggleFaq(index)}
               className="w-full flex items-center justify-between p-5 text-left font-bold text-base lg:text-lg text-gray-900 hover:bg-gray-50 transition-colors"
