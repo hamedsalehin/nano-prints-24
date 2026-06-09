@@ -193,6 +193,7 @@ export function CategoryPageClient({
                       fill
                       sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
                       quality={85}
+                      unoptimized={p.hoverImage.startsWith("/api/")}
                       className="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:opacity-0"
                     />
                   ) : (
@@ -207,6 +208,7 @@ export function CategoryPageClient({
                       fill
                       sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
                       quality={85}
+                      unoptimized={p.image.startsWith("/api/")}
                       className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
@@ -244,6 +246,7 @@ export function CategoryPageClient({
                     fill
                     sizes="(max-width: 1024px) 100vw, 550px"
                     quality={85}
+                    unoptimized={categorySecondaryImage.startsWith("/api/")}
                     className="w-full h-full object-cover"
                   />
                 </div>
