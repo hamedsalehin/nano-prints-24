@@ -13,6 +13,38 @@ import {
 import { useAuth } from "./AuthContext";
 import { supabase } from "@/lib/supabaseClient";
 
+function parseAuthError(err: unknown): string {
+  if (!err) return "An unexpected error occurred.";
+  if (err instanceof Error) {
+    const msg = err.message?.trim();
+    // Supabase returns '{}' when email delivery fails (SMTP not configured / rate limited)
+    if (!msg || msg === "{}" || msg === "{}") {
+      return "Sign-up failed. This is usually because email delivery isn't configured yet. Please contact the site administrator or try again later.";
+    }
+    if (msg.toLowerCase().includes("email rate limit")) {
+      return "Too many sign-up attempts. Please wait a few minutes and try again.";
+    }
+    if (msg.toLowerCase().includes("user already registered")) {
+      return "An account with this email already exists. Please sign in instead.";
+    }
+    if (msg.toLowerCase().includes("invalid login credentials")) {
+      return "Incorrect email or password. Please try again.";
+    }
+    if (msg.toLowerCase().includes("email not confirmed")) {
+      return "Please verify your email address before signing in. Check your inbox for a verification link.";
+    }
+    if (msg.toLowerCase().includes("password should be")) {
+      return "Password must be at least 6 characters long.";
+    }
+    return msg;
+  }
+  const str = String(err);
+  if (str === "[object Object]" || str === "{}") {
+    return "Sign-up failed. Email delivery may not be configured. Please contact the site administrator.";
+  }
+  return str || "An unexpected error occurred.";
+}
+
 export function AuthModal() {
   const { showAuthModal, setShowAuthModal } = useAuth();
   const [isSignUp, setIsSignUp] = useState(false);
@@ -82,9 +114,7 @@ export function AuthModal() {
         handleClose();
       }
     } catch (err) {
-      setError(
-        err instanceof Error ? err.message : "An unexpected error occurred.",
-      );
+      setError(parseAuthError(err));
     } finally {
       setLoading(false);
     }
