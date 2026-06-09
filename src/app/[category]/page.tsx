@@ -2,9 +2,24 @@ import React from "react";
 import { notFound } from "next/navigation";
 import { PRODUCTS_REGISTRY } from "@/lib/productsRegistry";
 import { CategoryPageClient } from "./CategoryPageClient";
+import { Metadata } from "next";
 
 interface PageProps {
   params: Promise<{ category: string }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { category } = await params;
+  const decodedCategory = decodeURIComponent(category);
+  const categoryData = PRODUCTS_REGISTRY[decodedCategory];
+  if (!categoryData) return {};
+  return {
+    title: `${categoryData.title} | Nano Signs`,
+    description: categoryData.categoryDescriptionText || `High-quality custom ${categoryData.title} printing at Nano Signs.`,
+    alternates: {
+      canonical: `https://nano-signs.com/${decodedCategory}`,
+    },
+  };
 }
 
 export async function generateStaticParams() {

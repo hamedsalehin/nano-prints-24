@@ -1,5 +1,15 @@
+import { Metadata } from "next";
 import { SignProductPage } from "@/components/SignProductPage";
 import { ArrowUpDown } from "lucide-react";
+
+
+export const metadata: Metadata = {
+  title: "A-Frame Signs (Sandwich Boards) | Nano Signs",
+  description: "Portable, double-sided sidewalk signs that grab foot traffic and drive customers through your door.",
+  alternates: {
+    canonical: "https://nano-signs.com/custom-signs/a-frame-signs",
+  },
+};
 
 export default function AFrameSignsPage() {
   return (

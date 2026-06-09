@@ -4,6 +4,7 @@ import Link from "next/link";
 export function HeroSection() {
   return (
     <section className="w-full">
+      <h1 className="sr-only">Nano Signs — Premium Custom Signs, Banners, Flags &amp; Promotional Products</h1>
       <div className="relative w-full aspect-[2164/727]">
         <Image
           src="/images/hero-image.jpeg"

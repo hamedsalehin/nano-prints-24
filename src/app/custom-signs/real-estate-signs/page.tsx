@@ -1,5 +1,15 @@
+import { Metadata } from "next";
 import { SignProductPage } from "@/components/SignProductPage";
 import { Home } from "lucide-react";
+
+
+export const metadata: Metadata = {
+  title: "Real Estate Signs | Nano Signs",
+  description: "Professional-grade signs that get properties noticed — riders, posts, and full frames included.",
+  alternates: {
+    canonical: "https://nano-signs.com/custom-signs/real-estate-signs",
+  },
+};
 
 export default function RealEstateSignsPage() {
   return (

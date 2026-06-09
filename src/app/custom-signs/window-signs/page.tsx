@@ -1,5 +1,15 @@
+import { Metadata } from "next";
 import { SignProductPage } from "@/components/SignProductPage";
 import { Eye } from "lucide-react";
+
+
+export const metadata: Metadata = {
+  title: "Window Signs & Clings | Nano Signs",
+  description: "Custom window graphics, clings, perforated vinyl, and decals for storefronts and offices.",
+  alternates: {
+    canonical: "https://nano-signs.com/custom-signs/window-signs",
+  },
+};
 
 export default function WindowSignsPage() {
   return (

@@ -32,6 +32,9 @@ export const metadata: Metadata = {
     icon: "/images/nano logo O.png",
     apple: "/images/nano logo O.png",
   },
+  alternates: {
+    canonical: "https://nano-signs.com",
+  },
 };
 
 export default function RootLayout({

@@ -1,5 +1,15 @@
+import { Metadata } from "next";
 import { SignProductPage } from "@/components/SignProductPage";
 import { ParkingCircle } from "lucide-react";
+
+
+export const metadata: Metadata = {
+  title: "Custom Parking Signs | Nano Signs",
+  description: "Regulatory, reserved, and custom parking signs — aluminum or coroplast, ships next day.",
+  alternates: {
+    canonical: "https://nano-signs.com/custom-signs/parking-signs",
+  },
+};
 
 export default function ParkingSignsPage() {
   return (

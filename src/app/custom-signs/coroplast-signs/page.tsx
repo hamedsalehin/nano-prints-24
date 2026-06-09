@@ -1,5 +1,15 @@
+import { Metadata } from "next";
 import { SignProductPage } from "@/components/SignProductPage";
 import { Droplets } from "lucide-react";
+
+
+export const metadata: Metadata = {
+  title: "Coroplast Signs | Nano Signs",
+  description: "The most versatile waterproof outdoor sign — durable, colorful, and incredibly affordable.",
+  alternates: {
+    canonical: "https://nano-signs.com/custom-signs/coroplast-signs",
+  },
+};
 
 export default function CoroplastSignsPage() {
   return (

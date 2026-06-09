@@ -1,5 +1,15 @@
+import { Metadata } from "next";
 import { SignProductPage } from "@/components/SignProductPage";
 import { Layers } from "lucide-react";
+
+
+export const metadata: Metadata = {
+  title: "Custom Yard Signs | Nano Signs",
+  description: "Corrugated plastic signs that weather any storm — perfect for campaigns, events, and businesses.",
+  alternates: {
+    canonical: "https://nano-signs.com/custom-signs/yard-signs",
+  },
+};
 
 export default function YardSignsPage() {
   return (

@@ -2,12 +2,30 @@ import React from "react";
 import { notFound } from "next/navigation";
 import { SignProductPage } from "@/components/SignProductPage";
 import { PRODUCTS_REGISTRY } from "@/lib/productsRegistry";
+import { Metadata } from "next";
 
 interface PageProps {
   params: Promise<{
     category: string;
     product: string;
   }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { category, product } = await params;
+  const decodedCategory = decodeURIComponent(category);
+  const decodedProduct = decodeURIComponent(product);
+  const categoryData = PRODUCTS_REGISTRY[decodedCategory];
+  if (!categoryData) return {};
+  const productData = categoryData.products.find((p) => p.id === decodedProduct);
+  if (!productData) return {};
+  return {
+    title: `${productData.name} | Nano Signs`,
+    description: productData.description || `Custom ${productData.name} design and high-quality printing at Nano Signs.`,
+    alternates: {
+      canonical: `https://nano-signs.com/${decodedCategory}/${decodedProduct}`,
+    },
+  };
 }
 
 // Categories that have their own static product sub-pages (e.g. custom-signs/yard-signs/page.tsx)

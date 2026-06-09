@@ -1,5 +1,15 @@
+import { Metadata } from "next";
 import { SignProductPage } from "@/components/SignProductPage";
 import { Lightbulb } from "lucide-react";
+
+
+export const metadata: Metadata = {
+  title: "Foam Board Signs | Nano Signs",
+  description: "Lightweight and professional indoor display signs for presentations, lobbies, and events.",
+  alternates: {
+    canonical: "https://nano-signs.com/custom-signs/foam-board-signs",
+  },
+};
 
 export default function FoamBoardSignsPage() {
   return (

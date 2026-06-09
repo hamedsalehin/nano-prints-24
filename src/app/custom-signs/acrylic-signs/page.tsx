@@ -1,5 +1,15 @@
+import { Metadata } from "next";
 import { SignProductPage } from "@/components/SignProductPage";
 import { Sparkles } from "lucide-react";
+
+
+export const metadata: Metadata = {
+  title: "Custom Acrylic Signs | Nano Signs",
+  description: "Premium clear and colored acrylic signs for a sleek, modern, upscale look.",
+  alternates: {
+    canonical: "https://nano-signs.com/custom-signs/acrylic-signs",
+  },
+};
 
 export default function AcrylicSignsPage() {
   return (
