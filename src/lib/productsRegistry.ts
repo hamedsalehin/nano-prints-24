@@ -36,7 +36,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     description:
       "High-quality custom banners for any occasion. From outdoor vinyl to professional retractable displays, we have the perfect solution for your business or event.",
     heroImage:
-      "https://www.buildasign.com/images/uploaded/Banner/BAS_WEB_01292025_Nav_Megamenu_Banner_V5.jpg",
+      "/api/assets/images/uploaded/Banner/BAS_WEB_01292025_Nav_Megamenu_Banner_V5.jpg",
     reviewRating: "4.9",
     reviewCount: "2,680",
     reviewQuote:
@@ -946,9 +946,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     heroSubtitle: "All-Weather. Quick Production. Affordable.",
     description:
       "Catch the attention of passing traffic with high-impact outdoor flags. Perfect for grand openings, store front promotions, and events.",
-    heroImage: "https://www.buildasign.com/0083264_Flags_Desktop.jpeg",
-    tabletHeroImage: "https://www.buildasign.com/0083259_Flags_Tablet.jpeg",
-    mobileHeroImage: "https://www.buildasign.com/0083260_Flags_Mobile.jpeg",
+    heroImage: "/api/assets/0083264_Flags_Desktop.jpeg",
+    tabletHeroImage: "/api/assets/0083259_Flags_Tablet.jpeg",
+    mobileHeroImage: "/api/assets/0083260_Flags_Mobile.jpeg",
     reviewRating: "4.8",
     reviewCount: "1,920",
     reviewQuote:
@@ -956,7 +956,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     categoryDescriptionText:
       "Discover custom flags that make your message stand tall or fly high. From feather, teardrop, and garden flags to standard hanging flags and pennants, we offer styles for every setting. Each flag is fully customizable and built for durability, whether displayed indoors or out. Enhance your display with our selection of bases and mounting accessories, including drive-over stands, handheld flagpoles, and adjustable brackets. With simple design tools and fast production, it's easy to create flags that get noticed.",
     categorySecondaryImage:
-      "https://www.buildasign.com/images/uploaded/BAS_WEB_071125_Category_Flags_Secondary.jpg",
+      "/api/assets/images/uploaded/BAS_WEB_071125_Category_Flags_Secondary.jpg",
     faqs: [
       {
         q: "What types of custom flags do you offer?",
@@ -989,7 +989,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Feather Flags",
         description:
           "Eye-catching fluttering flags designed to draw crowds from the roadside.",
-        image: "https://www.buildasign.com/0085996_feather-flags_360.png",
+        image: "/api/assets/0085996_feather-flags_360.png",
         price: "Starting at $54.37",
         badge: "Best Seller",
         config: {
@@ -999,7 +999,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Flags",
           breadcrumbHref: "/custom-flags",
           promoText: "20% OFF ALL ADVERTISING FLAGS - SHIPS NEXT DAY",
-          image: "https://www.buildasign.com/0085996_feather-flags_360.png",
+          image: "/api/assets/0085996_feather-flags_360.png",
           ratingCount: "820",
           ratingScore: "4.8",
           sizes: [
@@ -1121,7 +1121,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Teardrop Flags",
         description:
           "Elegant teardrop shape that remains taut and visible even in low wind conditions.",
-        image: "https://www.buildasign.com/0086040_teardrop-flags_360.png",
+        image: "/api/assets/0086040_teardrop-flags_360.png",
         price: "Starting at $49.68",
         config: {
           title: "Custom Teardrop Flags",
@@ -1130,7 +1130,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Flags",
           breadcrumbHref: "/custom-flags",
           promoText: "20% OFF ALL TEARDROP FLAGS",
-          image: "https://www.buildasign.com/0086040_teardrop-flags_360.png",
+          image: "/api/assets/0086040_teardrop-flags_360.png",
           ratingCount: "432",
           ratingScore: "4.7",
           sizes: [
@@ -1200,7 +1200,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Straight Flags",
         description:
           "Classic rectangular standing flags that offer a large design canvas.",
-        image: "https://www.buildasign.com/0086067_straight-flags_360.png",
+        image: "/api/assets/0086067_straight-flags_360.png",
         price: "Starting at $54.37",
         config: {
           title: "Custom Straight Flags",
@@ -1209,7 +1209,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Flags",
           breadcrumbHref: "/custom-flags",
           promoText: "20% OFF STRAIGHT ADVERTISING FLAGS",
-          image: "https://www.buildasign.com/0086067_straight-flags_360.png",
+          image: "/api/assets/0086067_straight-flags_360.png",
           ratingCount: "295",
           ratingScore: "4.7",
           sizes: [
@@ -1327,7 +1327,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Nylon Flags",
         description:
           "Premium heavy-duty nylon flags built for long-term outdoor display on poles.",
-        image: "https://www.buildasign.com/0086506_nylon-flags_360.png",
+        image: "/api/assets/0086506_nylon-flags_360.png",
         price: "Starting at $94.00",
         config: {
           title: "Custom Nylon Flags",
@@ -1336,7 +1336,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Flags",
           breadcrumbHref: "/custom-flags",
           promoText: "20% OFF HEAVY DUTY NYLON FLAGS",
-          image: "https://www.buildasign.com/0086506_nylon-flags_360.png",
+          image: "/api/assets/0086506_nylon-flags_360.png",
           ratingCount: "188",
           ratingScore: "4.9",
           sizes: [
@@ -1383,7 +1383,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Pennant Flags",
         description:
           "Triangular pennant flags for sports teams, schools, and festive string lines.",
-        image: "https://www.buildasign.com/0086533_pennant-flags_360.png",
+        image: "/api/assets/0086533_pennant-flags_360.png",
         price: "Starting at $51.11",
         config: {
           title: "Custom Pennant Flags",
@@ -1392,7 +1392,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Flags",
           breadcrumbHref: "/custom-flags",
           promoText: "20% OFF SPIRIT PENNANTS",
-          image: "https://www.buildasign.com/0086533_pennant-flags_360.png",
+          image: "/api/assets/0086533_pennant-flags_360.png",
           ratingCount: "140",
           ratingScore: "4.7",
           sizes: [
@@ -1435,7 +1435,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Garden Flags",
         description:
           "Small vertical flags to add a personalized touch to lawns, pathways, and gardens.",
-        image: "https://www.buildasign.com/0086497_garden-flags_360.png",
+        image: "/api/assets/0086497_garden-flags_360.png",
         price: "Starting at $50.82",
         config: {
           title: "Custom Garden Flags",
@@ -1444,7 +1444,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Flags",
           breadcrumbHref: "/custom-flags",
           promoText: "20% OFF PERSONALIZED GARDEN FLAGS",
-          image: "https://www.buildasign.com/0086497_garden-flags_360.png",
+          image: "/api/assets/0086497_garden-flags_360.png",
           ratingCount: "350",
           ratingScore: "4.8",
           sizes: [
@@ -1499,17 +1499,17 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     heroSubtitle: "Every Mile is an Opportunity.",
     description:
       "Turn any vehicle into a mobile billboard. Promote your business on the go with custom car magnets, decals, and truck lettering.",
-    heroImage: "https://www.buildasign.com/0084325_Desktop.jpeg",
-    tabletHeroImage: "https://www.buildasign.com/0084326_Tablet.jpeg",
-    mobileHeroImage: "https://www.buildasign.com/0084327_Mobile.jpeg",
+    heroImage: "/api/assets/0084325_Desktop.jpeg",
+    tabletHeroImage: "/api/assets/0084326_Tablet.jpeg",
+    mobileHeroImage: "/api/assets/0084327_Mobile.jpeg",
     reviewRating: "4.9",
     reviewCount: "2,150",
     reviewQuote:
       "Our fleet car magnets look incredibly professional. They stick perfectly at highway speeds and the print quality is showroom-grade.",
     categoryDescriptionText:
-      "Make every commute count with durable vehicle signs custom-built to stand out. BuildASign provides the options you need, from removable vehicle magnets and regulation door decals to bumper stickers and license plates. All vehicle products are constructed from high-grade vinyl and magnetic sheeting designed to hold tight at highway speeds and resist sun damage.",
+      "Make every commute count with durable vehicle signs custom-built to stand out. Nano Signs provides the options you need, from removable vehicle magnets and regulation door decals to bumper stickers and license plates. All vehicle products are constructed from high-grade vinyl and magnetic sheeting designed to hold tight at highway speeds and resist sun damage.",
     categorySecondaryImage:
-      "https://www.buildasign.com/images/uploaded/BAS_WEB_071125_Category_Vehicle_Secondary.jpg",
+      "/api/assets/images/uploaded/BAS_WEB_071125_Category_Vehicle_Secondary.jpg",
     faqs: [
       {
         q: "Will car magnets stick to aluminum vehicle panels?",
@@ -1526,7 +1526,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Bumper Stickers",
         description:
           "Classic adhesive labels for car bumpers and windows. High visibility branding.",
-        image: "https://www.buildasign.com/0085810_bumper-stickers_360.png",
+        image: "/api/assets/0085810_bumper-stickers_360.png",
         price: "Starting at $2.24",
         config: {
           title: "Custom Bumper Stickers",
@@ -1535,7 +1535,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Vehicle Signs",
           breadcrumbHref: "/vehicle-signs",
           promoText: "25% OFF BUMPER STICKERS",
-          image: "https://www.buildasign.com/0085810_bumper-stickers_360.png",
+          image: "/api/assets/0085810_bumper-stickers_360.png",
           ratingCount: "850",
           ratingScore: "4.8",
           sizes: [
@@ -1584,7 +1584,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "License Plates",
         description:
           "Custom front license plates made from heavy duty aluminum.",
-        image: "https://www.buildasign.com/0086545_license-plates_360.png",
+        image: "/api/assets/0086545_license-plates_360.png",
         price: "Starting at $13.72",
         config: {
           title: "Custom License Plates",
@@ -1593,7 +1593,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Vehicle Signs",
           breadcrumbHref: "/vehicle-signs",
           promoText: "25% OFF ALUMINUM AUTO PLATES",
-          image: "https://www.buildasign.com/0086545_license-plates_360.png",
+          image: "/api/assets/0086545_license-plates_360.png",
           ratingCount: "192",
           ratingScore: "4.7",
           sizes: [
@@ -1742,7 +1742,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Car Door Decals",
         description:
           "Adhesive door decals for car bodies. Durable semi-permanent advertising.",
-        image: "https://www.buildasign.com/0085984_car-door-decals_360.png",
+        image: "/api/assets/0085984_car-door-decals_360.png",
         price: "Starting at $23.86",
         config: {
           title: "Custom Car Door Decals",
@@ -1751,7 +1751,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Vehicle Signs",
           breadcrumbHref: "/vehicle-signs",
           promoText: "25% OFF SEMI-PERMANENT DOOR DECALS",
-          image: "https://www.buildasign.com/0085984_car-door-decals_360.png",
+          image: "/api/assets/0085984_car-door-decals_360.png",
           ratingCount: "320",
           ratingScore: "4.7",
           sizes: [
@@ -1802,7 +1802,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Car Window Decals",
         description:
           "Rear and side window adhesive graphics, available in transparent and opaque materials.",
-        image: "https://www.buildasign.com/0085990_car-window-decals_360.png",
+        image: "/api/assets/0085990_car-window-decals_360.png",
         price: "Starting at $23.86",
         config: {
           title: "Custom Car Window Decals",
@@ -1811,7 +1811,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Vehicle Signs",
           breadcrumbHref: "/vehicle-signs",
           promoText: "25% OFF WINDOW ADHESIVE DECALS",
-          image: "https://www.buildasign.com/0085990_car-window-decals_360.png",
+          image: "/api/assets/0085990_car-window-decals_360.png",
           ratingCount: "285",
           ratingScore: "4.8",
           sizes: [
@@ -1870,7 +1870,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Bumper Magnets",
         description:
           "Removable magnetic bumper stickers that slide on and off metal trunks easily.",
-        image: "https://www.buildasign.com/0086539_bumper-magnets_360.png",
+        image: "/api/assets/0086539_bumper-magnets_360.png",
         price: "Starting at $5.49",
         config: {
           title: "Custom Bumper Magnets",
@@ -1879,7 +1879,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Vehicle Signs",
           breadcrumbHref: "/vehicle-signs",
           promoText: "25% OFF REMOVABLE BUMPER MAGNETS",
-          image: "https://www.buildasign.com/0086539_bumper-magnets_360.png",
+          image: "/api/assets/0086539_bumper-magnets_360.png",
           ratingCount: "172",
           ratingScore: "4.7",
           sizes: [
@@ -1928,11 +1928,11 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     description:
       "Get trade show ready with custom products that make your brand stand out. Table covers, step and repeats, and stands.",
     heroImage:
-      "https://www.buildasign.com/0083714_BAS_WEB_071125_Category_Tradeshow_MCA_Desktop.jpeg",
+      "/api/assets/0083714_BAS_WEB_071125_Category_Tradeshow_MCA_Desktop.jpeg",
     tabletHeroImage:
-      "https://www.buildasign.com/0083715_BAS_WEB_071125_Category_Tradeshow_MCA_Tablet.jpeg",
+      "/api/assets/0083715_BAS_WEB_071125_Category_Tradeshow_MCA_Tablet.jpeg",
     mobileHeroImage:
-      "https://www.buildasign.com/0083717_BAS_WEB_071125_Category_Tradeshow_MCA_Mobile.jpeg",
+      "/api/assets/0083717_BAS_WEB_071125_Category_Tradeshow_MCA_Mobile.jpeg",
     heroSubtitle: "Where First Impressions Get Noticed.",
     reviewRating: "4.9",
     reviewCount: "3,240",
@@ -1941,7 +1941,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     categoryDescriptionText:
       "Your tradeshow booth should do more than fill space, it should tell your brand story. With a full range of customizable displays, signage, and print materials, we help you make every event count. From table covers to backdrops, banners to business cards, our products are designed to build cohesion, attract attention, and drive engagement. Whether you're setting up for a local fair or a national expo, we've got everything you need to show up strong and stay top of mind.",
     categorySecondaryImage:
-      "https://www.buildasign.com/images/uploaded/Redesign/NPIB-34422-Tradeshow-Hero-001_en-gb.png",
+      "/api/assets/images/uploaded/Redesign/NPIB-34422-Tradeshow-Hero-001_en-gb.png",
     faqs: [
       {
         q: "Can I customize designs with my logo and brand colors?",
@@ -2062,7 +2062,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Table Runners",
         description:
           "For a versatile, portable, and budget-friendly branding solution, our Custom Table Runners are the perfect choice. Drape one over a plain solid-colored tablecloth to instantly elevate your booth's look without the cost of a full tablecloth. Made from durable 300D polyester twill with optional liquid-repellent coatings, our table runners roll down flat, fit easily in any travel bag, and wash clean in the machine. Choose from multiple standard widths to display your company logo prominently.",
-        image: "https://www.buildasign.com/0086575_table-runners_360.jpeg",
+        image: "/api/assets/0086575_table-runners_360.jpeg",
         price: "Starting at $39.99",
         badge: "Budget-Friendly",
         config: {
@@ -2072,7 +2072,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF TABLE RUNNERS - SHIPS NEXT DAY",
-          image: "https://www.buildasign.com/0086575_table-runners_360.jpeg",
+          image: "/api/assets/0086575_table-runners_360.jpeg",
           ratingCount: "540",
           ratingScore: "4.8",
           sizes: [
@@ -2117,7 +2117,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Fitted Tablecloths",
         description:
           "Give your display tables a clean, sharp, box-tailored look with Fitted Tablecloths. Custom-tailored to slip perfectly over standard 6ft and 8ft rectangular tables, these covers stay securely in place without hanging or pooling on the floor, making them excellent for busy outdoor venues or professional recruiting events. Constructed from flame-retardant 300D knit polyester twill, they are machine-washable, wrinkle-resistant, and built to withstand repeated setups.",
-        image: "https://www.buildasign.com/0086560_fitted-tablecloths_360.png",
+        image: "/api/assets/0086560_fitted-tablecloths_360.png",
         price: "Starting at $109.99",
         config: {
           title: "Fitted Tablecloths",
@@ -2127,7 +2127,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF TAILORED FITTED TABLE COVERS",
           image:
-            "https://www.buildasign.com/0086560_fitted-tablecloths_360.png",
+            "/api/assets/0086560_fitted-tablecloths_360.png",
           ratingCount: "310",
           ratingScore: "4.8",
           sizes: [
@@ -2174,7 +2174,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Round Tablecloths",
         description:
           "Elevate your round banquet, registry, or cocktail tables with our Round Custom Tablecloths. Specially hemmed for standard circular table sizes, they drape elegantly to the floor in a seamless design. Using full-spectrum dye-sublimation printing, your custom colors, patterns, and logos will appear bright and clear, providing a premium aesthetic for weddings, evening galas, corporate fundraisers, and hotel lobbies.",
-        image: "https://www.buildasign.com/0086566_round-tablecloths_360.png",
+        image: "/api/assets/0086566_round-tablecloths_360.png",
         price: "Starting at $129.99",
         config: {
           title: "Round Custom Tablecloths",
@@ -2183,7 +2183,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF CUSTOM ROUND TABLECLOTHS",
-          image: "https://www.buildasign.com/0086566_round-tablecloths_360.png",
+          image: "/api/assets/0086566_round-tablecloths_360.png",
           ratingCount: "195",
           ratingScore: "4.7",
           sizes: [
@@ -2235,7 +2235,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Stretch Tablecloths",
         description:
           "Achieve a sleek, modern, and high-impact look with our contoured Stretch Tablecloths. Made from an elastic polyester-spandex blend, these covers stretch tightly over your table frame and secure into place using reinforced rubber leg pockets, preventing any flapping or shifting in windy outdoor conditions. The tight tension naturally pulls out all folds and wrinkles, ensuring a perfectly smooth, professional surface for tech conferences, outdoor festivals, and modern brand exhibitions.",
-        image: "https://www.buildasign.com/0086570_stretch-tablecloth_360.png",
+        image: "/api/assets/0086570_stretch-tablecloth_360.png",
         price: "Starting at $129.99",
         config: {
           title: "Stretch Tablecloths (Spandex Style)",
@@ -2245,7 +2245,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF CONTOURED SPANDEX DISPLAYS",
           image:
-            "https://www.buildasign.com/0086570_stretch-tablecloth_360.png",
+            "/api/assets/0086570_stretch-tablecloth_360.png",
           ratingCount: "290",
           ratingScore: "4.9",
           sizes: [
@@ -2299,7 +2299,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Pop-Up Displays",
         description:
           "Make a massive impression on the trade show floor with our premium Pop-Up Backdrop Displays. Featuring a lightweight accordion-style aluminum frame that snaps open in under two minutes, this backdrop utilizes a large, high-definition tension fabric graphic that attaches securely around the perimeter with heavy-duty hook-and-loop velcro. It packs down into a compact trolley bag with rolling wheels for effortless travel and setup.",
-        image: "https://www.buildasign.com/0086582_pop-up-displays_360.png",
+        image: "/api/assets/0086582_pop-up-displays_360.png",
         price: "Starting at $299.99",
         config: {
           title: "Pop-Up Backdrop Displays",
@@ -2308,7 +2308,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF ALL POP-UP EVENT DISPLAYS",
-          image: "https://www.buildasign.com/0086582_pop-up-displays_360.png",
+          image: "/api/assets/0086582_pop-up-displays_360.png",
           ratingCount: "430",
           ratingScore: "4.8",
           sizes: [
@@ -2379,7 +2379,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         description:
           "Our Tension Fabric Displays represent the gold standard of modern exhibition back walls. Utilizing an interlocking, lightweight aluminum tube frame that clicks together without tools, the graphic slides over the frame like a pillowcase and zips shut at the bottom for a perfectly tight, seamless, and wrinkle-free display. Printed via dye-sublimation on premium stretch polyester knit, it ensures your artwork looks spectacular and eliminates any glare under bright convention hall lights.",
         image:
-          "https://www.buildasign.com/0086489_tension-fabric-displays_360.png",
+          "/api/assets/0086489_tension-fabric-displays_360.png",
         price: "Starting at $189.99",
         config: {
           title: "Tension Fabric Displays",
@@ -2389,7 +2389,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF PREMIUM FABRIC DISPLAYS",
           image:
-            "https://www.buildasign.com/0086489_tension-fabric-displays_360.png",
+            "/api/assets/0086489_tension-fabric-displays_360.png",
           ratingCount: "165",
           ratingScore: "4.9",
           sizes: [
@@ -2447,7 +2447,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Step & Repeat Banners",
         description:
           "Create the perfect photo opportunity at red carpets, press conferences, weddings, and corporate summits with our Step & Repeat Banners. Designed to display repeated logos in a clean grid layout, the glare-free matte finish of our heavy-duty blockout vinyl ensures beautiful, flash-friendly photography. The package comes with an optional adjustable backdrop stand and top/bottom pole pockets for fast mounting.",
-        image: "https://www.buildasign.com/0086470_step-repeat-banners_360.png",
+        image: "/api/assets/0086470_step-repeat-banners_360.png",
         price: "Starting at $145.99",
         badge: "Event Ready",
         config: {
@@ -2458,7 +2458,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF STEP AND REPEAT PRESS WALLS",
           image:
-            "https://www.buildasign.com/0086470_step-repeat-banners_360.png",
+            "/api/assets/0086470_step-repeat-banners_360.png",
           ratingCount: "430",
           ratingScore: "4.8",
           sizes: [
@@ -2516,7 +2516,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Retractable Banner",
         description:
           "Our Retractable Banners (Roll Up Stands) are the ultimate standalone banner display for trade shows, retail checkouts, and office lobbies. The banner graphic pulls up from an anodized aluminum base stand in seconds and secures with a vertical support rod. Each kit includes a padded carrying bag, making transport and setup incredibly simple. Printed on premium curl-resistant polyester film or standard 13oz vinyl to maintain a clean, flat presentation.",
-        image: "https://www.buildasign.com/0085822_retractable-banner_360.png",
+        image: "/api/assets/0085822_retractable-banner_360.png",
         price: "Starting at $93.27",
         badge: "Most Popular",
         config: {
@@ -2527,7 +2527,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF RETRACTABLE ROLL-UP BANNERS",
           image:
-            "https://www.buildasign.com/0085822_retractable-banner_360.png",
+            "/api/assets/0085822_retractable-banner_360.png",
           ratingCount: "1240",
           ratingScore: "4.9",
           sizes: [
@@ -2599,7 +2599,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "X-Banners",
         description:
           "The X-Frame Banner Stand is a highly cost-effective, portable freestanding banner solution. By utilizing flexible composite fiberglass arms connected to a central hinge, the stand pulls a custom corner-grommeted banner taut, keeping your graphic perfectly flat and readable. Because the banner attaches simply via grommets, you can order replacement prints and swap graphics in seconds without needing to buy new stands.",
-        image: "https://www.buildasign.com/0086478_x-banners_360.png",
+        image: "/api/assets/0086478_x-banners_360.png",
         price: "Starting at $49.99",
         config: {
           title: "X-Frame Banner Stands",
@@ -2608,7 +2608,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF BUDGET X-BANNER DISPLAYS",
-          image: "https://www.buildasign.com/0086478_x-banners_360.png",
+          image: "/api/assets/0086478_x-banners_360.png",
           ratingCount: "385",
           ratingScore: "4.7",
           sizes: [
@@ -2661,7 +2661,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         description:
           "Bring high-impact branding to counter-tops, checkout registers, hotel lobbies, and registration desks with Tabletop Retractable Banners. These miniature versions of our full-sized roll-up stands feature a compact aluminum base housing that pulls up and retracts in seconds. Printed on smooth, high-resolution polypropylene film, they ensure small details and text are clear and easy to read from a close distance.",
         image:
-          "https://www.buildasign.com/0086578_tabletop-retractable-banners_360.png",
+          "/api/assets/0086578_tabletop-retractable-banners_360.png",
         price: "Starting at $27.18",
         config: {
           title: "Tabletop Retractable Banners",
@@ -2671,7 +2671,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF TABLETOP RETRACTABLE DISPLAYS",
           image:
-            "https://www.buildasign.com/0086578_tabletop-retractable-banners_360.png",
+            "/api/assets/0086578_tabletop-retractable-banners_360.png",
           ratingCount: "420",
           ratingScore: "4.8",
           sizes: [
@@ -2794,7 +2794,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Feather Flags",
         description:
           "Draw customers in from the roadside with our best-selling Custom Feather Flags. Designed to flutter in the wind and turn heads, these tall advertising flags are printed on premium open-weave knit polyester to reduce wind load stress. Supported by composite fiberglass poles and a rotating ground spike or cross stand, they rotate 360 degrees to remain visible from any traffic direction.",
-        image: "https://www.buildasign.com/0085996_feather-flags_360.png",
+        image: "/api/assets/0085996_feather-flags_360.png",
         price: "Starting at $54.37",
         config: {
           title: "Custom Feather Flags",
@@ -2803,7 +2803,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF ALL ADVERTISING FLAGS - SHIPS NEXT DAY",
-          image: "https://www.buildasign.com/0085996_feather-flags_360.png",
+          image: "/api/assets/0085996_feather-flags_360.png",
           ratingCount: "820",
           ratingScore: "4.8",
           sizes: [
@@ -2864,7 +2864,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Vinyl Banners",
         description:
           "Our Custom Vinyl Banners are a versatile, heavy-duty signage solution for indoor and outdoor advertising. Constructed from durable 13oz gloss or 15oz premium matte PVC vinyl with heat-welded hems, they are fully waterproof and UV-resistant to survive the elements. Complete with pre-installed brass grommets or pole pockets for easy hanging, they are perfect for storefront openings, construction fences, and event banners.",
-        image: "https://www.buildasign.com/0085750_vinyl-banners_360.png",
+        image: "/api/assets/0085750_vinyl-banners_360.png",
         price: "Starting at $12.99",
         config: {
           title: "Custom Vinyl Banners",
@@ -2873,7 +2873,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF ALL VINYL BANNERS - SHIPS NEXT DAY",
-          image: "https://www.buildasign.com/0085750_vinyl-banners_360.png",
+          image: "/api/assets/0085750_vinyl-banners_360.png",
           ratingCount: "1530",
           ratingScore: "4.8",
           sizes: [
@@ -3003,7 +3003,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Postcards",
         description:
           "Hand out rich, full-color Custom Postcards at your event table to advertise promotions, catalog your services, or distribute coupons. Printed in high definition on heavy 14pt gloss cover paper, they feel substantial and professional. Choose between matte or high-gloss front finishes and custom sizes to create flyers, handouts, or mailers that prompt action from potential clients.",
-        image: "https://www.buildasign.com/0086663_postcards_360.png",
+        image: "/api/assets/0086663_postcards_360.png",
         price: "Starting at $14.99",
         config: {
           title: "Custom Postcards",
@@ -3012,7 +3012,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF ALL POSTCARDS AND HANDOUTS",
-          image: "https://www.buildasign.com/0086663_postcards_360.png",
+          image: "/api/assets/0086663_postcards_360.png",
           ratingCount: "280",
           ratingScore: "4.8",
           sizes: [
@@ -3058,9 +3058,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     breadcrumbLabel: "Custom Decals",
     description:
       "Discover our full lineup of custom decal solutions, including vinyl decals, static clings, sticker sheets, and roll labels.",
-    heroImage: "https://www.buildasign.com/0084348_Desktop.jpeg",
-    tabletHeroImage: "https://www.buildasign.com/0084349_Tablet.jpeg",
-    mobileHeroImage: "https://www.buildasign.com/0084350_Mobile.jpeg",
+    heroImage: "/api/assets/0084348_Desktop.jpeg",
+    tabletHeroImage: "/api/assets/0084349_Tablet.jpeg",
+    mobileHeroImage: "/api/assets/0084350_Mobile.jpeg",
     heroSubtitle: "Design It. Stick It. Leave Your Mark.",
     reviewRating: "4.9",
     reviewCount: "1,840",
@@ -3069,7 +3069,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     categoryDescriptionText:
       "Discover our full lineup of custom decal solutions, including vinyl decals, static clings, sticker sheets, and roll labels. Perfect for use indoors or out, our decals are built to last and ideal for everything from storefront displays to vehicle branding and promotional giveaways. Easily personalize your decals with our intuitive design tools by uploading your own artwork or choosing from our ready-made templates to get started today.",
     categorySecondaryImage:
-      "https://www.buildasign.com/images/uploaded/Redesign/BAS_WEB_Redesign_Category_DecalsClings_Secondary.jpg",
+      "/api/assets/images/uploaded/Redesign/BAS_WEB_Redesign_Category_DecalsClings_Secondary.jpg",
     faqs: [
       {
         q: "What type of decal material should I choose?",
@@ -3102,7 +3102,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Bumper Stickers",
         description:
           "Classic adhesive labels for car bumpers and windows. High visibility branding.",
-        image: "https://www.buildasign.com/0085810_bumper-stickers_360.png",
+        image: "/api/assets/0085810_bumper-stickers_360.png",
         price: "Starting at $2.24",
         badge: "Car Favorite",
         config: {
@@ -3112,7 +3112,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Decals",
           breadcrumbHref: "/custom-decals",
           promoText: "20% OFF BUMPER STICKERS - SHIPS NEXT DAY",
-          image: "https://www.buildasign.com/0085810_bumper-stickers_360.png",
+          image: "/api/assets/0085810_bumper-stickers_360.png",
           ratingCount: "850",
           ratingScore: "4.8",
           sizes: [
@@ -3161,7 +3161,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Car Door Decals",
         description:
           "Adhesive door decals for car bodies. Durable semi-permanent advertising.",
-        image: "https://www.buildasign.com/0085984_car-door-decals_360.png",
+        image: "/api/assets/0085984_car-door-decals_360.png",
         price: "Starting at $23.86",
         config: {
           title: "Custom Car Door Decals",
@@ -3170,7 +3170,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Decals",
           breadcrumbHref: "/custom-decals",
           promoText: "20% OFF SEMI-PERMANENT DOOR DECALS",
-          image: "https://www.buildasign.com/0085984_car-door-decals_360.png",
+          image: "/api/assets/0085984_car-door-decals_360.png",
           ratingCount: "320",
           ratingScore: "4.7",
           sizes: [
@@ -3221,7 +3221,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Car Window Decals",
         description:
           "Rear and side window adhesive graphics, available in transparent and opaque materials.",
-        image: "https://www.buildasign.com/0085990_car-window-decals_360.png",
+        image: "/api/assets/0085990_car-window-decals_360.png",
         price: "Starting at $23.86",
         config: {
           title: "Custom Car Window Decals",
@@ -3230,7 +3230,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Decals",
           breadcrumbHref: "/custom-decals",
           promoText: "20% OFF WINDOW ADHESIVE DECALS",
-          image: "https://www.buildasign.com/0085990_car-window-decals_360.png",
+          image: "/api/assets/0085990_car-window-decals_360.png",
           ratingCount: "285",
           ratingScore: "4.8",
           sizes: [
@@ -3383,7 +3383,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Roll Labels",
         description:
           "Bulk promotional logo stickers printed on paper or plastic rolls, perfect for packaging.",
-        image: "https://www.buildasign.com/0086594_roll-labels_360.png",
+        image: "/api/assets/0086594_roll-labels_360.png",
         price: "Starting at $0.54 each",
         config: {
           title: "Custom Printed Roll Labels",
@@ -3392,7 +3392,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Decals",
           breadcrumbHref: "/custom-decals",
           promoText: "20% OFF ALL BULK ROLL LABELS",
-          image: "https://www.buildasign.com/0086594_roll-labels_360.png",
+          image: "/api/assets/0086594_roll-labels_360.png",
           ratingCount: "410",
           ratingScore: "4.8",
           sizes: [
@@ -3444,7 +3444,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         description:
           "Glueless static clings that stick to glass using static energy. Easy to reposition.",
         image:
-          "https://www.buildasign.com/0085814_static-window-clings_360.png",
+          "/api/assets/0085814_static-window-clings_360.png",
         price: "Starting at $62.96",
         config: {
           title: "Static Window Clings",
@@ -3454,7 +3454,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/custom-decals",
           promoText: "20% OFF REPOSITIONABLE WINDOW CLINGS",
           image:
-            "https://www.buildasign.com/0085814_static-window-clings_360.png",
+            "/api/assets/0085814_static-window-clings_360.png",
           ratingCount: "220",
           ratingScore: "4.7",
           sizes: [
@@ -3584,7 +3584,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         description:
           "Mini address stickers for envelope branding, packaging returns, and office logs.",
         image:
-          "https://www.buildasign.com/0086632_return-address-labels_360.jpeg",
+          "/api/assets/0086632_return-address-labels_360.jpeg",
         price: "Starting at $0.14 each",
         config: {
           title: "Return Address Labels",
@@ -3594,7 +3594,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/custom-decals",
           promoText: "20% OFF RETURN ADDRESS LABELS",
           image:
-            "https://www.buildasign.com/0086632_return-address-labels_360.jpeg",
+            "/api/assets/0086632_return-address-labels_360.jpeg",
           ratingCount: "480",
           ratingScore: "4.9",
           sizes: [
@@ -3753,7 +3753,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     description:
       "Grow your business and look professional with customized business cards, flyers, and brochures.",
     heroImage:
-      "https://www.buildasign.com/images/uploaded/Redesign/BAS_WEB_Redesign_Category_DecalsClings_Secondary.jpg",
+      "/api/assets/images/uploaded/Redesign/BAS_WEB_Redesign_Category_DecalsClings_Secondary.jpg",
     reviewRating: "4.9",
     reviewCount: "1,150",
     reviewQuote:
@@ -3761,7 +3761,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     categoryDescriptionText:
       "Make a powerful statement with custom marketing materials that elevate your brand. From premium double-sided business cards and local door hangers to detailed brochures, rack cards, and tabletop displays, we offer a comprehensive suite of print products designed to help you stand out. Easily customize each piece with your brand colors, logos, and promotions using our professional design tools and template libraries.",
     categorySecondaryImage:
-      "https://www.buildasign.com/images/uploaded/Redesign/NPIB-34422-Tradeshow-Hero-001_en-gb.png",
+      "/api/assets/images/uploaded/Redesign/NPIB-34422-Tradeshow-Hero-001_en-gb.png",
     faqs: [
       {
         q: "What cardstock and paper options do you offer?",
@@ -3782,7 +3782,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Custom Business Cards",
         description:
           "Make a great first impression with premium custom business cards.",
-        image: "https://www.buildasign.com/0085790_business-cards_360.jpeg",
+        image: "/api/assets/0085790_business-cards_360.jpeg",
         price: "Starting at $19.99 for 250",
         badge: "Corporate Choice",
         config: {
@@ -3792,7 +3792,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Marketing",
           breadcrumbHref: "/marketing-materials",
           promoText: "25% OFF ALL CORPORATE STATIONERY",
-          image: "https://www.buildasign.com/0085790_business-cards_360.jpeg",
+          image: "/api/assets/0085790_business-cards_360.jpeg",
           ratingCount: "1120",
           ratingScore: "4.9",
           sizes: [
@@ -3884,7 +3884,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Custom Postcards",
         description:
           "High-quality postcards for direct mail, handouts, and promotional inserts.",
-        image: "https://www.buildasign.com/0086663_postcards_360.png",
+        image: "/api/assets/0086663_postcards_360.png",
         price: "Starting at $14.99 for 50",
         badge: "Event Choice",
         config: {
@@ -3894,7 +3894,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Marketing",
           breadcrumbHref: "/marketing-materials",
           promoText: "25% OFF ALL EVENT MARKETING PRINTS",
-          image: "https://www.buildasign.com/0086663_postcards_360.png",
+          image: "/api/assets/0086663_postcards_360.png",
           ratingCount: "580",
           ratingScore: "4.8",
           sizes: [
@@ -3972,7 +3972,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Flyers & Brochures",
         description:
           "Vibrant single or double sided flyers to promote events, menus, and packages.",
-        image: "https://www.buildasign.com/0086669_flyers-brochures_360.png",
+        image: "/api/assets/0086669_flyers-brochures_360.png",
         price: "Starting at $29.99 for 50",
         badge: "Best Value",
         config: {
@@ -3982,7 +3982,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Marketing",
           breadcrumbHref: "/marketing-materials",
           promoText: "25% OFF BULK EVENT FLYERS & FOLDED BROCHURES",
-          image: "https://www.buildasign.com/0086669_flyers-brochures_360.png",
+          image: "/api/assets/0086669_flyers-brochures_360.png",
           ratingCount: "430",
           ratingScore: "4.7",
           sizes: [
@@ -4056,7 +4056,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Door Hangers",
         description:
           "Targeted local advertising hangers that slip easily onto front door handles.",
-        image: "https://www.buildasign.com/0086684_door-hangers_360.png",
+        image: "/api/assets/0086684_door-hangers_360.png",
         price: "Starting at $39.99 for 100",
         config: {
           title: "Custom Door Hangers",
@@ -4065,7 +4065,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Marketing",
           breadcrumbHref: "/marketing-materials",
           promoText: "25% OFF BUSINESS DOOR HANGERS",
-          image: "https://www.buildasign.com/0086684_door-hangers_360.png",
+          image: "/api/assets/0086684_door-hangers_360.png",
           ratingCount: "310",
           ratingScore: "4.8",
           sizes: [
@@ -4142,7 +4142,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         description:
           "Branded pocket folders to organize and present documents and proposals.",
         image:
-          "https://www.buildasign.com/0086700_presentation-folders_360.png",
+          "/api/assets/0086700_presentation-folders_360.png",
         price: "Starting at $99.99 for 50",
         badge: "Premium Choice",
         config: {
@@ -4153,7 +4153,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/marketing-materials",
           promoText: "25% OFF PRESENTATION CORPORATE FOLDERS",
           image:
-            "https://www.buildasign.com/0086700_presentation-folders_360.png",
+            "/api/assets/0086700_presentation-folders_360.png",
           ratingCount: "220",
           ratingScore: "4.7",
           sizes: [
@@ -4225,7 +4225,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Rack Cards",
         description:
           "Sleek vertical cards designed for display racks in hotel lobbies and cafes.",
-        image: "https://www.buildasign.com/0086692_rack-cards_360.png",
+        image: "/api/assets/0086692_rack-cards_360.png",
         price: "Starting at $19.99 for 50",
         config: {
           title: "Custom Rack Cards",
@@ -4234,7 +4234,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Marketing",
           breadcrumbHref: "/marketing-materials",
           promoText: "25% OFF COMPACT RACK CARDS",
-          image: "https://www.buildasign.com/0086692_rack-cards_360.png",
+          image: "/api/assets/0086692_rack-cards_360.png",
           ratingCount: "340",
           ratingScore: "4.8",
           sizes: [
@@ -4306,7 +4306,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Table Tents",
         description:
           "Double-sided self-standing table displays, ideal for restaurants and reception desks.",
-        image: "https://www.buildasign.com/0086720_table-tents_360.png",
+        image: "/api/assets/0086720_table-tents_360.png",
         price: "Starting at $49.99 for 50",
         badge: "Hospitality Favorite",
         config: {
@@ -4316,7 +4316,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Marketing",
           breadcrumbHref: "/marketing-materials",
           promoText: "25% OFF COUNTERTOP TABLE TENTS",
-          image: "https://www.buildasign.com/0086720_table-tents_360.png",
+          image: "/api/assets/0086720_table-tents_360.png",
           ratingCount: "190",
           ratingScore: "4.8",
           sizes: [
@@ -4373,7 +4373,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     description:
       "Customize apparel, mugs, and trade show giveaways with your business branding.",
     heroImage:
-      "https://www.buildasign.com/images/uploaded/BAS_WEB_071125_Category_Flags_Secondary.jpg",
+      "/api/assets/images/uploaded/BAS_WEB_071125_Category_Flags_Secondary.jpg",
     reviewRating: "4.9",
     reviewCount: "1,480",
     reviewQuote:
@@ -4381,7 +4381,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     categoryDescriptionText:
       "Promote your business and look professional with customized promo swag. From screen-printed cotton t-shirts and ceramic coffee mugs to canvas tote bags, retractable logo pens, executive journals, keychains, and fridge magnets, we have everything you need to leave a lasting impression. All items are constructed with high-grade, durable materials designed to proudly showcase your brand.",
     categorySecondaryImage:
-      "https://www.buildasign.com/images/uploaded/Redesign/BAS_WEB_Redesign_Category_DecalsClings_Secondary.jpg",
+      "/api/assets/images/uploaded/Redesign/BAS_WEB_Redesign_Category_DecalsClings_Secondary.jpg",
     faqs: [
       {
         q: "Is there a minimum order quantity (MOQ) for promotional products?",
@@ -4402,7 +4402,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Custom T-Shirts",
         description:
           "Screen printed cotton shirts featuring your company logo or message.",
-        image: "https://www.buildasign.com/0085750_vinyl-banners_360.png", // using an existing banner image or placeholder
+        image: "/api/assets/0085750_vinyl-banners_360.png", // using an existing banner image or placeholder
         price: "Starting at $14.99",
         badge: "Staff Wear",
         config: {
@@ -4412,7 +4412,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Promotional",
           breadcrumbHref: "/promotional-products",
           promoText: "25% OFF PROMOTIONAL MERCHANDISE",
-          image: "https://www.buildasign.com/0085750_vinyl-banners_360.png",
+          image: "/api/assets/0085750_vinyl-banners_360.png",
           ratingCount: "740",
           ratingScore: "4.8",
           sizes: [
@@ -4485,7 +4485,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Coffee Mugs & Tumblers",
         description:
           "Vibrant ceramic coffee mugs and travel tumblers with your company logo.",
-        image: "https://www.buildasign.com/0086638_ceramic-mugs_360.png",
+        image: "/api/assets/0086638_ceramic-mugs_360.png",
         price: "Starting at $4.99 each",
         badge: "Office Best-Seller",
         config: {
@@ -4495,7 +4495,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Promotional",
           breadcrumbHref: "/promotional-products",
           promoText: "25% OFF CUSTOM LOGO DRINKWARE",
-          image: "https://www.buildasign.com/0086638_ceramic-mugs_360.png",
+          image: "/api/assets/0086638_ceramic-mugs_360.png",
           ratingCount: "840",
           ratingScore: "4.9",
           sizes: [
@@ -4547,7 +4547,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Canvas Tote Bags",
         description:
           "Durable cotton canvas tote bags custom printed with your logo.",
-        image: "https://www.buildasign.com/0086644_tote-bags_360.png",
+        image: "/api/assets/0086644_tote-bags_360.png",
         price: "Starting at $5.99 each",
         config: {
           title: "Custom Canvas Tote Bags",
@@ -4556,7 +4556,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Promotional",
           breadcrumbHref: "/promotional-products",
           promoText: "25% OFF ECO-FRIENDLY PROM BAGS",
-          image: "https://www.buildasign.com/0086644_tote-bags_360.png",
+          image: "/api/assets/0086644_tote-bags_360.png",
           ratingCount: "490",
           ratingScore: "4.8",
           sizes: [
@@ -4612,7 +4612,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Custom Logo Pens",
         description:
           "Retractable ballpoint writing pens, perfect for trade shows and lobbies.",
-        image: "https://www.buildasign.com/0086650_pens_360.png",
+        image: "/api/assets/0086650_pens_360.png",
         price: "Starting at $0.89 each",
         badge: "Trade Show Choice",
         config: {
@@ -4622,7 +4622,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Promotional",
           breadcrumbHref: "/promotional-products",
           promoText: "25% OFF BULK LOGO WRITING PENS",
-          image: "https://www.buildasign.com/0086650_pens_360.png",
+          image: "/api/assets/0086650_pens_360.png",
           ratingCount: "1250",
           ratingScore: "4.8",
           sizes: [
@@ -4693,7 +4693,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Custom Journals & Notebooks",
         description:
           "Pre-ruled journals and notebooks, perfect for client meetings and logs.",
-        image: "https://www.buildasign.com/0086656_notebooks_360.png",
+        image: "/api/assets/0086656_notebooks_360.png",
         price: "Starting at $3.99 each",
         config: {
           title: "Custom Notebooks & Journals",
@@ -4702,7 +4702,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Promotional",
           breadcrumbHref: "/promotional-products",
           promoText: "25% OFF CUSTOM EXECUTIVE NOTEBOOKS",
-          image: "https://www.buildasign.com/0086656_notebooks_360.png",
+          image: "/api/assets/0086656_notebooks_360.png",
           ratingCount: "380",
           ratingScore: "4.8",
           sizes: [
@@ -4754,7 +4754,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Custom Logo Keychains",
         description:
           "Acrylic and metallic keyring tags customized with your company logo.",
-        image: "https://www.buildasign.com/0086660_keychains_360.png",
+        image: "/api/assets/0086660_keychains_360.png",
         price: "Starting at $1.29 each",
         config: {
           title: "Custom Logo Keychains",
@@ -4763,7 +4763,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Promotional",
           breadcrumbHref: "/promotional-products",
           promoText: "25% OFF CUSTOM ENGRAVED KEYCHAINS",
-          image: "https://www.buildasign.com/0086660_keychains_360.png",
+          image: "/api/assets/0086660_keychains_360.png",
           ratingCount: "290",
           ratingScore: "4.7",
           sizes: [
@@ -4814,7 +4814,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Custom Fridge Magnets",
         description:
           "Flexible promo magnets, perfect for household fridges and direct mail.",
-        image: "https://www.buildasign.com/0086664_fridge-magnets_360.png",
+        image: "/api/assets/0086664_fridge-magnets_360.png",
         price: "Starting at $0.49 each",
         badge: "Household Favorite",
         config: {
@@ -4824,7 +4824,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Promotional",
           breadcrumbHref: "/promotional-products",
           promoText: "25% OFF CUSTOM HOUSEHOLD MAGNETS",
-          image: "https://www.buildasign.com/0086664_fridge-magnets_360.png",
+          image: "/api/assets/0086664_fridge-magnets_360.png",
           ratingCount: "710",
           ratingScore: "4.9",
           sizes: [
@@ -4877,7 +4877,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     description:
       "From yard signs to premium acrylic, we print stunning custom signs fast. Choose your product, upload your design, and we ship next day.",
     heroImage:
-      "https://www.buildasign.com/images/uploaded/Banner/BAS_WEB_01292025_Nav_Megamenu_Banner_V5.jpg",
+      "/api/assets/images/uploaded/Banner/BAS_WEB_01292025_Nav_Megamenu_Banner_V5.jpg",
     reviewRating: "4.9",
     reviewCount: "8,420",
     reviewQuote:
