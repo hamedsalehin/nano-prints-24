@@ -171,6 +171,7 @@ function ShippingCountdown() {
 export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
   const [selectedSize, setSelectedSize] = useState(cfg.sizes[0]);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const { addItem } = useCart();
 
   const [pdfUploading, setPdfUploading] = useState(false);
@@ -482,7 +483,8 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
 
             {/* Dynamic Product Visual Configurator Preview */}
             <div
-              className={`relative w-full flex items-center justify-center bg-slate-50 border border-slate-100 shadow-inner mb-6 rounded-2xl min-h-[420px] transition-all duration-300 ${
+              onClick={() => setIsLightboxOpen(true)}
+              className={`relative w-full flex items-center justify-center bg-slate-50 border border-slate-100 shadow-inner mb-6 rounded-2xl min-h-[420px] transition-all duration-300 cursor-zoom-in ${
                 activeImageIndex > 0
                   ? "overflow-hidden p-0"
                   : "overflow-visible p-12"
@@ -517,7 +519,7 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
 
                       {/* Insert Container */}
                       <div
-                        style={{ aspectRatio: aspect }}
+                        style={{ aspectRatio: "4/3" }}
                         className="relative w-full shadow-inner border border-gray-200 overflow-hidden bg-white"
                       >
                         <Image
@@ -546,7 +548,7 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
 
                       {/* Stretched Hanging Sign Canvas */}
                       <div
-                        style={{ aspectRatio: aspect }}
+                        style={{ aspectRatio: "4/3" }}
                         className={`relative w-full shadow-lg border border-gray-200 transition-all duration-300 z-10 ${
                           hasRoundedCorners ? "rounded-3xl" : "rounded-none"
                         } ${
@@ -579,7 +581,7 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
                   ) : isRealEstate && accessoryType === "full_frame" ? (
                     <div className="relative p-6 border-8 border-slate-900 bg-slate-100 rounded-lg flex flex-col items-center justify-center max-w-[380px] w-full shadow-2xl">
                       <div
-                        style={{ aspectRatio: aspect }}
+                        style={{ aspectRatio: "4/3" }}
                         className="relative w-full shadow-inner border border-gray-200 overflow-hidden bg-white"
                       >
                         <Image
@@ -596,7 +598,7 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
                   ) : (
                     /* Standard dynamic sign preview */
                     <div
-                      style={{ aspectRatio: aspect }}
+                      style={{ aspectRatio: "4/3" }}
                       className={`relative w-full max-w-[380px] shadow-lg border transition-all duration-300 ${
                         hasRoundedCorners ? "rounded-[2rem]" : "rounded-none"
                       } ${
@@ -1171,6 +1173,53 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
       </section>
 
       <Footer />
+
+      {/* Lightbox Modal */}
+      {isLightboxOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex flex-col items-center justify-center p-4 cursor-zoom-out animate-fadeIn"
+          onClick={() => setIsLightboxOpen(false)}
+        >
+          {/* Close button */}
+          <button
+            onClick={() => setIsLightboxOpen(false)}
+            className="absolute top-6 right-6 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-all duration-200"
+            aria-label="Close image preview"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+
+          {/* Image */}
+          <div className="relative w-full max-w-5xl h-[80vh] flex items-center justify-center">
+            <Image
+              src={galleryImages[activeImageIndex]}
+              alt={cfg.title}
+              fill
+              sizes="100vw"
+              quality={95}
+              unoptimized={galleryImages[activeImageIndex].startsWith("/api/")}
+              className="object-contain"
+            />
+          </div>
+          
+          {/* Subtitle */}
+          <p className="text-white/80 font-poppins text-center mt-4 text-sm font-medium">
+            {activeImageIndex === 0 ? cfg.title : `${cfg.title} - View ${activeImageIndex + 1}`}
+          </p>
+        </div>
+      )}
     </div>
   );
 }

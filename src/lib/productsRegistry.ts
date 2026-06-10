@@ -946,9 +946,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     heroSubtitle: "All-Weather. Quick Production. Affordable.",
     description:
       "Catch the attention of passing traffic with high-impact outdoor flags. Perfect for grand openings, store front promotions, and events.",
-    heroImage: "/images/products/main page/Flag_page_hero_image.png",
-    tabletHeroImage: "/images/products/main page/Flag_page_hero_image.png",
-    mobileHeroImage: "/images/products/main page/Flag_page_hero_image.png",
+    heroImage: "/images/products/main page/Flag_page_hero_image.jpg",
+    tabletHeroImage: "/images/products/main page/Flag_page_hero_image.jpg",
+    mobileHeroImage: "/images/products/main page/Flag_page_hero_image.jpg",
     reviewRating: "4.8",
     reviewCount: "1,920",
     reviewQuote:
@@ -4924,6 +4924,10 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/custom-signs",
           promoText: "25% OFF Yard Signs + Free Shipping",
           image: "/images/products/main page/signs.png",
+          images: [
+            "/images/products/main page/signs.png",
+            "/images/products/yard_sign_hover.png",
+          ],
           ratingScore: "4.9",
           ratingCount: "8,420",
           sizes: [
@@ -4987,6 +4991,10 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/custom-signs",
           promoText: "FREE SHIPPING on Real Estate Sign Orders",
           image: "/images/products/main page/Real_estate_signs.png",
+          images: [
+            "/images/products/main page/Real_estate_signs.png",
+            "/images/products/re_sign_hover.png",
+          ],
           ratingScore: "4.9",
           ratingCount: "3,200",
           sizes: [
@@ -5036,6 +5044,10 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/custom-signs",
           promoText: "20% OFF Aluminum Signs",
           image: "/images/products/alum_sign_std.png",
+          images: [
+            "/images/products/alum_sign_std.png",
+            "/images/products/alum_sign_hover.png",
+          ],
           ratingScore: "4.8",
           ratingCount: "1,450",
           sizes: [
@@ -5084,6 +5096,10 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/custom-signs",
           promoText: "FREE SHIPPING on A-Frame Signs",
           image: "/images/products/main page/A-frame_sign.jpeg",
+          images: [
+            "/images/products/main page/A-frame_sign.jpeg",
+            "/images/products/aframe_sign_hover.png",
+          ],
           ratingScore: "4.7",
           ratingCount: "620",
           sizes: [
@@ -5129,6 +5145,10 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/custom-signs",
           promoText: "25% OFF Foam Board Signs",
           image: "/images/products/main page/foam_board.jpeg",
+          images: [
+            "/images/products/main page/foam_board.jpeg",
+            "/images/products/foam_sign_hover.png",
+          ],
           ratingScore: "4.8",
           ratingCount: "890",
           sizes: [
@@ -5176,6 +5196,10 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/custom-signs",
           promoText: "NEW - Premium Acrylic Signs Now Available",
           image: "/images/products/acryl_sign_std.png",
+          images: [
+            "/images/products/acryl_sign_std.png",
+            "/images/products/acryl_sign_hover.png",
+          ],
           ratingScore: "4.9",
           ratingCount: "540",
           sizes: [
@@ -5222,6 +5246,10 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/custom-signs",
           promoText: "BULK DISCOUNTS on Coroplast Signs",
           image: "/images/products/coro_sign_std.png",
+          images: [
+            "/images/products/coro_sign_std.png",
+            "/images/products/coro_sign_hover.png",
+          ],
           ratingScore: "4.8",
           ratingCount: "2,100",
           sizes: [
@@ -5269,6 +5297,10 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/custom-signs",
           promoText: "20% OFF Window Signs",
           image: "/images/products/wind_sign_std.png",
+          images: [
+            "/images/products/wind_sign_std.png",
+            "/images/products/wind_sign_hover.png",
+          ],
           ratingScore: "4.8",
           ratingCount: "760",
           sizes: [
@@ -5315,6 +5347,10 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/custom-signs",
           promoText: "FREE SHIPPING on Parking Signs",
           image: "/images/products/main page/Parking_sign.jpeg",
+          images: [
+            "/images/products/main page/Parking_sign.jpeg",
+            "/images/products/park_sign_hover.png",
+          ],
           ratingScore: "4.7",
           ratingCount: "430",
           sizes: [
