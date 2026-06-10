@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /account/
+
+Sitemap: https://nano-signs.com/sitemap.xml
