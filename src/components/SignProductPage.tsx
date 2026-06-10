@@ -255,10 +255,8 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
   };
 
   const galleryImages = useMemo(() => {
-    if (cfg.images && cfg.images.length > 0) {
-      return cfg.images;
-    }
-    return [cfg.image, cfg.image, cfg.image, cfg.image];
+    const imagesList = cfg.images && cfg.images.length > 0 ? cfg.images : [cfg.image];
+    return Array.from(new Set(imagesList.filter(Boolean)));
   }, [cfg.images, cfg.image]);
 
   useEffect(() => {
@@ -694,31 +692,33 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
               )}
             </div>
 
-            <div className="flex gap-3 mb-8 overflow-x-auto pb-2">
-              {galleryImages.map((img, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setActiveImageIndex(idx)}
-                  className={`w-16 h-16 rounded-lg border-2 cursor-pointer p-1 bg-gray-50 transition-all ${
-                    activeImageIndex === idx
-                      ? "border-[#ff2d78] ring-2 ring-pink-100"
-                      : "border-gray-150 hover:border-gray-350"
-                  }`}
-                  aria-label={`View product gallery image ${idx + 1}`}
-                >
-                  <div className="relative w-full h-full">
-                    <Image
-                      src={img}
-                      alt={`Product thumbnail ${idx + 1}`}
-                      fill
-                      sizes="64px"
-                      unoptimized={img.startsWith("/api/")}
-                      className="object-contain"
-                    />
-                  </div>
-                </button>
-              ))}
-            </div>
+            {galleryImages.length > 1 && (
+              <div className="flex gap-3 mb-8 overflow-x-auto pb-2">
+                {galleryImages.map((img, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setActiveImageIndex(idx)}
+                    className={`w-16 h-16 rounded-lg border-2 cursor-pointer p-1 bg-gray-50 transition-all ${
+                      activeImageIndex === idx
+                        ? "border-[#ff2d78] ring-2 ring-pink-100"
+                        : "border-gray-150 hover:border-gray-350"
+                    }`}
+                    aria-label={`View product gallery image ${idx + 1}`}
+                  >
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={img}
+                        alt={`Product thumbnail ${idx + 1}`}
+                        fill
+                        sizes="64px"
+                        unoptimized={img.startsWith("/api/")}
+                        className="object-contain"
+                      />
+                    </div>
+                  </button>
+                ))}
+              </div>
+            )}
 
             {/* Unique callout */}
             {cfg.uniqueCallout && (

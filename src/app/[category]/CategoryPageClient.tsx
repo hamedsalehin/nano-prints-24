@@ -184,32 +184,17 @@ export function CategoryPageClient({
                 href={`/${categorySlug}/${p.id}`}
                 className="flex flex-col items-center justify-start group text-center cursor-pointer"
               >
-                {/* Image Container with Yellow background on hover */}
-                <div className="browse-item-hover relative w-full aspect-square rounded-xl transition-all duration-300 ease-in-out flex items-center justify-center overflow-hidden">
-                  {p.hoverImage ? (
+                {/* Image Container with premium scale-on-hover effect */}
+                <div className="browse-item-hover relative w-full aspect-square rounded-xl transition-all duration-300 ease-in-out flex items-center justify-center overflow-hidden p-5 bg-slate-50/50">
+                  <div className="relative w-full h-full">
                     <Image
                       alt={p.name}
-                      src={p.hoverImage}
-                      fill
-                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
-                      quality={85}
-                      unoptimized={p.hoverImage.startsWith("/api/")}
-                      className="absolute inset-0 w-full h-full object-cover transition-all duration-500 ease-in-out group-hover:scale-105 group-hover:opacity-0"
-                    />
-                  ) : (
-                    <div className="absolute inset-0 bg-slate-100 animate-pulse"></div>
-                  )}
-
-                  {/* Hover State: High-Fidelity SVG Product Mockup with Stand */}
-                  <div className="absolute inset-0 flex items-center justify-center p-[20px] opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out z-10">
-                    <Image
-                      alt={`${p.name} Cutout`}
                       src={p.image}
                       fill
                       sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
                       quality={85}
                       unoptimized={p.image.startsWith("/api/")}
-                      className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                      className="object-contain transition-all duration-500 ease-in-out group-hover:scale-105"
                     />
                   </div>
                 </div>
