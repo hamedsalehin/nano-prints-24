@@ -494,7 +494,7 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                   quality={90}
                   unoptimized={galleryImages[activeImageIndex].startsWith("/api/")}
-                  className="object-contain"
+                  className="object-cover"
                   priority
                 />
               </div>
