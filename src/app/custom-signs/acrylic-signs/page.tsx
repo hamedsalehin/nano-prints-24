@@ -22,7 +22,11 @@ export default function AcrylicSignsPage() {
         breadcrumbHref: "/custom-signs",
         promoText:
           "💎 Premium Acrylic Signs — Crystal-Clear Quality, Ships Next Day!",
-        image: "/images/products/acryl_sign_std.png",
+        image: "/images/products/main page/acrylic_sign.png",
+        images: [
+          "/images/products/main page/acrylic_sign.png",
+          "/images/products/acryl_sign_hover.png",
+        ],
         ratingScore: "4.9",
         ratingCount: "980",
         sizes: [

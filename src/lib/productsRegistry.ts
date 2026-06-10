@@ -946,9 +946,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     heroSubtitle: "All-Weather. Quick Production. Affordable.",
     description:
       "Catch the attention of passing traffic with high-impact outdoor flags. Perfect for grand openings, store front promotions, and events.",
-    heroImage: "/images/products/main page/Flag_page_hero_image.jpg",
-    tabletHeroImage: "/images/products/main page/Flag_page_hero_image.jpg",
-    mobileHeroImage: "/images/products/main page/Flag_page_hero_image.jpg",
+    heroImage: "/images/products/main page/nano hero flag section.png",
+    tabletHeroImage: "/images/products/main page/nano hero flag section.png",
+    mobileHeroImage: "/images/products/main page/nano hero flag section.png",
     reviewRating: "4.8",
     reviewCount: "1,920",
     reviewQuote:
@@ -4876,8 +4876,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     heroSubtitle: "Built to Stand Out. Built to Last.",
     description:
       "From yard signs to premium acrylic, we print stunning custom signs fast. Choose your product, upload your design, and we ship next day.",
-    heroImage:
-      "/api/assets/images/uploaded/Banner/BAS_WEB_01292025_Nav_Megamenu_Banner_V5.jpg",
+    heroImage: "/images/products/main page/nano hero signs section.png",
+    tabletHeroImage: "/images/products/main page/nano hero signs section.png",
+    mobileHeroImage: "/images/products/main page/nano hero signs section.png",
     reviewRating: "4.9",
     reviewCount: "8,420",
     reviewQuote:
@@ -5033,7 +5034,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Aluminum Signs",
         description:
           "Durable rust-proof aluminum signs for indoor and outdoor use.",
-        image: "/images/products/alum_sign_std.png",
+        image: "/images/products/main page/aluminum_sign.png",
         price: "Starting at $8.99",
         badge: "Heavy Duty",
         config: {
@@ -5043,9 +5044,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
           promoText: "20% OFF Aluminum Signs",
-          image: "/images/products/alum_sign_std.png",
+          image: "/images/products/main page/aluminum_sign.png",
           images: [
-            "/images/products/alum_sign_std.png",
+            "/images/products/main page/aluminum_sign.png",
             "/images/products/alum_sign_hover.png",
           ],
           ratingScore: "4.8",
@@ -5185,7 +5186,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Acrylic Signs",
         description:
           "Premium clear or colored acrylic for a polished, modern look.",
-        image: "/images/products/acryl_sign_std.png",
+        image: "/images/products/main page/acrylic_sign.png",
         price: "Starting at $24.99",
         badge: "Premium",
         config: {
@@ -5195,9 +5196,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
           promoText: "NEW - Premium Acrylic Signs Now Available",
-          image: "/images/products/acryl_sign_std.png",
+          image: "/images/products/main page/acrylic_sign.png",
           images: [
-            "/images/products/acryl_sign_std.png",
+            "/images/products/main page/acrylic_sign.png",
             "/images/products/acryl_sign_hover.png",
           ],
           ratingScore: "4.9",
@@ -5235,7 +5236,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Coroplast Signs",
         description:
           "Waterproof corrugated plastic signs — the most versatile outdoor sign.",
-        image: "/images/products/coro_sign_std.png",
+        image: "/images/products/main page/coroplast_sign.png",
         price: "Starting at $4.99",
         badge: "Waterproof",
         config: {
@@ -5245,9 +5246,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
           promoText: "BULK DISCOUNTS on Coroplast Signs",
-          image: "/images/products/coro_sign_std.png",
+          image: "/images/products/main page/coroplast_sign.png",
           images: [
-            "/images/products/coro_sign_std.png",
+            "/images/products/main page/coroplast_sign.png",
             "/images/products/coro_sign_hover.png",
           ],
           ratingScore: "4.8",
@@ -5286,7 +5287,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Window Signs",
         description:
           "Custom window clings, decals and perforated vinyl for storefronts.",
-        image: "/images/products/wind_sign_std.png",
+        image: "/images/products/main page/window_sign.png",
         price: "Starting at $9.99",
         badge: "Storefront",
         config: {
@@ -5296,9 +5297,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
           promoText: "20% OFF Window Signs",
-          image: "/images/products/wind_sign_std.png",
+          image: "/images/products/main page/window_sign.png",
           images: [
-            "/images/products/wind_sign_std.png",
+            "/images/products/main page/window_sign.png",
             "/images/products/wind_sign_hover.png",
           ],
           ratingScore: "4.8",
@@ -5378,7 +5379,158 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           reviews: [],
           ctaHeading: "Parking Lot Management",
           ctaBody: "Professional parking signs that meet regulatory standards.",
-          ctaLabel: "Order Parking Signs",
+          ctaLabel: "Order Parking Signs Now",
+        },
+      },
+      {
+        id: "channel-letter-signs",
+        name: "Channel Letter Signs",
+        description:
+          "Premium 3D backlit and front-lit channel letters to make your business storefront stand out.",
+        image: "/images/products/main page/channel_letter_sign.png",
+        price: "Starting at $149.99",
+        badge: "Premium",
+        config: {
+          title: "Custom Channel Letter Signs",
+          subtitle:
+            "Professional dimensional signage with brilliant LED illumination options.",
+          breadcrumb: "Signs",
+          breadcrumbHref: "/custom-signs",
+          promoText: "✨ Modern LED Channel Letters — Professional Storefront Impact. Shipped Fast!",
+          image: "/images/products/main page/channel_letter_sign.png",
+          images: [
+            "/images/products/main page/channel_letter_sign.png",
+            "/images/products/gallery/channel_letter_storefront_1.png",
+            "/images/products/gallery/channel_letter_storefront_2.png",
+          ],
+          ratingScore: "4.9",
+          ratingCount: "820",
+          sizes: [
+            { label: '12" High Letters', value: "12in", basePrice: 149.99 },
+            { label: '18" High Letters', value: "18in", basePrice: 224.99 },
+            { label: '24" High Letters', value: "24in", basePrice: 299.99 },
+            { label: '36" High Letters', value: "36in", basePrice: 449.99 },
+          ],
+          selects: [
+            {
+              label: "Illumination Type",
+              options: [
+                {
+                  label: "Front-Lit (LED Face Glowing)",
+                  value: "front_lit",
+                  priceAdder: 0,
+                  description: "Standard bright acrylic faces with internal LED illumination.",
+                },
+                {
+                  label: "Halo-Lit / Reverse-Lit (Rear Glowing)",
+                  value: "halo_lit",
+                  priceAdder: 50.0,
+                  description: "Light projects onto the wall behind, creating a halo effect.",
+                },
+                {
+                  label: "Dual-Lit (Front & Rear Glowing)",
+                  value: "dual_lit",
+                  priceAdder: 90.0,
+                  description: "Combines glowing faces and halo backlighting for maximum impact.",
+                },
+                {
+                  label: "Non-Illuminated Dimensional Letters",
+                  value: "non_illuminated",
+                  priceAdder: -40.0,
+                  description: "High-end 3D metal or acrylic letters without lights.",
+                },
+              ],
+            },
+            {
+              label: "Mounting Style",
+              options: [
+                {
+                  label: "Raceway Mount (Standard)",
+                  value: "raceway",
+                  priceAdder: 0,
+                  description: "Letters pre-installed on a metal box/bar container for easier wiring.",
+                },
+                {
+                  label: "Flush / Direct Wall Mount",
+                  value: "flush",
+                  priceAdder: 35.0,
+                  description: "Letters mounted directly to the wall surface with individual wiring.",
+                },
+              ],
+            },
+          ],
+          toggleGroups: [
+            {
+              label: "Face Acrylic Color",
+              options: [
+                { id: "white_face", label: "Brilliant White", priceAdder: 0 },
+                { id: "red_face", label: "Vibrant Red", priceAdder: 0 },
+                { id: "blue_face", label: "Royal Blue", priceAdder: 0 },
+                { id: "black_face", label: "Black (Glows White)", priceAdder: 15.0 },
+              ],
+            },
+            {
+              label: "Return / Trim Color (Sides)",
+              options: [
+                { id: "black_return", label: "Sleek Black", priceAdder: 0 },
+                { id: "silver_return", label: "Brushed Aluminum", priceAdder: 0 },
+                { id: "bronze_return", label: "Classic Bronze", priceAdder: 0 },
+              ],
+            },
+          ],
+          qtyDiscount: "Volume discounts on complex multi-letter signs",
+          keyFeatures: [
+            "Heavy-duty aluminum returns (side walls) will not rust",
+            "Energy-efficient and long-lasting UL-listed LEDs",
+            "Custom fonts, colors, and logos supported",
+            "Front-lit and halo-lit options for stunning looks",
+            "Raceway mount option for simplified building installation",
+          ],
+          useCases: [
+            "Retail Storefronts",
+            "Corporate Offices",
+            "Restaurants & Cafes",
+            "Shopping Centers",
+            "Building Exterior Signage",
+          ],
+          specs: [
+            { key: "Letter Thickness (Depth)", value: "3\" to 5\" deep returns" },
+            { key: "Illumination source", value: "UL-certified Low-voltage 12V LEDs" },
+            { key: "Face Material", value: "3/16\" Cast Acrylic" },
+            { key: "Return Material", value: "0.040\" Pre-painted Aluminum" },
+            { key: "Wiring Type", value: "Single-source connection (with Raceway)" },
+            { key: "Outdoor Lifespan", value: "10+ years maintenance-free" },
+          ],
+          faqs: [
+            {
+              q: "What is the difference between front-lit and halo-lit letters?",
+              a: "Front-lit letters have acrylic faces that glow in the chosen color, throwing light forward. Halo-lit (or reverse-lit) letters have aluminum faces but open backs, allowing light to reflect off the wall behind the letter to create a soft, upscale halo glow.",
+            },
+            {
+              q: "What is a raceway mount?",
+              a: "A raceway is a metal box structure that the channel letters are mounted to. It holds the power supplies and wiring. Mounting via a raceway only requires a few holes in the building's facade, whereas flush mounting requires drilling individual mounting and wiring holes for every single letter.",
+            },
+            {
+              q: "Do you supply the mounting templates and hardware?",
+              a: "Yes! Every channel letter sign comes with a full-size paper mounting template, studs, silicone spacers, and clear instructions to make installation straightforward for any handyman or signage installer.",
+            },
+          ],
+          reviews: [
+            {
+              author: "Gordon K.",
+              rating: 5,
+              text: "The halo-lit letters transformed our cafe facade. Absolute showstopper at night. Highly recommend!",
+            },
+            {
+              author: "Samantha V.",
+              rating: 5,
+              text: "Fantastic customer support in setting up our custom vector logo. The letters arrived securely crated and installation templates were exact.",
+            },
+          ],
+          ctaHeading: "Brighten Your Business Facade",
+          ctaBody:
+            "Custom 3D LED channel letters manufactured with commercial-grade components.",
+          ctaLabel: "Order Channel Letter Signs Now",
         },
       },
     ],

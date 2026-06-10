@@ -21,7 +21,11 @@ export default function AFrameSignsPage() {
         breadcrumb: "Signs",
         breadcrumbHref: "/custom-signs",
         promoText: "🪧 A-Frame Signs — Double-Sided, Portable, Ships Tomorrow!",
-        image: "/images/products/aframe_sign_std.png",
+        image: "/images/products/main page/A-frame_sign.jpeg",
+        images: [
+          "/images/products/main page/A-frame_sign.jpeg",
+          "/images/products/aframe_sign_hover.png",
+        ],
         ratingScore: "4.8",
         ratingCount: "1,640",
         sizes: [

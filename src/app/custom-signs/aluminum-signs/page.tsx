@@ -22,7 +22,11 @@ export default function AluminumSignsPage() {
         breadcrumbHref: "/custom-signs",
         promoText:
           "⚙️ Aluminum Signs — Rust-Proof, Fade-Proof, Weatherproof. Ships Next Day!",
-        image: "/images/products/alum_sign_std.png",
+        image: "/images/products/main page/aluminum_sign.png",
+        images: [
+          "/images/products/main page/aluminum_sign.png",
+          "/images/products/alum_sign_hover.png",
+        ],
         ratingScore: "4.9",
         ratingCount: "2,840",
         sizes: [

@@ -22,7 +22,11 @@ export default function ParkingSignsPage() {
         breadcrumbHref: "/custom-signs",
         promoText:
           "🅿️ Custom Parking Signs — MUTCD-Compliant Reflective Available. Ships Tomorrow!",
-        image: "/images/products/park_sign_std.png",
+        image: "/images/products/main page/Parking_sign.jpeg",
+        images: [
+          "/images/products/main page/Parking_sign.jpeg",
+          "/images/products/park_sign_hover.png",
+        ],
         ratingScore: "4.9",
         ratingCount: "2,310",
         sizes: [

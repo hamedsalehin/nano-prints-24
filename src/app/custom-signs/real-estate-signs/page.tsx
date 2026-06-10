@@ -21,7 +21,11 @@ export default function RealEstateSignsPage() {
         breadcrumb: "Signs",
         breadcrumbHref: "/custom-signs",
         promoText: "🏠 Real Estate Signs — Next Day Delivery Available!",
-        image: "/images/products/re_sign_std.png",
+        image: "/images/products/main page/Real_estate_signs.png",
+        images: [
+          "/images/products/main page/Real_estate_signs.png",
+          "/images/products/re_sign_hover.png",
+        ],
         ratingScore: "4.9",
         ratingCount: "3,150",
         sizes: [
