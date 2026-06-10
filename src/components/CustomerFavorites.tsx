@@ -22,9 +22,9 @@ const favorites = [
     rating: 5,
   },
   {
-    name: "Real Estate Signs",
+    name: "Real Estate Panels",
     image: "/images/customer-favorites/real_estate_signs.jpeg",
-    href: "/custom-signs/real-estate-signs",
+    href: "/custom-signs/real-estate-panels",
     rating: 5,
   },
   {

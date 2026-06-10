@@ -91,11 +91,11 @@ export function CategoryPageClient({
                 <source srcSet={tabletHeroImage} media="(min-width: 481px)" />
               )}
               <img
-                className="w-full h-[168px] lg:h-[400px] object-cover object-top pointer-events-none"
+                className="w-full h-[220px] lg:h-[480px] object-cover object-top pointer-events-none"
                 src={mobileHeroImage || tabletHeroImage || heroImage}
                 alt={`${title} Banner`}
                 width={1200}
-                height={400}
+                height={480}
               />
             </picture>
 

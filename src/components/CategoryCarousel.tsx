@@ -12,9 +12,9 @@ const categories = [
     image: "/images/products/main page/signs.png",
   },
   {
-    name: "Real Estate Signs",
-    href: "/custom-signs/real-estate-signs",
-    image: "/images/products/main page/Real_estate_signs.png",
+    name: "Real Estate Panels",
+    href: "/custom-signs/real-estate-panels",
+    image: "/images/products/main page/Real_estate_panels.png",
   },
   {
     name: "Banners",

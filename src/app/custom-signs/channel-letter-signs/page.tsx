@@ -20,9 +20,9 @@ export default function ChannelLetterSignsPage() {
         breadcrumb: "Signs",
         breadcrumbHref: "/custom-signs",
         promoText: "✨ Modern LED Channel Letters — Professional Storefront Impact. Shipped Fast!",
-        image: "/images/products/main page/channel_letter_sign.png",
+        image: "/images/products/main page/channel_letter_signs.png",
         images: [
-          "/images/products/main page/channel_letter_sign.png",
+          "/images/products/main page/channel_letter_signs.png",
           "/images/products/gallery/channel_letter_storefront_1.png",
           "/images/products/gallery/channel_letter_storefront_2.png",
         ],

@@ -4977,24 +4977,25 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         },
       },
       {
-        id: "real-estate-signs",
-        name: "Real Estate Signs",
+        id: "real-estate-panels",
+        name: "Real Estate Panels",
         description:
-          "Professional aluminum and coroplast signs for property listings.",
-        image: "/images/products/main page/Real_estate_signs.png",
+          "Professional aluminum and coroplast panels for property listings.",
+        image: "/images/products/main page/Real_estate_panels.png",
         price: "Starting at $12.99",
         badge: "Most Popular",
         config: {
-          title: "Custom Real Estate Signs",
+          title: "Custom Real Estate Panels",
           subtitle:
-            "Professional-grade signs for property listings and open houses.",
+            "Professional-grade panels for property listings and open houses.",
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
-          promoText: "FREE SHIPPING on Real Estate Sign Orders",
-          image: "/images/products/main page/Real_estate_signs.png",
+          promoText: "FREE SHIPPING on Real Estate Panel Orders",
+          image: "/images/products/main page/Real_estate_panels.png",
           images: [
-            "/images/products/main page/Real_estate_signs.png",
-            "/images/products/re_sign_hover.png",
+            "/images/products/main page/Real_estate_panels.png",
+            "/images/products/gallery/real_estate_panels_in_action_1.png",
+            "/images/products/gallery/real_estate_panels_in_action_2.png",
           ],
           ratingScore: "4.9",
           ratingCount: "3,200",
@@ -5025,8 +5026,8 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           faqs: [],
           reviews: [],
           ctaHeading: "List Properties With Impact",
-          ctaBody: "Professional real estate signs shipped next day.",
-          ctaLabel: "Order Real Estate Signs",
+          ctaBody: "Professional real estate panels shipped next day.",
+          ctaLabel: "Order Real Estate Panels",
         },
       },
       {
@@ -5387,7 +5388,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Channel Letter Signs",
         description:
           "Premium 3D backlit and front-lit channel letters to make your business storefront stand out.",
-        image: "/images/products/main page/channel_letter_sign.png",
+        image: "/images/products/main page/channel_letter_signs.png",
         price: "Starting at $149.99",
         badge: "Premium",
         config: {
@@ -5397,9 +5398,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
           promoText: "✨ Modern LED Channel Letters — Professional Storefront Impact. Shipped Fast!",
-          image: "/images/products/main page/channel_letter_sign.png",
+          image: "/images/products/main page/channel_letter_signs.png",
           images: [
-            "/images/products/main page/channel_letter_sign.png",
+            "/images/products/main page/channel_letter_signs.png",
             "/images/products/gallery/channel_letter_storefront_1.png",
             "/images/products/gallery/channel_letter_storefront_2.png",
           ],

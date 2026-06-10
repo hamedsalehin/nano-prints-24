@@ -4,27 +4,28 @@ import { Home } from "lucide-react";
 
 
 export const metadata: Metadata = {
-  title: "Real Estate Signs | Nano Signs",
-  description: "Professional-grade signs that get properties noticed — riders, posts, and full frames included.",
+  title: "Real Estate Panels | Nano Signs",
+  description: "Professional-grade panels that get properties noticed — riders, posts, and full frames included.",
   alternates: {
-    canonical: "https://nano-signs.com/custom-signs/real-estate-signs",
+    canonical: "https://nano-signs.com/custom-signs/real-estate-panels",
   },
 };
 
-export default function RealEstateSignsPage() {
+export default function RealEstatePanelsPage() {
   return (
     <SignProductPage
       cfg={{
-        title: "Real Estate Signs",
+        title: "Real Estate Panels",
         subtitle:
-          "Professional-grade signs that get properties noticed — riders, posts, and full frames included.",
+          "Professional-grade panels that get properties noticed — riders, posts, and full frames included.",
         breadcrumb: "Signs",
         breadcrumbHref: "/custom-signs",
-        promoText: "🏠 Real Estate Signs — Next Day Delivery Available!",
-        image: "/images/products/main page/Real_estate_signs.png",
+        promoText: "🏠 Real Estate Panels — Next Day Delivery Available!",
+        image: "/images/products/main page/Real_estate_panels.png",
         images: [
-          "/images/products/main page/Real_estate_signs.png",
-          "/images/products/re_sign_hover.png",
+          "/images/products/main page/Real_estate_panels.png",
+          "/images/products/gallery/real_estate_panels_in_action_1.png",
+          "/images/products/gallery/real_estate_panels_in_action_2.png",
         ],
         ratingScore: "4.9",
         ratingCount: "3,150",
@@ -94,14 +95,14 @@ export default function RealEstateSignsPage() {
           "Professional-grade coroplast or aluminum",
           "UV-resistant fade-proof printing",
           "Compatible with standard real estate frames",
-          "Rider signs available for open houses & sold",
+          "Rider panels available for open houses & sold",
           "Ships next business day",
           "Double-sided printing available",
         ],
         useCases: [
           "For Sale Listings",
           "Open Houses",
-          "Sold Signs",
+          "Sold Panels",
           "New Listings",
           "Coming Soon",
           "Rental Properties",
@@ -121,11 +122,11 @@ export default function RealEstateSignsPage() {
         ],
         faqs: [
           {
-            q: "Are your signs compatible with standard real estate frames?",
-            a: 'Yes! Our 18"x24" and 24"x24" signs are designed to fit standard real estate wire frames and yard arm posts.',
+            q: "Are your panels compatible with standard real estate frames?",
+            a: 'Yes! Our 18"x24" and 24"x24" panels are designed to fit standard real estate wire frames and yard arm posts.',
           },
           {
-            q: "Can I order rider signs to match my main sign?",
+            q: "Can I order rider panels to match my main panel?",
             a: "Absolutely. Select the rider size in the dropdown and we'll match the design style for a cohesive, professional look.",
           },
           {
@@ -134,14 +135,14 @@ export default function RealEstateSignsPage() {
           },
           {
             q: "What is the minimum order?",
-            a: "We have no minimum! Order as few as 1 sign or as many as 1,000.",
+            a: "We have no minimum! Order as few as 1 panel or as many as 1,000.",
           },
         ],
         reviews: [
           {
             author: "Jessica A.",
             rating: 5,
-            text: "I've been ordering from here for 2 years. Best quality real estate signs I've found, and delivery is always on time.",
+            text: "I've been ordering from here for 2 years. Best quality real estate panels I've found, and delivery is always on time.",
           },
           {
             author: "Carlos M.",
@@ -151,17 +152,17 @@ export default function RealEstateSignsPage() {
           {
             author: "Patricia W.",
             rating: 5,
-            text: "The aluminum signs look incredibly professional. My clients always comment on them.",
+            text: "The aluminum panels look incredibly professional. My clients always comment on them.",
           },
         ],
         ctaHeading: "List More. Sell Faster.",
         ctaBody:
-          "Professional real estate signs that make every listing look premium.",
-        ctaLabel: "Order Real Estate Signs",
+          "Professional real estate panels that make every listing look premium.",
+        ctaLabel: "Order Real Estate Panels",
         uniqueCallout: {
           icon: <Home className="w-8 h-8 text-blue-500" />,
           heading: "Trusted by 50,000+ Real Estate Agents",
-          body: "From solo agents to national brokerages, real estate professionals across the country trust us for fast, professional signage that closes deals.",
+          body: "From solo agents to national brokerages, real estate professionals across the country trust us for fast, professional panels that close deals.",
           color: "bg-blue-50 border border-blue-200 text-blue-900",
         },
       }}
