@@ -1870,7 +1870,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Bumper Magnets",
         description:
           "Removable magnetic bumper stickers that slide on and off metal trunks easily.",
-        image: "/api/assets/0086539_bumper-magnets_360.png",
+        image: "/images/products/main page/bumper_magnet.png",
         price: "Starting at $5.49",
         config: {
           title: "Custom Bumper Magnets",
@@ -1879,7 +1879,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Vehicle Signs",
           breadcrumbHref: "/vehicle-signs",
           promoText: "25% OFF REMOVABLE BUMPER MAGNETS",
-          image: "/api/assets/0086539_bumper-magnets_360.png",
+          image: "/images/products/main page/bumper_magnet.png",
           ratingCount: "172",
           ratingScore: "4.7",
           sizes: [
