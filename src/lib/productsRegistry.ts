@@ -989,7 +989,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Feather Flags",
         description:
           "Eye-catching fluttering flags designed to draw crowds from the roadside.",
-        image: "/api/assets/0085996_feather-flags_360.png",
+        image: "/images/products/main page/feather_flag.png",
         price: "Starting at $54.37",
         badge: "Best Seller",
         config: {
@@ -999,7 +999,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Flags",
           breadcrumbHref: "/custom-flags",
           promoText: "20% OFF ALL ADVERTISING FLAGS - SHIPS NEXT DAY",
-          image: "/api/assets/0085996_feather-flags_360.png",
+          image: "/images/products/main page/feather_flag.png",
           ratingCount: "820",
           ratingScore: "4.8",
           sizes: [
@@ -1121,7 +1121,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Teardrop Flags",
         description:
           "Elegant teardrop shape that remains taut and visible even in low wind conditions.",
-        image: "/api/assets/0086040_teardrop-flags_360.png",
+        image: "/images/products/main page/teardrop_flag.png",
         price: "Starting at $49.68",
         config: {
           title: "Custom Teardrop Flags",
@@ -1130,7 +1130,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Flags",
           breadcrumbHref: "/custom-flags",
           promoText: "20% OFF ALL TEARDROP FLAGS",
-          image: "/api/assets/0086040_teardrop-flags_360.png",
+          image: "/images/products/main page/teardrop_flag.png",
           ratingCount: "432",
           ratingScore: "4.7",
           sizes: [
@@ -1200,7 +1200,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Straight Flags",
         description:
           "Classic rectangular standing flags that offer a large design canvas.",
-        image: "/api/assets/0086067_straight-flags_360.png",
+        image: "/images/products/main page/straight_flag.png",
         price: "Starting at $54.37",
         config: {
           title: "Custom Straight Flags",
@@ -1209,7 +1209,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Flags",
           breadcrumbHref: "/custom-flags",
           promoText: "20% OFF STRAIGHT ADVERTISING FLAGS",
-          image: "/api/assets/0086067_straight-flags_360.png",
+          image: "/images/products/main page/straight_flag.png",
           ratingCount: "295",
           ratingScore: "4.7",
           sizes: [
@@ -1327,7 +1327,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Nylon Flags",
         description:
           "Premium heavy-duty nylon flags built for long-term outdoor display on poles.",
-        image: "/api/assets/0086506_nylon-flags_360.png",
+        image: "/images/products/main page/nylon_flag.png",
         price: "Starting at $94.00",
         config: {
           title: "Custom Nylon Flags",
@@ -1336,7 +1336,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Flags",
           breadcrumbHref: "/custom-flags",
           promoText: "20% OFF HEAVY DUTY NYLON FLAGS",
-          image: "/api/assets/0086506_nylon-flags_360.png",
+          image: "/images/products/main page/nylon_flag.png",
           ratingCount: "188",
           ratingScore: "4.9",
           sizes: [
@@ -1383,7 +1383,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Pennant Flags",
         description:
           "Triangular pennant flags for sports teams, schools, and festive string lines.",
-        image: "/api/assets/0086533_pennant-flags_360.png",
+        image: "/images/products/main page/pennant_flag.png",
         price: "Starting at $51.11",
         config: {
           title: "Custom Pennant Flags",
@@ -1392,7 +1392,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Flags",
           breadcrumbHref: "/custom-flags",
           promoText: "20% OFF SPIRIT PENNANTS",
-          image: "/api/assets/0086533_pennant-flags_360.png",
+          image: "/images/products/main page/pennant_flag.png",
           ratingCount: "140",
           ratingScore: "4.7",
           sizes: [
@@ -1435,7 +1435,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Garden Flags",
         description:
           "Small vertical flags to add a personalized touch to lawns, pathways, and gardens.",
-        image: "/api/assets/0086497_garden-flags_360.png",
+        image: "/images/products/main page/garden_flag.png",
         price: "Starting at $50.82",
         config: {
           title: "Custom Garden Flags",
@@ -1444,7 +1444,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Flags",
           breadcrumbHref: "/custom-flags",
           promoText: "20% OFF PERSONALIZED GARDEN FLAGS",
-          image: "/api/assets/0086497_garden-flags_360.png",
+          image: "/images/products/main page/garden_flag.png",
           ratingCount: "350",
           ratingScore: "4.8",
           sizes: [
