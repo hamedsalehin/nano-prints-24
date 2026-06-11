@@ -64,7 +64,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         id: "vinyl-banners",
         name: "Vinyl Banners",
         description: "Durable and weather-resistant for indoor or outdoor use.",
-        image: "https://ext.same-assets.com/1114826555/3799598245.png",
+        image: "/images/products/main page/vinyl_banner.png",
         price: "Starting at $12.99",
         badge: "Most Popular",
         config: {
@@ -74,7 +74,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Banners",
           breadcrumbHref: "/custom-banners",
           promoText: "20% OFF ALL VINYL BANNERS - SHIPS NEXT DAY",
-          image: "https://ext.same-assets.com/1114826555/3799598245.png",
+          image: "/images/products/main page/vinyl_banner.png",
           ratingCount: "1,530",
           ratingScore: "4.8",
           sizes: [
@@ -244,7 +244,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Mesh Banners",
         description:
           "Perforated vinyl that allows wind to pass through, ideal for fences.",
-        image: "https://ext.same-assets.com/1114826555/1445363370.png",
+        image: "/images/products/main page/mesh_banner.png",
         price: "Starting at $42.99",
         badge: "Wind-Resistant",
         config: {
@@ -254,7 +254,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Banners",
           breadcrumbHref: "/custom-banners",
           promoText: "20% OFF ALL MESH FENCE BANNERS",
-          image: "https://ext.same-assets.com/1114826555/1445363370.png",
+          image: "/images/products/main page/mesh_banner.png",
           ratingCount: "680",
           ratingScore: "4.8",
           sizes: [
@@ -311,7 +311,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Pole Banners",
         description:
           "Street-pole double sided banners with pockets for outdoor municipal displays.",
-        image: "https://ext.same-assets.com/1114826555/2684103585.png",
+        image: "/images/products/main page/pole_banner.png",
         price: "Starting at $29.99",
         config: {
           title: "Custom Pole Banners",
@@ -320,7 +320,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Banners",
           breadcrumbHref: "/custom-banners",
           promoText: "20% OFF STREET & BOULEVARD POLE BANNERS",
-          image: "https://ext.same-assets.com/1114826555/2684103585.png",
+          image: "/images/products/main page/pole_banner.png",
           ratingCount: "210",
           ratingScore: "4.7",
           sizes: [
@@ -379,7 +379,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Breakaway Banners",
         description:
           "Run-through spirit banners for sports games with center Velcro seam.",
-        image: "https://ext.same-assets.com/1114826555/898075086.png",
+        image: "/images/products/main page/breakaway_banner.png",
         price: "Starting at $34.99",
         config: {
           title: "Custom Breakaway Banners",
@@ -388,7 +388,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Banners",
           breadcrumbHref: "/custom-banners",
           promoText: "20% OFF SCHOOL SPIRIT BREAKAWAYS",
-          image: "https://ext.same-assets.com/1114826555/898075086.png",
+          image: "/images/products/main page/breakaway_banner.png",
           ratingCount: "135",
           ratingScore: "4.8",
           sizes: [
@@ -444,7 +444,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Vertical Banners",
         description:
           "Hanging vertical banners for slim storefront pillars or corridor walls.",
-        image: "https://ext.same-assets.com/1114826555/1286398033.png",
+        image: "/images/products/main page/vertical_banner.png",
         price: "Starting at $19.99",
         config: {
           title: "Custom Vertical Banners",
@@ -453,7 +453,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Banners",
           breadcrumbHref: "/custom-banners",
           promoText: "20% OFF VERTICAL SIGNS & BANNERS",
-          image: "https://ext.same-assets.com/1114826555/1286398033.png",
+          image: "/images/products/main page/vertical_banner.png",
           ratingCount: "290",
           ratingScore: "4.7",
           sizes: [
@@ -615,7 +615,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "X-Banner Stands",
         description:
           "Collapsible lightweight cross stands with custom printed corner-grommet banners.",
-        image: "https://ext.same-assets.com/1114826555/2401743055.png",
+        image: "/images/products/main page/x_banner_stand.png",
         price: "Starting at $49.99",
         config: {
           title: "X-Frame Banner Stands",
@@ -624,7 +624,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Banners",
           breadcrumbHref: "/custom-banners",
           promoText: "20% OFF BUDGET X-BANNER DISPLAYS",
-          image: "https://ext.same-assets.com/1114826555/2401743055.png",
+          image: "/images/products/main page/x_banner_stand.png",
           ratingCount: "385",
           ratingScore: "4.7",
           sizes: [
@@ -750,7 +750,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Tension Fabric Displays",
         description:
           "Premium pillowcase stretch fabric displays sliding over aluminum tube frames.",
-        image: "https://ext.same-assets.com/1114826555/2283645032.png",
+        image: "/images/products/main page/tension_fabric_display.png",
         price: "Starting at $189.99",
         config: {
           title: "Tension Fabric Displays",
@@ -759,7 +759,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Banners",
           breadcrumbHref: "/custom-banners",
           promoText: "20% OFF PREMIUM FABRIC DISPLAYS",
-          image: "https://ext.same-assets.com/1114826555/2283645032.png",
+          image: "/images/products/main page/tension_fabric_display.png",
           ratingCount: "165",
           ratingScore: "4.9",
           sizes: [
@@ -817,7 +817,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Tabletop Retractables",
         description:
           "Miniature counter-top roll up banners for checkout registries and lobbies.",
-        image: "https://ext.same-assets.com/1114826555/898075086.png",
+        image: "/images/products/main page/tabletop_retractable.png",
         price: "Starting at $29.99",
         config: {
           title: "Tabletop Retractable Banners",
@@ -826,7 +826,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Banners",
           breadcrumbHref: "/custom-banners",
           promoText: "20% OFF TABLETOP RETRACTABLE DISPLAYS",
-          image: "https://ext.same-assets.com/1114826555/898075086.png",
+          image: "/images/products/main page/tabletop_retractable.png",
           ratingCount: "420",
           ratingScore: "4.8",
           sizes: [
@@ -883,7 +883,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Backdrop Banners",
         description:
           "Large format hanging backdrop banner sheets, ideal for photo booths.",
-        image: "https://ext.same-assets.com/1114826555/2684103585.png",
+        image: "/images/products/main page/backdrop_banner_sheet.png",
         price: "Starting at $139.99",
         config: {
           title: "Custom Backdrop Banners",
@@ -892,7 +892,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Banners",
           breadcrumbHref: "/custom-banners",
           promoText: "20% OFF LARGE FORMAT BACKDROP PRINTS",
-          image: "https://ext.same-assets.com/1114826555/2684103585.png",
+          image: "/images/products/main page/backdrop_banner_sheet.png",
           ratingCount: "270",
           ratingScore: "4.8",
           sizes: [
