@@ -1526,7 +1526,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Bumper Stickers",
         description:
           "Classic adhesive labels for car bumpers and windows. High visibility branding.",
-        image: "/api/assets/0085810_bumper-stickers_360.png",
+        image: "/images/products/main page/bumper_sticker.png",
         price: "Starting at $2.24",
         config: {
           title: "Custom Bumper Stickers",
@@ -1535,7 +1535,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Vehicle Signs",
           breadcrumbHref: "/vehicle-signs",
           promoText: "25% OFF BUMPER STICKERS",
-          image: "/api/assets/0085810_bumper-stickers_360.png",
+          image: "/images/products/main page/bumper_sticker.png",
           ratingCount: "850",
           ratingScore: "4.8",
           sizes: [
@@ -1584,7 +1584,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "License Plates",
         description:
           "Custom front license plates made from heavy duty aluminum.",
-        image: "/api/assets/0086545_license-plates_360.png",
+        image: "/images/products/main page/license_plate.png",
         price: "Starting at $13.72",
         config: {
           title: "Custom License Plates",
@@ -1593,7 +1593,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Vehicle Signs",
           breadcrumbHref: "/vehicle-signs",
           promoText: "25% OFF ALUMINUM AUTO PLATES",
-          image: "/api/assets/0086545_license-plates_360.png",
+          image: "/images/products/main page/license_plate.png",
           ratingCount: "192",
           ratingScore: "4.7",
           sizes: [
@@ -1742,7 +1742,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Car Door Decals",
         description:
           "Adhesive door decals for car bodies. Durable semi-permanent advertising.",
-        image: "/api/assets/0085984_car-door-decals_360.png",
+        image: "/images/products/main page/car_door_decal.png",
         price: "Starting at $23.86",
         config: {
           title: "Custom Car Door Decals",
@@ -1751,7 +1751,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Vehicle Signs",
           breadcrumbHref: "/vehicle-signs",
           promoText: "25% OFF SEMI-PERMANENT DOOR DECALS",
-          image: "/api/assets/0085984_car-door-decals_360.png",
+          image: "/images/products/main page/car_door_decal.png",
           ratingCount: "320",
           ratingScore: "4.7",
           sizes: [
@@ -1802,7 +1802,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Car Window Decals",
         description:
           "Rear and side window adhesive graphics, available in transparent and opaque materials.",
-        image: "/api/assets/0085990_car-window-decals_360.png",
+        image: "/images/products/main page/car_window_decal.png",
         price: "Starting at $23.86",
         config: {
           title: "Custom Car Window Decals",
@@ -1811,7 +1811,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Vehicle Signs",
           breadcrumbHref: "/vehicle-signs",
           promoText: "25% OFF WINDOW ADHESIVE DECALS",
-          image: "/api/assets/0085990_car-window-decals_360.png",
+          image: "/images/products/main page/car_window_decal.png",
           ratingCount: "285",
           ratingScore: "4.8",
           sizes: [
@@ -2062,7 +2062,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Table Runners",
         description:
           "For a versatile, portable, and budget-friendly branding solution, our Custom Table Runners are the perfect choice. Drape one over a plain solid-colored tablecloth to instantly elevate your booth's look without the cost of a full tablecloth. Made from durable 300D polyester twill with optional liquid-repellent coatings, our table runners roll down flat, fit easily in any travel bag, and wash clean in the machine. Choose from multiple standard widths to display your company logo prominently.",
-        image: "/api/assets/0086575_table-runners_360.jpeg",
+        image: "/images/products/main page/table_runner.png",
         price: "Starting at $39.99",
         badge: "Budget-Friendly",
         config: {
@@ -2072,7 +2072,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF TABLE RUNNERS - SHIPS NEXT DAY",
-          image: "/api/assets/0086575_table-runners_360.jpeg",
+          image: "/images/products/main page/table_runner.png",
           ratingCount: "540",
           ratingScore: "4.8",
           sizes: [
@@ -2117,7 +2117,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Fitted Tablecloths",
         description:
           "Give your display tables a clean, sharp, box-tailored look with Fitted Tablecloths. Custom-tailored to slip perfectly over standard 6ft and 8ft rectangular tables, these covers stay securely in place without hanging or pooling on the floor, making them excellent for busy outdoor venues or professional recruiting events. Constructed from flame-retardant 300D knit polyester twill, they are machine-washable, wrinkle-resistant, and built to withstand repeated setups.",
-        image: "/api/assets/0086560_fitted-tablecloths_360.png",
+        image: "/images/products/main page/fitted_tablecloth.png",
         price: "Starting at $109.99",
         config: {
           title: "Fitted Tablecloths",
@@ -2127,7 +2127,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF TAILORED FITTED TABLE COVERS",
           image:
-            "/api/assets/0086560_fitted-tablecloths_360.png",
+            "/images/products/main page/fitted_tablecloth.png",
           ratingCount: "310",
           ratingScore: "4.8",
           sizes: [
@@ -2174,7 +2174,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Round Tablecloths",
         description:
           "Elevate your round banquet, registry, or cocktail tables with our Round Custom Tablecloths. Specially hemmed for standard circular table sizes, they drape elegantly to the floor in a seamless design. Using full-spectrum dye-sublimation printing, your custom colors, patterns, and logos will appear bright and clear, providing a premium aesthetic for weddings, evening galas, corporate fundraisers, and hotel lobbies.",
-        image: "/api/assets/0086566_round-tablecloths_360.png",
+        image: "/images/products/main page/round_tablecloth.png",
         price: "Starting at $129.99",
         config: {
           title: "Round Custom Tablecloths",
@@ -2183,7 +2183,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF CUSTOM ROUND TABLECLOTHS",
-          image: "/api/assets/0086566_round-tablecloths_360.png",
+          image: "/images/products/main page/round_tablecloth.png",
           ratingCount: "195",
           ratingScore: "4.7",
           sizes: [
@@ -2235,7 +2235,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Stretch Tablecloths",
         description:
           "Achieve a sleek, modern, and high-impact look with our contoured Stretch Tablecloths. Made from an elastic polyester-spandex blend, these covers stretch tightly over your table frame and secure into place using reinforced rubber leg pockets, preventing any flapping or shifting in windy outdoor conditions. The tight tension naturally pulls out all folds and wrinkles, ensuring a perfectly smooth, professional surface for tech conferences, outdoor festivals, and modern brand exhibitions.",
-        image: "/api/assets/0086570_stretch-tablecloth_360.png",
+        image: "/images/products/main page/stretch_tablecloth.png",
         price: "Starting at $129.99",
         config: {
           title: "Stretch Tablecloths (Spandex Style)",
@@ -2245,7 +2245,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF CONTOURED SPANDEX DISPLAYS",
           image:
-            "/api/assets/0086570_stretch-tablecloth_360.png",
+            "/images/products/main page/stretch_tablecloth.png",
           ratingCount: "290",
           ratingScore: "4.9",
           sizes: [
@@ -2299,7 +2299,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Pop-Up Displays",
         description:
           "Make a massive impression on the trade show floor with our premium Pop-Up Backdrop Displays. Featuring a lightweight accordion-style aluminum frame that snaps open in under two minutes, this backdrop utilizes a large, high-definition tension fabric graphic that attaches securely around the perimeter with heavy-duty hook-and-loop velcro. It packs down into a compact trolley bag with rolling wheels for effortless travel and setup.",
-        image: "/api/assets/0086582_pop-up-displays_360.png",
+        image: "/images/products/main page/pop_up_display.png",
         price: "Starting at $299.99",
         config: {
           title: "Pop-Up Backdrop Displays",
@@ -2308,7 +2308,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF ALL POP-UP EVENT DISPLAYS",
-          image: "/api/assets/0086582_pop-up-displays_360.png",
+          image: "/images/products/main page/pop_up_display.png",
           ratingCount: "430",
           ratingScore: "4.8",
           sizes: [
@@ -2379,7 +2379,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         description:
           "Our Tension Fabric Displays represent the gold standard of modern exhibition back walls. Utilizing an interlocking, lightweight aluminum tube frame that clicks together without tools, the graphic slides over the frame like a pillowcase and zips shut at the bottom for a perfectly tight, seamless, and wrinkle-free display. Printed via dye-sublimation on premium stretch polyester knit, it ensures your artwork looks spectacular and eliminates any glare under bright convention hall lights.",
         image:
-          "/api/assets/0086489_tension-fabric-displays_360.png",
+          "/images/products/main page/tension_fabric_display.png",
         price: "Starting at $189.99",
         config: {
           title: "Tension Fabric Displays",
@@ -2389,7 +2389,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF PREMIUM FABRIC DISPLAYS",
           image:
-            "/api/assets/0086489_tension-fabric-displays_360.png",
+            "/images/products/main page/tension_fabric_display.png",
           ratingCount: "165",
           ratingScore: "4.9",
           sizes: [
@@ -2447,7 +2447,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Step & Repeat Banners",
         description:
           "Create the perfect photo opportunity at red carpets, press conferences, weddings, and corporate summits with our Step & Repeat Banners. Designed to display repeated logos in a clean grid layout, the glare-free matte finish of our heavy-duty blockout vinyl ensures beautiful, flash-friendly photography. The package comes with an optional adjustable backdrop stand and top/bottom pole pockets for fast mounting.",
-        image: "/api/assets/0086470_step-repeat-banners_360.png",
+        image: "/images/products/main page/backdrop_banners.png",
         price: "Starting at $145.99",
         badge: "Event Ready",
         config: {
@@ -2458,7 +2458,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF STEP AND REPEAT PRESS WALLS",
           image:
-            "/api/assets/0086470_step-repeat-banners_360.png",
+            "/images/products/main page/backdrop_banners.png",
           ratingCount: "430",
           ratingScore: "4.8",
           sizes: [
@@ -2516,7 +2516,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Retractable Banner",
         description:
           "Our Retractable Banners (Roll Up Stands) are the ultimate standalone banner display for trade shows, retail checkouts, and office lobbies. The banner graphic pulls up from an anodized aluminum base stand in seconds and secures with a vertical support rod. Each kit includes a padded carrying bag, making transport and setup incredibly simple. Printed on premium curl-resistant polyester film or standard 13oz vinyl to maintain a clean, flat presentation.",
-        image: "/api/assets/0085822_retractable-banner_360.png",
+        image: "/images/products/main page/retractable_roll_up_banner.png",
         price: "Starting at $93.27",
         badge: "Most Popular",
         config: {
@@ -2527,7 +2527,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF RETRACTABLE ROLL-UP BANNERS",
           image:
-            "/api/assets/0085822_retractable-banner_360.png",
+            "/images/products/main page/retractable_roll_up_banner.png",
           ratingCount: "1240",
           ratingScore: "4.9",
           sizes: [
@@ -2599,7 +2599,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "X-Banners",
         description:
           "The X-Frame Banner Stand is a highly cost-effective, portable freestanding banner solution. By utilizing flexible composite fiberglass arms connected to a central hinge, the stand pulls a custom corner-grommeted banner taut, keeping your graphic perfectly flat and readable. Because the banner attaches simply via grommets, you can order replacement prints and swap graphics in seconds without needing to buy new stands.",
-        image: "/api/assets/0086478_x-banners_360.png",
+        image: "/images/products/main page/x_banner_stand.png",
         price: "Starting at $49.99",
         config: {
           title: "X-Frame Banner Stands",
@@ -2608,7 +2608,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF BUDGET X-BANNER DISPLAYS",
-          image: "/api/assets/0086478_x-banners_360.png",
+          image: "/images/products/main page/x_banner_stand.png",
           ratingCount: "385",
           ratingScore: "4.7",
           sizes: [
@@ -2661,7 +2661,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         description:
           "Bring high-impact branding to counter-tops, checkout registers, hotel lobbies, and registration desks with Tabletop Retractable Banners. These miniature versions of our full-sized roll-up stands feature a compact aluminum base housing that pulls up and retracts in seconds. Printed on smooth, high-resolution polypropylene film, they ensure small details and text are clear and easy to read from a close distance.",
         image:
-          "/api/assets/0086578_tabletop-retractable-banners_360.png",
+          "/images/products/main page/tabletop_retractable.png",
         price: "Starting at $27.18",
         config: {
           title: "Tabletop Retractable Banners",
@@ -2671,7 +2671,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF TABLETOP RETRACTABLE DISPLAYS",
           image:
-            "/api/assets/0086578_tabletop-retractable-banners_360.png",
+            "/images/products/main page/tabletop_retractable.png",
           ratingCount: "420",
           ratingScore: "4.8",
           sizes: [
@@ -2794,7 +2794,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Feather Flags",
         description:
           "Draw customers in from the roadside with our best-selling Custom Feather Flags. Designed to flutter in the wind and turn heads, these tall advertising flags are printed on premium open-weave knit polyester to reduce wind load stress. Supported by composite fiberglass poles and a rotating ground spike or cross stand, they rotate 360 degrees to remain visible from any traffic direction.",
-        image: "/api/assets/0085996_feather-flags_360.png",
+        image: "/images/products/main page/feather_flag.png",
         price: "Starting at $54.37",
         config: {
           title: "Custom Feather Flags",
@@ -2864,7 +2864,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Vinyl Banners",
         description:
           "Our Custom Vinyl Banners are a versatile, heavy-duty signage solution for indoor and outdoor advertising. Constructed from durable 13oz gloss or 15oz premium matte PVC vinyl with heat-welded hems, they are fully waterproof and UV-resistant to survive the elements. Complete with pre-installed brass grommets or pole pockets for easy hanging, they are perfect for storefront openings, construction fences, and event banners.",
-        image: "/api/assets/0085750_vinyl-banners_360.png",
+        image: "/images/products/main page/vinyl_banner.png",
         price: "Starting at $12.99",
         config: {
           title: "Custom Vinyl Banners",
@@ -2873,7 +2873,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF ALL VINYL BANNERS - SHIPS NEXT DAY",
-          image: "/api/assets/0085750_vinyl-banners_360.png",
+          image: "/images/products/main page/vinyl_banner.png",
           ratingCount: "1530",
           ratingScore: "4.8",
           sizes: [
@@ -3003,7 +3003,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Postcards",
         description:
           "Hand out rich, full-color Custom Postcards at your event table to advertise promotions, catalog your services, or distribute coupons. Printed in high definition on heavy 14pt gloss cover paper, they feel substantial and professional. Choose between matte or high-gloss front finishes and custom sizes to create flyers, handouts, or mailers that prompt action from potential clients.",
-        image: "/api/assets/0086663_postcards_360.png",
+        image: "/images/products/main page/postcard.png",
         price: "Starting at $14.99",
         config: {
           title: "Custom Postcards",
@@ -3012,7 +3012,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF ALL POSTCARDS AND HANDOUTS",
-          image: "/api/assets/0086663_postcards_360.png",
+          image: "/images/products/main page/postcard.png",
           ratingCount: "280",
           ratingScore: "4.8",
           sizes: [
