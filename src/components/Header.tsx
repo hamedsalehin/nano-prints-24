@@ -350,7 +350,14 @@ export function Header() {
           </a>
           <span className="hidden sm:inline text-gray-300 font-normal">|</span>
           <span className="text-gray-500 font-semibold">
-            Can't find the product you're looking for? Don't hesitate to call us!
+            Can't find the product you're looking for? No worries! WE PRINT EVERYTHING,{" "}
+            <Link
+              href="/get-a-quote"
+              className="underline font-bold text-[#ff2d78] hover:text-[#b020ff] transition-colors"
+            >
+              ask for a quote
+            </Link>{" "}
+            and get your prices within 12 hours.
           </span>
         </p>
       </div>
