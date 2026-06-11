@@ -1255,9 +1255,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     heroSubtitle: "Every Mile is an Opportunity.",
     description:
       "Turn any vehicle into a mobile billboard. Promote your business on the go with custom car magnets, decals, and truck lettering.",
-    heroImage: "/api/assets/0084325_Desktop.jpeg",
-    tabletHeroImage: "/api/assets/0084326_Tablet.jpeg",
-    mobileHeroImage: "/api/assets/0084327_Mobile.jpeg",
+    heroImage: "/images/products/main%20page/magnet_hero_image.png",
+    tabletHeroImage: "/images/products/main%20page/magnet_hero_image.png",
+    mobileHeroImage: "/images/products/main%20page/magnet_hero_image.png",
     reviewRating: "4.9",
     reviewCount: "2,150",
     reviewQuote:

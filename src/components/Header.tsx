@@ -84,7 +84,7 @@ export function Header() {
 
       {/* Main header — white with pink/cyan search accents */}
       <div className="bg-white border-b border-pink-100 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 pt-2.5 pb-2">
+        <div className="max-w-7xl mx-auto px-4 pt-1.5 pb-1.5 md:pt-2.5 md:pb-2">
           <div className="flex items-center justify-between gap-4">
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
@@ -93,7 +93,7 @@ export function Header() {
                 alt="Nano Signs Logo"
                 width={180}
                 height={70}
-                className="h-14 w-auto object-contain"
+                className="h-10 md:h-14 w-auto object-contain"
                 priority
               />
             </Link>
@@ -223,19 +223,19 @@ export function Header() {
           </div>
 
           {/* Mobile search */}
-          <div className="md:hidden mt-3">
+          <div className="md:hidden mt-2">
             <div className="relative">
               <input
                 type="text"
                 placeholder="Search products..."
-                className="w-full px-4 py-2.5 border-2 border-gray-200 rounded-full focus:outline-none focus:border-[#ff2d78] transition-colors"
+                className="w-full px-3.5 py-1.5 border border-gray-200 rounded-full text-xs focus:outline-none focus:border-[#ff2d78] transition-colors"
               />
               <button
                 type="button"
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-[#ff2d78]"
                 aria-label="Search"
               >
-                <Search className="w-5 h-5" />
+                <Search className="w-4 h-4" />
               </button>
             </div>
           </div>
@@ -340,14 +340,18 @@ export function Header() {
 
       {/* Promo banner — white with pink text */}
       <div className="py-1.5 text-center bg-white border-b border-pink-100">
-        <p className="text-sm font-bold text-[#ff2d78] tracking-wide">
-          ✨ Custom Printing &amp; Signage — Fast Turnaround!{" "}
+        <p className="text-xs md:text-sm font-bold text-[#ff2d78] tracking-wide px-4 flex flex-wrap justify-center items-center gap-x-2 gap-y-0.5">
+          <span>✨ Custom Printing &amp; Signage — Fast Turnaround!</span>
           <a
             href="tel:305-967-1005"
             className="underline hover:no-underline hover:text-[#b020ff] transition-colors"
           >
             Call 305-967-1005
           </a>
+          <span className="hidden sm:inline text-gray-300 font-normal">|</span>
+          <span className="text-gray-500 font-semibold">
+            Can't find the product you're looking for? Don't hesitate to call us!
+          </span>
         </p>
       </div>
     </header>
