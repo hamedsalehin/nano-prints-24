@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Custom Channel Letter Signs | Nano Signs",
   description: "Premium 3D backlit and front-lit channel letters to make your business storefront stand out.",
   alternates: {
-    canonical: "https://nano-signs.com/custom-signs/channel-letter-signs",
+    canonical: "https://nanop.vercel.app/custom-signs/channel-letter-signs",
   },
 };
 

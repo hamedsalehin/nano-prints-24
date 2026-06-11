@@ -70,23 +70,29 @@ const socialIcons = [
   { Icon: Youtube, name: "YouTube" },
 ];
 
-export function Footer() {
+export function Footer({ light = false }: { light?: boolean } = {}) {
   return (
     <footer
-      className="text-white"
-      style={{
-        background:
-          "linear-gradient(160deg, #0d0d1a 0%, #130a1f 50%, #001a22 100%)",
-      }}
+      className={light ? "text-slate-600 bg-slate-50 border-t border-gray-200" : "text-white"}
+      style={
+        light
+          ? undefined
+          : {
+              background:
+                "linear-gradient(160deg, #0d0d1a 0%, #130a1f 50%, #001a22 100%)",
+            }
+      }
     >
       {/* Top gradient accent line */}
-      <div
-        className="h-1 w-full"
-        style={{
-          background:
-            "linear-gradient(90deg, #ff2d78 0%, #b020ff 50%, #00e5ff 100%)",
-        }}
-      />
+      {!light && (
+        <div
+          className="h-1 w-full"
+          style={{
+            background:
+              "linear-gradient(90deg, #ff2d78 0%, #b020ff 50%, #00e5ff 100%)",
+          }}
+        />
+      )}
 
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
@@ -101,7 +107,7 @@ export function Footer() {
                 className="h-12 w-auto object-contain"
               />
             </div>
-            <p className="text-gray-400 text-sm mb-6 leading-relaxed">
+            <p className={`text-sm mb-6 leading-relaxed ${light ? "text-slate-500" : "text-gray-400"}`}>
               Your trusted custom printing expert in Oakland Park, FL. Quality
               signs, banners, and more.
             </p>
@@ -109,7 +115,7 @@ export function Footer() {
             <div className="space-y-3 mb-6">
               <a
                 href="tel:305-967-1005"
-                className="flex items-center gap-2 text-gray-300 hover:text-[#ff2d78] transition-colors"
+                className={`flex items-center gap-2 transition-colors ${light ? "text-slate-600 hover:text-[#ff2d78]" : "text-gray-300 hover:text-[#ff2d78]"}`}
               >
                 <Phone
                   className="w-4 h-4 flex-shrink-0"
@@ -119,7 +125,7 @@ export function Footer() {
               </a>
               <a
                 href="tel:305-967-9654"
-                className="flex items-center gap-2 text-gray-300 hover:text-[#ff2d78] transition-colors"
+                className={`flex items-center gap-2 transition-colors ${light ? "text-slate-600 hover:text-[#ff2d78]" : "text-gray-300 hover:text-[#ff2d78]"}`}
               >
                 <Phone
                   className="w-4 h-4 flex-shrink-0"
@@ -129,18 +135,18 @@ export function Footer() {
               </a>
               <a
                 href="mailto:nanosign1@gmail.com"
-                className="flex items-center gap-2 text-gray-300 hover:text-[#00e5ff] transition-colors"
+                className={`flex items-center gap-2 transition-colors ${light ? "text-slate-600 hover:text-[#ff2d78]" : "text-gray-300 hover:text-[#00e5ff]"}`}
               >
                 <Mail
                   className="w-4 h-4 flex-shrink-0"
-                  style={{ color: "#00e5ff" }}
+                  style={{ color: light ? "#ff2d78" : "#00e5ff" }}
                 />
                 <span>nanosign1@gmail.com</span>
               </a>
-              <div className="flex items-start gap-2 text-gray-300">
+              <div className={`flex items-start gap-2 ${light ? "text-slate-600" : "text-gray-300"}`}>
                 <MapPin
                   className="w-4 h-4 mt-0.5 flex-shrink-0"
-                  style={{ color: "#00e5ff" }}
+                  style={{ color: light ? "#ff2d78" : "#00e5ff" }}
                 />
                 <span>4567 Powerline Rd, Oakland Park, FL 33309</span>
               </div>
@@ -152,10 +158,10 @@ export function Footer() {
                 <a
                   key={i}
                   href="#"
-                  className="social-icon-hover p-2 rounded-full"
+                  className={`social-icon-hover p-2 rounded-full ${light ? "bg-slate-200 border border-slate-350" : ""}`}
                   aria-label={social.name}
                 >
-                  <social.Icon className="w-5 h-5" />
+                  <social.Icon className={`w-5 h-5 ${light ? "text-slate-600 hover:text-white" : ""}`} />
                 </a>
               ))}
             </div>
@@ -163,7 +169,7 @@ export function Footer() {
 
           {/* Help Center */}
           <div>
-            <h3 className="font-poppins font-bold mb-4 pink-cyan-text">
+            <h3 className={`font-poppins font-bold mb-4 ${light ? "text-slate-800" : "pink-cyan-text"}`}>
               {footerLinks.helpCenter.title}
             </h3>
             <ul className="space-y-2">
@@ -171,7 +177,7 @@ export function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-[#00e5ff] transition-colors text-sm"
+                    className={`transition-colors text-sm ${light ? "text-slate-500 hover:text-[#ff2d78]" : "text-gray-400 hover:text-[#00e5ff]"}`}
                   >
                     {link.name}
                   </a>
@@ -182,7 +188,7 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="font-poppins font-bold mb-4 pink-cyan-text">
+            <h3 className={`font-poppins font-bold mb-4 ${light ? "text-slate-800" : "pink-cyan-text"}`}>
               {footerLinks.company.title}
             </h3>
             <ul className="space-y-2">
@@ -190,7 +196,7 @@ export function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-[#00e5ff] transition-colors text-sm"
+                    className={`transition-colors text-sm ${light ? "text-slate-500 hover:text-[#ff2d78]" : "text-gray-400 hover:text-[#00e5ff]"}`}
                   >
                     {link.name}
                   </a>
@@ -201,7 +207,7 @@ export function Footer() {
 
           {/* Products */}
           <div>
-            <h3 className="font-poppins font-bold mb-4 pink-cyan-text">
+            <h3 className={`font-poppins font-bold mb-4 ${light ? "text-slate-800" : "pink-cyan-text"}`}>
               {footerLinks.products.title}
             </h3>
             <ul className="space-y-2">
@@ -209,7 +215,7 @@ export function Footer() {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-[#00e5ff] transition-colors text-sm"
+                    className={`transition-colors text-sm ${light ? "text-slate-500 hover:text-[#ff2d78]" : "text-gray-400 hover:text-[#00e5ff]"}`}
                   >
                     {link.name}
                   </a>
@@ -218,7 +224,7 @@ export function Footer() {
             </ul>
 
             <div className="mt-6">
-              <p className="text-sm text-gray-500 mb-2">We accept:</p>
+              <p className={`text-sm mb-2 ${light ? "text-slate-400" : "text-gray-500"}`}>We accept:</p>
               <div className="flex flex-wrap gap-2">
                 {paymentMethods.map((method) => (
                   <img
@@ -227,7 +233,7 @@ export function Footer() {
                     alt={method.name}
                     width={38}
                     height={24}
-                    className="h-6 bg-white rounded px-1"
+                    className="h-6 bg-white rounded px-1 border border-gray-200"
                   />
                 ))}
               </div>
@@ -237,7 +243,10 @@ export function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div style={{ borderTop: "1px solid rgba(255,45,120,0.2)" }}>
+      <div
+        className={light ? "border-t border-slate-200" : ""}
+        style={light ? undefined : { borderTop: "1px solid rgba(255,45,120,0.2)" }}
+      >
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex flex-wrap justify-center gap-4">
@@ -245,13 +254,13 @@ export function Footer() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-gray-500 hover:text-[#ff2d78] transition-colors text-sm"
+                  className={`transition-colors text-sm ${light ? "text-slate-400 hover:text-[#ff2d78]" : "text-gray-500 hover:text-[#ff2d78]"}`}
                 >
                   {link.name}
                 </a>
               ))}
             </div>
-            <p className="text-gray-600 text-sm">
+            <p className={`text-sm ${light ? "text-slate-400" : "text-gray-600"}`}>
               Copyright 2025 Nano Signs. All rights reserved.
             </p>
           </div>

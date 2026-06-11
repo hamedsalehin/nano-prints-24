@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Window Signs & Clings | Nano Signs",
   description: "Custom window graphics, clings, perforated vinyl, and decals for storefronts and offices.",
   alternates: {
-    canonical: "https://nano-signs.com/custom-signs/window-signs",
+    canonical: "https://nanop.vercel.app/custom-signs/window-signs",
   },
 };
 

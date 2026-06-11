@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Custom Parking Signs | Nano Signs",
   description: "Regulatory, reserved, and custom parking signs — aluminum or coroplast, ships next day.",
   alternates: {
-    canonical: "https://nano-signs.com/custom-signs/parking-signs",
+    canonical: "https://nanop.vercel.app/custom-signs/parking-signs",
   },
 };
 

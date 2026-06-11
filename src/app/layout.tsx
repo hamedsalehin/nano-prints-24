@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     apple: "/images/nano logo O.png",
   },
   alternates: {
-    canonical: "https://nano-signs.com",
+    canonical: "https://nanop.vercel.app",
   },
 };
 

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Custom Acrylic Signs | Nano Signs",
   description: "Premium clear and colored acrylic signs for a sleek, modern, upscale look.",
   alternates: {
-    canonical: "https://nano-signs.com/custom-signs/acrylic-signs",
+    canonical: "https://nanop.vercel.app/custom-signs/acrylic-signs",
   },
 };
 

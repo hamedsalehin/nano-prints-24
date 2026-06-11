@@ -99,6 +99,20 @@ export function CategoryPageClient({
               />
             </picture>
 
+            {/* Custom bottom-left Quote Button overlay for Vehicle Signs category */}
+            {categorySlug === "vehicle-signs" && (
+              <Link
+                href="/get-a-quote"
+                className="absolute bottom-[10%] left-[8%] z-10 px-[3%] py-[1.2%] bg-white text-gray-950 font-black uppercase tracking-wider rounded-none shadow-2xl transition-all duration-300 hover:bg-[#ff2d78] hover:text-white hover:border-[#ff2d78] border border-transparent active:scale-95"
+                style={{
+                  fontSize: "clamp(8px, 1.15vw, 16px)",
+                  boxShadow: "0 4px 20px rgba(0,0,0,0.3)",
+                }}
+              >
+                Request Quote
+              </Link>
+            )}
+
             {/* Desktop Card Overlay */}
             <div className="hidden lg:block absolute top-1/2 transform -translate-y-1/2 left-[48px] z-10">
               <div className="bg-white rounded-xl shadow-xl p-10 flex flex-col items-center justify-center w-[450px] border border-gray-100">

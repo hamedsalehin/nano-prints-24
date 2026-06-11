@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Custom Yard Signs | Nano Signs",
   description: "Corrugated plastic signs that weather any storm — perfect for campaigns, events, and businesses.",
   alternates: {
-    canonical: "https://nano-signs.com/custom-signs/yard-signs",
+    canonical: "https://nanop.vercel.app/custom-signs/yard-signs",
   },
 };
 

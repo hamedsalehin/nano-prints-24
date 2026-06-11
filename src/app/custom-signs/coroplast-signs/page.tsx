@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Coroplast Signs | Nano Signs",
   description: "The most versatile waterproof outdoor sign — durable, colorful, and incredibly affordable.",
   alternates: {
-    canonical: "https://nano-signs.com/custom-signs/coroplast-signs",
+    canonical: "https://nanop.vercel.app/custom-signs/coroplast-signs",
   },
 };
 

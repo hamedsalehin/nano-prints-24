@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `${productData.name} | Nano Signs`,
     description: productData.description || `Custom ${productData.name} design and high-quality printing at Nano Signs.`,
     alternates: {
-      canonical: `https://nano-signs.com/${decodedCategory}/${decodedProduct}`,
+      canonical: `https://nanop.vercel.app/${decodedCategory}/${decodedProduct}`,
     },
   };
 }

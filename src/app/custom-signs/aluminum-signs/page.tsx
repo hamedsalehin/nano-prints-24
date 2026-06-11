@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Custom Aluminum Signs | Nano Signs",
   description: "Heavy-duty, rust-proof aluminum signs built to last years in any weather.",
   alternates: {
-    canonical: "https://nano-signs.com/custom-signs/aluminum-signs",
+    canonical: "https://nanop.vercel.app/custom-signs/aluminum-signs",
   },
 };
 

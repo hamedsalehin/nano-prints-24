@@ -19,7 +19,7 @@
 
 # Mobile: ensure www redirects to apex and proper HTTPS
 [[redirects]]
-  from = "https://www.nano-signs.com/*"
-  to = "https://nano-signs.com/:splat"
+  from = "https://www.nanop.vercel.app/*"
+  to = "https://nanop.vercel.app/:splat"
   status = 301
   force = true

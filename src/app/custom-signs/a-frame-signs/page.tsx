@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "A-Frame Signs (Sandwich Boards) | Nano Signs",
   description: "Portable, double-sided sidewalk signs that grab foot traffic and drive customers through your door.",
   alternates: {
-    canonical: "https://nano-signs.com/custom-signs/a-frame-signs",
+    canonical: "https://nanop.vercel.app/custom-signs/a-frame-signs",
   },
 };
 

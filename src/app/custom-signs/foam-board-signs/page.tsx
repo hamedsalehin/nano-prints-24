@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Foam Board Signs | Nano Signs",
   description: "Lightweight and professional indoor display signs for presentations, lobbies, and events.",
   alternates: {
-    canonical: "https://nano-signs.com/custom-signs/foam-board-signs",
+    canonical: "https://nanop.vercel.app/custom-signs/foam-board-signs",
   },
 };
 

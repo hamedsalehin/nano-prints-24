@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `${categoryData.title} | Nano Signs`,
     description: categoryData.categoryDescriptionText || `High-quality custom ${categoryData.title} printing at Nano Signs.`,
     alternates: {
-      canonical: `https://nano-signs.com/${decodedCategory}`,
+      canonical: `https://nanop.vercel.app/${decodedCategory}`,
     },
   };
 }

@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Real Estate Panels | Nano Signs",
   description: "Professional-grade panels that get properties noticed — riders, posts, and full frames included.",
   alternates: {
-    canonical: "https://nano-signs.com/custom-signs/real-estate-panels",
+    canonical: "https://nanop.vercel.app/custom-signs/real-estate-panels",
   },
 };
 
