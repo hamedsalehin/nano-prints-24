@@ -4,6 +4,7 @@ import { AuthProvider } from "@/components/AuthContext";
 import { CartProvider } from "@/components/CartContext";
 import { AuthModal } from "@/components/AuthModal";
 import { CartSidebar } from "@/components/CartSidebar";
+import { PromotionalModal } from "@/components/PromotionalModal";
 
 export function ClientBody({ children }: { children: React.ReactNode }) {
   return (
@@ -13,8 +14,10 @@ export function ClientBody({ children }: { children: React.ReactNode }) {
           {children}
           <AuthModal />
           <CartSidebar />
+          <PromotionalModal />
         </CartProvider>
       </AuthProvider>
     </body>
   );
 }
+

@@ -131,3 +131,35 @@ create trigger on_auth_user_created
   after insert on auth.users
   for each row execute procedure public.handle_new_user();
 
+
+-- ── 6. Promotional Discount Claims Table ─────────────────────
+-- Create table to track email addresses that claimed the 10% OFF discount
+create table if not exists public.discount_claims (
+  id          uuid        primary key default gen_random_uuid(),
+  email       text        unique not null,
+  claimed_at  timestamptz not null default now(),
+  used_at     timestamptz
+);
+
+-- Enable Row Level Security (RLS)
+alter table public.discount_claims enable row level security;
+
+-- Drop existing policies if any to prevent conflicts on re-run
+drop policy if exists "Anyone can insert discount claims" on public.discount_claims;
+drop policy if exists "Anyone can view discount claims" on public.discount_claims;
+drop policy if exists "Anyone can update discount claims" on public.discount_claims;
+
+-- Create policies to allow public insertion and verification during checkout
+create policy "Anyone can insert discount claims"
+  on public.discount_claims for insert
+  with check (true);
+
+create policy "Anyone can view discount claims"
+  on public.discount_claims for select
+  using (true);
+
+create policy "Anyone can update discount claims"
+  on public.discount_claims for update
+  using (true);
+
+

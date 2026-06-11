@@ -23,6 +23,7 @@ interface CartContextType {
   clearCart: () => void;
   cartOpen: boolean;
   setCartOpen: (open: boolean) => void;
+  discountApplied: boolean;
   checkout: () => Promise<{
     success: boolean;
     error?: string;
@@ -37,6 +38,59 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [cartOpen, setCartOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const [discountApplied, setDiscountApplied] = useState(false);
+
+  // Check discount eligibility from Supabase or localStorage fallback
+  useEffect(() => {
+    let active = true;
+
+    const checkDiscount = async () => {
+      if (!user?.email) {
+        setDiscountApplied(false);
+        return;
+      }
+      try {
+        const { data, error } = await supabase
+          .from("discount_claims")
+          .select("*")
+          .eq("email", user.email.trim().toLowerCase())
+          .is("used_at", null)
+          .maybeSingle();
+
+        if (error) throw error;
+        if (active) {
+          setDiscountApplied(!!data);
+        }
+      } catch (err) {
+        console.warn("Failed to check discount status in Supabase:", err);
+        if (active) {
+          // Fallback to local storage tracking
+          const claimed = localStorage.getItem("nano_promo_claimed") === "true";
+          const claimedEmail = localStorage.getItem("nano_promo_claimed_email");
+          const usedLocally = localStorage.getItem("nano_promo_used") === "true";
+
+          if (claimed && claimedEmail === user.email.trim().toLowerCase() && !usedLocally) {
+            setDiscountApplied(true);
+          } else {
+            setDiscountApplied(false);
+          }
+        }
+      }
+    };
+
+    checkDiscount();
+
+    // Listen for real-time claims in current tab
+    const handleLocalClaim = () => {
+      checkDiscount();
+    };
+    window.addEventListener("nano_discount_claimed", handleLocalClaim);
+
+    return () => {
+      active = false;
+      window.removeEventListener("nano_discount_claimed", handleLocalClaim);
+    };
+  }, [user]);
 
   // Load cart on mount
   useEffect(() => {
@@ -89,6 +143,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       const orderIds: string[] = [];
 
       for (const item of items) {
+        // Apply 10% discount if eligible
+        const finalUnitPrice = discountApplied ? item.unitPrice * 0.9 : item.unitPrice;
+        const finalTotalPrice = discountApplied ? item.totalPrice * 0.9 : item.totalPrice;
+
         const { data, error } = await supabase
           .from("orders")
           .insert({
@@ -96,8 +154,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
             product_title: item.productTitle,
             product_size: item.size,
             quantity: item.quantity,
-            unit_price: item.unitPrice,
-            total_price: item.totalPrice,
+            unit_price: finalUnitPrice,
+            total_price: finalTotalPrice,
             design_url: item.designUrl || null,
             design_filename: item.designFilename || null,
             custom_options: item.customOptions,
@@ -108,6 +166,21 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
         if (error) throw error;
         if (data) orderIds.push(data.id);
+      }
+
+      // If a discount was applied, mark it as used in Supabase
+      if (discountApplied) {
+        try {
+          await supabase
+            .from("discount_claims")
+            .update({ used_at: new Date().toISOString() })
+            .eq("email", user.email!.trim().toLowerCase())
+            .is("used_at", null);
+        } catch (dbErr) {
+          console.warn("Failed to mark discount as used in Supabase:", dbErr);
+        }
+        localStorage.setItem("nano_promo_used", "true");
+        setDiscountApplied(false);
       }
 
       clearCart();
@@ -133,6 +206,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         clearCart,
         cartOpen,
         setCartOpen,
+        discountApplied,
         checkout,
       }}
     >

@@ -16,7 +16,7 @@ import { useAuth } from "./AuthContext";
 import Link from "next/link";
 
 export function CartSidebar() {
-  const { items, removeItem, cartOpen, setCartOpen, checkout } = useCart();
+  const { items, removeItem, cartOpen, setCartOpen, checkout, discountApplied } = useCart();
   const { user } = useAuth();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -47,6 +47,8 @@ export function CartSidebar() {
   };
 
   const totalCartPrice = items.reduce((acc, item) => acc + item.totalPrice, 0);
+  const discountAmount = discountApplied ? totalCartPrice * 0.1 : 0;
+  const finalCartPrice = totalCartPrice - discountAmount;
 
   return (
     <div className="fixed inset-0 z-50 overflow-hidden font-opensans">
@@ -197,13 +199,36 @@ export function CartSidebar() {
           {/* Checkout Footer */}
           {!successOrderIds && items.length > 0 && (
             <div className="border-t px-6 py-6 space-y-4 bg-slate-50">
-              <div className="flex items-center justify-between font-poppins">
-                <span className="text-sm font-bold text-gray-500">
-                  Subtotal
-                </span>
-                <span className="text-2xl font-extrabold text-gray-900">
-                  ${totalCartPrice.toFixed(2)}
-                </span>
+              <div className="space-y-2.5 font-poppins">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-bold text-gray-500">
+                    Subtotal
+                  </span>
+                  <span className="text-base font-bold text-gray-800">
+                    ${totalCartPrice.toFixed(2)}
+                  </span>
+                </div>
+                {discountApplied && (
+                  <div className="flex items-center justify-between text-green-600">
+                    <span className="text-sm font-bold flex items-center gap-1">
+                      <span className="inline-block px-1.5 py-0.5 bg-green-100 text-green-800 text-[10px] font-black rounded uppercase tracking-wider">
+                        10% OFF
+                      </span>
+                      Promo Discount
+                    </span>
+                    <span className="text-sm font-extrabold">
+                      -${discountAmount.toFixed(2)}
+                    </span>
+                  </div>
+                )}
+                <div className="flex items-center justify-between border-t border-slate-200/60 pt-2.5">
+                  <span className="text-sm font-extrabold text-gray-900">
+                    Total
+                  </span>
+                  <span className="text-2xl font-extrabold text-[#ff2d78] drop-shadow-[0_0_8px_rgba(255,45,120,0.1)]">
+                    ${finalCartPrice.toFixed(2)}
+                  </span>
+                </div>
               </div>
               <p className="text-[11px] text-gray-400 font-semibold leading-normal">
                 Shipping and taxes will be calculated at printing confirmation.
