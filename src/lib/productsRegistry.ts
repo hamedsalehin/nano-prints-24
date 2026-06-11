@@ -673,14 +673,14 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
       },
       {
         id: "step-and-repeat-banners",
-        name: "Step & Repeat Banners",
+        name: "Backdrop Banners",
         description:
           "Ideal for red carpet events, photo backdrops and press conferences.",
         image: "/images/products/main page/backdrop_banners.png",
         price: "Starting at $145.99",
         badge: "Event Ready",
         config: {
-          title: "Step & Repeat Banners",
+          title: "Backdrop Banners",
           subtitle:
             "Professional background banners for press walls, photo shoots, and red carpets.",
           breadcrumb: "Banners",
@@ -743,73 +743,6 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           ctaBody:
             "Upload your sponsor logos and create repeated patterns instantly.",
           ctaLabel: "Customize Backdrop",
-        },
-      },
-      {
-        id: "tension-fabric-displays",
-        name: "Tension Fabric Displays",
-        description:
-          "Premium pillowcase stretch fabric displays sliding over aluminum tube frames.",
-        image: "/images/products/main page/tension_fabric_display.png",
-        price: "Starting at $189.99",
-        config: {
-          title: "Tension Fabric Displays",
-          subtitle:
-            "Pillowcase-style tension fabric graphics stretching over locking aluminum tubing. The ultimate tradeshow back wall.",
-          breadcrumb: "Banners",
-          breadcrumbHref: "/custom-banners",
-          promoText: "20% OFF PREMIUM FABRIC DISPLAYS",
-          image: "/images/products/main page/tension_fabric_display.png",
-          ratingCount: "165",
-          ratingScore: "4.9",
-          sizes: [
-            {
-              label: "8' x 8' Flat Tension Frame",
-              value: "96x96",
-              basePrice: 189.99,
-            },
-            {
-              label: "10' x 8' Deluxe Exhibition Frame",
-              value: "120x96",
-              basePrice: 249.99,
-            },
-          ],
-          selects: [
-            {
-              label: "Structure Hardware Kit",
-              options: [
-                {
-                  label: "Include Aluminum Tube Frame & Canvas Bag",
-                  value: "full_kit",
-                  priceAdder: 110.0,
-                },
-                {
-                  label: "Fabric Cover Graphic Print Only",
-                  value: "print_only",
-                  priceAdder: 0,
-                },
-              ],
-            },
-          ],
-          qtyDiscount: "Volume exhibition rates apply",
-          keyFeatures: [
-            "Wrinkle-free stretch polyester",
-            "Interlocking click-together aluminum frame",
-            "Zippered bottom secures graphic tautly",
-          ],
-          useCases: [
-            "Trade show back walls",
-            "Media walls",
-            "Exhibition booths",
-          ],
-          specs: [
-            { key: "Fabric Weight", value: "240g Stretch Polyester knit" },
-          ],
-          faqs: [],
-          reviews: [],
-          ctaHeading: "Build a premium booth back wall",
-          ctaBody: "Design zippered stretch fabric covers.",
-          ctaLabel: "Customize Tension Display",
         },
       },
       {
@@ -878,66 +811,6 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           ctaLabel: "Customize Mini Roll-Up",
         },
       },
-      {
-        id: "backdrop-banners",
-        name: "Backdrop Banners",
-        description:
-          "Large format hanging backdrop banner sheets, ideal for photo booths.",
-        image: "/images/products/main page/backdrop_banner_sheet.png",
-        price: "Starting at $139.99",
-        config: {
-          title: "Custom Backdrop Banners",
-          subtitle:
-            "Large format hanging sheets, perfect for photography, theater backgrounds, and event photo booths.",
-          breadcrumb: "Banners",
-          breadcrumbHref: "/custom-banners",
-          promoText: "20% OFF LARGE FORMAT BACKDROP PRINTS",
-          image: "/images/products/main page/backdrop_banner_sheet.png",
-          ratingCount: "270",
-          ratingScore: "4.8",
-          sizes: [
-            {
-              label: "8' x 8' Backdrop Banner",
-              value: "96x96",
-              basePrice: 139.99,
-            },
-            {
-              label: "10' x 8' Backdrop Banner",
-              value: "120x96",
-              basePrice: 169.99,
-            },
-          ],
-          selects: [
-            {
-              label: "Backdrop Lamination",
-              options: [
-                {
-                  label: "Matte Anti-Glare Finish",
-                  value: "matte",
-                  priceAdder: 0,
-                },
-              ],
-            },
-          ],
-          qtyDiscount: "Volume discounts on large photo backdrops",
-          keyFeatures: [
-            "Anti-glare lamination prevents flash reflections",
-            "Heavy duty matte blockout vinyl",
-            "Grommets or pockets included",
-          ],
-          useCases: [
-            "Photography studio walls",
-            "Theater backdrops",
-            "Corporate press backdrops",
-          ],
-          specs: [{ key: "Material", value: "15oz Blockout Vinyl" }],
-          faqs: [],
-          reviews: [],
-          ctaHeading: "Print your custom backdrops",
-          ctaBody: "Design seamless backdrops online.",
-          ctaLabel: "Customize Backdrop Print",
-        },
-      },
     ],
   },
   "custom-flags": {
@@ -954,13 +827,13 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     reviewQuote:
       "The feather flags are so vibrant and eye-catching! Setup was effortless and they've survived multiple rainstorms without any fading.",
     categoryDescriptionText:
-      "Discover custom flags that make your message stand tall or fly high. From feather, teardrop, and garden flags to standard hanging flags and pennants, we offer styles for every setting. Each flag is fully customizable and built for durability, whether displayed indoors or out. Enhance your display with our selection of bases and mounting accessories, including drive-over stands, handheld flagpoles, and adjustable brackets. With simple design tools and fast production, it's easy to create flags that get noticed.",
+      "Discover custom flags that make your message stand tall or fly high. From feather and teardrop flags to standard hanging flags and pennants, we offer styles for every setting. Each flag is fully customizable and built for durability, whether displayed indoors or out. Enhance your display with our selection of bases and mounting accessories, including drive-over stands, handheld flagpoles, and adjustable brackets. With simple design tools and fast production, it's easy to create flags that get noticed.",
     categorySecondaryImage:
       "/api/assets/images/uploaded/BAS_WEB_071125_Category_Flags_Secondary.jpg",
     faqs: [
       {
         q: "What types of custom flags do you offer?",
-        a: "We offer a wide range of custom flags to suit any need, including standing styles like feather flags, teardrop flags, straight flags, garden flags, and stick flags, as well as hanging options like standard flags, nylon flags, and pennant flags.",
+        a: "We offer a wide range of custom flags to suit any need, including standing styles like feather flags, teardrop flags, straight flags, and stick flags, as well as hanging options like standard flags and pennant flags.",
       },
       {
         q: "Can I customize both the design and size of my flag?",
@@ -1323,62 +1196,6 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         },
       },
       {
-        id: "nylon-flags",
-        name: "Nylon Flags",
-        description:
-          "Premium heavy-duty nylon flags built for long-term outdoor display on poles.",
-        image: "/images/products/main page/nylon_flag.png",
-        price: "Starting at $94.00",
-        config: {
-          title: "Custom Nylon Flags",
-          subtitle:
-            "Extra durable, weather-resistant nylon flags with reinforced stitching.",
-          breadcrumb: "Flags",
-          breadcrumbHref: "/custom-flags",
-          promoText: "20% OFF HEAVY DUTY NYLON FLAGS",
-          image: "/images/products/main page/nylon_flag.png",
-          ratingCount: "188",
-          ratingScore: "4.9",
-          sizes: [
-            { label: "3' x 5' Nylon Flag", value: "36x60", basePrice: 94.0 },
-            {
-              label: "4' x 6' Large Nylon Flag",
-              value: "48x72",
-              basePrice: 139.99,
-            },
-          ],
-          selects: [
-            {
-              label: "Header / Grommets",
-              options: [
-                {
-                  label: "Canvas Header & Brass Grommets",
-                  value: "header",
-                  priceAdder: 0,
-                },
-              ],
-            },
-          ],
-          qtyDiscount: "Save on bulk orders",
-          keyFeatures: [
-            "200 Denier premium nylon fabric",
-            "Reinforced 4-row fly hem stitching",
-            "High resistance to UV fading",
-          ],
-          useCases: [
-            "Outdoor commercial flagpoles",
-            "Government institutions",
-            "Premium corporate flags",
-          ],
-          specs: [{ key: "Material", value: "200 Denier Nylon" }],
-          faqs: [],
-          reviews: [],
-          ctaHeading: "Build a premium nylon flag",
-          ctaBody: "Order top-grade flags built to withstand the elements.",
-          ctaLabel: "Customize Nylon Flag",
-        },
-      },
-      {
         id: "pennant-flags",
         name: "Pennant Flags",
         description:
@@ -1428,67 +1245,6 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           ctaHeading: "Create your team pennant",
           ctaBody: "Customize your sports pennant with team logos and colors.",
           ctaLabel: "Customize Pennant",
-        },
-      },
-      {
-        id: "garden-flags",
-        name: "Garden Flags",
-        description:
-          "Small vertical flags to add a personalized touch to lawns, pathways, and gardens.",
-        image: "/images/products/main page/garden_flag.png",
-        price: "Starting at $50.82",
-        config: {
-          title: "Custom Garden Flags",
-          subtitle:
-            "Mini yard flags with optional metal stakes to welcome guests and advertise.",
-          breadcrumb: "Flags",
-          breadcrumbHref: "/custom-flags",
-          promoText: "20% OFF PERSONALIZED GARDEN FLAGS",
-          image: "/images/products/main page/garden_flag.png",
-          ratingCount: "350",
-          ratingScore: "4.8",
-          sizes: [
-            {
-              label: '12" x 18" Small Garden Flag',
-              value: "18x12",
-              basePrice: 50.82,
-            },
-          ],
-          selects: [
-            {
-              label: "Metal Stand Hardware",
-              options: [
-                {
-                  label: "Stand Included",
-                  value: "with_stand",
-                  priceAdder: 10.0,
-                },
-                {
-                  label: "Flag Only (No Stand)",
-                  value: "flag_only",
-                  priceAdder: 0,
-                },
-              ],
-            },
-          ],
-          qtyDiscount: "Save on multiple lawn designs",
-          keyFeatures: [
-            "Double-sided display option",
-            "Slides onto standard wire holders",
-            "Heavy outdoor blockout fabric",
-          ],
-          useCases: [
-            "Pathway decorations",
-            "Real estate open house pointers",
-            "Home gardens",
-          ],
-          specs: [{ key: "Material", value: "Heavy 300D Blockout Polyester" }],
-          faqs: [],
-          reviews: [],
-          ctaHeading: "Welcome guests to your garden",
-          ctaBody:
-            "Design a mini garden flag to line your pathway or garden beds.",
-          ctaLabel: "Customize Garden Flag",
         },
       },
     ],
@@ -1863,61 +1619,6 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           ctaBody:
             "Build rear window banners with easy-to-read font and phone info.",
           ctaLabel: "Customize Window Decal",
-        },
-      },
-      {
-        id: "magnetic-bumper-stickers",
-        name: "Bumper Magnets",
-        description:
-          "Removable magnetic bumper stickers that slide on and off metal trunks easily.",
-        image: "/images/products/main page/bumper_magnet.png",
-        price: "Starting at $5.49",
-        config: {
-          title: "Custom Bumper Magnets",
-          subtitle:
-            "Removable magnetic bumper strips that won't leave adhesive residue behind.",
-          breadcrumb: "Vehicle Signs",
-          breadcrumbHref: "/vehicle-signs",
-          promoText: "25% OFF REMOVABLE BUMPER MAGNETS",
-          image: "/images/products/main page/bumper_magnet.png",
-          ratingCount: "172",
-          ratingScore: "4.7",
-          sizes: [
-            {
-              label: '3" x 10" Bumper Magnet Strip',
-              value: "3x10",
-              basePrice: 5.49,
-            },
-          ],
-          selects: [
-            {
-              label: "Magnetic Type",
-              options: [
-                {
-                  label: "30mil Vehicle Magnet Quality",
-                  value: "30mil",
-                  priceAdder: 0,
-                },
-              ],
-            },
-          ],
-          qtyDiscount: "Volume discounts apply",
-          keyFeatures: [
-            "Removable without clean-up",
-            "Attaches to any steel tailgate/bumper",
-            "Thick 30mil grade",
-          ],
-          useCases: [
-            "Temporary advertising",
-            "School spirit support",
-            "Easy switchable messages",
-          ],
-          specs: [{ key: "Material", value: "30mil flexible vehicle magnet" }],
-          faqs: [],
-          reviews: [],
-          ctaHeading: "Get flexible bumper branding",
-          ctaBody: "Order magnets that pull right off before car washes.",
-          ctaLabel: "Customize Bumper Magnet",
         },
       },
     ],
@@ -2374,84 +2075,15 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         },
       },
       {
-        id: "tension-fabric-displays",
-        name: "Tension Fabric Displays",
-        description:
-          "Our Tension Fabric Displays represent the gold standard of modern exhibition back walls. Utilizing an interlocking, lightweight aluminum tube frame that clicks together without tools, the graphic slides over the frame like a pillowcase and zips shut at the bottom for a perfectly tight, seamless, and wrinkle-free display. Printed via dye-sublimation on premium stretch polyester knit, it ensures your artwork looks spectacular and eliminates any glare under bright convention hall lights.",
-        image:
-          "/images/products/main page/tension_fabric_display.png",
-        price: "Starting at $189.99",
-        config: {
-          title: "Tension Fabric Displays",
-          subtitle:
-            "Pillowcase-style tension fabric graphics stretching over locking aluminum tubing. The ultimate tradeshow back wall.",
-          breadcrumb: "Tradeshow",
-          breadcrumbHref: "/trade-show",
-          promoText: "25% OFF PREMIUM FABRIC DISPLAYS",
-          image:
-            "/images/products/main page/tension_fabric_display.png",
-          ratingCount: "165",
-          ratingScore: "4.9",
-          sizes: [
-            {
-              label: "8' x 8' Flat Tension Frame",
-              value: "96x96",
-              basePrice: 189.99,
-            },
-            {
-              label: "10' x 8' Deluxe Exhibition Frame",
-              value: "120x96",
-              basePrice: 249.99,
-            },
-          ],
-          selects: [
-            {
-              label: "Structure Hardware Kit",
-              options: [
-                {
-                  label: "Include Aluminum Tube Frame & Canvas Bag",
-                  value: "full_kit",
-                  priceAdder: 110.0,
-                },
-                {
-                  label: "Fabric Cover Graphic Print Only",
-                  value: "print_only",
-                  priceAdder: 0,
-                },
-              ],
-            },
-          ],
-          qtyDiscount: "Volume exhibition rates apply",
-          keyFeatures: [
-            "Wrinkle-free stretch polyester",
-            "Interlocking click-together aluminum frame",
-            "Zippered bottom secures graphic tautly",
-          ],
-          useCases: [
-            "Trade show back walls",
-            "Media walls",
-            "Exhibition booths",
-          ],
-          specs: [
-            { key: "Fabric Weight", value: "240g Stretch Polyester knit" },
-          ],
-          faqs: [],
-          reviews: [],
-          ctaHeading: "Build a premium booth back wall",
-          ctaBody: "Design zippered stretch fabric covers.",
-          ctaLabel: "Customize Tension Display",
-        },
-      },
-      {
         id: "step-and-repeat-banner",
-        name: "Step & Repeat Banners",
+        name: "Backdrop Banners",
         description:
           "Create the perfect photo opportunity at red carpets, press conferences, weddings, and corporate summits with our Step & Repeat Banners. Designed to display repeated logos in a clean grid layout, the glare-free matte finish of our heavy-duty blockout vinyl ensures beautiful, flash-friendly photography. The package comes with an optional adjustable backdrop stand and top/bottom pole pockets for fast mounting.",
         image: "/images/products/main page/backdrop_banners.png",
         price: "Starting at $145.99",
         badge: "Event Ready",
         config: {
-          title: "Step & Repeat Banners",
+          title: "Backdrop Banners",
           subtitle:
             "Professional background banners for press walls, photo shoots, and red carpets.",
           breadcrumb: "Tradeshow",

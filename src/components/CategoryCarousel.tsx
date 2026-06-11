@@ -32,7 +32,7 @@ const categories = [
     image: "/images/products/main page/flags.png",
   },
   {
-    name: "Magnets",
+    name: "Car Magnets",
     href: "/vehicle-signs",
     image: "/images/products/main page/vehicle_magnets.png",
   },

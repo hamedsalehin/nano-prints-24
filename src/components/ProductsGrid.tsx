@@ -8,7 +8,7 @@ const products = [
     href: "/trade-show/tablecloths",
   },
   {
-    name: "Magnets",
+    name: "Car Magnets",
     image: "/images/products/main page/vehicle_magnets.png",
     href: "/vehicle-signs/magnetic-signs",
   },
@@ -18,7 +18,7 @@ const products = [
     href: "/custom-banners/roll-up-banners",
   },
   {
-    name: "Step & Repeat Banners",
+    name: "Backdrop Banners",
     image: "/images/products/main page/backdrop_banners.png",
     href: "/custom-banners/step-and-repeat-banners",
   },
