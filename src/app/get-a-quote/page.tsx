@@ -136,7 +136,7 @@ export default function GetQuotePage() {
 
       <main className="flex-grow py-12">
         {/* Breadcrumb */}
-        <div className="max-w-6xl mx-auto px-4 md:px-8 mb-8 flex items-center gap-2 text-sm text-slate-500 font-['Open_Sans']">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 mb-8 flex items-center gap-2 text-sm text-slate-500 font-['Open_Sans']">
           <Link href="/" className="hover:text-[#ff2d78] transition-colors">
             Home
           </Link>
@@ -145,7 +145,7 @@ export default function GetQuotePage() {
         </div>
 
         {/* Form section - Expanded & minimal light theme */}
-        <section className="max-w-6xl mx-auto px-4 md:px-8 w-full">
+        <section className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 w-full">
           {!submitSuccess ? (
             <div className="space-y-8">
               {/* Form Header */}

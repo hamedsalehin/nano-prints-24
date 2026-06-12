@@ -341,16 +341,17 @@ export function Header() {
       {/* Promo banner — white with pink text */}
       <div className="py-1.5 text-center bg-white border-b border-pink-100">
         <p className="text-xs md:text-sm font-bold text-[#ff2d78] tracking-wide px-4 flex flex-wrap justify-center items-center gap-x-2 gap-y-0.5">
-          <span>✨ Custom Printing &amp; Signage — Fast Turnaround!</span>
+          <span className="hidden md:inline">✨ Custom Printing &amp; Signage — Fast Turnaround!</span>
           <a
             href="tel:305-967-1005"
-            className="underline hover:no-underline hover:text-[#b020ff] transition-colors"
+            className="hidden md:inline underline hover:no-underline hover:text-[#b020ff] transition-colors"
           >
             Call 305-967-1005
           </a>
-          <span className="hidden sm:inline text-gray-300 font-normal">|</span>
+          <span className="hidden md:inline text-gray-300 font-normal">|</span>
           <span className="text-gray-500 font-semibold">
-            Can't find the product you're looking for? No worries! WE PRINT EVERYTHING,{" "}
+            <span className="hidden md:inline">Can't find the product you're looking for? No worries! </span>
+            <span className="text-[#ff2d78] md:text-gray-500 font-bold md:font-semibold">WE PRINT EVERYTHING, </span>
             <Link
               href="/get-a-quote"
               className="underline font-bold text-[#ff2d78] hover:text-[#b020ff] transition-colors"
