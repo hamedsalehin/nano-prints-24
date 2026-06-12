@@ -4034,7 +4034,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Custom T-Shirts",
         description:
           "Screen printed cotton shirts featuring your company logo or message.",
-        image: "/api/assets/0085750_vinyl-banners_360.png", // using an existing banner image or placeholder
+        image: "/images/products/main page/custom_t_shirts.png",
         price: "Starting at $14.99",
         badge: "Staff Wear",
         config: {
@@ -4044,7 +4044,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Promotional",
           breadcrumbHref: "/promotional-products",
           promoText: "25% OFF PROMOTIONAL MERCHANDISE",
-          image: "/api/assets/0085750_vinyl-banners_360.png",
+          image: "/images/products/main page/custom_t_shirts.png",
           ratingCount: "740",
           ratingScore: "4.8",
           sizes: [
@@ -4117,7 +4117,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Coffee Mugs & Tumblers",
         description:
           "Vibrant ceramic coffee mugs and travel tumblers with your company logo.",
-        image: "/api/assets/0086638_ceramic-mugs_360.png",
+        image: "/images/products/main page/coffee_mugs.png",
         price: "Starting at $4.99 each",
         badge: "Office Best-Seller",
         config: {
@@ -4127,7 +4127,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Promotional",
           breadcrumbHref: "/promotional-products",
           promoText: "25% OFF CUSTOM LOGO DRINKWARE",
-          image: "/api/assets/0086638_ceramic-mugs_360.png",
+          image: "/images/products/main page/coffee_mugs.png",
           ratingCount: "840",
           ratingScore: "4.9",
           sizes: [
@@ -4179,7 +4179,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Canvas Tote Bags",
         description:
           "Durable cotton canvas tote bags custom printed with your logo.",
-        image: "/api/assets/0086644_tote-bags_360.png",
+        image: "/images/products/main page/canvas_tote_bags.png",
         price: "Starting at $5.99 each",
         config: {
           title: "Custom Canvas Tote Bags",
@@ -4188,7 +4188,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Promotional",
           breadcrumbHref: "/promotional-products",
           promoText: "25% OFF ECO-FRIENDLY PROM BAGS",
-          image: "/api/assets/0086644_tote-bags_360.png",
+          image: "/images/products/main page/canvas_tote_bags.png",
           ratingCount: "490",
           ratingScore: "4.8",
           sizes: [
@@ -4243,8 +4243,8 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         id: "pens",
         name: "Custom Logo Pens",
         description:
-          "Retractable ballpoint writing pens, perfect for trade shows and lobbies.",
-        image: "/api/assets/0086650_pens_360.png",
+          "Retractable ballpoint writing guidelines, perfect for trade shows and lobbies.",
+        image: "/images/products/main page/custom_pens.png",
         price: "Starting at $0.89 each",
         badge: "Trade Show Choice",
         config: {
@@ -4254,7 +4254,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Promotional",
           breadcrumbHref: "/promotional-products",
           promoText: "25% OFF BULK LOGO WRITING PENS",
-          image: "/api/assets/0086650_pens_360.png",
+          image: "/images/products/main page/custom_pens.png",
           ratingCount: "1250",
           ratingScore: "4.8",
           sizes: [
@@ -4325,7 +4325,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Custom Journals & Notebooks",
         description:
           "Pre-ruled journals and notebooks, perfect for client meetings and logs.",
-        image: "/api/assets/0086656_notebooks_360.png",
+        image: "/images/products/main page/custom_notebooks.png",
         price: "Starting at $3.99 each",
         config: {
           title: "Custom Notebooks & Journals",
@@ -4334,7 +4334,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Promotional",
           breadcrumbHref: "/promotional-products",
           promoText: "25% OFF CUSTOM EXECUTIVE NOTEBOOKS",
-          image: "/api/assets/0086656_notebooks_360.png",
+          image: "/images/products/main page/custom_notebooks.png",
           ratingCount: "380",
           ratingScore: "4.8",
           sizes: [
@@ -4386,7 +4386,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Custom Logo Keychains",
         description:
           "Acrylic and metallic keyring tags customized with your company logo.",
-        image: "/api/assets/0086660_keychains_360.png",
+        image: "/images/products/main page/custom_keychains.png",
         price: "Starting at $1.29 each",
         config: {
           title: "Custom Logo Keychains",
@@ -4395,7 +4395,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Promotional",
           breadcrumbHref: "/promotional-products",
           promoText: "25% OFF CUSTOM ENGRAVED KEYCHAINS",
-          image: "/api/assets/0086660_keychains_360.png",
+          image: "/images/products/main page/custom_keychains.png",
           ratingCount: "290",
           ratingScore: "4.7",
           sizes: [
@@ -4446,7 +4446,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Custom Fridge Magnets",
         description:
           "Flexible promo magnets, perfect for household fridges and direct mail.",
-        image: "/api/assets/0086664_fridge-magnets_360.png",
+        image: "/images/products/main page/custom_fridge_magnets.png",
         price: "Starting at $0.49 each",
         badge: "Household Favorite",
         config: {
@@ -4456,7 +4456,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Promotional",
           breadcrumbHref: "/promotional-products",
           promoText: "25% OFF CUSTOM HOUSEHOLD MAGNETS",
-          image: "/api/assets/0086664_fridge-magnets_360.png",
+          image: "/images/products/main page/custom_fridge_magnets.png",
           ratingCount: "710",
           ratingScore: "4.9",
           sizes: [
