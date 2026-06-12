@@ -3516,7 +3516,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Custom Postcards",
         description:
           "High-quality postcards for direct mail, handouts, and promotional inserts.",
-        image: "/images/products/main page/postcard.png",
+        image: "/api/assets/0086663_postcards_360.png",
         price: "Starting at $14.99 for 50",
         badge: "Event Choice",
         config: {
@@ -3526,7 +3526,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Marketing",
           breadcrumbHref: "/marketing-materials",
           promoText: "25% OFF ALL EVENT MARKETING PRINTS",
-          image: "/images/products/main page/postcard.png",
+          image: "/api/assets/0086663_postcards_360.png",
           ratingCount: "580",
           ratingScore: "4.8",
           sizes: [
@@ -3604,7 +3604,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Flyers & Brochures",
         description:
           "Vibrant single or double sided flyers to promote events, menus, and packages.",
-        image: "/images/products/main page/flyers_brochures.png",
+        image: "/api/assets/0086669_flyers-brochures_360.png",
         price: "Starting at $29.99 for 50",
         badge: "Best Value",
         config: {
@@ -3614,7 +3614,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Marketing",
           breadcrumbHref: "/marketing-materials",
           promoText: "25% OFF BULK EVENT FLYERS & FOLDED BROCHURES",
-          image: "/images/products/main page/flyers_brochures.png",
+          image: "/api/assets/0086669_flyers-brochures_360.png",
           ratingCount: "430",
           ratingScore: "4.7",
           sizes: [
@@ -3688,7 +3688,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Door Hangers",
         description:
           "Targeted local advertising hangers that slip easily onto front door handles.",
-        image: "/images/products/main page/door_hangers.png",
+        image: "/api/assets/0086684_door-hangers_360.png",
         price: "Starting at $39.99 for 100",
         config: {
           title: "Custom Door Hangers",
@@ -3697,7 +3697,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Marketing",
           breadcrumbHref: "/marketing-materials",
           promoText: "25% OFF BUSINESS DOOR HANGERS",
-          image: "/images/products/main page/door_hangers.png",
+          image: "/api/assets/0086684_door-hangers_360.png",
           ratingCount: "310",
           ratingScore: "4.8",
           sizes: [
@@ -3774,7 +3774,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         description:
           "Branded pocket folders to organize and present documents and proposals.",
         image:
-          "/images/products/main page/presentation_folders.png",
+          "/api/assets/0086700_presentation-folders_360.png",
         price: "Starting at $99.99 for 50",
         badge: "Premium Choice",
         config: {
@@ -3785,7 +3785,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/marketing-materials",
           promoText: "25% OFF PRESENTATION CORPORATE FOLDERS",
           image:
-            "/images/products/main page/presentation_folders.png",
+            "/api/assets/0086700_presentation-folders_360.png",
           ratingCount: "220",
           ratingScore: "4.7",
           sizes: [
@@ -3857,7 +3857,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Rack Cards",
         description:
           "Sleek vertical cards designed for display racks in hotel lobbies and cafes.",
-        image: "/images/products/main page/rack_cards.png",
+        image: "/api/assets/0086692_rack-cards_360.png",
         price: "Starting at $19.99 for 50",
         config: {
           title: "Custom Rack Cards",
@@ -3866,7 +3866,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Marketing",
           breadcrumbHref: "/marketing-materials",
           promoText: "25% OFF COMPACT RACK CARDS",
-          image: "/images/products/main page/rack_cards.png",
+          image: "/api/assets/0086692_rack-cards_360.png",
           ratingCount: "340",
           ratingScore: "4.8",
           sizes: [
@@ -3938,7 +3938,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Table Tents",
         description:
           "Double-sided self-standing table displays, ideal for restaurants and reception desks.",
-        image: "/images/products/main page/table_tents.png",
+        image: "/api/assets/0086720_table-tents_360.png",
         price: "Starting at $49.99 for 50",
         badge: "Hospitality Favorite",
         config: {
@@ -3948,7 +3948,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Marketing",
           breadcrumbHref: "/marketing-materials",
           promoText: "25% OFF COUNTERTOP TABLE TENTS",
-          image: "/images/products/main page/table_tents.png",
+          image: "/api/assets/0086720_table-tents_360.png",
           ratingCount: "190",
           ratingScore: "4.8",
           sizes: [
