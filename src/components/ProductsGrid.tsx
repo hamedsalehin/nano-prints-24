@@ -73,8 +73,8 @@ export function ProductsGrid() {
       }}
     >
       <div className="w-full px-6 md:px-16 lg:px-24 xl:px-32">
-        <h2 className="font-poppins text-3xl md:text-4xl font-extrabold mb-8 tracking-tight pink-cyan-text">
-          Custom Signage, LED Signs &amp; Banners in Fort Lauderdale
+        <h2 className="font-poppins text-2xl sm:text-3xl md:text-4xl font-extrabold mb-8 tracking-tight pink-cyan-text">
+          Custom Signage, LED Signs &amp; Banners
         </h2>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">

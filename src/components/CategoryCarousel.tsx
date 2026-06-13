@@ -69,7 +69,7 @@ export function CategoryCarousel() {
   return (
     <section className="py-14 bg-white border-b border-pink-50">
       <div className="w-full px-6 md:px-16 lg:px-24 xl:px-32">
-        <h2 className="font-poppins text-3xl md:text-4xl font-extrabold mb-8 tracking-tight pink-cyan-text">
+        <h2 className="font-poppins text-2xl sm:text-3xl md:text-4xl font-extrabold mb-8 tracking-tight pink-cyan-text">
           Custom Signs for Every Need
         </h2>
 

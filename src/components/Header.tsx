@@ -369,9 +369,8 @@ export function Header() {
               href="/get-a-quote"
               className="underline font-bold text-[#ff2d78] hover:text-[#b020ff] transition-colors"
             >
-              get your custom quote
-            </Link>{" "}
-            within 12 hrs.
+              get your custom quote in 12 hrs
+            </Link>
           </span>
         </p>
       </div>
