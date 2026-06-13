@@ -67,13 +67,13 @@ const products = [
 export function ProductsGrid() {
   return (
     <section
-      className="py-14"
+      className="py-4 md:py-6"
       style={{
         background: "linear-gradient(160deg, #f0faff 0%, #fdf0f8 100%)",
       }}
     >
       <div className="w-full px-6 md:px-16 lg:px-24 xl:px-32">
-        <h2 className="font-poppins text-2xl sm:text-3xl md:text-4xl font-extrabold mb-8 tracking-tight pink-cyan-text">
+        <h2 className="font-poppins text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold mb-4 md:mb-6 tracking-tight pink-cyan-text">
           Custom Signage, LED Signs &amp; Banners
         </h2>
 
@@ -100,7 +100,7 @@ export function ProductsGrid() {
                     className="object-contain p-6 group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
-                <p className="text-center font-bold text-gray-800 text-base md:text-lg transition-all group-hover:pink-cyan-text">
+                <p className="text-center font-bold text-gray-800 text-xs sm:text-sm md:text-base transition-all group-hover:pink-cyan-text">
                   {product.name}
                 </p>
               </Link>

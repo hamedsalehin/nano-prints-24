@@ -352,7 +352,7 @@ export function Header() {
           {/* Desktop Version */}
           <span className="hidden md:inline text-gray-500 font-semibold">
             Can't find the product you're looking for? No worries!{" "}
-            <span className="text-gray-500 font-semibold">WE PRINT EVERYTHING, </span>
+            <span className="text-black font-bold">WE PRINT EVERYTHING, </span>
             <Link
               href="/get-a-quote"
               className="underline font-bold text-[#ff2d78] hover:text-[#b020ff] transition-colors"
@@ -364,7 +364,7 @@ export function Header() {
 
           {/* Mobile Version */}
           <span className="inline md:hidden text-gray-500 font-semibold">
-            <span className="text-[#ff2d78] font-bold">WE PRINT EVERYTHING, </span>
+            <span className="text-black font-bold">WE PRINT EVERYTHING, </span>
             <Link
               href="/get-a-quote"
               className="underline font-bold text-[#ff2d78] hover:text-[#b020ff] transition-colors"

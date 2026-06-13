@@ -160,7 +160,7 @@ export default function QuotePageClient() {
               {/* Form Header */}
               <div className="border-b border-slate-100 pb-6">
                 <span className="text-[10px] md:text-xs font-extrabold uppercase tracking-widest text-[#ff2d78] flex items-center gap-1.5 mb-2">
-                  <Sparkles className="w-3.5 h-3.5" /> WE PRINT EVERYTHING
+                  <Sparkles className="w-3.5 h-3.5" /> <span className="text-black">WE PRINT EVERYTHING</span>
                 </span>
                 <h1 className="text-3xl md:text-4xl font-black font-poppins text-slate-800 leading-tight">
                   Custom Signage &amp; Print Quote in Fort Lauderdale

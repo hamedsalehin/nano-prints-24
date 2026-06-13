@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function ExpertsSection() {
   return (
-    <section className="py-20 relative">
+    <section className="py-6 md:py-10 relative">
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
@@ -32,10 +32,10 @@ export function ExpertsSection() {
               "0 0 40px rgba(255,45,120,0.25), 0 0 80px rgba(0,229,255,0.12)",
           }}
         >
-          <h2 className="font-poppins text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+          <h2 className="font-poppins text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 md:mb-4">
             Premium Custom Signage, LED Signs &amp; Banners in Fort Lauderdale
           </h2>
-          <p className="text-gray-600 mb-8 leading-relaxed">
+          <p className="text-gray-600 text-xs sm:text-sm md:text-base mb-6 md:mb-8 leading-relaxed">
             Welcome to Nano Signs, the print shop with the fastest turnaround times in Broward.
             Whether you want to design and order online or visit us in person, we are your
             premier source for custom signs, LED signs, retractable banners, business cards,

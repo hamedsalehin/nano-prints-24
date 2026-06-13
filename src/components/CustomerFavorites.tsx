@@ -50,9 +50,9 @@ function StarRating({ rating }: { rating: number }) {
 
 export function CustomerFavorites() {
   return (
-    <section className="py-14 bg-white">
+    <section className="py-3 md:py-6 bg-white">
       <div className="w-full px-6 md:px-16 lg:px-24 xl:px-32">
-        <h2 className="font-poppins text-2xl sm:text-3xl md:text-4xl font-extrabold mb-8 tracking-tight pink-cyan-text">
+        <h2 className="font-poppins text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold mb-4 md:mb-6 tracking-tight pink-cyan-text">
           Favorite Custom Banners &amp; Signs
         </h2>
 
@@ -74,7 +74,7 @@ export function CustomerFavorites() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                 />
               </div>
-              <p className="text-center font-bold text-gray-900 mb-1 font-poppins text-base md:text-lg leading-tight group-hover:pink-cyan-text transition-all">
+              <p className="text-center font-bold text-gray-900 mb-1 font-poppins text-xs sm:text-sm md:text-base leading-tight group-hover:pink-cyan-text transition-all">
                 {item.name}
               </p>
               {item.rating > 0 && (

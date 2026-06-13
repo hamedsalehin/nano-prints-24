@@ -174,13 +174,13 @@ export function CustomerHighlights() {
 
   return (
     <section
-      className="py-14"
+      className="py-4 md:py-6"
       style={{
         background: "linear-gradient(160deg, #f9f0ff 0%, #e0faff 100%)",
       }}
     >
       <div className="w-full px-6 md:px-16 lg:px-24 xl:px-32">
-        <h2 className="font-poppins text-3xl md:text-4xl font-extrabold mb-8 tracking-tight pink-cyan-text">
+        <h2 className="font-poppins text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold mb-4 md:mb-6 tracking-tight pink-cyan-text">
           Customer Highlights
         </h2>
 

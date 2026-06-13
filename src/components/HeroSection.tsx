@@ -12,7 +12,7 @@ export function HeroSection() {
           fill
           sizes="100vw"
           quality={90}
-          className="object-contain object-center"
+          className="object-cover object-center"
           priority
         />
         {/* Dynamic percentage-positioned Request Quote Button overlaying the hero image */}

@@ -47,7 +47,7 @@ const valueProps = [
 export function ValuePropositions() {
   return (
     <section
-      className="py-14"
+      className="py-4 md:py-6"
       style={{
         background: "linear-gradient(160deg, #fdf0f8 0%, #f0faff 100%)",
       }}
@@ -77,10 +77,10 @@ export function ValuePropositions() {
                 />
               </div>
               <div>
-                <h3 className="font-poppins font-bold text-gray-900 mb-1.5">
+                <h3 className="font-poppins font-bold text-sm sm:text-base text-gray-900 mb-1">
                   {prop.title}
                 </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">
+                <p className="text-gray-500 text-xs sm:text-sm leading-relaxed">
                   {prop.description}
                   {prop.link && (
                     <>

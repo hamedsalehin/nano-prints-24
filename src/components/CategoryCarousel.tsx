@@ -67,9 +67,9 @@ export function CategoryCarousel() {
   };
 
   return (
-    <section className="py-14 bg-white border-b border-pink-50">
+    <section className="pt-0 pb-3 md:pt-0 md:pb-6 bg-white border-b border-pink-50">
       <div className="w-full px-6 md:px-16 lg:px-24 xl:px-32">
-        <h2 className="font-poppins text-2xl sm:text-3xl md:text-4xl font-extrabold mb-8 tracking-tight pink-cyan-text">
+        <h2 className="font-poppins text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold mb-4 md:mb-6 tracking-tight pink-cyan-text">
           Custom Signs for Every Need
         </h2>
 
@@ -120,7 +120,7 @@ export function CategoryCarousel() {
                     />
                   </div>
                 </div>
-                <p className="text-center font-bold font-poppins text-base md:text-lg leading-tight text-gray-800 group-hover:pink-cyan-text transition-all duration-200">
+                <p className="text-center font-bold font-poppins text-xs sm:text-sm md:text-base leading-tight text-gray-800 group-hover:pink-cyan-text transition-all duration-200">
                   {category.name}
                 </p>
               </Link>
