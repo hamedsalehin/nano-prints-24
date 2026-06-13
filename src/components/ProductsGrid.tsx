@@ -60,7 +60,7 @@ const products = [
   {
     name: "Programmable LED Sign",
     image: "/images/products/main page/programmable_led_sign.jpeg",
-    href: "https://led.rgbsigns.com/",
+    href: "https://led-signs.us/",
   },
 ];
 

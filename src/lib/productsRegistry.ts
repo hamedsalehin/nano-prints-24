@@ -3601,20 +3601,20 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
       },
       {
         id: "flyers",
-        name: "Flyers & Brochures",
+        name: "Custom Flyers",
         description:
           "Vibrant single or double sided flyers to promote events, menus, and packages.",
-        image: "/api/assets/0086669_flyers-brochures_360.png",
-        price: "Starting at $29.99 for 50",
+        image: "/images/products/main page/custom_flyers.png",
+        price: "Starting at $19.99 for 50",
         badge: "Best Value",
         config: {
-          title: "Custom Flyers & Brochures",
+          title: "Custom Flyers",
           subtitle:
-            "Premium full color flyers and brochures printed on professional paper stock.",
+            "Premium full color flyers printed on professional paper stock.",
           breadcrumb: "Marketing",
           breadcrumbHref: "/marketing-materials",
-          promoText: "25% OFF BULK EVENT FLYERS & FOLDED BROCHURES",
-          image: "/api/assets/0086669_flyers-brochures_360.png",
+          promoText: "25% OFF BULK EVENT FLYERS",
+          image: "/images/products/main page/custom_flyers.png",
           ratingCount: "430",
           ratingScore: "4.7",
           sizes: [
@@ -3650,23 +3650,15 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
                 },
               ],
             },
-            {
-              label: "Fold Style",
-              options: [
-                { label: "Flat (No Fold)", value: "flat", priceAdder: 0 },
-                { label: "Tri-Fold", value: "tri_fold", priceAdder: 8.0 },
-                { label: "Half-Fold", value: "half_fold", priceAdder: 5.0 },
-              ],
-            },
           ],
           qtyDiscount: "Save more when printing in packs of 100+",
           keyFeatures: [
             "High definition color reproduction",
-            "Tri-fold & half-fold options",
+            "Vibrant double-sided printing available",
             "Glossy or matte textures",
           ],
           useCases: [
-            "Event brochures",
+            "Event handouts",
             "Restaurant menus",
             "Real estate listing sheets",
             "Corporate handouts",
@@ -3681,6 +3673,84 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           ctaBody:
             "Input your logo, menus, and corporate text using templates.",
           ctaLabel: "Customize Flyers",
+        },
+      },
+      {
+        id: "brochures",
+        name: "Folded Brochures",
+        description:
+          "Professional tri-fold or half-fold brochures to showcase your services, menus, and business details.",
+        image: "/images/products/main page/custom_brochures.png",
+        price: "Starting at $29.99 for 50",
+        badge: "Corporate Choice",
+        config: {
+          title: "Folded Brochures",
+          subtitle:
+            "Premium full color folded brochures printed on professional paper stock.",
+          breadcrumb: "Marketing",
+          breadcrumbHref: "/marketing-materials",
+          promoText: "25% OFF FOLDED BUSINESS BROCHURES",
+          image: "/images/products/main page/custom_brochures.png",
+          ratingCount: "320",
+          ratingScore: "4.8",
+          sizes: [
+            {
+              label: '8.5" x 11" Standard Brochure',
+              value: "8.5x11",
+              basePrice: 29.99,
+            },
+          ],
+          selects: [
+            {
+              label: "Paper Quality",
+              options: [
+                {
+                  label: "100lb Glossy Text",
+                  value: "100lb_gloss",
+                  priceAdder: 0,
+                },
+                {
+                  label: "100lb Matte Text",
+                  value: "100lb_matte",
+                  priceAdder: 0,
+                },
+                {
+                  label: "80lb Recycled Text",
+                  value: "80lb_recycled",
+                  priceAdder: 3.0,
+                },
+              ],
+            },
+            {
+              label: "Fold Style",
+              options: [
+                { label: "Tri-Fold", value: "tri_fold", priceAdder: 8.0 },
+                { label: "Half-Fold", value: "half_fold", priceAdder: 5.0 },
+              ],
+            },
+          ],
+          qtyDiscount: "Save more when printing in packs of 100+",
+          keyFeatures: [
+            "High definition color reproduction",
+            "Pre-folded and ready to display",
+            "Tri-fold & half-fold options",
+          ],
+          useCases: [
+            "Business guides & service lists",
+            "Restaurant take-out menus",
+            "Marketing handouts",
+            "Product display pamphlets",
+          ],
+          specs: [
+            { key: "Material", value: "100lb Text Paper" },
+            { key: "Printing", value: "Offset lithography" },
+          ],
+          faqs: [],
+          reviews: [],
+          ctaHeading: "Design brochures online",
+          ctaBody:
+            "Create beautiful brochures with professional folding styles.",
+          ctaLabel: "Customize Brochures",
         },
       },
       {
