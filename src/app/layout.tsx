@@ -25,9 +25,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Custom Signs, Banners & Flags Oakland Park FL | Nano Signs",
+  title: "Premium Custom Signage, Led signs & Banners Fort Lauderdale. FL | Nano Signs",
   description:
-    "Looking for custom signs, vinyl banners, vehicle wraps, or stickers in Fort Lauderdale & Oakland Park FL? Call Nano Signs at 305-967-1005 for fast 24h printing!",
+    "Design and order custom signs, LED signs, retractable banners, business cards and all other marketing materials online or in person. Fastest turnaround times in broward.",
   icons: {
     icon: "/images/nano logo O.png",
     apple: "/images/nano logo O.png",

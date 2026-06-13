@@ -4,8 +4,8 @@ import { Home } from "lucide-react";
 
 
 export const metadata: Metadata = {
-  title: "Real Estate Sign Panels Oakland Park FL | Nano Signs",
-  description: "Professional real estate panels, riders, and frames in Fort Lauderdale & Oakland Park FL. High-durability prints to get your property listings noticed.",
+  title: "Real Estate Sign Panels Fort Lauderdale FL | Nano Signs",
+  description: "Design custom real estate panels, riders, and frames online or in person in Broward County. High-durability property signs with fast turnaround.",
   alternates: {
     canonical: "https://nanop.vercel.app/custom-signs/real-estate-panels",
   },

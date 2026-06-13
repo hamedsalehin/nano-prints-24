@@ -163,10 +163,10 @@ export default function QuotePageClient() {
                   <Sparkles className="w-3.5 h-3.5" /> WE PRINT EVERYTHING
                 </span>
                 <h1 className="text-3xl md:text-4xl font-black font-poppins text-slate-800 leading-tight">
-                  Request a Custom Quote
+                  Custom Signage &amp; Print Quote in Fort Lauderdale
                 </h1>
                 <p className="text-sm text-slate-500 font-medium leading-relaxed mt-2 font-opensans max-w-3xl">
-                  Specify your project dimensions, upload your design files, and we will email your pricing back within 12 hours. For urgent needs, call 305-967-1005.
+                  Need premium custom signs, LED signs, banners, business cards, or other marketing materials in Fort Lauderdale and Broward County? Specify your dimensions and upload your artwork files below. Our print specialists will email you a layout proof and pricing quote within 12 hours.
                 </p>
               </div>
 

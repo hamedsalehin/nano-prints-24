@@ -3,8 +3,8 @@ import { SignProductPage } from "@/components/SignProductPage";
 import { Sparkles } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Custom Channel Letter Signs Oakland Park FL | Nano Signs",
-  description: "Vivid 3D backlit and front-lit channel letter storefront signs in Fort Lauderdale & Oakland Park FL. Call 305-967-1005 to get your business noticed!",
+  title: "Custom Channel Letter Signs Fort Lauderdale FL | Nano Signs",
+  description: "Premium 3D backlit and front-lit channel letter storefront signs in Broward County. Fast quotes and high-quality fabrication in Fort Lauderdale, FL.",
   alternates: {
     canonical: "https://nanop.vercel.app/custom-signs/channel-letter-signs",
   },

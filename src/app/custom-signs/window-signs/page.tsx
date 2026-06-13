@@ -4,8 +4,8 @@ import { Eye } from "lucide-react";
 
 
 export const metadata: Metadata = {
-  title: "Custom Window Graphics & Decals Oakland Park FL",
-  description: "High-res window decals, perforated vinyl, and clings in Fort Lauderdale & Oakland Park FL. Professional storefront graphics with easy installation.",
+  title: "Custom Window Graphics & Decals Fort Lauderdale FL",
+  description: "Design high-res window decals, perforated vinyl, & clings online. Professional storefront graphics with fast turnaround in Broward County.",
   alternates: {
     canonical: "https://nanop.vercel.app/custom-signs/window-signs",
   },

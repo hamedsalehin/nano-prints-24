@@ -4,8 +4,8 @@ import { ArrowUpDown } from "lucide-react";
 
 
 export const metadata: Metadata = {
-  title: "A-Frame Sidewalk Signs Oakland Park FL | Nano Signs",
-  description: "Premium portable, double-sided sidewalk A-frame signs in Fort Lauderdale & Oakland Park FL. Grab foot traffic and drive customers through your door!",
+  title: "A-Frame Sidewalk Signs Fort Lauderdale FL | Fast Turnaround | Nano Signs",
+  description: "Design & order portable, double-sided sidewalk A-frame signs in Fort Lauderdale & Oakland Park FL. Fastest turnaround times in Broward County.",
   alternates: {
     canonical: "https://nanop.vercel.app/custom-signs/a-frame-signs",
   },

@@ -19,11 +19,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!categoryData) return {};
   const productData = categoryData.products.find((p) => p.id === decodedProduct);
   if (!productData) return {};
-
-  const title = `${productData.name} Oakland Park FL | Nano Signs`;
+  const title = `${productData.name} Fort Lauderdale FL | Fast Turnaround | Nano Signs`;
   const description = productData.description
-    ? `Custom ${productData.name.toLowerCase()} in Fort Lauderdale & Oakland Park FL. ${productData.description}`
-    : `Custom ${productData.name} design and high-quality printing at Nano Signs in Oakland Park, FL. Call 305-967-1005 for a quote!`;
+    ? `Design custom ${productData.name.toLowerCase()} online or in person in Broward County. Fastest turnaround times. ${productData.description}`
+    : `Custom ${productData.name} design and high-quality printing in Fort Lauderdale & Oakland Park FL. Fastest turnaround times in Broward. Call 305-967-1005!`;
 
   return {
     title,

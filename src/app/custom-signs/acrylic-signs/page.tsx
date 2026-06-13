@@ -4,8 +4,8 @@ import { Sparkles } from "lucide-react";
 
 
 export const metadata: Metadata = {
-  title: "Custom Acrylic Signs Oakland Park FL | Nano Signs",
-  description: "Upscale clear, colored, and frosted custom acrylic signs in Fort Lauderdale & Oakland Park FL. Premium lobby plaques and receptionist signage.",
+  title: "Custom Acrylic Signs Fort Lauderdale FL | Fast Turnaround | Nano Signs",
+  description: "Premium clear, colored, and frosted custom acrylic signs in Broward County. Online design and next-day local pick up in Fort Lauderdale.",
   alternates: {
     canonical: "https://nanop.vercel.app/custom-signs/acrylic-signs",
   },

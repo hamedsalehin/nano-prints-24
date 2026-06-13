@@ -4,8 +4,8 @@ import { Shield } from "lucide-react";
 
 
 export const metadata: Metadata = {
-  title: "Custom Aluminum Signs Oakland Park FL | Nano Signs",
-  description: "Heavy-duty, rust-proof custom aluminum signs in Fort Lauderdale & Oakland Park FL. Weather-resistant metal prints built for long-term outdoor use.",
+  title: "Custom Aluminum Signs Fort Lauderdale FL | Fast Turnaround | Nano Signs",
+  description: "Heavy-duty, rust-proof custom aluminum signs in Broward County. Durable metal sign prints with fast turnaround and local pickup in Fort Lauderdale.",
   alternates: {
     canonical: "https://nanop.vercel.app/custom-signs/aluminum-signs",
   },

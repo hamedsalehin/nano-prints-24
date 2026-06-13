@@ -33,16 +33,15 @@ export function ExpertsSection() {
           }}
         >
           <h2 className="font-poppins text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-            Your All-in-One Online Shop for Custom Printing &amp; Signage
+            Premium Custom Signage, LED Signs &amp; Banners in Fort Lauderdale
           </h2>
           <p className="text-gray-600 mb-8 leading-relaxed">
-            Welcome to Nano Signs, your premier online printing materials and
-            signage shop serving businesses across Florida. From heavy-duty
-            outdoor vinyl banners and retractable roll-up banners to custom
-            stickers, decals, advertising flags, and tradeshow displays, we are
-            your all-in-one source for high-quality custom signs. Our print and
-            design experts ensure fast production and durable marketing
-            materials to elevate your brand presence.
+            Welcome to Nano Signs, the print shop with the fastest turnaround times in Broward.
+            Whether you want to design and order online or visit us in person, we are your
+            premier source for custom signs, LED signs, retractable banners, business cards,
+            and all other marketing materials. Serving Fort Lauderdale, Oakland Park, and the
+            wider Broward County area, our custom print and design experts ensure fast, professional
+            production to elevate your brand presence.
           </p>
           <a
             href="tel:305-967-1005"

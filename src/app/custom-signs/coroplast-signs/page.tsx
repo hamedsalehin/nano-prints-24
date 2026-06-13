@@ -4,8 +4,8 @@ import { Droplets } from "lucide-react";
 
 
 export const metadata: Metadata = {
-  title: "Custom Coroplast Signs Oakland Park FL | Nano Signs",
-  description: "Weatherproof corrugated plastic signs in Fort Lauderdale & Oakland Park FL. Lightweight, colorful, and highly affordable signs for any campaign or event.",
+  title: "Custom Coroplast Signs Fort Lauderdale FL | Fast Turnaround | Nano Signs",
+  description: "Design and order waterproof corrugated plastic coroplast signs in Broward County. Cheap prices & fast turnaround times in Fort Lauderdale.",
   alternates: {
     canonical: "https://nanop.vercel.app/custom-signs/coroplast-signs",
   },

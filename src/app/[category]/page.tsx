@@ -14,10 +14,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const categoryData = PRODUCTS_REGISTRY[decodedCategory];
   if (!categoryData) return {};
   
-  const title = `${categoryData.title} Oakland Park FL | Nano Signs`;
+  const title = `${categoryData.title} Fort Lauderdale FL | Fast Turnaround | Nano Signs`;
   const description = categoryData.description
-    ? `Looking for ${categoryData.title.toLowerCase()} in Fort Lauderdale or Oakland Park? ${categoryData.description}`
-    : `High-quality custom ${categoryData.title.toLowerCase()} printing at Nano Signs in Oakland Park, FL. Call 305-967-1005 for a quote!`;
+    ? `Design & order custom ${categoryData.title.toLowerCase()} online or in person in Broward County. Fastest turnaround times. ${categoryData.description}`
+    : `High-quality custom ${categoryData.title.toLowerCase()} printing in Fort Lauderdale & Oakland Park FL. Fastest turnaround times in Broward. Call 305-967-1005!`;
 
   return {
     title,
