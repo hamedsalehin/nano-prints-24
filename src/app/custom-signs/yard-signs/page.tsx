@@ -22,9 +22,9 @@ export default function YardSignsPage() {
         breadcrumbHref: "/custom-signs",
         promoText:
           "🏡 25% OFF Yard Signs + Free Shipping — Most Popular Sign in America!",
-        image: "/images/products/main page/signs.png",
+        image: "/images/products/main%20page/signs.png",
         images: [
-          "/images/products/main page/signs.png",
+          "/images/products/main%20page/signs.png",
           "/images/products/yard_sign_hover.png",
         ],
         ratingScore: "4.9",

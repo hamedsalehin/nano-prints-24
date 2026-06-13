@@ -21,9 +21,9 @@ export default function RealEstatePanelsPage() {
         breadcrumb: "Signs",
         breadcrumbHref: "/custom-signs",
         promoText: "🏠 Real Estate Panels — Next Day Delivery Available!",
-        image: "/images/products/main page/Real_estate_panels.png",
+        image: "/images/products/main%20page/Real_estate_panels.png",
         images: [
-          "/images/products/main page/Real_estate_panels.png",
+          "/images/products/main%20page/Real_estate_panels.png",
           "/images/products/gallery/real_estate_panels_in_action_1.png",
           "/images/products/gallery/real_estate_panels_in_action_2.png",
         ],

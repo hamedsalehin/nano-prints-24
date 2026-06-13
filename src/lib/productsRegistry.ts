@@ -35,7 +35,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     heroSubtitle: "Big Impact. Quick Production. Durable.",
     description:
       "High-quality custom banners for any occasion. From outdoor vinyl to professional retractable displays, we have the perfect solution for your business or event.",
-    heroImage: "/images/products/main page/hero_banners.png",
+    heroImage: "/images/products/main%20page/hero_banners.png",
     reviewRating: "4.9",
     reviewCount: "2,680",
     reviewQuote:
@@ -43,7 +43,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     categoryDescriptionText:
       "Discover high-impact custom banners designed to capture attention in any setting. Whether you need heavy-duty outdoor vinyl banners to weather the elements, mesh banners for high-wind fences, premium fabric banners for trade shows, or retractable roll-up displays for quick events, we have you covered. All banners are printed using state-of-the-art printers with vibrant, fade-resistant UV inks.",
     categorySecondaryImage:
-      "https://ext.same-assets.com/1114826555/3799598245.png",
+      "/images/products/main%20page/banners_desc.png",
     faqs: [
       {
         q: "What is the difference between vinyl and fabric banners?",
@@ -63,7 +63,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         id: "vinyl-banners",
         name: "Vinyl Banners",
         description: "Durable and weather-resistant for indoor or outdoor use.",
-        image: "/images/products/main page/vinyl_banner.png",
+        image: "/images/products/main%20page/vinyl_banner.png",
         price: "Starting at $12.99",
         badge: "Most Popular",
         config: {
@@ -73,7 +73,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Banners",
           breadcrumbHref: "/custom-banners",
           promoText: "20% OFF ALL VINYL BANNERS - SHIPS NEXT DAY",
-          image: "/images/products/main page/vinyl_banner.png",
+          image: "/images/products/main%20page/vinyl_banner.png",
           ratingCount: "1,530",
           ratingScore: "4.8",
           sizes: [
@@ -150,7 +150,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Fabric Banners",
         description:
           "Dye-sub polyester with a premium, wrinkle-free matte finish.",
-        image: "/images/products/main page/fabric_banner.png",
+        image: "/images/products/main%20page/fabric_banner.png",
         price: "Starting at $45.99",
         badge: "Premium",
         config: {
@@ -160,9 +160,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Banners",
           breadcrumbHref: "/custom-banners",
           promoText: "20% OFF PREMIUM FABRIC BANNERS",
-          image: "/images/products/main page/fabric_banner.png",
+          image: "/images/products/main%20page/fabric_banner.png",
           images: [
-            "/images/products/main page/fabric_banner.png",
+            "/images/products/main%20page/fabric_banner.png",
             "/images/products/gallery/fabric_banner_use_1.png",
             "/images/products/gallery/fabric_banner_use_1.png",
             "/images/products/gallery/fabric_banner_use_1.png",
@@ -243,7 +243,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Mesh Banners",
         description:
           "Perforated vinyl that allows wind to pass through, ideal for fences.",
-        image: "/images/products/main page/mesh_banner.png",
+        image: "/images/products/main%20page/mesh_banner.png",
         price: "Starting at $42.99",
         badge: "Wind-Resistant",
         config: {
@@ -253,7 +253,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Banners",
           breadcrumbHref: "/custom-banners",
           promoText: "20% OFF ALL MESH FENCE BANNERS",
-          image: "/images/products/main page/mesh_banner.png",
+          image: "/images/products/main%20page/mesh_banner.png",
           ratingCount: "680",
           ratingScore: "4.8",
           sizes: [
@@ -310,7 +310,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Pole Banners",
         description:
           "Street-pole double sided banners with pockets for outdoor municipal displays.",
-        image: "/images/products/main page/pole_banner.png",
+        image: "/images/products/main%20page/pole_banner.png",
         price: "Starting at $29.99",
         config: {
           title: "Custom Pole Banners",
@@ -319,7 +319,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Banners",
           breadcrumbHref: "/custom-banners",
           promoText: "20% OFF STREET & BOULEVARD POLE BANNERS",
-          image: "/images/products/main page/pole_banner.png",
+          image: "/images/products/main%20page/pole_banner.png",
           ratingCount: "210",
           ratingScore: "4.7",
           sizes: [
@@ -378,7 +378,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Breakaway Banners",
         description:
           "Run-through spirit banners for sports games with center Velcro seam.",
-        image: "/images/products/main page/breakaway_banner.png",
+        image: "/images/products/main%20page/breakaway_banner.png",
         price: "Starting at $34.99",
         config: {
           title: "Custom Breakaway Banners",
@@ -387,7 +387,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Banners",
           breadcrumbHref: "/custom-banners",
           promoText: "20% OFF SCHOOL SPIRIT BREAKAWAYS",
-          image: "/images/products/main page/breakaway_banner.png",
+          image: "/images/products/main%20page/breakaway_banner.png",
           ratingCount: "135",
           ratingScore: "4.8",
           sizes: [
@@ -443,7 +443,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Vertical Banners",
         description:
           "Hanging vertical banners for slim storefront pillars or corridor walls.",
-        image: "/images/products/main page/vertical_banner.png",
+        image: "/images/products/main%20page/vertical_banner.png",
         price: "Starting at $19.99",
         config: {
           title: "Custom Vertical Banners",
@@ -452,7 +452,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Banners",
           breadcrumbHref: "/custom-banners",
           promoText: "20% OFF VERTICAL SIGNS & BANNERS",
-          image: "/images/products/main page/vertical_banner.png",
+          image: "/images/products/main%20page/vertical_banner.png",
           ratingCount: "290",
           ratingScore: "4.7",
           sizes: [
@@ -508,7 +508,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         id: "roll-up-banners",
         name: "Retractable Banners",
         description: "Portable and easy to set up for trade shows and events.",
-        image: "/images/products/main page/retractable_roll_up_banner.png",
+        image: "/images/products/main%20page/retractable_roll_up_banner.png",
         price: "Starting at $93.27",
         badge: "Best Seller",
         config: {
@@ -518,9 +518,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Banners",
           breadcrumbHref: "/custom-banners",
           promoText: "20% OFF RETRACTABLE ROLL-UP BANNERS",
-          image: "/images/products/main page/retractable_roll_up_banner.png",
+          image: "/images/products/main%20page/retractable_roll_up_banner.png",
           images: [
-            "/images/products/main page/retractable_roll_up_banner.png",
+            "/images/products/main%20page/retractable_roll_up_banner.png",
             "/images/products/gallery/retractable_use_1.png",
             "/images/products/gallery/retractable_use_2.png",
             "/images/products/gallery/retractable_use_3.png",
@@ -614,7 +614,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "X-Banner Stands",
         description:
           "Collapsible lightweight cross stands with custom printed corner-grommet banners.",
-        image: "/images/products/main page/x_banner_stand.png",
+        image: "/images/products/main%20page/x_banner_stand.png",
         price: "Starting at $49.99",
         config: {
           title: "X-Frame Banner Stands",
@@ -623,7 +623,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Banners",
           breadcrumbHref: "/custom-banners",
           promoText: "20% OFF BUDGET X-BANNER DISPLAYS",
-          image: "/images/products/main page/x_banner_stand.png",
+          image: "/images/products/main%20page/x_banner_stand.png",
           ratingCount: "385",
           ratingScore: "4.7",
           sizes: [
@@ -675,7 +675,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Backdrop Banners",
         description:
           "Ideal for red carpet events, photo backdrops and press conferences.",
-        image: "/images/products/main page/backdrop_banners.png",
+        image: "/images/products/main%20page/backdrop_banners.png",
         price: "Starting at $145.99",
         badge: "Event Ready",
         config: {
@@ -685,9 +685,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Banners",
           breadcrumbHref: "/custom-banners",
           promoText: "20% OFF STEP AND REPEAT PRESS WALLS",
-          image: "/images/products/main page/backdrop_banners.png",
+          image: "/images/products/main%20page/backdrop_banners.png",
           images: [
-            "/images/products/main page/backdrop_banners.png",
+            "/images/products/main%20page/backdrop_banners.png",
             "/images/products/gallery/step_repeat_use_1.png",
             "/images/products/gallery/step_repeat_use_2.png",
             "/images/products/gallery/step_repeat_use_3.png",
@@ -749,7 +749,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Tabletop Retractables",
         description:
           "Miniature counter-top roll up banners for checkout registries and lobbies.",
-        image: "/images/products/main page/tabletop_retractable.png",
+        image: "/images/products/main%20page/tabletop_retractable.png",
         price: "Starting at $29.99",
         config: {
           title: "Tabletop Retractable Banners",
@@ -758,7 +758,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Banners",
           breadcrumbHref: "/custom-banners",
           promoText: "20% OFF TABLETOP RETRACTABLE DISPLAYS",
-          image: "/images/products/main page/tabletop_retractable.png",
+          image: "/images/products/main%20page/tabletop_retractable.png",
           ratingCount: "420",
           ratingScore: "4.8",
           sizes: [
@@ -818,16 +818,16 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     heroSubtitle: "All-Weather. Quick Production. Affordable.",
     description:
       "Catch the attention of passing traffic with high-impact outdoor flags. Perfect for grand openings, store front promotions, and events.",
-    heroImage: "/images/products/main page/nano hero flag section.png",
-    tabletHeroImage: "/images/products/main page/nano hero flag section.png",
-    mobileHeroImage: "/images/products/main page/nano hero flag section.png",
+    heroImage: "/images/products/main%20page/nano hero flag section.png",
+    tabletHeroImage: "/images/products/main%20page/nano hero flag section.png",
+    mobileHeroImage: "/images/products/main%20page/nano hero flag section.png",
     reviewRating: "4.8",
     reviewCount: "1,920",
     reviewQuote:
       "The feather flags are so vibrant and eye-catching! Setup was effortless and they've survived multiple rainstorms without any fading.",
     categoryDescriptionText:
       "Draw crowds and increase outdoor visibility with premium custom flags printed to last. Designed to withstand wind, rain, and intense sun, our custom advertising flags are constructed from lightweight, high-density knit polyester that ensures rich colors and single or double-sided visibility. Complete with heavy-duty composite fiberglass poles and ground stakes or solid steel cross stands.",
-    categorySecondaryImage: "/images/products/main page/feather_flag.png",
+    categorySecondaryImage: "/images/products/main%20page/flags_desc.png",
     faqs: [
       {
         q: "What types of custom flags do you offer?",
@@ -860,7 +860,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Feather Flags",
         description:
           "Eye-catching fluttering flags designed to draw crowds from the roadside.",
-        image: "/images/products/main page/feather_flag.png",
+        image: "/images/products/main%20page/feather_flag.png",
         price: "Starting at $54.37",
         badge: "Best Seller",
         config: {
@@ -870,7 +870,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Flags",
           breadcrumbHref: "/custom-flags",
           promoText: "20% OFF ALL ADVERTISING FLAGS - SHIPS NEXT DAY",
-          image: "/images/products/main page/feather_flag.png",
+          image: "/images/products/main%20page/feather_flag.png",
           ratingCount: "820",
           ratingScore: "4.8",
           sizes: [
@@ -992,7 +992,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Teardrop Flags",
         description:
           "Elegant teardrop shape that remains taut and visible even in low wind conditions.",
-        image: "/images/products/main page/teardrop_flag.png",
+        image: "/images/products/main%20page/teardrop_flag.png",
         price: "Starting at $49.68",
         config: {
           title: "Custom Teardrop Flags",
@@ -1001,7 +1001,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Flags",
           breadcrumbHref: "/custom-flags",
           promoText: "20% OFF ALL TEARDROP FLAGS",
-          image: "/images/products/main page/teardrop_flag.png",
+          image: "/images/products/main%20page/teardrop_flag.png",
           ratingCount: "432",
           ratingScore: "4.7",
           sizes: [
@@ -1071,7 +1071,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Straight Flags",
         description:
           "Classic rectangular standing flags that offer a large design canvas.",
-        image: "/images/products/main page/straight_flag.png",
+        image: "/images/products/main%20page/straight_flag.png",
         price: "Starting at $54.37",
         config: {
           title: "Custom Straight Flags",
@@ -1080,7 +1080,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Flags",
           breadcrumbHref: "/custom-flags",
           promoText: "20% OFF STRAIGHT ADVERTISING FLAGS",
-          image: "/images/products/main page/straight_flag.png",
+          image: "/images/products/main%20page/straight_flag.png",
           ratingCount: "295",
           ratingScore: "4.7",
           sizes: [
@@ -1129,7 +1129,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Standard Flags",
         description:
           "Classic horizontal flags with brass grommets, perfect for flagpoles or hanging.",
-        image: "/images/products/main page/flags.png",
+        image: "/images/products/main%20page/flags.png",
         price: "Starting at $38.43",
         config: {
           title: "Standard Custom Flags",
@@ -1138,9 +1138,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Flags",
           breadcrumbHref: "/custom-flags",
           promoText: "20% OFF CUSTOM HANGING FLAGS",
-          image: "/images/products/main page/flags.png",
+          image: "/images/products/main%20page/flags.png",
           images: [
-            "/images/products/main page/flags.png",
+            "/images/products/main%20page/flags.png",
             "/images/products/gallery/flag_use_1.png",
             "/images/products/gallery/flag_use_1.png",
             "/images/products/gallery/flag_use_1.png",
@@ -1198,7 +1198,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Pennant Flags",
         description:
           "Triangular pennant flags for sports teams, schools, and festive string lines.",
-        image: "/images/products/main page/pennant_flag.png",
+        image: "/images/products/main%20page/pennant_flag.png",
         price: "Starting at $51.11",
         config: {
           title: "Custom Pennant Flags",
@@ -1207,7 +1207,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Flags",
           breadcrumbHref: "/custom-flags",
           promoText: "20% OFF SPIRIT PENNANTS",
-          image: "/images/products/main page/pennant_flag.png",
+          image: "/images/products/main%20page/pennant_flag.png",
           ratingCount: "140",
           ratingScore: "4.7",
           sizes: [
@@ -1262,7 +1262,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
       "Our fleet car magnets look incredibly professional. They stick perfectly at highway speeds and the print quality is showroom-grade.",
     categoryDescriptionText:
       "Make every commute count with durable vehicle signs custom-built to stand out. Nano Signs provides the options you need, from removable vehicle magnets and regulation door decals to bumper stickers and license plates. All vehicle products are constructed from high-grade vinyl and magnetic sheeting designed to hold tight at highway speeds and resist sun damage.",
-    categorySecondaryImage: "/images/products/main page/vehicle_magnets.png",
+    categorySecondaryImage: "/images/products/main%20page/vehicle_signs_desc.png",
     faqs: [
       {
         q: "Will car magnets stick to aluminum vehicle panels?",
@@ -1279,7 +1279,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Bumper Stickers",
         description:
           "Classic adhesive labels for car bumpers and windows. High visibility branding.",
-        image: "/images/products/main page/bumper_sticker.png",
+        image: "/images/products/main%20page/bumper_sticker.png",
         price: "Starting at $2.24",
         config: {
           title: "Custom Bumper Stickers",
@@ -1288,7 +1288,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Vehicle Signs",
           breadcrumbHref: "/vehicle-signs",
           promoText: "25% OFF BUMPER STICKERS",
-          image: "/images/products/main page/bumper_sticker.png",
+          image: "/images/products/main%20page/bumper_sticker.png",
           ratingCount: "850",
           ratingScore: "4.8",
           sizes: [
@@ -1337,7 +1337,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "License Plates",
         description:
           "Custom front license plates made from heavy duty aluminum.",
-        image: "/images/products/main page/license_plate.png",
+        image: "/images/products/main%20page/license_plate.png",
         price: "Starting at $13.72",
         config: {
           title: "Custom License Plates",
@@ -1346,7 +1346,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Vehicle Signs",
           breadcrumbHref: "/vehicle-signs",
           promoText: "25% OFF ALUMINUM AUTO PLATES",
-          image: "/images/products/main page/license_plate.png",
+          image: "/images/products/main%20page/license_plate.png",
           ratingCount: "192",
           ratingScore: "4.7",
           sizes: [
@@ -1393,7 +1393,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Magnetic Car Signs",
         description:
           "Durable magnetic signs that attach to car doors and can be removed easily.",
-        image: "/images/products/main page/vehicle_magnets.png",
+        image: "/images/products/main%20page/vehicle_magnets.png",
         price: "Starting at $4.99",
         badge: "Most Popular",
         config: {
@@ -1403,9 +1403,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Vehicle Signs",
           breadcrumbHref: "/vehicle-signs",
           promoText: "25% OFF VEHICLE ADVERTISING - AUTO SHIPPED",
-          image: "/images/products/main page/vehicle_magnets.png",
+          image: "/images/products/main%20page/vehicle_magnets.png",
           images: [
-            "/images/products/main page/vehicle_magnets.png",
+            "/images/products/main%20page/vehicle_magnets.png",
             "/images/products/gallery/magnet_use_1.png",
             "/images/products/gallery/magnet_use_2.png",
             "/images/products/gallery/magnet_use_3.png",
@@ -1495,7 +1495,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Car Door Decals",
         description:
           "Adhesive door decals for car bodies. Durable semi-permanent advertising.",
-        image: "/images/products/main page/car_door_decal.png",
+        image: "/images/products/main%20page/car_door_decal.png",
         price: "Starting at $23.86",
         config: {
           title: "Custom Car Door Decals",
@@ -1504,7 +1504,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Vehicle Signs",
           breadcrumbHref: "/vehicle-signs",
           promoText: "25% OFF SEMI-PERMANENT DOOR DECALS",
-          image: "/images/products/main page/car_door_decal.png",
+          image: "/images/products/main%20page/car_door_decal.png",
           ratingCount: "320",
           ratingScore: "4.7",
           sizes: [
@@ -1555,7 +1555,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Car Window Decals",
         description:
           "Rear and side window adhesive graphics, available in transparent and opaque materials.",
-        image: "/images/products/main page/car_window_decal.png",
+        image: "/images/products/main%20page/car_window_decal.png",
         price: "Starting at $23.86",
         config: {
           title: "Custom Car Window Decals",
@@ -1564,7 +1564,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Vehicle Signs",
           breadcrumbHref: "/vehicle-signs",
           promoText: "25% OFF WINDOW ADHESIVE DECALS",
-          image: "/images/products/main page/car_window_decal.png",
+          image: "/images/products/main%20page/car_window_decal.png",
           ratingCount: "285",
           ratingScore: "4.8",
           sizes: [
@@ -1625,9 +1625,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     breadcrumbLabel: "Tradeshow",
     description:
       "Get trade show ready with custom products that make your brand stand out. Table covers, step and repeats, and stands.",
-    heroImage: "/images/products/main page/hero_banners.png",
-    tabletHeroImage: "/images/products/main page/hero_banners.png",
-    mobileHeroImage: "/images/products/main page/hero_banners.png",
+    heroImage: "/images/products/main%20page/hero_banners.png",
+    tabletHeroImage: "/images/products/main%20page/hero_banners.png",
+    mobileHeroImage: "/images/products/main%20page/hero_banners.png",
     heroSubtitle: "Where First Impressions Get Noticed.",
     reviewRating: "4.9",
     reviewCount: "3,240",
@@ -1635,7 +1635,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
       "The table cover and pop-up backdrop banner printed beautifully! Setup took seconds and our logo colors matched perfectly.",
     categoryDescriptionText:
       "Your tradeshow booth should do more than fill space, it should tell your brand story. With a full range of customizable displays, signage, and print materials, we help you make every event count. From table covers to backdrops, banners to business cards, our products are designed to build cohesion, attract attention, and drive engagement. Whether you're setting up for a local fair or a national expo, we've got everything you need to show up strong and stay top of mind.",
-    categorySecondaryImage: "/images/products/main page/pop_up_display.png",
+    categorySecondaryImage: "/images/products/main%20page/trade_show_desc.png",
     faqs: [
       {
         q: "Can I customize designs with my logo and brand colors?",
@@ -1664,7 +1664,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Custom Tablecloths",
         description:
           "Transform any standard folding table into a highly professional promotional display with our Custom Tablecloths. Printed using advanced dye-sublimation on premium 300D polyester twill, these covers feature a vibrant, scratch-resistant print that won't crack or peel. They are completely machine washable, flame-retardant (meeting NFPA 701 safety certifications), and designed to stay wrinkle-free throughout long events. Available in standard 6ft and 8ft sizes in both 4-sided (closed back) and 3-sided (open back) configurations for convenient under-table storage access.",
-        image: "/images/products/main page/tablecloths.png",
+        image: "/images/products/main%20page/tablecloths.png",
         price: "Starting at $89.99",
         badge: "Best Seller",
         config: {
@@ -1674,9 +1674,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF CUSTOM TABLECLOTHS - SHIPS NEXT DAY",
-          image: "/images/products/main page/tablecloths.png",
+          image: "/images/products/main%20page/tablecloths.png",
           images: [
-            "/images/products/main page/tablecloths.png",
+            "/images/products/main%20page/tablecloths.png",
             "/images/products/gallery/tablecloth_use_1.png",
             "/images/products/gallery/tablecloth_use_2.png",
             "/images/products/gallery/tablecloth_use_3.png",
@@ -1756,7 +1756,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Table Runners",
         description:
           "For a versatile, portable, and budget-friendly branding solution, our Custom Table Runners are the perfect choice. Drape one over a plain solid-colored tablecloth to instantly elevate your booth's look without the cost of a full tablecloth. Made from durable 300D polyester twill with optional liquid-repellent coatings, our table runners roll down flat, fit easily in any travel bag, and wash clean in the machine. Choose from multiple standard widths to display your company logo prominently.",
-        image: "/images/products/main page/table_runner.png",
+        image: "/images/products/main%20page/table_runner.png",
         price: "Starting at $39.99",
         badge: "Budget-Friendly",
         config: {
@@ -1766,7 +1766,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF TABLE RUNNERS - SHIPS NEXT DAY",
-          image: "/images/products/main page/table_runner.png",
+          image: "/images/products/main%20page/table_runner.png",
           ratingCount: "540",
           ratingScore: "4.8",
           sizes: [
@@ -1811,7 +1811,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Fitted Tablecloths",
         description:
           "Give your display tables a clean, sharp, box-tailored look with Fitted Tablecloths. Custom-tailored to slip perfectly over standard 6ft and 8ft rectangular tables, these covers stay securely in place without hanging or pooling on the floor, making them excellent for busy outdoor venues or professional recruiting events. Constructed from flame-retardant 300D knit polyester twill, they are machine-washable, wrinkle-resistant, and built to withstand repeated setups.",
-        image: "/images/products/main page/fitted_tablecloth.png",
+        image: "/images/products/main%20page/fitted_tablecloth.png",
         price: "Starting at $109.99",
         config: {
           title: "Fitted Tablecloths",
@@ -1821,7 +1821,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF TAILORED FITTED TABLE COVERS",
           image:
-            "/images/products/main page/fitted_tablecloth.png",
+            "/images/products/main%20page/fitted_tablecloth.png",
           ratingCount: "310",
           ratingScore: "4.8",
           sizes: [
@@ -1868,7 +1868,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Round Tablecloths",
         description:
           "Elevate your round banquet, registry, or cocktail tables with our Round Custom Tablecloths. Specially hemmed for standard circular table sizes, they drape elegantly to the floor in a seamless design. Using full-spectrum dye-sublimation printing, your custom colors, patterns, and logos will appear bright and clear, providing a premium aesthetic for weddings, evening galas, corporate fundraisers, and hotel lobbies.",
-        image: "/images/products/main page/round_tablecloth.png",
+        image: "/images/products/main%20page/round_tablecloth.png",
         price: "Starting at $129.99",
         config: {
           title: "Round Custom Tablecloths",
@@ -1877,7 +1877,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF CUSTOM ROUND TABLECLOTHS",
-          image: "/images/products/main page/round_tablecloth.png",
+          image: "/images/products/main%20page/round_tablecloth.png",
           ratingCount: "195",
           ratingScore: "4.7",
           sizes: [
@@ -1929,7 +1929,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Stretch Tablecloths",
         description:
           "Achieve a sleek, modern, and high-impact look with our contoured Stretch Tablecloths. Made from an elastic polyester-spandex blend, these covers stretch tightly over your table frame and secure into place using reinforced rubber leg pockets, preventing any flapping or shifting in windy outdoor conditions. The tight tension naturally pulls out all folds and wrinkles, ensuring a perfectly smooth, professional surface for tech conferences, outdoor festivals, and modern brand exhibitions.",
-        image: "/images/products/main page/stretch_tablecloth.png",
+        image: "/images/products/main%20page/stretch_tablecloth.png",
         price: "Starting at $129.99",
         config: {
           title: "Stretch Tablecloths (Spandex Style)",
@@ -1939,7 +1939,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF CONTOURED SPANDEX DISPLAYS",
           image:
-            "/images/products/main page/stretch_tablecloth.png",
+            "/images/products/main%20page/stretch_tablecloth.png",
           ratingCount: "290",
           ratingScore: "4.9",
           sizes: [
@@ -1993,7 +1993,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Pop-Up Displays",
         description:
           "Make a massive impression on the trade show floor with our premium Pop-Up Backdrop Displays. Featuring a lightweight accordion-style aluminum frame that snaps open in under two minutes, this backdrop utilizes a large, high-definition tension fabric graphic that attaches securely around the perimeter with heavy-duty hook-and-loop velcro. It packs down into a compact trolley bag with rolling wheels for effortless travel and setup.",
-        image: "/images/products/main page/pop_up_display.png",
+        image: "/images/products/main%20page/pop_up_display.png",
         price: "Starting at $299.99",
         config: {
           title: "Pop-Up Backdrop Displays",
@@ -2002,7 +2002,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF ALL POP-UP EVENT DISPLAYS",
-          image: "/images/products/main page/pop_up_display.png",
+          image: "/images/products/main%20page/pop_up_display.png",
           ratingCount: "430",
           ratingScore: "4.8",
           sizes: [
@@ -2072,7 +2072,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Backdrop Banners",
         description:
           "Create the perfect photo opportunity at red carpets, press conferences, weddings, and corporate summits with our Step & Repeat Banners. Designed to display repeated logos in a clean grid layout, the glare-free matte finish of our heavy-duty blockout vinyl ensures beautiful, flash-friendly photography. The package comes with an optional adjustable backdrop stand and top/bottom pole pockets for fast mounting.",
-        image: "/images/products/main page/backdrop_banners.png",
+        image: "/images/products/main%20page/backdrop_banners.png",
         price: "Starting at $145.99",
         badge: "Event Ready",
         config: {
@@ -2083,7 +2083,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF STEP AND REPEAT PRESS WALLS",
           image:
-            "/images/products/main page/backdrop_banners.png",
+            "/images/products/main%20page/backdrop_banners.png",
           ratingCount: "430",
           ratingScore: "4.8",
           sizes: [
@@ -2141,7 +2141,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Retractable Banner",
         description:
           "Our Retractable Banners (Roll Up Stands) are the ultimate standalone banner display for trade shows, retail checkouts, and office lobbies. The banner graphic pulls up from an anodized aluminum base stand in seconds and secures with a vertical support rod. Each kit includes a padded carrying bag, making transport and setup incredibly simple. Printed on premium curl-resistant polyester film or standard 13oz vinyl to maintain a clean, flat presentation.",
-        image: "/images/products/main page/retractable_roll_up_banner.png",
+        image: "/images/products/main%20page/retractable_roll_up_banner.png",
         price: "Starting at $93.27",
         badge: "Most Popular",
         config: {
@@ -2152,7 +2152,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF RETRACTABLE ROLL-UP BANNERS",
           image:
-            "/images/products/main page/retractable_roll_up_banner.png",
+            "/images/products/main%20page/retractable_roll_up_banner.png",
           ratingCount: "1240",
           ratingScore: "4.9",
           sizes: [
@@ -2224,7 +2224,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "X-Banners",
         description:
           "The X-Frame Banner Stand is a highly cost-effective, portable freestanding banner solution. By utilizing flexible composite fiberglass arms connected to a central hinge, the stand pulls a custom corner-grommeted banner taut, keeping your graphic perfectly flat and readable. Because the banner attaches simply via grommets, you can order replacement prints and swap graphics in seconds without needing to buy new stands.",
-        image: "/images/products/main page/x_banner_stand.png",
+        image: "/images/products/main%20page/x_banner_stand.png",
         price: "Starting at $49.99",
         config: {
           title: "X-Frame Banner Stands",
@@ -2233,7 +2233,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF BUDGET X-BANNER DISPLAYS",
-          image: "/images/products/main page/x_banner_stand.png",
+          image: "/images/products/main%20page/x_banner_stand.png",
           ratingCount: "385",
           ratingScore: "4.7",
           sizes: [
@@ -2286,7 +2286,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         description:
           "Bring high-impact branding to counter-tops, checkout registers, hotel lobbies, and registration desks with Tabletop Retractable Banners. These miniature versions of our full-sized roll-up stands feature a compact aluminum base housing that pulls up and retracts in seconds. Printed on smooth, high-resolution polypropylene film, they ensure small details and text are clear and easy to read from a close distance.",
         image:
-          "/images/products/main page/tabletop_retractable.png",
+          "/images/products/main%20page/tabletop_retractable.png",
         price: "Starting at $27.18",
         config: {
           title: "Tabletop Retractable Banners",
@@ -2296,7 +2296,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF TABLETOP RETRACTABLE DISPLAYS",
           image:
-            "/images/products/main page/tabletop_retractable.png",
+            "/images/products/main%20page/tabletop_retractable.png",
           ratingCount: "420",
           ratingScore: "4.8",
           sizes: [
@@ -2353,7 +2353,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Custom Canopies",
         description:
           "Stand out at outdoor events, farmers markets, sporting events, and street fairs with our 10' x 10' Custom Canopy Tents. The canopy top is made from heavy-duty, waterproof, and UV-resistant fabric printed in rich full-color dye-sublimation. The popup frame features a commercial-grade steel or aluminum truss system with adjustable height settings, popping up in minutes for instant shade and high-visibility branding.",
-        image: "/images/products/main page/event_tents.png",
+        image: "/images/products/main%20page/event_tents.png",
         price: "Starting at $349.99",
         config: {
           title: "Custom Canopy Tents",
@@ -2362,9 +2362,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF OUTDOOR EVENT CANOPIES",
-          image: "/images/products/main page/event_tents.png",
+          image: "/images/products/main%20page/event_tents.png",
           images: [
-            "/images/products/main page/event_tents.png",
+            "/images/products/main%20page/event_tents.png",
             "/images/products/gallery/canopy_tent_use_1.png",
             "/images/products/gallery/canopy_tent_use_1.png",
             "/images/products/gallery/canopy_tent_use_1.png",
@@ -2419,7 +2419,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Feather Flags",
         description:
           "Draw customers in from the roadside with our best-selling Custom Feather Flags. Designed to flutter in the wind and turn heads, these tall advertising flags are printed on premium open-weave knit polyester to reduce wind load stress. Supported by composite fiberglass poles and a rotating ground spike or cross stand, they rotate 360 degrees to remain visible from any traffic direction.",
-        image: "/images/products/main page/feather_flag.png",
+        image: "/images/products/main%20page/feather_flag.png",
         price: "Starting at $54.37",
         config: {
           title: "Custom Feather Flags",
@@ -2489,7 +2489,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Vinyl Banners",
         description:
           "Our Custom Vinyl Banners are a versatile, heavy-duty signage solution for indoor and outdoor advertising. Constructed from durable 13oz gloss or 15oz premium matte PVC vinyl with heat-welded hems, they are fully waterproof and UV-resistant to survive the elements. Complete with pre-installed brass grommets or pole pockets for easy hanging, they are perfect for storefront openings, construction fences, and event banners.",
-        image: "/images/products/main page/vinyl_banner.png",
+        image: "/images/products/main%20page/vinyl_banner.png",
         price: "Starting at $12.99",
         config: {
           title: "Custom Vinyl Banners",
@@ -2498,7 +2498,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF ALL VINYL BANNERS - SHIPS NEXT DAY",
-          image: "/images/products/main page/vinyl_banner.png",
+          image: "/images/products/main%20page/vinyl_banner.png",
           ratingCount: "1530",
           ratingScore: "4.8",
           sizes: [
@@ -2550,7 +2550,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Business Cards",
         description:
           'Leave a lasting impression with premium Custom Business Cards. Printed on ultra-thick 14pt or 16pt cardstock with offset high-resolution printing, these standard 3.5" x 2" cards represent your business with absolute quality. Customize your finish with professional non-glare matte or high-gloss UV sheen, and choose single or double-sided layouts to distribute to tradeshow attendees, recruits, and new leads.',
-        image: "/images/products/main page/business_cards.png",
+        image: "/images/products/main%20page/business_cards.png",
         price: "Starting at $19.99",
         config: {
           title: "Custom Business Cards",
@@ -2559,9 +2559,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF ALL EVENT STATIONERY",
-          image: "/images/products/main page/business_cards.png",
+          image: "/images/products/main%20page/business_cards.png",
           images: [
-            "/images/products/main page/business_cards.png",
+            "/images/products/main%20page/business_cards.png",
             "/images/products/gallery/business_card_use_1.png",
             "/images/products/gallery/business_card_use_1.png",
             "/images/products/gallery/business_card_use_1.png",
@@ -2628,7 +2628,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Postcards",
         description:
           "Hand out rich, full-color Custom Postcards at your event table to advertise promotions, catalog your services, or distribute coupons. Printed in high definition on heavy 14pt gloss cover paper, they feel substantial and professional. Choose between matte or high-gloss front finishes and custom sizes to create flyers, handouts, or mailers that prompt action from potential clients.",
-        image: "/images/products/main page/postcard.png",
+        image: "/images/products/main%20page/postcard.png",
         price: "Starting at $14.99",
         config: {
           title: "Custom Postcards",
@@ -2637,7 +2637,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF ALL POSTCARDS AND HANDOUTS",
-          image: "/images/products/main page/postcard.png",
+          image: "/images/products/main%20page/postcard.png",
           ratingCount: "280",
           ratingScore: "4.8",
           sizes: [
@@ -2683,9 +2683,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     breadcrumbLabel: "Custom Decals",
     description:
       "Discover our full lineup of custom decal solutions, including vinyl decals, static clings, sticker sheets, and roll labels.",
-    heroImage: "/images/products/main page/nano hero signs section.png",
-    tabletHeroImage: "/images/products/main page/nano hero signs section.png",
-    mobileHeroImage: "/images/products/main page/nano hero signs section.png",
+    heroImage: "/images/products/main%20page/nano hero signs section.png",
+    tabletHeroImage: "/images/products/main%20page/nano hero signs section.png",
+    mobileHeroImage: "/images/products/main%20page/nano hero signs section.png",
     heroSubtitle: "Design It. Stick It. Leave Your Mark.",
     reviewRating: "4.9",
     reviewCount: "1,840",
@@ -2693,7 +2693,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
       "The custom window decals turned out perfectly! Extremely easy to apply without bubbles, and the resolution is incredibly sharp. Will buy again!",
     categoryDescriptionText:
       "Discover our full lineup of custom decal solutions, including vinyl decals, static clings, sticker sheets, and roll labels. Perfect for use indoors or out, our decals are built to last and ideal for everything from storefront displays to vehicle branding and promotional giveaways. Easily personalize your decals with our intuitive design tools by uploading your own artwork or choosing from our ready-made templates to get started today.",
-    categorySecondaryImage: "/images/products/main page/window_sign.png",
+    categorySecondaryImage: "/images/products/main%20page/custom_decals_desc.png",
     faqs: [
       {
         q: "What type of decal material should I choose?",
@@ -2913,7 +2913,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Window Decals",
         description:
           "Adhesive signage for business storefront windows and glass panels.",
-        image: "/images/products/main page/vinyl_sticker.png",
+        image: "/images/products/main%20page/vinyl_sticker.png",
         price: "Starting at $23.86",
         badge: "Best Seller",
         config: {
@@ -2923,9 +2923,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Decals",
           breadcrumbHref: "/custom-decals",
           promoText: "20% OFF STOREFRONT WINDOW DECALS",
-          image: "/images/products/main page/vinyl_sticker.png",
+          image: "/images/products/main%20page/vinyl_sticker.png",
           images: [
-            "/images/products/main page/vinyl_sticker.png",
+            "/images/products/main%20page/vinyl_sticker.png",
             "/images/products/gallery/vinyl_decal_use_1.png",
             "/images/products/gallery/vinyl_decal_use_1.png",
             "/images/products/gallery/vinyl_decal_use_1.png",
@@ -3141,7 +3141,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Sheet Stickers",
         description:
           "Multiple custom stickers printed on a flat sheet, perfect for retail labelling.",
-        image: "/images/products/main page/sticker_and_labels.png",
+        image: "/images/products/main%20page/sticker_and_labels.png",
         price: "Starting at $11.16",
         config: {
           title: "Custom Sheet Stickers",
@@ -3150,9 +3150,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Decals",
           breadcrumbHref: "/custom-decals",
           promoText: "20% OFF PRINTED STICKER SHEETS",
-          image: "/images/products/main page/sticker_and_labels.png",
+          image: "/images/products/main%20page/sticker_and_labels.png",
           images: [
-            "/images/products/main page/sticker_and_labels.png",
+            "/images/products/main%20page/sticker_and_labels.png",
             "/images/products/gallery/sticker_use_1.png",
             "/images/products/gallery/sticker_use_1.png",
             "/images/products/gallery/sticker_use_1.png",
@@ -3376,14 +3376,14 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     heroSubtitle: "Professional Print. Promoted Brand.",
     description:
       "Grow your business and look professional with customized business cards, flyers, and brochures.",
-    heroImage: "/images/products/main page/nano hero signs section.png",
+    heroImage: "/images/products/main%20page/nano hero signs section.png",
     reviewRating: "4.9",
     reviewCount: "1,150",
     reviewQuote:
       "The flyers and folded menus turned out absolutely gorgeous! Perfect color alignment with our corporate branding guidelines and the paper quality is very thick.",
     categoryDescriptionText:
       "Make a powerful statement with custom marketing materials that elevate your brand. From premium double-sided business cards and local door hangers to detailed brochures, rack cards, and tabletop displays, we offer a comprehensive suite of print products designed to help you stand out. Easily customize each piece with your brand colors, logos, and promotions using our professional design tools and template libraries.",
-    categorySecondaryImage: "/images/products/main page/business_cards.png",
+    categorySecondaryImage: "/images/products/main%20page/marketing_materials_desc.png",
     faqs: [
       {
         q: "What cardstock and paper options do you offer?",
@@ -3404,7 +3404,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Custom Business Cards",
         description:
           "Make a great first impression with premium custom business cards.",
-        image: "/images/products/main page/business_cards.png",
+        image: "/images/products/main%20page/business_cards.png",
         price: "Starting at $19.99 for 250",
         badge: "Corporate Choice",
         config: {
@@ -3414,7 +3414,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Marketing",
           breadcrumbHref: "/marketing-materials",
           promoText: "25% OFF ALL CORPORATE STATIONERY",
-          image: "/images/products/main page/business_cards.png",
+          image: "/images/products/main%20page/business_cards.png",
           ratingCount: "1120",
           ratingScore: "4.9",
           sizes: [
@@ -3594,7 +3594,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Custom Flyers",
         description:
           "Vibrant single or double sided flyers to promote events, menus, and packages.",
-        image: "/images/products/main page/custom_flyers.png",
+        image: "/images/products/main%20page/custom_flyers.png",
         price: "Starting at $19.99 for 50",
         badge: "Best Value",
         config: {
@@ -3604,7 +3604,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Marketing",
           breadcrumbHref: "/marketing-materials",
           promoText: "25% OFF BULK EVENT FLYERS",
-          image: "/images/products/main page/custom_flyers.png",
+          image: "/images/products/main%20page/custom_flyers.png",
           ratingCount: "430",
           ratingScore: "4.7",
           sizes: [
@@ -3670,7 +3670,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Folded Brochures",
         description:
           "Professional tri-fold or half-fold brochures to showcase your services, menus, and business details.",
-        image: "/images/products/main page/custom_brochures.png",
+        image: "/images/products/main%20page/custom_brochures.png",
         price: "Starting at $29.99 for 50",
         badge: "Corporate Choice",
         config: {
@@ -3680,7 +3680,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Marketing",
           breadcrumbHref: "/marketing-materials",
           promoText: "25% OFF FOLDED BUSINESS BROCHURES",
-          image: "/images/products/main page/custom_brochures.png",
+          image: "/images/products/main%20page/custom_brochures.png",
           ratingCount: "320",
           ratingScore: "4.8",
           sizes: [
@@ -4064,14 +4064,14 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     heroSubtitle: "Brand It. Share It. Grow It.",
     description:
       "Customize apparel, mugs, and trade show giveaways with your business branding.",
-    heroImage: "/images/products/main page/nano hero flag section.png",
+    heroImage: "/images/products/main%20page/nano hero flag section.png",
     reviewRating: "4.9",
     reviewCount: "1,480",
     reviewQuote:
       "We ordered 500 custom logo pens and a couple dozen ceramic mugs for our annual summit giveaway bags. The logo resolution is incredibly sharp and the mugs look amazing.",
     categoryDescriptionText:
       "Promote your business and look professional with customized promo swag. From screen-printed cotton t-shirts and ceramic coffee mugs to canvas tote bags, retractable logo pens, executive journals, keychains, and fridge magnets, we have everything you need to leave a lasting impression. All items are constructed with high-grade, durable materials designed to proudly showcase your brand.",
-    categorySecondaryImage: "/images/products/main page/coffee_mugs.png",
+    categorySecondaryImage: "/images/products/main%20page/promotional_products_desc.png",
     faqs: [
       {
         q: "Is there a minimum order quantity (MOQ) for promotional products?",
@@ -4092,7 +4092,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Custom T-Shirts",
         description:
           "Screen printed cotton shirts featuring your company logo or message.",
-        image: "/images/products/main page/custom_t_shirts.png",
+        image: "/images/products/main%20page/custom_t_shirts.png",
         price: "Starting at $14.99",
         badge: "Staff Wear",
         config: {
@@ -4102,7 +4102,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Promotional",
           breadcrumbHref: "/promotional-products",
           promoText: "25% OFF PROMOTIONAL MERCHANDISE",
-          image: "/images/products/main page/custom_t_shirts.png",
+          image: "/images/products/main%20page/custom_t_shirts.png",
           ratingCount: "740",
           ratingScore: "4.8",
           sizes: [
@@ -4175,7 +4175,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Coffee Mugs & Tumblers",
         description:
           "Vibrant ceramic coffee mugs and travel tumblers with your company logo.",
-        image: "/images/products/main page/coffee_mugs.png",
+        image: "/images/products/main%20page/coffee_mugs.png",
         price: "Starting at $4.99 each",
         badge: "Office Best-Seller",
         config: {
@@ -4185,7 +4185,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Promotional",
           breadcrumbHref: "/promotional-products",
           promoText: "25% OFF CUSTOM LOGO DRINKWARE",
-          image: "/images/products/main page/coffee_mugs.png",
+          image: "/images/products/main%20page/coffee_mugs.png",
           ratingCount: "840",
           ratingScore: "4.9",
           sizes: [
@@ -4237,7 +4237,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Canvas Tote Bags",
         description:
           "Durable cotton canvas tote bags custom printed with your logo.",
-        image: "/images/products/main page/canvas_tote_bags.png",
+        image: "/images/products/main%20page/canvas_tote_bags.png",
         price: "Starting at $5.99 each",
         config: {
           title: "Custom Canvas Tote Bags",
@@ -4246,7 +4246,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Promotional",
           breadcrumbHref: "/promotional-products",
           promoText: "25% OFF ECO-FRIENDLY PROM BAGS",
-          image: "/images/products/main page/canvas_tote_bags.png",
+          image: "/images/products/main%20page/canvas_tote_bags.png",
           ratingCount: "490",
           ratingScore: "4.8",
           sizes: [
@@ -4302,7 +4302,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Custom Logo Pens",
         description:
           "Retractable ballpoint writing guidelines, perfect for trade shows and lobbies.",
-        image: "/images/products/main page/custom_pens.png",
+        image: "/images/products/main%20page/custom_pens.png",
         price: "Starting at $0.89 each",
         badge: "Trade Show Choice",
         config: {
@@ -4312,7 +4312,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Promotional",
           breadcrumbHref: "/promotional-products",
           promoText: "25% OFF BULK LOGO WRITING PENS",
-          image: "/images/products/main page/custom_pens.png",
+          image: "/images/products/main%20page/custom_pens.png",
           ratingCount: "1250",
           ratingScore: "4.8",
           sizes: [
@@ -4383,7 +4383,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Custom Journals & Notebooks",
         description:
           "Pre-ruled journals and notebooks, perfect for client meetings and logs.",
-        image: "/images/products/main page/custom_notebooks.png",
+        image: "/images/products/main%20page/custom_notebooks.png",
         price: "Starting at $3.99 each",
         config: {
           title: "Custom Notebooks & Journals",
@@ -4392,7 +4392,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Promotional",
           breadcrumbHref: "/promotional-products",
           promoText: "25% OFF CUSTOM EXECUTIVE NOTEBOOKS",
-          image: "/images/products/main page/custom_notebooks.png",
+          image: "/images/products/main%20page/custom_notebooks.png",
           ratingCount: "380",
           ratingScore: "4.8",
           sizes: [
@@ -4444,7 +4444,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Custom Logo Keychains",
         description:
           "Acrylic and metallic keyring tags customized with your company logo.",
-        image: "/images/products/main page/custom_keychains.png",
+        image: "/images/products/main%20page/custom_keychains.png",
         price: "Starting at $1.29 each",
         config: {
           title: "Custom Logo Keychains",
@@ -4453,7 +4453,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Promotional",
           breadcrumbHref: "/promotional-products",
           promoText: "25% OFF CUSTOM ENGRAVED KEYCHAINS",
-          image: "/images/products/main page/custom_keychains.png",
+          image: "/images/products/main%20page/custom_keychains.png",
           ratingCount: "290",
           ratingScore: "4.7",
           sizes: [
@@ -4504,7 +4504,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Custom Fridge Magnets",
         description:
           "Flexible promo magnets, perfect for household fridges and direct mail.",
-        image: "/images/products/main page/custom_fridge_magnets.png",
+        image: "/images/products/main%20page/custom_fridge_magnets.png",
         price: "Starting at $0.49 each",
         badge: "Household Favorite",
         config: {
@@ -4514,7 +4514,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Promotional",
           breadcrumbHref: "/promotional-products",
           promoText: "25% OFF CUSTOM HOUSEHOLD MAGNETS",
-          image: "/images/products/main page/custom_fridge_magnets.png",
+          image: "/images/products/main%20page/custom_fridge_magnets.png",
           ratingCount: "710",
           ratingScore: "4.9",
           sizes: [
@@ -4566,9 +4566,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     heroSubtitle: "Built to Stand Out. Built to Last.",
     description:
       "From yard signs to premium acrylic, we print stunning custom signs fast. Choose your product, upload your design, and we ship next day.",
-    heroImage: "/images/products/main page/nano hero signs section.png",
-    tabletHeroImage: "/images/products/main page/nano hero signs section.png",
-    mobileHeroImage: "/images/products/main page/nano hero signs section.png",
+    heroImage: "/images/products/main%20page/nano hero signs section.png",
+    tabletHeroImage: "/images/products/main%20page/nano hero signs section.png",
+    mobileHeroImage: "/images/products/main%20page/nano hero signs section.png",
     reviewRating: "4.9",
     reviewCount: "8,420",
     reviewQuote:
@@ -4576,7 +4576,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     categoryDescriptionText:
       "Discover our complete lineup of custom sign solutions. From lightweight corrugated plastic yard signs that withstand any weather to premium acrylic and aluminum signs built for permanent installations. Whether you need a single sign for your business or thousands for a nationwide campaign, we deliver vibrant, full-color prints with next-day shipping.",
     categorySecondaryImage:
-      "https://ext.same-assets.com/1114826555/3799598245.png",
+      "/images/products/main%20page/custom_signs_desc.png",
     faqs: [
       {
         q: "What sign materials do you offer?",
@@ -4605,7 +4605,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Yard Signs",
         description:
           "Corrugated plastic signs perfect for lawns, events, and political campaigns.",
-        image: "/images/products/main page/signs.png",
+        image: "/images/products/main%20page/signs.png",
         price: "Starting at $3.99",
         badge: "Best Seller",
         config: {
@@ -4614,9 +4614,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
           promoText: "25% OFF Yard Signs + Free Shipping",
-          image: "/images/products/main page/signs.png",
+          image: "/images/products/main%20page/signs.png",
           images: [
-            "/images/products/main page/signs.png",
+            "/images/products/main%20page/signs.png",
             "/images/products/yard_sign_hover.png",
           ],
           ratingScore: "4.9",
@@ -4671,7 +4671,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Real Estate Panels",
         description:
           "Professional aluminum and coroplast panels for property listings.",
-        image: "/images/products/main page/Real_estate_panels.png",
+        image: "/images/products/main%20page/Real_estate_panels.png",
         price: "Starting at $12.99",
         badge: "Most Popular",
         config: {
@@ -4681,9 +4681,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
           promoText: "FREE SHIPPING on Real Estate Panel Orders",
-          image: "/images/products/main page/Real_estate_panels.png",
+          image: "/images/products/main%20page/Real_estate_panels.png",
           images: [
-            "/images/products/main page/Real_estate_panels.png",
+            "/images/products/main%20page/Real_estate_panels.png",
             "/images/products/gallery/real_estate_panels_in_action_1.png",
             "/images/products/gallery/real_estate_panels_in_action_2.png",
           ],
@@ -4725,7 +4725,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Aluminum Signs",
         description:
           "Durable rust-proof aluminum signs for indoor and outdoor use.",
-        image: "/images/products/main page/aluminum_sign.png",
+        image: "/images/products/main%20page/aluminum_sign.png",
         price: "Starting at $8.99",
         badge: "Heavy Duty",
         config: {
@@ -4735,9 +4735,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
           promoText: "20% OFF Aluminum Signs",
-          image: "/images/products/main page/aluminum_sign.png",
+          image: "/images/products/main%20page/aluminum_sign.png",
           images: [
-            "/images/products/main page/aluminum_sign.png",
+            "/images/products/main%20page/aluminum_sign.png",
             "/images/products/alum_sign_hover.png",
           ],
           ratingScore: "4.8",
@@ -4777,7 +4777,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "A-Frame Signs",
         description:
           "Portable sandwich board signs ideal for sidewalk and event advertising.",
-        image: "/images/products/main page/A-frame_sign.jpeg",
+        image: "/images/products/main%20page/A-frame_sign.jpeg",
         price: "Starting at $89.99",
         badge: "Eye-Catching",
         config: {
@@ -4787,9 +4787,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
           promoText: "FREE SHIPPING on A-Frame Signs",
-          image: "/images/products/main page/A-frame_sign.jpeg",
+          image: "/images/products/main%20page/A-frame_sign.jpeg",
           images: [
-            "/images/products/main page/A-frame_sign.jpeg",
+            "/images/products/main%20page/A-frame_sign.jpeg",
             "/images/products/aframe_sign_hover.png",
           ],
           ratingScore: "4.7",
@@ -4826,7 +4826,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Foam Board Signs",
         description:
           "Lightweight, professional indoor display signs for presentations and lobbies.",
-        image: "/images/products/main page/foam_board.jpeg",
+        image: "/images/products/main%20page/foam_board.jpeg",
         price: "Starting at $14.99",
         badge: "Indoor Favorite",
         config: {
@@ -4836,9 +4836,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
           promoText: "25% OFF Foam Board Signs",
-          image: "/images/products/main page/foam_board.jpeg",
+          image: "/images/products/main%20page/foam_board.jpeg",
           images: [
-            "/images/products/main page/foam_board.jpeg",
+            "/images/products/main%20page/foam_board.jpeg",
             "/images/products/foam_sign_hover.png",
           ],
           ratingScore: "4.8",
@@ -4877,7 +4877,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Acrylic Signs",
         description:
           "Premium clear or colored acrylic for a polished, modern look.",
-        image: "/images/products/main page/acrylic_sign.png",
+        image: "/images/products/main%20page/acrylic_sign.png",
         price: "Starting at $24.99",
         badge: "Premium",
         config: {
@@ -4887,9 +4887,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
           promoText: "NEW - Premium Acrylic Signs Now Available",
-          image: "/images/products/main page/acrylic_sign.png",
+          image: "/images/products/main%20page/acrylic_sign.png",
           images: [
-            "/images/products/main page/acrylic_sign.png",
+            "/images/products/main%20page/acrylic_sign.png",
             "/images/products/acryl_sign_hover.png",
           ],
           ratingScore: "4.9",
@@ -4927,7 +4927,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Coroplast Signs",
         description:
           "Waterproof corrugated plastic signs — the most versatile outdoor sign.",
-        image: "/images/products/main page/coroplast_sign.png",
+        image: "/images/products/main%20page/coroplast_sign.png",
         price: "Starting at $4.99",
         badge: "Waterproof",
         config: {
@@ -4937,9 +4937,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
           promoText: "BULK DISCOUNTS on Coroplast Signs",
-          image: "/images/products/main page/coroplast_sign.png",
+          image: "/images/products/main%20page/coroplast_sign.png",
           images: [
-            "/images/products/main page/coroplast_sign.png",
+            "/images/products/main%20page/coroplast_sign.png",
             "/images/products/coro_sign_hover.png",
           ],
           ratingScore: "4.8",
@@ -4978,7 +4978,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Window Signs",
         description:
           "Custom window clings, decals and perforated vinyl for storefronts.",
-        image: "/images/products/main page/window_sign.png",
+        image: "/images/products/main%20page/window_sign.png",
         price: "Starting at $9.99",
         badge: "Storefront",
         config: {
@@ -4988,9 +4988,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
           promoText: "20% OFF Window Signs",
-          image: "/images/products/main page/window_sign.png",
+          image: "/images/products/main%20page/window_sign.png",
           images: [
-            "/images/products/main page/window_sign.png",
+            "/images/products/main%20page/window_sign.png",
             "/images/products/wind_sign_hover.png",
           ],
           ratingScore: "4.8",
@@ -5028,7 +5028,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Parking Signs",
         description:
           "Regulatory and custom parking signs — aluminum or coroplast.",
-        image: "/images/products/main page/Parking_sign.jpeg",
+        image: "/images/products/main%20page/Parking_sign.jpeg",
         price: "Starting at $6.99",
         badge: "Ready to Ship",
         config: {
@@ -5038,9 +5038,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
           promoText: "FREE SHIPPING on Parking Signs",
-          image: "/images/products/main page/Parking_sign.jpeg",
+          image: "/images/products/main%20page/Parking_sign.jpeg",
           images: [
-            "/images/products/main page/Parking_sign.jpeg",
+            "/images/products/main%20page/Parking_sign.jpeg",
             "/images/products/park_sign_hover.png",
           ],
           ratingScore: "4.7",
@@ -5078,7 +5078,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Channel Letter Signs",
         description:
           "Premium 3D backlit and front-lit channel letters to make your business storefront stand out.",
-        image: "/images/products/main page/channel_letter_signs.png",
+        image: "/images/products/main%20page/channel_letter_signs.png",
         price: "Starting at $149.99",
         badge: "Premium",
         config: {
@@ -5088,9 +5088,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
           promoText: "✨ Modern LED Channel Letters — Professional Storefront Impact. Shipped Fast!",
-          image: "/images/products/main page/channel_letter_signs.png",
+          image: "/images/products/main%20page/channel_letter_signs.png",
           images: [
-            "/images/products/main page/channel_letter_signs.png",
+            "/images/products/main%20page/channel_letter_signs.png",
             "/images/products/gallery/channel_letter_storefront_1.png",
             "/images/products/gallery/channel_letter_storefront_2.png",
           ],
