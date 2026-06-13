@@ -4,8 +4,8 @@ import { ArrowUpDown } from "lucide-react";
 
 
 export const metadata: Metadata = {
-  title: "A-Frame Signs (Sandwich Boards) | Nano Signs",
-  description: "Portable, double-sided sidewalk signs that grab foot traffic and drive customers through your door.",
+  title: "A-Frame Sidewalk Signs Oakland Park FL | Nano Signs",
+  description: "Premium portable, double-sided sidewalk A-frame signs in Fort Lauderdale & Oakland Park FL. Grab foot traffic and drive customers through your door!",
   alternates: {
     canonical: "https://nanop.vercel.app/custom-signs/a-frame-signs",
   },

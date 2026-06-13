@@ -4,8 +4,8 @@ import { Layers } from "lucide-react";
 
 
 export const metadata: Metadata = {
-  title: "Custom Yard Signs | Nano Signs",
-  description: "Corrugated plastic signs that weather any storm — perfect for campaigns, events, and businesses.",
+  title: "Custom Yard Signs Oakland Park FL | Nano Signs",
+  description: "America's #1 custom corrugated plastic yard signs in Fort Lauderdale & Oakland Park FL. Campaign yard signs with wire H-stakes and fast turnaround.",
   alternates: {
     canonical: "https://nanop.vercel.app/custom-signs/yard-signs",
   },

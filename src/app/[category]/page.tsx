@@ -13,9 +13,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const decodedCategory = decodeURIComponent(category);
   const categoryData = PRODUCTS_REGISTRY[decodedCategory];
   if (!categoryData) return {};
+  
+  const title = `${categoryData.title} Oakland Park FL | Nano Signs`;
+  const description = categoryData.description
+    ? `Looking for ${categoryData.title.toLowerCase()} in Fort Lauderdale or Oakland Park? ${categoryData.description}`
+    : `High-quality custom ${categoryData.title.toLowerCase()} printing at Nano Signs in Oakland Park, FL. Call 305-967-1005 for a quote!`;
+
   return {
-    title: `${categoryData.title} | Nano Signs`,
-    description: categoryData.categoryDescriptionText || `High-quality custom ${categoryData.title} printing at Nano Signs.`,
+    title,
+    description: description.slice(0, 160), // Keep description within SEO limits
     alternates: {
       canonical: `https://nanop.vercel.app/${decodedCategory}`,
     },

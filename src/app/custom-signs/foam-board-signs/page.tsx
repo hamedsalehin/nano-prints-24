@@ -4,8 +4,8 @@ import { Lightbulb } from "lucide-react";
 
 
 export const metadata: Metadata = {
-  title: "Foam Board Signs | Nano Signs",
-  description: "Lightweight and professional indoor display signs for presentations, lobbies, and events.",
+  title: "Foam Board Signs Oakland Park FL | Nano Signs",
+  description: "Professional indoor foam board signs in Fort Lauderdale & Oakland Park FL. Premium lightweight prints for lobby displays, presentations, and events.",
   alternates: {
     canonical: "https://nanop.vercel.app/custom-signs/foam-board-signs",
   },

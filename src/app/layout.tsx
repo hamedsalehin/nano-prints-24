@@ -25,9 +25,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Nano Signs | Custom Signs, Banners & Flags | Oakland Park, FL",
+  title: "Custom Signs, Banners & Flags Oakland Park FL | Nano Signs",
   description:
-    "Nano Signs - Your trusted custom printing expert in Oakland Park, FL. Custom signs, banners, flags, stickers and more. Call 305-967-1005 for a quote!",
+    "Looking for custom signs, vinyl banners, vehicle wraps, or stickers in Fort Lauderdale & Oakland Park FL? Call Nano Signs at 305-967-1005 for fast 24h printing!",
   icons: {
     icon: "/images/nano logo O.png",
     apple: "/images/nano logo O.png",
@@ -55,6 +55,47 @@ export default function RootLayout({
             gtag('config', 'G-8N8L6WV8RE');
           `
         }} />
+        {/* Local Business Schema Markup */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "name": "Nano Signs",
+              "image": "https://nanop.vercel.app/images/nano%20logo%20complete.png",
+              "@id": "https://nanop.vercel.app/#localbusiness",
+              "url": "https://nanop.vercel.app",
+              "telephone": "305-967-1005",
+              "priceRange": "$$",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "4567 Powerline Rd",
+                "addressLocality": "Oakland Park",
+                "addressRegion": "FL",
+                "postalCode": "33309",
+                "addressCountry": "US"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 26.1835062,
+                "longitude": -80.1554943
+              },
+              "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday"
+                ],
+                "opens": "09:00",
+                "closes": "18:00"
+              }
+            })
+          }}
+        />
       </head>
       <ClientBody>{children}</ClientBody>
     </html>

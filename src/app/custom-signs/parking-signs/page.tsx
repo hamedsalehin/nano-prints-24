@@ -4,8 +4,8 @@ import { ParkingCircle } from "lucide-react";
 
 
 export const metadata: Metadata = {
-  title: "Custom Parking Signs | Nano Signs",
-  description: "Regulatory, reserved, and custom parking signs — aluminum or coroplast, ships next day.",
+  title: "Custom Parking & Traffic Signs Oakland Park FL | Nano Signs",
+  description: "Regulatory, reserved, and custom parking signs in Fort Lauderdale & Oakland Park FL. Rust-proof aluminum and coroplast signs with fast 24h turnaround.",
   alternates: {
     canonical: "https://nanop.vercel.app/custom-signs/parking-signs",
   },

@@ -4,8 +4,8 @@ import { Eye } from "lucide-react";
 
 
 export const metadata: Metadata = {
-  title: "Window Signs & Clings | Nano Signs",
-  description: "Custom window graphics, clings, perforated vinyl, and decals for storefronts and offices.",
+  title: "Custom Window Graphics & Decals Oakland Park FL",
+  description: "High-res window decals, perforated vinyl, and clings in Fort Lauderdale & Oakland Park FL. Professional storefront graphics with easy installation.",
   alternates: {
     canonical: "https://nanop.vercel.app/custom-signs/window-signs",
   },

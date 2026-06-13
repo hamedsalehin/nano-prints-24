@@ -19,9 +19,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!categoryData) return {};
   const productData = categoryData.products.find((p) => p.id === decodedProduct);
   if (!productData) return {};
+
+  const title = `${productData.name} Oakland Park FL | Nano Signs`;
+  const description = productData.description
+    ? `Custom ${productData.name.toLowerCase()} in Fort Lauderdale & Oakland Park FL. ${productData.description}`
+    : `Custom ${productData.name} design and high-quality printing at Nano Signs in Oakland Park, FL. Call 305-967-1005 for a quote!`;
+
   return {
-    title: `${productData.name} | Nano Signs`,
-    description: productData.description || `Custom ${productData.name} design and high-quality printing at Nano Signs.`,
+    title,
+    description: description.slice(0, 160),
     alternates: {
       canonical: `https://nanop.vercel.app/${decodedCategory}/${decodedProduct}`,
     },
