@@ -35,7 +35,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     heroSubtitle: "Big Impact. Quick Production. Durable.",
     description:
       "High-quality custom banners for any occasion. From outdoor vinyl to professional retractable displays, we have the perfect solution for your business or event.",
-    heroImage: "/images/products/main%20page/hero_banners.png",
+    heroImage: "/images/products/main%20page/banners_hero.png",
     reviewRating: "4.9",
     reviewCount: "2,680",
     reviewQuote:
@@ -749,7 +749,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Tabletop Retractables",
         description:
           "Miniature counter-top roll up banners for checkout registries and lobbies.",
-        image: "/images/products/main%20page/tabletop_retractable.png",
+        image: "/images/products/main%20page/tabletop_retractable.jpg",
         price: "Starting at $29.99",
         config: {
           title: "Tabletop Retractable Banners",
@@ -758,7 +758,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Banners",
           breadcrumbHref: "/custom-banners",
           promoText: "20% OFF TABLETOP RETRACTABLE DISPLAYS",
-          image: "/images/products/main%20page/tabletop_retractable.png",
+          image: "/images/products/main%20page/tabletop_retractable.jpg",
           ratingCount: "420",
           ratingScore: "4.8",
           sizes: [
@@ -1625,9 +1625,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     breadcrumbLabel: "Tradeshow",
     description:
       "Get trade show ready with custom products that make your brand stand out. Table covers, step and repeats, and stands.",
-    heroImage: "/images/products/main%20page/hero_banners.png",
-    tabletHeroImage: "/images/products/main%20page/hero_banners.png",
-    mobileHeroImage: "/images/products/main%20page/hero_banners.png",
+    heroImage: "/images/products/main%20page/tradeshow_hero.png",
+    tabletHeroImage: "/images/products/main%20page/tradeshow_hero.png",
+    mobileHeroImage: "/images/products/main%20page/tradeshow_hero.png",
     heroSubtitle: "Where First Impressions Get Noticed.",
     reviewRating: "4.9",
     reviewCount: "3,240",
@@ -2286,7 +2286,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         description:
           "Bring high-impact branding to counter-tops, checkout registers, hotel lobbies, and registration desks with Tabletop Retractable Banners. These miniature versions of our full-sized roll-up stands feature a compact aluminum base housing that pulls up and retracts in seconds. Printed on smooth, high-resolution polypropylene film, they ensure small details and text are clear and easy to read from a close distance.",
         image:
-          "/images/products/main%20page/tabletop_retractable.png",
+          "/images/products/main%20page/tabletop_retractable.jpg",
         price: "Starting at $27.18",
         config: {
           title: "Tabletop Retractable Banners",
@@ -2296,7 +2296,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF TABLETOP RETRACTABLE DISPLAYS",
           image:
-            "/images/products/main%20page/tabletop_retractable.png",
+            "/images/products/main%20page/tabletop_retractable.jpg",
           ratingCount: "420",
           ratingScore: "4.8",
           sizes: [
@@ -2726,7 +2726,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Bumper Stickers",
         description:
           "Classic adhesive labels for car bumpers and windows. High visibility branding.",
-        image: "/api/assets/0085810_bumper-stickers_360.png",
+        image: "/images/products/main%20page/bumper_sticker_product.png",
         price: "Starting at $2.24",
         badge: "Car Favorite",
         config: {
@@ -2736,7 +2736,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Decals",
           breadcrumbHref: "/custom-decals",
           promoText: "20% OFF BUMPER STICKERS - SHIPS NEXT DAY",
-          image: "/api/assets/0085810_bumper-stickers_360.png",
+          image: "/images/products/main%20page/bumper_sticker_product.png",
           ratingCount: "850",
           ratingScore: "4.8",
           sizes: [
@@ -2785,7 +2785,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Car Door Decals",
         description:
           "Adhesive door decals for car bodies. Durable semi-permanent advertising.",
-        image: "/api/assets/0085984_car-door-decals_360.png",
+        image: "/images/products/main%20page/car_door_decal_product.png",
         price: "Starting at $23.86",
         config: {
           title: "Custom Car Door Decals",
@@ -2794,7 +2794,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Decals",
           breadcrumbHref: "/custom-decals",
           promoText: "20% OFF SEMI-PERMANENT DOOR DECALS",
-          image: "/api/assets/0085984_car-door-decals_360.png",
+          image: "/images/products/main%20page/car_door_decal_product.png",
           ratingCount: "320",
           ratingScore: "4.7",
           sizes: [
@@ -2845,7 +2845,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Car Window Decals",
         description:
           "Rear and side window adhesive graphics, available in transparent and opaque materials.",
-        image: "/api/assets/0085990_car-window-decals_360.png",
+        image: "/images/products/main%20page/car_window_decal_product.png",
         price: "Starting at $23.86",
         config: {
           title: "Custom Car Window Decals",
@@ -2854,7 +2854,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Decals",
           breadcrumbHref: "/custom-decals",
           promoText: "20% OFF WINDOW ADHESIVE DECALS",
-          image: "/api/assets/0085990_car-window-decals_360.png",
+          image: "/images/products/main%20page/car_window_decal_product.png",
           ratingCount: "285",
           ratingScore: "4.8",
           sizes: [
@@ -3007,7 +3007,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Roll Labels",
         description:
           "Bulk promotional logo stickers printed on paper or plastic rolls, perfect for packaging.",
-        image: "/api/assets/0086594_roll-labels_360.png",
+        image: "/images/products/main%20page/roll_labels_product.png",
         price: "Starting at $0.54 each",
         config: {
           title: "Custom Printed Roll Labels",
@@ -3016,7 +3016,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Decals",
           breadcrumbHref: "/custom-decals",
           promoText: "20% OFF ALL BULK ROLL LABELS",
-          image: "/api/assets/0086594_roll-labels_360.png",
+          image: "/images/products/main%20page/roll_labels_product.png",
           ratingCount: "410",
           ratingScore: "4.8",
           sizes: [
@@ -3068,7 +3068,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         description:
           "Glueless static clings that stick to glass using static energy. Easy to reposition.",
         image:
-          "/api/assets/0085814_static-window-clings_360.png",
+          "/images/products/main%20page/window_clings_product.png",
         price: "Starting at $62.96",
         config: {
           title: "Static Window Clings",
@@ -3078,7 +3078,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/custom-decals",
           promoText: "20% OFF REPOSITIONABLE WINDOW CLINGS",
           image:
-            "/api/assets/0085814_static-window-clings_360.png",
+            "/images/products/main%20page/window_clings_product.png",
           ratingCount: "220",
           ratingScore: "4.7",
           sizes: [
@@ -3208,7 +3208,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         description:
           "Mini address stickers for envelope branding, packaging returns, and office logs.",
         image:
-          "/api/assets/0086632_return-address-labels_360.jpeg",
+          "/images/products/main%20page/return_address_labels_product.png",
         price: "Starting at $0.14 each",
         config: {
           title: "Return Address Labels",
@@ -3218,7 +3218,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumbHref: "/custom-decals",
           promoText: "20% OFF RETURN ADDRESS LABELS",
           image:
-            "/api/assets/0086632_return-address-labels_360.jpeg",
+            "/images/products/main%20page/return_address_labels_product.png",
           ratingCount: "480",
           ratingScore: "4.9",
           sizes: [
@@ -3748,7 +3748,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Door Hangers",
         description:
           "Targeted local advertising hangers that slip easily onto front door handles.",
-        image: "/api/assets/0086684_door-hangers_360.png",
+        image: "/images/products/main%20page/door_hangers.png",
         price: "Starting at $39.99 for 100",
         config: {
           title: "Custom Door Hangers",
@@ -3757,7 +3757,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           breadcrumb: "Marketing",
           breadcrumbHref: "/marketing-materials",
           promoText: "25% OFF BUSINESS DOOR HANGERS",
-          image: "/api/assets/0086684_door-hangers_360.png",
+          image: "/images/products/main%20page/door_hangers.png",
           ratingCount: "310",
           ratingScore: "4.8",
           sizes: [
@@ -3828,234 +3828,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           ctaLabel: "Customize Door Hangers",
         },
       },
-      {
-        id: "folders",
-        name: "Presentation Folders",
-        description:
-          "Branded pocket folders to organize and present documents and proposals.",
-        image:
-          "/api/assets/0086700_presentation-folders_360.png",
-        price: "Starting at $99.99 for 50",
-        badge: "Premium Choice",
-        config: {
-          title: "Presentation Folders",
-          subtitle:
-            '9" x 12" custom folders with inner pockets and business card slots.',
-          breadcrumb: "Marketing",
-          breadcrumbHref: "/marketing-materials",
-          promoText: "25% OFF PRESENTATION CORPORATE FOLDERS",
-          image:
-            "/api/assets/0086700_presentation-folders_360.png",
-          ratingCount: "220",
-          ratingScore: "4.7",
-          sizes: [
-            {
-              label: '9" x 12" Standard Folder',
-              value: "9x12",
-              basePrice: 99.99,
-            },
-          ],
-          selects: [
-            {
-              label: "Pocket Configuration",
-              options: [
-                {
-                  label: "Two Pockets (Left & Right)",
-                  value: "two_pockets",
-                  priceAdder: 0,
-                },
-                {
-                  label: "One Pocket (Right Side Only)",
-                  value: "one_pocket",
-                  priceAdder: -10.0,
-                },
-              ],
-            },
-            {
-              label: "Business Card Slots",
-              options: [
-                {
-                  label: "Slits on Right Pocket",
-                  value: "right_only",
-                  priceAdder: 0,
-                },
-                {
-                  label: "Slits on Both Pockets",
-                  value: "both_pockets",
-                  priceAdder: 2.5,
-                },
-                { label: "No Card Slits", value: "none", priceAdder: 0 },
-              ],
-            },
-          ],
-          qtyDiscount: "Save on office packs of 100+",
-          keyFeatures: [
-            "Deep 4-inch inner pockets",
-            "Standard pre-cut business card slots",
-            "Thick premium semi-gloss stock",
-          ],
-          useCases: [
-            "Corporate presentations",
-            "Real estate contract folders",
-            "Educational package folders",
-            "Client proposal folders",
-          ],
-          specs: [
-            { key: "Closed Size", value: "9 inches x 12 inches" },
-            { key: "Open Size", value: "18 inches x 12 inches" },
-            { key: "Pocket Height", value: "4 inches" },
-          ],
-          faqs: [],
-          reviews: [],
-          ctaHeading: "Organize client paperwork",
-          ctaBody: "Design professional pocket folders with corporate logos.",
-          ctaLabel: "Customize Folders",
-        },
-      },
-      {
-        id: "rack-cards",
-        name: "Rack Cards",
-        description:
-          "Sleek vertical cards designed for display racks in hotel lobbies and cafes.",
-        image: "/api/assets/0086692_rack-cards_360.png",
-        price: "Starting at $19.99 for 50",
-        config: {
-          title: "Custom Rack Cards",
-          subtitle:
-            'Standard 4" x 9" vertical cards printed on high durability thick cardstock.',
-          breadcrumb: "Marketing",
-          breadcrumbHref: "/marketing-materials",
-          promoText: "25% OFF COMPACT RACK CARDS",
-          image: "/api/assets/0086692_rack-cards_360.png",
-          ratingCount: "340",
-          ratingScore: "4.8",
-          sizes: [
-            {
-              label: '4" x 9" Standard Vertical Card',
-              value: "4x9",
-              basePrice: 19.99,
-            },
-          ],
-          selects: [
-            {
-              label: "Cardstock Weight & Finish",
-              options: [
-                {
-                  label: "14pt Glossy Cover",
-                  value: "14pt_gloss",
-                  priceAdder: 0,
-                },
-                {
-                  label: "14pt Smooth Matte",
-                  value: "14pt_matte",
-                  priceAdder: 0,
-                },
-                {
-                  label: "16pt Heavyweight Cardstock",
-                  value: "16pt_premium",
-                  priceAdder: 3.5,
-                },
-              ],
-            },
-            {
-              label: "Print Layout",
-              options: [
-                { label: "Single Sided", value: "single_sided", priceAdder: 0 },
-                {
-                  label: "Double Sided",
-                  value: "double_sided",
-                  priceAdder: 5.0,
-                },
-              ],
-            },
-          ],
-          qtyDiscount: "Volume tourist display tiers apply",
-          keyFeatures: [
-            "Perfect 4x9 sizing fits standard tourist racks",
-            "Thick sturdy build stands upright",
-            "Rich double-sided print available",
-          ],
-          useCases: [
-            "Tourism brochures & guides",
-            "Hotel lobby advertisements",
-            "Restaurant display menus",
-            "Retail pricing lists",
-          ],
-          specs: [
-            { key: "Sizing", value: "4 inches wide x 9 inches tall" },
-            { key: "Paper", value: "14pt or 16pt cardstock" },
-          ],
-          faqs: [],
-          reviews: [],
-          ctaHeading: "Get featured in tourism racks",
-          ctaBody:
-            "Create beautiful vertical rack cards with layouts and maps.",
-          ctaLabel: "Customize Rack Cards",
-        },
-      },
-      {
-        id: "table-tents",
-        name: "Table Tents",
-        description:
-          "Double-sided self-standing table displays, ideal for restaurants and reception desks.",
-        image: "/api/assets/0086720_table-tents_360.png",
-        price: "Starting at $49.99 for 50",
-        badge: "Hospitality Favorite",
-        config: {
-          title: "Custom Table Tents",
-          subtitle:
-            "Self-standing three-dimensional table tents. Pre-scored with interlocking bottom tabs.",
-          breadcrumb: "Marketing",
-          breadcrumbHref: "/marketing-materials",
-          promoText: "25% OFF COUNTERTOP TABLE TENTS",
-          image: "/api/assets/0086720_table-tents_360.png",
-          ratingCount: "190",
-          ratingScore: "4.8",
-          sizes: [
-            { label: '4" x 6" Display Face', value: "4x6", basePrice: 49.99 },
-            { label: '5" x 7" Display Face', value: "5x7", basePrice: 59.99 },
-          ],
-          selects: [
-            {
-              label: "Base Materials",
-              options: [
-                {
-                  label: "14pt Glossy Cover",
-                  value: "14pt_gloss",
-                  priceAdder: 0,
-                },
-                {
-                  label: "14pt Matte Cover",
-                  value: "14pt_matte",
-                  priceAdder: 0,
-                },
-              ],
-            },
-          ],
-          qtyDiscount: "Volume savings for hospitality packages",
-          keyFeatures: [
-            "Pre-scored lines fold up in seconds",
-            "Interlocking tabs lock base without tape",
-            "Double-sided prints show messages on both sides",
-          ],
-          useCases: [
-            "Restaurant special menus",
-            "Bar drink promotions",
-            "Hotel checkout counter info",
-            "Conference desk name plates",
-          ],
-          specs: [
-            { key: "Assembly", value: "Shipped flat, scored folding tabs" },
-            { key: "Print", value: "Double sided outer surface" },
-          ],
-          faqs: [],
-          reviews: [],
-          ctaHeading: "Promote directly on tables",
-          ctaBody:
-            "Design self-standing table tent cards for specials and drinks.",
-          ctaLabel: "Customize Table Tents",
-        },
-      },
+
+
+
     ],
   },
   "promotional-products": {
