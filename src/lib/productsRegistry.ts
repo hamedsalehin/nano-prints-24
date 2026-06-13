@@ -2683,9 +2683,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     breadcrumbLabel: "Custom Decals",
     description:
       "Discover our full lineup of custom decal solutions, including vinyl decals, static clings, sticker sheets, and roll labels.",
-    heroImage: "/images/products/main%20page/nano hero signs section.png",
-    tabletHeroImage: "/images/products/main%20page/nano hero signs section.png",
-    mobileHeroImage: "/images/products/main%20page/nano hero signs section.png",
+    heroImage: "/images/products/main%20page/stickers%20%26%20decals%20hero%20image.png",
+    tabletHeroImage: "/images/products/main%20page/stickers%20%26%20decals%20hero%20image.png",
+    mobileHeroImage: "/images/products/main%20page/stickers%20%26%20decals%20hero%20image.png",
     heroSubtitle: "Design It. Stick It. Leave Your Mark.",
     reviewRating: "4.9",
     reviewCount: "1,840",
