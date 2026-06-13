@@ -35,7 +35,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     heroSubtitle: "Big Impact. Quick Production. Durable.",
     description:
       "High-quality custom banners for any occasion. From outdoor vinyl to professional retractable displays, we have the perfect solution for your business or event.",
-    heroImage: "/images/products/main%20page/banners_hero.png",
+    heroImage: "/images/products/main%20page/banners%20hero%20image.png",
     reviewRating: "4.9",
     reviewCount: "2,680",
     reviewQuote:
@@ -1625,9 +1625,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     breadcrumbLabel: "Tradeshow",
     description:
       "Get trade show ready with custom products that make your brand stand out. Table covers, step and repeats, and stands.",
-    heroImage: "/images/products/main%20page/tradeshow_hero.png",
-    tabletHeroImage: "/images/products/main%20page/tradeshow_hero.png",
-    mobileHeroImage: "/images/products/main%20page/tradeshow_hero.png",
+    heroImage: "/images/products/main%20page/tradeshow%20hero%20image.png",
+    tabletHeroImage: "/images/products/main%20page/tradeshow%20hero%20image.png",
+    mobileHeroImage: "/images/products/main%20page/tradeshow%20hero%20image.png",
     heroSubtitle: "Where First Impressions Get Noticed.",
     reviewRating: "4.9",
     reviewCount: "3,240",
