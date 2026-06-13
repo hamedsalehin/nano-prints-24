@@ -35,8 +35,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     heroSubtitle: "Big Impact. Quick Production. Durable.",
     description:
       "High-quality custom banners for any occasion. From outdoor vinyl to professional retractable displays, we have the perfect solution for your business or event.",
-    heroImage:
-      "/api/assets/images/uploaded/Banner/BAS_WEB_01292025_Nav_Megamenu_Banner_V5.jpg",
+    heroImage: "/images/products/main page/hero_banners.png",
     reviewRating: "4.9",
     reviewCount: "2,680",
     reviewQuote:
@@ -827,9 +826,8 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     reviewQuote:
       "The feather flags are so vibrant and eye-catching! Setup was effortless and they've survived multiple rainstorms without any fading.",
     categoryDescriptionText:
-      "Discover custom flags that make your message stand tall or fly high. From feather and teardrop flags to standard hanging flags and pennants, we offer styles for every setting. Each flag is fully customizable and built for durability, whether displayed indoors or out. Enhance your display with our selection of bases and mounting accessories, including drive-over stands, handheld flagpoles, and adjustable brackets. With simple design tools and fast production, it's easy to create flags that get noticed.",
-    categorySecondaryImage:
-      "/api/assets/images/uploaded/BAS_WEB_071125_Category_Flags_Secondary.jpg",
+      "Draw crowds and increase outdoor visibility with premium custom flags printed to last. Designed to withstand wind, rain, and intense sun, our custom advertising flags are constructed from lightweight, high-density knit polyester that ensures rich colors and single or double-sided visibility. Complete with heavy-duty composite fiberglass poles and ground stakes or solid steel cross stands.",
+    categorySecondaryImage: "/images/products/main page/feather_flag.png",
     faqs: [
       {
         q: "What types of custom flags do you offer?",
@@ -1264,8 +1262,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
       "Our fleet car magnets look incredibly professional. They stick perfectly at highway speeds and the print quality is showroom-grade.",
     categoryDescriptionText:
       "Make every commute count with durable vehicle signs custom-built to stand out. Nano Signs provides the options you need, from removable vehicle magnets and regulation door decals to bumper stickers and license plates. All vehicle products are constructed from high-grade vinyl and magnetic sheeting designed to hold tight at highway speeds and resist sun damage.",
-    categorySecondaryImage:
-      "/api/assets/images/uploaded/BAS_WEB_071125_Category_Vehicle_Secondary.jpg",
+    categorySecondaryImage: "/images/products/main page/vehicle_magnets.png",
     faqs: [
       {
         q: "Will car magnets stick to aluminum vehicle panels?",
@@ -1628,12 +1625,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     breadcrumbLabel: "Tradeshow",
     description:
       "Get trade show ready with custom products that make your brand stand out. Table covers, step and repeats, and stands.",
-    heroImage:
-      "/api/assets/0083714_BAS_WEB_071125_Category_Tradeshow_MCA_Desktop.jpeg",
-    tabletHeroImage:
-      "/api/assets/0083715_BAS_WEB_071125_Category_Tradeshow_MCA_Tablet.jpeg",
-    mobileHeroImage:
-      "/api/assets/0083717_BAS_WEB_071125_Category_Tradeshow_MCA_Mobile.jpeg",
+    heroImage: "/images/products/main page/hero_banners.png",
+    tabletHeroImage: "/images/products/main page/hero_banners.png",
+    mobileHeroImage: "/images/products/main page/hero_banners.png",
     heroSubtitle: "Where First Impressions Get Noticed.",
     reviewRating: "4.9",
     reviewCount: "3,240",
@@ -1641,8 +1635,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
       "The table cover and pop-up backdrop banner printed beautifully! Setup took seconds and our logo colors matched perfectly.",
     categoryDescriptionText:
       "Your tradeshow booth should do more than fill space, it should tell your brand story. With a full range of customizable displays, signage, and print materials, we help you make every event count. From table covers to backdrops, banners to business cards, our products are designed to build cohesion, attract attention, and drive engagement. Whether you're setting up for a local fair or a national expo, we've got everything you need to show up strong and stay top of mind.",
-    categorySecondaryImage:
-      "/api/assets/images/uploaded/Redesign/NPIB-34422-Tradeshow-Hero-001_en-gb.png",
+    categorySecondaryImage: "/images/products/main page/pop_up_display.png",
     faqs: [
       {
         q: "Can I customize designs with my logo and brand colors?",
@@ -2690,9 +2683,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     breadcrumbLabel: "Custom Decals",
     description:
       "Discover our full lineup of custom decal solutions, including vinyl decals, static clings, sticker sheets, and roll labels.",
-    heroImage: "/api/assets/0084348_Desktop.jpeg",
-    tabletHeroImage: "/api/assets/0084349_Tablet.jpeg",
-    mobileHeroImage: "/api/assets/0084350_Mobile.jpeg",
+    heroImage: "/images/products/main page/nano hero signs section.png",
+    tabletHeroImage: "/images/products/main page/nano hero signs section.png",
+    mobileHeroImage: "/images/products/main page/nano hero signs section.png",
     heroSubtitle: "Design It. Stick It. Leave Your Mark.",
     reviewRating: "4.9",
     reviewCount: "1,840",
@@ -2700,8 +2693,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
       "The custom window decals turned out perfectly! Extremely easy to apply without bubbles, and the resolution is incredibly sharp. Will buy again!",
     categoryDescriptionText:
       "Discover our full lineup of custom decal solutions, including vinyl decals, static clings, sticker sheets, and roll labels. Perfect for use indoors or out, our decals are built to last and ideal for everything from storefront displays to vehicle branding and promotional giveaways. Easily personalize your decals with our intuitive design tools by uploading your own artwork or choosing from our ready-made templates to get started today.",
-    categorySecondaryImage:
-      "/api/assets/images/uploaded/Redesign/BAS_WEB_Redesign_Category_DecalsClings_Secondary.jpg",
+    categorySecondaryImage: "/images/products/main page/window_sign.png",
     faqs: [
       {
         q: "What type of decal material should I choose?",
@@ -3384,16 +3376,14 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     heroSubtitle: "Professional Print. Promoted Brand.",
     description:
       "Grow your business and look professional with customized business cards, flyers, and brochures.",
-    heroImage:
-      "/api/assets/images/uploaded/Redesign/BAS_WEB_Redesign_Category_DecalsClings_Secondary.jpg",
+    heroImage: "/images/products/main page/nano hero signs section.png",
     reviewRating: "4.9",
     reviewCount: "1,150",
     reviewQuote:
       "The flyers and folded menus turned out absolutely gorgeous! Perfect color alignment with our corporate branding guidelines and the paper quality is very thick.",
     categoryDescriptionText:
       "Make a powerful statement with custom marketing materials that elevate your brand. From premium double-sided business cards and local door hangers to detailed brochures, rack cards, and tabletop displays, we offer a comprehensive suite of print products designed to help you stand out. Easily customize each piece with your brand colors, logos, and promotions using our professional design tools and template libraries.",
-    categorySecondaryImage:
-      "/api/assets/images/uploaded/Redesign/NPIB-34422-Tradeshow-Hero-001_en-gb.png",
+    categorySecondaryImage: "/images/products/main page/business_cards.png",
     faqs: [
       {
         q: "What cardstock and paper options do you offer?",
@@ -4074,16 +4064,14 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     heroSubtitle: "Brand It. Share It. Grow It.",
     description:
       "Customize apparel, mugs, and trade show giveaways with your business branding.",
-    heroImage:
-      "/api/assets/images/uploaded/BAS_WEB_071125_Category_Flags_Secondary.jpg",
+    heroImage: "/images/products/main page/nano hero flag section.png",
     reviewRating: "4.9",
     reviewCount: "1,480",
     reviewQuote:
       "We ordered 500 custom logo pens and a couple dozen ceramic mugs for our annual summit giveaway bags. The logo resolution is incredibly sharp and the mugs look amazing.",
     categoryDescriptionText:
       "Promote your business and look professional with customized promo swag. From screen-printed cotton t-shirts and ceramic coffee mugs to canvas tote bags, retractable logo pens, executive journals, keychains, and fridge magnets, we have everything you need to leave a lasting impression. All items are constructed with high-grade, durable materials designed to proudly showcase your brand.",
-    categorySecondaryImage:
-      "/api/assets/images/uploaded/Redesign/BAS_WEB_Redesign_Category_DecalsClings_Secondary.jpg",
+    categorySecondaryImage: "/images/products/main page/coffee_mugs.png",
     faqs: [
       {
         q: "Is there a minimum order quantity (MOQ) for promotional products?",
