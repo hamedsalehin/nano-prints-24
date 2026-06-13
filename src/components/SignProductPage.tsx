@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { useCart } from "./CartContext";
 import { supabase } from "@/lib/supabaseClient";
+import { useAuth } from "./AuthContext";
 
 /* ─── Generic Types ─────────────────────────────── */
 export interface SizeOption {
@@ -173,6 +174,7 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const { addItem } = useCart();
+  const { user, setShowAuthModal } = useAuth();
 
   const [pdfUploading, setPdfUploading] = useState(false);
   const [pdfUrl, setPdfUrl] = useState<string | null>(null);
@@ -182,6 +184,13 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
   const handlePdfUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
+
+    if (!user) {
+      setPdfError("Please sign in or create an account to upload your design.");
+      setShowAuthModal(true);
+      e.target.value = "";
+      return;
+    }
 
     const allowedTypes = [
       "application/pdf",
@@ -884,6 +893,13 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
                     type="file"
                     accept=".pdf,.png,.jpg,.jpeg"
                     onChange={handlePdfUpload}
+                    onClick={(e) => {
+                      if (!user) {
+                        e.preventDefault();
+                        setPdfError("Please sign in or create an account to upload your design.");
+                        setShowAuthModal(true);
+                      }
+                    }}
                     id="pdf-upload-input"
                     className="hidden"
                     disabled={pdfUploading}

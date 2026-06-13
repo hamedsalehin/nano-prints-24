@@ -58,10 +58,11 @@ insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_typ
 
 -- ── 4. Storage Policies ──────────────────────────────────────
 drop policy if exists "Auth users can upload designs"  on storage.objects;
+drop policy if exists "Anyone can upload designs"      on storage.objects;
 drop policy if exists "Anyone can read designs"        on storage.objects;
 drop policy if exists "Users can delete own designs"   on storage.objects;
 
--- Allow any authenticated user to upload
+-- Allow any authenticated user to upload designs
 create policy "Auth users can upload designs"
   on storage.objects for insert
   with check (
@@ -163,3 +164,68 @@ create policy "Anyone can update discount claims"
   using (true);
 
 
+-- ── 7. Quote Requests Table ───────────────────────────────────
+-- Create table to track custom quote requests
+create table if not exists public.quote_requests (
+  id          uuid        primary key default gen_random_uuid(),
+  full_name   text        not null,
+  email       text        not null,
+  phone       text        not null,
+  description text        not null,
+  width       text,
+  height      text,
+  quantity    int         not null default 1,
+  file_url    text,
+  created_at  timestamptz not null default now()
+);
+
+-- Enable Row Level Security (RLS)
+alter table public.quote_requests enable row level security;
+
+-- Drop existing policies if any to prevent conflicts on re-run
+drop policy if exists "Anyone can insert quote requests" on public.quote_requests;
+drop policy if exists "Anyone can view quote requests"   on public.quote_requests;
+
+-- Create policies to allow public insertion and viewing
+create policy "Anyone can insert quote requests"
+  on public.quote_requests for insert
+  with check (true);
+
+create policy "Anyone can view quote requests"
+  on public.quote_requests for select
+  using (true);
+
+
+-- ── 8. Quote Attachments Storage Bucket ───────────────────────
+-- Manually create this or run this script to ensure the bucket exists
+insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
+  values (
+    'quote-attachments',
+    'quote-attachments',
+    true,
+    26214400,  -- 25 MB limit
+    array['application/pdf','image/png','image/jpeg','image/jpg']
+  )
+  on conflict (id) do update set
+    public             = true,
+    file_size_limit    = 26214400,
+    allowed_mime_types = array['application/pdf','image/png','image/jpeg','image/jpg'];
+
+
+-- ── 9. Quote Attachments Storage Policies ─────────────────────
+drop policy if exists "Anyone can upload quote attachments"   on storage.objects;
+drop policy if exists "Auth users can upload quote attachments" on storage.objects;
+drop policy if exists "Anyone can read quote attachments"     on storage.objects;
+
+-- Allow any authenticated user to upload quote attachments
+create policy "Auth users can upload quote attachments"
+  on storage.objects for insert
+  with check (
+    bucket_id = 'quote-attachments'
+    and auth.role() = 'authenticated'
+  );
+
+-- Allow public read
+create policy "Anyone can read quote attachments"
+  on storage.objects for select
+  using (bucket_id = 'quote-attachments');

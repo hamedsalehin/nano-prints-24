@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { supabase } from "@/lib/supabaseClient";
+import { useAuth } from "@/components/AuthContext";
 import {
   UploadCloud,
   Loader2,
@@ -20,6 +21,7 @@ import {
 } from "lucide-react";
 
 export default function GetQuotePage() {
+  const { user, setShowAuthModal } = useAuth();
   // Form states
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -44,6 +46,13 @@ export default function GetQuotePage() {
   const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0];
     if (!selectedFile) return;
+
+    if (!user) {
+      setFileError("Please sign in or create an account to upload artwork.");
+      setShowAuthModal(true);
+      e.target.value = "";
+      return;
+    }
 
     // Validate size (max 25MB)
     if (selectedFile.size > 25 * 1024 * 1024) {
@@ -289,6 +298,13 @@ export default function GetQuotePage() {
                           type="file"
                           accept="application/pdf,image/png,image/jpeg,image/jpg"
                           onChange={handleFileChange}
+                          onClick={(e) => {
+                            if (!user) {
+                              e.preventDefault();
+                              setFileError("Please sign in or create an account to upload artwork.");
+                              setShowAuthModal(true);
+                            }
+                          }}
                           disabled={fileUploading}
                           className="absolute inset-0 opacity-0 cursor-pointer w-full h-full"
                         />
