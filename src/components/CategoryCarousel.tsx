@@ -67,9 +67,9 @@ export function CategoryCarousel() {
   };
 
   return (
-    <section className="pt-0 pb-3 md:pt-0 md:pb-6 bg-white border-b border-pink-50">
+    <section className="pt-3 pb-3 md:pt-6 md:pb-6 bg-white border-b border-pink-50">
       <div className="w-full px-6 md:px-16 lg:px-24 xl:px-32">
-        <h2 className="font-poppins text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold mb-4 md:mb-6 tracking-tight pink-cyan-text">
+        <h2 className="font-poppins text-lg sm:text-xl md:text-2xl lg:text-3xl font-extrabold mb-2 md:mb-4 tracking-tight pink-cyan-text">
           Custom Signs for Every Need
         </h2>
 
@@ -125,15 +125,6 @@ export function CategoryCarousel() {
                 </p>
               </Link>
             ))}
-          </div>
-
-          {/* Progress bar */}
-          <div className="mt-2 flex justify-center gap-1.5">
-            <div
-              className="w-20 h-1.5 rounded-full"
-              style={{ background: "linear-gradient(90deg, #ff2d78, #00e5ff)" }}
-            />
-            <div className="w-20 h-1.5 bg-gray-200 rounded-full" />
           </div>
         </div>
       </div>
