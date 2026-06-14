@@ -1,3 +1,5 @@
+
+
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
@@ -273,9 +275,8 @@ export function CustomerHighlights() {
             }}
           >
             <div
-              className={`relative max-w-full max-h-[75vh] flex items-center justify-center transition-transform duration-200 ${
-                isDragging ? "cursor-grabbing" : scale > 1 ? "cursor-grab" : ""
-              }`}
+              className={`relative max-w-full max-h-[75vh] flex items-center justify-center transition-transform duration-200 ${isDragging ? "cursor-grabbing" : scale > 1 ? "cursor-grab" : ""
+                }`}
               style={{
                 transform: `translate(${offset.x}px, ${offset.y}px) scale(${scale})`,
                 transition: isDragging

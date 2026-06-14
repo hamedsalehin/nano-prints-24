@@ -1,7 +1,7 @@
 import Image from "next/image";
 import {
   Facebook,
-  Twitter,
+  Instagram,
   Linkedin,
   Youtube,
   MapPin,
@@ -64,10 +64,10 @@ const bottomLinks = [
 ];
 
 const socialIcons = [
-  { Icon: Facebook, name: "Facebook" },
-  { Icon: Twitter, name: "Twitter" },
-  { Icon: Linkedin, name: "LinkedIn" },
-  { Icon: Youtube, name: "YouTube" },
+  { Icon: Facebook, name: "Facebook", href: "https://facebook.com/signsnano" },
+  { Icon: Instagram, name: "Instagram", href: "https://instagram.com/nanosigns" },
+  { Icon: Linkedin, name: "LinkedIn", href: "#" },
+  { Icon: Youtube, name: "YouTube", href: "#" },
 ];
 
 export function Footer({ light = false }: { light?: boolean } = {}) {
@@ -157,7 +157,9 @@ export function Footer({ light = false }: { light?: boolean } = {}) {
               {socialIcons.map((social, i) => (
                 <a
                   key={i}
-                  href="#"
+                  href={social.href}
+                  target={social.href !== "#" ? "_blank" : undefined}
+                  rel={social.href !== "#" ? "noopener noreferrer" : undefined}
                   className={`social-icon-hover p-2 rounded-full ${light ? "bg-slate-200 border border-slate-350" : ""}`}
                   aria-label={social.name}
                 >

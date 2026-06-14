@@ -7,7 +7,7 @@ const favorites = [
     name: "Retractable Banners",
     image: "/images/customer-favorites/retractable_banners.jpeg",
     href: "/custom-banners/roll-up-banners",
-    rating: 4,
+    rating: 5,
   },
   {
     name: "Feather Flags",
