@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { X, Gift, Mail, ArrowRight, CheckCircle2, AlertCircle, Sparkles, HelpCircle } from "lucide-react";
 import { supabase } from "@/lib/supabaseClient";
+import { usePathname } from "next/navigation";
 
 export function PromotionalModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -107,6 +108,11 @@ export function PromotionalModal() {
     setIsMinimized(false);
     setIsOpen(true);
   };
+
+  const pathname = usePathname();
+  if (pathname === "/design" || pathname?.startsWith("/PrintDesignExperience")) {
+    return null;
+  }
 
   if (!isOpen && !isMinimized) return null;
 

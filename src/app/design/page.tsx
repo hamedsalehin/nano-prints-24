@@ -17,6 +17,7 @@ import {
   ShieldCheck,
   ShoppingCart,
   ChevronRight,
+  ChevronDown,
   ArrowLeft,
   Check,
   Sparkles,
@@ -31,6 +32,8 @@ import {
 import { DesignCanvas, CanvasElement } from "@/components/DesignCanvas";
 import { ClipartLibrary, ClipartItem } from "@/components/ClipartLibrary";
 import { useAuth } from "@/components/AuthContext";
+import { PRODUCTS_REGISTRY } from "@/lib/productsRegistry";
+import { useCart } from "@/components/CartContext";
 
 // Product templates
 const PRESET_TEMPLATES = [
@@ -550,6 +553,19 @@ function DesignPageContent() {
   const urlWidth = searchParams.get("width");
   const urlHeight = searchParams.get("height");
 
+  const { addItem } = useCart();
+
+  const registryProduct = React.useMemo(() => {
+    if (!productId) return null;
+    for (const category of Object.values(PRODUCTS_REGISTRY)) {
+      const found = category.products.find((p) => p.id === productId);
+      if (found) return found;
+    }
+    return null;
+  }, [productId]);
+
+  const [selectValues, setSelectValues] = useState<Record<string, any>>({});
+
   const availableTemplates = React.useMemo(() => {
     if (productId === "rollup" || urlHeight === "79") {
       return ROLLUP_TEMPLATES;
@@ -691,6 +707,30 @@ function DesignPageContent() {
         basePrice: 93.27,
         desc: "Classic, durable, and fade-resistant.",
       });
+    } else if (registryProduct) {
+      const defaultSize = registryProduct.config.sizes[0];
+      let initialSize = defaultSize;
+      
+      if (urlWidth && urlHeight) {
+        const matched = registryProduct.config.sizes.find(s => {
+          const parts = s.value.split('x');
+          return parts.includes(urlWidth) && parts.includes(urlHeight);
+        });
+        if (matched) {
+          initialSize = matched;
+        }
+      }
+      
+      const parts = initialSize.value.split('x');
+      const h = parseInt(parts[0]) || 2;
+      const w = parseInt(parts[1]) || 3.5;
+      
+      setCanvasSize({
+        label: initialSize.label,
+        width: w,
+        height: h,
+        priceAdder: initialSize.basePrice - defaultSize.basePrice,
+      });
     } else if (urlWidth && urlHeight) {
       const w = parseInt(urlWidth) || 24;
       const h = parseInt(urlHeight) || 18;
@@ -701,7 +741,7 @@ function DesignPageContent() {
         priceAdder: 0,
       });
     }
-  }, [productId, urlWidth, urlHeight]);
+  }, [productId, urlWidth, urlHeight, registryProduct]);
 
   // Canvas Aesthetics
   const [bgColor, setBgColor] = useState("#ffffff");
@@ -710,6 +750,48 @@ function DesignPageContent() {
   const [showGrid, setShowGrid] = useState(false);
   const [snapToGrid, setSnapToGrid] = useState(true);
   const [zoomLevel, setZoomLevel] = useState(100);
+
+  // Initialize options from registry product or query params
+  useEffect(() => {
+    if (registryProduct) {
+      const initialSelects: Record<string, any> = {};
+      registryProduct.config.selects?.forEach((s) => {
+        initialSelects[s.label] = s.options[0];
+      });
+
+      const urlSelects = searchParams.get("selects");
+      if (urlSelects) {
+        try {
+          const parsed = JSON.parse(decodeURIComponent(urlSelects));
+          Object.entries(parsed).forEach(([key, val]) => {
+            const selectDef = registryProduct.config.selects?.find(s => s.label === key);
+            if (selectDef) {
+              const matchedOption = selectDef.options.find(o => o.value === val);
+              if (matchedOption) {
+                initialSelects[key] = matchedOption;
+              }
+            }
+          });
+        } catch (e) {
+          console.error("Failed to parse selects from URL:", e);
+        }
+      }
+      setSelectValues(initialSelects);
+
+      const urlQty = searchParams.get("quantity");
+      if (urlQty) {
+        setQuantity(parseInt(urlQty) || 100);
+      } else {
+        const defaultMin = registryProduct.config.minQuantity || (registryProduct.config.quantityOptions ? registryProduct.config.quantityOptions[0] : 100);
+        setQuantity(defaultMin);
+      }
+
+      const sidesSelect = initialSelects["Sides"] || initialSelects["Back Side"] || initialSelects["Print Direction"];
+      if (sidesSelect && sidesSelect.value === "double") {
+        setDoubleSided(true);
+      }
+    }
+  }, [registryProduct, searchParams]);
 
   // Auth
   const { user } = useAuth();
@@ -951,34 +1033,110 @@ function DesignPageContent() {
 
   // Price calculations
   const calculatedPrice = React.useMemo(() => {
-    let base = material.basePrice;
-    base += canvasSize.priceAdder;
+    if (registryProduct) {
+      const cfg = registryProduct.config;
+      let baseUnitPrice = cfg.sizes[0].basePrice;
+      if (cfg.quantityPrices && cfg.quantityPrices[quantity] !== undefined) {
+        baseUnitPrice = cfg.quantityPrices[quantity] / quantity;
+      } else {
+        const matchedSize = cfg.sizes.find(s => s.label === canvasSize.label);
+        if (matchedSize) {
+          baseUnitPrice = matchedSize.basePrice;
+        }
+      }
 
-    if (doubleSided) {
-      base *= 1.4; // 40% upcharge for double-sided
+      let price = baseUnitPrice;
+
+      Object.entries(selectValues).forEach(([k, v]: [string, any]) => {
+        if (v && v.priceAdder !== undefined) {
+          price += v.priceAdder;
+        }
+      });
+
+      const hasSidesSelect = Object.keys(selectValues).some(k => k.toLowerCase() === "sides" || k.toLowerCase() === "back side" || k.toLowerCase() === "print direction");
+      if (doubleSided && !hasSidesSelect) {
+        price *= 1.4;
+      }
+
+      let discount = 1;
+      if (cfg.bulkDiscounts) {
+        const sortedDiscounts = [...cfg.bulkDiscounts].sort((a, b) => b.minQty - a.minQty);
+        const matchedDiscount = sortedDiscounts.find((d) => quantity >= d.minQty);
+        if (matchedDiscount) {
+          discount = (100 - matchedDiscount.discountPercent) / 100;
+        }
+      } else if (cfg.quantityPrices) {
+        discount = 1;
+      } else {
+        if (quantity >= 100) discount = 0.82;
+        else if (quantity >= 50) discount = 0.87;
+        else if (quantity >= 25) discount = 0.9;
+        else if (quantity >= 10) discount = 0.94;
+        else if (quantity >= 5) discount = 0.97;
+      }
+
+      const subtotal = price * discount * quantity;
+
+      return {
+        unitPrice: (price * discount).toFixed(2),
+        total: subtotal.toFixed(2),
+        savings: (subtotal / 0.75 - subtotal).toFixed(2),
+      };
+    } else {
+      let base = material.basePrice;
+      base += canvasSize.priceAdder;
+
+      if (doubleSided) {
+        base *= 1.4;
+      }
+
+      const extraElements = Math.max(0, elements.length - 4);
+      base += extraElements * 0.5;
+
+      let subtotal = base * quantity;
+
+      let discount = 1;
+      if (quantity >= 50) discount = 0.85;
+      else if (quantity >= 25) discount = 0.9;
+      else if (quantity >= 10) discount = 0.95;
+
+      subtotal = subtotal * discount * 0.75;
+
+      return {
+        unitPrice: (subtotal / quantity).toFixed(2),
+        total: subtotal.toFixed(2),
+        savings: (base * quantity - subtotal).toFixed(2),
+      };
     }
+  }, [registryProduct, selectValues, doubleSided, quantity, material, canvasSize, elements.length]);
 
-    // Add small charge per element above 4 elements (mock material overhead)
-    const extraElements = Math.max(0, elements.length - 4);
-    base += extraElements * 0.5;
-
-    let subtotal = base * quantity;
-
-    // Quantity discounts
-    let discount = 1;
-    if (quantity >= 50) discount = 0.85;
-    else if (quantity >= 25) discount = 0.9;
-    else if (quantity >= 10) discount = 0.95;
-
-    // Promo discount (25% off)
-    subtotal = subtotal * discount * 0.75;
-
-    return {
-      unitPrice: (subtotal / quantity).toFixed(2),
-      total: subtotal.toFixed(2),
-      savings: (base * quantity - subtotal).toFixed(2),
+  const handleAddToCart = () => {
+    const customOptions: Record<string, string> = {
+      Sides: doubleSided ? "Double-sided" : "Single-sided",
     };
-  }, [material, canvasSize, doubleSided, elements.length, quantity]);
+
+    Object.entries(selectValues).forEach(([k, v]: [string, any]) => {
+      if (v && v.label) {
+        customOptions[k] = v.label;
+      }
+    });
+
+    customOptions["Design Data"] = JSON.stringify({
+      elements,
+      bgColor,
+      bgGradient,
+      bgImage
+    });
+
+    addItem({
+      productTitle: registryProduct ? registryProduct.name : material.label,
+      size: canvasSize.label,
+      quantity,
+      unitPrice: parseFloat(calculatedPrice.unitPrice),
+      totalPrice: parseFloat(calculatedPrice.total),
+      customOptions,
+    });
+  };
 
   const selectedEl = elements.find((el) => el.id === selectedId);
 
@@ -1089,14 +1247,11 @@ function DesignPageContent() {
             </div>
           </div>
           <button
-            onClick={() => {
-              setCheckoutStep("review");
-              setIsCheckoutOpen(true);
-            }}
+            onClick={handleAddToCart}
             className="bg-[#ff2d78] hover:opacity-90 text-slate-950 font-bold px-6 py-2.5 rounded-xl shadow-lg hover:shadow-pink-500\/20 flex items-center gap-2 transition-all active:scale-[0.98]"
           >
             <ShoppingCart className="w-4 h-4" />
-            Checkout Design
+            Add to Cart
           </button>
         </div>
       </header>
@@ -1848,85 +2003,167 @@ function DesignPageContent() {
                   Canvas Settings
                 </span>
 
-                {/* Sign Sizes */}
-                <div>
-                  <label className="block text-[11px] font-bold text-slate-400 mb-1">
-                    Board Dimensions
-                  </label>
-                  {productId === "rollup" || urlHeight === "79" ? (
-                    <div className="w-full bg-slate-950/45 border border-slate-850 rounded-lg p-2.5 text-xs text-slate-200 font-semibold">
-                      79" x 33" (Fixed Size)
-                    </div>
-                  ) : (
+                {/* Sizes Selection */}
+                {registryProduct ? (
+                  <div>
+                    <label className="block text-[11px] font-bold text-slate-400 mb-1">
+                      Size Selection
+                    </label>
                     <select
                       value={canvasSize.label}
                       onChange={(e) => {
-                        const found = BOARD_SIZES.find(
+                        const sizeOpt = registryProduct.config.sizes.find(
                           (s) => s.label === e.target.value,
                         );
-                        if (found) setCanvasSize(found);
+                        if (sizeOpt) {
+                          const parts = sizeOpt.value.split("x");
+                          setCanvasSize({
+                            label: sizeOpt.label,
+                            width: parseInt(parts[1]) || 3.5,
+                            height: parseInt(parts[0]) || 2,
+                            priceAdder: sizeOpt.basePrice - registryProduct.config.sizes[0].basePrice,
+                          });
+                        }
                       }}
-                      className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#ff2d78]"
+                      className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#ff2d78] font-semibold"
                     >
-                      {BOARD_SIZES.map((sz) => (
-                        <option key={sz.label} value={sz.label}>
-                          {sz.label}{" "}
-                          {sz.priceAdder > 0
-                            ? `(+$${sz.priceAdder.toFixed(2)})`
-                            : sz.priceAdder < 0
-                              ? `(-$${Math.abs(sz.priceAdder).toFixed(2)})`
-                              : ""}
+                      {registryProduct.config.sizes.map((sz) => (
+                        <option key={sz.value} value={sz.label}>
+                          {sz.label}
                         </option>
                       ))}
                     </select>
-                  )}
-                </div>
-
-                {/* Sign Material */}
-                <div>
-                  <label className="block text-[11px] font-bold text-slate-400 mb-1">
-                    Product Material
-                  </label>
-                  <select
-                    value={material.value}
-                    onChange={(e) => {
-                      const found = availableMaterials.find(
-                        (m) => m.value === e.target.value,
-                      );
-                      if (found) setMaterial(found);
-                    }}
-                    className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#ff2d78]"
-                  >
-                    {availableMaterials.map((m) => (
-                      <option key={m.value} value={m.value}>
-                        {m.label}
-                      </option>
-                    ))}
-                  </select>
-                  <p className="text-[10px] text-slate-500 mt-1.5 leading-normal">
-                    {material.desc}
-                  </p>
-                </div>
-
-                {/* Single/Double Sided */}
-                <div className="flex items-center justify-between py-2 border-t border-b border-slate-800">
-                  <div>
-                    <label className="text-[11px] font-bold text-slate-350 block">
-                      Double-Sided Printing
-                    </label>
-                    <span className="text-[10px] text-slate-500 block">
-                      Print design on both sides (+40%)
-                    </span>
                   </div>
-                  <button
-                    onClick={() => setDoubleSided(!doubleSided)}
-                    className={`w-11 h-6 rounded-full relative transition-colors ${doubleSided ? "bg-[#ff2d78]" : "bg-slate-700"}`}
-                  >
-                    <div
-                      className={`w-4 h-4 bg-slate-950 rounded-full absolute top-1 transition-transform ${doubleSided ? "left-6" : "left-1"}`}
-                    />
-                  </button>
-                </div>
+                ) : (
+                  /* Sign Sizes fallback */
+                  <div>
+                    <label className="block text-[11px] font-bold text-slate-400 mb-1">
+                      Board Dimensions
+                    </label>
+                    {productId === "rollup" || urlHeight === "79" ? (
+                      <div className="w-full bg-slate-950/45 border border-slate-850 rounded-lg p-2.5 text-xs text-slate-200 font-semibold">
+                        79" x 33" (Fixed Size)
+                      </div>
+                    ) : (
+                      <select
+                        value={canvasSize.label}
+                        onChange={(e) => {
+                          const found = BOARD_SIZES.find(
+                            (s) => s.label === e.target.value,
+                          );
+                          if (found) setCanvasSize(found);
+                        }}
+                        className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#ff2d78]"
+                      >
+                        {BOARD_SIZES.map((sz) => (
+                          <option key={sz.label} value={sz.label}>
+                            {sz.label}{" "}
+                            {sz.priceAdder > 0
+                              ? `(+${sz.priceAdder.toFixed(2)})`
+                              : sz.priceAdder < 0
+                                ? `(-${Math.abs(sz.priceAdder).toFixed(2)})`
+                                : ""}
+                          </option>
+                        ))}
+                      </select>
+                    )}
+                  </div>
+                )}
+
+                {/* Materials Selection / Dynamic selects */}
+                {registryProduct ? (
+                  <>
+                    {registryProduct.config.selects?.map((sel) => (
+                      <div key={sel.label}>
+                        <label className="block text-[11px] font-bold text-slate-400 mb-1">
+                          {sel.label}
+                        </label>
+                        <select
+                          value={selectValues[sel.label]?.value || ""}
+                          onChange={(e) => {
+                            const opt = sel.options.find(
+                              (o) => o.value === e.target.value,
+                            );
+                            if (opt) {
+                              setSelectValues((prev) => ({
+                                ...prev,
+                                [sel.label]: opt,
+                              }));
+                              if (sel.label.toLowerCase() === "sides" || sel.label.toLowerCase() === "back side") {
+                                setDoubleSided(opt.value === "double");
+                              }
+                            }
+                          }}
+                          className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#ff2d78] font-semibold"
+                        >
+                          {sel.options.map((o) => (
+                            <option key={o.value} value={o.value}>
+                              {o.label}
+                              {o.priceAdder > 0
+                                ? ` (+${o.priceAdder.toFixed(2)})`
+                                : ""}
+                            </option>
+                          ))}
+                        </select>
+                        {selectValues[sel.label]?.description && (
+                          <p className="text-[10px] text-slate-500 mt-1 leading-normal">
+                            {selectValues[sel.label].description}
+                          </p>
+                        )}
+                      </div>
+                    ))}
+                  </>
+                ) : (
+                  /* Sign Material fallback */
+                  <div>
+                    <label className="block text-[11px] font-bold text-slate-400 mb-1">
+                      Product Material
+                    </label>
+                    <select
+                      value={material.value}
+                      onChange={(e) => {
+                        const found = availableMaterials.find(
+                          (m) => m.value === e.target.value,
+                        );
+                        if (found) setMaterial(found);
+                      }}
+                      className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#ff2d78]"
+                    >
+                      {availableMaterials.map((m) => (
+                        <option key={m.value} value={m.value}>
+                          {m.label}
+                        </option>
+                      ))}
+                    </select>
+                    <p className="text-[10px] text-slate-500 mt-1.5 leading-normal">
+                      {material.desc}
+                    </p>
+                  </div>
+                )}
+
+                {/* Single/Double Sided Toggle - only show if there is no explicit sides select */}
+                {(!registryProduct || 
+                  !registryProduct.config.selects?.some(s => s.label.toLowerCase() === "sides" || s.label.toLowerCase() === "back side")
+                ) && (
+                  <div className="flex items-center justify-between py-2 border-t border-b border-slate-800">
+                    <div>
+                      <label className="text-[11px] font-bold text-slate-350 block">
+                        Double-Sided Printing
+                      </label>
+                      <span className="text-[10px] text-slate-500 block">
+                        Print design on both sides (+40%)
+                      </span>
+                    </div>
+                    <button
+                      onClick={() => setDoubleSided(!doubleSided)}
+                      className={`w-11 h-6 rounded-full relative transition-colors ${doubleSided ? "bg-[#ff2d78]" : "bg-slate-700"}`}
+                    >
+                      <div
+                        className={`w-4 h-4 bg-slate-950 rounded-full absolute top-1 transition-transform ${doubleSided ? "left-6" : "left-1"}`}
+                      />
+                    </button>
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -1940,30 +2177,47 @@ function DesignPageContent() {
                   Order Quantity
                 </label>
                 <div className="flex items-center gap-3">
-                  <div className="flex bg-slate-950 border border-slate-800 rounded-xl overflow-hidden shadow-inner">
-                    <button
-                      onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                      className="px-3 py-2 text-slate-400 hover:bg-slate-850 hover:text-white transition-colors text-sm font-bold"
-                    >
-                      −
-                    </button>
-                    <input
-                      type="number"
-                      value={quantity}
-                      onChange={(e) =>
-                        setQuantity(Math.max(1, parseInt(e.target.value) || 1))
-                      }
-                      className="w-12 text-center bg-transparent focus:outline-none font-bold text-xs text-slate-100"
-                    />
-                    <button
-                      onClick={() => setQuantity(quantity + 1)}
-                      className="px-3 py-2 text-slate-400 hover:bg-slate-850 hover:text-white transition-colors text-sm font-bold"
-                    >
-                      +
-                    </button>
-                  </div>
-                  <span className="text-[10px] text-slate-500">
-                    Buy 10+ for 5% off, 25+ for 10% off
+                  {registryProduct?.config.quantityOptions ? (
+                    <div className="relative flex bg-slate-950 border border-slate-800 rounded-xl px-4 py-2 shadow-inner">
+                      <select
+                        value={quantity}
+                        onChange={(e) => setQuantity(parseInt(e.target.value) || 100)}
+                        className="appearance-none bg-transparent pr-7 focus:outline-none font-bold text-xs text-slate-100 cursor-pointer"
+                      >
+                        {registryProduct.config.quantityOptions.map((opt) => (
+                          <option key={opt} value={opt} className="bg-slate-900">
+                            {opt}
+                          </option>
+                        ))}
+                      </select>
+                      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-450 pointer-events-none" />
+                    </div>
+                  ) : (
+                    <div className="flex bg-slate-950 border border-slate-800 rounded-xl overflow-hidden shadow-inner">
+                      <button
+                        onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                        className="px-3 py-2 text-slate-400 hover:bg-slate-850 hover:text-white transition-colors text-sm font-bold"
+                      >
+                        −
+                      </button>
+                      <input
+                        type="number"
+                        value={quantity}
+                        onChange={(e) =>
+                          setQuantity(Math.max(1, parseInt(e.target.value) || 1))
+                        }
+                        className="w-12 text-center bg-transparent focus:outline-none font-bold text-xs text-slate-100"
+                      />
+                      <button
+                        onClick={() => setQuantity(quantity + 1)}
+                        className="px-3 py-2 text-slate-400 hover:bg-slate-850 hover:text-white transition-colors text-sm font-bold"
+                      >
+                        +
+                      </button>
+                    </div>
+                  )}
+                  <span className="text-[10px] text-slate-505">
+                    {registryProduct ? registryProduct.config.qtyDiscount : "Buy 10+ for 5% off, 25+ for 10% off"}
                   </span>
                 </div>
               </div>
@@ -1999,15 +2253,12 @@ function DesignPageContent() {
                 </div>
               </div>
 
-              {/* Checkout CTA */}
+              {/* Add to Cart CTA */}
               <button
-                onClick={() => {
-                  setCheckoutStep("review");
-                  setIsCheckoutOpen(true);
-                }}
+                onClick={handleAddToCart}
                 className="w-full bg-[#ff2d78] hover:opacity-90 text-slate-950 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all active:scale-[0.98] shadow-lg hover:shadow-pink-500\/10"
               >
-                Proceed to Checkout
+                Add to Cart
               </button>
             </div>
           </div>

@@ -2616,41 +2616,40 @@ Why Choose Our Professional Rollup Banners?
             "Start designing online in minutes or upload your print-ready files.",
           ctaLabel: "Customize Vinyl Banner",
         },
-      },
-      {
+      },      {
         id: "business-cards",
         name: "Business Cards",
         description:
           'Leave a lasting impression with premium Custom Business Cards. Printed on ultra-thick 14pt or 16pt cardstock with offset high-resolution printing, these standard 3.5" x 2" cards represent your business with absolute quality. Customize your finish with professional non-glare matte or high-gloss UV sheen, and choose single or double-sided layouts to distribute to tradeshow attendees, recruits, and new leads.',
-        image: "/images/products/main%20page/business_cards.png",
-        price: "Starting at $19.99",
+        image: "/images/products/main page/business_cards.png",
+        price: "Starting at $19.00",
         config: {
           title: "Custom Business Cards",
           quantityOptions: [100, 250, 500, 1000, 1500, 2000, 2500, 5000, 10000],
           quantityPrices: {
-            100: 19.99,
-            250: 29.99,
-            500: 44.99,
-            1000: 69.99,
-            1500: 94.99,
-            2000: 119.99,
-            2500: 139.99,
-            5000: 249.99,
-            10000: 449.99,
+            100: 19.00,
+            250: 28.00,
+            500: 42.00,
+            1000: 64.00,
+            1500: 92.00,
+            2000: 115.00,
+            2500: 138.00,
+            5000: 249.00,
+            10000: 449.00,
           },
           subtitle:
             'Standard 3.5" x 2" cards printed on ultra-thick cardstock with multiple finishes.',
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF ALL EVENT STATIONERY",
-          image: "/images/products/main%20page/business_cards.png",
+          image: "/images/products/main page/business_cards.png",
           ratingCount: "1120",
           ratingScore: "4.9",
           sizes: [
             {
               label: '3.5" x 2" Standard size',
               value: "3.5x2",
-              basePrice: 19.99,
+              basePrice: 19.00,
             },
           ],
           selects: [
@@ -2658,74 +2657,91 @@ Why Choose Our Professional Rollup Banners?
               label: "Paper Stock & Finish",
               options: [
                 {
-                  label: "Standard Matte (14 pt)",
-                  value: "standard_matte",
+                  label: "Matte",
+                  value: "matte",
                   priceAdder: 0,
                   description: "Classic smooth, glare-free matte finish.",
-                  image: "/images/products/main%20page/business_cards_standard.png",
+                  image: "/images/products/main page/business_cards_matte.png",
                 },
                 {
-                  label: "Standard Glossy (14 pt)",
-                  value: "standard_glossy",
+                  label: "Glossy",
+                  value: "glossy",
                   priceAdder: 0,
                   description: "High-shine glossy finish that makes colors pop.",
-                  image: "/images/products/main%20page/business_cards_standard.png",
+                  image: "/images/products/main page/business_cards_glossy.png",
                 },
                 {
-                  label: "Standard Uncoated (14 pt)",
-                  value: "standard_uncoated",
-                  priceAdder: 2.00,
-                  description: "Easy-to-write-on paper with a clean, natural texture.",
-                  image: "/images/products/main%20page/business_cards_standard.png",
-                },
-                {
-                  label: "Premium Matte (16 pt)",
-                  value: "premium_matte",
-                  priceAdder: 4.99,
-                  description: "Thicker cardstock with a sleek, non-reflective finish.",
-                  image: "/images/products/main%20page/business_cards_premium.png",
-                },
-                {
-                  label: "Premium Glossy (16 pt)",
-                  value: "premium_glossy",
-                  priceAdder: 4.99,
-                  description: "Thicker cardstock with a brilliant, light-catching coat.",
-                  image: "/images/products/main%20page/business_cards_premium.png",
-                },
-                {
-                  label: "Premium Plus Matte (18 pt)",
-                  value: "premium_plus_matte",
-                  priceAdder: 9.99,
-                  description: "Our thickest matte cardstock for a substantial, sturdy feel.",
-                  image: "/images/products/main%20page/business_cards_premium.png",
-                },
-                {
-                  label: "Pearl (14 pt)",
-                  value: "pearl",
-                  priceAdder: 14.99,
-                  description: "Glimmering, light-catching surface with a pearlescent shine.",
-                  image: "/images/products/main%20page/business_cards_pearl.png",
-                },
-                {
-                  label: "Soft Touch (16 pt)",
+                  label: "Soft Touch",
                   value: "soft_touch",
-                  priceAdder: 14.99,
+                  priceAdder: 0.10,
                   description: "Velvety coating that feels soft and premium in the hand.",
-                  image: "/images/products/main%20page/business_cards_premium.png",
+                  image: "/images/products/main page/business_cards_soft_touch.png",
                 },
                 {
-                  label: "Metallic Foil (16 pt)",
-                  value: "metallic_foil",
-                  priceAdder: 19.99,
+                  label: "Foil Accent",
+                  value: "foil_accent",
+                  priceAdder: 0.20,
                   description: "Stunning custom gold or silver foil accents that reflect light.",
-                  image: "/images/products/main%20page/business_cards_foil.png",
+                  image: "/images/products/main page/business_cards_foil_accent.png",
                 },
                 {
-                  label: "Embossed Gloss (16 pt)",
-                  value: "embossed_gloss",
-                  priceAdder: 19.99,
-                  description: "Raised, clear glossy patterns for an elegant 3D texture.",
-                  image: "/images/products/main%20page/business_cards_foil.png",
+                  label: "Painted Edge",
+                  value: "painted_edge",
+                  priceAdder: 0.25,
+                  description: "Thick cards with colored edges for a bold, modern look.",
+                  image: "/images/products/main page/business_cards_painted_edge.png",
+                },
+                {
+                  label: "Ultra Thick",
+                  value: "ultra_thick",
+                  priceAdder: 0.30,
+                  description: "Double-thick cardstock for a substantial, sturdy feel.",
+                  image: "/images/products/main page/business_cards_ultra_thick.png",
+                },
+                {
+                  label: "Clear Plastic",
+                  value: "clear_plastic",
+                  priceAdder: 0.40,
+                  description: "See-through modern plastic cards that make a unique statement.",
+                  image: "/images/products/main page/business_cards_clear_plastic.png",
+                },
+                {
+                  label: "Pearl",
+                  value: "pearl",
+                  priceAdder: 0.15,
+                  description: "Glimmering, light-catching surface with a pearlescent shine.",
+                  image: "/images/products/main page/business_cards_pearl.png",
+                },
+                {
+                  label: "Gold Raised Foil",
+                  value: "gold_raised_foil",
+                  priceAdder: 0.30,
+                  description: "Elevated, 3D raised gold foil accents for a luxury feel.",
+                  image: "/images/products/main page/business_cards_gold_raised_foil.png",
+                },
+                {
+                  label: "Silver Raised Foil",
+                  value: "silver_raised_foil",
+                  priceAdder: 0.30,
+                  description: "Elevated, 3D raised silver foil accents for a luxury feel.",
+                  image: "/images/products/main page/business_cards_silver_raised_foil.png",
+                },
+              ],
+            },
+            {
+              label: "Sides",
+              options: [
+                {
+                  label: "Single-Sided",
+                  value: "single",
+                  priceAdder: 0,
+                  description: "Printed on front side only.",
+                },
+                {
+                  label: "Double-Sided",
+                  value: "double",
+                  priceAdder: 0.08,
+                  description: "Printed on both front and back sides.",
                 },
               ],
             },
@@ -2740,7 +2756,7 @@ Why Choose Our Professional Rollup Banners?
                 {
                   label: "Rounded Corners",
                   value: "rounded",
-                  priceAdder: 4.99,
+                  priceAdder: 0.05,
                 },
               ],
             },
@@ -2753,65 +2769,43 @@ Why Choose Our Professional Rollup Banners?
           ],
           useCases: ["Networking events", "Customer takeaways"],
           specs: [{ key: "Material", value: "14pt, 16pt, or 18pt Cardstock" }],
-          description: `Leave a powerful, lasting impression with our premium Custom Business Cards. A business card is more than just contact information—it is a tangible extension of your brand and a critical tool for networking and professional credibility. We offer standard standard sizing (3.5" x 2") printed on ultra-thick cardstocks with premium textures and finishes to match the exact quality of VistaPrint.
-
-Our cards are produced on state-of-the-art digital and offset presses, ensuring razor-sharp text and vivid color reproduction. Choose from standard matte or high-gloss finishes, or elevate your design with our specialty papers including shimmering Pearl, velvety Soft Touch, or light-reflecting Metallic Foil.
-
-By offering quantities from 100 up to 10,000 cards, we cater to individual freelancers, growing startups, and large enterprise fleets. Every paper stock option is selected for its stiffness and premium feel, guaranteeing your card won't get lost or damaged in a pocket or wallet.
-
-Our Paper Stock & Specialty Finishes:
-- Standard Matte (14 pt): Glare-free, clean, and classic. Easy to write on.
-- Standard Glossy (14 pt): Brilliant shine that makes images and photos pop.
-- Standard Uncoated (14 pt): Easy-to-write-on paper with a clean, natural texture.
-- Premium Matte (16 pt): Thicker cardstock with a sleek, non-reflective finish.
-- Premium Glossy (16 pt): Thicker cardstock with a brilliant, light-catching coat.
-- Premium Plus Matte (18 pt): Our thickest matte cardstock for a substantial, sturdy feel.
-- Pearl (14 pt): A unique shimmering paper that reflects light with a pearlescent glow.
-- Soft Touch (16 pt): A velvet-like matte coating that feels luxurious and unique.
-- Metallic Foil (16 pt): Premium metallic gold or silver foil accents for upscale highlights.
-- Embossed Gloss (16 pt): Raised clear glossy varnish creates a tactile, premium 3D effect.`,
           faqs: [
             {
               q: "What is the standard size of a business card?",
-              a: "The standard size for standard business cards is 3.5 inches by 2 inches. This fits perfectly into standard wallets, cardholders, and organizer slots.",
+              a: 'The standard size for standard business cards is 3.5 inches by 2 inches. This fits perfectly into standard wallets, cardholders, and organizer slots.',
             },
             {
               q: "What is the difference between 14 pt and 16 pt cardstock?",
-              a: "The point (pt) unit measures paper thickness. 14 pt cardstock is the industry standard for high-quality business cards. 16 pt cardstock is thicker and sturdier, providing a heavier, more premium feel.",
+              a: 'The point (pt) unit measures paper thickness. 14 pt cardstock is the industry standard for high-quality business cards. 16 pt cardstock is thicker and sturdier, providing a heavier, more premium feel.',
             },
             {
               q: "Can I write on both matte and glossy business cards?",
-              a: "You can write on matte and uncoated cards using standard ballpoint pens or pencils. Glossy cards have a slick UV coating that resists ink, making them harder to write on.",
+              a: 'You can write on matte and uncoated cards using standard ballpoint pens or pencils. Glossy cards have a slick UV coating that resists ink, making them harder to write on.',
             },
             {
-              q: "What are Pearl and Soft Touch finishes?",
-              a: "Pearl cardstock uses a specialized paper embedded with natural shimmering fibers that give the entire card a pearlescent sheen. Soft Touch is a velvet-matte protective coating applied after printing that gives the cards a soft, suede-like texture.",
-            },
-            {
-              q: "How does the Metallic Foil option work?",
-              a: "Metallic foil adds a brilliant, reflective gold or silver foil layer to selected areas of your design (such as your logo or name). This creates a striking contrast against the matte background.",
+              q: "What is the difference between Pearl and Soft Touch finishes?",
+              a: 'Pearl cardstock uses a specialized paper embedded with natural shimmering fibers that give the entire card a pearlescent sheen. Soft Touch is a velvet-matte protective coating applied after printing that gives the cards a soft, suede-like texture.',
             },
           ],
           reviews: [
             {
-              author: "David L., Creative Lead",
+              author: "Marcus K., Event Director",
               rating: 5,
               text: "The metallic foil cards look amazing! They really capture attention when handed out. Exact color registration and excellent premium paper stock.",
             },
             {
-              author: "Sophia R., Real Estate Agent",
+              author: "Sarah J., Retail Manager",
               rating: 5,
               text: "I ordered the Pearl business cards and have received so many compliments on the shimmer. The offset print quality is pristine.",
             },
             {
-              author: "James P., Contractor",
+              author: "David T., Startup Founder",
               rating: 5,
               text: "Sturdy 16 pt premium cards. Excellent price point and extremely fast turnaround. Will definitely reorder standard cards here.",
             },
           ],
           ctaHeading: "Design business cards now",
-          ctaBody:
-            "Upload your business info and logo to print double-sided cards fast.",
+          ctaBody: "Upload your business info and logo to print double-sided cards fast.",
           ctaLabel: "Customize Cards",
         },
       },
@@ -3598,39 +3592,38 @@ Our Paper Stock & Specialty Finishes:
     products: [
       {
         id: "business-cards",
-        name: "Custom Business Cards",
+        name: "Business Cards",
         description:
-          "Make a great first impression with premium custom business cards.",
-        image: "/images/products/main%20page/business_cards.png",
-        price: "Starting at $19.99",
-        badge: "Corporate Choice",
+          'Leave a lasting impression with premium Custom Business Cards. Printed on ultra-thick 14pt or 16pt cardstock with offset high-resolution printing, these standard 3.5" x 2" cards represent your business with absolute quality. Customize your finish with professional non-glare matte or high-gloss UV sheen, and choose single or double-sided layouts to distribute to tradeshow attendees, recruits, and new leads.',
+        image: "/images/products/main page/business_cards.png",
+        price: "Starting at $19.00",
         config: {
           title: "Custom Business Cards",
           quantityOptions: [100, 250, 500, 1000, 1500, 2000, 2500, 5000, 10000],
           quantityPrices: {
-            100: 19.99,
-            250: 29.99,
-            500: 44.99,
-            1000: 69.99,
-            1500: 94.99,
-            2000: 119.99,
-            2500: 139.99,
-            5000: 249.99,
-            10000: 449.99,
+            100: 19.00,
+            250: 28.00,
+            500: 42.00,
+            1000: 64.00,
+            1500: 92.00,
+            2000: 115.00,
+            2500: 138.00,
+            5000: 249.00,
+            10000: 449.00,
           },
           subtitle:
             'Standard 3.5" x 2" cards printed on ultra-thick cardstock with multiple finishes.',
           breadcrumb: "Marketing",
           breadcrumbHref: "/marketing-materials",
           promoText: "25% OFF ALL CORPORATE STATIONERY",
-          image: "/images/products/main%20page/business_cards.png",
+          image: "/images/products/main page/business_cards.png",
           ratingCount: "1120",
           ratingScore: "4.9",
           sizes: [
             {
               label: '3.5" x 2" Standard size',
               value: "3.5x2",
-              basePrice: 19.99,
+              basePrice: 19.00,
             },
           ],
           selects: [
@@ -3638,74 +3631,91 @@ Our Paper Stock & Specialty Finishes:
               label: "Paper Stock & Finish",
               options: [
                 {
-                  label: "Standard Matte (14 pt)",
-                  value: "standard_matte",
+                  label: "Matte",
+                  value: "matte",
                   priceAdder: 0,
                   description: "Classic smooth, glare-free matte finish.",
-                  image: "/images/products/main%20page/business_cards_standard.png",
+                  image: "/images/products/main page/business_cards_matte.png",
                 },
                 {
-                  label: "Standard Glossy (14 pt)",
-                  value: "standard_glossy",
+                  label: "Glossy",
+                  value: "glossy",
                   priceAdder: 0,
                   description: "High-shine glossy finish that makes colors pop.",
-                  image: "/images/products/main%20page/business_cards_standard.png",
+                  image: "/images/products/main page/business_cards_glossy.png",
                 },
                 {
-                  label: "Standard Uncoated (14 pt)",
-                  value: "standard_uncoated",
-                  priceAdder: 2.00,
-                  description: "Easy-to-write-on paper with a clean, natural texture.",
-                  image: "/images/products/main%20page/business_cards_standard.png",
-                },
-                {
-                  label: "Premium Matte (16 pt)",
-                  value: "premium_matte",
-                  priceAdder: 4.99,
-                  description: "Thicker cardstock with a sleek, non-reflective finish.",
-                  image: "/images/products/main%20page/business_cards_premium.png",
-                },
-                {
-                  label: "Premium Glossy (16 pt)",
-                  value: "premium_glossy",
-                  priceAdder: 4.99,
-                  description: "Thicker cardstock with a brilliant, light-catching coat.",
-                  image: "/images/products/main%20page/business_cards_premium.png",
-                },
-                {
-                  label: "Premium Plus Matte (18 pt)",
-                  value: "premium_plus_matte",
-                  priceAdder: 9.99,
-                  description: "Our thickest matte cardstock for a substantial, sturdy feel.",
-                  image: "/images/products/main%20page/business_cards_premium.png",
-                },
-                {
-                  label: "Pearl (14 pt)",
-                  value: "pearl",
-                  priceAdder: 14.99,
-                  description: "Glimmering, light-catching surface with a pearlescent shine.",
-                  image: "/images/products/main%20page/business_cards_pearl.png",
-                },
-                {
-                  label: "Soft Touch (16 pt)",
+                  label: "Soft Touch",
                   value: "soft_touch",
-                  priceAdder: 14.99,
+                  priceAdder: 0.10,
                   description: "Velvety coating that feels soft and premium in the hand.",
-                  image: "/images/products/main%20page/business_cards_premium.png",
+                  image: "/images/products/main page/business_cards_soft_touch.png",
                 },
                 {
-                  label: "Metallic Foil (16 pt)",
-                  value: "metallic_foil",
-                  priceAdder: 19.99,
+                  label: "Foil Accent",
+                  value: "foil_accent",
+                  priceAdder: 0.20,
                   description: "Stunning custom gold or silver foil accents that reflect light.",
-                  image: "/images/products/main%20page/business_cards_foil.png",
+                  image: "/images/products/main page/business_cards_foil_accent.png",
                 },
                 {
-                  label: "Embossed Gloss (16 pt)",
-                  value: "embossed_gloss",
-                  priceAdder: 19.99,
-                  description: "Raised, clear glossy patterns for an elegant 3D texture.",
-                  image: "/images/products/main%20page/business_cards_foil.png",
+                  label: "Painted Edge",
+                  value: "painted_edge",
+                  priceAdder: 0.25,
+                  description: "Thick cards with colored edges for a bold, modern look.",
+                  image: "/images/products/main page/business_cards_painted_edge.png",
+                },
+                {
+                  label: "Ultra Thick",
+                  value: "ultra_thick",
+                  priceAdder: 0.30,
+                  description: "Double-thick cardstock for a substantial, sturdy feel.",
+                  image: "/images/products/main page/business_cards_ultra_thick.png",
+                },
+                {
+                  label: "Clear Plastic",
+                  value: "clear_plastic",
+                  priceAdder: 0.40,
+                  description: "See-through modern plastic cards that make a unique statement.",
+                  image: "/images/products/main page/business_cards_clear_plastic.png",
+                },
+                {
+                  label: "Pearl",
+                  value: "pearl",
+                  priceAdder: 0.15,
+                  description: "Glimmering, light-catching surface with a pearlescent shine.",
+                  image: "/images/products/main page/business_cards_pearl.png",
+                },
+                {
+                  label: "Gold Raised Foil",
+                  value: "gold_raised_foil",
+                  priceAdder: 0.30,
+                  description: "Elevated, 3D raised gold foil accents for a luxury feel.",
+                  image: "/images/products/main page/business_cards_gold_raised_foil.png",
+                },
+                {
+                  label: "Silver Raised Foil",
+                  value: "silver_raised_foil",
+                  priceAdder: 0.30,
+                  description: "Elevated, 3D raised silver foil accents for a luxury feel.",
+                  image: "/images/products/main page/business_cards_silver_raised_foil.png",
+                },
+              ],
+            },
+            {
+              label: "Sides",
+              options: [
+                {
+                  label: "Single-Sided",
+                  value: "single",
+                  priceAdder: 0,
+                  description: "Printed on front side only.",
+                },
+                {
+                  label: "Double-Sided",
+                  value: "double",
+                  priceAdder: 0.08,
+                  description: "Printed on both front and back sides.",
                 },
               ],
             },
@@ -3720,7 +3730,7 @@ Our Paper Stock & Specialty Finishes:
                 {
                   label: "Rounded Corners",
                   value: "rounded",
-                  priceAdder: 4.99,
+                  priceAdder: 0.05,
                 },
               ],
             },
@@ -3731,79 +3741,45 @@ Our Paper Stock & Specialty Finishes:
             "Ultra-thick cardstock options",
             "Easy design templates",
           ],
-          useCases: [
-            "Networking events",
-            "Customer takeaways",
-            "Loyalty stamp cards",
-            "Appointment reminders",
-          ],
-          specs: [
-            { key: "Material", value: "14pt, 16pt, or 18pt Cardstock" },
-            {
-              key: "Finish Options",
-              value: "Matte, UV Gloss, Pearl, Soft Touch, Metallic Foil, Embossed Gloss",
-            },
-            { key: "DPI", value: "Offset litho press 300 Line Screen" },
-          ],
-          description: `Leave a powerful, lasting impression with our premium Custom Business Cards. A business card is more than just contact information—it is a tangible extension of your brand and a critical tool for networking and professional credibility. We offer standard standard sizing (3.5" x 2") printed on ultra-thick cardstocks with premium textures and finishes to match the exact quality of VistaPrint.
-
-Our cards are produced on state-of-the-art digital and offset presses, ensuring razor-sharp text and vivid color reproduction. Choose from standard matte or high-gloss finishes, or elevate your design with our specialty papers including shimmering Pearl, velvety Soft Touch, or light-reflecting Metallic Foil.
-
-By offering quantities from 100 up to 10,000 cards, we cater to individual freelancers, growing startups, and large enterprise fleets. Every paper stock option is selected for its stiffness and premium feel, guaranteeing your card won't get lost or damaged in a pocket or wallet.
-
-Our Paper Stock & Specialty Finishes:
-- Standard Matte (14 pt): Glare-free, clean, and classic. Easy to write on.
-- Standard Glossy (14 pt): Brilliant shine that makes images and photos pop.
-- Standard Uncoated (14 pt): Easy-to-write-on paper with a clean, natural texture.
-- Premium Matte (16 pt): Thicker cardstock with a sleek, non-reflective finish.
-- Premium Glossy (16 pt): Thicker cardstock with a brilliant, light-catching coat.
-- Premium Plus Matte (18 pt): Our thickest matte cardstock for a substantial, sturdy feel.
-- Pearl (14 pt): A unique shimmering paper that reflects light with a pearlescent glow.
-- Soft Touch (16 pt): A velvet-like matte coating that feels luxurious and unique.
-- Metallic Foil (16 pt): Premium metallic gold or silver foil accents for upscale highlights.
-- Embossed Gloss (16 pt): Raised clear glossy varnish creates a tactile, premium 3D effect.`,
+          useCases: ["Networking events", "Customer takeaways", "Loyalty stamp cards", "Appointment reminders"],
+          specs: [{ key: "Material", value: "14pt, 16pt, or 18pt Cardstock" }],
           faqs: [
             {
               q: "What is the standard size of a business card?",
-              a: "The standard size for standard business cards is 3.5 inches by 2 inches. This fits perfectly into standard wallets, cardholders, and organizer slots.",
+              a: 'The standard size for standard business cards is 3.5 inches by 2 inches. This fits perfectly into standard wallets, cardholders, and organizer slots.',
             },
             {
               q: "What is the difference between 14 pt and 16 pt cardstock?",
-              a: "The point (pt) unit measures paper thickness. 14 pt cardstock is the industry standard for high-quality business cards. 16 pt cardstock is thicker and sturdier, providing a heavier, more premium feel.",
+              a: 'The point (pt) unit measures paper thickness. 14 pt cardstock is the industry standard for high-quality business cards. 16 pt cardstock is thicker and sturdier, providing a heavier, more premium feel.',
             },
             {
               q: "Can I write on both matte and glossy business cards?",
-              a: "You can write on matte and uncoated cards using standard ballpoint pens or pencils. Glossy cards have a slick UV coating that resists ink, making them harder to write on.",
+              a: 'You can write on matte and uncoated cards using standard ballpoint pens or pencils. Glossy cards have a slick UV coating that resists ink, making them harder to write on.',
             },
             {
-              q: "What are Pearl and Soft Touch finishes?",
-              a: "Pearl cardstock uses a specialized paper embedded with natural shimmering fibers that give the entire card a pearlescent sheen. Soft Touch is a velvet-matte protective coating applied after printing that gives the cards a soft, suede-like texture.",
-            },
-            {
-              q: "How does the Metallic Foil option work?",
-              a: "Metallic foil adds a brilliant, reflective gold or silver foil layer to selected areas of your design (such as your logo or name). This creates a striking contrast against the matte background.",
+              q: "What is the difference between Pearl and Soft Touch finishes?",
+              a: 'Pearl cardstock uses a specialized paper embedded with natural shimmering fibers that give the entire card a pearlescent sheen. Soft Touch is a velvet-matte protective coating applied after printing that gives the cards a soft, suede-like texture.',
             },
           ],
           reviews: [
             {
-              author: "David L., Creative Lead",
+              author: "Marcus K., Event Director",
               rating: 5,
               text: "The metallic foil cards look amazing! They really capture attention when handed out. Exact color registration and excellent premium paper stock.",
             },
             {
-              author: "Sophia R., Real Estate Agent",
+              author: "Sarah J., Retail Manager",
               rating: 5,
               text: "I ordered the Pearl business cards and have received so many compliments on the shimmer. The offset print quality is pristine.",
             },
             {
-              author: "James P., Contractor",
+              author: "David T., Startup Founder",
               rating: 5,
               text: "Sturdy 16 pt premium cards. Excellent price point and extremely fast turnaround. Will definitely reorder standard cards here.",
             },
           ],
           ctaHeading: "Design business cards now",
-          ctaBody:
-            "Upload your business info and logo to print double-sided cards fast.",
+          ctaBody: "Upload your business info and logo to print double-sided cards fast.",
           ctaLabel: "Customize Cards",
         },
       },

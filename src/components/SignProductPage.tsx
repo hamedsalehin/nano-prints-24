@@ -86,6 +86,7 @@ export interface ProductPageConfig {
   quantityOptions?: number[];
   bulkDiscounts?: { minQty: number; discountPercent: number }[];
   quantityPrices?: Record<number, number>;
+  id?: string;
 }
 
 function StarRating({ rating }: { rating: number }) {
@@ -357,13 +358,21 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
 
   const customizeUrl = useMemo(() => {
     const parts = selectedSize.value.split("x");
+    const pId = cfg.id || "51060";
+    
+    const selVals: Record<string, string> = {};
+    Object.entries(selectValues).forEach(([k, v]) => {
+      selVals[k] = v.value;
+    });
+    const selQuery = encodeURIComponent(JSON.stringify(selVals));
+
     if (parts.length === 2) {
       const height = parts[0];
       const width = parts[1];
-      return `/PrintDesignExperience/Load?productId=51060&width=${width}&height=${height}`;
+      return `/PrintDesignExperience/Load?productId=${pId}&width=${width}&height=${height}&quantity=${quantity}&selects=${selQuery}`;
     }
-    return `/PrintDesignExperience/Load?productId=51060`;
-  }, [selectedSize.value]);
+    return `/PrintDesignExperience/Load?productId=${pId}&quantity=${quantity}&selects=${selQuery}`;
+  }, [selectedSize.value, cfg.id, selectValues, quantity]);
 
   // Dynamic preview calculations
   const aspect = useMemo(() => {

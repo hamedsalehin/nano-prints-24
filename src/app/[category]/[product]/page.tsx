@@ -77,6 +77,7 @@ export default async function ProductConfiguratorPage({ params }: PageProps) {
   // Render the pre-configured product layout page with dynamic description
   const configWithDesc = {
     ...productData.config,
+    id: productData.id,
     description: productData.config.description || productData.description,
   };
 
