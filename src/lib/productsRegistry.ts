@@ -511,7 +511,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         name: "Retractable Banners",
         description: "Portable and easy to set up for trade shows and events.",
         image: "/images/products/main%20page/retractable_roll_up_banner.png",
-        price: "Starting at $93.27",
+        price: "Starting at $89.00",
         badge: "Best Seller",
         config: {
           title: "Retractable Banners (Roll Up)",
@@ -533,34 +533,10 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
             {
               label: '79" x 33" Standard Stand Size',
               value: "79x33",
-              basePrice: 93.27,
+              basePrice: 89.00,
             },
           ],
           selects: [
-            {
-              label: "Material Style",
-              options: [
-                {
-                  label: "Standard (13oz Vinyl)",
-                  value: "standard",
-                  priceAdder: 0,
-                  description: "Classic, durable, and fade-resistant.",
-                },
-                {
-                  label: "Polyester Greyback",
-                  value: "polyester",
-                  priceAdder: 15.0,
-                  description:
-                    "Smooth, wrinkle-resistant with lightblock backing.",
-                },
-                {
-                  label: "Eco-Wise PVC Free",
-                  value: "eco",
-                  priceAdder: 10.0,
-                  description: "Environmentally friendly 13oz material.",
-                },
-              ],
-            },
             {
               label: "Stand Option",
               options: [
@@ -582,12 +558,18 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
               ],
             },
           ],
-          qtyDiscount: "Saves up to 10% on bulk displays",
+          qtyDiscount: "Bulk discounts starting at 2 or more banners",
+          bulkDiscounts: [
+            { minQty: 2, discountPercent: 5 },
+            { minQty: 5, discountPercent: 10 },
+            { minQty: 10, discountPercent: 15 },
+            { minQty: 25, discountPercent: 20 },
+          ],
           keyFeatures: [
             "Sturdy aluminum base container",
             "Padded carrying case included",
             "Setup in under 60 seconds",
-            "Anti-curl materials",
+            "Anti-curl curl-free polyester film",
           ],
           useCases: [
             "Trade show booths",
@@ -603,8 +585,56 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
               value: "Anodized aluminum body with fold-out feet",
             },
           ],
-          faqs: [],
-          reviews: [],
+          description: `Maximize your brand visibility at trade shows, retail storefronts, conferences, and exhibitions with our premium Custom Retractable Roll Up Banners. These portable banner displays are the gold standard for high-impact offline marketing, offering a seamless blend of durability, convenience, and visual appeal. 
+
+Every retractable banner stand comes pre-assembled with your custom-printed graphic rolled inside a sturdy, lightweight aluminum cassette. Setup takes under 60 seconds—simply extend the vertical support pole, pull up the banner graphic, and lock it into place. Whether you need custom trade show signage or a permanent retail display, our roll up stands are built to last.
+
+Our banners are printed on curl-free, light-blocking polyester grayback film. This prevents the edges of the banner from curling over time and ensures that light does not shine through from behind, keeping your message fully legible under bright exhibition lights. With next-day banner printing options, we help you get event-ready at a moment's notice.
+
+Why Choose Our Professional Rollup Banners?
+- Premium Anti-Curl Material: Printed on smooth, opaque blockout film for a clean, flat presentation.
+- Heavy-Duty Cassette: Anodized aluminum base with fold-out stabilizing feet for reliable outdoor and indoor standee stability.
+- Effortless Portability: A padded travel carrying case is included with every order, making transportation a breeze.
+- Dynamic Visual Impact: High-resolution UV printing at 1440 DPI delivers vivid, fade-resistant colors that stand out across crowded halls.`,
+          faqs: [
+            {
+              q: "How do I set up a retractable roll up banner?",
+              a: "Setting up your pull up banner is incredibly simple. Unpack the aluminum base, turn out the stabilizing feet, insert the support pole into the base slot, and then pull the banner up gently and attach it to the top hook of the pole. The entire process takes less than a minute.",
+            },
+            {
+              q: "What material is used for the rollup banner graphic?",
+              a: "We use a premium curl-free polyester film with a blockout greyback coating. This professional material ensures your graphics remain completely flat and prevents rear light show-through, ensuring maximum legibility under bright trade show lighting.",
+            },
+            {
+              q: "Can I replace the banner graphic in my existing retractable stand?",
+              a: "Yes, the graphic can be replaced, but it requires tensioning the internal spring mechanism of the aluminum cassette. We recommend sending it to our print facility or purchasing a new stand bundle for the best results.",
+            },
+            {
+              q: "What is the difference between standard and professional stands?",
+              a: "Standard stands feature swing-out stabilizing feet that extend from the front and back of the aluminum base. Professional luxury stands have a wider, heavier teardrop-shaped base that stands stable on its own without visible swing-out feet, offering a cleaner look.",
+            },
+            {
+              q: "Is the roll up banner suitable for outdoor use?",
+              a: "Retractable banners are designed primarily for indoor applications. They can be used outdoors in calm, dry conditions, but because of their tall profile, wind can act as a sail and tip the stand. For outdoor promotions, we recommend our heavy-duty feather flags or mesh banners.",
+            },
+          ],
+          reviews: [
+            {
+              author: "Marcus K., Event Director",
+              rating: 5,
+              text: "The custom rollup banner exceeded our expectations. The greyback film is completely blockout and doesn't curl at all. Set up was a breeze at our conference booth.",
+            },
+            {
+              author: "Sarah J., Retail Manager",
+              rating: 5,
+              text: "Absolute lifesaver! Ordered with next day banner printing and it arrived right on time for our store opening. The print colors are stunningly bright.",
+            },
+            {
+              author: "David T., Startup Founder",
+              rating: 5,
+              text: "Excellent quality trade show banner stand. We've used it at three separate events now and the aluminum retracting mechanism still works perfectly.",
+            },
+          ],
           ctaHeading: "Ready to make an impression?",
           ctaBody:
             "Order a retractable banner stand and roll out your messages quickly.",
@@ -2145,7 +2175,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         description:
           "Our Retractable Banners (Roll Up Stands) are the ultimate standalone banner display for trade shows, retail checkouts, and office lobbies. The banner graphic pulls up from an anodized aluminum base stand in seconds and secures with a vertical support rod. Each kit includes a padded carrying bag, making transport and setup incredibly simple. Printed on premium curl-resistant polyester film or standard 13oz vinyl to maintain a clean, flat presentation.",
         image: "/images/products/main%20page/retractable_roll_up_banner.png",
-        price: "Starting at $93.27",
+        price: "Starting at $89.00",
         badge: "Most Popular",
         config: {
           title: "Retractable Banners (Roll Up)",
@@ -2162,25 +2192,10 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
             {
               label: '79" x 33" Standard Stand Size',
               value: "79x33",
-              basePrice: 93.27,
+              basePrice: 89.00,
             },
           ],
           selects: [
-            {
-              label: "Material Style",
-              options: [
-                {
-                  label: "Standard (13oz Vinyl)",
-                  value: "standard",
-                  priceAdder: 0,
-                },
-                {
-                  label: "Polyester Greyback",
-                  value: "polyester",
-                  priceAdder: 15.0,
-                },
-              ],
-            },
             {
               label: "Stand Option",
               options: [
@@ -2197,12 +2212,18 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
               ],
             },
           ],
-          qtyDiscount: "Save up to 10% on bulk displays",
+          qtyDiscount: "Bulk discounts starting at 2 or more banners",
+          bulkDiscounts: [
+            { minQty: 2, discountPercent: 5 },
+            { minQty: 5, discountPercent: 10 },
+            { minQty: 10, discountPercent: 15 },
+            { minQty: 25, discountPercent: 20 },
+          ],
           keyFeatures: [
             "Sturdy aluminum base container",
             "Padded carrying case included",
             "Setup in under 60 seconds",
-            "Anti-curl materials",
+            "Anti-curl curl-free polyester film",
           ],
           useCases: [
             "Trade show booths",
@@ -2214,8 +2235,56 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
             { key: "Weight", value: "Approximately 7-10 lbs including stand" },
             { key: "Display Size", value: '79" High x 33" Wide' },
           ],
-          faqs: [],
-          reviews: [],
+          description: `Maximize your brand visibility at trade shows, retail storefronts, conferences, and exhibitions with our premium Custom Retractable Roll Up Banners. These portable banner displays are the gold standard for high-impact offline marketing, offering a seamless blend of durability, convenience, and visual appeal. 
+
+Every retractable banner stand comes pre-assembled with your custom-printed graphic rolled inside a sturdy, lightweight aluminum cassette. Setup takes under 60 seconds—simply extend the vertical support pole, pull up the banner graphic, and lock it into place. Whether you need custom trade show signage or a permanent retail display, our roll up stands are built to last.
+
+Our banners are printed on curl-free, light-blocking polyester grayback film. This prevents the edges of the banner from curling over time and ensures that light does not shine through from behind, keeping your message fully legible under bright exhibition lights. With next-day banner printing options, we help you get event-ready at a moment's notice.
+
+Why Choose Our Professional Rollup Banners?
+- Premium Anti-Curl Material: Printed on smooth, opaque blockout film for a clean, flat presentation.
+- Heavy-Duty Cassette: Anodized aluminum base with fold-out stabilizing feet for reliable outdoor and indoor standee stability.
+- Effortless Portability: A padded travel carrying case is included with every order, making transportation a breeze.
+- Dynamic Visual Impact: High-resolution UV printing at 1440 DPI delivers vivid, fade-resistant colors that stand out across crowded halls.`,
+          faqs: [
+            {
+              q: "How do I set up a retractable roll up banner?",
+              a: "Setting up your pull up banner is incredibly simple. Unpack the aluminum base, turn out the stabilizing feet, insert the support pole into the base slot, and then pull the banner up gently and attach it to the top hook of the pole. The entire process takes less than a minute.",
+            },
+            {
+              q: "What material is used for the rollup banner graphic?",
+              a: "We use a premium curl-free polyester film with a blockout greyback coating. This professional material ensures your graphics remain completely flat and prevents rear light show-through, ensuring maximum legibility under bright trade show lighting.",
+            },
+            {
+              q: "Can I replace the banner graphic in my existing retractable stand?",
+              a: "Yes, the graphic can be replaced, but it requires tensioning the internal spring mechanism of the aluminum cassette. We recommend sending it to our print facility or purchasing a new stand bundle for the best results.",
+            },
+            {
+              q: "What is the difference between standard and professional stands?",
+              a: "Standard stands feature swing-out stabilizing feet that extend from the front and back of the aluminum base. Professional luxury stands have a wider, heavier teardrop-shaped base that stands stable on its own without visible swing-out feet, offering a cleaner look.",
+            },
+            {
+              q: "Is the roll up banner suitable for outdoor use?",
+              a: "Retractable banners are designed primarily for indoor applications. They can be used outdoors in calm, dry conditions, but because of their tall profile, wind can act as a sail and tip the stand. For outdoor promotions, we recommend our heavy-duty feather flags or mesh banners.",
+            },
+          ],
+          reviews: [
+            {
+              author: "Marcus K., Event Director",
+              rating: 5,
+              text: "The custom rollup banner exceeded our expectations. The greyback film is completely blockout and doesn't curl at all. Set up was a breeze at our conference booth.",
+            },
+            {
+              author: "Sarah J., Retail Manager",
+              rating: 5,
+              text: "Absolute lifesaver! Ordered with next day banner printing and it arrived right on time for our store opening. The print colors are stunningly bright.",
+            },
+            {
+              author: "David T., Startup Founder",
+              rating: 5,
+              text: "Excellent quality trade show banner stand. We've used it at three separate events now and the aluminum retracting mechanism still works perfectly.",
+            },
+          ],
           ctaHeading: "Ready to make an impression?",
           ctaBody:
             "Order a retractable banner stand and roll out your messages quickly.",
@@ -2557,19 +2626,24 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         price: "Starting at $19.99",
         config: {
           title: "Custom Business Cards",
-          quantityOptions: [100, 250, 500, 1000, 2500, 5000, 10000],
+          quantityOptions: [100, 250, 500, 1000, 1500, 2000, 2500, 5000, 10000],
+          quantityPrices: {
+            100: 19.99,
+            250: 29.99,
+            500: 44.99,
+            1000: 69.99,
+            1500: 94.99,
+            2000: 119.99,
+            2500: 139.99,
+            5000: 249.99,
+            10000: 449.99,
+          },
           subtitle:
             'Standard 3.5" x 2" cards printed on ultra-thick cardstock with multiple finishes.',
           breadcrumb: "Tradeshow",
           breadcrumbHref: "/trade-show",
           promoText: "25% OFF ALL EVENT STATIONERY",
           image: "/images/products/main%20page/business_cards.png",
-          images: [
-            "/images/products/main%20page/business_cards.png",
-            "/images/products/gallery/business_card_use_1.png",
-            "/images/products/gallery/business_card_use_1.png",
-            "/images/products/gallery/business_card_use_1.png",
-          ],
           ratingCount: "1120",
           ratingScore: "4.9",
           sizes: [
@@ -2581,46 +2655,160 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           ],
           selects: [
             {
-              label: "Paper Thickness & Texture",
+              label: "Paper Stock & Finish",
               options: [
                 {
-                  label: "Premium 14pt Cardstock",
-                  value: "14pt",
+                  label: "Standard Matte (14 pt)",
+                  value: "standard_matte",
                   priceAdder: 0,
+                  description: "Classic smooth, glare-free matte finish.",
+                  image: "/images/products/main%20page/business_cards_standard.png",
                 },
                 {
-                  label: "Ultra-Premium 16pt Cardstock",
-                  value: "16pt",
-                  priceAdder: 5.0,
+                  label: "Standard Glossy (14 pt)",
+                  value: "standard_glossy",
+                  priceAdder: 0,
+                  description: "High-shine glossy finish that makes colors pop.",
+                  image: "/images/products/main%20page/business_cards_standard.png",
+                },
+                {
+                  label: "Standard Uncoated (14 pt)",
+                  value: "standard_uncoated",
+                  priceAdder: 2.00,
+                  description: "Easy-to-write-on paper with a clean, natural texture.",
+                  image: "/images/products/main%20page/business_cards_standard.png",
+                },
+                {
+                  label: "Premium Matte (16 pt)",
+                  value: "premium_matte",
+                  priceAdder: 4.99,
+                  description: "Thicker cardstock with a sleek, non-reflective finish.",
+                  image: "/images/products/main%20page/business_cards_premium.png",
+                },
+                {
+                  label: "Premium Glossy (16 pt)",
+                  value: "premium_glossy",
+                  priceAdder: 4.99,
+                  description: "Thicker cardstock with a brilliant, light-catching coat.",
+                  image: "/images/products/main%20page/business_cards_premium.png",
+                },
+                {
+                  label: "Premium Plus Matte (18 pt)",
+                  value: "premium_plus_matte",
+                  priceAdder: 9.99,
+                  description: "Our thickest matte cardstock for a substantial, sturdy feel.",
+                  image: "/images/products/main%20page/business_cards_premium.png",
+                },
+                {
+                  label: "Pearl (14 pt)",
+                  value: "pearl",
+                  priceAdder: 14.99,
+                  description: "Glimmering, light-catching surface with a pearlescent shine.",
+                  image: "/images/products/main%20page/business_cards_pearl.png",
+                },
+                {
+                  label: "Soft Touch (16 pt)",
+                  value: "soft_touch",
+                  priceAdder: 14.99,
+                  description: "Velvety coating that feels soft and premium in the hand.",
+                  image: "/images/products/main%20page/business_cards_premium.png",
+                },
+                {
+                  label: "Metallic Foil (16 pt)",
+                  value: "metallic_foil",
+                  priceAdder: 19.99,
+                  description: "Stunning custom gold or silver foil accents that reflect light.",
+                  image: "/images/products/main%20page/business_cards_foil.png",
+                },
+                {
+                  label: "Embossed Gloss (16 pt)",
+                  value: "embossed_gloss",
+                  priceAdder: 19.99,
+                  description: "Raised, clear glossy patterns for an elegant 3D texture.",
+                  image: "/images/products/main%20page/business_cards_foil.png",
                 },
               ],
             },
             {
-              label: "Card Finish",
+              label: "Corners",
               options: [
                 {
-                  label: "Premium Matte (Non-glare)",
-                  value: "matte",
+                  label: "Standard Square Corners",
+                  value: "square",
                   priceAdder: 0,
                 },
                 {
-                  label: "High-Gloss UV Shine",
-                  value: "gloss",
-                  priceAdder: 2.5,
+                  label: "Rounded Corners",
+                  value: "rounded",
+                  priceAdder: 4.99,
                 },
               ],
             },
           ],
-          qtyDiscount: "Bulk boxes of 250, 500, 1000 available",
+          qtyDiscount: "Predefined package quantities selected below",
           keyFeatures: [
             "Vibrant color offset printing",
             "Ultra-thick cardstock options",
             "Easy design templates",
           ],
           useCases: ["Networking events", "Customer takeaways"],
-          specs: [{ key: "Material", value: "14pt or 16pt Cardstock" }],
-          faqs: [],
-          reviews: [],
+          specs: [{ key: "Material", value: "14pt, 16pt, or 18pt Cardstock" }],
+          description: `Leave a powerful, lasting impression with our premium Custom Business Cards. A business card is more than just contact information—it is a tangible extension of your brand and a critical tool for networking and professional credibility. We offer standard standard sizing (3.5" x 2") printed on ultra-thick cardstocks with premium textures and finishes to match the exact quality of VistaPrint.
+
+Our cards are produced on state-of-the-art digital and offset presses, ensuring razor-sharp text and vivid color reproduction. Choose from standard matte or high-gloss finishes, or elevate your design with our specialty papers including shimmering Pearl, velvety Soft Touch, or light-reflecting Metallic Foil.
+
+By offering quantities from 100 up to 10,000 cards, we cater to individual freelancers, growing startups, and large enterprise fleets. Every paper stock option is selected for its stiffness and premium feel, guaranteeing your card won't get lost or damaged in a pocket or wallet.
+
+Our Paper Stock & Specialty Finishes:
+- Standard Matte (14 pt): Glare-free, clean, and classic. Easy to write on.
+- Standard Glossy (14 pt): Brilliant shine that makes images and photos pop.
+- Standard Uncoated (14 pt): Easy-to-write-on paper with a clean, natural texture.
+- Premium Matte (16 pt): Thicker cardstock with a sleek, non-reflective finish.
+- Premium Glossy (16 pt): Thicker cardstock with a brilliant, light-catching coat.
+- Premium Plus Matte (18 pt): Our thickest matte cardstock for a substantial, sturdy feel.
+- Pearl (14 pt): A unique shimmering paper that reflects light with a pearlescent glow.
+- Soft Touch (16 pt): A velvet-like matte coating that feels luxurious and unique.
+- Metallic Foil (16 pt): Premium metallic gold or silver foil accents for upscale highlights.
+- Embossed Gloss (16 pt): Raised clear glossy varnish creates a tactile, premium 3D effect.`,
+          faqs: [
+            {
+              q: "What is the standard size of a business card?",
+              a: "The standard size for standard business cards is 3.5 inches by 2 inches. This fits perfectly into standard wallets, cardholders, and organizer slots.",
+            },
+            {
+              q: "What is the difference between 14 pt and 16 pt cardstock?",
+              a: "The point (pt) unit measures paper thickness. 14 pt cardstock is the industry standard for high-quality business cards. 16 pt cardstock is thicker and sturdier, providing a heavier, more premium feel.",
+            },
+            {
+              q: "Can I write on both matte and glossy business cards?",
+              a: "You can write on matte and uncoated cards using standard ballpoint pens or pencils. Glossy cards have a slick UV coating that resists ink, making them harder to write on.",
+            },
+            {
+              q: "What are Pearl and Soft Touch finishes?",
+              a: "Pearl cardstock uses a specialized paper embedded with natural shimmering fibers that give the entire card a pearlescent sheen. Soft Touch is a velvet-matte protective coating applied after printing that gives the cards a soft, suede-like texture.",
+            },
+            {
+              q: "How does the Metallic Foil option work?",
+              a: "Metallic foil adds a brilliant, reflective gold or silver foil layer to selected areas of your design (such as your logo or name). This creates a striking contrast against the matte background.",
+            },
+          ],
+          reviews: [
+            {
+              author: "David L., Creative Lead",
+              rating: 5,
+              text: "The metallic foil cards look amazing! They really capture attention when handed out. Exact color registration and excellent premium paper stock.",
+            },
+            {
+              author: "Sophia R., Real Estate Agent",
+              rating: 5,
+              text: "I ordered the Pearl business cards and have received so many compliments on the shimmer. The offset print quality is pristine.",
+            },
+            {
+              author: "James P., Contractor",
+              rating: 5,
+              text: "Sturdy 16 pt premium cards. Excellent price point and extremely fast turnaround. Will definitely reorder standard cards here.",
+            },
+          ],
           ctaHeading: "Design business cards now",
           ctaBody:
             "Upload your business info and logo to print double-sided cards fast.",
@@ -3414,11 +3602,22 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         description:
           "Make a great first impression with premium custom business cards.",
         image: "/images/products/main%20page/business_cards.png",
-        price: "Starting at $19.99 for 250",
+        price: "Starting at $19.99",
         badge: "Corporate Choice",
         config: {
           title: "Custom Business Cards",
-          quantityOptions: [100, 250, 500, 1000, 2500, 5000, 10000],
+          quantityOptions: [100, 250, 500, 1000, 1500, 2000, 2500, 5000, 10000],
+          quantityPrices: {
+            100: 19.99,
+            250: 29.99,
+            500: 44.99,
+            1000: 69.99,
+            1500: 94.99,
+            2000: 119.99,
+            2500: 139.99,
+            5000: 249.99,
+            10000: 449.99,
+          },
           subtitle:
             'Standard 3.5" x 2" cards printed on ultra-thick cardstock with multiple finishes.',
           breadcrumb: "Marketing",
@@ -3436,46 +3635,100 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           ],
           selects: [
             {
-              label: "Paper Thickness & Texture",
+              label: "Paper Stock & Finish",
               options: [
                 {
-                  label: "Premium 14pt Cardstock",
-                  value: "14pt",
+                  label: "Standard Matte (14 pt)",
+                  value: "standard_matte",
                   priceAdder: 0,
-                  description: "Classic professional card thickness.",
+                  description: "Classic smooth, glare-free matte finish.",
+                  image: "/images/products/main%20page/business_cards_standard.png",
                 },
                 {
-                  label: "Ultra-Premium 16pt Cardstock",
-                  value: "16pt",
-                  priceAdder: 5.0,
-                  description: "Extra sturdy, high end feel.",
+                  label: "Standard Glossy (14 pt)",
+                  value: "standard_glossy",
+                  priceAdder: 0,
+                  description: "High-shine glossy finish that makes colors pop.",
+                  image: "/images/products/main%20page/business_cards_standard.png",
+                },
+                {
+                  label: "Standard Uncoated (14 pt)",
+                  value: "standard_uncoated",
+                  priceAdder: 2.00,
+                  description: "Easy-to-write-on paper with a clean, natural texture.",
+                  image: "/images/products/main%20page/business_cards_standard.png",
+                },
+                {
+                  label: "Premium Matte (16 pt)",
+                  value: "premium_matte",
+                  priceAdder: 4.99,
+                  description: "Thicker cardstock with a sleek, non-reflective finish.",
+                  image: "/images/products/main%20page/business_cards_premium.png",
+                },
+                {
+                  label: "Premium Glossy (16 pt)",
+                  value: "premium_glossy",
+                  priceAdder: 4.99,
+                  description: "Thicker cardstock with a brilliant, light-catching coat.",
+                  image: "/images/products/main%20page/business_cards_premium.png",
+                },
+                {
+                  label: "Premium Plus Matte (18 pt)",
+                  value: "premium_plus_matte",
+                  priceAdder: 9.99,
+                  description: "Our thickest matte cardstock for a substantial, sturdy feel.",
+                  image: "/images/products/main%20page/business_cards_premium.png",
+                },
+                {
+                  label: "Pearl (14 pt)",
+                  value: "pearl",
+                  priceAdder: 14.99,
+                  description: "Glimmering, light-catching surface with a pearlescent shine.",
+                  image: "/images/products/main%20page/business_cards_pearl.png",
+                },
+                {
+                  label: "Soft Touch (16 pt)",
+                  value: "soft_touch",
+                  priceAdder: 14.99,
+                  description: "Velvety coating that feels soft and premium in the hand.",
+                  image: "/images/products/main%20page/business_cards_premium.png",
+                },
+                {
+                  label: "Metallic Foil (16 pt)",
+                  value: "metallic_foil",
+                  priceAdder: 19.99,
+                  description: "Stunning custom gold or silver foil accents that reflect light.",
+                  image: "/images/products/main%20page/business_cards_foil.png",
+                },
+                {
+                  label: "Embossed Gloss (16 pt)",
+                  value: "embossed_gloss",
+                  priceAdder: 19.99,
+                  description: "Raised, clear glossy patterns for an elegant 3D texture.",
+                  image: "/images/products/main%20page/business_cards_foil.png",
                 },
               ],
             },
             {
-              label: "Card Finish",
+              label: "Corners",
               options: [
                 {
-                  label: "Premium Matte (Non-glare)",
-                  value: "matte",
+                  label: "Standard Square Corners",
+                  value: "square",
                   priceAdder: 0,
-                  description: "Elegant, easy to write notes on.",
                 },
                 {
-                  label: "High-Gloss UV Shine",
-                  value: "gloss",
-                  priceAdder: 2.5,
-                  description:
-                    "Coated front protection with a premium reflection.",
+                  label: "Rounded Corners",
+                  value: "rounded",
+                  priceAdder: 4.99,
                 },
               ],
             },
           ],
-          qtyDiscount: "Bulk boxes of 250, 500, 1000 available",
+          qtyDiscount: "Predefined package quantities selected below",
           keyFeatures: [
             "Vibrant color offset printing",
             "Ultra-thick cardstock options",
-            "Spot UV and rounded corner finishes",
             "Easy design templates",
           ],
           useCases: [
@@ -3485,24 +3738,67 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
             "Appointment reminders",
           ],
           specs: [
-            { key: "Material", value: "14pt or 16pt Cardstock" },
+            { key: "Material", value: "14pt, 16pt, or 18pt Cardstock" },
             {
               key: "Finish Options",
-              value: "Matte, UV Gloss, Rounded corners",
+              value: "Matte, UV Gloss, Pearl, Soft Touch, Metallic Foil, Embossed Gloss",
             },
             { key: "DPI", value: "Offset litho press 300 Line Screen" },
           ],
+          description: `Leave a powerful, lasting impression with our premium Custom Business Cards. A business card is more than just contact information—it is a tangible extension of your brand and a critical tool for networking and professional credibility. We offer standard standard sizing (3.5" x 2") printed on ultra-thick cardstocks with premium textures and finishes to match the exact quality of VistaPrint.
+
+Our cards are produced on state-of-the-art digital and offset presses, ensuring razor-sharp text and vivid color reproduction. Choose from standard matte or high-gloss finishes, or elevate your design with our specialty papers including shimmering Pearl, velvety Soft Touch, or light-reflecting Metallic Foil.
+
+By offering quantities from 100 up to 10,000 cards, we cater to individual freelancers, growing startups, and large enterprise fleets. Every paper stock option is selected for its stiffness and premium feel, guaranteeing your card won't get lost or damaged in a pocket or wallet.
+
+Our Paper Stock & Specialty Finishes:
+- Standard Matte (14 pt): Glare-free, clean, and classic. Easy to write on.
+- Standard Glossy (14 pt): Brilliant shine that makes images and photos pop.
+- Standard Uncoated (14 pt): Easy-to-write-on paper with a clean, natural texture.
+- Premium Matte (16 pt): Thicker cardstock with a sleek, non-reflective finish.
+- Premium Glossy (16 pt): Thicker cardstock with a brilliant, light-catching coat.
+- Premium Plus Matte (18 pt): Our thickest matte cardstock for a substantial, sturdy feel.
+- Pearl (14 pt): A unique shimmering paper that reflects light with a pearlescent glow.
+- Soft Touch (16 pt): A velvet-like matte coating that feels luxurious and unique.
+- Metallic Foil (16 pt): Premium metallic gold or silver foil accents for upscale highlights.
+- Embossed Gloss (16 pt): Raised clear glossy varnish creates a tactile, premium 3D effect.`,
           faqs: [
             {
-              q: "Can I write on these cards?",
-              a: "Yes! Our premium matte finish cards can be written on with standard pens or pencils.",
+              q: "What is the standard size of a business card?",
+              a: "The standard size for standard business cards is 3.5 inches by 2 inches. This fits perfectly into standard wallets, cardholders, and organizer slots.",
+            },
+            {
+              q: "What is the difference between 14 pt and 16 pt cardstock?",
+              a: "The point (pt) unit measures paper thickness. 14 pt cardstock is the industry standard for high-quality business cards. 16 pt cardstock is thicker and sturdier, providing a heavier, more premium feel.",
+            },
+            {
+              q: "Can I write on both matte and glossy business cards?",
+              a: "You can write on matte and uncoated cards using standard ballpoint pens or pencils. Glossy cards have a slick UV coating that resists ink, making them harder to write on.",
+            },
+            {
+              q: "What are Pearl and Soft Touch finishes?",
+              a: "Pearl cardstock uses a specialized paper embedded with natural shimmering fibers that give the entire card a pearlescent sheen. Soft Touch is a velvet-matte protective coating applied after printing that gives the cards a soft, suede-like texture.",
+            },
+            {
+              q: "How does the Metallic Foil option work?",
+              a: "Metallic foil adds a brilliant, reflective gold or silver foil layer to selected areas of your design (such as your logo or name). This creates a striking contrast against the matte background.",
             },
           ],
           reviews: [
             {
-              author: "Jessica M.",
+              author: "David L., Creative Lead",
               rating: 5,
-              text: "Excellent matte finish. The colors matched my website colors exactly.",
+              text: "The metallic foil cards look amazing! They really capture attention when handed out. Exact color registration and excellent premium paper stock.",
+            },
+            {
+              author: "Sophia R., Real Estate Agent",
+              rating: 5,
+              text: "I ordered the Pearl business cards and have received so many compliments on the shimmer. The offset print quality is pristine.",
+            },
+            {
+              author: "James P., Contractor",
+              rating: 5,
+              text: "Sturdy 16 pt premium cards. Excellent price point and extremely fast turnaround. Will definitely reorder standard cards here.",
             },
           ],
           ctaHeading: "Design business cards now",

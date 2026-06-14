@@ -31,6 +31,7 @@ export interface SelectOption {
   value: string;
   priceAdder: number;
   description?: string;
+  image?: string;
 }
 export interface ToggleOption {
   id: string;
@@ -83,6 +84,8 @@ export interface ProductPageConfig {
   description?: string;
   minQuantity?: number;
   quantityOptions?: number[];
+  bulkDiscounts?: { minQty: number; discountPercent: number }[];
+  quantityPrices?: Record<number, number>;
 }
 
 function StarRating({ rating }: { rating: number }) {
@@ -266,11 +269,6 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
     });
   };
 
-  const galleryImages = useMemo(() => {
-    const imagesList = cfg.images && cfg.images.length > 0 ? cfg.images : [cfg.image];
-    return Array.from(new Set(imagesList.filter(Boolean)));
-  }, [cfg.images, cfg.image]);
-
   useEffect(() => {
     setActiveImageIndex(0);
     const defaultMin = cfg.minQuantity || (cfg.quantityOptions ? cfg.quantityOptions[0] : 1);
@@ -297,22 +295,62 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
   const [quantity, setQuantity] = useState(() => cfg.minQuantity || (cfg.quantityOptions ? cfg.quantityOptions[0] : 1));
   const [activeTab, setActiveTab] = useState("overview");
 
+  const galleryImages = useMemo(() => {
+    const imagesList = cfg.images && cfg.images.length > 0 ? cfg.images : [cfg.image];
+    return Array.from(new Set(imagesList.filter(Boolean)));
+  }, [cfg.images, cfg.image]);
+
+  const currentImage = useMemo(() => {
+    for (const val of Object.values(selectValues)) {
+      if (val.image) return val.image;
+    }
+    return galleryImages[activeImageIndex];
+  }, [selectValues, galleryImages, activeImageIndex]);
+
   const unitPrice = useMemo(() => {
-    let price = selectedSize.basePrice;
+    let baseUnitPrice = selectedSize.basePrice;
+    if (cfg.quantityPrices && cfg.quantityPrices[quantity] !== undefined) {
+      baseUnitPrice = cfg.quantityPrices[quantity] / quantity;
+    }
+
+    let price = baseUnitPrice;
     Object.values(selectValues).forEach((v) => {
       price += v.priceAdder;
     });
     Object.values(toggleValues).forEach((v) => {
       price += v.priceAdder;
     });
+
     let discount = 1;
-    if (quantity >= 100) discount = 0.82;
-    else if (quantity >= 50) discount = 0.87;
-    else if (quantity >= 25) discount = 0.9;
-    else if (quantity >= 10) discount = 0.94;
-    else if (quantity >= 5) discount = 0.97;
+    if (cfg.bulkDiscounts) {
+      const sortedDiscounts = [...cfg.bulkDiscounts].sort((a, b) => b.minQty - a.minQty);
+      const matchedDiscount = sortedDiscounts.find((d) => quantity >= d.minQty);
+      if (matchedDiscount) {
+        discount = (100 - matchedDiscount.discountPercent) / 100;
+      }
+    } else if (cfg.quantityPrices) {
+      discount = 1;
+    } else {
+      if (quantity >= 100) discount = 0.82;
+      else if (quantity >= 50) discount = 0.87;
+      else if (quantity >= 25) discount = 0.9;
+      else if (quantity >= 10) discount = 0.94;
+      else if (quantity >= 5) discount = 0.97;
+    }
+
     return price * discount;
-  }, [selectedSize, selectValues, toggleValues, quantity]);
+  }, [selectedSize, selectValues, toggleValues, quantity, cfg.bulkDiscounts, cfg.quantityPrices]);
+
+  const isBulkDiscountApplied = useMemo(() => {
+    if (cfg.bulkDiscounts) {
+      const minQty = Math.min(...cfg.bulkDiscounts.map((d) => d.minQty));
+      return quantity >= minQty;
+    }
+    if (cfg.quantityPrices) {
+      return quantity > (cfg.quantityOptions ? cfg.quantityOptions[0] : 1);
+    }
+    return quantity >= 5;
+  }, [cfg, quantity]);
 
   const totalPrice = (unitPrice * quantity).toFixed(2);
   const originalTotalPrice = ((unitPrice / 0.75) * quantity).toFixed(2); // 25% off display
@@ -501,12 +539,12 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
             >
               <div className="relative w-full h-full min-h-[420px] self-stretch flex aspect-[4/3] max-h-[420px]">
                 <Image
-                  src={galleryImages[activeImageIndex]}
+                  src={currentImage}
                   alt={`${cfg.title} preview`}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                   quality={90}
-                  unoptimized={galleryImages[activeImageIndex].startsWith("/api/")}
+                  unoptimized={currentImage.startsWith("/api/")}
                   className="object-cover"
                   priority
                 />
@@ -720,7 +758,7 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
                   <span className="text-gray-500 font-semibold">
                     ${unitPrice.toFixed(2)} each
                   </span>
-                  {quantity >= 5 && (
+                  {isBulkDiscountApplied && (
                     <span className="text-green-600 font-extrabold">
                       Bulk Discount Applied!
                     </span>
@@ -886,22 +924,24 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
                     </span>
                   </div>
                   {/* Qty tiers */}
-                  <div className="mt-3 grid grid-cols-4 gap-1.5 text-center text-[10px] font-bold">
-                    {[
-                      ["5+", "3% off"],
-                      ["10+", "6% off"],
-                      ["25+", "10% off"],
-                      ["50+", "13% off"],
-                    ].map(([q, d]) => (
-                      <div
-                        key={q}
-                        className="bg-gray-50 border border-gray-200 rounded-lg p-1.5 shadow-sm"
-                      >
-                        <div className="text-gray-700">{q}</div>
-                        <div className="text-green-600">{d}</div>
-                      </div>
-                    ))}
-                  </div>
+                  {!cfg.quantityPrices && (
+                    <div className="mt-3 grid grid-cols-4 gap-1.5 text-center text-[10px] font-bold">
+                      {(cfg.bulkDiscounts || [
+                        { minQty: 5, discountPercent: 3 },
+                        { minQty: 10, discountPercent: 6 },
+                        { minQty: 25, discountPercent: 10 },
+                        { minQty: 50, discountPercent: 13 },
+                      ]).map((d) => (
+                        <div
+                          key={d.minQty}
+                          className="bg-gray-50 border border-gray-200 rounded-lg p-1.5 shadow-sm"
+                        >
+                          <div className="text-gray-700">{d.minQty}+</div>
+                          <div className="text-green-600">{d.discountPercent}% off</div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -1050,12 +1090,12 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
           {/* Image */}
           <div className="relative w-full max-w-5xl h-[80vh] flex items-center justify-center">
             <Image
-              src={galleryImages[activeImageIndex]}
+              src={currentImage}
               alt={cfg.title}
               fill
               sizes="100vw"
               quality={95}
-              unoptimized={galleryImages[activeImageIndex].startsWith("/api/")}
+              unoptimized={currentImage.startsWith("/api/")}
               className="object-contain"
             />
           </div>
