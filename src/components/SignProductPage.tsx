@@ -81,6 +81,8 @@ export interface ProductPageConfig {
     color: string;
   };
   description?: string;
+  minQuantity?: number;
+  quantityOptions?: number[];
 }
 
 function StarRating({ rating }: { rating: number }) {
@@ -271,6 +273,8 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
 
   useEffect(() => {
     setActiveImageIndex(0);
+    const defaultMin = cfg.minQuantity || (cfg.quantityOptions ? cfg.quantityOptions[0] : 1);
+    setQuantity(defaultMin);
   }, [cfg]);
   const [selectValues, setSelectValues] = useState<
     Record<string, SelectOption>
@@ -290,7 +294,7 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
     });
     return init;
   });
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(() => cfg.minQuantity || (cfg.quantityOptions ? cfg.quantityOptions[0] : 1));
   const [activeTab, setActiveTab] = useState("overview");
 
   const unitPrice = useMemo(() => {
@@ -832,31 +836,51 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
                     Quantity
                   </label>
                   <div className="flex items-center gap-3">
-                    <div className="flex items-center bg-gray-50 border border-gray-200 rounded-xl overflow-hidden">
-                      <button
-                        onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                        className="px-4 py-2.5 hover:bg-gray-100 text-lg font-bold transition-colors"
-                      >
-                        −
-                      </button>
-                      <input
-                        type="number"
-                        value={quantity}
-                        min={1}
-                        onChange={(e) =>
-                          setQuantity(
-                            Math.max(1, parseInt(e.target.value) || 1),
-                          )
-                        }
-                        className="w-16 text-center bg-transparent focus:outline-none font-extrabold text-sm text-gray-900"
-                      />
-                      <button
-                        onClick={() => setQuantity(quantity + 1)}
-                        className="px-4 py-2.5 hover:bg-gray-100 text-lg font-bold transition-colors"
-                      >
-                        +
-                      </button>
-                    </div>
+                    {cfg.quantityOptions ? (
+                      <div className="relative flex items-center bg-gray-50 border border-gray-200 rounded-xl overflow-hidden px-4 py-2.5">
+                        <select
+                          value={quantity}
+                          onChange={(e) => setQuantity(parseInt(e.target.value) || 100)}
+                          className="appearance-none bg-transparent pr-7 focus:outline-none font-extrabold text-sm text-gray-900 cursor-pointer"
+                        >
+                          {cfg.quantityOptions.map((opt) => (
+                            <option key={opt} value={opt}>
+                              {opt}
+                            </option>
+                          ))}
+                        </select>
+                        <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none" />
+                      </div>
+                    ) : (
+                      <div className="flex items-center bg-gray-50 border border-gray-200 rounded-xl overflow-hidden">
+                        <button
+                          onClick={() => setQuantity(Math.max(cfg.minQuantity || 1, quantity - 1))}
+                          className="px-4 py-2.5 hover:bg-gray-100 text-lg font-bold transition-colors"
+                        >
+                          −
+                        </button>
+                        <input
+                          type="number"
+                          value={quantity}
+                          min={cfg.minQuantity || 1}
+                          onChange={(e) =>
+                            setQuantity(
+                              Math.max(
+                                cfg.minQuantity || 1,
+                                parseInt(e.target.value) || (cfg.minQuantity || 1),
+                              ),
+                            )
+                          }
+                          className="w-16 text-center bg-transparent focus:outline-none font-extrabold text-sm text-gray-900"
+                        />
+                        <button
+                          onClick={() => setQuantity(quantity + 1)}
+                          className="px-4 py-2.5 hover:bg-gray-100 text-lg font-bold transition-colors"
+                        >
+                          +
+                        </button>
+                      </div>
+                    )}
                     <span className="text-xs text-gray-500 font-semibold">
                       {cfg.qtyDiscount}
                     </span>

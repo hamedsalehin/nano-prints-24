@@ -36,6 +36,8 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     description:
       "High-quality custom banners for any occasion. From outdoor vinyl to professional retractable displays, we have the perfect solution for your business or event.",
     heroImage: "/images/products/main%20page/banners%20hero%20image.png",
+    tabletHeroImage: "/images/products/main%20page/banners%20hero%20image.png",
+    mobileHeroImage: "/images/products/main%20page/banners%20hero%20image.png",
     reviewRating: "4.9",
     reviewCount: "2,680",
     reviewQuote:
@@ -1283,6 +1285,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         price: "Starting at $2.24",
         config: {
           title: "Custom Bumper Stickers",
+          quantityOptions: [100, 250, 500, 1000, 2500, 5000, 10000],
           subtitle:
             "Standard bumper stickers printed on waterproof, UV-proof outdoor vinyl adhesive.",
           breadcrumb: "Vehicle Signs",
@@ -2554,6 +2557,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         price: "Starting at $19.99",
         config: {
           title: "Custom Business Cards",
+          quantityOptions: [100, 250, 500, 1000, 2500, 5000, 10000],
           subtitle:
             'Standard 3.5" x 2" cards printed on ultra-thick cardstock with multiple finishes.',
           breadcrumb: "Tradeshow",
@@ -2632,6 +2636,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         price: "Starting at $14.99",
         config: {
           title: "Custom Postcards",
+          quantityOptions: [100, 250, 500, 1000, 2500, 5000, 10000],
           subtitle:
             "Standard promotional postcards printed in high definition gloss or matte cardstock.",
           breadcrumb: "Tradeshow",
@@ -2731,6 +2736,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         badge: "Car Favorite",
         config: {
           title: "Custom Bumper Stickers",
+          quantityOptions: [100, 250, 500, 1000, 2500, 5000, 10000],
           subtitle:
             "Standard bumper stickers printed on waterproof, UV-proof outdoor vinyl adhesive.",
           breadcrumb: "Decals",
@@ -3011,6 +3017,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         price: "Starting at $0.54 each",
         config: {
           title: "Custom Printed Roll Labels",
+          quantityOptions: [100, 250, 500, 1000, 2500, 5000, 10000],
           subtitle:
             "Bulk logo and product label rolls, perfect for quick peeling, boxing, and product jars.",
           breadcrumb: "Decals",
@@ -3145,6 +3152,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         price: "Starting at $11.16",
         config: {
           title: "Custom Sheet Stickers",
+          quantityOptions: [100, 250, 500, 1000, 2500, 5000, 10000],
           subtitle:
             "Sticker sheets featuring multiple peel-off sticker cut contours on a single page.",
           breadcrumb: "Decals",
@@ -3212,6 +3220,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         price: "Starting at $0.14 each",
         config: {
           title: "Return Address Labels",
+          quantityOptions: [100, 250, 500, 1000, 2500, 5000, 10000],
           subtitle:
             "Convenient return address labels printed on premium sticky sheets.",
           breadcrumb: "Decals",
@@ -3409,6 +3418,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         badge: "Corporate Choice",
         config: {
           title: "Custom Business Cards",
+          quantityOptions: [100, 250, 500, 1000, 2500, 5000, 10000],
           subtitle:
             'Standard 3.5" x 2" cards printed on ultra-thick cardstock with multiple finishes.',
           breadcrumb: "Marketing",
@@ -3511,6 +3521,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         badge: "Event Choice",
         config: {
           title: "Custom Postcards",
+          quantityOptions: [100, 250, 500, 1000, 2500, 5000, 10000],
           subtitle:
             "Full-color promotional postcards printed on premium thick cardstock.",
           breadcrumb: "Marketing",
@@ -3599,6 +3610,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         badge: "Best Value",
         config: {
           title: "Custom Flyers",
+          quantityOptions: [100, 250, 500, 1000, 2500, 5000, 10000],
           subtitle:
             "Premium full color flyers printed on professional paper stock.",
           breadcrumb: "Marketing",
@@ -3675,6 +3687,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         badge: "Corporate Choice",
         config: {
           title: "Folded Brochures",
+          quantityOptions: [100, 250, 500, 1000, 2500, 5000, 10000],
           subtitle:
             "Premium full color folded brochures printed on professional paper stock.",
           breadcrumb: "Marketing",
@@ -3752,6 +3765,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         price: "Starting at $39.99 for 100",
         config: {
           title: "Custom Door Hangers",
+          quantityOptions: [100, 250, 500, 1000, 2500, 5000, 10000],
           subtitle:
             "Vibrant door hangers pre-cut with handle holes, perfect for local business advertising.",
           breadcrumb: "Marketing",
@@ -3872,6 +3886,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         badge: "Staff Wear",
         config: {
           title: "Custom Printed T-Shirts",
+          minQuantity: 12,
           subtitle:
             "Comfortable cotton tees customized with full-color heat-press or screen prints.",
           breadcrumb: "Promotional",
@@ -3955,6 +3970,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         badge: "Office Best-Seller",
         config: {
           title: "Custom Coffee Mugs",
+          minQuantity: 12,
           subtitle:
             "Full-color sublimation print ceramic mugs, perfect for corporate swag and office desks.",
           breadcrumb: "Promotional",
@@ -4016,6 +4032,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         price: "Starting at $5.99 each",
         config: {
           title: "Custom Canvas Tote Bags",
+          minQuantity: 12,
           subtitle:
             "Eco-friendly, reusable cotton canvas totes printed with vibrant logo colors.",
           breadcrumb: "Promotional",
@@ -4082,6 +4099,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         badge: "Trade Show Choice",
         config: {
           title: "Custom Logo Pens",
+          quantityOptions: [100, 250, 500, 1000, 2500, 5000, 10000],
           subtitle:
             "Sleek retractable clicker pens printed with your business website or phone number.",
           breadcrumb: "Promotional",
@@ -4162,6 +4180,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         price: "Starting at $3.99 each",
         config: {
           title: "Custom Notebooks & Journals",
+          minQuantity: 10,
           subtitle:
             "Lined paper journals with premium custom covers to organize meetings and ideas.",
           breadcrumb: "Promotional",
@@ -4223,6 +4242,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         price: "Starting at $1.29 each",
         config: {
           title: "Custom Logo Keychains",
+          minQuantity: 25,
           subtitle:
             "Sturdy custom key rings featuring printed acrylic shapes or laser engraved metal.",
           breadcrumb: "Promotional",
@@ -4284,6 +4304,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
         badge: "Household Favorite",
         config: {
           title: "Custom Fridge Magnets",
+          quantityOptions: [100, 250, 500, 1000, 2500, 5000, 10000],
           subtitle:
             "Lightweight flexible promo magnets, perfect for direct mail and fridge doors.",
           breadcrumb: "Promotional",
@@ -4341,9 +4362,9 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
     heroSubtitle: "Built to Stand Out. Built to Last.",
     description:
       "From yard signs to premium acrylic, we print stunning custom signs fast. Choose your product, upload your design, and we ship next day.",
-    heroImage: "/images/products/main%20page/nano hero signs section.png",
-    tabletHeroImage: "/images/products/main%20page/nano hero signs section.png",
-    mobileHeroImage: "/images/products/main%20page/nano hero signs section.png",
+    heroImage: "/images/products/main%20page/nano%20hero%20signs%20section.png",
+    tabletHeroImage: "/images/products/main%20page/nano%20hero%20signs%20section.png",
+    mobileHeroImage: "/images/products/main%20page/nano%20hero%20signs%20section.png",
     reviewRating: "4.9",
     reviewCount: "8,420",
     reviewQuote:
