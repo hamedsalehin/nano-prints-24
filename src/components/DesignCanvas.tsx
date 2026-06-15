@@ -492,6 +492,24 @@ export function DesignCanvas({
         />
       )}
 
+      {/* Print Bleed & Safety Guidelines */}
+      <div
+        className="absolute border border-dashed border-red-500/60 pointer-events-none z-20"
+        style={{
+          top: "2.5%",
+          left: "2.5%",
+          right: "2.5%",
+          bottom: "2.5%",
+        }}
+      >
+        <span className="absolute top-1 left-2 text-[8px] font-semibold text-red-500/80 bg-slate-900/10 px-1 rounded uppercase tracking-wider select-none">
+          Safety Margin
+        </span>
+        <span className="absolute bottom-1 right-2 text-[8px] font-semibold text-red-500/80 bg-slate-900/10 px-1 rounded uppercase tracking-wider select-none">
+          Bleed Area
+        </span>
+      </div>
+
       {/* Canvas Elements */}
       {elements.map((el) => {
         const isSelected = selectedId === el.id;

@@ -600,7 +600,7 @@ function DesignPageContent() {
   }, [productId, urlHeight]);
 
   // State Management
-  const [elements, setElements] = useState<CanvasElement[]>([
+  const [elements, setElementsRaw] = useState<CanvasElement[]>([
     {
       id: "init-bg",
       type: "shape",
@@ -632,8 +632,113 @@ function DesignPageContent() {
   ]);
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
+  // Double-Sided Pages Support
+  const [activeSide, setActiveSide] = useState<"front" | "back">("front");
+  const [frontElements, setFrontElements] = useState<CanvasElement[]>(() => [
+    {
+      id: "init-bg",
+      type: "shape",
+      x: 2,
+      y: 2,
+      width: 96,
+      height: 96,
+      rotation: 0,
+      shapeType: "rect",
+      fillColor: "#ffffff",
+      borderWidth: 4,
+      borderColor: "#000",
+    },
+    {
+      id: "text-1",
+      type: "text",
+      x: 10,
+      y: 35,
+      width: 80,
+      height: 30,
+      rotation: 0,
+      content: "YOUR DESIGN HERE",
+      fontFamily: "Impact",
+      fontSize: 56,
+      color: "#000000",
+      bold: true,
+      align: "center",
+    },
+  ]);
+  const [backElements, setBackElements] = useState<CanvasElement[]>([
+    {
+      id: "init-bg",
+      type: "shape",
+      x: 2,
+      y: 2,
+      width: 96,
+      height: 96,
+      rotation: 0,
+      shapeType: "rect",
+      fillColor: "#ffffff",
+      borderWidth: 4,
+      borderColor: "#000",
+    },
+    {
+      id: "text-1",
+      type: "text",
+      x: 10,
+      y: 35,
+      width: 80,
+      height: 30,
+      rotation: 0,
+      content: "BACK SIDE DESIGN",
+      fontFamily: "Impact",
+      fontSize: 56,
+      color: "#000000",
+      bold: true,
+      align: "center",
+    },
+  ]);
+
+  // Canvas Aesthetics for Front and Back
+  const [bgColor, setBgColor] = useState("#ffffff");
+  const [bgGradient, setBgGradient] = useState("");
+  const [bgImage, setBgImage] = useState<string | null>(null);
+
+  const [frontBgColor, setFrontBgColor] = useState("#ffffff");
+  const [frontBgGradient, setFrontBgGradient] = useState("");
+  const [frontBgImage, setFrontBgImage] = useState<string | null>(null);
+
+  const [backBgColor, setBackBgColor] = useState("#ffffff");
+  const [backBgGradient, setBackBgGradient] = useState("");
+  const [backBgImage, setBackBgImage] = useState<string | null>(null);
+
   // Undo/Redo History
-  const [history, setHistory] = useState<CanvasElement[][]>([[...elements]]);
+  const [history, setHistory] = useState<CanvasElement[][]>([[
+    {
+      id: "init-bg",
+      type: "shape",
+      x: 2,
+      y: 2,
+      width: 96,
+      height: 96,
+      rotation: 0,
+      shapeType: "rect",
+      fillColor: "#ffffff",
+      borderWidth: 4,
+      borderColor: "#000",
+    },
+    {
+      id: "text-1",
+      type: "text",
+      x: 10,
+      y: 35,
+      width: 80,
+      height: 30,
+      rotation: 0,
+      content: "YOUR DESIGN HERE",
+      fontFamily: "Impact",
+      fontSize: 56,
+      color: "#000000",
+      bold: true,
+      align: "center",
+    },
+  ]]);
   const [historyIndex, setHistoryIndex] = useState(0);
 
   // Canvas Settings
@@ -644,6 +749,63 @@ function DesignPageContent() {
   const [material, setMaterial] = useState(MATERIALS[0]);
   const [doubleSided, setDoubleSided] = useState(false);
   const [quantity, setQuantity] = useState(1);
+
+  // Wrapper setter for elements that also writes to side buffers
+  const setElements = React.useCallback(
+    (newElements: React.SetStateAction<CanvasElement[]>) => {
+      setElementsRaw((prev) => {
+        const next = typeof newElements === "function" ? newElements(prev) : newElements;
+        if (activeSide === "front") {
+          setFrontElements(next);
+        } else {
+          setBackElements(next);
+        }
+        return next;
+      });
+    },
+    [activeSide]
+  );
+
+  const handleSwitchSide = (side: "front" | "back") => {
+    if (side === activeSide) return;
+
+    // Save current active state to source buffer
+    if (activeSide === "front") {
+      setFrontElements(elements);
+      setFrontBgColor(bgColor);
+      setFrontBgGradient(bgGradient);
+      setFrontBgImage(bgImage);
+    } else {
+      setBackElements(elements);
+      setBackBgColor(bgColor);
+      setBackBgGradient(bgGradient);
+      setBackBgImage(bgImage);
+    }
+
+    // Load state from target buffer
+    const targetElements = side === "front" ? frontElements : backElements;
+    const targetBgColor = side === "front" ? frontBgColor : backBgColor;
+    const targetBgGradient = side === "front" ? frontBgGradient : backBgGradient;
+    const targetBgImage = side === "front" ? frontBgImage : backBgImage;
+
+    setElementsRaw(targetElements);
+    setBgColor(targetBgColor);
+    setBgGradient(targetBgGradient);
+    setBgImage(targetBgImage);
+    setActiveSide(side);
+    setSelectedId(null);
+
+    // Reset history index for this side switch
+    setHistory([targetElements]);
+    setHistoryIndex(0);
+  };
+
+  useEffect(() => {
+    if (!doubleSided && activeSide === "back") {
+      handleSwitchSide("front");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [doubleSided, activeSide]);
 
   useEffect(() => {
     if (productId === "rollup" || urlHeight === "79") {
@@ -722,8 +884,13 @@ function DesignPageContent() {
       }
       
       const parts = initialSize.value.split('x');
-      const h = parseInt(parts[0]) || 2;
-      const w = parseInt(parts[1]) || 3.5;
+      let h = parseFloat(parts[0]) || 2;
+      let w = parseFloat(parts[1]) || 3.5;
+      
+      if (productId === "business-cards") {
+        w = 3.5;
+        h = 2;
+      }
       
       setCanvasSize({
         label: initialSize.label,
@@ -732,8 +899,12 @@ function DesignPageContent() {
         priceAdder: initialSize.basePrice - defaultSize.basePrice,
       });
     } else if (urlWidth && urlHeight) {
-      const w = parseInt(urlWidth) || 24;
-      const h = parseInt(urlHeight) || 18;
+      let w = parseFloat(urlWidth) || 24;
+      let h = parseFloat(urlHeight) || 18;
+      if (productId === "business-cards") {
+        w = 3.5;
+        h = 2;
+      }
       setCanvasSize({
         label: `${h}" x ${w}" (Custom)`,
         width: w,
@@ -741,12 +912,10 @@ function DesignPageContent() {
         priceAdder: 0,
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [productId, urlWidth, urlHeight, registryProduct]);
 
   // Canvas Aesthetics
-  const [bgColor, setBgColor] = useState("#ffffff");
-  const [bgGradient, setBgGradient] = useState("");
-  const [bgImage, setBgImage] = useState<string | null>(null);
   const [showGrid, setShowGrid] = useState(false);
   const [snapToGrid, setSnapToGrid] = useState(true);
   const [zoomLevel, setZoomLevel] = useState(100);
@@ -801,6 +970,7 @@ function DesignPageContent() {
   const [checkoutStep, setCheckoutStep] = useState<
     "review" | "shipping" | "success"
   >("review");
+  const [modalPreviewSide, setModalPreviewSide] = useState<"front" | "back">("front");
 
   // Shipping form state
   const [shippingName, setShippingName] = useState("");
@@ -832,7 +1002,7 @@ function DesignPageContent() {
       const formData = new FormData();
       formData.append("user_id", user.id);
       formData.append("user_email", user.email ?? "");
-      formData.append("product_title", material.label);
+      formData.append("product_title", registryProduct ? registryProduct.name : material.label);
       formData.append("product_size", canvasSize.label);
       formData.append("quantity", String(quantity));
       formData.append("unit_price", calculatedPrice.unitPrice);
@@ -1046,16 +1216,27 @@ function DesignPageContent() {
       }
 
       let price = baseUnitPrice;
+      let multiplier = 1;
 
       Object.entries(selectValues).forEach(([k, v]: [string, any]) => {
-        if (v && v.priceAdder !== undefined) {
-          price += v.priceAdder;
+        if (v) {
+          if (v.priceAdder !== undefined) {
+            price += v.priceAdder;
+          }
+          if (v.priceMultiplier !== undefined) {
+            multiplier *= v.priceMultiplier;
+          }
         }
       });
 
-      const hasSidesSelect = Object.keys(selectValues).some(k => k.toLowerCase() === "sides" || k.toLowerCase() === "back side" || k.toLowerCase() === "print direction");
+      const hasSidesSelect = Object.keys(selectValues).some(
+        (k) =>
+          k.toLowerCase() === "sides" ||
+          k.toLowerCase() === "back side" ||
+          k.toLowerCase() === "print direction"
+      );
       if (doubleSided && !hasSidesSelect) {
-        price *= 1.4;
+        multiplier *= 1.25; // Surcharge of +25% for double sided printing
       }
 
       let discount = 1;
@@ -1075,10 +1256,11 @@ function DesignPageContent() {
         else if (quantity >= 5) discount = 0.97;
       }
 
-      const subtotal = price * discount * quantity;
+      const finalUnitPrice = price * discount * multiplier;
+      const subtotal = finalUnitPrice * quantity;
 
       return {
-        unitPrice: (price * discount).toFixed(2),
+        unitPrice: finalUnitPrice.toFixed(2),
         total: subtotal.toFixed(2),
         savings: (subtotal / 0.75 - subtotal).toFixed(2),
       };
@@ -1086,24 +1268,24 @@ function DesignPageContent() {
       let base = material.basePrice;
       base += canvasSize.priceAdder;
 
+      let multiplier = 1;
       if (doubleSided) {
-        base *= 1.4;
+        multiplier *= 1.25; // 25% surcharge for double sided printing
       }
 
       const extraElements = Math.max(0, elements.length - 4);
       base += extraElements * 0.5;
-
-      let subtotal = base * quantity;
 
       let discount = 1;
       if (quantity >= 50) discount = 0.85;
       else if (quantity >= 25) discount = 0.9;
       else if (quantity >= 10) discount = 0.95;
 
-      subtotal = subtotal * discount * 0.75;
+      const finalUnitPrice = base * discount * multiplier;
+      const subtotal = finalUnitPrice * quantity;
 
       return {
-        unitPrice: (subtotal / quantity).toFixed(2),
+        unitPrice: finalUnitPrice.toFixed(2),
         total: subtotal.toFixed(2),
         savings: (base * quantity - subtotal).toFixed(2),
       };
@@ -1121,12 +1303,54 @@ function DesignPageContent() {
       }
     });
 
-    customOptions["Design Data"] = JSON.stringify({
-      elements,
-      bgColor,
-      bgGradient,
-      bgImage
-    });
+    // Make sure we save the latest active state to side buffers
+    let finalFrontElements = frontElements;
+    let finalFrontBgColor = frontBgColor;
+    let finalFrontBgGradient = frontBgGradient;
+    let finalFrontBgImage = frontBgImage;
+
+    let finalBackElements = backElements;
+    let finalBackBgColor = backBgColor;
+    let finalBackBgGradient = backBgGradient;
+    let finalBackBgImage = backBgImage;
+
+    if (activeSide === "front") {
+      finalFrontElements = elements;
+      finalFrontBgColor = bgColor;
+      finalFrontBgGradient = bgGradient;
+      finalFrontBgImage = bgImage;
+    } else {
+      finalBackElements = elements;
+      finalBackBgColor = bgColor;
+      finalBackBgGradient = bgGradient;
+      finalBackBgImage = bgImage;
+    }
+
+    if (doubleSided) {
+      customOptions["Design Data"] = JSON.stringify({
+        doubleSided: true,
+        front: {
+          elements: finalFrontElements,
+          bgColor: finalFrontBgColor,
+          bgGradient: finalFrontBgGradient,
+          bgImage: finalFrontBgImage,
+        },
+        back: {
+          elements: finalBackElements,
+          bgColor: finalBackBgColor,
+          bgGradient: finalBackBgGradient,
+          bgImage: finalBackBgImage,
+        },
+      });
+    } else {
+      customOptions["Design Data"] = JSON.stringify({
+        doubleSided: false,
+        elements: finalFrontElements,
+        bgColor: finalFrontBgColor,
+        bgGradient: finalFrontBgGradient,
+        bgImage: finalFrontBgImage,
+      });
+    }
 
     addItem({
       productTitle: registryProduct ? registryProduct.name : material.label,
@@ -1534,7 +1758,31 @@ function DesignPageContent() {
         </div>
 
         {/* 2. CENTRAL WORKSPACE (THE CANVAS CONTAINER) */}
-        <div className="flex-grow bg-slate-950 flex items-center justify-center p-8 overflow-auto relative">
+        <div className="flex-grow bg-slate-950 flex flex-col items-center justify-center p-8 overflow-auto relative">
+          {doubleSided && (
+            <div className="mb-6 flex gap-2 bg-slate-900 border border-slate-800 rounded-xl p-1 shadow-lg z-20">
+              <button
+                onClick={() => handleSwitchSide("front")}
+                className={`px-4 py-2 text-xs font-bold rounded-lg transition-all ${
+                  activeSide === "front"
+                    ? "bg-[#ff2d78] text-slate-950 shadow"
+                    : "text-slate-400 hover:text-white hover:bg-slate-800"
+                }`}
+              >
+                Page 1 (Front Side)
+              </button>
+              <button
+                onClick={() => handleSwitchSide("back")}
+                className={`px-4 py-2 text-xs font-bold rounded-lg transition-all ${
+                  activeSide === "back"
+                    ? "bg-[#ff2d78] text-slate-950 shadow"
+                    : "text-slate-400 hover:text-white hover:bg-slate-800"
+                }`}
+              >
+                Page 2 (Back Side)
+              </button>
+            </div>
+          )}
           <div
             style={{
               transform: `scale(${zoomLevel / 100})`,
@@ -1652,7 +1900,7 @@ function DesignPageContent() {
                           className="w-full bg-slate-800 border border-slate-700 rounded-lg p-2 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#ff2d78]"
                         >
                           {FONTS.map((font) => (
-                            <option key={font} value={font}>
+                            <option key={font} value={font} className="bg-slate-900 text-white">
                               {font}
                             </option>
                           ))}
@@ -2017,10 +2265,16 @@ function DesignPageContent() {
                         );
                         if (sizeOpt) {
                           const parts = sizeOpt.value.split("x");
+                          let h = parseFloat(parts[0]) || 2;
+                          let w = parseFloat(parts[1]) || 3.5;
+                          if (productId === "business-cards") {
+                            w = 3.5;
+                            h = 2;
+                          }
                           setCanvasSize({
                             label: sizeOpt.label,
-                            width: parseInt(parts[1]) || 3.5,
-                            height: parseInt(parts[0]) || 2,
+                            width: w,
+                            height: h,
                             priceAdder: sizeOpt.basePrice - registryProduct.config.sizes[0].basePrice,
                           });
                         }
@@ -2028,7 +2282,7 @@ function DesignPageContent() {
                       className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#ff2d78] font-semibold"
                     >
                       {registryProduct.config.sizes.map((sz) => (
-                        <option key={sz.value} value={sz.label}>
+                        <option key={sz.value} value={sz.label} className="bg-slate-900 text-white">
                           {sz.label}
                         </option>
                       ))}
@@ -2056,7 +2310,7 @@ function DesignPageContent() {
                         className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#ff2d78]"
                       >
                         {BOARD_SIZES.map((sz) => (
-                          <option key={sz.label} value={sz.label}>
+                          <option key={sz.label} value={sz.label} className="bg-slate-900 text-white">
                             {sz.label}{" "}
                             {sz.priceAdder > 0
                               ? `(+${sz.priceAdder.toFixed(2)})`
@@ -2097,7 +2351,7 @@ function DesignPageContent() {
                           className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#ff2d78] font-semibold"
                         >
                           {sel.options.map((o) => (
-                            <option key={o.value} value={o.value}>
+                            <option key={o.value} value={o.value} className="bg-slate-900 text-white">
                               {o.label}
                               {o.priceAdder > 0
                                 ? ` (+${o.priceAdder.toFixed(2)})`
@@ -2130,7 +2384,7 @@ function DesignPageContent() {
                       className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#ff2d78]"
                     >
                       {availableMaterials.map((m) => (
-                        <option key={m.value} value={m.value}>
+                        <option key={m.value} value={m.value} className="bg-slate-900 text-white">
                           {m.label}
                         </option>
                       ))}
@@ -2151,7 +2405,7 @@ function DesignPageContent() {
                         Double-Sided Printing
                       </label>
                       <span className="text-[10px] text-slate-500 block">
-                        Print design on both sides (+40%)
+                        Print design on both sides (+25%)
                       </span>
                     </div>
                     <button
@@ -2185,7 +2439,7 @@ function DesignPageContent() {
                         className="appearance-none bg-transparent pr-7 focus:outline-none font-bold text-xs text-slate-100 cursor-pointer"
                       >
                         {registryProduct.config.quantityOptions.map((opt) => (
-                          <option key={opt} value={opt} className="bg-slate-900">
+                          <option key={opt} value={opt} className="bg-slate-900 text-white">
                             {opt}
                           </option>
                         ))}
@@ -2275,96 +2529,145 @@ function DesignPageContent() {
                 Visual Proof
               </h3>
 
-              <div
-                className="w-full aspect-[4/3] rounded-xl border border-slate-800 shadow-xl overflow-hidden relative flex items-center justify-center"
-                style={{
-                  backgroundColor: bgColor,
-                  backgroundImage:
-                    bgGradient || (bgImage ? `url(${bgImage})` : "none"),
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              >
-                {elements.map((el) => (
+              {(() => {
+                let proofElements = elements;
+                let proofBgColor = bgColor;
+                let proofBgGradient = bgGradient;
+                let proofBgImage = bgImage;
+
+                if (doubleSided) {
+                  const currentFront = activeSide === "front" ? elements : frontElements;
+                  const currentBack = activeSide === "back" ? elements : backElements;
+                  const currentFrontBg = activeSide === "front" ? bgColor : frontBgColor;
+                  const currentBackBg = activeSide === "back" ? bgColor : backBgColor;
+                  const currentFrontGrad = activeSide === "front" ? bgGradient : frontBgGradient;
+                  const currentBackGrad = activeSide === "back" ? bgGradient : backBgGradient;
+                  const currentFrontImg = activeSide === "front" ? bgImage : frontBgImage;
+                  const currentBackImg = activeSide === "back" ? bgImage : backBgImage;
+
+                  proofElements = modalPreviewSide === "front" ? currentFront : currentBack;
+                  proofBgColor = modalPreviewSide === "front" ? currentFrontBg : currentBackBg;
+                  proofBgGradient = modalPreviewSide === "front" ? currentFrontGrad : currentBackGrad;
+                  proofBgImage = modalPreviewSide === "front" ? currentFrontImg : currentBackImg;
+                }
+
+                return (
                   <div
-                    key={el.id}
-                    className="absolute flex items-center justify-center pointer-events-none"
+                    className="w-full aspect-[4/3] rounded-xl border border-slate-800 shadow-xl overflow-hidden relative flex items-center justify-center"
                     style={{
-                      left: `${el.x}%`,
-                      top: `${el.y}%`,
-                      width: `${el.width}%`,
-                      height: `${el.height}%`,
-                      transform: `rotate(${el.rotation || 0}deg)`,
-                      transformOrigin: "center center",
-                      opacity: el.opacity !== undefined ? el.opacity : 1,
+                      backgroundColor: proofBgColor,
+                      backgroundImage:
+                        proofBgGradient || (proofBgImage ? `url(${proofBgImage})` : "none"),
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
                     }}
                   >
-                    {el.type === "text" && (
+                    {doubleSided && (
+                      <div className="absolute top-4 right-4 flex gap-1 bg-slate-900/80 border border-slate-800 rounded-lg p-0.5 z-40 pointer-events-auto">
+                        <button
+                          onClick={() => setModalPreviewSide("front")}
+                          className={`px-2 py-1 text-[10px] font-bold rounded ${
+                            modalPreviewSide === "front"
+                              ? "bg-[#ff2d78] text-slate-950"
+                              : "text-slate-400 hover:text-white"
+                          }`}
+                        >
+                          Front
+                        </button>
+                        <button
+                          onClick={() => setModalPreviewSide("back")}
+                          className={`px-2 py-1 text-[10px] font-bold rounded ${
+                            modalPreviewSide === "back"
+                              ? "bg-[#ff2d78] text-slate-950"
+                              : "text-slate-400 hover:text-white"
+                          }`}
+                        >
+                          Back
+                        </button>
+                      </div>
+                    )}
+                    {proofElements.map((el) => (
                       <div
-                        className="w-full h-full text-center flex items-center justify-center select-none truncate"
+                        key={el.id}
+                        className="absolute flex items-center justify-center pointer-events-none"
                         style={{
-                          fontFamily: el.fontFamily || "Inter",
-                          color: el.color || "#000000",
-                          fontWeight: el.bold ? "bold" : "normal",
-                          fontStyle: el.italic ? "italic" : "normal",
-                          textDecoration: el.underline ? "underline" : "none",
-                          fontSize: `${(el.fontSize || 24) * 0.55}px`,
-                          lineHeight: "1.1",
-                          WebkitTextStroke: el.strokeColor
-                            ? `${(el.strokeWidth || 1) * 0.55}px ${el.strokeColor}`
-                            : "none",
+                          left: `${el.x}%`,
+                          top: `${el.y}%`,
+                          width: `${el.width}%`,
+                          height: `${el.height}%`,
+                          transform: `rotate(${el.rotation || 0}deg)`,
+                          transformOrigin: "center center",
+                          opacity: el.opacity !== undefined ? el.opacity : 1,
                         }}
                       >
-                        {el.content}
-                      </div>
-                    )}
-                    {el.type === "shape" && (
-                      <div className="w-full h-full flex items-center justify-center p-1">
-                        {el.shapeType === "rect" && (
+                        {el.type === "text" && (
                           <div
-                            className="w-full h-full"
+                            className="w-full h-full text-center flex items-center justify-center select-none truncate"
                             style={{
-                              backgroundColor: el.fillColor,
-                              border: el.borderWidth
-                                ? `${el.borderWidth * 0.5}px solid ${el.borderColor}`
+                              fontFamily: el.fontFamily || "Inter",
+                              color: el.color || "#000000",
+                              fontWeight: el.bold ? "bold" : "normal",
+                              fontStyle: el.italic ? "italic" : "normal",
+                              textDecoration: el.underline ? "underline" : "none",
+                              fontSize: `${(el.fontSize || 24) * 0.55}px`,
+                              lineHeight: "1.1",
+                              WebkitTextStroke: el.strokeColor
+                                ? `${(el.strokeWidth || 1) * 0.55}px ${el.strokeColor}`
                                 : "none",
                             }}
-                          />
+                          >
+                            {el.content}
+                          </div>
                         )}
-                        {el.shapeType === "circle" && (
-                          <div
-                            className="w-full h-full rounded-full"
-                            style={{
-                              backgroundColor: el.fillColor,
-                              border: el.borderWidth
-                                ? `${el.borderWidth * 0.5}px solid ${el.borderColor}`
-                                : "none",
-                            }}
-                          />
+                        {el.type === "shape" && (
+                          <div className="w-full h-full flex items-center justify-center p-1">
+                            {el.shapeType === "rect" && (
+                              <div
+                                className="w-full h-full"
+                                style={{
+                                  backgroundColor: el.fillColor,
+                                  border: el.borderWidth
+                                    ? `${el.borderWidth * 0.5}px solid ${el.borderColor}`
+                                    : "none",
+                                }}
+                              />
+                            )}
+                            {el.shapeType === "circle" && (
+                              <div
+                                className="w-full h-full rounded-full"
+                                style={{
+                                  backgroundColor: el.fillColor,
+                                  border: el.borderWidth
+                                    ? `${el.borderWidth * 0.5}px solid ${el.borderColor}`
+                                    : "none",
+                                }}
+                              />
+                            )}
+                          </div>
+                        )}
+                        {el.type === "clipart" && el.clipartId && (
+                          <div className="w-full h-full p-1.5 text-center flex items-center justify-center">
+                            <Layers
+                              className="w-6 h-6"
+                              style={{ color: el.color }}
+                            />
+                          </div>
+                        )}
+                        {el.type === "image" && el.imageUrl && (
+                          <div className="w-full h-full p-0.5 flex items-center justify-center">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                              src={el.imageUrl}
+                              alt="preview"
+                              className="max-w-full max-h-full object-contain"
+                            />
+                          </div>
                         )}
                       </div>
-                    )}
-                    {el.type === "clipart" && el.clipartId && (
-                      <div className="w-full h-full p-1.5 text-center flex items-center justify-center">
-                        <Layers
-                          className="w-6 h-6"
-                          style={{ color: el.color }}
-                        />
-                      </div>
-                    )}
-                    {el.type === "image" && el.imageUrl && (
-                      <div className="w-full h-full p-0.5 flex items-center justify-center">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={el.imageUrl}
-                          alt="preview"
-                          className="max-w-full max-h-full object-contain"
-                        />
-                      </div>
-                    )}
+                    ))}
                   </div>
-                ))}
-              </div>
+                );
+              })()}
 
               <div className="mt-4 text-[10px] text-slate-500 text-center">
                 Mock representation of final printed product dimensions (
