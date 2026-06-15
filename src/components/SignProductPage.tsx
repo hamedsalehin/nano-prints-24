@@ -30,6 +30,7 @@ export interface SelectOption {
   label: string;
   value: string;
   priceAdder: number;
+  priceMultiplier?: number;
   description?: string;
   image?: string;
 }
@@ -37,6 +38,7 @@ export interface ToggleOption {
   id: string;
   label: string;
   priceAdder: number;
+  priceMultiplier?: number;
   description?: string;
 }
 export interface FaqItem {
@@ -315,11 +317,19 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
     }
 
     let price = baseUnitPrice;
+    let multiplier = 1;
+
     Object.values(selectValues).forEach((v) => {
       price += v.priceAdder;
+      if (v.priceMultiplier !== undefined) {
+        multiplier *= v.priceMultiplier;
+      }
     });
     Object.values(toggleValues).forEach((v) => {
       price += v.priceAdder;
+      if (v.priceMultiplier !== undefined) {
+        multiplier *= v.priceMultiplier;
+      }
     });
 
     let discount = 1;
@@ -339,7 +349,7 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
       else if (quantity >= 5) discount = 0.97;
     }
 
-    return price * discount;
+    return price * discount * multiplier;
   }, [selectedSize, selectValues, toggleValues, quantity, cfg.bulkDiscounts, cfg.quantityPrices]);
 
   const isBulkDiscountApplied = useMemo(() => {
