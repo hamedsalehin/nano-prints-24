@@ -531,6 +531,11 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           ratingScore: "4.9",
           sizes: [
             {
+              label: '46" x 80" Vertical Size',
+              value: "46x80",
+              basePrice: 220.00,
+            },
+            {
               label: '79" x 33" Standard Stand Size',
               value: "79x33",
               basePrice: 89.00,
@@ -579,7 +584,7 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           ],
           specs: [
             { key: "Weight", value: "Approximately 7-10 lbs including stand" },
-            { key: "Display Size", value: '79" High x 33" Wide' },
+            { key: "Display Size", value: '79" x 33" (Standard) or 80" x 46" (Large)' },
             {
               key: "Hardware",
               value: "Anodized aluminum body with fold-out feet",
@@ -2190,6 +2195,11 @@ Why Choose Our Professional Rollup Banners?
           ratingScore: "4.9",
           sizes: [
             {
+              label: '46" x 80" Vertical Size',
+              value: "46x80",
+              basePrice: 220.00,
+            },
+            {
               label: '79" x 33" Standard Stand Size',
               value: "79x33",
               basePrice: 89.00,
@@ -2233,7 +2243,7 @@ Why Choose Our Professional Rollup Banners?
           ],
           specs: [
             { key: "Weight", value: "Approximately 7-10 lbs including stand" },
-            { key: "Display Size", value: '79" High x 33" Wide' },
+            { key: "Display Size", value: '79" x 33" (Standard) or 80" x 46" (Large)' },
           ],
           description: `Maximize your brand visibility at trade shows, retail storefronts, conferences, and exhibitions with our premium Custom Retractable Roll Up Banners. These portable banner displays are the gold standard for high-impact offline marketing, offering a seamless blend of durability, convenience, and visual appeal. 
 

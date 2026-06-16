@@ -146,12 +146,13 @@ export async function POST(req: NextRequest) {
               </table>
             </div>
 
-            ${Object.keys(customOptions).length > 0
+            ${Object.entries(customOptions).filter(([key]) => key !== "Design Data").length > 0
             ? `
             <div style="background: #1e293b; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
               <h3 style="margin: 0 0 12px; font-size: 14px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em;">Custom Options</h3>
               <table style="width: 100%; font-size: 13px;">
                 ${Object.entries(customOptions)
+              .filter(([k]) => k !== "Design Data")
               .map(
                 ([k, v]) => `
                   <tr><td style="padding: 4px 0; color: #64748b; width: 40%;">${k}:</td><td style="color: #e2e8f0;">${v}</td></tr>

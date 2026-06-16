@@ -271,10 +271,11 @@ export default function OrdersPage() {
                     </p>
 
                     {/* Specifications grid */}
-                    {Object.keys(order.custom_options).length > 0 && (
+                    {Object.entries(order.custom_options).filter(([key]) => key !== "Design Data").length > 0 && (
                       <div className="mt-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 bg-slate-50/50 p-4 rounded-2xl border border-slate-100">
-                        {Object.entries(order.custom_options).map(
-                          ([key, val]) => (
+                        {Object.entries(order.custom_options)
+                          .filter(([key]) => key !== "Design Data")
+                          .map(([key, val]) => (
                             <div key={key} className="text-xs">
                               <span className="text-gray-400 font-semibold block uppercase text-[9px] tracking-wider">
                                 {key}
@@ -283,8 +284,7 @@ export default function OrdersPage() {
                                 {val}
                               </span>
                             </div>
-                          ),
-                        )}
+                          ))}
                       </div>
                     )}
                   </div>

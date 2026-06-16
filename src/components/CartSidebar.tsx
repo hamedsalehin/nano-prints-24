@@ -162,10 +162,11 @@ export function CartSidebar() {
                       )}
 
                       {/* Display specs */}
-                      {Object.keys(item.customOptions).length > 0 && (
+                      {Object.entries(item.customOptions).filter(([key]) => key !== "Design Data").length > 0 && (
                         <div className="mt-2.5 space-y-0.5">
-                          {Object.entries(item.customOptions).map(
-                            ([key, val]) => (
+                          {Object.entries(item.customOptions)
+                            .filter(([key]) => key !== "Design Data")
+                            .map(([key, val]) => (
                               <div
                                 key={key}
                                 className="text-[10px] text-gray-400 font-semibold"
@@ -173,8 +174,7 @@ export function CartSidebar() {
                                 <span className="text-gray-500">{key}:</span>{" "}
                                 {val}
                               </div>
-                            ),
-                          )}
+                            ))}
                         </div>
                       )}
 
