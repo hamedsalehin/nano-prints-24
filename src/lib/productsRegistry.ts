@@ -3586,7 +3586,7 @@ Why Choose Our Professional Rollup Banners?
     heroSubtitle: "Professional Print. Promoted Brand.",
     description:
       "Grow your business and look professional with customized business cards, flyers, and brochures.",
-    heroImage: "/images/products/main%20page/nano hero signs section.png",
+    heroImage: "/images/products/main%20page/marketing%20materials.png",
     reviewRating: "4.9",
     reviewCount: "1,150",
     reviewQuote:
