@@ -2,13 +2,16 @@ import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { Resend } from "resend";
 
-// ── Server-side Supabase client (uses service role to bypass RLS) ────────────
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!,
-);
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+const resendApiKey = process.env.RESEND_API_KEY;
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// ── Server-side Supabase client (uses service role to bypass RLS) ────────────
+const supabaseAdmin = (supabaseUrl && supabaseServiceKey)
+  ? createClient(supabaseUrl, supabaseServiceKey)
+  : (null as any);
+
+const resend = resendApiKey ? new Resend(resendApiKey) : (null as any);
 
 const FROM = `${process.env.RESEND_FROM_NAME || "Nano Signs"} <${process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev"}>`;
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "";
@@ -16,6 +19,14 @@ const ADMIN_EMAIL = process.env.ADMIN_EMAIL || "";
 // ── POST /api/submit-order ───────────────────────────────────────────────────
 export async function POST(req: NextRequest) {
   try {
+    if (!supabaseAdmin) {
+      console.error("submit-order POST: supabaseAdmin not initialized. Missing environment variables.");
+      return NextResponse.json(
+        { error: "Database configuration error. Please contact the administrator." },
+        { status: 500 },
+      );
+    }
+
     const formData = await req.formData();
 
     // Parse order fields
@@ -108,7 +119,10 @@ export async function POST(req: NextRequest) {
 
     // ── Send Admin Notification Email ─────────────────────────────────────────
     if (ADMIN_EMAIL) {
-      await resend.emails.send({
+      if (!resend) {
+        console.warn("submit-order POST: resend client not initialized. Skipping admin notification email.");
+      } else {
+        await resend.emails.send({
         from: FROM,
         to: [ADMIN_EMAIL],
         subject: `🖨️ New Order #${shortId} — ${productTitle}`,
@@ -183,11 +197,15 @@ export async function POST(req: NextRequest) {
           </div>
         `,
       });
+      }
     }
 
     // ── Send Customer Confirmation Email ──────────────────────────────────────
     if (userEmail) {
-      await resend.emails.send({
+      if (!resend) {
+        console.warn("submit-order POST: resend client not initialized. Skipping customer confirmation email.");
+      } else {
+        await resend.emails.send({
         from: FROM,
         to: [userEmail],
         subject: `✅ Your Order #${shortId} is Confirmed — Nano Signs`,
@@ -266,6 +284,7 @@ export async function POST(req: NextRequest) {
           </div>
         `,
       });
+      }
     }
 
     return NextResponse.json({
