@@ -955,8 +955,16 @@ function DesignPageContent() {
         setQuantity(defaultMin);
       }
 
-      const sidesSelect = initialSelects["Sides"] || initialSelects["Back Side"] || initialSelects["Print Direction"];
-      if (sidesSelect && sidesSelect.value === "double") {
+      const sidesSelect =
+        initialSelects["Sides"] ||
+        initialSelects["Back Side"] ||
+        initialSelects["Backside Printing"] ||
+        initialSelects["Printing"];
+      if (
+        sidesSelect &&
+        (sidesSelect.value === "double" ||
+          sidesSelect.value === "double_sided")
+      ) {
         setDoubleSided(true);
       }
     }
@@ -1511,7 +1519,7 @@ function DesignPageContent() {
                   className={`py-3 flex flex-col items-center justify-center border-b-2 transition-all ${
                     activeTab === tab
                       ? "border-[#ff2d78] text-[#ff2d78] bg-slate-800/40"
-                      : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-850/20"
+                      : "border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-800/20"
                   }`}
                   title={tab.charAt(0).toUpperCase() + tab.slice(1)}
                 >
@@ -1558,7 +1566,7 @@ function DesignPageContent() {
                 <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider">
                   Text Overlays
                 </h3>
-                <p className="text-xs text-slate-450 leading-relaxed">
+                <p className="text-xs text-slate-400 leading-relaxed">
                   Add high-contrast typography elements to ensure signs are
                   legible from distance.
                 </p>
@@ -1856,7 +1864,7 @@ function DesignPageContent() {
                         historyPush(updated);
                         setSelectedId(null);
                       }}
-                      className="p-1.5 hover:bg-red-950/40 text-slate-450 hover:text-red-400 rounded-lg transition-colors"
+                      className="p-1.5 hover:bg-red-950/40 text-slate-400 hover:text-red-400 rounded-lg transition-colors"
                       title="Delete"
                     >
                       <Trash2 className="w-3.5 h-3.5" />
@@ -1869,7 +1877,7 @@ function DesignPageContent() {
                   <div className="space-y-4">
                     {/* Text Area */}
                     <div>
-                      <label className="block text-[11px] font-bold text-slate-450 mb-1">
+                      <label className="block text-[11px] font-bold text-slate-400 mb-1">
                         Text Content
                       </label>
                       <textarea
@@ -1886,7 +1894,7 @@ function DesignPageContent() {
                     {/* Font Family & Size */}
                     <div className="grid grid-cols-2 gap-2">
                       <div>
-                        <label className="block text-[11px] font-bold text-slate-450 mb-1">
+                        <label className="block text-[11px] font-bold text-slate-400 mb-1">
                           Font Family
                         </label>
                         <select
@@ -1907,7 +1915,7 @@ function DesignPageContent() {
                         </select>
                       </div>
                       <div>
-                        <label className="block text-[11px] font-bold text-slate-450 mb-1">
+                        <label className="block text-[11px] font-bold text-slate-400 mb-1">
                           Font Size (px)
                         </label>
                         <input
@@ -1929,7 +1937,7 @@ function DesignPageContent() {
 
                     {/* Text Styling Modifiers */}
                     <div>
-                      <label className="block text-[11px] font-bold text-slate-450 mb-1.5">
+                      <label className="block text-[11px] font-bold text-slate-400 mb-1.5">
                         Style
                       </label>
                       <div className="flex gap-1.5">
@@ -1941,7 +1949,7 @@ function DesignPageContent() {
                           className={`flex-1 py-1.5 text-xs font-bold rounded-lg border transition-all ${
                             selectedEl.bold
                               ? "bg-[#ff2d78] border-[#ff2d78] text-slate-950"
-                              : "bg-slate-850 border-slate-700 text-slate-350 hover:bg-slate-800"
+                              : "bg-slate-800 border-slate-700 text-slate-350 hover:bg-slate-800"
                           }`}
                         >
                           B
@@ -1956,7 +1964,7 @@ function DesignPageContent() {
                           className={`flex-1 py-1.5 text-xs italic rounded-lg border transition-all ${
                             selectedEl.italic
                               ? "bg-[#ff2d78] border-[#ff2d78] text-slate-950"
-                              : "bg-slate-850 border-slate-700 text-slate-350 hover:bg-slate-800"
+                              : "bg-slate-800 border-slate-700 text-slate-350 hover:bg-slate-800"
                           }`}
                         >
                           I
@@ -1971,7 +1979,7 @@ function DesignPageContent() {
                           className={`flex-1 py-1.5 text-xs underline rounded-lg border transition-all ${
                             selectedEl.underline
                               ? "bg-[#ff2d78] border-[#ff2d78] text-slate-950"
-                              : "bg-slate-850 border-slate-700 text-slate-350 hover:bg-slate-800"
+                              : "bg-slate-800 border-slate-700 text-slate-350 hover:bg-slate-800"
                           }`}
                         >
                           U
@@ -1981,7 +1989,7 @@ function DesignPageContent() {
 
                     {/* Alignment */}
                     <div>
-                      <label className="block text-[11px] font-bold text-slate-450 mb-1">
+                      <label className="block text-[11px] font-bold text-slate-400 mb-1">
                         Alignment
                       </label>
                       <div className="grid grid-cols-3 gap-1 bg-slate-950/40 p-1 rounded-lg border border-slate-800">
@@ -2034,7 +2042,7 @@ function DesignPageContent() {
                     {/* Color & Border Outline */}
                     <div className="grid grid-cols-2 gap-2">
                       <div>
-                        <label className="block text-[11px] font-bold text-slate-450 mb-1">
+                        <label className="block text-[11px] font-bold text-slate-400 mb-1">
                           Text Color
                         </label>
                         <div className="flex gap-2 items-center">
@@ -2053,7 +2061,7 @@ function DesignPageContent() {
                         </div>
                       </div>
                       <div>
-                        <label className="block text-[11px] font-bold text-slate-450 mb-1">
+                        <label className="block text-[11px] font-bold text-slate-400 mb-1">
                           Outline Stroke
                         </label>
                         <div className="flex gap-2 items-center">
@@ -2091,7 +2099,7 @@ function DesignPageContent() {
                 {selectedEl.type === "shape" && (
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-[11px] font-bold text-slate-450 mb-1">
+                      <label className="block text-[11px] font-bold text-slate-400 mb-1">
                         Fill Color
                       </label>
                       <div className="flex gap-2 items-center">
@@ -2112,7 +2120,7 @@ function DesignPageContent() {
 
                     <div className="grid grid-cols-2 gap-2">
                       <div>
-                        <label className="block text-[11px] font-bold text-slate-450 mb-1">
+                        <label className="block text-[11px] font-bold text-slate-400 mb-1">
                           Border Width
                         </label>
                         <input
@@ -2130,7 +2138,7 @@ function DesignPageContent() {
                         />
                       </div>
                       <div>
-                        <label className="block text-[11px] font-bold text-slate-450 mb-1">
+                        <label className="block text-[11px] font-bold text-slate-400 mb-1">
                           Border Color
                         </label>
                         <input
@@ -2152,7 +2160,7 @@ function DesignPageContent() {
                 {selectedEl.type === "clipart" && (
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-[11px] font-bold text-slate-450 mb-1">
+                      <label className="block text-[11px] font-bold text-slate-400 mb-1">
                         Clipart Tint Color
                       </label>
                       <div className="flex gap-2 items-center">
@@ -2247,7 +2255,7 @@ function DesignPageContent() {
             ) : (
               // Default properties: Canvas parameters
               <div className="space-y-4">
-                <span className="text-xs font-bold text-slate-450 uppercase tracking-wider block">
+                <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block">
                   Canvas Settings
                 </span>
 
@@ -2279,7 +2287,7 @@ function DesignPageContent() {
                           });
                         }
                       }}
-                      className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#ff2d78] font-semibold"
+                      className="w-full bg-slate-800 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#ff2d78] font-semibold"
                     >
                       {registryProduct.config.sizes.map((sz) => (
                         <option key={sz.value} value={sz.label} className="bg-slate-900 text-white">
@@ -2295,7 +2303,7 @@ function DesignPageContent() {
                       Board Dimensions
                     </label>
                     {productId === "rollup" || urlHeight === "79" ? (
-                      <div className="w-full bg-slate-950/45 border border-slate-850 rounded-lg p-2.5 text-xs text-slate-200 font-semibold">
+                      <div className="w-full bg-slate-950/45 border border-slate-800 rounded-lg p-2.5 text-xs text-slate-200 font-semibold">
                         79" x 33" (Fixed Size)
                       </div>
                     ) : (
@@ -2307,7 +2315,7 @@ function DesignPageContent() {
                           );
                           if (found) setCanvasSize(found);
                         }}
-                        className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#ff2d78]"
+                        className="w-full bg-slate-800 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#ff2d78]"
                       >
                         {BOARD_SIZES.map((sz) => (
                           <option key={sz.label} value={sz.label} className="bg-slate-900 text-white">
@@ -2343,12 +2351,18 @@ function DesignPageContent() {
                                 ...prev,
                                 [sel.label]: opt,
                               }));
-                              if (sel.label.toLowerCase() === "sides" || sel.label.toLowerCase() === "back side") {
-                                setDoubleSided(opt.value === "double");
+                              const labelLower = sel.label.toLowerCase();
+                              if (
+                                labelLower === "sides" ||
+                                labelLower === "back side" ||
+                                labelLower === "backside printing" ||
+                                labelLower === "printing"
+                              ) {
+                                setDoubleSided(opt.value === "double" || opt.value === "double_sided");
                               }
                             }
                           }}
-                          className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#ff2d78] font-semibold"
+                          className="w-full bg-slate-800 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#ff2d78] font-semibold"
                         >
                           {sel.options.map((o) => (
                             <option key={o.value} value={o.value} className="bg-slate-900 text-white">
@@ -2381,7 +2395,7 @@ function DesignPageContent() {
                         );
                         if (found) setMaterial(found);
                       }}
-                      className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#ff2d78]"
+                      className="w-full bg-slate-800 border border-slate-700 rounded-lg p-2.5 text-xs text-slate-100 focus:outline-none focus:ring-2 focus:ring-[#ff2d78]"
                     >
                       {availableMaterials.map((m) => (
                         <option key={m.value} value={m.value} className="bg-slate-900 text-white">
@@ -2396,8 +2410,8 @@ function DesignPageContent() {
                 )}
 
                 {/* Single/Double Sided Toggle - only show if there is no explicit sides select */}
-                {(!registryProduct || 
-                  !registryProduct.config.selects?.some(s => s.label.toLowerCase() === "sides" || s.label.toLowerCase() === "back side")
+                {(["door-hangers", "flyers"].includes(productId)) && (!registryProduct || 
+                  !registryProduct.config.selects?.some(s => s.label.toLowerCase() === "sides" || s.label.toLowerCase() === "back side" || s.label.toLowerCase() === "backside printing" || s.label.toLowerCase() === "printing")
                 ) && (
                   <div className="flex items-center justify-between py-2 border-t border-b border-slate-800">
                     <div>
@@ -2444,13 +2458,13 @@ function DesignPageContent() {
                           </option>
                         ))}
                       </select>
-                      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-450 pointer-events-none" />
+                      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none" />
                     </div>
                   ) : (
                     <div className="flex bg-slate-950 border border-slate-800 rounded-xl overflow-hidden shadow-inner">
                       <button
                         onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                        className="px-3 py-2 text-slate-400 hover:bg-slate-850 hover:text-white transition-colors text-sm font-bold"
+                        className="px-3 py-2 text-slate-400 hover:bg-slate-800 hover:text-white transition-colors text-sm font-bold"
                       >
                         −
                       </button>
@@ -2464,13 +2478,13 @@ function DesignPageContent() {
                       />
                       <button
                         onClick={() => setQuantity(quantity + 1)}
-                        className="px-3 py-2 text-slate-400 hover:bg-slate-850 hover:text-white transition-colors text-sm font-bold"
+                        className="px-3 py-2 text-slate-400 hover:bg-slate-800 hover:text-white transition-colors text-sm font-bold"
                       >
                         +
                       </button>
                     </div>
                   )}
-                  <span className="text-[10px] text-slate-505">
+                  <span className="text-[10px] text-slate-500">
                     {registryProduct ? registryProduct.config.qtyDiscount : "Buy 10+ for 5% off, 25+ for 10% off"}
                   </span>
                 </div>
@@ -2525,7 +2539,7 @@ function DesignPageContent() {
           <div className="w-full max-w-2xl bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh]">
             {/* Left Hand Render Preview */}
             <div className="flex-1 bg-slate-950 p-6 flex flex-col items-center justify-center border-b md:border-b-0 md:border-r border-slate-800 relative">
-              <h3 className="text-xs font-bold text-slate-450 uppercase tracking-widest absolute top-4 left-4">
+              <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest absolute top-4 left-4">
                 Visual Proof
               </h3>
 
@@ -2691,7 +2705,7 @@ function DesignPageContent() {
                     </button>
                   </div>
 
-                  <div className="space-y-3 text-xs bg-slate-950/40 p-4 rounded-xl border border-slate-850">
+                  <div className="space-y-3 text-xs bg-slate-950/40 p-4 rounded-xl border border-slate-800">
                     <div>
                       <span className="text-slate-400 block">Product:</span>
                       <span className="font-semibold text-slate-200">
@@ -2720,7 +2734,7 @@ function DesignPageContent() {
                     </div>
                   </div>
 
-                  <div className="bg-slate-950/80 p-3.5 rounded-lg border border-slate-850/80">
+                  <div className="bg-slate-950/80 p-3.5 rounded-lg border border-slate-800/80">
                     <h4 className="text-[10px] uppercase font-bold tracking-wider text-green-400 mb-1 flex items-center gap-1.5">
                       <ShieldCheck className="w-4 h-4 text-green-500" /> Free
                       Artwork Check
@@ -2804,7 +2818,7 @@ function DesignPageContent() {
                         placeholder="John Doe"
                         value={shippingName}
                         onChange={(e) => setShippingName(e.target.value)}
-                        className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2 text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#ff2d78]"
+                        className="w-full bg-slate-800 border border-slate-700 rounded-lg p-2 text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#ff2d78]"
                       />
                     </div>
                     <div>
@@ -2816,7 +2830,7 @@ function DesignPageContent() {
                         placeholder="123 Main Street"
                         value={shippingAddress}
                         onChange={(e) => setShippingAddress(e.target.value)}
-                        className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2 text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#ff2d78]"
+                        className="w-full bg-slate-800 border border-slate-700 rounded-lg p-2 text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#ff2d78]"
                       />
                     </div>
                     <div className="grid grid-cols-2 gap-2">
@@ -2829,7 +2843,7 @@ function DesignPageContent() {
                           placeholder="Austin"
                           value={shippingCity}
                           onChange={(e) => setShippingCity(e.target.value)}
-                          className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2 text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#ff2d78]"
+                          className="w-full bg-slate-800 border border-slate-700 rounded-lg p-2 text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#ff2d78]"
                         />
                       </div>
                       <div>
@@ -2841,7 +2855,7 @@ function DesignPageContent() {
                           placeholder="78701"
                           value={shippingPostal}
                           onChange={(e) => setShippingPostal(e.target.value)}
-                          className="w-full bg-slate-850 border border-slate-700 rounded-lg p-2 text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#ff2d78]"
+                          className="w-full bg-slate-800 border border-slate-700 rounded-lg p-2 text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#ff2d78]"
                         />
                       </div>
                     </div>
@@ -2893,7 +2907,7 @@ function DesignPageContent() {
                         setSubmitError(null);
                       }}
                       disabled={isSubmitting}
-                      className="w-full text-slate-450 hover:text-white text-xs font-semibold py-2 mt-1 transition-colors disabled:opacity-50"
+                      className="w-full text-slate-400 hover:text-white text-xs font-semibold py-2 mt-1 transition-colors disabled:opacity-50"
                     >
                       ← Back to Review
                     </button>

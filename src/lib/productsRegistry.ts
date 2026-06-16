@@ -2667,11 +2667,11 @@ Why Choose Our Professional Rollup Banners?
               label: "Paper Stock & Finish",
               options: [
                 {
-                  label: "Matte",
-                  value: "matte",
+                  label: "14pt semi gloss (profit maximizer)",
+                  value: "semi_gloss",
                   priceAdder: 0,
-                  description: "Classic smooth, glare-free matte finish.",
-                  image: "/images/products/main%20page/business_cards_matte.png",
+                  description: "Clean, professional look with a smooth semi-gloss finish. Easy to write on.",
+                  image: "/images/products/main%20page/business_cards_semigloss.png",
                 },
                 {
                   label: "Glossy",
@@ -2688,18 +2688,11 @@ Why Choose Our Professional Rollup Banners?
                   image: "/images/products/main%20page/business_cards_foil.png",
                 },
                 {
-                  label: "Uncoated",
-                  value: "uncoated",
-                  priceAdder: 0,
-                  description: "Easy to write on, clean and crisp texture.",
-                  image: "/images/products/main%20page/business_cards_standard.png",
-                },
-                {
                   label: "Soft Touch",
                   value: "soft_touch",
                   priceAdder: 0.12,
                   description: "Velvety coating that feels soft and premium in the hand.",
-                  image: "/images/products/main%20page/business_cards_soft_touch.png",
+                  image: "/images/products/main%20page/business_cards.png",
                 },
                 {
                   label: "Painted Edge",
@@ -2787,7 +2780,14 @@ Why Choose Our Professional Rollup Banners?
             "Easy design templates",
           ],
           useCases: ["Networking events", "Customer takeaways"],
-          specs: [{ key: "Material", value: "14pt, 16pt, or 18pt Cardstock" }],
+          specs: [
+            { key: "Dimensions", value: '3.5" x 2" (Standard size)' },
+            { key: "Standard Stock", value: "14pt semi gloss (profit maximizer)" },
+            { key: "Premium Finishes", value: "Glossy, Soft Touch, Pearl" },
+            { key: "Luxury Finishes", value: "Embossed Gloss, Gold Raised Foil, Silver Raised Foil" },
+            { key: "Specialty Stocks", value: "Painted Edge, Ultra Thick, Clear Plastic" },
+            { key: "Standard Turnaround", value: "Next Business Day" },
+          ],
           faqs: [
             {
               q: "What is the standard size of a business card?",
@@ -3586,7 +3586,7 @@ Why Choose Our Professional Rollup Banners?
     heroSubtitle: "Professional Print. Promoted Brand.",
     description:
       "Grow your business and look professional with customized business cards, flyers, and brochures.",
-    heroImage: "/images/products/main%20page/marketing%20materials.png",
+    heroImage: "/images/products/main%20page/marketing%20materials%20hero%20image.png",
     reviewRating: "4.9",
     reviewCount: "1,150",
     reviewQuote:
@@ -3650,11 +3650,11 @@ Why Choose Our Professional Rollup Banners?
               label: "Paper Stock & Finish",
               options: [
                 {
-                  label: "Matte",
-                  value: "matte",
+                  label: "14pt semi gloss (profit maximizer)",
+                  value: "semi_gloss",
                   priceAdder: 0,
-                  description: "Classic smooth, glare-free matte finish.",
-                  image: "/images/products/main%20page/business_cards_matte.png",
+                  description: "Clean, professional look with a smooth semi-gloss finish. Easy to write on.",
+                  image: "/images/products/main%20page/business_cards_semigloss.png",
                 },
                 {
                   label: "Glossy",
@@ -3671,18 +3671,11 @@ Why Choose Our Professional Rollup Banners?
                   image: "/images/products/main%20page/business_cards_foil.png",
                 },
                 {
-                  label: "Uncoated",
-                  value: "uncoated",
-                  priceAdder: 0,
-                  description: "Easy to write on, clean and crisp texture.",
-                  image: "/images/products/main%20page/business_cards_standard.png",
-                },
-                {
                   label: "Soft Touch",
                   value: "soft_touch",
                   priceAdder: 0.12,
                   description: "Velvety coating that feels soft and premium in the hand.",
-                  image: "/images/products/main%20page/business_cards_soft_touch.png",
+                  image: "/images/products/main%20page/business_cards.png",
                 },
                 {
                   label: "Painted Edge",
@@ -3770,7 +3763,14 @@ Why Choose Our Professional Rollup Banners?
             "Easy design templates",
           ],
           useCases: ["Networking events", "Customer takeaways", "Loyalty stamp cards", "Appointment reminders"],
-          specs: [{ key: "Material", value: "14pt, 16pt, or 18pt Cardstock" }],
+          specs: [
+            { key: "Dimensions", value: '3.5" x 2" (Standard size)' },
+            { key: "Standard Stock", value: "14pt semi gloss (profit maximizer)" },
+            { key: "Premium Finishes", value: "Glossy, Soft Touch, Pearl" },
+            { key: "Luxury Finishes", value: "Embossed Gloss, Gold Raised Foil, Silver Raised Foil" },
+            { key: "Specialty Stocks", value: "Painted Edge, Ultra Thick, Clear Plastic" },
+            { key: "Standard Turnaround", value: "Next Business Day" },
+          ],
           faqs: [
             {
               q: "What is the standard size of a business card?",

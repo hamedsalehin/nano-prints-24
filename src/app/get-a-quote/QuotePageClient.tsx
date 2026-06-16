@@ -156,7 +156,7 @@ export default function QuotePageClient() {
             Home
           </Link>
           <span>/</span>
-          <span className="font-semibold text-slate-850">Get a Quote</span>
+          <span className="font-semibold text-slate-800">Get a Quote</span>
         </div>
 
         {/* Form section - Expanded & minimal light theme */}
