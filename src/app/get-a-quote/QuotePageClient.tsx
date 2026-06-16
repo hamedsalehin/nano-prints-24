@@ -97,7 +97,7 @@ export default function QuotePageClient() {
     }
   };
 
-  // Handle db submission
+  // Handle db & email submission via API
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!fullName || !email || !phone || !description) {
@@ -109,26 +109,32 @@ export default function QuotePageClient() {
     setSubmitError(null);
 
     try {
-      const { error: dbError } = await supabase
-        .from("quote_requests")
-        .insert({
-          full_name: fullName.trim(),
+      const res = await fetch("/api/submit-quote", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fullName: fullName.trim(),
           email: email.trim().toLowerCase(),
           phone: phone.trim(),
           description: description.trim(),
           width: width ? width.trim() : null,
           height: height ? height.trim() : null,
           quantity: Number(quantity) || 1,
-          file_url: fileUrl,
-        });
+          fileUrl: fileUrl,
+        }),
+      });
 
-      if (dbError) {
-        throw dbError;
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to submit quote request.");
       }
 
       setSubmitSuccess(true);
     } catch (err) {
-      console.error("Database insert failed:", err);
+      console.error("Quote submission failed:", err);
       setSubmitError(
         err instanceof Error
           ? err.message
