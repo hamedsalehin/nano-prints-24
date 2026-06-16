@@ -25,6 +25,7 @@ export interface SizeOption {
   label: string;
   value: string;
   basePrice: number;
+  quantityPrices?: Record<number, number>;
 }
 export interface SelectOption {
   label: string;
@@ -312,7 +313,10 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
 
   const unitPrice = useMemo(() => {
     let baseUnitPrice = selectedSize.basePrice;
-    if (cfg.quantityPrices && cfg.quantityPrices[quantity] !== undefined) {
+    const sizeQtyPrices = (selectedSize as any).quantityPrices;
+    if (sizeQtyPrices && sizeQtyPrices[quantity] !== undefined) {
+      baseUnitPrice = sizeQtyPrices[quantity] / quantity;
+    } else if (cfg.quantityPrices && cfg.quantityPrices[quantity] !== undefined) {
       baseUnitPrice = cfg.quantityPrices[quantity] / quantity;
     }
 
@@ -339,7 +343,7 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
       if (matchedDiscount) {
         discount = (100 - matchedDiscount.discountPercent) / 100;
       }
-    } else if (cfg.quantityPrices) {
+    } else if (cfg.quantityPrices || sizeQtyPrices) {
       discount = 1;
     } else {
       if (quantity >= 100) discount = 0.82;
@@ -357,11 +361,12 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
       const minQty = Math.min(...cfg.bulkDiscounts.map((d) => d.minQty));
       return quantity >= minQty;
     }
-    if (cfg.quantityPrices) {
+    const sizeQtyPrices = (selectedSize as any).quantityPrices;
+    if (cfg.quantityPrices || sizeQtyPrices) {
       return quantity > (cfg.quantityOptions ? cfg.quantityOptions[0] : 1);
     }
     return quantity >= 5;
-  }, [cfg, quantity]);
+  }, [cfg, selectedSize, quantity]);
 
   const totalPrice = (unitPrice * quantity).toFixed(2);
   const originalTotalPrice = ((unitPrice / 0.75) * quantity).toFixed(2); // 25% off display

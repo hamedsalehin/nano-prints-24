@@ -4,6 +4,7 @@ import {
   Instagram,
   Linkedin,
   Youtube,
+  Twitter,
   MapPin,
   Mail,
   Phone,
@@ -66,8 +67,9 @@ const bottomLinks = [
 const socialIcons = [
   { Icon: Facebook, name: "Facebook", href: "https://facebook.com/signsnano" },
   { Icon: Instagram, name: "Instagram", href: "https://instagram.com/nanosigns" },
-  { Icon: Linkedin, name: "LinkedIn", href: "#" },
+  { Icon: Linkedin, name: "LinkedIn", href: "https://www.linkedin.com/company/nano-signs" },
   { Icon: Youtube, name: "YouTube", href: "#" },
+  { Icon: Twitter, name: "X", href: "https://x.com/nanosigns1" },
 ];
 
 export function Footer({ light = false }: { light?: boolean } = {}) {

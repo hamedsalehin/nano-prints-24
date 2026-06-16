@@ -970,6 +970,32 @@ function DesignPageContent() {
     }
   }, [registryProduct, searchParams]);
 
+  // Orientation handler to dynamically swap canvasSize width and height
+  useEffect(() => {
+    if (selectValues["Orientation"]) {
+      const orientationVal = selectValues["Orientation"].value;
+      const isVertical = orientationVal.toLowerCase().includes("vertical");
+      const currentWidth = canvasSize.width;
+      const currentHeight = canvasSize.height;
+      const minDim = Math.min(currentWidth, currentHeight);
+      const maxDim = Math.max(currentWidth, currentHeight);
+
+      if (isVertical && (currentWidth !== minDim || currentHeight !== maxDim)) {
+        setCanvasSize(prev => ({
+          ...prev,
+          width: minDim,
+          height: maxDim,
+        }));
+      } else if (!isVertical && (currentWidth !== maxDim || currentHeight !== minDim)) {
+        setCanvasSize(prev => ({
+          ...prev,
+          width: maxDim,
+          height: minDim,
+        }));
+      }
+    }
+  }, [selectValues, canvasSize.width, canvasSize.height]);
+
   // Auth
   const { user } = useAuth();
 
@@ -1213,14 +1239,13 @@ function DesignPageContent() {
   const calculatedPrice = React.useMemo(() => {
     if (registryProduct) {
       const cfg = registryProduct.config;
-      let baseUnitPrice = cfg.sizes[0].basePrice;
-      if (cfg.quantityPrices && cfg.quantityPrices[quantity] !== undefined) {
+      const matchedSize = cfg.sizes.find(s => s.label === canvasSize.label) || cfg.sizes[0];
+      let baseUnitPrice = matchedSize.basePrice;
+      const sizeQtyPrices = (matchedSize as any).quantityPrices;
+      if (sizeQtyPrices && sizeQtyPrices[quantity] !== undefined) {
+        baseUnitPrice = sizeQtyPrices[quantity] / quantity;
+      } else if (cfg.quantityPrices && cfg.quantityPrices[quantity] !== undefined) {
         baseUnitPrice = cfg.quantityPrices[quantity] / quantity;
-      } else {
-        const matchedSize = cfg.sizes.find(s => s.label === canvasSize.label);
-        if (matchedSize) {
-          baseUnitPrice = matchedSize.basePrice;
-        }
       }
 
       let price = baseUnitPrice;
@@ -1254,7 +1279,7 @@ function DesignPageContent() {
         if (matchedDiscount) {
           discount = (100 - matchedDiscount.discountPercent) / 100;
         }
-      } else if (cfg.quantityPrices) {
+      } else if (cfg.quantityPrices || sizeQtyPrices) {
         discount = 1;
       } else {
         if (quantity >= 100) discount = 0.82;
