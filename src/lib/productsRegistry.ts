@@ -4701,7 +4701,7 @@ Why Choose Our Professional Rollup Banners?
         name: "Yard Signs",
         description:
           "Corrugated plastic signs perfect for lawns, events, and political campaigns.",
-        image: "/images/products/main%20page/signs.png",
+        image: "/images/products/main%20page/yard_sign.jpeg",
         price: "Starting at $3.99",
         badge: "Best Seller",
         config: {
@@ -4710,9 +4710,9 @@ Why Choose Our Professional Rollup Banners?
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
           promoText: "25% OFF Yard Signs + Free Shipping",
-          image: "/images/products/main%20page/signs.png",
+          image: "/images/products/main%20page/yard_sign.jpeg",
           images: [
-            "/images/products/main%20page/signs.png",
+            "/images/products/main%20page/yard_sign.jpeg",
             "/images/products/yard_sign_hover.png",
           ],
           ratingScore: "4.9",
@@ -4781,7 +4781,7 @@ Why Choose Our Professional Rollup Banners?
           images: [
             "/images/products/main%20page/Real_estate_panels.png",
             "/images/products/gallery/real_estate_panels_in_action_1.png",
-            "/images/products/gallery/real_estate_panels_in_action_2.png",
+            "/images/products/re_sign_hover.png",
           ],
           ratingScore: "4.9",
           ratingCount: "3,200",

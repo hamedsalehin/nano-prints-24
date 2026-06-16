@@ -9,12 +9,12 @@ const categories = [
   {
     name: "Signs",
     href: "/custom-signs",
-    image: "/images/products/main%20page/signs.png",
+    image: "/images/products/main%20page/all_signs_product.png",
   },
   {
-    name: "Real Estate Panels",
-    href: "/custom-signs/real-estate-panels",
-    image: "/images/products/main%20page/Real_estate_panels.png",
+    name: "Business Cards",
+    href: "/marketing-materials/business-cards",
+    image: "/images/products/main%20page/business_cards.png",
   },
   {
     name: "Banners",
@@ -45,11 +45,6 @@ const categories = [
     name: "Custom Decals",
     href: "/custom-decals",
     image: "/images/products/main%20page/sticker_and_labels.png",
-  },
-  {
-    name: "Business Cards",
-    href: "/marketing-materials",
-    image: "/images/products/main%20page/business_cards.png",
   },
 ];
 
