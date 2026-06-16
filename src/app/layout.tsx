@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     apple: "/images/nano logo O.png",
   },
   alternates: {
-    canonical: "https://nanop.vercel.app",
+    canonical: "https://nano-signs.com",
   },
 };
 
@@ -63,9 +63,9 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "name": "Nano Signs",
-              "image": "https://nanop.vercel.app/images/nano%20logo%20complete.png",
-              "@id": "https://nanop.vercel.app/#localbusiness",
-              "url": "https://nanop.vercel.app",
+              "image": "https://nano-signs.com/images/nano%20logo%20complete.png",
+              "@id": "https://nano-signs.com/#localbusiness",
+              "url": "https://nano-signs.com",
               "telephone": "305-967-1005",
               "priceRange": "$$",
               "address": {

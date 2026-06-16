@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Custom Channel Letter Signs Fort Lauderdale FL | Nano Signs",
   description: "Premium 3D backlit and front-lit channel letter storefront signs in Broward County. Fast quotes and high-quality fabrication in Fort Lauderdale, FL.",
   alternates: {
-    canonical: "https://nanop.vercel.app/custom-signs/channel-letter-signs",
+    canonical: "https://nano-signs.com/custom-signs/channel-letter-signs",
   },
 };
 

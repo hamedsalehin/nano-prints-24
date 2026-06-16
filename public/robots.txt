@@ -3,4 +3,4 @@ Allow: /
 Disallow: /api/
 Disallow: /account/
 
-Sitemap: https://nanop.vercel.app/sitemap.xml
+Sitemap: https://nano-signs.com/sitemap.xml

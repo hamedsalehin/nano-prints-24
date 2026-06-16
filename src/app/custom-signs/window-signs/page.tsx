@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Custom Window Graphics & Decals Fort Lauderdale FL",
   description: "Design high-res window decals, perforated vinyl, & clings online. Professional storefront graphics with fast turnaround in Broward County.",
   alternates: {
-    canonical: "https://nanop.vercel.app/custom-signs/window-signs",
+    canonical: "https://nano-signs.com/custom-signs/window-signs",
   },
 };
 
