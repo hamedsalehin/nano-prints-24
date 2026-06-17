@@ -2968,7 +2968,7 @@ Why Choose Our Professional Rollup Banners?
             `<div class="space-y-4">
               <h3 class="text-lg font-bold text-slate-900">Custom Event Postcards & Table Handouts</h3>
               <p class="text-sm text-gray-700 leading-relaxed">
-                Nano Signs provides high-quality postcard printing tailored for trade shows, networking events, and corporate displays across Fort Lauderdale, Oakland Park, and Broward County. Printed on rigid 14pt cardstock, these postcards make outstanding spec sheets, coupon hand-outs, and direct mail ads. The clean, square-cornered trim ensures a simple, modern look that matches corporate guidelines.
+                Nano Signs provides high-quality postcard printing tailored for trade shows, networking events, and corporate displays nationwide. Printed on rigid 14pt cardstock, these postcards make outstanding spec sheets, coupon hand-outs, and direct mail ads. The clean, square-cornered trim ensures a simple, modern look that matches corporate guidelines.
               </p>
               <p class="text-sm text-gray-700 leading-relaxed">
                 Choose between high-gloss coating for ultimate vibrance or matte finish for a elegant, non-glare appearance that is easy to write on. Personalize with your logo and messaging in our Design Studio or upload custom layouts to print single-sided or double-sided.
@@ -3724,12 +3724,12 @@ Why Choose Our Professional Rollup Banners?
       "The flyers and folded menus turned out absolutely gorgeous! Perfect color alignment with our corporate branding guidelines and the paper quality is very thick.",
     categoryDescriptionText:
       `<div class="space-y-4">
-        <h3 class="text-xl font-bold text-slate-900">Elevate Your Brand in Broward County with Premium Marketing Materials</h3>
+        <h3 class="text-xl font-bold text-slate-900">Elevate Your Brand with Premium Marketing Materials</h3>
         <p class="text-sm text-gray-700 leading-relaxed">
-          At <strong>Nano Signs</strong>, we deliver industry-leading commercial printing and sign services designed to grab attention and convert leads. Serving <strong>Fort Lauderdale</strong>, <strong>Oakland Park</strong>, and the wider <strong>Broward County</strong> area, we specialize in high-definition print collateral that represents your business with distinction. Whether you need standard business cards for networking events, door hangers for targeted local neighborhood mailings, or folded brochures to pitch complex services, our state-of-the-art print production facilities ensure crisp details, harmonious colors, and premium paper weights.
+          At <strong>Nano Signs</strong>, we deliver industry-leading commercial printing and sign services designed to grab attention and convert leads. We specialize in high-definition print collateral that represents your business with distinction. Whether you need standard business cards for networking events, door hangers for targeted neighborhood mailings, or folded brochures to pitch complex services, our state-of-the-art print production facilities ensure crisp details, harmonious colors, and premium paper weights.
         </p>
         <p class="text-sm text-gray-700 leading-relaxed">
-          Our complete suite of custom marketing collateral includes premium business cards (including our 14pt semi-gloss profit maximizer), custom postcards and direct mailers, vibrant flyers and folded brochures, and pre-cut door hangers. We print on heavy cardstock and high-density text papers using advanced offset lithography. Plus, with our local facility advantages, we support next-day shipping throughout South Florida, ensuring you never show up empty-handed to your next client pitch or local tradeshow event.
+          Our complete suite of custom marketing collateral includes premium business cards (including our 14pt semi-gloss profit maximizer), custom postcards and direct mailers, vibrant flyers and folded brochures, and pre-cut door hangers. We print on heavy cardstock and high-density text papers using advanced offset lithography. Plus, we support fast shipping nationwide, ensuring you never show up empty-handed to your next client pitch or tradeshow event.
         </p>
       </div>`,
     categorySecondaryImage: "/images/products/main%20page/marketing_materials_desc.png",
@@ -3912,12 +3912,12 @@ Why Choose Our Professional Rollup Banners?
           ],
           description:
             `<div class="space-y-4">
-              <h3 class="text-lg font-bold text-slate-900">Premium Business Cards Printed in Fort Lauderdale</h3>
+              <h3 class="text-lg font-bold text-slate-900">Premium Custom Business Cards</h3>
               <p class="text-sm text-gray-700 leading-relaxed">
-                Make a striking professional statement with custom business cards from Nano Signs. Serving Fort Lauderdale, Oakland Park, and Broward County, we specialize in high-definition offset business card printing that sets your brand apart. Our cards are printed on ultra-sturdy 14pt semi-gloss cardstock (our profit maximizer option) or heavy-weight 16pt stock, ensuring they never feel flimsy or cheap. Choose between a glossy UV protective coating for high vibrant contrast, or a smooth matte coating for a sophisticated, writable surface.
+                Make a striking professional statement with custom business cards from Nano Signs. We specialize in high-definition offset business card printing that sets your brand apart. Our cards are printed on ultra-sturdy 14pt semi-gloss cardstock (our profit maximizer option) or heavy-weight 16pt stock, ensuring they never feel flimsy or cheap. Choose between a glossy UV protective coating for high vibrant contrast, or a smooth matte coating for a sophisticated, writable surface.
               </p>
               <p class="text-sm text-gray-700 leading-relaxed">
-                Whether you are an independent contractor in Broward County, a startup founder in Oakland Park, or a real estate agent in Fort Lauderdale, having a pocket full of pristine, double-sided business cards ensures you are always ready to network. Customize yours with raised foil accents, custom shapes, or painted edges to leave a memorable physical impression.
+                Whether you are an independent contractor, a startup founder, or a real estate agent, having a pocket full of pristine, double-sided business cards ensures you are always ready to network. Customize yours with raised foil accents, custom shapes, or painted edges to leave a memorable physical impression.
               </p>
             </div>`,
           faqs: [
@@ -4104,12 +4104,12 @@ Why Choose Our Professional Rollup Banners?
           ],
           description:
             `<div class="space-y-4">
-              <h3 class="text-lg font-bold text-slate-900">Custom Printed Postcards in Fort Lauderdale & Oakland Park</h3>
+              <h3 class="text-lg font-bold text-slate-900">Custom Printed Postcards</h3>
               <p class="text-sm text-gray-700 leading-relaxed">
-                Take your local direct mail marketing or client handouts to the next level with premium custom postcards from Nano Signs. Serving Broward County, Fort Lauderdale, and Oakland Park, FL, we offer crisp, full-color postcard printing that is perfect for neighborhood outreach, retail promotions, coupons, and corporate invitations. Our postcards are cut with square corners to comply with standard USPS and Canada Post specifications, guaranteeing a clean and simple product-focused aesthetic.
+                Take your direct mail marketing or client handouts to the next level with premium custom postcards from Nano Signs. We offer crisp, full-color postcard printing that is perfect for neighborhood outreach, retail promotions, coupons, and corporate invitations. Our postcards are cut with square corners to comply with standard USPS and Canada Post specifications, guaranteeing a clean and simple product-focused aesthetic.
               </p>
               <p class="text-sm text-gray-700 leading-relaxed">
-                Choose between high-shine glossy finish that accentuates photographic imagery and makes colors pop, or smooth matte cardstock for a non-glare, writeable finish. With single-sided or double-sided printing options, you can design your postcard layout to showcase eye-catching graphics on the front while keeping the back clear for address, postage, and local business details.
+                Choose between high-shine glossy finish that accentuates photographic imagery and makes colors pop, or smooth matte cardstock for a non-glare, writeable finish. With single-sided or double-sided printing options, you can design your postcard layout to showcase eye-catching graphics on the front while keeping the back clear for address, postage, and business details.
               </p>
             </div>`,
           faqs: [
@@ -4278,12 +4278,12 @@ Why Choose Our Professional Rollup Banners?
           ],
           description:
             `<div class="space-y-4">
-              <h3 class="text-lg font-bold text-slate-900">Custom Flyer Printing in Fort Lauderdale</h3>
+              <h3 class="text-lg font-bold text-slate-900">Custom Flyer Printing</h3>
               <p class="text-sm text-gray-700 leading-relaxed">
-                Promote your next corporate event, local restaurant menu, or real estate open house with custom flyers from Nano Signs. Serving Oakland Park, Fort Lauderdale, and all of Broward County, we specialize in high-definition offset flyer printing with fast turnarounds. Printed on premium 100lb glossy text paper (which makes colors pop with photographic vibrance) or smooth matte text paper (ideal for a sophisticated, glare-free readable finish), our flyers offer a thick, substantial feel.
+                Promote your next corporate event, restaurant menu, or real estate open house with custom flyers from Nano Signs. We specialize in high-definition offset flyer printing with fast turnarounds. Printed on premium 100lb glossy text paper (which makes colors pop with photographic vibrance) or smooth matte text paper (ideal for a sophisticated, glare-free readable finish), our flyers offer a thick, substantial feel.
               </p>
               <p class="text-sm text-gray-700 leading-relaxed">
-                Choose single or double-sided layouts and orientation options (horizontal or vertical) to match your campaign goals. Hand them out at local South Florida events, display them at front desks, or mail them directly to neighborhood prospects.
+                Choose single or double-sided layouts and orientation options (horizontal or vertical) to match your campaign goals. Hand them out at events, display them at front desks, or mail them directly to neighborhood prospects.
               </p>
             </div>`,
           faqs: [
@@ -4399,9 +4399,9 @@ Why Choose Our Professional Rollup Banners?
           ],
           description:
             `<div class="space-y-4">
-              <h3 class="text-lg font-bold text-slate-900">Custom Folded Brochures in Broward County</h3>
+              <h3 class="text-lg font-bold text-slate-900">Custom Folded Brochures</h3>
               <p class="text-sm text-gray-700 leading-relaxed">
-                Present your products, services, or menu items in an elegant, structured format with custom folded brochures from Nano Signs. Serving businesses in Fort Lauderdale, Oakland Park, and neighboring South Florida cities, we provide high-definition brochure printing with clean scoring and machine-folding. Our standard 8.5" x 11" brochures are available in standard Tri-Fold or Half-Fold configurations, ensuring your layouts line up perfectly.
+                Present your products, services, or menu items in an elegant, structured format with custom folded brochures from Nano Signs. We provide high-definition brochure printing with clean scoring and machine-folding. Our standard 8.5" x 11" brochures are available in standard Tri-Fold or Half-Fold configurations, ensuring your layouts line up perfectly.
               </p>
               <p class="text-sm text-gray-700 leading-relaxed">
                 Customize your print run with premium 100lb glossy text paper (vibrant and eye-catching), 100lb matte text paper (sophisticated, smudge-resistant), or 80lb recycled text paper for green-focused branding. Organize complex business information, portfolios, or restaurant menu items into readable panels that encourage prospective customers to learn more.
@@ -4527,9 +4527,9 @@ Why Choose Our Professional Rollup Banners?
           ],
           description:
             `<div class="space-y-4">
-              <h3 class="text-lg font-bold text-slate-900">Custom Door Hanger Printing in Fort Lauderdale & Oakland Park</h3>
+              <h3 class="text-lg font-bold text-slate-900">Custom Door Hanger Printing</h3>
               <p class="text-sm text-gray-700 leading-relaxed">
-                Connect directly with local neighborhoods using custom door hangers from Nano Signs. Highly popular for landscaping, pressure washing, pest control, roofing, plumbing, and local restaurant delivery campaigns, door hangers provide a guaranteed physical touchpoint on the front doors of Fort Lauderdale, Oakland Park, and Broward County homes. Printed on heavy 14pt cardstock, these hangers hold up against South Florida's outdoor humidity without curling.
+                Connect directly with local neighborhoods using custom door hangers from Nano Signs. Highly popular for landscaping, pressure washing, pest control, roofing, plumbing, and restaurant delivery campaigns, door hangers provide a guaranteed physical touchpoint on the front doors of homes and businesses. Printed on heavy 14pt cardstock, these hangers hold up against outdoor humidity without curling.
               </p>
               <p class="text-sm text-gray-700 leading-relaxed">
                 Our door hangers are pre-cut with a circular hole and a slit (or curved arch hook) at the top, sliding effortlessly onto any standard handle. Design your custom door hangers with double-sided printing: use the front for bold, high-gloss promos and contact details, and the back for detailed service pricing or client reviews.
