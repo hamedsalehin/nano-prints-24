@@ -220,9 +220,10 @@ export function CategoryPageClient({
                 <h4 className="font-poppins font-bold text-2xl lg:text-3xl text-gray-900 mb-4">
                   {title}
                 </h4>
-                <p className="text-gray-700 leading-relaxed text-base font-opensans">
-                  {categoryDescriptionText}
-                </p>
+                <div
+                  className="text-gray-700 leading-relaxed text-base font-opensans space-y-4"
+                  dangerouslySetInnerHTML={{ __html: categoryDescriptionText }}
+                />
               </div>
               {/* Secondary Image */}
               {categorySecondaryImage && (

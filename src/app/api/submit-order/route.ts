@@ -61,9 +61,11 @@ export async function POST(req: NextRequest) {
     let designUrl: string | null = null;
     let designFilename: string | null = null;
     const designFile = formData.get("design_file") as File | null;
+    let fileBufferNode: Buffer | null = null;
 
     if (designFile && designFile.size > 0) {
       const fileBuffer = await designFile.arrayBuffer();
+      fileBufferNode = Buffer.from(fileBuffer);
       const fileBytes = new Uint8Array(fileBuffer);
       const safeFileName = `${userId}/${Date.now()}-${designFile.name.replace(/[^a-zA-Z0-9._-]/g, "_")}`;
 
@@ -85,6 +87,14 @@ export async function POST(req: NextRequest) {
         designUrl = publicUrlData.publicUrl;
         designFilename = designFile.name;
       }
+    }
+
+    const emailAttachments = [];
+    if (fileBufferNode && designFile) {
+      emailAttachments.push({
+        filename: designFile.name || "design.pdf",
+        content: fileBufferNode,
+      });
     }
 
     // ── Insert order into Supabase ─────────────────────────────────────────────
@@ -197,6 +207,7 @@ export async function POST(req: NextRequest) {
             </div>
           </div>
         `,
+        attachments: emailAttachments,
       });
       }
     }
@@ -284,6 +295,7 @@ export async function POST(req: NextRequest) {
             </div>
           </div>
         `,
+        attachments: emailAttachments,
       });
       }
     }

@@ -181,6 +181,7 @@ function ShippingCountdown() {
 export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
   const [selectedSize, setSelectedSize] = useState(cfg.sizes[0]);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [userClickedThumbnail, setUserClickedThumbnail] = useState(false);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const { addItem } = useCart();
   const { user, setShowAuthModal } = useAuth();
@@ -275,6 +276,7 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
 
   useEffect(() => {
     setActiveImageIndex(0);
+    setUserClickedThumbnail(false);
     const defaultMin = cfg.minQuantity || (cfg.quantityOptions ? cfg.quantityOptions[0] : 1);
     setQuantity(defaultMin);
   }, [cfg]);
@@ -305,11 +307,20 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
   }, [cfg.images, cfg.image]);
 
   const currentImage = useMemo(() => {
+    if (userClickedThumbnail) {
+      return galleryImages[activeImageIndex] || galleryImages[0] || "";
+    }
     for (const val of Object.values(selectValues)) {
       if (val.image) return val.image;
     }
-    return galleryImages[activeImageIndex];
-  }, [selectValues, galleryImages, activeImageIndex]);
+    return galleryImages[activeImageIndex] || galleryImages[0] || "";
+  }, [selectValues, galleryImages, activeImageIndex, userClickedThumbnail]);
+
+  const activeIndex = useMemo(() => {
+    if (userClickedThumbnail) return activeImageIndex;
+    const idx = galleryImages.indexOf(currentImage);
+    return idx !== -1 ? idx : activeImageIndex;
+  }, [userClickedThumbnail, activeImageIndex, galleryImages, currentImage]);
 
   const unitPrice = useMemo(() => {
     let baseUnitPrice = selectedSize.basePrice;
@@ -580,9 +591,12 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
                 {galleryImages.map((img, idx) => (
                   <button
                     key={idx}
-                    onClick={() => setActiveImageIndex(idx)}
+                    onClick={() => {
+                      setActiveImageIndex(idx);
+                      setUserClickedThumbnail(true);
+                    }}
                     className={`w-16 h-16 rounded-lg border-2 cursor-pointer p-1 bg-gray-50 transition-all ${
-                      activeImageIndex === idx
+                      activeIndex === idx
                         ? "border-[#ff2d78] ring-2 ring-pink-100"
                         : "border-gray-150 hover:border-gray-350"
                     }`}
@@ -677,9 +691,10 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
             {activeTab === "overview" && (
               <div className="space-y-6">
                 {cfg.description && (
-                  <p className="text-gray-600 text-sm leading-relaxed mb-6 font-opensans border-b border-gray-150 pb-6 whitespace-pre-line">
-                    {cfg.description}
-                  </p>
+                  <div
+                    className="text-gray-600 text-sm leading-relaxed mb-6 font-opensans border-b border-gray-150 pb-6 space-y-4"
+                    dangerouslySetInnerHTML={{ __html: cfg.description }}
+                  />
                 )}
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
@@ -797,11 +812,12 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
                   <div className="relative">
                     <select
                       value={selectedSize.value}
-                      onChange={(e) =>
+                      onChange={(e) => {
                         setSelectedSize(
                           cfg.sizes.find((s) => s.value === e.target.value)!,
-                        )
-                      }
+                        );
+                        setUserClickedThumbnail(false);
+                      }}
                       className="w-full appearance-none bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-[#ff2d78] cursor-pointer font-semibold"
                     >
                       {cfg.sizes.map((s) => (
@@ -827,11 +843,13 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
                           const found = sel.options.find(
                             (o) => o.value === e.target.value,
                           );
-                          if (found)
+                          if (found) {
                             setSelectValues((prev) => ({
                               ...prev,
                               [sel.label]: found,
                             }));
+                            setUserClickedThumbnail(false);
+                          }
                         }}
                         className="w-full appearance-none bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-[#ff2d78] cursor-pointer font-semibold"
                       >
@@ -865,12 +883,13 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
                       {grp.options.map((o) => (
                         <button
                           key={o.id}
-                          onClick={() =>
+                          onClick={() => {
                             setToggleValues((prev) => ({
                               ...prev,
                               [grp.label]: o,
-                            }))
-                          }
+                            }));
+                            setUserClickedThumbnail(false);
+                          }}
                           className={`p-3 text-left rounded-xl border-2 transition-all duration-200 ${toggleValues[grp.label]?.id === o.id ? "border-[#ff2d78] bg-pink-50" : "border-gray-200 hover:border-gray-300 bg-white"}`}
                         >
                           <span className="block text-xs font-bold text-gray-900">

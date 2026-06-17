@@ -2964,8 +2964,50 @@ Why Choose Our Professional Rollup Banners?
             { key: "Material", value: "14pt Premium Cardstock" },
             { key: "Finish Options", value: "Glossy (front only) or Smooth Matte" },
           ],
-          faqs: [],
-          reviews: [],
+          description:
+            `<div class="space-y-4">
+              <h3 class="text-lg font-bold text-slate-900">Custom Event Postcards & Table Handouts</h3>
+              <p class="text-sm text-gray-700 leading-relaxed">
+                Nano Signs provides high-quality postcard printing tailored for trade shows, networking events, and corporate displays across Fort Lauderdale, Oakland Park, and Broward County. Printed on rigid 14pt cardstock, these postcards make outstanding spec sheets, coupon hand-outs, and direct mail ads. The clean, square-cornered trim ensures a simple, modern look that matches corporate guidelines.
+              </p>
+              <p class="text-sm text-gray-700 leading-relaxed">
+                Choose between high-gloss coating for ultimate vibrance or matte finish for a elegant, non-glare appearance that is easy to write on. Personalize with your logo and messaging in our Design Studio or upload custom layouts to print single-sided or double-sided.
+              </p>
+            </div>`,
+          faqs: [
+            {
+              q: "What paper stock options do you offer for custom postcards?",
+              a: "We print our postcards on premium heavy 14pt glossy cover or matte cardstock, giving them a stiff and substantial feel. Our glossy finish offers a high-shine coating that enhances photographic prints, while our smooth matte finish offers an elegant, writeable surface that resists smudging.",
+            },
+            {
+              q: "Can I print on both the front and back of the postcards?",
+              a: "Yes, absolutely! We offer both single-sided and double-sided full-color printing. Double-sided printing is highly recommended for direct mailers so you can place address and postage details on one side and a beautiful visual promotion on the other.",
+            },
+            {
+              q: "Are your postcards compatible with direct mail services like EDDM?",
+              a: "Yes! Our postcards are cut with square corners (no round cornering) to comply with Canada Post and USPS direct mail standards. Popular EDDM sizes like 6\" x 9\" and 6\" x 11\" are fully supported.",
+            },
+            {
+              q: "What is the difference between glossy and matte postcard finishes?",
+              a: "Glossy paper has a reflective coating that makes images pop with intense color and deep contrasts, perfect for real estate flyers. Matte finish is non-reflective, soft to the touch, and makes text highly legible, ideal for info-dense postcards.",
+            },
+            {
+              q: "Do you offer layout templates for designing postcards?",
+              a: "Yes, our online Design Studio provides easy-to-use layouts, shapes, cliparts, and text boxes. You can design your custom postcard from scratch or upload a print-ready PDF/AI file directly to place your order.",
+            },
+          ],
+          reviews: [
+            {
+              author: "Tina M., Sales Rep",
+              rating: 5,
+              text: "Used these as handout spec sheets for our trade show in Fort Lauderdale. Colors are bright, and the 14pt stock feels very thick and expensive. Highly recommended local print shop!",
+            },
+            {
+              author: "Robert G., General Contractor",
+              rating: 5,
+              text: "Durable, thick cards. Square corners look very modern. Handed out to clients and got a great response.",
+            },
+          ],
           ctaHeading: "Build flyers & postcards",
           ctaBody: "Design promotional cards to hand out at your event tables.",
           ctaLabel: "Customize Postcards",
@@ -3675,13 +3717,21 @@ Why Choose Our Professional Rollup Banners?
     heroSubtitle: "Professional Print. Promoted Brand.",
     description:
       "Grow your business and look professional with customized business cards, flyers, and brochures.",
-    heroImage: "/images/products/main%20page/marketing%20materials%20hero%20image.png",
+    heroImage: "/images/products/main%20page/marketing%20_materials_hero_image.png",
     reviewRating: "4.9",
     reviewCount: "1,150",
     reviewQuote:
       "The flyers and folded menus turned out absolutely gorgeous! Perfect color alignment with our corporate branding guidelines and the paper quality is very thick.",
     categoryDescriptionText:
-      "Make a powerful statement with custom marketing materials that elevate your brand. From premium double-sided business cards and local door hangers to detailed brochures, rack cards, and tabletop displays, we offer a comprehensive suite of print products designed to help you stand out. Easily customize each piece with your brand colors, logos, and promotions using our professional design tools and template libraries.",
+      `<div class="space-y-4">
+        <h3 class="text-xl font-bold text-slate-900">Elevate Your Brand in Broward County with Premium Marketing Materials</h3>
+        <p class="text-sm text-gray-700 leading-relaxed">
+          At <strong>Nano Signs</strong>, we deliver industry-leading commercial printing and sign services designed to grab attention and convert leads. Serving <strong>Fort Lauderdale</strong>, <strong>Oakland Park</strong>, and the wider <strong>Broward County</strong> area, we specialize in high-definition print collateral that represents your business with distinction. Whether you need standard business cards for networking events, door hangers for targeted local neighborhood mailings, or folded brochures to pitch complex services, our state-of-the-art print production facilities ensure crisp details, harmonious colors, and premium paper weights.
+        </p>
+        <p class="text-sm text-gray-700 leading-relaxed">
+          Our complete suite of custom marketing collateral includes premium business cards (including our 14pt semi-gloss profit maximizer), custom postcards and direct mailers, vibrant flyers and folded brochures, and pre-cut door hangers. We print on heavy cardstock and high-density text papers using advanced offset lithography. Plus, with our local facility advantages, we support next-day shipping throughout South Florida, ensuring you never show up empty-handed to your next client pitch or local tradeshow event.
+        </p>
+      </div>`,
     categorySecondaryImage: "/images/products/main%20page/marketing_materials_desc.png",
     faqs: [
       {
@@ -3860,6 +3910,16 @@ Why Choose Our Professional Rollup Banners?
             { key: "Specialty Stocks", value: "Painted Edge, Ultra Thick, Clear Plastic" },
             { key: "Standard Turnaround", value: "Next Business Day" },
           ],
+          description:
+            `<div class="space-y-4">
+              <h3 class="text-lg font-bold text-slate-900">Premium Business Cards Printed in Fort Lauderdale</h3>
+              <p class="text-sm text-gray-700 leading-relaxed">
+                Make a striking professional statement with custom business cards from Nano Signs. Serving Fort Lauderdale, Oakland Park, and Broward County, we specialize in high-definition offset business card printing that sets your brand apart. Our cards are printed on ultra-sturdy 14pt semi-gloss cardstock (our profit maximizer option) or heavy-weight 16pt stock, ensuring they never feel flimsy or cheap. Choose between a glossy UV protective coating for high vibrant contrast, or a smooth matte coating for a sophisticated, writable surface.
+              </p>
+              <p class="text-sm text-gray-700 leading-relaxed">
+                Whether you are an independent contractor in Broward County, a startup founder in Oakland Park, or a real estate agent in Fort Lauderdale, having a pocket full of pristine, double-sided business cards ensures you are always ready to network. Customize yours with raised foil accents, custom shapes, or painted edges to leave a memorable physical impression.
+              </p>
+            </div>`,
           faqs: [
             {
               q: "What is the standard size of a business card?",
@@ -3876,6 +3936,10 @@ Why Choose Our Professional Rollup Banners?
             {
               q: "What is the difference between Pearl and Soft Touch finishes?",
               a: 'Pearl cardstock uses a specialized paper embedded with natural shimmering fibers that give the entire card a pearlescent sheen. Soft Touch is a velvet-matte protective coating applied after printing that gives the cards a soft, suede-like texture.',
+            },
+            {
+              q: "What is the minimum order quantity for custom business cards?",
+              a: "Our minimum quantity starts at just 100 cards. We provide significant bulk printing discounts for quantities of 250, 500, 1000, and up to 10,000 cards per order, giving you maximum value.",
             },
           ],
           reviews: [
@@ -4038,8 +4102,50 @@ Why Choose Our Professional Rollup Banners?
             { key: "Material", value: "14pt Premium Cardstock" },
             { key: "Finish Options", value: "Glossy (front only) or Smooth Matte" },
           ],
-          faqs: [],
-          reviews: [],
+          description:
+            `<div class="space-y-4">
+              <h3 class="text-lg font-bold text-slate-900">Custom Printed Postcards in Fort Lauderdale & Oakland Park</h3>
+              <p class="text-sm text-gray-700 leading-relaxed">
+                Take your local direct mail marketing or client handouts to the next level with premium custom postcards from Nano Signs. Serving Broward County, Fort Lauderdale, and Oakland Park, FL, we offer crisp, full-color postcard printing that is perfect for neighborhood outreach, retail promotions, coupons, and corporate invitations. Our postcards are cut with square corners to comply with standard USPS and Canada Post specifications, guaranteeing a clean and simple product-focused aesthetic.
+              </p>
+              <p class="text-sm text-gray-700 leading-relaxed">
+                Choose between high-shine glossy finish that accentuates photographic imagery and makes colors pop, or smooth matte cardstock for a non-glare, writeable finish. With single-sided or double-sided printing options, you can design your postcard layout to showcase eye-catching graphics on the front while keeping the back clear for address, postage, and local business details.
+              </p>
+            </div>`,
+          faqs: [
+            {
+              q: "What paper stock options do you offer for custom postcards?",
+              a: "We print our postcards on premium heavy 14pt glossy cover or matte cardstock, giving them a stiff and substantial feel. Our glossy finish offers a high-shine coating that enhances photographic prints, while our smooth matte finish offers an elegant, writeable surface that resists smudging.",
+            },
+            {
+              q: "Can I print on both the front and back of the postcards?",
+              a: "Yes, absolutely! We offer both single-sided and double-sided full-color printing. Double-sided printing is highly recommended for direct mailers so you can place address and postage details on one side and a beautiful visual promotion on the other.",
+            },
+            {
+              q: "Are your postcards compatible with direct mail services like EDDM?",
+              a: "Yes! Our postcards are cut with square corners (no round cornering) to comply with Canada Post and USPS direct mail standards. Popular EDDM sizes like 6\" x 9\" and 6\" x 11\" are fully supported.",
+            },
+            {
+              q: "What is the difference between glossy and matte postcard finishes?",
+              a: "Glossy paper has a reflective coating that makes images pop with intense color and deep contrasts, perfect for real estate flyers. Matte finish is non-reflective, soft to the touch, and makes text highly legible, ideal for info-dense postcards.",
+            },
+            {
+              q: "Do you offer layout templates for designing postcards?",
+              a: "Yes, our online Design Studio provides easy-to-use layouts, shapes, cliparts, and text boxes. You can design your custom postcard from scratch or upload a print-ready PDF/AI file directly to place your order.",
+            },
+          ],
+          reviews: [
+            {
+              author: "Elena R., Boutique Owner",
+              rating: 5,
+              text: "The matte postcards were perfect for our summer collection mailer! They feel very high-quality and the printing is incredibly sharp. Excellent Broward local service.",
+            },
+            {
+              author: "Jason L., Realtor",
+              rating: 5,
+              text: "Exactly what I was looking for. No rounded corners, very simple and professional. Will buy all my listing postcards here.",
+            },
+          ],
           ctaHeading: "Ready to design postcards?",
           ctaBody:
             "Custom print postcards using our online template catalog or upload artwork.",
@@ -4170,8 +4276,50 @@ Why Choose Our Professional Rollup Banners?
             { key: "Material", value: "Premium Glossy or Matte paper stock" },
             { key: "Printing", value: "High definition offset printing" },
           ],
-          faqs: [],
-          reviews: [],
+          description:
+            `<div class="space-y-4">
+              <h3 class="text-lg font-bold text-slate-900">Custom Flyer Printing in Fort Lauderdale</h3>
+              <p class="text-sm text-gray-700 leading-relaxed">
+                Promote your next corporate event, local restaurant menu, or real estate open house with custom flyers from Nano Signs. Serving Oakland Park, Fort Lauderdale, and all of Broward County, we specialize in high-definition offset flyer printing with fast turnarounds. Printed on premium 100lb glossy text paper (which makes colors pop with photographic vibrance) or smooth matte text paper (ideal for a sophisticated, glare-free readable finish), our flyers offer a thick, substantial feel.
+              </p>
+              <p class="text-sm text-gray-700 leading-relaxed">
+                Choose single or double-sided layouts and orientation options (horizontal or vertical) to match your campaign goals. Hand them out at local South Florida events, display them at front desks, or mail them directly to neighborhood prospects.
+              </p>
+            </div>`,
+          faqs: [
+            {
+              q: "What sizes are available for custom flyers?",
+              a: "Our flyers are available in three versatile sizes: 5.5\"x8.5\" (compact handouts), 8.5\"x14\" (legal-size sheets), and 11\"x17\" (large display posters).",
+            },
+            {
+              q: "What paper stocks are used for printing flyers?",
+              a: "We use high-density 100lb glossy text paper and smooth matte text paper, ensuring a thick, premium feel without compromising on flexibility.",
+            },
+            {
+              q: "Are flyers printed on both sides?",
+              a: "Yes! You can choose between single-sided and double-sided printing. Double-sided flyers are excellent for menus, pamphlets, and product sheets.",
+            },
+            {
+              q: "Can I fold these flyers to make brochures?",
+              a: "While we offer folded brochures separately, our flyers are shipped flat. If you want pre-folded handouts, we recommend ordering from our Brochures section.",
+            },
+            {
+              q: "Is there a bulk discount for large flyer orders?",
+              a: "Yes! We offer bulk tier discounts starting at 250 flyers. The unit price decreases significantly as you print higher quantities (up to 2,500 units).",
+            },
+          ],
+          reviews: [
+            {
+              author: "Kevin M., Event Coordinator",
+              rating: 5,
+              text: "The glossy 100lb text flyers looked stunning under the venue lighting. Very fast local pickup in Broward County.",
+            },
+            {
+              author: "Maria S., Restaurant Owner",
+              rating: 5,
+              text: "Printed our double-sided takeout menus on the matte stock. Beautifully clean, easy to read, and very thick. Excellent value!",
+            },
+          ],
           ctaHeading: "Design flyers online",
           ctaBody:
             "Input your logo, menus, and corporate text using templates.",
@@ -4249,8 +4397,50 @@ Why Choose Our Professional Rollup Banners?
             { key: "Material", value: "100lb Text Paper" },
             { key: "Printing", value: "Offset lithography" },
           ],
-          faqs: [],
-          reviews: [],
+          description:
+            `<div class="space-y-4">
+              <h3 class="text-lg font-bold text-slate-900">Custom Folded Brochures in Broward County</h3>
+              <p class="text-sm text-gray-700 leading-relaxed">
+                Present your products, services, or menu items in an elegant, structured format with custom folded brochures from Nano Signs. Serving businesses in Fort Lauderdale, Oakland Park, and neighboring South Florida cities, we provide high-definition brochure printing with clean scoring and machine-folding. Our standard 8.5" x 11" brochures are available in standard Tri-Fold or Half-Fold configurations, ensuring your layouts line up perfectly.
+              </p>
+              <p class="text-sm text-gray-700 leading-relaxed">
+                Customize your print run with premium 100lb glossy text paper (vibrant and eye-catching), 100lb matte text paper (sophisticated, smudge-resistant), or 80lb recycled text paper for green-focused branding. Organize complex business information, portfolios, or restaurant menu items into readable panels that encourage prospective customers to learn more.
+              </p>
+            </div>`,
+          faqs: [
+            {
+              q: "What fold styles do you offer for custom brochures?",
+              a: "We offer pre-folded brochures in two styles: Tri-Fold (divided into 3 panels per side) and Half-Fold (folded down the middle into 4 pages).",
+            },
+            {
+              q: "What paper qualities are available for brochures?",
+              a: "You can select 100lb Glossy Text (ideal for vivid brochures), 100lb Matte Text (classy, readable), or 80lb Recycled Text for eco-friendly branding.",
+            },
+            {
+              q: "What are the dimensions of the brochures?",
+              a: "Our standard brochures start with flat sheets of 8.5\" x 11\" and are pre-folded to compact sizes (approx. 3.7\" x 8.5\" for tri-folds).",
+            },
+            {
+              q: "Do the brochures arrive pre-folded?",
+              a: "Yes, absolutely! We score and fold your brochures in-house, so they arrive fully assembled and ready to hand out.",
+            },
+            {
+              q: "Can I design a brochure with custom layouts?",
+              a: "Yes! Our online customizer lets you place images, logos, and descriptions in dedicated text panels matching the folding guidelines.",
+            },
+          ],
+          reviews: [
+            {
+              author: "Clarissa W., Medical Clinic Manager",
+              rating: 5,
+              text: "The matte 100lb tri-fold brochures looked highly professional. Text is very sharp and the folds are perfectly aligned. Excellent South Florida printer.",
+            },
+            {
+              author: "Daniel H., HVAC Owner",
+              rating: 5,
+              text: "Tri-fold brochures were perfect for listing our residential seasonal maintenance packages. Very sturdy paper weight.",
+            },
+          ],
           ctaHeading: "Design brochures online",
           ctaBody:
             "Create beautiful brochures with professional folding styles.",
@@ -4335,8 +4525,50 @@ Why Choose Our Professional Rollup Banners?
             { key: "Material", value: "14pt cardstock" },
             { key: "Hole Diameter", value: "1.25 inches standard" },
           ],
-          faqs: [],
-          reviews: [],
+          description:
+            `<div class="space-y-4">
+              <h3 class="text-lg font-bold text-slate-900">Custom Door Hanger Printing in Fort Lauderdale & Oakland Park</h3>
+              <p class="text-sm text-gray-700 leading-relaxed">
+                Connect directly with local neighborhoods using custom door hangers from Nano Signs. Highly popular for landscaping, pressure washing, pest control, roofing, plumbing, and local restaurant delivery campaigns, door hangers provide a guaranteed physical touchpoint on the front doors of Fort Lauderdale, Oakland Park, and Broward County homes. Printed on heavy 14pt cardstock, these hangers hold up against South Florida's outdoor humidity without curling.
+              </p>
+              <p class="text-sm text-gray-700 leading-relaxed">
+                Our door hangers are pre-cut with a circular hole and a slit (or curved arch hook) at the top, sliding effortlessly onto any standard handle. Design your custom door hangers with double-sided printing: use the front for bold, high-gloss promos and contact details, and the back for detailed service pricing or client reviews.
+              </p>
+            </div>`,
+          faqs: [
+            {
+              q: "What sizes do you offer for door hangers?",
+              a: "We provide two standard sizes: 3.5\" x 8.5\" (compact) and 4.25\" x 11\" (large and highly visible).",
+            },
+            {
+              q: "Do the door hangers come with pre-cut holes?",
+              a: "Yes! All door hangers are pre-cut with a circular hole and a slit at the top, allowing them to hang easily on any standard door knob.",
+            },
+            {
+              q: "What cardstock weight do you use for door hangers?",
+              a: "We print on thick, durable 14pt cardstock. This ensures they resist bending and withstand outdoor humidity while hanging on front doors.",
+            },
+            {
+              q: "Are door hangers weather-resistant?",
+              a: "Our 14pt Gloss Cardstock has a light protective sheen that helps resist light South Florida moisture, but they are designed for temporary outdoor hangings.",
+            },
+            {
+              q: "What businesses benefit most from door hangers?",
+              a: "Local home services (landscaping, pressure washing, pest control, roofing, plumbing) and restaurants benefit massively from direct neighborhood canvassing.",
+            },
+          ],
+          reviews: [
+            {
+              author: "Dwayne K., Lawn Care Owner",
+              rating: 5,
+              text: "Our response rate was excellent! We distributed 500 hangers in Oakland Park and gained 12 new monthly accounts. Very clean cut, thick cardstock.",
+            },
+            {
+              author: "Linda J., Pizzeria Manager",
+              rating: 5,
+              text: "Used these to distribute our menu coupon codes locally. The glossy printing is bright and the hole fits perfectly over door handles.",
+            },
+          ],
           ctaHeading: "Kick off local door hanger campaigns",
           ctaBody:
             "Custom print door hangers with coupon codes and contact numbers.",

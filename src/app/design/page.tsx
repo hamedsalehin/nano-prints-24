@@ -28,7 +28,9 @@ import {
   Upload,
   Loader2,
   Mail,
+  Download,
 } from "lucide-react";
+import * as Icons from "lucide-react";
 import { DesignCanvas, CanvasElement } from "@/components/DesignCanvas";
 import { ClipartLibrary, ClipartItem } from "@/components/ClipartLibrary";
 import { useAuth } from "@/components/AuthContext";
@@ -1023,6 +1025,70 @@ function DesignPageContent() {
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [confirmedOrderId, setConfirmedOrderId] = useState<string | null>(null);
   const [confirmedShortId, setConfirmedShortId] = useState<string | null>(null);
+  const [isDownloadingPdf, setIsDownloadingPdf] = useState(false);
+
+  const exportDesignToPdf = async () => {
+    const { jsPDF } = await import("jspdf");
+    const html2canvas = (await import("html2canvas")).default;
+
+    const frontEl = document.getElementById("export-canvas-front");
+    const backEl = document.getElementById("export-canvas-back");
+
+    if (!frontEl) {
+      throw new Error("Export canvas elements not found in DOM.");
+    }
+
+    // Capture front side
+    const frontCanvas = await html2canvas(frontEl, {
+      scale: 3,
+      useCORS: true,
+      logging: false,
+      backgroundColor: null,
+    });
+    const frontImg = frontCanvas.toDataURL("image/jpeg", 0.95);
+
+    const currentWidth = (urlWidth ? parseFloat(urlWidth) : 0) || canvasSize.width;
+    const currentHeight = (urlHeight ? parseFloat(urlHeight) : 0) || canvasSize.height;
+
+    const wPts = currentWidth * 72;
+    const hPts = currentHeight * 72;
+
+    const doc = new jsPDF({
+      orientation: wPts > hPts ? "landscape" : "portrait",
+      unit: "pt",
+      format: [wPts, hPts],
+    });
+
+    doc.addImage(frontImg, "JPEG", 0, 0, wPts, hPts);
+
+    if (doubleSided && backEl) {
+      const backCanvas = await html2canvas(backEl, {
+        scale: 3,
+        useCORS: true,
+        logging: false,
+        backgroundColor: null,
+      });
+      const backImg = backCanvas.toDataURL("image/jpeg", 0.95);
+      doc.addPage([wPts, hPts], wPts > hPts ? "landscape" : "portrait");
+      doc.addImage(backImg, "JPEG", 0, 0, wPts, hPts);
+    }
+
+    return doc;
+  };
+
+  const handleDownloadPdf = async () => {
+    setIsDownloadingPdf(true);
+    try {
+      const doc = await exportDesignToPdf();
+      const filename = `${(registryProduct ? registryProduct.name : "design").toLowerCase().replace(/[^a-z0-9]+/g, "_")}_design.pdf`;
+      doc.save(filename);
+    } catch (err) {
+      console.error("Failed to download PDF:", err);
+      alert("Failed to export PDF. Please check your console for details.");
+    } finally {
+      setIsDownloadingPdf(false);
+    }
+  };
 
   const handlePlaceOrder = async () => {
     if (!user) {
@@ -1057,6 +1123,14 @@ function DesignPageContent() {
 
       if (finishedDesignFile) {
         formData.append("design_file", finishedDesignFile);
+      } else {
+        try {
+          const doc = await exportDesignToPdf();
+          const pdfBlob = doc.output("blob");
+          formData.append("design_file", pdfBlob, "online_design.pdf");
+        } catch (pdfErr) {
+          console.error("Error generating design PDF:", pdfErr);
+        }
       }
 
       const res = await fetch("/api/submit-order", {
@@ -1504,8 +1578,20 @@ function DesignPageContent() {
             </div>
           </div>
           <button
+            onClick={handleDownloadPdf}
+            disabled={isDownloadingPdf}
+            className="border border-slate-750 bg-slate-800 hover:bg-slate-700 disabled:opacity-50 text-white font-semibold px-4 py-2.5 rounded-xl flex items-center gap-2 transition-all"
+          >
+            {isDownloadingPdf ? (
+              <Loader2 className="w-4 h-4 animate-spin" />
+            ) : (
+              <Download className="w-4 h-4" />
+            )}
+            Download PDF
+          </button>
+          <button
             onClick={handleAddToCart}
-            className="bg-[#ff2d78] hover:opacity-90 text-slate-950 font-bold px-6 py-2.5 rounded-xl shadow-lg hover:shadow-pink-500\/20 flex items-center gap-2 transition-all active:scale-[0.98]"
+            className="bg-[#ff2d78] hover:opacity-90 text-slate-950 font-bold px-6 py-2.5 rounded-xl shadow-lg hover:shadow-pink-500/20 flex items-center gap-2 transition-all active:scale-[0.98]"
           >
             <ShoppingCart className="w-4 h-4" />
             Add to Cart
@@ -2549,9 +2635,22 @@ function DesignPageContent() {
               {/* Add to Cart CTA */}
               <button
                 onClick={handleAddToCart}
-                className="w-full bg-[#ff2d78] hover:opacity-90 text-slate-950 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all active:scale-[0.98] shadow-lg hover:shadow-pink-500\/10"
+                className="w-full bg-[#ff2d78] hover:opacity-90 text-slate-950 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all active:scale-[0.98] shadow-lg hover:shadow-pink-500/10 mb-2.5"
               >
                 Add to Cart
+              </button>
+
+              <button
+                onClick={handleDownloadPdf}
+                disabled={isDownloadingPdf}
+                className="w-full border border-slate-750 bg-slate-800 hover:bg-slate-700 disabled:opacity-50 text-white font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all"
+              >
+                {isDownloadingPdf ? (
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                ) : (
+                  <Download className="w-4 h-4" />
+                )}
+                Download PDF
               </button>
             </div>
           </div>
@@ -3016,6 +3115,308 @@ function DesignPageContent() {
           </div>
         </div>
       )}
+
+      {/* Offscreen Export Container */}
+      <div
+        className="absolute overflow-hidden pointer-events-none select-none"
+        style={{ left: "-9999px", top: "-9999px" }}
+      >
+        <div
+          id="export-canvas-front"
+          style={{
+            width: "800px",
+            height: `${800 * (canvasSize.height / canvasSize.width)}px`,
+            position: "relative",
+            backgroundColor: activeSide === "front" ? bgColor : frontBgColor,
+            backgroundImage: activeSide === "front" ? (bgGradient || (bgImage ? `url(${bgImage})` : "none")) : (frontBgGradient || (frontBgImage ? `url(${frontBgImage})` : "none")),
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          {(activeSide === "front" ? elements : frontElements).map((el) => (
+            <div
+              key={el.id}
+              className="absolute flex items-center justify-center pointer-events-none"
+              style={{
+                left: `${el.x}%`,
+                top: `${el.y}%`,
+                width: `${el.width}%`,
+                height: `${el.height}%`,
+                transform: `rotate(${el.rotation || 0}deg)`,
+                transformOrigin: "center center",
+                opacity: el.opacity !== undefined ? el.opacity : 1,
+              }}
+            >
+              <div className="w-full h-full flex items-center justify-center overflow-hidden">
+                {el.type === "text" && (
+                  <div
+                    className="w-full h-full flex items-center truncate"
+                    style={{
+                      fontFamily: el.fontFamily || "Inter",
+                      color: el.color || "#000000",
+                      fontWeight: el.bold ? "bold" : "normal",
+                      fontStyle: el.italic ? "italic" : "normal",
+                      textDecoration: el.underline ? "underline" : "none",
+                      justifyContent:
+                        el.align === "left"
+                          ? "flex-start"
+                          : el.align === "right"
+                            ? "flex-end"
+                            : "center",
+                      textAlign: el.align || "center",
+                      fontSize: `${el.fontSize || 32}px`,
+                      whiteSpace: "pre-wrap",
+                      lineHeight: "1.1",
+                      WebkitTextStroke: el.strokeColor
+                        ? `${el.strokeWidth || 1}px ${el.strokeColor}`
+                        : "none",
+                    }}
+                  >
+                    {el.content || ""}
+                  </div>
+                )}
+
+                {el.type === "shape" && (
+                  <div className="w-full h-full flex items-center justify-center p-1">
+                    {el.shapeType === "rect" && (
+                      <div
+                        className="w-full h-full"
+                        style={{
+                          backgroundColor: el.fillColor || "#3b82f6",
+                          border: el.borderWidth
+                            ? `${el.borderWidth}px solid ${el.borderColor || "#000"}`
+                            : "none",
+                          borderRadius: "2px",
+                        }}
+                      />
+                    )}
+                    {el.shapeType === "circle" && (
+                      <div
+                        className="w-full h-full rounded-full"
+                        style={{
+                          backgroundColor: el.fillColor || "#3b82f6",
+                          border: el.borderWidth
+                            ? `${el.borderWidth}px solid ${el.borderColor || "#000"}`
+                            : "none",
+                        }}
+                      />
+                    )}
+                    {el.shapeType === "triangle" && (
+                      <svg
+                        className="w-full h-full"
+                        viewBox="0 0 100 100"
+                        preserveAspectRatio="none"
+                      >
+                        <polygon
+                          points="50,5 95,95 5,95"
+                          fill={el.fillColor || "#3b82f6"}
+                          stroke={el.borderColor || "#000"}
+                          strokeWidth={el.borderWidth ? el.borderWidth * 2 : 0}
+                        />
+                      </svg>
+                    )}
+                    {el.shapeType === "star" && (
+                      <svg
+                        className="w-full h-full"
+                        viewBox="0 0 100 100"
+                        preserveAspectRatio="none"
+                      >
+                        <polygon
+                          points="50,2 64,36 100,36 71,57 81,95 50,72 19,95 29,57 0,36 36,36"
+                          fill={el.fillColor || "#eab308"}
+                          stroke={el.borderColor || "#000"}
+                          strokeWidth={el.borderWidth ? el.borderWidth * 2 : 0}
+                        />
+                      </svg>
+                    )}
+                    {el.shapeType === "line" && (
+                      <div
+                        className="w-full"
+                        style={{
+                          height: `${el.borderWidth || 4}px`,
+                          backgroundColor: el.fillColor || "#000",
+                        }}
+                      />
+                    )}
+                  </div>
+                )}
+
+                {el.type === "clipart" && el.clipartId && (
+                  <div className="w-full h-full p-1.5 flex items-center justify-center">
+                    {(() => {
+                      const formattedId = el.clipartId
+                        .split("-")
+                        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                        .join("");
+                      const IconComp = (Icons as any)[formattedId] || Icons.HelpCircle;
+                      return <IconComp className="w-full h-full" style={{ color: el.color }} />;
+                    })()}
+                  </div>
+                )}
+
+                {el.type === "image" && el.imageUrl && (
+                  <div className="w-full h-full relative flex items-center justify-center p-0.5">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={el.imageUrl}
+                      alt="Uploaded element"
+                      className="max-w-full max-h-full object-contain pointer-events-none"
+                    />
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div
+          id="export-canvas-back"
+          style={{
+            width: "800px",
+            height: `${800 * (canvasSize.height / canvasSize.width)}px`,
+            position: "relative",
+            backgroundColor: activeSide === "back" ? bgColor : backBgColor,
+            backgroundImage: activeSide === "back" ? (bgGradient || (bgImage ? `url(${bgImage})` : "none")) : (backBgGradient || (backBgImage ? `url(${backBgImage})` : "none")),
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          {(activeSide === "back" ? elements : backElements).map((el) => (
+            <div
+              key={el.id}
+              className="absolute flex items-center justify-center pointer-events-none"
+              style={{
+                left: `${el.x}%`,
+                top: `${el.y}%`,
+                width: `${el.width}%`,
+                height: `${el.height}%`,
+                transform: `rotate(${el.rotation || 0}deg)`,
+                transformOrigin: "center center",
+                opacity: el.opacity !== undefined ? el.opacity : 1,
+              }}
+            >
+              <div className="w-full h-full flex items-center justify-center overflow-hidden">
+                {el.type === "text" && (
+                  <div
+                    className="w-full h-full flex items-center truncate"
+                    style={{
+                      fontFamily: el.fontFamily || "Inter",
+                      color: el.color || "#000000",
+                      fontWeight: el.bold ? "bold" : "normal",
+                      fontStyle: el.italic ? "italic" : "normal",
+                      textDecoration: el.underline ? "underline" : "none",
+                      justifyContent:
+                        el.align === "left"
+                          ? "flex-start"
+                          : el.align === "right"
+                            ? "flex-end"
+                            : "center",
+                      textAlign: el.align || "center",
+                      fontSize: `${el.fontSize || 32}px`,
+                      whiteSpace: "pre-wrap",
+                      lineHeight: "1.1",
+                      WebkitTextStroke: el.strokeColor
+                        ? `${el.strokeWidth || 1}px ${el.strokeColor}`
+                        : "none",
+                    }}
+                  >
+                    {el.content || ""}
+                  </div>
+                )}
+
+                {el.type === "shape" && (
+                  <div className="w-full h-full flex items-center justify-center p-1">
+                    {el.shapeType === "rect" && (
+                      <div
+                        className="w-full h-full"
+                        style={{
+                          backgroundColor: el.fillColor || "#3b82f6",
+                          border: el.borderWidth
+                            ? `${el.borderWidth}px solid ${el.borderColor || "#000"}`
+                            : "none",
+                          borderRadius: "2px",
+                        }}
+                      />
+                    )}
+                    {el.shapeType === "circle" && (
+                      <div
+                        className="w-full h-full rounded-full"
+                        style={{
+                          backgroundColor: el.fillColor || "#3b82f6",
+                          border: el.borderWidth
+                            ? `${el.borderWidth}px solid ${el.borderColor || "#000"}`
+                            : "none",
+                        }}
+                      />
+                    )}
+                    {el.shapeType === "triangle" && (
+                      <svg
+                        className="w-full h-full"
+                        viewBox="0 0 100 100"
+                        preserveAspectRatio="none"
+                      >
+                        <polygon
+                          points="50,5 95,95 5,95"
+                          fill={el.fillColor || "#3b82f6"}
+                          stroke={el.borderColor || "#000"}
+                          strokeWidth={el.borderWidth ? el.borderWidth * 2 : 0}
+                        />
+                      </svg>
+                    )}
+                    {el.shapeType === "star" && (
+                      <svg
+                        className="w-full h-full"
+                        viewBox="0 0 100 100"
+                        preserveAspectRatio="none"
+                      >
+                        <polygon
+                          points="50,2 64,36 100,36 71,57 81,95 50,72 19,95 29,57 0,36 36,36"
+                          fill={el.fillColor || "#eab308"}
+                          stroke={el.borderColor || "#000"}
+                          strokeWidth={el.borderWidth ? el.borderWidth * 2 : 0}
+                        />
+                      </svg>
+                    )}
+                    {el.shapeType === "line" && (
+                      <div
+                        className="w-full"
+                        style={{
+                          height: `${el.borderWidth || 4}px`,
+                          backgroundColor: el.fillColor || "#000",
+                        }}
+                      />
+                    )}
+                  </div>
+                )}
+
+                {el.type === "clipart" && el.clipartId && (
+                  <div className="w-full h-full p-1.5 flex items-center justify-center">
+                    {(() => {
+                      const formattedId = el.clipartId
+                        .split("-")
+                        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                        .join("");
+                      const IconComp = (Icons as any)[formattedId] || Icons.HelpCircle;
+                      return <IconComp className="w-full h-full" style={{ color: el.color }} />;
+                    })()}
+                  </div>
+                )}
+
+                {el.type === "image" && el.imageUrl && (
+                  <div className="w-full h-full relative flex items-center justify-center p-0.5">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={el.imageUrl}
+                      alt="Uploaded element"
+                      className="max-w-full max-h-full object-contain pointer-events-none"
+                    />
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
