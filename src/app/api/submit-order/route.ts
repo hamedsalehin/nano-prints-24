@@ -33,6 +33,17 @@ export async function POST(req: NextRequest) {
     const userId = formData.get("user_id") as string;
     const userEmail = formData.get("user_email") as string;
     const productTitle = formData.get("product_title") as string;
+
+    console.log("Submit order endpoint hit:", {
+      userId,
+      userEmail,
+      productTitle,
+      hasResendApiKey: !!resendApiKey,
+      hasSupabaseAdmin: !!supabaseAdmin,
+      ADMIN_EMAIL,
+      FROM
+    });
+
     const productSize = formData.get("product_size") as string;
     const quantity = parseInt(formData.get("quantity") as string) || 1;
     const unitPrice = parseFloat(formData.get("unit_price") as string) || 0;
@@ -132,171 +143,184 @@ export async function POST(req: NextRequest) {
       if (!resend) {
         console.warn("submit-order POST: resend client not initialized. Skipping admin notification email.");
       } else {
-        await resend.emails.send({
-        from: FROM,
-        to: [ADMIN_EMAIL],
-        subject: `🖨️ New Order #${shortId} — ${productTitle}`,
-        html: `
-          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0f172a; color: #f1f5f9; padding: 32px; border-radius: 12px;">
-            <div style="text-align: center; margin-bottom: 28px;">
-              <h1 style="color: #ff2d78; font-size: 28px; margin: 0; letter-spacing: -0.5px;">NANO SIGNS</h1>
-              <p style="color: #94a3b8; margin: 4px 0 0;">New Order Received</p>
-            </div>
+        const adminEmailRes = await resend.emails.send({
+          from: FROM,
+          to: [ADMIN_EMAIL],
+          subject: `🖨️ New Order #${shortId} — ${productTitle}`,
+          html: `
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0f172a; color: #f1f5f9; padding: 32px; border-radius: 12px;">
+              <div style="text-align: center; margin-bottom: 28px;">
+                <h1 style="color: #ff2d78; font-size: 28px; margin: 0; letter-spacing: -0.5px;">NANO SIGNS</h1>
+                <p style="color: #94a3b8; margin: 4px 0 0;">New Order Received</p>
+              </div>
 
-            <div style="background: #1e293b; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
-              <h2 style="margin: 0 0 16px; font-size: 16px; color: #e2e8f0; border-bottom: 1px solid #334155; padding-bottom: 10px;">
-                📦 Order #${shortId}
-              </h2>
-              <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
-                <tr><td style="padding: 6px 0; color: #94a3b8; width: 40%;">Product:</td><td style="color: #f1f5f9; font-weight: bold;">${productTitle}</td></tr>
-                <tr><td style="padding: 6px 0; color: #94a3b8;">Size:</td><td style="color: #f1f5f9;">${productSize || "—"}</td></tr>
-                <tr><td style="padding: 6px 0; color: #94a3b8;">Quantity:</td><td style="color: #f1f5f9;">${quantity} unit(s)</td></tr>
-                <tr><td style="padding: 6px 0; color: #94a3b8;">Unit Price:</td><td style="color: #f1f5f9;">$${unitPrice.toFixed(2)}</td></tr>
-                <tr><td style="padding: 6px 0; color: #94a3b8;">Total:</td><td style="color: #ff2d78; font-weight: bold; font-size: 16px;">$${totalPrice.toFixed(2)}</td></tr>
-              </table>
-            </div>
+              <div style="background: #1e293b; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
+                <h2 style="margin: 0 0 16px; font-size: 16px; color: #e2e8f0; border-bottom: 1px solid #334155; padding-bottom: 10px;">
+                  📦 Order #${shortId}
+                </h2>
+                <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+                  <tr><td style="padding: 6px 0; color: #94a3b8; width: 40%;">Product:</td><td style="color: #f1f5f9; font-weight: bold;">${productTitle}</td></tr>
+                  <tr><td style="padding: 6px 0; color: #94a3b8;">Size:</td><td style="color: #f1f5f9;">${productSize || "—"}</td></tr>
+                  <tr><td style="padding: 6px 0; color: #94a3b8;">Quantity:</td><td style="color: #f1f5f9;">${quantity} unit(s)</td></tr>
+                  <tr><td style="padding: 6px 0; color: #94a3b8;">Unit Price:</td><td style="color: #f1f5f9;">$${unitPrice.toFixed(2)}</td></tr>
+                  <tr><td style="padding: 6px 0; color: #94a3b8;">Total:</td><td style="color: #ff2d78; font-weight: bold; font-size: 16px;">$${totalPrice.toFixed(2)}</td></tr>
+                </table>
+              </div>
 
-            ${Object.entries(customOptions).filter(([key]) => key !== "Design Data").length > 0
-            ? `
-            <div style="background: #1e293b; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
-              <h3 style="margin: 0 0 12px; font-size: 14px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em;">Custom Options</h3>
-              <table style="width: 100%; font-size: 13px;">
-                ${Object.entries(customOptions)
-              .filter(([k]) => k !== "Design Data")
-              .map(
-                ([k, v]) => `
-                  <tr><td style="padding: 4px 0; color: #64748b; width: 40%;">${k}:</td><td style="color: #e2e8f0;">${v}</td></tr>
-                `,
-              )
-              .join("")}
-              </table>
-            </div>
-            `
-            : ""
-          }
+              ${Object.entries(customOptions).filter(([key]) => key !== "Design Data").length > 0
+              ? `
+              <div style="background: #1e293b; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
+                <h3 style="margin: 0 0 12px; font-size: 14px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em;">Custom Options</h3>
+                <table style="width: 100%; font-size: 13px;">
+                  ${Object.entries(customOptions)
+                .filter(([k]) => k !== "Design Data")
+                .map(
+                  ([k, v]) => `
+                    <tr><td style="padding: 4px 0; color: #64748b; width: 40%;">${k}:</td><td style="color: #e2e8f0;">${v}</td></tr>
+                  `,
+                )
+                .join("")}
+                </table>
+              </div>
+              `
+              : ""
+            }
 
-            <div style="background: #1e293b; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
-              <h3 style="margin: 0 0 12px; font-size: 14px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em;">Shipping Details</h3>
-              <p style="margin: 0; font-size: 14px; color: #e2e8f0; line-height: 1.6;">
-                ${shippingName || "—"}<br/>
-                ${shippingAddress || "—"}<br/>
-                ${shippingCity || ""} ${shippingPostal || ""}
-              </p>
-            </div>
+              <div style="background: #1e293b; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
+                <h3 style="margin: 0 0 12px; font-size: 14px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em;">Shipping Details</h3>
+                <p style="margin: 0; font-size: 14px; color: #e2e8f0; line-height: 1.6;">
+                  ${shippingName || "—"}<br/>
+                  ${shippingAddress || "—"}<br/>
+                  ${shippingCity || ""} ${shippingPostal || ""}
+                </p>
+              </div>
 
-            ${designUrl
-            ? `
-            <div style="background: #1e293b; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
-              <h3 style="margin: 0 0 12px; font-size: 14px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em;">Customer Artwork</h3>
-              <p style="margin: 0 0 10px; font-size: 13px; color: #cbd5e1;">Filename: ${designFilename}</p>
-              <a href="${designUrl}" style="display: inline-block; background: #ff2d78; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 13px; font-weight: bold;">
-                Download Design File
-              </a>
-            </div>
-            `
-            : `
-            <div style="background: #1e293b; border-radius: 10px; padding: 20px; margin-bottom: 20px; border: 1px dashed #334155;">
-              <p style="margin: 0; font-size: 13px; color: #64748b;">⚙️ Design was created via the online canvas editor — no file upload.</p>
-            </div>
-            `
-          }
+              ${designUrl
+              ? `
+              <div style="background: #1e293b; border-radius: 10px; padding: 20px; margin-bottom: 20px;">
+                <h3 style="margin: 0 0 12px; font-size: 14px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em;">Customer Artwork</h3>
+                <p style="margin: 0 0 10px; font-size: 13px; color: #cbd5e1;">Filename: ${designFilename}</p>
+                <a href="${designUrl}" style="display: inline-block; background: #ff2d78; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 13px; font-weight: bold;">
+                  Download Design File
+                </a>
+              </div>
+              `
+              : `
+              <div style="background: #1e293b; border-radius: 10px; padding: 20px; margin-bottom: 20px; border: 1px dashed #334155;">
+                <p style="margin: 0; font-size: 13px; color: #64748b;">⚙️ Design was created via the online canvas editor — no file upload.</p>
+              </div>
+              `
+            }
 
-            <div style="text-align: center; padding-top: 20px; border-top: 1px solid #1e293b;">
-              <p style="font-size: 12px; color: #475569; margin: 0;">Customer: ${userEmail}</p>
-              <p style="font-size: 12px; color: #475569; margin: 4px 0 0;">Order ID: ${orderId}</p>
+              <div style="text-align: center; padding-top: 20px; border-top: 1px solid #1e293b;">
+                <p style="font-size: 12px; color: #475569; margin: 0;">Customer: ${userEmail}</p>
+                <p style="font-size: 12px; color: #475569; margin: 4px 0 0;">Order ID: ${orderId}</p>
+              </div>
             </div>
-          </div>
-        `,
-        attachments: emailAttachments,
-      });
+          `,
+          attachments: emailAttachments,
+        });
+
+        if (adminEmailRes.error) {
+          console.error("submit-order: admin email send error:", adminEmailRes.error);
+        } else {
+          console.log("submit-order: admin email send success:", adminEmailRes.data);
+        }
       }
     }
+
 
     // ── Send Customer Confirmation Email ──────────────────────────────────────
     if (userEmail) {
       if (!resend) {
         console.warn("submit-order POST: resend client not initialized. Skipping customer confirmation email.");
       } else {
-        await resend.emails.send({
-        from: FROM,
-        to: [userEmail],
-        subject: `✅ Your Order #${shortId} is Confirmed — Nano Signs`,
-        html: `
-          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; padding: 0; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0;">
-            <!-- Header -->
-            <div style="background: linear-gradient(135deg, #ff2d78, #b020ff, #00e5ff); padding: 32px; text-align: center;">
-              <h1 style="color: white; font-size: 32px; margin: 0; letter-spacing: -0.5px; font-weight: 900;">NANO SIGNS</h1>
-              <p style="color: rgba(255,255,255,0.85); margin: 6px 0 0; font-size: 14px;">Your order is confirmed and in our queue!</p>
-            </div>
+        const customerEmailRes = await resend.emails.send({
+          from: FROM,
+          to: [userEmail],
+          subject: `✅ Your Order #${shortId} is Confirmed — Nano Signs`,
+          html: `
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #ffffff; padding: 0; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0;">
+              <!-- Header -->
+              <div style="background: linear-gradient(135deg, #ff2d78, #b020ff, #00e5ff); padding: 32px; text-align: center;">
+                <h1 style="color: white; font-size: 32px; margin: 0; letter-spacing: -0.5px; font-weight: 900;">NANO SIGNS</h1>
+                <p style="color: rgba(255,255,255,0.85); margin: 6px 0 0; font-size: 14px;">Your order is confirmed and in our queue!</p>
+              </div>
 
-            <!-- Body -->
-            <div style="padding: 32px;">
-              <div style="display: flex; align-items: center; gap: 12px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 16px; margin-bottom: 24px;">
-                <span style="font-size: 24px;">✅</span>
-                <div>
-                  <p style="margin: 0; font-weight: bold; color: #166534; font-size: 15px;">Order Placed Successfully!</p>
-                  <p style="margin: 4px 0 0; color: #15803d; font-size: 13px;">Our team will review your artwork and begin production shortly.</p>
+              <!-- Body -->
+              <div style="padding: 32px;">
+                <div style="display: flex; align-items: center; gap: 12px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 16px; margin-bottom: 24px;">
+                  <span style="font-size: 24px;">✅</span>
+                  <div>
+                    <p style="margin: 0; font-weight: bold; color: #166534; font-size: 15px;">Order Placed Successfully!</p>
+                    <p style="margin: 4px 0 0; color: #15803d; font-size: 13px;">Our team will review your artwork and begin production shortly.</p>
+                  </div>
+                </div>
+
+                <h2 style="font-size: 16px; color: #0f172a; margin: 0 0 16px;">Order Summary</h2>
+                <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 24px;">
+                  <tr style="border-bottom: 1px solid #f1f5f9;">
+                    <td style="padding: 10px 0; color: #64748b;">Order ID</td>
+                    <td style="padding: 10px 0; color: #0f172a; font-family: monospace; font-weight: bold;">#${shortId}</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid #f1f5f9;">
+                    <td style="padding: 10px 0; color: #64748b;">Product</td>
+                    <td style="padding: 10px 0; color: #0f172a; font-weight: 600;">${productTitle}</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid #f1f5f9;">
+                    <td style="padding: 10px 0; color: #64748b;">Size</td>
+                    <td style="padding: 10px 0; color: #0f172a;">${productSize || "—"}</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid #f1f5f9;">
+                    <td style="padding: 10px 0; color: #64748b;">Quantity</td>
+                    <td style="padding: 10px 0; color: #0f172a;">${quantity} unit(s)</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 10px 0; color: #64748b; font-weight: bold;">Total Charged</td>
+                    <td style="padding: 10px 0; color: #ff2d78; font-size: 18px; font-weight: 900;">$${totalPrice.toFixed(2)}</td>
+                  </tr>
+                </table>
+
+                ${shippingName
+                ? `
+                <h2 style="font-size: 16px; color: #0f172a; margin: 0 0 12px;">Shipping To</h2>
+                <div style="background: #f8fafc; border-radius: 8px; padding: 14px; font-size: 14px; color: #334155; line-height: 1.6; margin-bottom: 24px;">
+                  <strong>${shippingName}</strong><br/>
+                  ${shippingAddress || ""}<br/>
+                  ${shippingCity || ""} ${shippingPostal || ""}
+                </div>
+                `
+                : ""
+              }
+
+                <div style="background: #fef9ff; border: 1px solid #e9d5ff; border-radius: 10px; padding: 16px; margin-bottom: 24px;">
+                  <p style="margin: 0; font-size: 13px; color: #7e22ce; font-weight: bold;">🎨 Free Artwork Review Included</p>
+                  <p style="margin: 6px 0 0; font-size: 12px; color: #6b21a8;">Our in-house team checks alignment, colors, and resolution before we print — free of charge.</p>
+                </div>
+
+                <div style="text-align: center;">
+                  <p style="font-size: 13px; color: #64748b; margin: 0 0 16px;">Expected delivery: <strong style="color: #0f172a;">Next Business Day</strong></p>
+                  <a href="${process.env.NEXT_PUBLIC_SUPABASE_URL?.replace("supabase.co", "") || ""}account/orders" style="display: inline-block; background: linear-gradient(135deg, #ff2d78, #b020ff); color: white; padding: 12px 28px; border-radius: 50px; text-decoration: none; font-size: 13px; font-weight: bold;">
+                    View My Orders
+                  </a>
                 </div>
               </div>
 
-              <h2 style="font-size: 16px; color: #0f172a; margin: 0 0 16px;">Order Summary</h2>
-              <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 24px;">
-                <tr style="border-bottom: 1px solid #f1f5f9;">
-                  <td style="padding: 10px 0; color: #64748b;">Order ID</td>
-                  <td style="padding: 10px 0; color: #0f172a; font-family: monospace; font-weight: bold;">#${shortId}</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #f1f5f9;">
-                  <td style="padding: 10px 0; color: #64748b;">Product</td>
-                  <td style="padding: 10px 0; color: #0f172a; font-weight: 600;">${productTitle}</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #f1f5f9;">
-                  <td style="padding: 10px 0; color: #64748b;">Size</td>
-                  <td style="padding: 10px 0; color: #0f172a;">${productSize || "—"}</td>
-                </tr>
-                <tr style="border-bottom: 1px solid #f1f5f9;">
-                  <td style="padding: 10px 0; color: #64748b;">Quantity</td>
-                  <td style="padding: 10px 0; color: #0f172a;">${quantity} unit(s)</td>
-                </tr>
-                <tr>
-                  <td style="padding: 10px 0; color: #64748b; font-weight: bold;">Total Charged</td>
-                  <td style="padding: 10px 0; color: #ff2d78; font-size: 18px; font-weight: 900;">$${totalPrice.toFixed(2)}</td>
-                </tr>
-              </table>
-
-              ${shippingName
-            ? `
-              <h2 style="font-size: 16px; color: #0f172a; margin: 0 0 12px;">Shipping To</h2>
-              <div style="background: #f8fafc; border-radius: 8px; padding: 14px; font-size: 14px; color: #334155; line-height: 1.6; margin-bottom: 24px;">
-                <strong>${shippingName}</strong><br/>
-                ${shippingAddress || ""}<br/>
-                ${shippingCity || ""} ${shippingPostal || ""}
-              </div>
-              `
-            : ""
-          }
-
-              <div style="background: #fef9ff; border: 1px solid #e9d5ff; border-radius: 10px; padding: 16px; margin-bottom: 24px;">
-                <p style="margin: 0; font-size: 13px; color: #7e22ce; font-weight: bold;">🎨 Free Artwork Review Included</p>
-                <p style="margin: 6px 0 0; font-size: 12px; color: #6b21a8;">Our in-house team checks alignment, colors, and resolution before we print — free of charge.</p>
-              </div>
-
-              <div style="text-align: center;">
-                <p style="font-size: 13px; color: #64748b; margin: 0 0 16px;">Expected delivery: <strong style="color: #0f172a;">Next Business Day</strong></p>
-                <a href="${process.env.NEXT_PUBLIC_SUPABASE_URL?.replace("supabase.co", "") || ""}account/orders" style="display: inline-block; background: linear-gradient(135deg, #ff2d78, #b020ff); color: white; padding: 12px 28px; border-radius: 50px; text-decoration: none; font-size: 13px; font-weight: bold;">
-                  View My Orders
-                </a>
+              <!-- Footer -->
+              <div style="background: #f8fafc; padding: 20px; text-align: center; border-top: 1px solid #e2e8f0;">
+                <p style="font-size: 12px; color: #94a3b8; margin: 0;">Nano Signs • Your custom sign partner</p>
+                <p style="font-size: 11px; color: #cbd5e1; margin: 4px 0 0;">Questions? Reply to this email or contact us.</p>
               </div>
             </div>
+          `,
+          attachments: emailAttachments,
+        });
 
-            <!-- Footer -->
-            <div style="background: #f8fafc; padding: 20px; text-align: center; border-top: 1px solid #e2e8f0;">
-              <p style="font-size: 12px; color: #94a3b8; margin: 0;">Nano Signs • Your custom sign partner</p>
-              <p style="font-size: 11px; color: #cbd5e1; margin: 4px 0 0;">Questions? Reply to this email or contact us.</p>
-            </div>
-          </div>
-        `,
-        attachments: emailAttachments,
-      });
+        if (customerEmailRes.error) {
+          console.error("submit-order: customer email send error:", customerEmailRes.error);
+        } else {
+          console.log("submit-order: customer email send success:", customerEmailRes.data);
+        }
       }
     }
 
@@ -304,7 +328,10 @@ export async function POST(req: NextRequest) {
       success: true,
       orderId,
       shortId,
-      message: "Order submitted and confirmation emails sent.",
+      message: resend
+        ? "Order submitted and confirmation emails triggered."
+        : "Order submitted. Warning: Resend email sending skipped (missing RESEND_API_KEY).",
+      emailsInitialized: !!resend,
     });
   } catch (err) {
     console.error("submit-order error:", err);
