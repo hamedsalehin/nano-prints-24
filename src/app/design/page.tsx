@@ -36,6 +36,7 @@ import { ClipartLibrary, ClipartItem } from "@/components/ClipartLibrary";
 import { useAuth } from "@/components/AuthContext";
 import { PRODUCTS_REGISTRY } from "@/lib/productsRegistry";
 import { useCart } from "@/components/CartContext";
+import { supabase } from "@/lib/supabaseClient";
 
 // Product templates
 const PRESET_TEMPLATES = [
@@ -999,7 +1000,7 @@ function DesignPageContent() {
   }, [selectValues, canvasSize.width, canvasSize.height]);
 
   // Auth
-  const { user } = useAuth();
+  const { user, setShowAuthModal } = useAuth();
 
   // Checkout modal
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
@@ -1406,74 +1407,122 @@ function DesignPageContent() {
     }
   }, [registryProduct, selectValues, doubleSided, quantity, material, canvasSize, elements.length]);
 
-  const handleAddToCart = () => {
-    const customOptions: Record<string, string> = {
-      Sides: doubleSided ? "Double-sided" : "Single-sided",
-    };
-
-    Object.entries(selectValues).forEach(([k, v]: [string, any]) => {
-      if (v && v.label) {
-        customOptions[k] = v.label;
-      }
-    });
-
-    // Make sure we save the latest active state to side buffers
-    let finalFrontElements = frontElements;
-    let finalFrontBgColor = frontBgColor;
-    let finalFrontBgGradient = frontBgGradient;
-    let finalFrontBgImage = frontBgImage;
-
-    let finalBackElements = backElements;
-    let finalBackBgColor = backBgColor;
-    let finalBackBgGradient = backBgGradient;
-    let finalBackBgImage = backBgImage;
-
-    if (activeSide === "front") {
-      finalFrontElements = elements;
-      finalFrontBgColor = bgColor;
-      finalFrontBgGradient = bgGradient;
-      finalFrontBgImage = bgImage;
-    } else {
-      finalBackElements = elements;
-      finalBackBgColor = bgColor;
-      finalBackBgGradient = bgGradient;
-      finalBackBgImage = bgImage;
+  const handleAddToCart = async () => {
+    if (!user) {
+      setShowAuthModal(true);
+      return;
     }
 
-    if (doubleSided) {
-      customOptions["Design Data"] = JSON.stringify({
-        doubleSided: true,
-        front: {
+    setIsSubmitting(true);
+    try {
+      const customOptions: Record<string, string> = {
+        Sides: doubleSided ? "Double-sided" : "Single-sided",
+      };
+
+      Object.entries(selectValues).forEach(([k, v]: [string, any]) => {
+        if (v && v.label) {
+          customOptions[k] = v.label;
+        }
+      });
+
+      // Make sure we save the latest active state to side buffers
+      let finalFrontElements = frontElements;
+      let finalFrontBgColor = frontBgColor;
+      let finalFrontBgGradient = frontBgGradient;
+      let finalFrontBgImage = frontBgImage;
+
+      let finalBackElements = backElements;
+      let finalBackBgColor = backBgColor;
+      let finalBackBgGradient = backBgGradient;
+      let finalBackBgImage = backBgImage;
+
+      if (activeSide === "front") {
+        finalFrontElements = elements;
+        finalFrontBgColor = bgColor;
+        finalFrontBgGradient = bgGradient;
+        finalFrontBgImage = bgImage;
+      } else {
+        finalBackElements = elements;
+        finalBackBgColor = bgColor;
+        finalBackBgGradient = bgGradient;
+        finalBackBgImage = bgImage;
+      }
+
+      if (doubleSided) {
+        customOptions["Design Data"] = JSON.stringify({
+          doubleSided: true,
+          front: {
+            elements: finalFrontElements,
+            bgColor: finalFrontBgColor,
+            bgGradient: finalFrontBgGradient,
+            bgImage: finalFrontBgImage,
+          },
+          back: {
+            elements: finalBackElements,
+            bgColor: finalBackBgColor,
+            bgGradient: finalBackBgGradient,
+            bgImage: finalBackBgImage,
+          },
+        });
+      } else {
+        customOptions["Design Data"] = JSON.stringify({
+          doubleSided: false,
           elements: finalFrontElements,
           bgColor: finalFrontBgColor,
           bgGradient: finalFrontBgGradient,
           bgImage: finalFrontBgImage,
-        },
-        back: {
-          elements: finalBackElements,
-          bgColor: finalBackBgColor,
-          bgGradient: finalBackBgGradient,
-          bgImage: finalBackBgImage,
-        },
-      });
-    } else {
-      customOptions["Design Data"] = JSON.stringify({
-        doubleSided: false,
-        elements: finalFrontElements,
-        bgColor: finalFrontBgColor,
-        bgGradient: finalFrontBgGradient,
-        bgImage: finalFrontBgImage,
-      });
-    }
+        });
+      }
 
-    addItem({
-      productTitle: registryProduct ? registryProduct.name : material.label,
-      size: canvasSize.label,
-      quantity,
-      unitPrice: parseFloat(calculatedPrice.unitPrice),
-      totalPrice: parseFloat(calculatedPrice.total),
-      customOptions,
-    });
+      // Generate the visual proof PDF and upload to Supabase
+      console.log("Generating visual proof PDF...");
+      const doc = await exportDesignToPdf();
+      const pdfBlob = doc.output("blob");
+      
+      const fileName = `online_design_${Date.now()}.pdf`;
+      const filePath = `designs/${fileName}`;
+      
+      console.log("Uploading visual proof PDF to Supabase...");
+      const { error: uploadError } = await supabase.storage
+        .from("designs")
+        .upload(filePath, pdfBlob, {
+          contentType: "application/pdf",
+          upsert: false,
+        });
+
+      if (uploadError) {
+        throw uploadError;
+      }
+
+      const { data: publicUrlData } = supabase.storage
+        .from("designs")
+        .getPublicUrl(filePath);
+
+      const designUrl = publicUrlData.publicUrl;
+      const designFilename = fileName;
+
+      addItem({
+        productTitle: registryProduct ? registryProduct.name : material.label,
+        size: canvasSize.label,
+        quantity,
+        unitPrice: parseFloat(calculatedPrice.unitPrice),
+        totalPrice: parseFloat(calculatedPrice.total),
+        designUrl,
+        designFilename,
+        customOptions,
+      });
+
+      console.log("Item added to cart with design attachment:", designUrl);
+    } catch (err) {
+      console.error("Failed to add custom design to cart:", err);
+      alert(
+        err instanceof Error
+          ? `Failed to generate/upload design proof: ${err.message}`
+          : "An unexpected error occurred while saving your design. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const selectedEl = elements.find((el) => el.id === selectedId);
@@ -1598,10 +1647,20 @@ function DesignPageContent() {
           </button>
           <button
             onClick={handleAddToCart}
-            className="bg-[#ff2d78] hover:opacity-90 text-slate-950 font-bold px-6 py-2.5 rounded-xl shadow-lg hover:shadow-pink-500/20 flex items-center gap-2 transition-all active:scale-[0.98]"
+            disabled={isSubmitting}
+            className="bg-[#ff2d78] hover:opacity-90 text-slate-950 font-bold px-6 py-2.5 rounded-xl shadow-lg hover:shadow-pink-500/20 flex items-center gap-2 transition-all active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <ShoppingCart className="w-4 h-4" />
-            Add to Cart
+            {isSubmitting ? (
+              <>
+                <Loader2 className="w-4 h-4 animate-spin" />
+                Proofing...
+              </>
+            ) : (
+              <>
+                <ShoppingCart className="w-4 h-4" />
+                Add to Cart
+              </>
+            )}
           </button>
         </div>
       </header>
@@ -2642,9 +2701,17 @@ function DesignPageContent() {
               {/* Add to Cart CTA */}
               <button
                 onClick={handleAddToCart}
-                className="w-full bg-[#ff2d78] hover:opacity-90 text-slate-950 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all active:scale-[0.98] shadow-lg hover:shadow-pink-500/10 mb-2.5"
+                disabled={isSubmitting}
+                className="w-full bg-[#ff2d78] hover:opacity-90 text-slate-950 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all active:scale-[0.98] shadow-lg hover:shadow-pink-500/10 mb-2.5 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Add to Cart
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin text-slate-950" />
+                    Generating Proof...
+                  </>
+                ) : (
+                  "Add to Cart"
+                )}
               </button>
 
               <button
