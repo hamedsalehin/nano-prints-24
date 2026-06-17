@@ -1026,6 +1026,8 @@ function DesignPageContent() {
   const [confirmedOrderId, setConfirmedOrderId] = useState<string | null>(null);
   const [confirmedShortId, setConfirmedShortId] = useState<string | null>(null);
   const [isDownloadingPdf, setIsDownloadingPdf] = useState(false);
+  const [emailsInitialized, setEmailsInitialized] = useState(true);
+  const [emailErrors, setEmailErrors] = useState<{ admin?: any; customer?: any } | null>(null);
 
   const exportDesignToPdf = async () => {
     const { jsPDF } = await import("jspdf");
@@ -1146,6 +1148,11 @@ function DesignPageContent() {
 
       setConfirmedOrderId(json.orderId);
       setConfirmedShortId(json.shortId);
+      setEmailsInitialized(json.emailsInitialized !== false);
+      setEmailErrors({
+        admin: json.adminEmailError || null,
+        customer: json.customerEmailError || null,
+      });
       setCheckoutStep("success");
     } catch (err) {
       setSubmitError(
@@ -3050,10 +3057,34 @@ function DesignPageContent() {
                     </h2>
                     <p className="text-xs text-slate-400 mt-1.5 leading-relaxed">
                       Thank you for choosing Nano Signs! A confirmation email
-                      has been sent to{" "}
+                      is configured to be sent to{" "}
                       <strong className="text-slate-200">{user?.email}</strong>.
                       Our artwork review team is auditing your design now.
                     </p>
+                    {!emailsInitialized && (
+                      <div className="mt-3 p-3 bg-amber-500/15 border border-amber-500/30 rounded-xl text-[11px] text-amber-400 text-left leading-normal font-sans">
+                        <div className="flex gap-1.5 items-start">
+                          <AlertTriangle className="w-4 h-4 shrink-0 text-amber-400 mt-0.5" />
+                          <div>
+                            <span className="font-bold">⚠️ Server Configuration Missing:</span> Email dispatch was skipped because the hosting provider does not have the <code>RESEND_API_KEY</code> environment variable configured in Netlify.
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                    {emailsInitialized && (emailErrors?.admin || emailErrors?.customer) && (
+                      <div className="mt-3 p-3 bg-red-500/15 border border-red-500/30 rounded-xl text-[11px] text-red-400 text-left leading-normal font-sans">
+                        <div className="flex gap-1.5 items-start">
+                          <AlertTriangle className="w-4 h-4 shrink-0 text-red-400 mt-0.5" />
+                          <div>
+                            <span className="font-bold">❌ Email Dispatch Failed:</span>
+                            <ul className="list-disc list-inside mt-1 space-y-1">
+                              {emailErrors.admin && <li>Admin Notify: {emailErrors.admin.message || JSON.stringify(emailErrors.admin)}</li>}
+                              {emailErrors.customer && <li>Customer Confirm: {emailErrors.customer.message || JSON.stringify(emailErrors.customer)}</li>}
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
 
                   <div className="bg-slate-950/60 p-4 rounded-xl border border-slate-800 text-left text-xs space-y-2">
@@ -3076,10 +3107,20 @@ function DesignPageContent() {
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-400">Emails Sent:</span>
-                      <span className="text-green-400 font-semibold flex items-center gap-1">
-                        <Mail className="w-3 h-3" /> Admin + Customer
-                      </span>
+                      <span className="text-slate-400">Email Status:</span>
+                      {!emailsInitialized ? (
+                        <span className="text-amber-500 font-semibold flex items-center gap-1">
+                          <AlertTriangle className="w-3 h-3" /> Config Missing
+                        </span>
+                      ) : (emailErrors?.admin || emailErrors?.customer) ? (
+                        <span className="text-red-400 font-semibold flex items-center gap-1">
+                          <AlertTriangle className="w-3 h-3" /> Sending Failed
+                        </span>
+                      ) : (
+                        <span className="text-green-400 font-semibold flex items-center gap-1">
+                          <Mail className="w-3 h-3" /> Admin + Customer
+                        </span>
+                      )}
                     </div>
                   </div>
 

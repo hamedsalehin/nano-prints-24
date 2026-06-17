@@ -76,12 +76,15 @@ export async function POST(req: NextRequest) {
     const quoteId = quoteData?.id ?? "N/A";
     const shortId = quoteId.slice(0, 8).toUpperCase();
 
+    let adminEmailError: any = null;
+    let customerEmailError: any = null;
+
     // ── Send Admin Notification Email ─────────────────────────────────────────
     if (ADMIN_EMAIL) {
       if (!resend) {
         console.warn("submit-quote POST: resend client not initialized. Skipping admin notification email.");
       } else {
-        await resend.emails.send({
+        const adminEmailRes = await resend.emails.send({
           from: FROM,
           to: [ADMIN_EMAIL],
           subject: `📋 New Quote Request #${shortId} — ${fullName}`,
@@ -138,6 +141,13 @@ export async function POST(req: NextRequest) {
             </div>
           `,
         });
+
+        if (adminEmailRes.error) {
+          console.error("submit-quote: admin email send error:", adminEmailRes.error);
+          adminEmailError = adminEmailRes.error;
+        } else {
+          console.log("submit-quote: admin email send success:", adminEmailRes.data);
+        }
       }
     }
 
@@ -146,7 +156,7 @@ export async function POST(req: NextRequest) {
       if (!resend) {
         console.warn("submit-quote POST: resend client not initialized. Skipping customer confirmation email.");
       } else {
-        await resend.emails.send({
+        const customerEmailRes = await resend.emails.send({
           from: FROM,
           to: [email],
           subject: `✅ We Received Your Custom Quote Request — Nano Signs`,
@@ -225,6 +235,13 @@ export async function POST(req: NextRequest) {
             </div>
           `,
         });
+
+        if (customerEmailRes.error) {
+          console.error("submit-quote: customer email send error:", customerEmailRes.error);
+          customerEmailError = customerEmailRes.error;
+        } else {
+          console.log("submit-quote: customer email send success:", customerEmailRes.data);
+        }
       }
     }
 
@@ -232,7 +249,12 @@ export async function POST(req: NextRequest) {
       success: true,
       quoteId,
       shortId,
-      message: "Quote request submitted and confirmation emails sent.",
+      message: resend
+        ? "Quote request submitted and confirmation emails sent."
+        : "Quote request submitted. Warning: Resend email sending skipped (missing RESEND_API_KEY).",
+      emailsInitialized: !!resend,
+      adminEmailError,
+      customerEmailError,
     });
 
   } catch (err) {

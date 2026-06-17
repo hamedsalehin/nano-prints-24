@@ -138,6 +138,9 @@ export async function POST(req: NextRequest) {
     const orderId = orderData?.id ?? "N/A";
     const shortId = orderId.slice(0, 8).toUpperCase();
 
+    let adminEmailError: any = null;
+    let customerEmailError: any = null;
+
     // ── Send Admin Notification Email ─────────────────────────────────────────
     if (ADMIN_EMAIL) {
       if (!resend) {
@@ -223,6 +226,7 @@ export async function POST(req: NextRequest) {
 
         if (adminEmailRes.error) {
           console.error("submit-order: admin email send error:", adminEmailRes.error);
+          adminEmailError = adminEmailRes.error;
         } else {
           console.log("submit-order: admin email send success:", adminEmailRes.data);
         }
@@ -318,6 +322,7 @@ export async function POST(req: NextRequest) {
 
         if (customerEmailRes.error) {
           console.error("submit-order: customer email send error:", customerEmailRes.error);
+          customerEmailError = customerEmailRes.error;
         } else {
           console.log("submit-order: customer email send success:", customerEmailRes.data);
         }
@@ -332,6 +337,8 @@ export async function POST(req: NextRequest) {
         ? "Order submitted and confirmation emails triggered."
         : "Order submitted. Warning: Resend email sending skipped (missing RESEND_API_KEY).",
       emailsInitialized: !!resend,
+      adminEmailError,
+      customerEmailError,
     });
   } catch (err) {
     console.error("submit-order error:", err);

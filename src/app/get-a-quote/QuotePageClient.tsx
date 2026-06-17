@@ -41,6 +41,8 @@ export default function QuotePageClient() {
   const [submitting, setSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [emailsInitialized, setEmailsInitialized] = useState(true);
+  const [emailErrors, setEmailErrors] = useState<{ admin?: any; customer?: any } | null>(null);
 
   // Handle local file selection and Supabase storage upload
   const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -132,6 +134,11 @@ export default function QuotePageClient() {
         throw new Error(data.error || "Failed to submit quote request.");
       }
 
+      setEmailsInitialized(data.emailsInitialized !== false);
+      setEmailErrors({
+        admin: data.adminEmailError || null,
+        customer: data.customerEmailError || null,
+      });
       setSubmitSuccess(true);
     } catch (err) {
       console.error("Quote submission failed:", err);
@@ -396,6 +403,27 @@ export default function QuotePageClient() {
                 <p className="leading-relaxed">
                   Our formatting and layout specialists will review your specs and details. We will email you a print proof and pricing breakdown at <span className="font-bold text-slate-800">{email}</span> within <span className="font-bold text-[#ff2d78]">12 hours</span>.
                 </p>
+
+                {!emailsInitialized && (
+                  <div className="mt-3 p-3.5 bg-amber-55/60 border border-amber-200 rounded-xl text-xs text-amber-800 leading-normal flex gap-2 items-start font-sans">
+                    <AlertCircle className="w-4 h-4 shrink-0 text-amber-600 mt-0.5" />
+                    <div>
+                      <span className="font-bold">⚠️ Server Notification:</span> Email confirmation was skipped because the server does not have <code>RESEND_API_KEY</code> configured. Please configure it in your Netlify settings.
+                    </div>
+                  </div>
+                )}
+                {emailsInitialized && (emailErrors?.admin || emailErrors?.customer) && (
+                  <div className="mt-3 p-3.5 bg-red-55/60 border border-red-200 rounded-xl text-xs text-red-800 leading-normal flex gap-2 items-start font-sans">
+                    <AlertCircle className="w-4 h-4 shrink-0 text-red-600 mt-0.5" />
+                    <div>
+                      <span className="font-bold">❌ Email Confirmation Failed:</span>
+                      <ul className="list-disc list-inside mt-1 space-y-1">
+                        {emailErrors.admin && <li>Admin Notify: {emailErrors.admin.message || JSON.stringify(emailErrors.admin)}</li>}
+                        {emailErrors.customer && <li>Customer Confirm: {emailErrors.customer.message || JSON.stringify(emailErrors.customer)}</li>}
+                      </ul>
+                    </div>
+                  </div>
+                )}
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3 pt-4 justify-center">
