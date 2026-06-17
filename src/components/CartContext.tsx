@@ -183,6 +183,31 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         setDiscountApplied(false);
       }
 
+      // Trigger order confirmation emails asynchronously
+      if (orderIds.length > 0) {
+        try {
+          fetch("/api/send-order-emails", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              orderIds,
+              userEmail: user.email,
+            }),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              console.log("send-order-emails response:", data);
+            })
+            .catch((err) => {
+              console.error("send-order-emails request failed:", err);
+            });
+        } catch (emailErr) {
+          console.error("Failed to call send-order-emails API:", emailErr);
+        }
+      }
+
       clearCart();
       return { success: true, orderIds };
     } catch (err) {
