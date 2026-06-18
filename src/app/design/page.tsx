@@ -1586,6 +1586,15 @@ function DesignPageContent() {
     return null;
   }, [productId]);
 
+  const categoryKey = React.useMemo(() => {
+    if (!productId) return null;
+    for (const [key, category] of Object.entries(PRODUCTS_REGISTRY)) {
+      const found = category.products.some((p) => p.id === productId);
+      if (found) return key;
+    }
+    return null;
+  }, [productId]);
+
   const [selectValues, setSelectValues] = useState<Record<string, any>>({});
 
   const availableTemplates = React.useMemo(() => {
@@ -2605,11 +2614,11 @@ function DesignPageContent() {
       <header className="flex items-center justify-between px-6 py-4 bg-slate-900 border-b border-slate-800 z-10">
         <div className="flex items-center gap-4">
           <Link
-            href="/custom-signs"
+            href={categoryKey && productId ? `/${categoryKey}/${productId}` : "/custom-signs"}
             className="flex items-center text-sm font-semibold text-slate-400 hover:text-white transition-colors group"
           >
             <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-0.5 transition-transform" />
-            Back to Signs
+            Back to {registryProduct ? registryProduct.name : "Signs"}
           </Link>
           <div className="h-4 w-px bg-slate-800" />
           <div className="flex items-center gap-2">
@@ -3730,22 +3739,8 @@ function DesignPageContent() {
               {/* Price Breakdown Summary */}
               <div className="bg-slate-950/60 rounded-xl border border-slate-800 p-4 space-y-2">
                 <div className="flex justify-between text-xs text-slate-400">
-                  <span>List Price:</span>
-                  <span className="line-through">
-                    $
-                    {(
-                      parseFloat(calculatedPrice.total) +
-                      parseFloat(calculatedPrice.savings)
-                    ).toFixed(2)}
-                  </span>
-                </div>
-                <div className="flex justify-between text-xs text-slate-400">
                   <span>Unit Cost:</span>
                   <span>${calculatedPrice.unitPrice} each</span>
-                </div>
-                <div className="flex justify-between text-xs text-green-400 font-bold">
-                  <span>Discount Savings (25% + Bulk):</span>
-                  <span>-${calculatedPrice.savings}</span>
                 </div>
                 <div className="h-px bg-slate-800 my-1" />
                 <div className="flex justify-between items-baseline">
