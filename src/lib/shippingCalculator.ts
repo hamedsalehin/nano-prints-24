@@ -28,14 +28,14 @@ export function parseDimensions(sizeStr: string): { width: number; height: numbe
     // split by x, *, or by
     const parts = clean.split(/x|\*|by/i).map(p => p.trim());
     if (parts.length >= 2) {
-      let w = parseFloat(parts[0]);
-      let h = parseFloat(parts[1]);
+      const w = parseFloat(parts[0]);
+      const h = parseFloat(parts[1]);
 
       const isWFeet = parts[0].includes("'") || parts[0].toLowerCase().includes("ft");
       const isHFeet = parts[1].includes("'") || parts[1].toLowerCase().includes("ft");
 
-      let wIn = isWFeet ? w * 12 : w;
-      let hIn = isHFeet ? h * 12 : h;
+      const wIn = isWFeet ? w * 12 : w;
+      const hIn = isHFeet ? h * 12 : h;
 
       if (isNaN(wIn) || isNaN(hIn)) {
         return { width: 12, height: 12, areaSqFt: 1 };

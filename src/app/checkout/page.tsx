@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
+import Link from "next/link";
 import { loadStripe } from "@stripe/stripe-js";
 import {
   Elements,
@@ -101,7 +102,7 @@ export default function CheckoutPage() {
   }, [user, setShowAuthModal]);
 
   // Fetch shipping rates when address or ZIP changes
-  const fetchRates = async () => {
+  const fetchRates = useCallback(async () => {
     if (!shippingAddress.postal || shippingAddress.postal.length < 5) return;
     setCalculatingRates(true);
     setRateError(null);
@@ -133,14 +134,14 @@ export default function CheckoutPage() {
     } finally {
       setCalculatingRates(false);
     }
-  };
+  }, [shippingAddress.postal, freightOptions.residential, freightOptions.liftgate, items]);
 
   // Re-fetch rates on ZIP change or freight option change
   useEffect(() => {
     if (items.length > 0 && shippingAddress.postal.length >= 5) {
       fetchRates();
     }
-  }, [shippingAddress.postal, freightOptions.residential, freightOptions.liftgate, items]);
+  }, [shippingAddress.postal, freightOptions.residential, freightOptions.liftgate, items, fetchRates]);
 
   // Create payment intent from backend
   const handleInitiatePayment = async () => {
@@ -283,12 +284,12 @@ export default function CheckoutPage() {
                 </code>
               ))}
             </div>
-            <a
+            <Link
               href="/account/orders"
               className="w-full text-center bg-black hover:bg-gray-900 text-white font-bold py-4 rounded-xl transition-all text-sm uppercase tracking-wider font-poppins"
             >
               View My Orders
-            </a>
+            </Link>
           </div>
         </main>
         <Footer />
@@ -320,9 +321,9 @@ export default function CheckoutPage() {
           <div className="text-center py-16 bg-white border rounded-3xl p-8 max-w-md mx-auto shadow">
             <ShoppingBag className="w-16 h-16 text-gray-200 mx-auto" />
             <p className="text-gray-500 font-medium mt-4">Your shopping cart is empty.</p>
-            <a href="/" className="text-sm font-bold text-[#ff2d78] hover:underline mt-2 inline-block">
+            <Link href="/" className="text-sm font-bold text-[#ff2d78] hover:underline mt-2 inline-block">
               Return to Homepage
-            </a>
+            </Link>
           </div>
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
