@@ -71,19 +71,41 @@ export default function YardSignsPage() {
               { label: "Double Sided", value: "double", priceAdder: 2.5 },
             ],
           },
+          {
+            label: "Hanging Holes",
+            options: [
+              {
+                label: "Top Hanging Holes (Grommets)",
+                value: "top_holes",
+                priceAdder: 0,
+                description: "Pre-drilled holes at top corners to hang from the arm.",
+              },
+              {
+                label: "No Holes",
+                value: "no_holes",
+                priceAdder: 0,
+                description: "Solid panel without pre-drilled holes.",
+              },
+            ],
+          },
         ],
         toggleGroups: [
           {
-            label: "Stakes (Wire H-Frame)",
+            label: "Frame/Stand Option",
             options: [
-              { id: "no_stake", label: "No Stakes", priceAdder: 0 },
-              { id: "9in_stake", label: '9" H-Frame Stakes', priceAdder: 0.99 },
+              { id: "no_stand", label: "Sign Panel Only", priceAdder: 0 },
               {
-                id: "15in_stake",
-                label: '15" H-Frame Stakes',
-                priceAdder: 1.49,
+                id: "wood_l_stand",
+                label: "White L-Shaped Wood Yard Arm Stand",
+                priceAdder: 39.99,
+                description: "Premium wooden colonial yard post",
               },
-              { id: "step_stake", label: "Step Stakes", priceAdder: 1.99 },
+              {
+                id: "metal_l_stand",
+                label: "Black L-Shaped Metal Yard Arm Stand",
+                priceAdder: 49.99,
+                description: "Heavy-duty steel hanging sign post",
+              },
             ],
           },
           {
@@ -104,7 +126,7 @@ export default function YardSignsPage() {
           "Weather-resistant corrugated plastic",
           "Full-color edge-to-edge printing",
           "Ships in as fast as 1 business day",
-          "Optional H-frame wire stakes included",
+          "Optional L-shaped wood or metal stands available",
           "Recyclable & eco-friendly material",
           "Single or double-sided printing",
         ],
@@ -136,8 +158,8 @@ export default function YardSignsPage() {
             a: "Standard 4mm coroplast yard signs typically last 6–12 months outdoors. The 6mm heavy-duty option can last 1–2+ years depending on conditions.",
           },
           {
-            q: "Do your yard signs come with stakes?",
-            a: "Stakes are optional. Select your preferred H-frame wire stake size in the configurator. Step stakes are also available for harder ground.",
+            q: "Do your yard signs come with stands?",
+            a: "Stands are optional. You can select either a White L-Shaped Wood Yard Arm Stand or a Black L-Shaped Metal Yard Arm Stand in the configurator. We can pre-drill top hanging holes to make hanging simple.",
           },
           {
             q: "Can I order just 1 yard sign?",
@@ -157,7 +179,7 @@ export default function YardSignsPage() {
           {
             author: "Sandra R.",
             rating: 5,
-            text: "Used for our open house. Very professional look, easy to stake in the ground. Will definitely order again.",
+            text: "Used for our open house. Very professional look, easy to hang on the L-stand. Will definitely order again.",
           },
           {
             author: "Tom B.",

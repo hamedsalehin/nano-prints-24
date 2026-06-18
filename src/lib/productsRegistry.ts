@@ -5133,16 +5133,16 @@ Why Choose Our Professional Rollup Banners?
         id: "yard-signs",
         name: "Yard Signs",
         description:
-          "Corrugated plastic signs perfect for lawns, events, and political campaigns.",
+          "Hanging corrugated plastic signs suspended from premium L-shaped stands, perfect for real estate, campaigns, and storefronts.",
         image: "/images/products/main%20page/yard_sign.jpeg",
         price: "Starting at $3.99",
         badge: "Best Seller",
         config: {
           title: "Custom Yard Signs",
-          subtitle: "Corrugated plastic signs that weather any storm.",
+          subtitle: "Hanging lawn and commercial signs suspended from wood or metal L-stands.",
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
-          promoText: "25% OFF Yard Signs + Free Shipping",
+          promoText: "🏡 25% OFF Yard Signs + Free Shipping — Most Popular Sign in America!",
           image: "/images/products/main%20page/yard_sign.jpeg",
           images: [
             "/images/products/main%20page/yard_sign.jpeg",
@@ -5154,7 +5154,9 @@ Why Choose Our Professional Rollup Banners?
           sizes: [
             { label: '12" x 18" (Standard)', value: "12x18", basePrice: 3.99 },
             { label: '18" x 24"', value: "18x24", basePrice: 6.99 },
+            { label: '24" x 24"', value: "24x24", basePrice: 9.99 },
             { label: '24" x 36"', value: "24x36", basePrice: 13.99 },
+            { label: '36" x 48"', value: "36x48", basePrice: 22.99 },
           ],
           selects: [
             {
@@ -5164,33 +5166,146 @@ Why Choose Our Professional Rollup Banners?
                   label: "4mm Corrugated Plastic (Standard)",
                   value: "4mm",
                   priceAdder: 0,
+                  description:
+                    "Lightweight, weatherproof, great for short-term outdoor use.",
                 },
                 {
                   label: "6mm Heavy-Duty Coroplast",
                   value: "6mm",
                   priceAdder: 1.5,
+                  description:
+                    "50% thicker — perfect for long-term yard sign campaigns.",
+                },
+                {
+                  label: "Aluminum (Substrate)",
+                  value: "aluminum",
+                  priceAdder: 4,
+                  description:
+                    "Rigid aluminum for permanent outdoor installations.",
+                },
+              ],
+            },
+            {
+              label: "Printing",
+              options: [
+                { label: "Single Sided", value: "single", priceAdder: 0 },
+                { label: "Double Sided", value: "double", priceAdder: 2.5 },
+              ],
+            },
+            {
+              label: "Hanging Holes",
+              options: [
+                {
+                  label: "Top Hanging Holes (Grommets)",
+                  value: "top_holes",
+                  priceAdder: 0,
+                  description: "Pre-drilled holes at top corners to hang from the arm.",
+                },
+                {
+                  label: "No Holes",
+                  value: "no_holes",
+                  priceAdder: 0,
+                  description: "Solid panel without pre-drilled holes.",
                 },
               ],
             },
           ],
-          qtyDiscount: "Volume discounts on bulk lawn signs",
+          toggleGroups: [
+            {
+              label: "Frame/Stand Option",
+              options: [
+                { id: "no_stand", label: "Sign Panel Only", priceAdder: 0 },
+                {
+                  id: "wood_l_stand",
+                  label: "White L-Shaped Wood Yard Arm Stand",
+                  priceAdder: 39.99,
+                  description: "Premium wooden colonial yard post",
+                },
+                {
+                  id: "metal_l_stand",
+                  label: "Black L-Shaped Metal Yard Arm Stand",
+                  priceAdder: 49.99,
+                  description: "Heavy-duty steel hanging sign post",
+                },
+              ],
+            },
+            {
+              label: "UV Coating",
+              options: [
+                { id: "no_coat", label: "None", priceAdder: 0 },
+                {
+                  id: "uv",
+                  label: "UV Gloss Coating",
+                  priceAdder: 0.75,
+                  description: "Adds scratch & fade protection.",
+                },
+              ],
+            },
+          ],
+          qtyDiscount: "Buy more, save more — up to 13% off!",
           keyFeatures: [
             "Weather-resistant corrugated plastic",
             "Full-color edge-to-edge printing",
             "Ships in as fast as 1 business day",
+            "Optional L-shaped wood or metal stands available",
+            "Recyclable & eco-friendly material",
+            "Single or double-sided printing",
           ],
           useCases: [
             "Political Campaigns",
             "Real Estate",
+            "Open Houses",
+            "Elections",
             "Business Promotions",
             "Events",
           ],
           specs: [
-            { key: "Material", value: "4mm Corrugated Plastic" },
-            { key: "Print Resolution", value: "720 x 1440 dpi" },
+            {
+              key: "Standard Material",
+              value: "4mm Corrugated Plastic (Coroplast)",
+            },
+            { key: "Heavy Duty Option", value: "6mm Coroplast" },
+            { key: "Print Resolution", value: "720 x 1440 dpi Full Color" },
+            { key: "Color Profile", value: "CMYK" },
+            { key: "Bleed Required", value: '0.125" on all sides' },
+            { key: "File Formats", value: "PDF, AI, EPS, PNG, TIFF" },
+            { key: "Turnaround", value: "Next Business Day" },
           ],
-          faqs: [],
-          reviews: [],
+          faqs: [
+            {
+              q: "How long will yard signs last outdoors?",
+              a: "Standard 4mm coroplast yard signs typically last 6–12 months outdoors. The 6mm heavy-duty option can last 1–2+ years depending on conditions.",
+            },
+            {
+              q: "Do your yard signs come with stands?",
+              a: "Stands are optional. You can select either a White L-Shaped Wood Yard Arm Stand or a Black L-Shaped Metal Yard Arm Stand in the configurator. We can pre-drill top hanging holes to make hanging simple.",
+            },
+            {
+              q: "Can I order just 1 yard sign?",
+              a: "Yes! We have no minimum order quantity. Single signs ship just as fast as bulk orders.",
+            },
+            {
+              q: "Are the signs waterproof?",
+              a: "Yes. Corrugated plastic is inherently waterproof. Our inks are UV-resistant and won't run or fade in rain.",
+            },
+          ],
+          reviews: [
+            {
+              author: "Mike D.",
+              rating: 5,
+              text: "Ordered 200 yard signs for a local election campaign. They arrived the next day and looked exactly like the proof!",
+            },
+            {
+              author: "Sandra R.",
+              rating: 5,
+              text: "Used for our open house. Very professional look, easy to hang on the L-stand. Will definitely order again.",
+            },
+            {
+              author: "Tom B.",
+              rating: 4,
+              text: "Great quality for the price. Colors were vibrant and matched perfectly.",
+            },
+          ],
           ctaHeading: "Get Your Signs Out There",
           ctaBody: "Order by 5 PM and your custom yard signs ship tomorrow.",
           ctaLabel: "Order Yard Signs Now",
@@ -5200,7 +5315,7 @@ Why Choose Our Professional Rollup Banners?
         id: "real-estate-panels",
         name: "Real Estate Panels",
         description:
-          "Professional aluminum and coroplast panels for property listings.",
+          "Professional-grade aluminum and coroplast panels for property listings, open houses, and riders.",
         image: "/images/products/main%20page/Real_estate_panels.png",
         price: "Starting at $12.99",
         badge: "Most Popular",
@@ -5210,7 +5325,7 @@ Why Choose Our Professional Rollup Banners?
             "Professional-grade panels for property listings and open houses.",
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
-          promoText: "FREE SHIPPING on Real Estate Panel Orders",
+          promoText: "🏠 Real Estate Panels — Next Day Delivery Available!",
           image: "/images/products/main%20page/Real_estate_panels.png",
           images: [
             "/images/products/main%20page/Real_estate_panels.png",
@@ -5218,34 +5333,123 @@ Why Choose Our Professional Rollup Banners?
             "/images/products/gallery/real_estate_panels_in_action_2.png",
           ],
           ratingScore: "4.9",
-          ratingCount: "3,200",
+          ratingCount: "3,150",
           sizes: [
             { label: '18" x 24" (Standard)', value: "18x24", basePrice: 12.99 },
+            { label: '24" x 24"', value: "24x24", basePrice: 16.99 },
             { label: '24" x 36"', value: "24x36", basePrice: 22.99 },
+            { label: '18" x 6" Rider', value: "18x6_rider", basePrice: 5.99 },
+            { label: '24" x 6" Rider', value: "24x6_rider", basePrice: 7.99 },
           ],
           selects: [
             {
               label: "Material",
               options: [
-                { label: "4mm Coroplast", value: "coroplast", priceAdder: 0 },
-                { label: "Aluminum", value: "aluminum", priceAdder: 8 },
+                {
+                  label: "4mm Coroplast (Standard)",
+                  value: "4mm_coro",
+                  priceAdder: 0,
+                  description:
+                    "Lightweight, waterproof. Best for short listings.",
+                },
+                {
+                  label: ".040 Aluminum",
+                  value: "aluminum_040",
+                  priceAdder: 6,
+                  description: "Rigid, durable metal. Lasts years outdoors.",
+                },
+                {
+                  label: "6mm Heavy-Duty Coroplast",
+                  value: "6mm_coro",
+                  priceAdder: 2.5,
+                  description: "Thicker plastic for longer listing cycles.",
+                },
+              ],
+            },
+            {
+              label: "Printing",
+              options: [
+                { label: "Single Sided", value: "single", priceAdder: 0 },
+                { label: "Double Sided", value: "double", priceAdder: 3.5 },
               ],
             },
           ],
-          qtyDiscount: "Save on real estate packages",
+          toggleGroups: [
+            {
+              label: "Accessories",
+              options: [
+                { id: "none", label: "Sign Only", priceAdder: 0 },
+                { id: "h_frame", label: "Wire H-Frame Post", priceAdder: 4.99 },
+                {
+                  id: "yard_arm",
+                  label: "Yard Arm Post",
+                  priceAdder: 18.99,
+                  description: "Classic single-post arm",
+                },
+                {
+                  id: "full_frame",
+                  label: "Full Frame Post Kit",
+                  priceAdder: 34.99,
+                  description: "Includes two posts + crossbar",
+                },
+              ],
+            },
+          ],
+          qtyDiscount: "Agent bulk pricing — buy 10+ and save",
           keyFeatures: [
             "Professional real estate layouts",
             "Durable outdoor materials",
             "Rider slot compatible",
+            "UV-resistant fade-proof printing",
+            "Compatible with standard real estate frames",
+            "Next-day turnaround available",
           ],
           useCases: ["For Sale", "Open House", "For Rent", "Sold"],
           specs: [
-            { key: "Material", value: "Coroplast or Aluminum" },
+            { key: "Standard Material", value: "4mm Corrugated Plastic (Coroplast)" },
+            { key: "Metal Option", value: ".040 Aluminum" },
+            { key: "Print Resolution", value: "720 x 1440 dpi" },
+            { key: "Color Profile", value: "CMYK" },
+            { key: "Bleed Required", value: '0.125" all sides' },
+            { key: "Frame Compatibility", value: 'Standard 30" wide RE frames' },
             { key: "Turnaround", value: "Next Business Day" },
           ],
-          faqs: [],
-          reviews: [],
-          ctaHeading: "List Properties With Impact",
+          faqs: [
+            {
+              q: "Are your panels compatible with standard real estate frames?",
+              a: 'Yes! Our 18"x24" and 24"x24" panels are designed to fit standard real estate wire frames and yard arm posts.',
+            },
+            {
+              q: "Can I order rider panels to match my main panel?",
+              a: "Absolutely. Select the rider size in the dropdown and we'll match the design style for a cohesive, professional look.",
+            },
+            {
+              q: "Can I include my brokerage logo and headshot?",
+              a: "Yes. Upload any artwork file and we'll print it exactly as provided. Our free artwork check ensures everything looks perfect.",
+            },
+            {
+              q: "What is the minimum order?",
+              a: "We have no minimum! Order as few as 1 panel or as many as 1,000.",
+            },
+          ],
+          reviews: [
+            {
+              author: "Jessica A.",
+              rating: 5,
+              text: "I've been ordering from here for 2 years. Best quality real estate panels I've found, and delivery is always on time.",
+            },
+            {
+              author: "Carlos M.",
+              rating: 5,
+              text: "Ordered riders for my open house last minute — they arrived the next morning. Saved my weekend!",
+            },
+            {
+              author: "Patricia W.",
+              rating: 5,
+              text: "The aluminum panels look incredibly professional. My clients always comment on them.",
+            },
+          ],
+          ctaHeading: "List More. Sell Faster.",
           ctaBody: "Professional real estate panels shipped next day.",
           ctaLabel: "Order Real Estate Panels",
         },
@@ -5254,101 +5458,348 @@ Why Choose Our Professional Rollup Banners?
         id: "aluminum-signs",
         name: "Aluminum Signs",
         description:
-          "Durable rust-proof aluminum signs for indoor and outdoor use.",
+          "Durable rust-proof aluminum signs for permanent indoor and outdoor branding, safety, and parking installations.",
         image: "/images/products/main%20page/aluminum_sign.png",
         price: "Starting at $8.99",
         badge: "Heavy Duty",
         config: {
           title: "Custom Aluminum Signs",
           subtitle:
-            "Rigid, rust-proof aluminum signs built for permanent installations.",
+            "Heavy-duty, rust-proof aluminum signs built to last years in any weather.",
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
-          promoText: "20% OFF Aluminum Signs",
+          promoText: "⚙️ Aluminum Signs — Rust-Proof, Fade-Proof, Weatherproof. Ships Next Day!",
           image: "/images/products/main%20page/aluminum_sign.png",
           images: [
             "/images/products/main%20page/aluminum_sign.png",
             "/images/products/alum_sign_hover.png",
           ],
-          ratingScore: "4.8",
-          ratingCount: "1,450",
+          ratingScore: "4.9",
+          ratingCount: "2,840",
           sizes: [
-            { label: '12" x 18"', value: "12x18", basePrice: 8.99 },
-            { label: '18" x 24"', value: "18x24", basePrice: 16.99 },
-            { label: '24" x 36"', value: "24x36", basePrice: 29.99 },
+            { label: '6" x 12"', value: "6x12", basePrice: 8.99 },
+            { label: '12" x 12"', value: "12x12", basePrice: 12.99 },
+            { label: '12" x 18"', value: "12x18", basePrice: 14.99 },
+            { label: '18" x 24"', value: "18x24", basePrice: 21.99 },
+            { label: '24" x 24"', value: "24x24", basePrice: 28.99 },
+            { label: '24" x 36"', value: "24x36", basePrice: 38.99 },
+            { label: "Custom Size", value: "custom", basePrice: 0 },
           ],
-          selects: [],
-          qtyDiscount: "Volume discounts on mounting orders",
+          selects: [
+            {
+              label: "Aluminum Grade",
+              options: [
+                {
+                  label: ".040 Aluminum (Standard)",
+                  value: "040",
+                  priceAdder: 0,
+                  description: "Standard gauge — great for most applications.",
+                },
+                {
+                  label: ".080 Aluminum (Heavy Duty)",
+                  value: "080",
+                  priceAdder: 5.5,
+                  description: "Double thickness for maximum rigidity.",
+                },
+              ],
+            },
+            {
+              label: "Finish",
+              options: [
+                {
+                  label: "Matte White (Standard)",
+                  value: "matte",
+                  priceAdder: 0,
+                },
+                { label: "High Gloss", value: "gloss", priceAdder: 2.5 },
+                {
+                  label: "Reflective (ASTM D4956)",
+                  value: "reflective",
+                  priceAdder: 8,
+                  description:
+                    "Highly visible at night — for safety & regulatory use.",
+                },
+              ],
+            },
+            {
+              label: "Printing",
+              options: [
+                { label: "Single Sided", value: "single", priceAdder: 0 },
+                { label: "Double Sided", value: "double", priceAdder: 6 },
+              ],
+            },
+          ],
+          toggleGroups: [
+            {
+              label: "Mounting Holes",
+              options: [
+                { id: "no_holes", label: "No Holes", priceAdder: 0 },
+                { id: "corner_holes", label: "Corner Holes", priceAdder: 0 },
+                {
+                  id: "custom_holes",
+                  label: "Custom Hole Placement",
+                  priceAdder: 1,
+                },
+                { id: "grommets", label: "Grommets Added", priceAdder: 2 },
+              ],
+            },
+            {
+              label: "Rounded Corners",
+              options: [
+                { id: "square", label: "Square Corners", priceAdder: 0 },
+                { id: "rounded", label: "Rounded Corners", priceAdder: 1.5 },
+              ],
+            },
+          ],
+          qtyDiscount: "Volume pricing — buy 10+ for up to 13% off",
           keyFeatures: [
-            "Rust-proof aluminum",
-            "UV-resistant inks",
-            "Pre-drilled mounting holes",
+            "Rust-proof, corrosion-resistant aluminum",
+            "UV-resistant inks — won't fade for years",
+            "Available in .040 and .080 gauge",
+            "Reflective finish option for regulatory use",
+            "Pre-drilled mounting holes available",
+            "Square or rounded corner options",
           ],
           useCases: [
-            "Parking Signs",
-            "Warning Signs",
             "Business Signs",
+            "Parking Signs",
+            "Street Signs",
+            "Safety Signs",
+            "Property Signs",
+            "Regulatory Signs",
             "Directional Signs",
           ],
           specs: [
-            { key: "Material", value: '.040" Aluminum' },
-            { key: "Corners", value: "Rounded or Square" },
+            { key: "Standard Grade", value: '.040" Aluminum' },
+            { key: "Heavy Duty Grade", value: '.080" Aluminum' },
+            { key: "Print Method", value: "Direct UV Digital Print" },
+            { key: "Color Profile", value: "CMYK" },
+            { key: "Finish Options", value: "Matte, Gloss, Reflective" },
+            { key: "Hole Diameter", value: '5/16" standard' },
+            { key: "Turnaround", value: "Next Business Day" },
           ],
-          faqs: [],
-          reviews: [],
-          ctaHeading: "Built to Last Outdoors",
+          faqs: [
+            {
+              q: "How long do aluminum signs last?",
+              a: "Our aluminum signs are rated for 7–10+ years outdoors. The UV-resistant inks won't fade, and aluminum won't rust or corrode.",
+            },
+            {
+              q: "Can I get reflective aluminum signs?",
+              a: "Yes! Select the 'Reflective' finish option. Our reflective signs meet ASTM D4956 standards and are great for regulatory, safety, and parking applications.",
+            },
+            {
+              q: "Are mounting holes included?",
+              a: 'Mounting holes are optional. Choose corner holes (standard 5/16") or custom placement in the configurator — always free to add.',
+            },
+            {
+              q: "Do you offer custom shapes?",
+              a: "Standard shapes (square/rectangle with optional rounded corners) are available online. Contact us for completely custom cut shapes.",
+            },
+          ],
+          reviews: [
+            {
+              author: "Frank L.",
+              rating: 5,
+              text: "We've had these parking signs up for 3 years and they still look brand new. Incredible durability.",
+            },
+            {
+              author: "Donna S.",
+              rating: 5,
+              text: "Ordered 50 directional signs for our campus. Fast turnaround, perfect print quality.",
+            },
+            {
+              author: "Brian T.",
+              rating: 5,
+              text: "The reflective signs are exactly what we needed for night visibility. Very professional.",
+            },
+          ],
+          ctaHeading: "Signs That Last a Decade",
           ctaBody:
-            "Aluminum signs that resist rust, fading, and harsh weather.",
-          ctaLabel: "Order Aluminum Signs",
+            "Rust-proof aluminum signs printed with UV inks that resist fading for years.",
+          ctaLabel: "Order Aluminum Signs Now",
         },
       },
       {
         id: "a-frame-signs",
         name: "A-Frame Signs",
         description:
-          "Portable sandwich board signs ideal for sidewalk and event advertising.",
+          "Portable double-sided sandwich board sidewalk signs that grab foot traffic and drive customers through your door.",
         image: "/images/products/main%20page/A-frame_sign.jpeg",
         price: "Starting at $89.99",
         badge: "Eye-Catching",
         config: {
-          title: "Custom A-Frame Signs",
+          title: "A-Frame Signs (Sandwich Boards)",
           subtitle:
-            "Double-sided sidewalk signs that fold flat for easy transport.",
+            "Portable, double-sided sidewalk signs that grab foot traffic and drive customers through your door.",
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
-          promoText: "FREE SHIPPING on A-Frame Signs",
+          promoText: "🪧 A-Frame Signs — Double-Sided, Portable, Ships Tomorrow!",
           image: "/images/products/main%20page/A-frame_sign.jpeg",
           images: [
             "/images/products/main%20page/A-frame_sign.jpeg",
             "/images/products/aframe_sign_hover.png",
           ],
-          ratingScore: "4.7",
-          ratingCount: "620",
+          ratingScore: "4.8",
+          ratingCount: "1,640",
           sizes: [
-            { label: '24" x 36" (Standard)', value: "24x36", basePrice: 89.99 },
+            {
+              label: '18" x 24" Insert (Standard)',
+              value: "18x24",
+              basePrice: 89.99,
+            },
+            { label: '22" x 28" Insert', value: "22x28", basePrice: 109.99 },
+            { label: '24" x 36" Insert', value: "24x36", basePrice: 134.99 },
           ],
-          selects: [],
-          qtyDiscount: "Bulk event pricing applies",
+          selects: [
+            {
+              label: "Frame Material",
+              options: [
+                {
+                  label: "Plastic A-Frame (Standard)",
+                  value: "plastic",
+                  priceAdder: 0,
+                  description: "Lightweight, weather-resistant. Budget-friendly.",
+                },
+                {
+                  label: "Aluminum A-Frame",
+                  value: "aluminum",
+                  priceAdder: 25,
+                  description: "Heavier, more stable in wind. Long-lasting.",
+                },
+                {
+                  label: "Premium Swinger Frame",
+                  value: "swinger",
+                  priceAdder: 45,
+                  description: "360° swivel top. Maximum visibility.",
+                },
+              ],
+            },
+            {
+              label: "Insert Material",
+              options: [
+                {
+                  label: "Coroplast Insert (Standard)",
+                  value: "coro",
+                  priceAdder: 0,
+                  description: "Waterproof, lightweight corrugated plastic.",
+                },
+                {
+                  label: "PVC Foam Board Insert",
+                  value: "pvc",
+                  priceAdder: 8,
+                  description: "Rigid, premium look for upscale establishments.",
+                },
+                {
+                  label: "Aluminum Insert",
+                  value: "alum",
+                  priceAdder: 14,
+                  description: "The most durable, longest-lasting option.",
+                },
+              ],
+            },
+          ],
+          toggleGroups: [
+            {
+              label: "Printing",
+              options: [
+                { id: "single", label: "1-Sided Print", priceAdder: 0 },
+                {
+                  id: "double",
+                  label: "2-Sided Print",
+                  priceAdder: 0,
+                  description: "Both panels printed (standard for A-frames)",
+                },
+              ],
+            },
+            {
+              label: "Anti-Wind Accessory",
+              options: [
+                { id: "none", label: "No Accessory", priceAdder: 0 },
+                {
+                  id: "chain",
+                  label: "Connecting Chain",
+                  priceAdder: 2.99,
+                  description: "Limits how far the sign opens in wind",
+                },
+                {
+                  id: "sandbag",
+                  label: "Sandbag Weight",
+                  priceAdder: 9.99,
+                  description: "Keeps sign stable in windy conditions",
+                },
+              ],
+            },
+          ],
+          qtyDiscount: "Buy 3+ A-frames and save up to 10%",
           keyFeatures: [
-            "Double-sided display",
-            "Folds flat for storage",
-            "Heavy-duty plastic frame",
+            "Double-sided by default",
+            "Portable — set up in seconds",
+            "Weather-resistant frame & inserts",
+            "Interchangeable insert panels",
+            "Multiple frame material options",
+            "Compact for storage",
           ],
           useCases: [
-            "Sidewalk Advertising",
-            "Cafe Menus",
-            "Open House",
-            "Events",
+            "Restaurants & Cafes",
+            "Retail Stores",
+            "Salons",
+            "Sidewalk Promotions",
+            "Event Venues",
+            "Hotels",
+            "Markets",
+            "Pop-Up Shops",
           ],
           specs: [
-            { key: "Frame", value: "Heavy-duty plastic" },
-            { key: "Insert", value: "Corrugated plastic" },
+            {
+              key: "Standard Frame",
+              value: "Plastic A-Frame with coroplast insert",
+            },
+            { key: "Insert Fits", value: '18"x24", 22"x28", or 24"x36"' },
+            { key: "Print Method", value: "Full-Color Digital UV Print" },
+            { key: "Fold Height", value: 'Approximately 48" tall when open' },
+            { key: "Color Profile", value: "CMYK" },
+            { key: "Bleed Required", value: '0.125" all sides' },
+            { key: "Turnaround", value: "Next Business Day" },
           ],
-          faqs: [],
-          reviews: [],
-          ctaHeading: "Sidewalk Advertising Made Easy",
-          ctaBody: "Portable A-frame signs that grab foot traffic attention.",
-          ctaLabel: "Order A-Frame Signs",
+          faqs: [
+            {
+              q: "Is printing included on both sides?",
+              a: "Yes! A-frame signs are inherently double-sided. Both panels are printed by default.",
+            },
+            {
+              q: "Can I swap out the inserts?",
+              a: "Yes. The coroplast and PVC foam board inserts slide out easily so you can swap promotions or update messaging without buying a new frame.",
+            },
+            {
+              q: "Are they stable in wind?",
+              a: "Plastic A-frames can tip in strong wind. We recommend the connecting chain or sandbag weight add-on for windy locations.",
+            },
+            {
+              q: "Can I store them inside at night?",
+              a: "Absolutely. A-frames fold flat for easy interior storage. This also extends the life of the printed inserts.",
+            },
+          ],
+          reviews: [
+            {
+              author: "Rachel H.",
+              rating: 5,
+              text: "Our restaurant's daily specials board. Customers stop to read it every single day. Best investment we've made!",
+            },
+            {
+              author: "Aaron P.",
+              rating: 5,
+              text: "Ordered 5 for our chain of yoga studios. Fast delivery and great print quality on both sides.",
+            },
+            {
+              author: "Maria C.",
+              rating: 4,
+              text: "Sturdy and looks professional on the sidewalk. The chain accessory was a great add-on.",
+            },
+          ],
+          ctaHeading: "Bring Customers Through the Door",
+          ctaBody:
+            "A-frame signs are proven to increase foot traffic. Order yours today.",
+          ctaLabel: "Design Your A-Frame Sign",
         },
       },
       {
@@ -5357,48 +5808,182 @@ Why Choose Our Professional Rollup Banners?
         description:
           "Lightweight, professional indoor display signs for presentations and lobbies.",
         image: "/images/products/main%20page/foam_board.jpeg",
-        price: "Starting at $14.99",
+        price: "Starting at $7.99",
         badge: "Indoor Favorite",
         config: {
-          title: "Custom Foam Board Signs",
+          title: "Foam Board Signs",
           subtitle:
-            "Lightweight foam core signs perfect for indoor displays and presentations.",
+            "Lightweight and professional indoor display signs for presentations, lobbies, and events.",
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
-          promoText: "25% OFF Foam Board Signs",
+          promoText:
+            "✨ Foam Board Signs — Ultra-Light, Ultra-Crisp. Perfect for Presentations!",
           image: "/images/products/main%20page/foam_board.jpeg",
           images: [
             "/images/products/main%20page/foam_board.jpeg",
             "/images/products/foam_sign_hover.png",
           ],
           ratingScore: "4.8",
-          ratingCount: "890",
+          ratingCount: "1,280",
           sizes: [
-            { label: '18" x 24"', value: "18x24", basePrice: 14.99 },
-            { label: '24" x 36"', value: "24x36", basePrice: 24.99 },
+            { label: '8.5" x 11"', value: "8_5x11", basePrice: 7.99 },
+            { label: '11" x 14"', value: "11x14", basePrice: 10.99 },
+            { label: '11" x 17"', value: "11x17", basePrice: 12.99 },
+            { label: '18" x 24"', value: "18x24", basePrice: 19.99 },
+            { label: '24" x 36"', value: "24x36", basePrice: 32.99 },
+            { label: '36" x 48"', value: "36x48", basePrice: 54.99 },
+            { label: "Custom Size", value: "custom", basePrice: 0 },
           ],
-          selects: [],
-          qtyDiscount: "Save on bulk presentation boards",
+          selects: [
+            {
+              label: "Board Thickness",
+              options: [
+                {
+                  label: '3/16" (5mm) Standard',
+                  value: "3_16",
+                  priceAdder: 0,
+                  description: "Best for most display applications.",
+                },
+                {
+                  label: '1/2" (12mm) Thick',
+                  value: "half",
+                  priceAdder: 4,
+                  description:
+                    "Extra rigid — stands up on its own with an easel.",
+                },
+                {
+                  label: '1" (25mm) Ultra-Thick',
+                  value: "1in",
+                  priceAdder: 9,
+                  description: "Museum-quality thickness for premium displays.",
+                },
+              ],
+            },
+            {
+              label: "Surface Finish",
+              options: [
+                {
+                  label: "Matte (Standard)",
+                  value: "matte",
+                  priceAdder: 0,
+                  description:
+                    "No glare — great for photography and presentations.",
+                },
+                {
+                  label: "Gloss",
+                  value: "gloss",
+                  priceAdder: 2.5,
+                  description: "Deep, vivid colors with a polished look.",
+                },
+                {
+                  label: "Satin",
+                  value: "satin",
+                  priceAdder: 2,
+                  description:
+                    "The best of both — minimal glare with rich color.",
+                },
+              ],
+            },
+          ],
+          toggleGroups: [
+            {
+              label: "Mounting Backing",
+              options: [
+                { id: "none", label: "No Backing", priceAdder: 0 },
+                {
+                  id: "self_stick",
+                  label: "Self-Adhesive Back",
+                  priceAdder: 2.5,
+                  description: "Peel & stick to any flat surface.",
+                },
+                {
+                  id: "easel",
+                  label: "Easel Back",
+                  priceAdder: 1.99,
+                  description: "Stands up on any flat surface.",
+                },
+              ],
+            },
+            {
+              label: "Border / Frame",
+              options: [
+                { id: "no_border", label: "No Border", priceAdder: 0 },
+                { id: "black_border", label: "Black Border", priceAdder: 0 },
+                { id: "white_border", label: "White Border", priceAdder: 0 },
+                {
+                  id: "custom_frame",
+                  label: "Custom Color Border",
+                  priceAdder: 1,
+                },
+              ],
+            },
+          ],
+          qtyDiscount: "Buy 5+ foam boards and save up to 10%",
           keyFeatures: [
-            "Lightweight foam core",
-            "Sharp full-color printing",
-            "Self-standing with easel back",
+            "Crisp, vivid full-color printing",
+            "Ultra-lightweight for easy transport",
+            "Smooth white surface for premium look",
+            "Multiple thickness options",
+            "Matte, Gloss or Satin finish",
+            "Self-adhesive or easel-back options",
           ],
           useCases: [
-            "Lobby Displays",
+            "Trade Show Displays",
+            "Lobbies",
             "Presentations",
-            "Trade Shows",
-            "Photo Boards",
+            "Real Estate Open Houses",
+            "Photo Backdrops",
+            "Wedding Signs",
+            "School Projects",
+            "Retail Displays",
           ],
           specs: [
-            { key: "Material", value: '3/16" Foam Core' },
-            { key: "Finish", value: "Matte or Gloss Laminate" },
+            { key: "Core Material", value: "Polystyrene foam with paper face" },
+            { key: "Standard Thickness", value: '3/16" (5mm)' },
+            { key: "Print Method", value: "Direct UV Digital Inkjet" },
+            { key: "Print Resolution", value: "1440 dpi" },
+            { key: "Color Profile", value: "CMYK" },
+            { key: "Bleed Required", value: '0.125" all sides' },
+            { key: "Turnaround", value: "Next Business Day" },
           ],
-          faqs: [],
-          reviews: [],
-          ctaHeading: "Professional Indoor Displays",
+          faqs: [
+            {
+              q: "Are foam board signs suitable for outdoor use?",
+              a: "Foam board is designed for indoor use. It can be used outdoors briefly, but prolonged sun and moisture exposure will damage the board. For outdoor use, consider our coroplast or aluminum signs.",
+            },
+            {
+              q: "Can foam board signs stand on their own?",
+              a: "Yes, with the easel-back option selected. The easel attaches to the back and allows the sign to stand freestanding on any flat surface.",
+            },
+            {
+              q: "How do I hang a foam board sign?",
+              a: "Use push pins, foam tape, or command strips. With the self-adhesive backing option, simply peel and stick directly to any wall or surface.",
+            },
+            {
+              q: 'Can I get large format foam boards over 36"?',
+              a: "Yes, contact us for larger custom sizes. We can print foam boards up to 4' x 8' with seams jointed for larger displays.",
+            },
+          ],
+          reviews: [
+            {
+              author: "Linda K.",
+              rating: 5,
+              text: "Perfect for our trade show booth. They were lightweight and the print quality was stunning!",
+            },
+            {
+              author: "Jason R.",
+              rating: 5,
+              text: "Used these for an open house. Very professional looking and easy to carry around the property.",
+            },
+            {
+              author: "Amanda T.",
+              rating: 4,
+              text: "Great for indoor use. Colors were accurate to my file. The easel back is a nice touch.",
+            },
+          ],
+          ctaHeading: "Make Your Presentation Pop",
           ctaBody:
-            "Foam board signs that make your message pop in any indoor space.",
+            "Vivid foam board signs that command attention at any indoor event.",
           ctaLabel: "Order Foam Board Signs",
         },
       },
@@ -5413,60 +5998,207 @@ Why Choose Our Professional Rollup Banners?
         config: {
           title: "Custom Acrylic Signs",
           subtitle:
-            "Crystal-clear or frosted acrylic signs for a premium, modern aesthetic.",
+            "Premium clear and colored acrylic signs for a sleek, modern, upscale look.",
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
-          promoText: "NEW - Premium Acrylic Signs Now Available",
+          promoText:
+            "💎 Premium Acrylic Signs — Crystal-Clear Quality, Ships Next Day!",
           image: "/images/products/main%20page/acrylic_sign.png",
           images: [
             "/images/products/main%20page/acrylic_sign.png",
             "/images/products/acryl_sign_hover.png",
           ],
           ratingScore: "4.9",
-          ratingCount: "540",
+          ratingCount: "980",
           sizes: [
-            { label: '8" x 10"', value: "8x10", basePrice: 24.99 },
-            { label: '12" x 18"', value: "12x18", basePrice: 44.99 },
+            { label: '5" x 7"', value: "5x7", basePrice: 24.99 },
+            { label: '8" x 10"', value: "8x10", basePrice: 34.99 },
+            { label: '12" x 12"', value: "12x12", basePrice: 49.99 },
+            { label: '12" x 18"', value: "12x18", basePrice: 59.99 },
+            { label: '18" x 24"', value: "18x24", basePrice: 89.99 },
+            { label: '24" x 36"', value: "24x36", basePrice: 139.99 },
+            { label: "Custom Size", value: "custom", basePrice: 0 },
           ],
-          selects: [],
-          qtyDiscount: "Office bulk rates apply",
+          selects: [
+            {
+              label: "Acrylic Type",
+              options: [
+                {
+                  label: "Clear Acrylic (Standard)",
+                  value: "clear",
+                  priceAdder: 0,
+                  description: "Crystal clear — print shows through beautifully.",
+                },
+                {
+                  label: "White Acrylic",
+                  value: "white",
+                  priceAdder: 5,
+                  description: "Bright white base for maximum color vibrancy.",
+                },
+                {
+                  label: "Frosted Acrylic",
+                  value: "frosted",
+                  priceAdder: 8,
+                  description:
+                    "Elegant translucent appearance, ideal for office reception.",
+                },
+                {
+                  label: "Black Acrylic",
+                  value: "black",
+                  priceAdder: 10,
+                  description:
+                    "Dramatic and modern — great for gold/silver text.",
+                },
+              ],
+            },
+            {
+              label: "Thickness",
+              options: [
+                { label: '1/8" (3mm) Standard', value: "3mm", priceAdder: 0 },
+                {
+                  label: '1/4" (6mm) Heavy',
+                  value: "6mm",
+                  priceAdder: 15,
+                  description: "Premium weight that commands respect.",
+                },
+                {
+                  label: '3/8" (9mm) Ultra-Thick',
+                  value: "9mm",
+                  priceAdder: 30,
+                  description: "The heaviest, most substantial option.",
+                },
+              ],
+            },
+            {
+              label: "Print Method",
+              options: [
+                {
+                  label: "UV Printed (Front)",
+                  value: "uv_front",
+                  priceAdder: 0,
+                  description: "Direct printed on the front surface.",
+                },
+                {
+                  label: "Second-Surface Print (Back)",
+                  value: "second_surface",
+                  priceAdder: 10,
+                  description:
+                    "Image printed on the back for a glass-effect look.",
+                },
+              ],
+            },
+          ],
+          toggleGroups: [
+            {
+              label: "Corners",
+              options: [
+                { id: "square", label: "Square Corners", priceAdder: 0 },
+                { id: "rounded", label: "Rounded Corners", priceAdder: 3 },
+                { id: "custom_shape", label: "Custom Shape", priceAdder: 15 },
+              ],
+            },
+            {
+              label: "Mounting Hardware",
+              options: [
+                { id: "none", label: "No Mounting", priceAdder: 0 },
+                {
+                  id: "standoffs",
+                  label: "Standoff Mounts (x4)",
+                  priceAdder: 12.99,
+                  description:
+                    "Polished metal standoffs for wall floating effect.",
+                },
+                { id: "adhesive", label: "3M Adhesive Tape", priceAdder: 2.99 },
+                { id: "holes", label: "Pre-Drilled Holes", priceAdder: 0 },
+              ],
+            },
+          ],
+          qtyDiscount: "Volume pricing — perfect for office signage packages",
           keyFeatures: [
-            "Crystal-clear acrylic",
-            "UV-printed graphics",
-            "Standoff mounting hardware included",
+            "Premium cast acrylic material",
+            "Laser-cut edges for a perfect finish",
+            "Multiple color and thickness options",
+            "Second-surface printing for glass effect",
+            "Standoff mounting hardware available",
+            "Custom shapes and sizes supported",
           ],
           useCases: [
-            "Office Signs",
-            "Reception Areas",
-            "Room Numbers",
-            "Wayfinding",
+            "Office Reception",
+            "Lobby Signage",
+            "Awards & Recognition",
+            "Retail Branding",
+            "Wayfinding Signs",
+            "Restaurant Menus",
+            "Hotel Signage",
           ],
           specs: [
-            { key: "Material", value: '1/4" Cast Acrylic' },
-            { key: "Print", value: "Direct UV Printing" },
+            { key: "Material", value: "Cast Acrylic (PMMA)" },
+            { key: "Standard Thickness", value: '1/8" (3mm)' },
+            { key: "Print Method", value: "UV Direct Print or Second-Surface" },
+            {
+              key: "Edge Finish",
+              value: "Laser-polished, flame-polished, or matte",
+            },
+            { key: "Color Profile", value: "CMYK + White Ink Base" },
+            { key: "Bleed Required", value: '0.125" all sides' },
+            { key: "Turnaround", value: "2-3 Business Days" },
           ],
-          faqs: [],
-          reviews: [],
-          ctaHeading: "Premium Office Signage",
-          ctaBody: "Acrylic signs that elevate any professional space.",
-          ctaLabel: "Order Acrylic Signs",
+          faqs: [
+            {
+              q: "What is second-surface printing?",
+              a: "The design is printed on the back of clear acrylic. You view it through the clear surface, creating a premium glass-like appearance that protects the ink from scratches.",
+            },
+            {
+              q: "What standoff mounts do you recommend?",
+              a: 'We offer 3/4" polished chrome standoffs for a sleek corporate look, or brushed nickel for a warmer finish. Both create a floating effect on the wall.',
+            },
+            {
+              q: "Can acrylic signs be used outdoors?",
+              a: "Cast acrylic is UV-stable and can be used outdoors. However, we recommend UV-printed finishes and avoiding direct harsh weather exposure for longest life.",
+            },
+            {
+              q: "How do I clean acrylic signs?",
+              a: "Use a soft cloth and mild soap or specialized acrylic cleaner. Never use ammonia-based cleaners (like Windex) as they may cloud the surface.",
+            },
+          ],
+          reviews: [
+            {
+              author: "Gabriel M.",
+              rating: 5,
+              text: "Ordered acrylic signs for our new office. They look stunning — clients always ask about them.",
+            },
+            {
+              author: "Sophia K.",
+              rating: 5,
+              text: "The second-surface printing is absolutely beautiful. Totally worth the extra cost.",
+            },
+            {
+              author: "David N.",
+              rating: 5,
+              text: "The standoff mounts are a great touch. The floating effect on the wall looks very high-end.",
+            },
+          ],
+          ctaHeading: "Upgrade to Premium Acrylic",
+          ctaBody:
+            "Crystal-clear signs that make your brand look like a million dollars.",
+          ctaLabel: "Design Your Acrylic Sign",
         },
       },
       {
         id: "coroplast-signs",
         name: "Coroplast Signs",
         description:
-          "Waterproof corrugated plastic signs — the most versatile outdoor sign.",
+          "Waterproof corrugated plastic signs — the most versatile, lightweight, and affordable outdoor advertising signs.",
         image: "/images/products/main%20page/coroplast_sign.png",
         price: "Starting at $4.99",
         badge: "Waterproof",
         config: {
           title: "Custom Coroplast Signs",
           subtitle:
-            "Versatile corrugated plastic signs for any indoor or outdoor application.",
+            "The most versatile waterproof outdoor sign — durable, colorful, and incredibly affordable.",
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
-          promoText: "BULK DISCOUNTS on Coroplast Signs",
+          promoText: "💧 Waterproof Coroplast Signs — Weatherproof & Budget-Friendly. Ships Tomorrow!",
           image: "/images/products/main%20page/coroplast_sign.png",
           images: [
             "/images/products/main%20page/coroplast_sign.png",
@@ -5474,133 +6206,603 @@ Why Choose Our Professional Rollup Banners?
             "/images/products/yard_sign_hover.png",
           ],
           ratingScore: "4.8",
-          ratingCount: "2,100",
+          ratingCount: "5,620",
           sizes: [
             { label: '12" x 18"', value: "12x18", basePrice: 4.99 },
-            { label: '18" x 24"', value: "18x24", basePrice: 8.99 },
+            {
+              label: '18" x 24" (Most Popular)',
+              value: "18x24",
+              basePrice: 7.99,
+            },
+            { label: '24" x 24"', value: "24x24", basePrice: 10.99 },
             { label: '24" x 36"', value: "24x36", basePrice: 14.99 },
+            { label: '24" x 48"', value: "24x48", basePrice: 19.99 },
+            { label: '48" x 96"', value: "48x96", basePrice: 64.99 },
+            { label: "Custom Size", value: "custom", basePrice: 0 },
           ],
-          selects: [],
-          qtyDiscount: "Pricing drops on bulk corrugated plastic",
+          selects: [
+            {
+              label: "Thickness",
+              options: [
+                {
+                  label: "4mm (Standard — Most Popular)",
+                  value: "4mm",
+                  priceAdder: 0,
+                  description:
+                    "Best for general outdoor signage up to 12 months.",
+                },
+                {
+                  label: "6mm Heavy Duty",
+                  value: "6mm",
+                  priceAdder: 1.75,
+                  description:
+                    "50% thicker — ideal for long-term and reusable signs.",
+                },
+                {
+                  label: "8mm Ultra Heavy Duty",
+                  value: "8mm",
+                  priceAdder: 4,
+                  description: "The thickest option for maximum rigidity.",
+                },
+              ],
+            },
+            {
+              label: "Printing",
+              options: [
+                { label: "Single Sided", value: "single", priceAdder: 0 },
+                {
+                  label: "Double Sided",
+                  value: "double",
+                  priceAdder: 2.5,
+                  description: "Both faces printed for maximum visibility.",
+                },
+              ],
+            },
+            {
+              label: "Color",
+              options: [
+                {
+                  label: "White Background (Standard)",
+                  value: "white",
+                  priceAdder: 0,
+                },
+                { label: "Yellow Background", value: "yellow", priceAdder: 0 },
+                { label: "Red Background", value: "red", priceAdder: 0 },
+                { label: "Blue Background", value: "blue", priceAdder: 0 },
+              ],
+            },
+          ],
+          toggleGroups: [
+            {
+              label: "Stakes",
+              options: [
+                { id: "none", label: "No Stakes", priceAdder: 0 },
+                { id: "9in", label: '9" Wire H-Stakes', priceAdder: 0.99 },
+                { id: "15in", label: '15" Wire H-Stakes', priceAdder: 1.49 },
+                {
+                  id: "step",
+                  label: "Step Stakes",
+                  priceAdder: 1.99,
+                  description: "Easy push-in with foot",
+                },
+              ],
+            },
+            {
+              label: "Grommets",
+              options: [
+                { id: "no_grommets", label: "No Grommets", priceAdder: 0 },
+                {
+                  id: "corner_grommets",
+                  label: "Corner Grommets",
+                  priceAdder: 0.5,
+                },
+                {
+                  id: "perimeter_grommets",
+                  label: 'Perimeter Grommets (every 24")',
+                  priceAdder: 1.5,
+                },
+              ],
+            },
+          ],
+          qtyDiscount: "Buy more, save more — up to 13% off on large orders",
           keyFeatures: [
-            "100% waterproof",
-            "Lightweight and durable",
-            "Full-color single or double-sided",
+            "100% waterproof corrugated plastic",
+            "UV-resistant full-color printing",
+            "Available in 4mm, 6mm, and 8mm",
+            "Lightweight and easy to transport",
+            "Double-sided printing available",
+            "Custom sizes available",
           ],
           useCases: [
+            "Yard Signs",
             "Construction Sites",
+            "Fence Signs",
+            "Event Signage",
+            "Political Signs",
+            "For Sale Signs",
+            "Business Promotions",
             "Directional Signs",
-            "Event Signs",
-            "Temporary Notices",
           ],
           specs: [
-            { key: "Material", value: "4mm Corrugated Plastic" },
-            { key: "Weight", value: "Ultra-lightweight" },
+            { key: "Material", value: "Corrugated Polypropylene (Coroplast)" },
+            { key: "Standard Thickness", value: "4mm" },
+            {
+              key: "Weatherproof Rating",
+              value: "Fully waterproof, UV-resistant inks",
+            },
+            { key: "Print Resolution", value: "720 x 1440 dpi" },
+            { key: "Color Profile", value: "CMYK" },
+            { key: "Bleed Required", value: '0.125" all sides' },
+            {
+              key: "Expected Lifespan",
+              value: "6–18 months outdoors (4mm); 2+ years (6mm+)",
+            },
+            { key: "Turnaround", value: "Next Business Day" },
           ],
-          faqs: [],
-          reviews: [],
-          ctaHeading: "Versatile Outdoor Signs",
-          ctaBody: "Waterproof coroplast signs at the best bulk prices.",
-          ctaLabel: "Order Coroplast Signs",
+          faqs: [
+            {
+              q: "What is the difference between coroplast and regular cardboard?",
+              a: "Coroplast is corrugated polypropylene plastic — it is 100% waterproof, flexible, and far more durable than cardboard. It won't absorb moisture or warp in the rain.",
+            },
+            {
+              q: "Can I use coroplast signs indoors?",
+              a: "Absolutely. Coroplast is a great indoor sign material too — it's lightweight, rigid, and easy to display with stakes, grommets, or adhesive.",
+            },
+            {
+              q: "How do I attach coroplast signs to a fence?",
+              a: "Use zip ties through grommets, or bungee cords. We can add pre-punched grommets to any side of the sign for easy attachment.",
+            },
+            {
+              q: "Are they recyclable?",
+              a: "Yes! Coroplast signs are made from polypropylene (PP #5) and are fully recyclable at facilities that accept rigid plastics.",
+            },
+          ],
+          reviews: [
+            {
+              author: "Derek F.",
+              rating: 5,
+              text: "We ordered 500 signs for our campaign and they were perfect. Fast delivery and great price per sign.",
+            },
+            {
+              author: "Tina R.",
+              rating: 5,
+              text: "The 6mm signs are incredibly sturdy. Held up through a whole hurricane season on our construction site.",
+            },
+            {
+              author: "Bobby M.",
+              rating: 5,
+              text: "Best price I found anywhere for coroplast signs. Will definitely order again.",
+            },
+          ],
+          ctaHeading: "Sign Big, Spend Small",
+          ctaBody: "Coroplast signs deliver maximum impact at the lowest possible price per sign.",
+          ctaLabel: "Order Coroplast Signs Now",
         },
       },
       {
         id: "window-signs",
         name: "Window Signs",
         description:
-          "Custom window clings, decals and perforated vinyl for storefronts.",
+          "Custom window graphics, clings, perforated vinyl, and decals for storefronts and offices.",
         image: "/images/products/main%20page/window_sign.png",
         price: "Starting at $9.99",
         badge: "Storefront",
         config: {
-          title: "Custom Window Signs",
+          title: "Window Signs & Clings",
           subtitle:
-            "Window graphics and perforated vinyl for storefront advertising.",
+            "Custom window graphics, clings, perforated vinyl, and decals for storefronts and offices.",
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
-          promoText: "20% OFF Window Signs",
+          promoText:
+            "🪟 Window Signs That Turn Passersby Into Customers — Ships Next Day!",
           image: "/images/products/main%20page/window_sign.png",
           images: [
             "/images/products/main%20page/window_sign.png",
             "/images/products/wind_sign_hover.png",
           ],
           ratingScore: "4.8",
-          ratingCount: "760",
+          ratingCount: "1,940",
           sizes: [
-            { label: '12" x 18"', value: "12x18", basePrice: 9.99 },
-            { label: '24" x 36"', value: "24x36", basePrice: 19.99 },
+            { label: '12" x 12"', value: "12x12", basePrice: 9.99 },
+            { label: '12" x 24"', value: "12x24", basePrice: 14.99 },
+            { label: '24" x 24"', value: "24x24", basePrice: 22.99 },
+            { label: '24" x 36"', value: "24x36", basePrice: 32.99 },
+            { label: '36" x 48"', value: "36x48", basePrice: 49.99 },
+            { label: '48" x 72"', value: "48x72", basePrice: 79.99 },
+            { label: "Custom Size", value: "custom", basePrice: 0 },
           ],
-          selects: [],
-          qtyDiscount: "Storefront branding discounts available",
+          selects: [
+            {
+              label: "Window Graphic Type",
+              options: [
+                {
+                  label: "Static Cling (Removable)",
+                  value: "static_cling",
+                  priceAdder: 0,
+                  description:
+                    "No adhesive — clings electrostatically. Fully removable & reusable.",
+                },
+                {
+                  label: "Clear Vinyl Decal",
+                  value: "clear_vinyl",
+                  priceAdder: 2,
+                  description:
+                    "Permanent adhesive on clear film. Very professional look.",
+                },
+                {
+                  label: "White Vinyl Decal",
+                  value: "white_vinyl",
+                  priceAdder: 2,
+                  description: "Opaque white background — bold, vivid colors.",
+                },
+                {
+                  label: "Perforated Vinyl (One-Way Vision)",
+                  value: "perforated",
+                  priceAdder: 6,
+                  description:
+                    "See-through from inside, solid image from outside. 60/40 blockout.",
+                },
+                {
+                  label: "Frosted Vinyl",
+                  value: "frosted",
+                  priceAdder: 5,
+                  description:
+                    "Privacy glass effect. Great for offices & conference rooms.",
+                },
+              ],
+            },
+            {
+              label: "Adhesive",
+              options: [
+                {
+                  label: "Removable (Standard)",
+                  value: "removable",
+                  priceAdder: 0,
+                  description: "Peels off cleanly without residue.",
+                },
+                {
+                  label: "Permanent",
+                  value: "permanent",
+                  priceAdder: 0,
+                  description: "Long-term adhesion for extended display.",
+                },
+              ],
+            },
+          ],
+          toggleGroups: [
+            {
+              label: "Application Surface",
+              options: [
+                {
+                  id: "inside",
+                  label: "Apply Inside (Facing Out)",
+                  priceAdder: 0,
+                  description: "Protected from weather — most durable.",
+                },
+                {
+                  id: "outside",
+                  label: "Apply Outside (Facing Out)",
+                  priceAdder: 0,
+                  description: "Maximum visibility from street.",
+                },
+                {
+                  id: "second_surface",
+                  label: "Second-Surface Reverse Print",
+                  priceAdder: 2,
+                  description:
+                    "Image reversed so it reads correctly applied inside.",
+                },
+              ],
+            },
+            {
+              label: "Lamination",
+              options: [
+                { id: "no_lam", label: "No Lamination", priceAdder: 0 },
+                {
+                  id: "matte_lam",
+                  label: "Matte Laminate",
+                  priceAdder: 2,
+                  description: "UV protection, scratch-resistant.",
+                },
+                {
+                  id: "gloss_lam",
+                  label: "Gloss Laminate",
+                  priceAdder: 2,
+                  description: "Vibrant colors, scratch-resistant.",
+                },
+              ],
+            },
+          ],
+          qtyDiscount: "Buy 3+ and save up to 10%",
           keyFeatures: [
-            "See-through perforated vinyl option",
-            "Easy peel-and-stick application",
-            "Removable without residue",
+            "Multiple window graphic types available",
+            "One-way vision perforated vinyl available",
+            "Removable or permanent adhesive options",
+            "Inside or outside application",
+            "UV-resistant inks",
+            "Easy DIY installation",
           ],
           useCases: [
-            "Storefront Windows",
-            "Restaurant Specials",
-            "Sale Announcements",
-            "Privacy Glass",
+            "Retail Storefronts",
+            "Restaurant Windows",
+            "Office Branding",
+            "Sales & Promotions",
+            "Privacy Screens",
+            "Vehicle Windows",
+            "Real Estate Listings",
+            "Event Promotion",
           ],
           specs: [
-            { key: "Material", value: "Perforated Vinyl or Static Cling" },
-            { key: "Application", value: "Interior or Exterior Mount" },
+            { key: "Cling Material", value: "Electrostatic PVC (no adhesive)" },
+            {
+              key: "Vinyl Material",
+              value: "Calendered PVC with acrylic adhesive",
+            },
+            {
+              key: "Perforated Vinyl",
+              value: "60% ink coverage / 40% hole (one-way vision)",
+            },
+            { key: "Print Resolution", value: "1440 dpi" },
+            { key: "Color Profile", value: "CMYK" },
+            { key: "Bleed Required", value: '0.25" all sides' },
+            {
+              key: "Max Width",
+              value: '54" (custom widths for larger installs)',
+            },
+            { key: "Turnaround", value: "Next Business Day" },
           ],
-          faqs: [],
-          reviews: [],
-          ctaHeading: "Storefront Advertising",
-          ctaBody: "Turn your windows into eye-catching advertising space.",
-          ctaLabel: "Order Window Signs",
+          faqs: [
+            {
+              q: "What is the difference between a window cling and a decal?",
+              a: "A static cling uses no adhesive — it clings to glass via static electricity and can be removed and reused. A decal uses adhesive to create a more permanent bond.",
+            },
+            {
+              q: "Can I see through perforated vinyl?",
+              a: "Yes! Perforated vinyl (one-way vision) blocks 60% of light from outside, forming your printed image. From the inside, you can see through the small holes clearly.",
+            },
+            {
+              q: "How do I apply a window decal without bubbles?",
+              a: "Clean the glass thoroughly, wet the surface with soapy water, apply with a squeegee, and work from center to edges. We include installation instructions with every order.",
+            },
+            {
+              q: "Will window graphics damage my glass?",
+              a: "Removable adhesive window graphics peel off cleanly without damage or residue when removed within the recommended display period (typically 2 years).",
+            },
+          ],
+          reviews: [
+            {
+              author: "Naomi S.",
+              rating: 5,
+              text: "The perforated vinyl looks incredible on our storefront. We get compliments on it every day.",
+            },
+            {
+              author: "Kyle R.",
+              rating: 5,
+              text: "Ordered frosted vinyl for our conference room for privacy. Looks extremely professional and high-end.",
+            },
+            {
+              author: "Isabella T.",
+              rating: 4,
+              text: "Great quality static clings for a seasonal sale promotion. Easy to put up and remove — will reorder.",
+            },
+          ],
+          ctaHeading: "Your Window Is Your Best Billboard",
+          ctaBody:
+            "Window signs turn every passerby into a potential customer. Start designing yours.",
+          ctaLabel: "Design Your Window Sign",
         },
       },
       {
         id: "parking-signs",
         name: "Parking Signs",
         description:
-          "Regulatory and custom parking signs — aluminum or coroplast.",
+          "Regulatory, reserved, and custom parking signs — aluminum or coroplast, ships next day.",
         image: "/images/products/main%20page/Parking_sign.jpeg",
         price: "Starting at $6.99",
         badge: "Ready to Ship",
         config: {
           title: "Custom Parking Signs",
           subtitle:
-            "Regulatory and custom parking lot signs on durable aluminum.",
+            "Regulatory, reserved, and custom parking signs — aluminum or coroplast, ships next day.",
           breadcrumb: "Signs",
           breadcrumbHref: "/custom-signs",
-          promoText: "FREE SHIPPING on Parking Signs",
+          promoText:
+            "🅿️ Custom Parking Signs — MUTCD-Compliant Reflective Available. Ships Tomorrow!",
           image: "/images/products/main%20page/Parking_sign.jpeg",
           images: [
             "/images/products/main%20page/Parking_sign.jpeg",
             "/images/products/park_sign_hover.png",
           ],
-          ratingScore: "4.7",
-          ratingCount: "430",
+          ratingScore: "4.9",
+          ratingCount: "2,310",
           sizes: [
-            { label: '12" x 18" (Standard)', value: "12x18", basePrice: 6.99 },
-            { label: '18" x 24"', value: "18x24", basePrice: 12.99 },
+            { label: '6" x 12" (Small)', value: "6x12", basePrice: 6.99 },
+            { label: '9" x 12"', value: "9x12", basePrice: 8.99 },
+            { label: '12" x 18" (Standard)', value: "12x18", basePrice: 11.99 },
+            { label: '18" x 24" (Large)', value: "18x24", basePrice: 17.99 },
+            { label: '24" x 24"', value: "24x24", basePrice: 24.99 },
+            { label: "Custom Size", value: "custom", basePrice: 0 },
           ],
-          selects: [],
-          qtyDiscount: "Bulk rates on parking signs",
+          selects: [
+            {
+              label: "Material",
+              options: [
+                {
+                  label: ".040 Aluminum (Most Popular)",
+                  value: "040_alum",
+                  priceAdder: 0,
+                  description:
+                    "Industry standard for parking signs. Rigid and durable.",
+                },
+                {
+                  label: ".080 Aluminum Heavy Duty",
+                  value: "080_alum",
+                  priceAdder: 5,
+                  description: "Double thickness — ideal for high-traffic lots.",
+                },
+                {
+                  label: "4mm Coroplast (Budget)",
+                  value: "coro",
+                  priceAdder: -3,
+                  description:
+                    "Lightweight and waterproof — best for temporary use.",
+                },
+              ],
+            },
+            {
+              label: "Finish",
+              options: [
+                { label: "Matte (Standard)", value: "matte", priceAdder: 0 },
+                { label: "High Gloss", value: "gloss", priceAdder: 1.5 },
+                {
+                  label: "Engineer-Grade Reflective",
+                  value: "reflective_eng",
+                  priceAdder: 7,
+                  description:
+                    "ASTM D4956 Type I — visible at night with headlights.",
+                },
+                {
+                  label: "High-Intensity Reflective",
+                  value: "reflective_hi",
+                  priceAdder: 14,
+                  description: "ASTM D4956 Type III — maximum night visibility.",
+                },
+              ],
+            },
+            {
+              label: "Sign Template",
+              options: [
+                {
+                  label: "Custom Design (Upload Artwork)",
+                  value: "custom",
+                  priceAdder: 0,
+                },
+                {
+                  label: "No Parking (Standard Red/White)",
+                  value: "no_parking",
+                  priceAdder: 0,
+                },
+                { label: "Reserved Parking", value: "reserved", priceAdder: 0 },
+                {
+                  label: "Handicap Accessible",
+                  value: "handicap",
+                  priceAdder: 0,
+                },
+                { label: "Tow Away Zone", value: "tow_away", priceAdder: 0 },
+                {
+                  label: "Customer Parking Only",
+                  value: "customer_only",
+                  priceAdder: 0,
+                },
+              ],
+            },
+          ],
+          toggleGroups: [
+            {
+              label: "Mounting Holes",
+              options: [
+                { id: "no_holes", label: "No Holes", priceAdder: 0 },
+                { id: "two_top", label: "2 Holes at Top", priceAdder: 0 },
+                { id: "four_corner", label: "4 Corner Holes", priceAdder: 0 },
+                {
+                  id: "center_holes",
+                  label: "2 Center-Side Holes",
+                  priceAdder: 0,
+                },
+              ],
+            },
+            {
+              label: "Post / Mounting Bracket",
+              options: [
+                { id: "sign_only", label: "Sign Only", priceAdder: 0 },
+                {
+                  id: "u_channel",
+                  label: "U-Channel Post (included)",
+                  priceAdder: 18.99,
+                  description: "Standard street-sign post",
+                },
+                {
+                  id: "square_post",
+                  label: "Square Tubing Post",
+                  priceAdder: 22.99,
+                  description: "Heavy-duty square post for permanent installs",
+                },
+              ],
+            },
+          ],
+          qtyDiscount: "Bulk parking sign orders — save up to 13%",
           keyFeatures: [
-            "Regulatory-compliant designs",
-            "Reflective option available",
-            "Pre-drilled mounting holes",
+            "Industry-standard .040 aluminum",
+            "Reflective finish available (ASTM D4956 Type I & III)",
+            "Standard templates or fully custom designs",
+            "Pre-drilled mounting holes included free",
+            "MUTCD-compliant options available",
+            "U-channel and square post add-ons",
           ],
           useCases: [
-            "Reserved Parking",
-            "No Parking",
-            "Handicap Parking",
-            "Visitor Parking",
+            "Private Parking Lots",
+            "Business Parking",
+            "HOA Communities",
+            "Hotels & Motels",
+            "Hospitals & Clinics",
+            "Churches",
+            "Schools",
+            "Apartment Complexes",
           ],
           specs: [
-            { key: "Material", value: '.040" Aluminum' },
-            { key: "Reflectivity", value: "Engineer Grade (optional)" },
+            { key: "Standard Material", value: '.040" Aluminum' },
+            { key: "Heavy Duty", value: '.080" Aluminum' },
+            {
+              key: "Reflective Standard",
+              value: "ASTM D4956 Type I (Engineer Grade)",
+            },
+            {
+              key: "Reflective Premium",
+              value: "ASTM D4956 Type III (High Intensity)",
+            },
+            { key: "Hole Diameter", value: '5/16" standard' },
+            { key: "Print Resolution", value: "1440 dpi" },
+            { key: "Color Profile", value: "CMYK + Spot colors available" },
+            { key: "Turnaround", value: "Next Business Day" },
           ],
-          faqs: [],
-          reviews: [],
-          ctaHeading: "Parking Lot Management",
-          ctaBody: "Professional parking signs that meet regulatory standards.",
+          faqs: [
+            {
+              q: "Are your parking signs MUTCD compliant?",
+              a: "Yes! Our reflective aluminum signs can be produced to MUTCD (Manual on Uniform Traffic Control Devices) specifications. Select the Engineer-Grade or High-Intensity Reflective finish.",
+            },
+            {
+              q: "Do you have standard parking sign templates?",
+              a: "Yes — we offer standard pre-designed templates (No Parking, Reserved, Handicap, Tow Away Zone, etc.) that follow regulatory color standards. You can also fully customize any sign.",
+            },
+            {
+              q: "How do I mount a parking sign to a post?",
+              a: 'We offer U-Channel and square tubing post add-ons. Alternatively, pre-drilled holes allow you to mount to any standard 2" U-channel post with sign-mounting hardware.',
+            },
+            {
+              q: "Can I include time restrictions on my parking sign?",
+              a: "Absolutely. Our custom design upload lets you include any specific text, time ranges, or language. We also have templates with 'Hours of Enforcement' sections.",
+            },
+          ],
+          reviews: [
+            {
+              author: "Steve P.",
+              rating: 5,
+              text: "Ordered 30 parking signs for our apartment complex. All look great and the reflective finish is very visible at night.",
+            },
+            {
+              author: "Rebecca O.",
+              rating: 5,
+              text: "Fast, high quality, and exactly the right regulatory look. Our HOA board approved them immediately.",
+            },
+            {
+              author: "Marcus J.",
+              rating: 5,
+              text: "The U-channel posts were a perfect add-on. Everything arrived together and install was straightforward.",
+            },
+          ],
+          ctaHeading: "Control Your Parking. Protect Your Space.",
+          ctaBody:
+            "Professional-grade parking signs that are clear, visible, and regulation-ready.",
           ctaLabel: "Order Parking Signs Now",
         },
       },
