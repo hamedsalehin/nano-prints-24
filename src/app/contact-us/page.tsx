@@ -26,16 +26,36 @@ export default function ContactUsPage() {
   });
   const [submitting, setSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
-    // Simulate API request
-    setTimeout(() => {
-      setSubmitting(false);
+    setSubmitError(null);
+    setSubmitSuccess(false);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to send message.");
+      }
+
       setSubmitSuccess(true);
       setFormData({ name: "", email: "", subject: "", message: "" });
-    }, 1200);
+    } catch (err: any) {
+      console.error("Failed to send contact message:", err);
+      setSubmitError(err.message || "Failed to submit. Please try again later.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -149,6 +169,12 @@ export default function ContactUsPage() {
             <p className="text-sm text-slate-500 mb-6 font-medium">
               Fill out this form and our support agents will email you back within 12 hours.
             </p>
+
+            {submitError && (
+              <div className="bg-red-50 border border-red-200 text-red-700 text-xs rounded-xl p-4 mb-4 font-semibold font-poppins">
+                ⚠️ {submitError}
+              </div>
+            )}
 
             {submitSuccess ? (
               <div className="bg-emerald-50 border border-emerald-200 text-emerald-900 rounded-2xl p-6 flex flex-col items-center text-center animate-in zoom-in-95 duration-200">
