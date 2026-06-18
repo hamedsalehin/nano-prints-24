@@ -10,6 +10,8 @@
     "format": "bunx biome format --write"
   },
   "dependencies": {
+    "@stripe/react-stripe-js": "^6.6.0",
+    "@stripe/stripe-js": "^9.8.0",
     "@supabase/supabase-js": "^2.108.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -22,6 +24,7 @@
     "react-grab": "latest",
     "resend": "^6.12.4",
     "same-runtime": "^0.0.1",
+    "stripe": "^22.2.1",
     "tailwind-merge": "^3.3.0",
     "tailwindcss-animate": "^1.0.7"
   },

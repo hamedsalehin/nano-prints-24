@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import {
   Type,
   Square,
@@ -1570,6 +1570,7 @@ const GRADIENTS = [
 
 function DesignPageContent() {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const productId = searchParams.get("productId") || "51060";
   const urlWidth = searchParams.get("width");
   const urlHeight = searchParams.get("height");
@@ -2144,72 +2145,92 @@ function DesignPageContent() {
     }
   };
 
-  const handlePlaceOrder = async () => {
+  const handleAddDesignToCartAndCheckout = async () => {
     if (!user) {
-      setSubmitError("You must be signed in to place an order.");
+      setShowAuthModal(true);
       return;
     }
     setIsSubmitting(true);
     setSubmitError(null);
 
     try {
-      const formData = new FormData();
-      formData.append("user_id", user.id);
-      formData.append("user_email", user.email ?? "");
-      formData.append("product_title", registryProduct ? registryProduct.name : material.label);
-      formData.append("product_size", canvasSize.label);
-      formData.append("quantity", String(quantity));
-      formData.append("unit_price", calculatedPrice.unitPrice);
-      formData.append("total_price", calculatedPrice.total);
-      formData.append(
-        "custom_options",
-        JSON.stringify({
+      let designUrl = "";
+      let designFilename = "";
+
+      if (finishedDesignFile) {
+        // 1. Upload pre-existing custom artwork file
+        const fileBuffer = await finishedDesignFile.arrayBuffer();
+        const fileBytes = new Uint8Array(fileBuffer);
+        const safeFileName = `${user.id}/${Date.now()}-${finishedDesignFile.name.replace(/[^a-zA-Z0-9._-]/g, "_")}`;
+
+        const { data: uploadData, error: uploadError } = await supabase.storage
+          .from("designs")
+          .upload(safeFileName, fileBytes, {
+            contentType: finishedDesignFile.type || "application/pdf",
+            upsert: false,
+          });
+
+        if (uploadError) {
+          throw new Error("Failed to upload custom artwork file: " + uploadError.message);
+        }
+
+        const { data: publicUrlData } = supabase.storage
+          .from("designs")
+          .getPublicUrl(uploadData.path);
+        designUrl = publicUrlData.publicUrl;
+        designFilename = finishedDesignFile.name;
+      } else {
+        // 2. Export canvas layout as PDF and upload to Supabase storage
+        try {
+          const doc = await exportDesignToPdf();
+          const pdfBlob = doc.output("blob");
+          const safeFileName = `${user.id}/${Date.now()}-canvas_design.pdf`;
+
+          const { data: uploadData, error: uploadError } = await supabase.storage
+            .from("designs")
+            .upload(safeFileName, pdfBlob, {
+              contentType: "application/pdf",
+              upsert: false,
+            });
+
+          if (uploadError) {
+            throw new Error("Failed to upload canvas design PDF: " + uploadError.message);
+          }
+
+          const { data: publicUrlData } = supabase.storage
+            .from("designs")
+            .getPublicUrl(uploadData.path);
+          designUrl = publicUrlData.publicUrl;
+          designFilename = "canvas_design.pdf";
+        } catch (pdfErr: any) {
+          throw new Error("Failed to compile and upload design PDF. " + (pdfErr.message || ""));
+        }
+      }
+
+      // Add custom design item to cart
+      addItem({
+        productTitle: registryProduct ? registryProduct.name : material.label,
+        size: canvasSize.label,
+        quantity,
+        unitPrice: Number(calculatedPrice.unitPrice),
+        totalPrice: Number(calculatedPrice.total),
+        designUrl,
+        designFilename,
+        customOptions: {
           Material: material.label,
           Size: canvasSize.label,
           Sides: doubleSided ? "Double-sided" : "Single-sided",
           Quantity: String(quantity),
-        }),
-      );
-      formData.append("shipping_name", shippingName);
-      formData.append("shipping_address", shippingAddress);
-      formData.append("shipping_city", shippingCity);
-      formData.append("shipping_postal", shippingPostal);
-
-      if (finishedDesignFile) {
-        formData.append("design_file", finishedDesignFile);
-      } else {
-        try {
-          const doc = await exportDesignToPdf();
-          const pdfBlob = doc.output("blob");
-          formData.append("design_file", pdfBlob, "online_design.pdf");
-        } catch (pdfErr) {
-          console.error("Error generating design PDF:", pdfErr);
-        }
-      }
-
-      const res = await fetch("/api/submit-order", {
-        method: "POST",
-        body: formData,
+          ...Object.entries(selectValues).reduce((acc, [k, v]) => ({ ...acc, [k]: String(v) }), {}),
+        },
       });
 
-      const json = await res.json();
-
-      if (!res.ok || json.error) {
-        throw new Error(json.error || "Order submission failed.");
-      }
-
-      setConfirmedOrderId(json.orderId);
-      setConfirmedShortId(json.shortId);
-      setEmailsInitialized(json.emailsInitialized !== false);
-      setEmailErrors({
-        admin: json.adminEmailError || null,
-        customer: json.customerEmailError || null,
-      });
-      setCheckoutStep("success");
-    } catch (err) {
-      setSubmitError(
-        err instanceof Error ? err.message : "An unexpected error occurred.",
-      );
+      // Close modal and redirect to Checkout page
+      setIsCheckoutOpen(false);
+      router.push("/checkout");
+    } catch (err: any) {
+      console.error("Failed to add custom design to cart:", err);
+      setSubmitError(err.message || "Failed to process design order.");
     } finally {
       setIsSubmitting(false);
     }
@@ -3977,271 +3998,38 @@ function DesignPageContent() {
                         ${calculatedPrice.total}
                       </span>
                     </div>
-                    <button
-                      onClick={() => setCheckoutStep("shipping")}
-                      className="w-full bg-[#ff2d78] hover:opacity-90 text-slate-950 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wide transition-all shadow-md"
-                    >
-                      Submit To Printing
-                    </button>
-                  </div>
-                </div>
-              )}
-
-              {checkoutStep === "shipping" && (
-                <div className="space-y-4">
-                  <h2 className="text-lg font-bold text-slate-100 font-poppins">
-                    Shipping & Design
-                  </h2>
-
-                  {/* Finished design upload (optional) */}
-                  <div>
-                    <label className="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">
-                      Finished Design File (Optional)
-                    </label>
-                    <div
-                      onClick={() => finishedDesignRef.current?.click()}
-                      className="border border-dashed border-slate-700 hover:border-[#ff2d78] rounded-lg p-3 text-center cursor-pointer transition-colors group"
-                    >
-                      <input
-                        ref={finishedDesignRef}
-                        type="file"
-                        accept=".pdf,.ai,.eps,.png,.jpg,.svg"
-                        className="hidden"
-                        onChange={(e) =>
-                          setFinishedDesignFile(e.target.files?.[0] ?? null)
-                        }
-                      />
-                      {finishedDesignFile ? (
-                        <div className="flex items-center gap-2 text-green-400 text-xs font-bold">
-                          <Check className="w-4 h-4 shrink-0" />
-                          <span className="truncate">
-                            {finishedDesignFile.name}
-                          </span>
-                        </div>
-                      ) : (
-                        <div className="flex flex-col items-center gap-1">
-                          <Upload className="w-5 h-5 text-slate-500 group-hover:text-[#ff2d78] transition-colors" />
-                          <span className="text-[10px] text-slate-500 group-hover:text-slate-300">
-                            Upload PDF / AI / EPS / PNG
-                          </span>
-                        </div>
-                      )}
-                    </div>
-                    <p className="text-[10px] text-slate-500 mt-1">
-                      Leave blank if you used the canvas editor above.
-                    </p>
-                  </div>
-
-                  <div className="space-y-2.5 text-xs">
-                    <div>
-                      <label className="block text-slate-400 mb-1">
-                        Full Name *
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="John Doe"
-                        value={shippingName}
-                        onChange={(e) => setShippingName(e.target.value)}
-                        className="w-full bg-slate-800 border border-slate-700 rounded-lg p-2 text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#ff2d78]"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-slate-400 mb-1">
-                        Shipping Address *
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="123 Main Street"
-                        value={shippingAddress}
-                        onChange={(e) => setShippingAddress(e.target.value)}
-                        className="w-full bg-slate-800 border border-slate-700 rounded-lg p-2 text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#ff2d78]"
-                      />
-                    </div>
-                    <div className="grid grid-cols-2 gap-2">
-                      <div>
-                        <label className="block text-slate-400 mb-1">
-                          City
-                        </label>
-                        <input
-                          type="text"
-                          placeholder="Austin"
-                          value={shippingCity}
-                          onChange={(e) => setShippingCity(e.target.value)}
-                          className="w-full bg-slate-800 border border-slate-700 rounded-lg p-2 text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#ff2d78]"
-                        />
+                    {!user && (
+                      <div className="bg-amber-950/40 border border-amber-800 rounded-lg p-3 text-xs text-amber-300 flex items-start gap-2 mb-3">
+                        <AlertTriangle className="w-4.5 h-4.5 shrink-0 mt-0.5" />
+                        <span>
+                          You must be <strong>signed in</strong> to place an order. Please log in first.
+                        </span>
                       </div>
-                      <div>
-                        <label className="block text-slate-400 mb-1">
-                          Postal Code
-                        </label>
-                        <input
-                          type="text"
-                          placeholder="78701"
-                          value={shippingPostal}
-                          onChange={(e) => setShippingPostal(e.target.value)}
-                          className="w-full bg-slate-800 border border-slate-700 rounded-lg p-2 text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#ff2d78]"
-                        />
+                    )}
+
+                    {submitError && (
+                      <div className="bg-red-950/50 border border-red-800 rounded-lg p-3 text-xs text-red-300 flex items-start gap-2 mb-3">
+                        <AlertTriangle className="w-4.5 h-4.5 shrink-0 mt-0.5 text-red-400" />
+                        <span>{submitError}</span>
                       </div>
-                    </div>
-                  </div>
+                    )}
 
-                  {submitError && (
-                    <div className="bg-red-950/50 border border-red-800 rounded-lg p-3 text-xs text-red-300 flex items-start gap-2">
-                      <AlertTriangle className="w-4 h-4 shrink-0 mt-0.5 text-red-400" />
-                      <span>{submitError}</span>
-                    </div>
-                  )}
-
-                  {!user && (
-                    <div className="bg-amber-950/40 border border-amber-800 rounded-lg p-3 text-xs text-amber-300 flex items-start gap-2">
-                      <AlertTriangle className="w-4 h-4 shrink-0 mt-0.5" />
-                      <span>
-                        You must be <strong>signed in</strong> to place an
-                        order. Please log in first.
-                      </span>
-                    </div>
-                  )}
-
-                  <div className="pt-4 border-t border-slate-800">
                     <button
-                      onClick={handlePlaceOrder}
-                      disabled={
-                        isSubmitting ||
-                        !user ||
-                        !shippingName ||
-                        !shippingAddress
-                      }
-                      className="w-full bg-[#ff2d78] hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed text-slate-950 font-bold py-3 rounded-xl text-xs uppercase tracking-wide transition-all shadow-md flex items-center justify-center gap-2"
+                      onClick={handleAddDesignToCartAndCheckout}
+                      disabled={isSubmitting || !user}
+                      className="w-full bg-[#ff2d78] hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed text-slate-950 font-bold py-3.5 rounded-xl text-xs uppercase tracking-wide transition-all shadow-md flex items-center justify-center gap-2"
                     >
                       {isSubmitting ? (
                         <>
-                          <Loader2 className="w-4 h-4 animate-spin" /> Placing
-                          Order...
+                          <Loader2 className="w-4.5 h-4.5 animate-spin" /> Preparing Checkout...
                         </>
                       ) : (
                         <>
-                          <Mail className="w-4 h-4" /> Place Order & Send
-                          Confirmation
+                          <ShoppingCart className="w-4.5 h-4.5" /> Add to Cart &amp; Checkout
                         </>
                       )}
                     </button>
-                    <button
-                      onClick={() => {
-                        setCheckoutStep("review");
-                        setSubmitError(null);
-                      }}
-                      disabled={isSubmitting}
-                      className="w-full text-slate-400 hover:text-white text-xs font-semibold py-2 mt-1 transition-colors disabled:opacity-50"
-                    >
-                      ← Back to Review
-                    </button>
-                  </div>
-                </div>
-              )}
-
-              {checkoutStep === "success" && (
-                <div className="space-y-5 text-center py-4">
-                  <div className="w-14 h-14 bg-green-950 border-2 border-green-500 text-green-400 rounded-full flex items-center justify-center mx-auto shadow-lg shadow-green-500/10">
-                    <Check className="w-7 h-7" />
-                  </div>
-                  <div>
-                    <h2 className="text-base font-bold text-slate-100 font-poppins">
-                      Order Confirmed! 🎉
-                    </h2>
-                    <p className="text-xs text-slate-400 mt-1.5 leading-relaxed">
-                      Thank you for choosing Nano Signs! A confirmation email
-                      is configured to be sent to{" "}
-                      <strong className="text-slate-200">{user?.email}</strong>.
-                      Our artwork review team is auditing your design now.
-                    </p>
-                    {!emailsInitialized && (
-                      <div className="mt-3 p-3 bg-amber-500/15 border border-amber-500/30 rounded-xl text-[11px] text-amber-400 text-left leading-normal font-sans">
-                        <div className="flex gap-1.5 items-start">
-                          <AlertTriangle className="w-4 h-4 shrink-0 text-amber-400 mt-0.5" />
-                          <div>
-                            <span className="font-bold">⚠️ Server Configuration Missing:</span> Email dispatch was skipped because the hosting provider does not have the <code>RESEND_API_KEY</code> environment variable configured in Netlify.
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                    {emailsInitialized && (emailErrors?.admin || emailErrors?.customer) && (
-                      <div className="mt-3 p-3 bg-red-500/15 border border-red-500/30 rounded-xl text-[11px] text-red-400 text-left leading-normal font-sans">
-                        <div className="flex gap-1.5 items-start">
-                          <AlertTriangle className="w-4 h-4 shrink-0 text-red-400 mt-0.5" />
-                          <div>
-                            <span className="font-bold">❌ Email Dispatch Failed:</span>
-                            <ul className="list-disc list-inside mt-1 space-y-1">
-                              {emailErrors.admin && <li>Admin Notify: {emailErrors.admin.message || JSON.stringify(emailErrors.admin)}</li>}
-                              {emailErrors.customer && <li>Customer Confirm: {emailErrors.customer.message || JSON.stringify(emailErrors.customer)}</li>}
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="bg-slate-950/60 p-4 rounded-xl border border-slate-800 text-left text-xs space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-slate-400">Order ID:</span>
-                      <span className="font-mono text-green-400 font-bold">
-                        #{confirmedShortId}
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-400">Full ID:</span>
-                      <span className="font-mono text-slate-500 text-[10px] truncate max-w-[130px]">
-                        {confirmedOrderId}
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-400">Expected Delivery:</span>
-                      <span className="font-semibold text-[#ff2d78]">
-                        Next Business Day
-                      </span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-400">Email Status:</span>
-                      {!emailsInitialized ? (
-                        <span className="text-amber-500 font-semibold flex items-center gap-1">
-                          <AlertTriangle className="w-3 h-3" /> Config Missing
-                        </span>
-                      ) : (emailErrors?.admin || emailErrors?.customer) ? (
-                        <span className="text-red-400 font-semibold flex items-center gap-1">
-                          <AlertTriangle className="w-3 h-3" /> Sending Failed
-                        </span>
-                      ) : (
-                        <span className="text-green-400 font-semibold flex items-center gap-1">
-                          <Mail className="w-3 h-3" /> Admin + Customer
-                        </span>
-                      )}
-                    </div>
-                  </div>
-
-                  <div className="flex gap-2 flex-col">
-                    <Link
-                      href="/account/orders"
-                      className="w-full bg-[#ff2d78] hover:opacity-90 text-slate-950 font-bold py-2.5 rounded-xl text-xs uppercase tracking-wide transition-all flex items-center justify-center gap-2"
-                    >
-                      View My Orders
-                    </Link>
-                    <button
-                      onClick={() => {
-                        setIsCheckoutOpen(false);
-                        setElements([]);
-                        historyPush([]);
-                        setShippingName("");
-                        setShippingAddress("");
-                        setShippingCity("");
-                        setShippingPostal("");
-                        setFinishedDesignFile(null);
-                        setConfirmedOrderId(null);
-                        setConfirmedShortId(null);
-                        setCheckoutStep("review");
-                      }}
-                      className="w-full bg-slate-800 hover:bg-slate-750 text-white font-bold py-2.5 rounded-xl text-xs uppercase transition-all"
-                    >
-                      Start New Design
-                    </button>
+                    {/* Other steps are now handled on the unified /checkout page */}
                   </div>
                 </div>
               )}

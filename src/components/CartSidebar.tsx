@@ -14,8 +14,10 @@ import {
 import { useCart } from "./CartContext";
 import { useAuth } from "./AuthContext";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export function CartSidebar() {
+  const router = useRouter();
   const { items, removeItem, cartOpen, setCartOpen, checkout, discountApplied } = useCart();
   const { user } = useAuth();
   const [loading, setLoading] = useState(false);
@@ -24,17 +26,9 @@ export function CartSidebar() {
 
   if (!cartOpen) return null;
 
-  const handleCheckout = async () => {
-    setError(null);
-    setLoading(true);
-    const res = await checkout();
-    setLoading(false);
-
-    if (res.success) {
-      setSuccessOrderIds(res.orderIds || []);
-    } else {
-      setError(res.error || "An error occurred during checkout.");
-    }
+  const handleCheckout = () => {
+    setCartOpen(false);
+    router.push("/checkout");
   };
 
   const closeSidebar = () => {
@@ -237,25 +231,15 @@ export function CartSidebar() {
 
               <button
                 onClick={handleCheckout}
-                disabled={loading}
-                className="w-full active:scale-[0.98] text-white font-extrabold py-4 rounded-xl transition-all text-sm uppercase tracking-wider shadow-md font-poppins flex items-center justify-center gap-2 hover:opacity-90 disabled:opacity-50"
+                className="w-full active:scale-[0.98] text-white font-extrabold py-4 rounded-xl transition-all text-sm uppercase tracking-wider shadow-md font-poppins flex items-center justify-center gap-2 hover:opacity-90"
                 style={{
                   background:
                     "linear-gradient(135deg, #ff2d78, #b020ff, #00e5ff)",
                   boxShadow: "0 4px 15px rgba(255,45,120,0.2)",
                 }}
               >
-                {loading ? (
-                  <>
-                    <Loader2 className="w-4 h-4 animate-spin" />
-                    Submitting Order...
-                  </>
-                ) : (
-                  <>
-                    Place Order
-                    <ArrowRight className="w-4 h-4" />
-                  </>
-                )}
+                Proceed to Checkout
+                <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           )}
