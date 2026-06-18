@@ -4586,7 +4586,7 @@ Why Choose Our Professional Rollup Banners?
     heroSubtitle: "Brand It. Share It. Grow It.",
     description:
       "Customize apparel, mugs, and trade show giveaways with your business branding.",
-    heroImage: "/images/products/main%20page/nano hero flag section.png",
+    heroImage: "/images/products/main%20page/promotional_products_hero_image.png",
     reviewRating: "4.9",
     reviewCount: "1,480",
     reviewQuote:

@@ -302,6 +302,19 @@ export async function POST(req: NextRequest) {
               <p style="margin: 6px 0 0; font-size: 12px; color: #6b21a8;">Our in-house team checks alignment, colors, and resolution before we print — free of charge.</p>
             </div>
 
+            ${designUrl
+            ? `
+            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 20px; margin-bottom: 24px; text-align: center;">
+              <h3 style="margin: 0 0 8px; font-size: 14px; color: #0f172a; text-transform: uppercase; letter-spacing: 0.05em; font-weight: bold;">Your Custom Design File</h3>
+              <p style="margin: 0 0 12px; font-size: 12px; color: #64748b;">Filename: ${designFilename || "online_design.pdf"}</p>
+              <a href="${designUrl}" style="display: inline-block; background: #0f172a; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-size: 13px; font-weight: bold; border: 1px solid #0f172a;">
+                📥 Download Design PDF
+              </a>
+            </div>
+            `
+            : ""
+            }
+
             <div style="text-align: center;">
               <p style="font-size: 13px; color: #64748b; margin: 0 0 16px;">Expected delivery: <strong style="color: #0f172a;">Next Business Day</strong></p>
               <a href="${process.env.NEXT_PUBLIC_SUPABASE_URL?.replace("supabase.co", "") || ""}account/orders" style="display: inline-block; background: linear-gradient(135deg, #ff2d78, #b020ff); color: white; padding: 12px 28px; border-radius: 50px; text-decoration: none; font-size: 13px; font-weight: bold;">
