@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import {
@@ -147,8 +148,74 @@ export default function AboutUsPage() {
           </div>
         </section>
 
+        {/* Visit Our Fort Lauderdale Location */}
+        <section className="space-y-6">
+          <div className="text-center max-w-2xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-poppins font-black text-slate-800">
+              Our Fort Lauderdale Facility
+            </h2>
+            <p className="text-sm text-slate-500 font-medium mt-1">
+              Visit our local showroom and production facility on Powerline Road. See our state-of-the-art printers in action and check out physical material samples before you order.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="group overflow-hidden rounded-2xl border border-slate-200 bg-white p-3 shadow-sm hover:shadow-md transition-shadow">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-100">
+                <Image
+                  src="/images/about/storefront.jpg"
+                  alt="Nano Signs Storefront in Fort Lauderdale"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <p className="mt-3 text-center text-xs font-bold text-slate-700 font-poppins">Fort Lauderdale Storefront</p>
+            </div>
+
+            <div className="group overflow-hidden rounded-2xl border border-slate-200 bg-white p-3 shadow-sm hover:shadow-md transition-shadow">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-100">
+                <Image
+                  src="/images/about/interior_2.jpg"
+                  alt="Nano Signs Lobby & Showroom"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <p className="mt-3 text-center text-xs font-bold text-slate-700 font-poppins">Lobby &amp; Waiting Area</p>
+            </div>
+
+            <div className="group overflow-hidden rounded-2xl border border-slate-200 bg-white p-3 shadow-sm hover:shadow-md transition-shadow">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-100">
+                <Image
+                  src="/images/about/interior_1.png"
+                  alt="Custom Print Product Display"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <p className="mt-3 text-center text-xs font-bold text-slate-700 font-poppins">Product Samples Display</p>
+            </div>
+
+            <div className="group overflow-hidden rounded-2xl border border-slate-200 bg-white p-3 shadow-sm hover:shadow-md transition-shadow">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-slate-100">
+                <Image
+                  src="/images/about/printer.jpg"
+                  alt="High-Resolution Wide Format Mimaki Printer"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <p className="mt-3 text-center text-xs font-bold text-slate-700 font-poppins">Wide Format UV Printer</p>
+            </div>
+          </div>
+        </section>
+
         {/* Capability Overview */}
-        <section className="text-center space-y-6">
+        <section className="text-center space-y-8">
           <div>
             <h2 className="text-2xl md:text-3xl font-poppins font-black text-slate-800">
               One Shop. Infinite Possibilities.
@@ -158,22 +225,65 @@ export default function AboutUsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            <Link href="/custom-signs" className="bg-white hover:bg-slate-100 hover:border-pink-200 transition-all border border-gray-150 rounded-2xl p-6 text-center shadow-sm">
-              <span className="text-2xl mb-2 block">🏡</span>
-              <h4 className="text-xs font-bold font-poppins text-slate-700">Custom Signs</h4>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            <Link href="/custom-signs" className="group">
+              <div className="product-card-hover bg-white rounded-2xl p-4 mb-3 aspect-square flex items-center justify-center border border-slate-200 shadow-sm relative overflow-hidden">
+                <Image
+                  src="/images/products/main%20page/all_signs_product.png"
+                  alt="Custom Signs"
+                  fill
+                  sizes="(max-width: 640px) 50vw, 250px"
+                  className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <p className="text-center font-poppins font-black text-slate-800 text-xs sm:text-sm transition-colors group-hover:text-[#ff2d78]">
+                Custom Signs
+              </p>
             </Link>
-            <Link href="/custom-banners" className="bg-white hover:bg-slate-100 hover:border-pink-200 transition-all border border-gray-150 rounded-2xl p-6 text-center shadow-sm">
-              <span className="text-2xl mb-2 block">🚩</span>
-              <h4 className="text-xs font-bold font-poppins text-slate-700">Vinyl Banners</h4>
+
+            <Link href="/custom-banners" className="group">
+              <div className="product-card-hover bg-white rounded-2xl p-4 mb-3 aspect-square flex items-center justify-center border border-slate-200 shadow-sm relative overflow-hidden">
+                <Image
+                  src="/images/products/main%20page/fabric_banner.png"
+                  alt="Vinyl Banners"
+                  fill
+                  sizes="(max-width: 640px) 50vw, 250px"
+                  className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <p className="text-center font-poppins font-black text-slate-800 text-xs sm:text-sm transition-colors group-hover:text-[#ff2d78]">
+                Vinyl Banners
+              </p>
             </Link>
-            <Link href="/custom-flags" className="bg-white hover:bg-slate-100 hover:border-pink-200 transition-all border border-gray-150 rounded-2xl p-6 text-center shadow-sm">
-              <span className="text-2xl mb-2 block">🏁</span>
-              <h4 className="text-xs font-bold font-poppins text-slate-700">Business Flags</h4>
+
+            <Link href="/custom-flags" className="group">
+              <div className="product-card-hover bg-white rounded-2xl p-4 mb-3 aspect-square flex items-center justify-center border border-slate-200 shadow-sm relative overflow-hidden">
+                <Image
+                  src="/images/products/main%20page/flags.png"
+                  alt="Business Flags"
+                  fill
+                  sizes="(max-width: 640px) 50vw, 250px"
+                  className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <p className="text-center font-poppins font-black text-slate-800 text-xs sm:text-sm transition-colors group-hover:text-[#ff2d78]">
+                Business Flags
+              </p>
             </Link>
-            <Link href="/marketing-materials" className="bg-white hover:bg-slate-100 hover:border-pink-200 transition-all border border-gray-150 rounded-2xl p-6 text-center shadow-sm">
-              <span className="text-2xl mb-2 block">📇</span>
-              <h4 className="text-xs font-bold font-poppins text-slate-700">Business Cards</h4>
+
+            <Link href="/marketing-materials" className="group">
+              <div className="product-card-hover bg-white rounded-2xl p-4 mb-3 aspect-square flex items-center justify-center border border-slate-200 shadow-sm relative overflow-hidden">
+                <Image
+                  src="/images/products/main%20page/business_cards.png"
+                  alt="Business Cards"
+                  fill
+                  sizes="(max-width: 640px) 50vw, 250px"
+                  className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <p className="text-center font-poppins font-black text-slate-800 text-xs sm:text-sm transition-colors group-hover:text-[#ff2d78]">
+                Business Cards
+              </p>
             </Link>
           </div>
         </section>
