@@ -26,6 +26,7 @@ export default function CoroplastSignsPage() {
         images: [
           "/images/products/main%20page/coroplast_sign.png",
           "/images/products/coro_sign_hover.png",
+          "/images/products/yard_sign_hover.png",
         ],
         ratingScore: "4.8",
         ratingCount: "5,620",

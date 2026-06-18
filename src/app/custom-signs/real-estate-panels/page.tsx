@@ -25,7 +25,7 @@ export default function RealEstatePanelsPage() {
         images: [
           "/images/products/main%20page/Real_estate_panels.png",
           "/images/products/gallery/real_estate_panels_in_action_1.png",
-          "/images/products/re_sign_hover.png",
+          "/images/products/gallery/real_estate_panels_in_action_2.png",
         ],
         ratingScore: "4.9",
         ratingCount: "3,150",

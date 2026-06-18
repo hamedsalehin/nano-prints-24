@@ -25,7 +25,7 @@ export default function YardSignsPage() {
         image: "/images/products/main%20page/yard_sign.jpeg",
         images: [
           "/images/products/main%20page/yard_sign.jpeg",
-          "/images/products/yard_sign_hover.png",
+          "/images/products/gallery/yard_sign_in_action.png",
         ],
         ratingScore: "4.9",
         ratingCount: "8,420",

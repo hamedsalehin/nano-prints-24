@@ -5146,7 +5146,7 @@ Why Choose Our Professional Rollup Banners?
           image: "/images/products/main%20page/yard_sign.jpeg",
           images: [
             "/images/products/main%20page/yard_sign.jpeg",
-            "/images/products/yard_sign_hover.png",
+            "/images/products/gallery/yard_sign_in_action.png",
           ],
           ratingScore: "4.9",
           ratingCount: "8,420",
@@ -5214,7 +5214,7 @@ Why Choose Our Professional Rollup Banners?
           images: [
             "/images/products/main%20page/Real_estate_panels.png",
             "/images/products/gallery/real_estate_panels_in_action_1.png",
-            "/images/products/re_sign_hover.png",
+            "/images/products/gallery/real_estate_panels_in_action_2.png",
           ],
           ratingScore: "4.9",
           ratingCount: "3,200",
@@ -5470,6 +5470,7 @@ Why Choose Our Professional Rollup Banners?
           images: [
             "/images/products/main%20page/coroplast_sign.png",
             "/images/products/coro_sign_hover.png",
+            "/images/products/yard_sign_hover.png",
           ],
           ratingScore: "4.8",
           ratingCount: "2,100",
