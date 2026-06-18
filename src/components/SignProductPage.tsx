@@ -570,20 +570,18 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
             {/* Dynamic Product Visual Configurator Preview */}
             <div
               onClick={() => setIsLightboxOpen(true)}
-              className="relative w-full flex items-center justify-center bg-slate-50 border border-slate-100 shadow-inner mb-6 rounded-2xl min-h-[420px] transition-all duration-300 cursor-zoom-in overflow-hidden p-6"
+              className="relative w-full aspect-square bg-slate-50 border border-slate-100 shadow-inner mb-6 rounded-2xl transition-all duration-300 cursor-zoom-in overflow-hidden"
             >
-              <div className="relative w-full h-full min-h-[420px] self-stretch flex aspect-[4/3] max-h-[420px]">
-                <Image
-                  src={currentImage}
-                  alt={`${cfg.title} preview`}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                  quality={90}
-                  unoptimized={currentImage.startsWith("/api/")}
-                  className="object-contain"
-                  priority
-                />
-              </div>
+              <Image
+                src={currentImage}
+                alt={`${cfg.title} preview`}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                quality={90}
+                unoptimized={currentImage.startsWith("/api/")}
+                className="object-cover"
+                priority
+              />
             </div>
 
             {galleryImages.length > 1 && (
