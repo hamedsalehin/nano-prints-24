@@ -14,6 +14,7 @@ import {
   Menu,
   X,
   ChevronDown,
+  Info,
 } from "lucide-react";
 import { useAuth } from "./AuthContext";
 import { useCart } from "./CartContext";
@@ -47,14 +48,14 @@ export function Header() {
       {/* Top utility bar — simple white */}
       <div className="bg-white border-b border-gray-150 text-gray-500 text-xs py-1.5 font-medium">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-end gap-4 md:gap-6">
-          <a
-            href="#"
+          <Link
+            href="/about-us"
             className="flex items-center gap-1.5 hover:text-[#ff2d78] transition-colors duration-200"
-            aria-label="Order Status"
+            aria-label="About Us"
           >
-            <Package className="w-4 h-4" />
-            <span className="hidden sm:inline">Order Status</span>
-          </a>
+            <Info className="w-4 h-4" />
+            <span className="hidden sm:inline">About Us</span>
+          </Link>
           <a
             href="mailto:nanosign1@gmail.com"
             className="flex items-center gap-1.5 hover:text-[#ff2d78] transition-colors duration-200"
@@ -63,14 +64,14 @@ export function Header() {
             <MessageCircle className="w-4 h-4" />
             <span className="hidden sm:inline">nanosign1@gmail.com</span>
           </a>
-          <a
-            href="#"
+          <Link
+            href="/contact-us"
             className="flex items-center gap-1.5 hover:text-[#ff2d78] transition-colors duration-200"
-            aria-label="Help Center"
+            aria-label="Contact Us"
           >
             <HelpCircle className="w-4 h-4" />
-            <span className="hidden sm:inline">Help Center</span>
-          </a>
+            <span className="hidden sm:inline">Contact Us</span>
+          </Link>
           <a
             href="tel:305-967-1005"
             className="flex items-center gap-1.5 hover:text-[#ff2d78] transition-colors duration-200"

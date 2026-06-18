@@ -14,7 +14,7 @@ const footerLinks = {
   helpCenter: {
     title: "Help Center",
     links: [
-      { name: "Contact Us", href: "#" },
+      { name: "Contact Us", href: "/contact-us" },
       { name: "Frequently Asked Questions", href: "#" },
       { name: "Corporate Pricing", href: "#" },
     ],
@@ -22,7 +22,7 @@ const footerLinks = {
   company: {
     title: "Company",
     links: [
-      { name: "About Us", href: "#" },
+      { name: "About Us", href: "/about-us" },
       { name: "Our Services", href: "#" },
       { name: "Portfolio", href: "#" },
       { name: "Testimonials", href: "#" },
@@ -31,8 +31,8 @@ const footerLinks = {
   products: {
     title: "Products",
     links: [
-      { name: "Custom Signs", href: "#" },
-      { name: "Banners", href: "#" },
+      { name: "Custom Signs", href: "/custom-signs" },
+      { name: "Banners", href: "/custom-banners" },
       { name: "Vehicle Wraps", href: "#" },
       { name: "Decals & Stickers", href: "#" },
     ],
@@ -61,6 +61,7 @@ const paymentMethods = [
 const bottomLinks = [
   { name: "Privacy Policy", href: "#" },
   { name: "Terms of Service", href: "#" },
+  { name: "Return Policy", href: "/return-policy" },
   { name: "Accessibility", href: "#" },
 ];
 
