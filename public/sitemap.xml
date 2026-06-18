@@ -385,4 +385,22 @@
       <changefreq>weekly</changefreq>
       <priority>0.6</priority>
     </url>
+  <url>
+      <loc>https://nano-signs.com/about-us</loc>
+      <lastmod>2026-06-18</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+    </url>
+  <url>
+      <loc>https://nano-signs.com/contact-us</loc>
+      <lastmod>2026-06-18</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+    </url>
+  <url>
+      <loc>https://nano-signs.com/return-policy</loc>
+      <lastmod>2026-06-18</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+    </url>
 </urlset>
