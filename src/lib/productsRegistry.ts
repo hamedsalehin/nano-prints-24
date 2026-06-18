@@ -5146,7 +5146,7 @@ Why Choose Our Professional Rollup Banners?
           image: "/images/products/main%20page/yard_sign.jpeg",
           images: [
             "/images/products/main%20page/yard_sign.jpeg",
-            "/images/products/gallery/yard_sign_in_action.png",
+            "/images/products/gallery/yard_sign_in_action.jpg",
           ],
           ratingScore: "4.9",
           ratingCount: "8,420",
