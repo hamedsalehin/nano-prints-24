@@ -3044,52 +3044,53 @@ function DesignPageContent() {
         </div>
 
         {/* 2. CENTRAL WORKSPACE (THE CANVAS CONTAINER) */}
-        <div className="flex-grow bg-slate-950 flex flex-col items-center justify-center p-8 overflow-auto relative">
-          {doubleSided && (
-            <div className="mb-6 flex gap-2 bg-slate-900 border border-slate-800 rounded-xl p-1 shadow-lg z-20">
-              <button
-                onClick={() => handleSwitchSide("front")}
-                className={`px-4 py-2 text-xs font-bold rounded-lg transition-all ${
-                  activeSide === "front"
-                    ? "bg-[#ff2d78] text-slate-950 shadow"
-                    : "text-slate-400 hover:text-white hover:bg-slate-800"
-                }`}
-              >
-                Page 1 (Front Side)
-              </button>
-              <button
-                onClick={() => handleSwitchSide("back")}
-                className={`px-4 py-2 text-xs font-bold rounded-lg transition-all ${
-                  activeSide === "back"
-                    ? "bg-[#ff2d78] text-slate-950 shadow"
-                    : "text-slate-400 hover:text-white hover:bg-slate-800"
-                }`}
-              >
-                Page 2 (Back Side)
-              </button>
+        <div className="flex-grow bg-slate-950 flex flex-col overflow-auto relative p-8">
+          <div className="flex flex-col items-center justify-center animate-in fade-in zoom-in-95 duration-200" style={{ margin: "auto" }}>
+            {doubleSided && (
+              <div className="mb-6 flex gap-2 bg-slate-900 border border-slate-800 rounded-xl p-1 shadow-lg z-20">
+                <button
+                  onClick={() => handleSwitchSide("front")}
+                  className={`px-4 py-2 text-xs font-bold rounded-lg transition-all ${
+                    activeSide === "front"
+                      ? "bg-[#ff2d78] text-slate-950 shadow"
+                      : "text-slate-400 hover:text-white hover:bg-slate-800"
+                  }`}
+                >
+                  Page 1 (Front Side)
+                </button>
+                <button
+                  onClick={() => handleSwitchSide("back")}
+                  className={`px-4 py-2 text-xs font-bold rounded-lg transition-all ${
+                    activeSide === "back"
+                      ? "bg-[#ff2d78] text-slate-950 shadow"
+                      : "text-slate-400 hover:text-white hover:bg-slate-800"
+                  }`}
+                >
+                  Page 2 (Back Side)
+                </button>
+              </div>
+            )}
+            <div
+              style={{
+                width: `${(canvasSize.width > canvasSize.height ? 650 : 400) * (zoomLevel / 100)}px`,
+                transition: "width 0.15s ease-out",
+              }}
+              className="flex items-center justify-center"
+            >
+              <DesignCanvas
+                elements={elements}
+                selectedId={selectedId}
+                canvasSize={canvasSize}
+                backgroundColor={bgColor}
+                backgroundGradient={bgGradient}
+                backgroundImage={bgImage}
+                showGrid={showGrid}
+                snapToGrid={snapToGrid}
+                onElementsChange={setElements}
+                onSelectElement={setSelectedId}
+                historyPush={historyPush}
+              />
             </div>
-          )}
-          <div
-            style={{
-              transform: `scale(${zoomLevel / 100})`,
-              transformOrigin: "center center",
-              transition: "transform 0.15s ease-out",
-            }}
-            className="w-full max-w-[800px] flex items-center justify-center"
-          >
-            <DesignCanvas
-              elements={elements}
-              selectedId={selectedId}
-              canvasSize={canvasSize}
-              backgroundColor={bgColor}
-              backgroundGradient={bgGradient}
-              backgroundImage={bgImage}
-              showGrid={showGrid}
-              snapToGrid={snapToGrid}
-              onElementsChange={setElements}
-              onSelectElement={setSelectedId}
-              historyPush={historyPush}
-            />
           </div>
 
           {/* Quick Helper Banner */}
