@@ -238,14 +238,7 @@ export function DesignCanvas({
         element.x = Math.max(-50, Math.min(100, newX));
         element.y = Math.max(-50, Math.min(100, newY));
       } else if (dragState.type === "resize" && dragState.handle) {
-        // Transform screen-space delta into element's local coordinate space
-        // so resizing works correctly even when the element is rotated
-        const rotationRad = ((element.rotation || 0) * Math.PI) / 180;
-        const cos = Math.cos(-rotationRad);
-        const sin = Math.sin(-rotationRad);
-        const localDeltaX = deltaPercentX * cos - deltaPercentY * sin;
-        const localDeltaY = deltaPercentX * sin + deltaPercentY * cos;
-
+        // Handles are always axis-aligned (never rotate), so use screen-space deltas directly
         const handle = dragState.handle;
         let newWidth = element.width;
         let newHeight = element.height;
@@ -253,20 +246,20 @@ export function DesignCanvas({
         let newY = element.y;
 
         if (handle.includes("e")) {
-          newWidth = Math.max(5, dragState.startElementW + localDeltaX);
+          newWidth = Math.max(5, dragState.startElementW + deltaPercentX);
         }
         if (handle.includes("s")) {
-          newHeight = Math.max(5, dragState.startElementH + localDeltaY);
+          newHeight = Math.max(5, dragState.startElementH + deltaPercentY);
         }
         if (handle.includes("w")) {
-          const wDiff = localDeltaX;
+          const wDiff = deltaPercentX;
           newWidth = Math.max(5, dragState.startElementW - wDiff);
           if (newWidth > 5) {
             newX = dragState.startElementX + wDiff;
           }
         }
         if (handle.includes("n")) {
-          const hDiff = localDeltaY;
+          const hDiff = deltaPercentY;
           newHeight = Math.max(5, dragState.startElementH - hDiff);
           if (newHeight > 5) {
             newY = dragState.startElementY + hDiff;
@@ -521,6 +514,7 @@ export function DesignCanvas({
       {elements.map((el) => {
         const isSelected = selectedId === el.id;
         const opacity = el.opacity !== undefined ? el.opacity : 1;
+        const refWidth = canvasSize.width > canvasSize.height ? 650 : 400;
 
         return (
           <div
@@ -530,7 +524,7 @@ export function DesignCanvas({
               onSelectElement(el.id);
             }}
             onMouseDown={(e) => handleInteractionStart(e, "move")}
-            className={`absolute flex items-center justify-center cursor-move transition-shadow ${
+            className={`absolute cursor-move transition-shadow ${
               isSelected
                 ? "z-30 select-all"
                 : "z-10 hover:outline hover:outline-1 hover:outline-dashed hover:outline-yellow-400"
@@ -540,16 +534,20 @@ export function DesignCanvas({
               top: `${el.y}%`,
               width: `${el.width}%`,
               height: `${el.height}%`,
-              transform: `rotate(${el.rotation || 0}deg)`,
-              transformOrigin: "center center",
               opacity: opacity,
             }}
           >
-            {/* Selection box visual details */}
+            {/* Selection frame stays axis-aligned (never rotates) */}
             {renderSelectionFrame(el)}
 
-            {/* Content Rendering based on Type */}
-            <div className="w-full h-full select-none flex items-center justify-center overflow-hidden">
+            {/* Content wrapper applies rotation */}
+            <div
+              className="w-full h-full select-none flex items-center justify-center overflow-visible"
+              style={{
+                transform: `rotate(${el.rotation || 0}deg)`,
+                transformOrigin: "center center",
+              }}
+            >
               {el.type === "text" && (
                 <div
                   className="w-full h-full flex items-center select-none truncate"
@@ -566,11 +564,11 @@ export function DesignCanvas({
                           ? "flex-end"
                           : "center",
                     textAlign: el.align || "center",
-                    fontSize: `${(el.fontSize || 32) / 10}cqw`,
+                    fontSize: `${((el.fontSize || 32) / refWidth) * 100}cqw`,
                     whiteSpace: "pre-wrap",
                     lineHeight: "1.1",
                     WebkitTextStroke: el.strokeColor
-                      ? `${(el.strokeWidth || 1) / 10}cqw ${el.strokeColor}`
+                      ? `${((el.strokeWidth || 1) / refWidth) * 100}cqw ${el.strokeColor}`
                       : "none",
                   }}
                 >
