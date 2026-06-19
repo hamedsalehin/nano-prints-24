@@ -2378,23 +2378,38 @@ function DesignPageContent() {
       const quality =
         file.size > 800000 ? "excellent" : file.size > 200000 ? "good" : "poor";
 
-      const newEl: CanvasElement = {
-        id: `img_${Date.now()}`,
-        type: "image",
-        imageUrl: url,
-        imageFile: file,
-        resolutionQuality: quality,
-        x: 30,
-        y: 30,
-        width: 40,
-        height: 40,
-        rotation: 0,
-      };
+      // Load image to get natural dimensions and set correct aspect ratio
+      const img = new Image();
+      img.onload = () => {
+        const naturalW = img.naturalWidth;
+        const naturalH = img.naturalHeight;
+        const aspectRatio = naturalW / naturalH;
 
-      const updated = [...elements, newEl];
-      setElements(updated);
-      historyPush(updated);
-      setSelectedId(newEl.id);
+        // Target ~40% of canvas width, calculate height from aspect ratio
+        // Account for the canvas aspect ratio so the element looks correct
+        const canvasAspect = canvasSize.width / canvasSize.height;
+        const elWidth = 40;
+        const elHeight = (elWidth / aspectRatio) * canvasAspect;
+
+        const newEl: CanvasElement = {
+          id: `img_${Date.now()}`,
+          type: "image",
+          imageUrl: url,
+          imageFile: file,
+          resolutionQuality: quality,
+          x: 30,
+          y: Math.max(5, 50 - elHeight / 2),
+          width: elWidth,
+          height: Math.min(90, elHeight),
+          rotation: 0,
+        };
+
+        const updated = [...elements, newEl];
+        setElements(updated);
+        historyPush(updated);
+        setSelectedId(newEl.id);
+      };
+      img.src = url;
     }
   };
 

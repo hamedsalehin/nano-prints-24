@@ -238,8 +238,14 @@ export function DesignCanvas({
         element.x = Math.max(-50, Math.min(100, newX));
         element.y = Math.max(-50, Math.min(100, newY));
       } else if (dragState.type === "resize" && dragState.handle) {
-        // Handle resizing from various handles
-        // This is a simplified scale calculation
+        // Transform screen-space delta into element's local coordinate space
+        // so resizing works correctly even when the element is rotated
+        const rotationRad = ((element.rotation || 0) * Math.PI) / 180;
+        const cos = Math.cos(-rotationRad);
+        const sin = Math.sin(-rotationRad);
+        const localDeltaX = deltaPercentX * cos - deltaPercentY * sin;
+        const localDeltaY = deltaPercentX * sin + deltaPercentY * cos;
+
         const handle = dragState.handle;
         let newWidth = element.width;
         let newHeight = element.height;
@@ -247,20 +253,20 @@ export function DesignCanvas({
         let newY = element.y;
 
         if (handle.includes("e")) {
-          newWidth = Math.max(5, dragState.startElementW + deltaPercentX);
+          newWidth = Math.max(5, dragState.startElementW + localDeltaX);
         }
         if (handle.includes("s")) {
-          newHeight = Math.max(5, dragState.startElementH + deltaPercentY);
+          newHeight = Math.max(5, dragState.startElementH + localDeltaY);
         }
         if (handle.includes("w")) {
-          const wDiff = deltaPercentX;
+          const wDiff = localDeltaX;
           newWidth = Math.max(5, dragState.startElementW - wDiff);
           if (newWidth > 5) {
             newX = dragState.startElementX + wDiff;
           }
         }
         if (handle.includes("n")) {
-          const hDiff = deltaPercentY;
+          const hDiff = localDeltaY;
           newHeight = Math.max(5, dragState.startElementH - hDiff);
           if (newHeight > 5) {
             newY = dragState.startElementY + hDiff;
@@ -644,12 +650,12 @@ export function DesignCanvas({
               )}
 
               {el.type === "image" && el.imageUrl && (
-                <div className="w-full h-full relative flex items-center justify-center p-0.5">
+                <div className="w-full h-full relative p-0">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={el.imageUrl}
                     alt="Uploaded element"
-                    className="max-w-full max-h-full object-contain pointer-events-none"
+                    className="w-full h-full object-fill pointer-events-none"
                   />
                   {el.resolutionQuality === "poor" && (
                     <div className="absolute top-1 right-1 bg-red-600/90 text-white text-[8px] font-bold px-1 rounded-sm shadow-md flex items-center gap-0.5 z-10 pointer-events-none">
