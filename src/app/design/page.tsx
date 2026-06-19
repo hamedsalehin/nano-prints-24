@@ -3045,7 +3045,7 @@ function DesignPageContent() {
 
         {/* 2. CENTRAL WORKSPACE (THE CANVAS CONTAINER) */}
         <div className="flex-grow bg-slate-950 flex flex-col overflow-auto relative p-8">
-          <div className="flex flex-col items-center justify-center animate-in fade-in zoom-in-95 duration-200" style={{ margin: "auto" }}>
+          <div className="flex flex-col items-center justify-center shrink-0 min-h-full min-w-full animate-in fade-in zoom-in-95 duration-200" style={{ margin: "auto" }}>
             {doubleSided && (
               <div className="mb-6 flex gap-2 bg-slate-900 border border-slate-800 rounded-xl p-1 shadow-lg z-20">
                 <button
