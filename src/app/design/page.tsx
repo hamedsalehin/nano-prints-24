@@ -1921,11 +1921,43 @@ function DesignPageContent() {
       setElements(initialRollupElements);
       setHistory([initialRollupElements]);
       setHistoryIndex(0);
+      let w = 33;
+      let h = 80;
+      let label = '33" x 80" (Banner)';
+      let priceAdder = 0;
+
+      if (registryProduct) {
+        const defaultSize = registryProduct.config.sizes[0];
+        let initialSize = defaultSize;
+        if (urlWidth && urlHeight) {
+          const matched = registryProduct.config.sizes.find(s => {
+            const parts = s.value.split('x');
+            return parts.includes(urlWidth) && parts.includes(urlHeight);
+          });
+          if (matched) {
+            initialSize = matched;
+          }
+        }
+        const parts = initialSize.value.split('x');
+        const dim1 = parseFloat(parts[0]) || 33;
+        const dim2 = parseFloat(parts[1]) || 80;
+        w = Math.min(dim1, dim2);
+        h = Math.max(dim1, dim2);
+        label = `${w}" x ${h}" (Banner)`;
+        priceAdder = initialSize.basePrice - defaultSize.basePrice;
+      } else if (urlWidth && urlHeight) {
+        const dim1 = parseFloat(urlWidth) || 33;
+        const dim2 = parseFloat(urlHeight) || 80;
+        w = Math.min(dim1, dim2);
+        h = Math.max(dim1, dim2);
+        label = `${w}" x ${h}" (Banner)`;
+      }
+
       setCanvasSize({
-        label: '33" x 80" (Banner)',
-        width: 33,
-        height: 80,
-        priceAdder: 0,
+        label,
+        width: w,
+        height: h,
+        priceAdder,
       });
       setMaterial({
         label: "Standard (13oz Vinyl)",
@@ -3550,7 +3582,7 @@ function DesignPageContent() {
                     </label>
                     {productId === "rollup" || productId === "roll-up-banners" || urlHeight === "79" || urlHeight === "80" ? (
                       <div className="w-full bg-slate-950/45 border border-slate-800 rounded-lg p-2.5 text-xs text-slate-200 font-semibold">
-                        33" x 80" (Fixed Size)
+                        {canvasSize.width}" x {canvasSize.height}" (Fixed Size)
                       </div>
                     ) : (
                       <select
