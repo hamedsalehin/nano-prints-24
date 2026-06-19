@@ -531,14 +531,14 @@ export const PRODUCTS_REGISTRY: Record<string, RegistryCategory> = {
           ratingScore: "4.9",
           sizes: [
             {
+              label: '33" x 80" Standard Stand Size',
+              value: "33x80",
+              basePrice: 89.00,
+            },
+            {
               label: '46" x 80" Vertical Size',
               value: "46x80",
               basePrice: 220.00,
-            },
-            {
-              label: '79" x 33" Standard Stand Size',
-              value: "79x33",
-              basePrice: 89.00,
             },
           ],
           selects: [
@@ -2195,14 +2195,14 @@ Why Choose Our Professional Rollup Banners?
           ratingScore: "4.9",
           sizes: [
             {
+              label: '33" x 80" Standard Stand Size',
+              value: "33x80",
+              basePrice: 89.00,
+            },
+            {
               label: '46" x 80" Vertical Size',
               value: "46x80",
               basePrice: 220.00,
-            },
-            {
-              label: '79" x 33" Standard Stand Size',
-              value: "79x33",
-              basePrice: 89.00,
             },
           ],
           selects: [

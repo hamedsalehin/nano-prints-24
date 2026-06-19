@@ -1598,7 +1598,7 @@ function DesignPageContent() {
   const [selectValues, setSelectValues] = useState<Record<string, any>>({});
 
   const availableTemplates = React.useMemo(() => {
-    if (productId === "rollup" || urlHeight === "79") {
+    if (productId === "rollup" || productId === "roll-up-banners" || urlHeight === "79" || urlHeight === "80") {
       return ROLLUP_TEMPLATES;
     }
     if (productId === "business-cards") {
@@ -1638,7 +1638,7 @@ function DesignPageContent() {
   }, [productId, urlHeight]);
 
   const availableMaterials = React.useMemo(() => {
-    if (productId === "rollup" || urlHeight === "79") {
+    if (productId === "rollup" || productId === "roll-up-banners" || urlHeight === "79" || urlHeight === "80") {
       return [
         {
           label: "Standard (13oz Vinyl)",
@@ -1872,7 +1872,7 @@ function DesignPageContent() {
   }, [doubleSided, activeSide]);
 
   useEffect(() => {
-    if (productId === "rollup" || urlHeight === "79") {
+    if (productId === "rollup" || productId === "roll-up-banners" || urlHeight === "79" || urlHeight === "80") {
       const initialRollupElements: CanvasElement[] = [
         {
           id: "init-bg",
@@ -1922,9 +1922,9 @@ function DesignPageContent() {
       setHistory([initialRollupElements]);
       setHistoryIndex(0);
       setCanvasSize({
-        label: '79" x 33" (Banner)',
+        label: '33" x 80" (Banner)',
         width: 33,
-        height: 79,
+        height: 80,
         priceAdder: 0,
       });
       setMaterial({
@@ -1981,7 +1981,7 @@ function DesignPageContent() {
 
   // Canvas Aesthetics
   const [showGrid, setShowGrid] = useState(false);
-  const [snapToGrid, setSnapToGrid] = useState(true);
+  const [snapToGrid, setSnapToGrid] = useState(false);
   const [zoomLevel, setZoomLevel] = useState(100);
 
   // Initialize options from registry product or query params
@@ -3548,9 +3548,9 @@ function DesignPageContent() {
                     <label className="block text-[11px] font-bold text-slate-400 mb-1">
                       Board Dimensions
                     </label>
-                    {productId === "rollup" || urlHeight === "79" ? (
+                    {productId === "rollup" || productId === "roll-up-banners" || urlHeight === "79" || urlHeight === "80" ? (
                       <div className="w-full bg-slate-950/45 border border-slate-800 rounded-lg p-2.5 text-xs text-slate-200 font-semibold">
-                        79" x 33" (Fixed Size)
+                        33" x 80" (Fixed Size)
                       </div>
                     ) : (
                       <select
