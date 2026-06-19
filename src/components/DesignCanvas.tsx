@@ -475,6 +475,7 @@ export function DesignCanvas({
           (backgroundImage ? `url(${backgroundImage})` : "none"),
         backgroundSize: "cover",
         backgroundPosition: "center",
+        containerType: "inline-size",
       }}
       onClick={() => onSelectElement(null)}
     >
@@ -559,11 +560,11 @@ export function DesignCanvas({
                           ? "flex-end"
                           : "center",
                     textAlign: el.align || "center",
-                    fontSize: `${el.fontSize || 32}px`,
+                    fontSize: `${(el.fontSize || 32) / 10}cqw`,
                     whiteSpace: "pre-wrap",
                     lineHeight: "1.1",
                     WebkitTextStroke: el.strokeColor
-                      ? `${el.strokeWidth || 1}px ${el.strokeColor}`
+                      ? `${(el.strokeWidth || 1) / 10}cqw ${el.strokeColor}`
                       : "none",
                   }}
                 >

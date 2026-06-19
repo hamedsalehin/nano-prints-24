@@ -1943,7 +1943,7 @@ function DesignPageContent() {
         const dim2 = parseFloat(parts[1]) || 80;
         w = Math.min(dim1, dim2);
         h = Math.max(dim1, dim2);
-        label = `${w}" x ${h}" (Banner)`;
+        label = initialSize.label;
         priceAdder = initialSize.basePrice - defaultSize.basePrice;
       } else if (urlWidth && urlHeight) {
         const dim1 = parseFloat(urlWidth) || 33;
@@ -3557,6 +3557,12 @@ function DesignPageContent() {
                           if (productId === "business-cards") {
                             w = 3.5;
                             h = 2;
+                          }
+                          if (productId === "rollup" || productId === "roll-up-banners" || sizeOpt.value.includes("33x80") || sizeOpt.value.includes("46x80")) {
+                            const dim1 = w;
+                            const dim2 = h;
+                            w = Math.min(dim1, dim2);
+                            h = Math.max(dim1, dim2);
                           }
                           setCanvasSize({
                             label: sizeOpt.label,
