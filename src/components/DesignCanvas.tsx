@@ -83,6 +83,7 @@ export function DesignCanvas({
 }: DesignCanvasProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const selectedElement = elements.find((el) => el.id === selectedId);
+  const [editingId, setEditingId] = useState<string | null>(null);
 
   // Dragging states
   const [dragState, setDragState] = useState<{
@@ -653,15 +654,13 @@ export function DesignCanvas({
 
   const isDragging = dragState.type === "move";
   const showSnapX =
-    snapToGrid &&
     isDragging &&
     selectedElement &&
-    Math.abs(selectedElement.x + selectedElement.width / 2 - 50) < 0.01;
+    Math.abs(selectedElement.x + selectedElement.width / 2 - 50) < 0.05;
   const showSnapY =
-    snapToGrid &&
     isDragging &&
     selectedElement &&
-    Math.abs(selectedElement.y + selectedElement.height / 2 - 50) < 0.01;
+    Math.abs(selectedElement.y + selectedElement.height / 2 - 50) < 0.05;
 
   return (
     <div
@@ -741,18 +740,16 @@ export function DesignCanvas({
               onDoubleClick={(e) => {
                 if (el.type === "text") {
                   e.stopPropagation();
-                  const newContent = window.prompt("Edit text:", el.content || "");
-                  if (newContent !== null) {
-                    const updated = elements.map((item) =>
-                      item.id === el.id ? { ...item, content: newContent } : item
-                    );
-                    onElementsChange(updated);
-                    historyPush(updated);
-                  }
+                  setEditingId(el.id);
                 }
               }}
-              onMouseDown={(e) => handleInteractionStart(e, "move")}
-              className={`absolute cursor-move transition-shadow pointer-events-auto ${
+              onMouseDown={(e) => {
+                if (editingId === el.id) return;
+                handleInteractionStart(e, "move");
+              }}
+              className={`absolute transition-shadow pointer-events-auto ${
+                editingId === el.id ? "cursor-text" : "cursor-move"
+              } ${
                 isSelected
                   ? "z-30 select-all"
                   : "z-10 hover:outline hover:outline-1 hover:outline-dashed hover:outline-yellow-400"
@@ -768,10 +765,51 @@ export function DesignCanvas({
               }}
             >
               {/* Content */}
-              <div className="w-full h-full select-none flex items-center justify-center overflow-hidden">
+              <div className={`w-full h-full flex items-center justify-center overflow-hidden ${editingId === el.id ? "select-text pointer-events-auto" : "select-none"}`}>
                 {el.type === "text" && (
                   <div
-                    className="w-full h-full flex items-center select-none truncate"
+                    contentEditable={editingId === el.id}
+                    suppressContentEditableWarning
+                    onBlur={(e) => {
+                      if (editingId !== el.id) return;
+                      const newText = e.currentTarget.textContent || "";
+                      setEditingId(null);
+                      if (newText !== el.content) {
+                        const updated = elements.map((item) =>
+                          item.id === el.id ? { ...item, content: newText } : item
+                        );
+                        onElementsChange(updated);
+                        historyPush(updated);
+                      }
+                    }}
+                    onKeyDown={(e) => {
+                      if (editingId !== el.id) return;
+                      if (e.key === "Enter" && !e.shiftKey) {
+                        e.preventDefault();
+                        e.currentTarget.blur();
+                      } else if (e.key === "Escape") {
+                        e.preventDefault();
+                        e.currentTarget.textContent = el.content || "";
+                        e.currentTarget.blur();
+                      }
+                    }}
+                    onFocus={(e) => {
+                      const range = document.createRange();
+                      range.selectNodeContents(e.currentTarget);
+                      const selection = window.getSelection();
+                      if (selection) {
+                        selection.removeAllRanges();
+                        selection.addRange(range);
+                      }
+                    }}
+                    ref={(node) => {
+                      if (node && editingId === el.id && document.activeElement !== node) {
+                        node.focus();
+                      }
+                    }}
+                    className={`w-full h-full flex items-center select-text outline-none truncate ${
+                      editingId === el.id ? "cursor-text pointer-events-auto" : "select-none pointer-events-none"
+                    }`}
                     style={{
                       fontFamily: el.fontFamily || "Inter",
                       color: el.color || "#000000",
