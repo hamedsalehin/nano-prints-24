@@ -25,6 +25,7 @@ export interface CanvasElement {
   height: number; // percentage of canvas height
   rotation: number; // degrees (0 to 360)
   opacity?: number; // 0 to 1
+  aspectLocked?: boolean;
 
   // Text specific
   content?: string;
@@ -296,40 +297,70 @@ export function DesignCanvas({
         element.x = Math.max(-50, Math.min(100, newX));
         element.y = Math.max(-50, Math.min(100, newY));
       } else if (dragState.type === "resize" && dragState.handle) {
-        // Transform screen-space delta into element's local coordinate space
-        // so resizing works correctly when the element is rotated
-        const rotationRad = ((element.rotation || 0) * Math.PI) / 180;
-        const cos = Math.cos(-rotationRad);
-        const sin = Math.sin(-rotationRad);
-        const localDeltaX = deltaPercentX * cos - deltaPercentY * sin;
-        const localDeltaY = deltaPercentX * sin + deltaPercentY * cos;
+        const startW = dragState.startElementW;
+        const startH = dragState.startElementH;
+        const startX = dragState.startElementX;
+        const startY = dragState.startElementY;
+        const thetaRad = ((dragState.startRotation || 0) * Math.PI) / 180;
+        const cos = Math.cos(thetaRad);
+        const sin = Math.sin(thetaRad);
+
+        // Transform client-space delta (pixels) to element's local coordinate system (pixels)
+        const localDeltaX_px = deltaX * cos + deltaY * sin;
+        const localDeltaY_px = -deltaX * sin + deltaY * cos;
+
+        // Convert pixel delta to percentage of canvas dimensions
+        const localDeltaX = (localDeltaX_px / rect.width) * 100;
+        const localDeltaY = (localDeltaY_px / rect.height) * 100;
 
         const handle = dragState.handle;
-        let newWidth = element.width;
-        let newHeight = element.height;
-        let newX = element.x;
-        let newY = element.y;
+        const aspectLocked = element.aspectLocked !== undefined 
+          ? element.aspectLocked 
+          : (element.type === "image" || element.type === "clipart");
 
+        let newWidth = startW;
+        let newHeight = startH;
+
+        // Compute candidate dimensions based on active drag handles
         if (handle.includes("e")) {
-          newWidth = Math.max(5, dragState.startElementW + localDeltaX);
+          newWidth = startW + localDeltaX;
+        } else if (handle.includes("w")) {
+          newWidth = startW - localDeltaX;
         }
+
         if (handle.includes("s")) {
-          newHeight = Math.max(5, dragState.startElementH + localDeltaY);
+          newHeight = startH + localDeltaY;
+        } else if (handle.includes("n")) {
+          newHeight = startH - localDeltaY;
         }
-        if (handle.includes("w")) {
-          const wDiff = localDeltaX;
-          newWidth = Math.max(5, dragState.startElementW - wDiff);
-          if (newWidth > 5) {
-            newX = dragState.startElementX + wDiff;
+
+        // Apply aspect ratio lock if active
+        if (aspectLocked) {
+          const startAspect = startW / startH;
+          let scale = 1;
+          if (handle === "e" || handle === "w") {
+            scale = newWidth / startW;
+          } else if (handle === "n" || handle === "s") {
+            scale = newHeight / startH;
+          } else {
+            // Diagonal handles: compute X and Y scales, and pick the one with greater change
+            const scaleX = newWidth / startW;
+            const scaleY = newHeight / startH;
+            scale = Math.abs(scaleX - 1) > Math.abs(scaleY - 1) ? scaleX : scaleY;
           }
+          // Constrain sizes to avoid negative or tiny scales
+          scale = Math.max(0.01, scale);
+          newWidth = startW * scale;
+          newHeight = startH * scale;
         }
-        if (handle.includes("n")) {
-          const hDiff = localDeltaY;
-          newHeight = Math.max(5, dragState.startElementH - hDiff);
-          if (newHeight > 5) {
-            newY = dragState.startElementY + hDiff;
-          }
+
+        // Apply snapToGrid and clamp to minimum size
+        if (snapToGrid) {
+          newWidth = Math.round(newWidth / 5) * 5;
+          newHeight = Math.round(newHeight / 5) * 5;
         }
+        newWidth = Math.max(5, newWidth);
+        newHeight = Math.max(5, newHeight);
 
         // For text elements, scale font size proportionally with resize
         if (element.type === "text" && element.fontSize) {
@@ -339,15 +370,63 @@ export function DesignCanvas({
           element.fontSize = Math.max(8, Math.round(dragState.startFontSize * scale));
         }
 
-        if (snapToGrid) {
-          newWidth = Math.round(newWidth / 5) * 5;
-          newHeight = Math.round(newHeight / 5) * 5;
+        // Anchor point in local unrotated element percentage space (relative to its center)
+        let anchorLocalX = 0;
+        if (handle.includes("e")) {
+          anchorLocalX = -startW / 2;
+        } else if (handle.includes("w")) {
+          anchorLocalX = startW / 2;
         }
 
+        let anchorLocalY = 0;
+        if (handle.includes("s")) {
+          anchorLocalY = -startH / 2;
+        } else if (handle.includes("n")) {
+          anchorLocalY = startH / 2;
+        }
+
+        // Convert start center and anchor point to pixel coordinates
+        const startCenterX_px = (startX + startW / 2) * (rect.width / 100);
+        const startCenterY_px = (startY + startH / 2) * (rect.height / 100);
+        const anchorLocalX_px = anchorLocalX * (rect.width / 100);
+        const anchorLocalY_px = anchorLocalY * (rect.height / 100);
+
+        // Compute anchor point in world pixel coordinates
+        const anchorWorldX_px = startCenterX_px + anchorLocalX_px * cos - anchorLocalY_px * sin;
+        const anchorWorldY_px = startCenterY_px + anchorLocalX_px * sin + anchorLocalY_px * cos;
+
+        // Anchor point in new local unrotated element percentage space (relative to its new center)
+        let newAnchorLocalX = 0;
+        if (handle.includes("e")) {
+          newAnchorLocalX = -newWidth / 2;
+        } else if (handle.includes("w")) {
+          newAnchorLocalX = newWidth / 2;
+        }
+
+        let newAnchorLocalY = 0;
+        if (handle.includes("s")) {
+          newAnchorLocalY = -newHeight / 2;
+        } else if (handle.includes("n")) {
+          newAnchorLocalY = newHeight / 2;
+        }
+
+        // Convert new local anchor point to pixel units
+        const newAnchorLocalX_px = newAnchorLocalX * (rect.width / 100);
+        const newAnchorLocalY_px = newAnchorLocalY * (rect.height / 100);
+
+        // Solve for newCenter_px
+        const newCenterX_px = anchorWorldX_px - (newAnchorLocalX_px * cos - newAnchorLocalY_px * sin);
+        const newCenterY_px = anchorWorldY_px - (newAnchorLocalX_px * sin + newAnchorLocalY_px * cos);
+
+        // Convert new center back to percentage coordinates
+        const newCenterX = (newCenterX_px / rect.width) * 100;
+        const newCenterY = (newCenterY_px / rect.height) * 100;
+
+        // Calculate new top-left corner coordinates (x, y)
         element.width = newWidth;
         element.height = newHeight;
-        element.x = newX;
-        element.y = newY;
+        element.x = newCenterX - newWidth / 2;
+        element.y = newCenterY - newHeight / 2;
       } else if (dragState.type === "rotate") {
         // Rotation logic relative to element center
         const elementCenterPx = {
@@ -494,6 +573,26 @@ export function DesignCanvas({
           >
             <MoveDown className="w-4 h-4" />
           </button>
+          <div className="flex items-center gap-1.5 text-[10px] text-slate-300 hover:text-white select-none cursor-pointer pl-2 border-l border-slate-700 ml-1">
+            <input
+              type="checkbox"
+              id={`aspect-lock-${el.id}`}
+              checked={el.aspectLocked !== undefined ? el.aspectLocked : (el.type === "image" || el.type === "clipart")}
+              onChange={(e) => {
+                const updated = elements.map((item) =>
+                  item.id === el.id
+                    ? { ...item, aspectLocked: e.target.checked }
+                    : item,
+                );
+                onElementsChange(updated);
+                historyPush(updated);
+              }}
+              className="accent-[#ff2d78] w-3 h-3 rounded bg-slate-850 border-slate-700 cursor-pointer"
+            />
+            <label htmlFor={`aspect-lock-${el.id}`} className="whitespace-nowrap cursor-pointer select-none">
+              Lock Aspect
+            </label>
+          </div>
         </div>
 
         {/* Resize Handles */}
