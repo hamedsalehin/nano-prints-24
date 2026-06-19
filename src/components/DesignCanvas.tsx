@@ -290,8 +290,22 @@ export function DesignCanvas({
         let newY = dragState.startElementY + deltaPercentY;
 
         if (snapToGrid) {
-          newX = Math.round(newX / 5) * 5;
-          newY = Math.round(newY / 5) * 5;
+          const centerX = newX + element.width / 2;
+          const centerY = newY + element.height / 2;
+
+          // Snap to X-axis center (50%) with 2% tolerance
+          if (Math.abs(centerX - 50) < 2) {
+            newX = 50 - element.width / 2;
+          } else {
+            newX = Math.round(newX / 5) * 5;
+          }
+
+          // Snap to Y-axis center (50%) with 2% tolerance
+          if (Math.abs(centerY - 50) < 2) {
+            newY = 50 - element.height / 2;
+          } else {
+            newY = Math.round(newY / 5) * 5;
+          }
         }
 
         element.x = Math.max(-50, Math.min(100, newX));
@@ -638,10 +652,22 @@ export function DesignCanvas({
     );
   };
 
+  const isDragging = dragState.type === "move";
+  const showSnapX =
+    snapToGrid &&
+    isDragging &&
+    selectedElement &&
+    Math.abs(selectedElement.x + selectedElement.width / 2 - 50) < 0.01;
+  const showSnapY =
+    snapToGrid &&
+    isDragging &&
+    selectedElement &&
+    Math.abs(selectedElement.y + selectedElement.height / 2 - 50) < 0.01;
+
   return (
     <div
       ref={containerRef}
-      className="relative w-full rounded-xl shadow-2xl border border-slate-700 overflow-hidden select-none transition-all duration-355"
+      className="relative w-full rounded-xl shadow-2xl border border-slate-700 overflow-visible select-none transition-all duration-355"
       style={{
         aspectRatio: `${canvasSize.width} / ${canvasSize.height}`,
         backgroundColor: backgroundColor,
@@ -654,6 +680,19 @@ export function DesignCanvas({
       }}
       onClick={() => onSelectElement(null)}
     >
+      {/* Center Snap Lines */}
+      {showSnapX && (
+        <div
+          className="absolute top-0 bottom-0 w-0.5 bg-[#ff2d78] z-35 pointer-events-none shadow-[0_0_8px_#ff2d78]"
+          style={{ left: "50%", transform: "translateX(-50%)" }}
+        />
+      )}
+      {showSnapY && (
+        <div
+          className="absolute left-0 right-0 h-0.5 bg-[#ff2d78] z-35 pointer-events-none shadow-[0_0_8px_#ff2d78]"
+          style={{ top: "50%", transform: "translateY(-50%)" }}
+        />
+      )}
       {/* Grid Lines */}
       {showGrid && (
         <div
@@ -698,6 +737,19 @@ export function DesignCanvas({
             onClick={(e) => {
               e.stopPropagation();
               onSelectElement(el.id);
+            }}
+            onDoubleClick={(e) => {
+              if (el.type === "text") {
+                e.stopPropagation();
+                const newContent = window.prompt("Edit text:", el.content || "");
+                if (newContent !== null) {
+                  const updated = elements.map((item) =>
+                    item.id === el.id ? { ...item, content: newContent } : item
+                  );
+                  onElementsChange(updated);
+                  historyPush(updated);
+                }
+              }
             }}
             onMouseDown={(e) => handleInteractionStart(e, "move")}
             className={`absolute cursor-move transition-shadow ${
