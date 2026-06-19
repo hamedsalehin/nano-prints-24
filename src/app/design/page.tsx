@@ -4104,7 +4104,9 @@ function DesignPageContent() {
             backgroundPosition: "center",
           }}
         >
-          {(activeSide === "front" ? elements : frontElements).map((el) => (
+          {(activeSide === "front" ? elements : frontElements)
+            .filter((el) => !(el.x + el.width <= 0 || el.x >= 100 || el.y + el.height <= 0 || el.y >= 100))
+            .map((el) => (
             <div
               key={el.id}
               className="absolute flex items-center justify-center pointer-events-none"
@@ -4252,7 +4254,9 @@ function DesignPageContent() {
             backgroundPosition: "center",
           }}
         >
-          {(activeSide === "back" ? elements : backElements).map((el) => (
+          {(activeSide === "back" ? elements : backElements)
+            .filter((el) => !(el.x + el.width <= 0 || el.x >= 100 || el.y + el.height <= 0 || el.y >= 100))
+            .map((el) => (
             <div
               key={el.id}
               className="absolute flex items-center justify-center pointer-events-none"

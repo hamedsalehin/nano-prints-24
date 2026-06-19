@@ -289,27 +289,26 @@ export function DesignCanvas({
         let newX = dragState.startElementX + deltaPercentX;
         let newY = dragState.startElementY + deltaPercentY;
 
-        if (snapToGrid) {
-          const centerX = newX + element.width / 2;
-          const centerY = newY + element.height / 2;
+        const centerX = newX + element.width / 2;
+        const centerY = newY + element.height / 2;
 
-          // Snap to X-axis center (50%) with 2% tolerance
-          if (Math.abs(centerX - 50) < 2) {
-            newX = 50 - element.width / 2;
-          } else {
-            newX = Math.round(newX / 5) * 5;
-          }
-
-          // Snap to Y-axis center (50%) with 2% tolerance
-          if (Math.abs(centerY - 50) < 2) {
-            newY = 50 - element.height / 2;
-          } else {
-            newY = Math.round(newY / 5) * 5;
-          }
+        // Snap to X-axis center (50%) with 2% tolerance (always active)
+        if (Math.abs(centerX - 50) < 2) {
+          newX = 50 - element.width / 2;
+        } else if (snapToGrid) {
+          newX = Math.round(newX / 5) * 5;
         }
 
-        element.x = Math.max(-50, Math.min(100, newX));
-        element.y = Math.max(-50, Math.min(100, newY));
+        // Snap to Y-axis center (50%) with 2% tolerance (always active)
+        if (Math.abs(centerY - 50) < 2) {
+          newY = 50 - element.height / 2;
+        } else if (snapToGrid) {
+          newY = Math.round(newY / 5) * 5;
+        }
+
+        // Allow elements to be dragged completely off-canvas (up to -200% to 200%)
+        element.x = Math.max(-200, Math.min(200, newX));
+        element.y = Math.max(-200, Math.min(200, newY));
       } else if (dragState.type === "resize" && dragState.handle) {
         const startW = dragState.startElementW;
         const startH = dragState.startElementH;
@@ -725,171 +724,187 @@ export function DesignCanvas({
         </span>
       </div>
 
-      {/* Canvas Elements */}
-      {elements.map((el) => {
-        const isSelected = selectedId === el.id;
-        const opacity = el.opacity !== undefined ? el.opacity : 1;
-        const refWidth = canvasSize.width > canvasSize.height ? 650 : 400;
+      {/* Clipped Elements Content Layer */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-xl z-10">
+        {elements.map((el) => {
+          const isSelected = selectedId === el.id;
+          const opacity = el.opacity !== undefined ? el.opacity : 1;
+          const refWidth = canvasSize.width > canvasSize.height ? 650 : 400;
 
-        return (
-          <div
-            key={el.id}
-            onClick={(e) => {
-              e.stopPropagation();
-              onSelectElement(el.id);
-            }}
-            onDoubleClick={(e) => {
-              if (el.type === "text") {
+          return (
+            <div
+              key={el.id}
+              onClick={(e) => {
                 e.stopPropagation();
-                const newContent = window.prompt("Edit text:", el.content || "");
-                if (newContent !== null) {
-                  const updated = elements.map((item) =>
-                    item.id === el.id ? { ...item, content: newContent } : item
-                  );
-                  onElementsChange(updated);
-                  historyPush(updated);
+                onSelectElement(el.id);
+              }}
+              onDoubleClick={(e) => {
+                if (el.type === "text") {
+                  e.stopPropagation();
+                  const newContent = window.prompt("Edit text:", el.content || "");
+                  if (newContent !== null) {
+                    const updated = elements.map((item) =>
+                      item.id === el.id ? { ...item, content: newContent } : item
+                    );
+                    onElementsChange(updated);
+                    historyPush(updated);
+                  }
                 }
-              }
-            }}
-            onMouseDown={(e) => handleInteractionStart(e, "move")}
-            className={`absolute cursor-move transition-shadow ${
-              isSelected
-                ? "z-30 select-all"
-                : "z-10 hover:outline hover:outline-1 hover:outline-dashed hover:outline-yellow-400"
-            }`}
-            style={{
-              left: `${el.x}%`,
-              top: `${el.y}%`,
-              width: `${el.width}%`,
-              height: `${el.height}%`,
-              transform: `rotate(${el.rotation || 0}deg)`,
-              transformOrigin: "center center",
-              opacity: opacity,
-            }}
-          >
-            {/* Selection frame rotates with element */}
-            {renderSelectionFrame(el)}
+              }}
+              onMouseDown={(e) => handleInteractionStart(e, "move")}
+              className={`absolute cursor-move transition-shadow pointer-events-auto ${
+                isSelected
+                  ? "z-30 select-all"
+                  : "z-10 hover:outline hover:outline-1 hover:outline-dashed hover:outline-yellow-400"
+              }`}
+              style={{
+                left: `${el.x}%`,
+                top: `${el.y}%`,
+                width: `${el.width}%`,
+                height: `${el.height}%`,
+                transform: `rotate(${el.rotation || 0}deg)`,
+                transformOrigin: "center center",
+                opacity: opacity,
+              }}
+            >
+              {/* Content */}
+              <div className="w-full h-full select-none flex items-center justify-center overflow-hidden">
+                {el.type === "text" && (
+                  <div
+                    className="w-full h-full flex items-center select-none truncate"
+                    style={{
+                      fontFamily: el.fontFamily || "Inter",
+                      color: el.color || "#000000",
+                      fontWeight: el.bold ? "bold" : "normal",
+                      fontStyle: el.italic ? "italic" : "normal",
+                      textDecoration: el.underline ? "underline" : "none",
+                      justifyContent:
+                        el.align === "left"
+                          ? "flex-start"
+                          : el.align === "right"
+                            ? "flex-end"
+                            : "center",
+                      textAlign: el.align || "center",
+                      fontSize: `${((el.fontSize || 32) / refWidth) * 100}cqw`,
+                      whiteSpace: "pre-wrap",
+                      lineHeight: "1.1",
+                      WebkitTextStroke: el.strokeColor
+                        ? `${((el.strokeWidth || 1) / refWidth) * 100}cqw ${el.strokeColor}`
+                        : "none",
+                    }}
+                  >
+                    {el.content || "Double click to edit"}
+                  </div>
+                )}
 
-            {/* Content */}
-            <div className="w-full h-full select-none flex items-center justify-center overflow-hidden">
-              {el.type === "text" && (
-                <div
-                  className="w-full h-full flex items-center select-none truncate"
-                  style={{
-                    fontFamily: el.fontFamily || "Inter",
-                    color: el.color || "#000000",
-                    fontWeight: el.bold ? "bold" : "normal",
-                    fontStyle: el.italic ? "italic" : "normal",
-                    textDecoration: el.underline ? "underline" : "none",
-                    justifyContent:
-                      el.align === "left"
-                        ? "flex-start"
-                        : el.align === "right"
-                          ? "flex-end"
-                          : "center",
-                    textAlign: el.align || "center",
-                    fontSize: `${((el.fontSize || 32) / refWidth) * 100}cqw`,
-                    whiteSpace: "pre-wrap",
-                    lineHeight: "1.1",
-                    WebkitTextStroke: el.strokeColor
-                      ? `${((el.strokeWidth || 1) / refWidth) * 100}cqw ${el.strokeColor}`
-                      : "none",
-                  }}
-                >
-                  {el.content || "Double click to edit"}
-                </div>
-              )}
-
-              {el.type === "shape" && (
-                <div className="w-full h-full flex items-center justify-center p-1">
-                  {el.shapeType === "rect" && (
-                    <div
-                      className="w-full h-full"
-                      style={{
-                        backgroundColor: el.fillColor || "#3b82f6",
-                        border: el.borderWidth
-                          ? `${el.borderWidth}px solid ${el.borderColor || "#000"}`
-                          : "none",
-                        borderRadius: "2px",
-                      }}
-                    />
-                  )}
-                  {el.shapeType === "circle" && (
-                    <div
-                      className="w-full h-full rounded-full"
-                      style={{
-                        backgroundColor: el.fillColor || "#3b82f6",
-                        border: el.borderWidth
-                          ? `${el.borderWidth}px solid ${el.borderColor || "#000"}`
-                          : "none",
-                      }}
-                    />
-                  )}
-                  {el.shapeType === "triangle" && (
-                    <svg
-                      className="w-full h-full"
-                      viewBox="0 0 100 100"
-                      preserveAspectRatio="none"
-                    >
-                      <polygon
-                        points="50,5 95,95 5,95"
-                        fill={el.fillColor || "#3b82f6"}
-                        stroke={el.borderColor || "#000"}
-                        strokeWidth={el.borderWidth ? el.borderWidth * 2 : 0}
+                {el.type === "shape" && (
+                  <div className="w-full h-full flex items-center justify-center p-1">
+                    {el.shapeType === "rect" && (
+                      <div
+                        className="w-full h-full"
+                        style={{
+                          backgroundColor: el.fillColor || "#3b82f6",
+                          border: el.borderWidth
+                            ? `${el.borderWidth}px solid ${el.borderColor || "#000"}`
+                            : "none",
+                          borderRadius: "2px",
+                        }}
                       />
-                    </svg>
-                  )}
-                  {el.shapeType === "star" && (
-                    <svg
-                      className="w-full h-full"
-                      viewBox="0 0 100 100"
-                      preserveAspectRatio="none"
-                    >
-                      <polygon
-                        points="50,2 64,36 100,36 71,57 81,95 50,72 19,95 29,57 0,36 36,36"
-                        fill={el.fillColor || "#eab308"}
-                        stroke={el.borderColor || "#000"}
-                        strokeWidth={el.borderWidth ? el.borderWidth * 2 : 0}
+                    )}
+                    {el.shapeType === "circle" && (
+                      <div
+                        className="w-full h-full rounded-full"
+                        style={{
+                          backgroundColor: el.fillColor || "#3b82f6",
+                          border: el.borderWidth
+                            ? `${el.borderWidth}px solid ${el.borderColor || "#000"}`
+                            : "none",
+                        }}
                       />
-                    </svg>
-                  )}
-                  {el.shapeType === "line" && (
-                    <div
-                      className="w-full"
-                      style={{
-                        height: `${el.borderWidth || 4}px`,
-                        backgroundColor: el.fillColor || "#000",
-                      }}
+                    )}
+                    {el.shapeType === "triangle" && (
+                      <svg
+                        className="w-full h-full"
+                        viewBox="0 0 100 100"
+                        preserveAspectRatio="none"
+                      >
+                        <polygon
+                          points="50,5 95,95 5,95"
+                          fill={el.fillColor || "#3b82f6"}
+                          stroke={el.borderColor || "#000"}
+                          strokeWidth={el.borderWidth ? el.borderWidth * 2 : 0}
+                        />
+                      </svg>
+                    )}
+                    {el.shapeType === "star" && (
+                      <svg
+                        className="w-full h-full"
+                        viewBox="0 0 100 100"
+                        preserveAspectRatio="none"
+                      >
+                        <polygon
+                          points="50,2 64,36 100,36 71,57 81,95 50,72 19,95 29,57 0,36 36,36"
+                          fill={el.fillColor || "#eab308"}
+                          stroke={el.borderColor || "#000"}
+                          strokeWidth={el.borderWidth ? el.borderWidth * 2 : 0}
+                        />
+                      </svg>
+                    )}
+                    {el.shapeType === "line" && (
+                      <div
+                        className="w-full"
+                        style={{
+                          height: `${el.borderWidth || 4}px`,
+                          backgroundColor: el.fillColor || "#000",
+                        }}
+                      />
+                    )}
+                  </div>
+                )}
+
+                {el.type === "clipart" && el.clipartId && (
+                  <div className="w-full h-full p-1.5 flex items-center justify-center">
+                    {renderClipart(el.clipartId, el.color)}
+                  </div>
+                )}
+
+                {el.type === "image" && el.imageUrl && (
+                  <div className="w-full h-full relative p-0">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={el.imageUrl}
+                      alt="Uploaded element"
+                      className="w-full h-full object-fill pointer-events-none"
                     />
-                  )}
-                </div>
-              )}
-
-              {el.type === "clipart" && el.clipartId && (
-                <div className="w-full h-full p-1.5 flex items-center justify-center">
-                  {renderClipart(el.clipartId, el.color)}
-                </div>
-              )}
-
-              {el.type === "image" && el.imageUrl && (
-                <div className="w-full h-full relative p-0">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={el.imageUrl}
-                    alt="Uploaded element"
-                    className="w-full h-full object-fill pointer-events-none"
-                  />
-                  {el.resolutionQuality === "poor" && (
-                    <div className="absolute top-1 right-1 bg-red-600/90 text-white text-[8px] font-bold px-1 rounded-sm shadow-md flex items-center gap-0.5 z-10 pointer-events-none">
-                      Low Res!
-                    </div>
-                  )}
-                </div>
-              )}
+                    {el.resolutionQuality === "poor" && (
+                      <div className="absolute top-1 right-1 bg-red-600/90 text-white text-[8px] font-bold px-1 rounded-sm shadow-md flex items-center gap-0.5 z-10 pointer-events-none">
+                        Low Res!
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
+
+      {/* Unclipped Selection Frame & Handles Layer */}
+      {selectedElement && (
+        <div
+          className="absolute pointer-events-none z-30"
+          style={{
+            left: `${selectedElement.x}%`,
+            top: `${selectedElement.y}%`,
+            width: `${selectedElement.width}%`,
+            height: `${selectedElement.height}%`,
+            transform: `rotate(${selectedElement.rotation || 0}deg)`,
+            transformOrigin: "center center",
+          }}
+        >
+          {renderSelectionFrame(selectedElement)}
+        </div>
+      )}
     </div>
   );
 }
