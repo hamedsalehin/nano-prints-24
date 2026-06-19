@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import {
   Trash2,
   Copy,
@@ -94,6 +94,7 @@ export function DesignCanvas({
     startElementW: number;
     startElementH: number;
     startRotation: number;
+    startFontSize: number;
   }>({
     type: null,
     startX: 0,
@@ -103,6 +104,7 @@ export function DesignCanvas({
     startElementW: 0,
     startElementH: 0,
     startRotation: 0,
+    startFontSize: 0,
   });
 
   // Handle outside click to deselect
@@ -166,6 +168,61 @@ export function DesignCanvas({
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [selectedId, elements, onElementsChange, onSelectElement, historyPush]);
 
+  // Auto-fit text element dimensions to tightly wrap visible text content
+  // Uses off-screen canvas to measure text width/height and adjusts element %
+  const autoFitTextElements = useCallback(() => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    if (rect.width === 0 || rect.height === 0) return;
+
+    const refWidth = canvasSize.width > canvasSize.height ? 650 : 400;
+    let changed = false;
+    const updated = elements.map((el) => {
+      if (el.type !== "text" || !el.content) return el;
+
+      const fontSize = el.fontSize || 32;
+      // Convert cqw font size to actual pixels at current container width
+      const fontSizePx = (fontSize / refWidth) * rect.width;
+      const fontWeight = el.bold ? "bold" : "normal";
+      const fontStyle = el.italic ? "italic" : "normal";
+      const fontFamily = el.fontFamily || "Inter";
+
+      // Measure text using off-screen canvas
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return el;
+
+      ctx.font = `${fontStyle} ${fontWeight} ${fontSizePx}px ${fontFamily}`;
+      const metrics = ctx.measureText(el.content);
+      const textWidth = metrics.width;
+      const textHeight = fontSizePx * 1.2; // lineHeight ~1.1 + small padding
+
+      // Convert pixel dimensions to percentage of canvas container
+      const newWidthPercent = Math.max(8, (textWidth / rect.width) * 100 + 3); // +3% padding
+      const newHeightPercent = Math.max(5, (textHeight / rect.height) * 100 + 1.5); // +1.5% padding
+
+      // Only update if dimensions differ significantly (>2% diff)
+      const wDiff = Math.abs(newWidthPercent - el.width);
+      const hDiff = Math.abs(newHeightPercent - el.height);
+      if (wDiff > 2 || hDiff > 2) {
+        changed = true;
+        return { ...el, width: Math.round(newWidthPercent * 10) / 10, height: Math.round(newHeightPercent * 10) / 10 };
+      }
+      return el;
+    });
+
+    if (changed) {
+      onElementsChange(updated);
+    }
+  }, [elements, canvasSize, onElementsChange]);
+
+  // Run auto-fit on mount and when elements change content/fontSize
+  useEffect(() => {
+    // Small delay to let fonts load and container render
+    const timer = setTimeout(autoFitTextElements, 100);
+    return () => clearTimeout(timer);
+  }, [autoFitTextElements]);
+
   // Get active clipart icon component
   const renderClipart = (clipartId: string, color: string = "#000000") => {
     const standardIcons = Icons as unknown as Record<
@@ -202,6 +259,7 @@ export function DesignCanvas({
       startElementW: selectedElement.width,
       startElementH: selectedElement.height,
       startRotation: selectedElement.rotation,
+      startFontSize: selectedElement.fontSize || 32,
     });
   };
 
@@ -238,7 +296,14 @@ export function DesignCanvas({
         element.x = Math.max(-50, Math.min(100, newX));
         element.y = Math.max(-50, Math.min(100, newY));
       } else if (dragState.type === "resize" && dragState.handle) {
-        // Handles are always axis-aligned (never rotate), so use screen-space deltas directly
+        // Transform screen-space delta into element's local coordinate space
+        // so resizing works correctly when the element is rotated
+        const rotationRad = ((element.rotation || 0) * Math.PI) / 180;
+        const cos = Math.cos(-rotationRad);
+        const sin = Math.sin(-rotationRad);
+        const localDeltaX = deltaPercentX * cos - deltaPercentY * sin;
+        const localDeltaY = deltaPercentX * sin + deltaPercentY * cos;
+
         const handle = dragState.handle;
         let newWidth = element.width;
         let newHeight = element.height;
@@ -246,24 +311,32 @@ export function DesignCanvas({
         let newY = element.y;
 
         if (handle.includes("e")) {
-          newWidth = Math.max(5, dragState.startElementW + deltaPercentX);
+          newWidth = Math.max(5, dragState.startElementW + localDeltaX);
         }
         if (handle.includes("s")) {
-          newHeight = Math.max(5, dragState.startElementH + deltaPercentY);
+          newHeight = Math.max(5, dragState.startElementH + localDeltaY);
         }
         if (handle.includes("w")) {
-          const wDiff = deltaPercentX;
+          const wDiff = localDeltaX;
           newWidth = Math.max(5, dragState.startElementW - wDiff);
           if (newWidth > 5) {
             newX = dragState.startElementX + wDiff;
           }
         }
         if (handle.includes("n")) {
-          const hDiff = deltaPercentY;
+          const hDiff = localDeltaY;
           newHeight = Math.max(5, dragState.startElementH - hDiff);
           if (newHeight > 5) {
             newY = dragState.startElementY + hDiff;
           }
+        }
+
+        // For text elements, scale font size proportionally with resize
+        if (element.type === "text" && element.fontSize) {
+          const widthScale = newWidth / dragState.startElementW;
+          const heightScale = newHeight / dragState.startElementH;
+          const scale = Math.min(widthScale, heightScale);
+          element.fontSize = Math.max(8, Math.round(dragState.startFontSize * scale));
         }
 
         if (snapToGrid) {
@@ -311,6 +384,7 @@ export function DesignCanvas({
         startElementW: 0,
         startElementH: 0,
         startRotation: 0,
+        startFontSize: 0,
       });
       // Save state into history after completion of drag operation
       historyPush(elements);
@@ -349,8 +423,11 @@ export function DesignCanvas({
           <div className="w-3.5 h-3.5 bg-[#ff2d78] hover:bg-yellow-300 rounded-full border-2 border-slate-900 shadow-md transition-colors" />
         </div>
 
-        {/* Quick Toolbar overlay */}
-        <div className="absolute left-1/2 -bottom-14 -translate-x-1/2 flex items-center bg-slate-900 border border-slate-800 text-white rounded-lg px-2 py-1 shadow-xl gap-2 pointer-events-auto z-50">
+        {/* Quick Toolbar overlay — counter-rotate so it stays readable */}
+        <div
+          className="absolute left-1/2 -bottom-14 -translate-x-1/2 flex items-center bg-slate-900 border border-slate-800 text-white rounded-lg px-2 py-1 shadow-xl gap-2 pointer-events-auto z-50"
+          style={{ transform: `rotate(${-(el.rotation || 0)}deg)` }}
+        >
           <button
             onClick={() => {
               const updated = elements.filter((item) => item.id !== el.id);
@@ -534,20 +611,16 @@ export function DesignCanvas({
               top: `${el.y}%`,
               width: `${el.width}%`,
               height: `${el.height}%`,
+              transform: `rotate(${el.rotation || 0}deg)`,
+              transformOrigin: "center center",
               opacity: opacity,
             }}
           >
-            {/* Selection frame stays axis-aligned (never rotates) */}
+            {/* Selection frame rotates with element */}
             {renderSelectionFrame(el)}
 
-            {/* Content wrapper applies rotation */}
-            <div
-              className="w-full h-full select-none flex items-center justify-center overflow-visible"
-              style={{
-                transform: `rotate(${el.rotation || 0}deg)`,
-                transformOrigin: "center center",
-              }}
-            >
+            {/* Content */}
+            <div className="w-full h-full select-none flex items-center justify-center overflow-hidden">
               {el.type === "text" && (
                 <div
                   className="w-full h-full flex items-center select-none truncate"
