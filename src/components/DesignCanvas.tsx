@@ -725,7 +725,7 @@ export function DesignCanvas({
 
       {/* Clipped Elements Content Layer */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-xl z-10">
-        {elements.map((el) => {
+        {elements.map((el, idx) => {
           const isSelected = selectedId === el.id;
           const opacity = el.opacity !== undefined ? el.opacity : 1;
           const refWidth = canvasSize.width > canvasSize.height ? 650 : 400;
@@ -751,8 +751,8 @@ export function DesignCanvas({
                 editingId === el.id ? "cursor-text" : "cursor-move"
               } ${
                 isSelected
-                  ? "z-30 select-all"
-                  : "z-10 hover:outline hover:outline-1 hover:outline-dashed hover:outline-yellow-400"
+                  ? "select-all"
+                  : "hover:outline hover:outline-1 hover:outline-dashed hover:outline-yellow-400"
               }`}
               style={{
                 left: `${el.x}%`,
@@ -762,6 +762,7 @@ export function DesignCanvas({
                 transform: `rotate(${el.rotation || 0}deg)`,
                 transformOrigin: "center center",
                 opacity: opacity,
+                zIndex: idx,
               }}
             >
               {/* Content */}
