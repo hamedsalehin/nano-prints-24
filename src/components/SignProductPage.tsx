@@ -34,6 +34,7 @@ export interface SelectOption {
   priceMultiplier?: number;
   description?: string;
   image?: string;
+  sizePriceAdders?: Record<string, number>;
 }
 export interface ToggleOption {
   id: string;
@@ -41,6 +42,7 @@ export interface ToggleOption {
   priceAdder: number;
   priceMultiplier?: number;
   description?: string;
+  sizePriceAdders?: Record<string, number>;
 }
 export interface FaqItem {
   q: string;
@@ -335,13 +337,15 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
     let multiplier = 1;
 
     Object.values(selectValues).forEach((v) => {
-      price += v.priceAdder;
+      const adder = (v as any).sizePriceAdders?.[selectedSize.value] ?? v.priceAdder;
+      price += adder;
       if (v.priceMultiplier !== undefined) {
         multiplier *= v.priceMultiplier;
       }
     });
     Object.values(toggleValues).forEach((v) => {
-      price += v.priceAdder;
+      const adder = (v as any).sizePriceAdders?.[selectedSize.value] ?? v.priceAdder;
+      price += adder;
       if (v.priceMultiplier !== undefined) {
         multiplier *= v.priceMultiplier;
       }

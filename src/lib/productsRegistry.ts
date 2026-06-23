@@ -898,7 +898,7 @@ Why Choose Our Professional Rollup Banners?
         description:
           "Eye-catching fluttering flags designed to draw crowds from the roadside.",
         image: "/images/products/main%20page/feather_flag.png",
-        price: "Starting at $54.37",
+        price: "Starting at $80.00",
         badge: "Best Seller",
         config: {
           title: "Custom Feather Flags",
@@ -912,37 +912,119 @@ Why Choose Our Professional Rollup Banners?
           ratingScore: "4.8",
           sizes: [
             {
-              label: "8ft Small Feather Flag",
-              value: "96x24",
-              basePrice: 54.37,
+              label: "9ft Feather Flag",
+              value: "9ft",
+              basePrice: 80.00,
             },
             {
-              label: "10.5ft Medium Feather Flag",
-              value: "126x28",
-              basePrice: 79.99,
+              label: "10ft Feather Flag",
+              value: "10ft",
+              basePrice: 100.00,
             },
             {
-              label: "14ft Large Feather Flag",
-              value: "168x30",
-              basePrice: 119.99,
+              label: "13ft Feather Flag",
+              value: "13ft",
+              basePrice: 110.00,
+            },
+            {
+              label: "16ft Feather Flag",
+              value: "16ft",
+              basePrice: 130.00,
             },
           ],
           selects: [
             {
-              label: "Hardware / Base Type",
+              label: "Pole Option",
               options: [
                 {
-                  label: "Ground Spike (For Lawn/Soil)",
-                  value: "spike",
+                  label: "No Pole (Flag Fabric Only)",
+                  value: "no_pole",
                   priceAdder: 0,
-                  description: "Classic metal stake for inserting into soil.",
+                  description: "Select if you already have a pole.",
                 },
                 {
-                  label: "Cross Stand & Water Bag",
+                  label: "Include Pole (+$35.00)",
+                  value: "pole",
+                  priceAdder: 35.00,
+                  description: "Premium carbon-fiberglass pole.",
+                },
+              ],
+            },
+            {
+              label: "Base Option",
+              options: [
+                {
+                  label: "No Base",
+                  value: "no_base",
+                  priceAdder: 0,
+                },
+                {
+                  label: "Ground Stake (+$40.00)",
+                  value: "stake",
+                  priceAdder: 40.00,
+                  description: "Classic stake for soil or grass.",
+                },
+                {
+                  label: "Cross Base (+$55.00)",
                   value: "cross",
-                  priceAdder: 15.0,
-                  description:
-                    "Folds flat, ideal for indoor or hard concrete ground.",
+                  priceAdder: 55.00,
+                  description: "Standard folding cross base.",
+                },
+                {
+                  label: "CS-01 Metal Cross Base (+$65.00)",
+                  value: "cs01",
+                  priceAdder: 65.00,
+                  description: "Heavy duty metal cross base.",
+                },
+                {
+                  label: "CS-02 Cross Base (+$45.00)",
+                  value: "cs02",
+                  priceAdder: 45.00,
+                  description: "Standard economy cross base.",
+                },
+                {
+                  label: "GS-01 Ground Spike (+$45.00)",
+                  value: "gs01",
+                  priceAdder: 45.00,
+                  description: "Heavy duty ground spike.",
+                },
+              ],
+            },
+            {
+              label: "Water Bag Option",
+              options: [
+                {
+                  label: "No Water Bag",
+                  value: "no_water_bag",
+                  priceAdder: 0,
+                },
+                {
+                  label: "Water Bag (+$10.00)",
+                  value: "water_bag_10",
+                  priceAdder: 10.00,
+                  description: "Adds stability for cross bases.",
+                },
+                {
+                  label: "WF-08 Water Bag (+$14.00)",
+                  value: "wf08",
+                  priceAdder: 14.00,
+                  description: "Premium donut water weight bag.",
+                },
+              ],
+            },
+            {
+              label: "Carry Bag Option",
+              options: [
+                {
+                  label: "No Carry Bag",
+                  value: "no_carry_bag",
+                  priceAdder: 0,
+                },
+                {
+                  label: "Flag Carry Bag (+$45.00)",
+                  value: "carry_bag",
+                  priceAdder: 45.00,
+                  description: "Convenient travel bag for hardware.",
                 },
               ],
             },
@@ -972,7 +1054,13 @@ Why Choose Our Professional Rollup Banners?
                 {
                   id: "double",
                   label: "Double-Sided (Three layers)",
-                  priceAdder: 25.0,
+                  priceAdder: 150.00,
+                  sizePriceAdders: {
+                    "9ft": 150.00,
+                    "10ft": 150.00,
+                    "13ft": 160.00,
+                    "16ft": 160.00,
+                  },
                   description:
                     "Two separate prints with blocker liner in between.",
                 },
@@ -2502,7 +2590,7 @@ Why Choose Our Professional Rollup Banners?
         description:
           "Draw customers in from the roadside with our best-selling Custom Feather Flags. Designed to flutter in the wind and turn heads, these tall advertising flags are printed on premium open-weave knit polyester to reduce wind load stress. Supported by composite fiberglass poles and a rotating ground spike or cross stand, they rotate 360 degrees to remain visible from any traffic direction.",
         image: "/images/products/main%20page/feather_flag.png",
-        price: "Starting at $54.37",
+        price: "Starting at $80.00",
         config: {
           title: "Custom Feather Flags",
           subtitle:
@@ -2515,34 +2603,157 @@ Why Choose Our Professional Rollup Banners?
           ratingScore: "4.8",
           sizes: [
             {
-              label: "8ft Small Feather Flag",
-              value: "96x24",
-              basePrice: 54.37,
+              label: "9ft Feather Flag",
+              value: "9ft",
+              basePrice: 80.00,
             },
             {
-              label: "10.5ft Medium Feather Flag",
-              value: "126x28",
-              basePrice: 79.99,
+              label: "10ft Feather Flag",
+              value: "10ft",
+              basePrice: 100.00,
             },
             {
-              label: "14ft Large Feather Flag",
-              value: "168x30",
-              basePrice: 119.99,
+              label: "13ft Feather Flag",
+              value: "13ft",
+              basePrice: 110.00,
+            },
+            {
+              label: "16ft Feather Flag",
+              value: "16ft",
+              basePrice: 130.00,
             },
           ],
           selects: [
             {
-              label: "Hardware / Base Type",
+              label: "Pole Option",
               options: [
                 {
-                  label: "Ground Spike (For Lawn/Soil)",
-                  value: "spike",
+                  label: "No Pole (Flag Fabric Only)",
+                  value: "no_pole",
+                  priceAdder: 0,
+                  description: "Select if you already have a pole.",
+                },
+                {
+                  label: "Include Pole (+$35.00)",
+                  value: "pole",
+                  priceAdder: 35.00,
+                  description: "Premium carbon-fiberglass pole.",
+                },
+              ],
+            },
+            {
+              label: "Base Option",
+              options: [
+                {
+                  label: "No Base",
+                  value: "no_base",
                   priceAdder: 0,
                 },
                 {
-                  label: "Cross Stand & Water Bag",
+                  label: "Ground Stake (+$40.00)",
+                  value: "stake",
+                  priceAdder: 40.00,
+                  description: "Classic stake for soil or grass.",
+                },
+                {
+                  label: "Cross Base (+$55.00)",
                   value: "cross",
-                  priceAdder: 15.0,
+                  priceAdder: 55.00,
+                  description: "Standard folding cross base.",
+                },
+                {
+                  label: "CS-01 Metal Cross Base (+$65.00)",
+                  value: "cs01",
+                  priceAdder: 65.00,
+                  description: "Heavy duty metal cross base.",
+                },
+                {
+                  label: "CS-02 Cross Base (+$45.00)",
+                  value: "cs02",
+                  priceAdder: 45.00,
+                  description: "Standard economy cross base.",
+                },
+                {
+                  label: "GS-01 Ground Spike (+$45.00)",
+                  value: "gs01",
+                  priceAdder: 45.00,
+                  description: "Heavy duty ground spike.",
+                },
+              ],
+            },
+            {
+              label: "Water Bag Option",
+              options: [
+                {
+                  label: "No Water Bag",
+                  value: "no_water_bag",
+                  priceAdder: 0,
+                },
+                {
+                  label: "Water Bag (+$10.00)",
+                  value: "water_bag_10",
+                  priceAdder: 10.00,
+                  description: "Adds stability for cross bases.",
+                },
+                {
+                  label: "WF-08 Water Bag (+$14.00)",
+                  value: "wf08",
+                  priceAdder: 14.00,
+                  description: "Premium donut water weight bag.",
+                },
+              ],
+            },
+            {
+              label: "Carry Bag Option",
+              options: [
+                {
+                  label: "No Carry Bag",
+                  value: "no_carry_bag",
+                  priceAdder: 0,
+                },
+                {
+                  label: "Flag Carry Bag (+$45.00)",
+                  value: "carry_bag",
+                  priceAdder: 45.00,
+                  description: "Convenient travel bag for hardware.",
+                },
+              ],
+            },
+            {
+              label: "Flag Material & Build",
+              options: [
+                {
+                  label: "Premium Polyester Knit",
+                  value: "standard",
+                  priceAdder: 0,
+                  description:
+                    "Lightweight mesh fabric designed for wind flow.",
+                },
+              ],
+            },
+          ],
+          toggleGroups: [
+            {
+              label: "Print Direction",
+              options: [
+                {
+                  id: "single",
+                  label: "Single-Sided (Show through)",
+                  priceAdder: 0,
+                  description: "Design printed on one side, mirrored on back.",
+                },
+                {
+                  id: "double",
+                  label: "Double-Sided (Three layers)",
+                  priceAdder: 150.00,
+                  sizePriceAdders: {
+                    "9ft": 150.00,
+                    "10ft": 150.00,
+                    "13ft": 160.00,
+                    "16ft": 160.00,
+                  },
+                  description:
+                    "Two separate prints with blocker liner in between.",
                 },
               ],
             },

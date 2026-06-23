@@ -1917,6 +1917,188 @@ const GRADIENTS = [
   },
 ];
 
+interface TemplatePreviewProps {
+  elements: CanvasElement[];
+  canvasSize: { width: number; height: number };
+  bgColor: string;
+  bgGradient: string;
+  bgImage: string | null;
+}
+
+function TemplatePreview({
+  elements,
+  canvasSize,
+  bgColor,
+  bgGradient,
+  bgImage,
+}: TemplatePreviewProps) {
+  const refWidth = canvasSize.width > canvasSize.height ? 650 : 400;
+
+  const renderClipartPreview = (clipartId: string, color: string = "#000000") => {
+    const standardIcons = Icons as unknown as Record<
+      string,
+      React.ComponentType<{ className?: string; style?: React.CSSProperties }>
+    >;
+    const formattedId = clipartId
+      .split("-")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join("");
+
+    const IconComp = standardIcons[formattedId] || Icons.HelpCircle;
+    return <IconComp className="w-full h-full" style={{ color }} />;
+  };
+
+  return (
+    <div
+      className="relative w-full overflow-hidden rounded bg-slate-950 border border-slate-800 shadow-inner"
+      style={{
+        aspectRatio: `${canvasSize.width} / ${canvasSize.height}`,
+        backgroundColor: bgColor,
+        backgroundImage:
+          bgGradient ||
+          (bgImage ? `url(${bgImage})` : "none"),
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        containerType: "inline-size",
+      }}
+    >
+      <div className="absolute inset-0 pointer-events-none rounded select-none">
+        {elements.map((el, idx) => {
+          const opacity = el.opacity !== undefined ? el.opacity : 1;
+          return (
+            <div
+              key={el.id}
+              className="absolute"
+              style={{
+                left: `${el.x}%`,
+                top: `${el.y}%`,
+                width: `${el.width}%`,
+                height: `${el.height}%`,
+                transform: `rotate(${el.rotation || 0}deg)`,
+                transformOrigin: "center center",
+                opacity: opacity,
+                zIndex: idx,
+              }}
+            >
+              <div className="w-full h-full flex items-center justify-center overflow-hidden select-none pointer-events-none">
+                {el.type === "text" && (
+                  <div
+                    className="w-full h-full flex items-center select-none pointer-events-none truncate"
+                    style={{
+                      fontFamily: el.fontFamily || "Inter",
+                      color: el.color || "#000000",
+                      fontWeight: el.bold ? "bold" : "normal",
+                      fontStyle: el.italic ? "italic" : "normal",
+                      textDecoration: el.underline ? "underline" : "none",
+                      justifyContent:
+                        el.align === "left"
+                          ? "flex-start"
+                          : el.align === "right"
+                            ? "flex-end"
+                            : "center",
+                      textAlign: el.align || "center",
+                      fontSize: `${((el.fontSize || 32) / refWidth) * 100}cqw`,
+                      whiteSpace: "pre-wrap",
+                      lineHeight: "1.1",
+                      WebkitTextStroke: el.strokeColor
+                        ? `${((el.strokeWidth || 1) / refWidth) * 100}cqw ${el.strokeColor}`
+                        : "none",
+                    }}
+                  >
+                    {el.content}
+                  </div>
+                )}
+
+                {el.type === "shape" && (
+                  <div className="w-full h-full flex items-center justify-center p-[0.5px]">
+                    {el.shapeType === "rect" && (
+                      <div
+                        className="w-full h-full"
+                        style={{
+                          backgroundColor: el.fillColor || "#3b82f6",
+                          border: el.borderWidth
+                            ? `${Math.max(0.5, (el.borderWidth / refWidth) * 100)}cqw solid ${el.borderColor || "#000"}`
+                            : "none",
+                          borderRadius: "1px",
+                        }}
+                      />
+                    )}
+                    {el.shapeType === "circle" && (
+                      <div
+                        className="w-full h-full rounded-full"
+                        style={{
+                          backgroundColor: el.fillColor || "#3b82f6",
+                          border: el.borderWidth
+                            ? `${Math.max(0.5, (el.borderWidth / refWidth) * 100)}cqw solid ${el.borderColor || "#000"}`
+                            : "none",
+                        }}
+                      />
+                    )}
+                    {el.shapeType === "triangle" && (
+                      <svg
+                        className="w-full h-full"
+                        viewBox="0 0 100 100"
+                        preserveAspectRatio="none"
+                      >
+                        <polygon
+                          points="50,5 95,95 5,95"
+                          fill={el.fillColor || "#3b82f6"}
+                          stroke={el.borderColor || "#000"}
+                          strokeWidth={el.borderWidth ? el.borderWidth * 2 : 0}
+                        />
+                      </svg>
+                    )}
+                    {el.shapeType === "star" && (
+                      <svg
+                        className="w-full h-full"
+                        viewBox="0 0 100 100"
+                        preserveAspectRatio="none"
+                      >
+                        <polygon
+                          points="50,2 64,36 100,36 71,57 81,95 50,72 19,95 29,57 0,36 36,36"
+                          fill={el.fillColor || "#eab308"}
+                          stroke={el.borderColor || "#000"}
+                          strokeWidth={el.borderWidth ? el.borderWidth * 2 : 0}
+                        />
+                      </svg>
+                    )}
+                    {el.shapeType === "line" && (
+                      <div
+                        className="w-full"
+                        style={{
+                          height: `${Math.max(0.5, ((el.borderWidth || 4) / refWidth) * 100)}cqw`,
+                          backgroundColor: el.fillColor || "#000",
+                        }}
+                      />
+                    )}
+                  </div>
+                )}
+
+                {el.type === "clipart" && el.clipartId && (
+                  <div className="w-full h-full p-[1.5px] flex items-center justify-center">
+                    {renderClipartPreview(el.clipartId, el.color)}
+                  </div>
+                )}
+
+                {el.type === "image" && el.imageUrl && (
+                  <div className="w-full h-full relative p-0">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={el.imageUrl}
+                      alt="Template image preview"
+                      className="w-full h-full object-fill pointer-events-none"
+                    />
+                  </div>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function DesignPageContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -3181,22 +3363,31 @@ function DesignPageContent() {
                 <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
                   Preset Sign Layouts
                 </h3>
-                <div className="space-y-3">
+                <div className="grid grid-cols-2 gap-3">
                   {availableTemplates.map((tmpl) => (
                     <button
                       key={tmpl.id}
                       onClick={() => loadTemplate(tmpl)}
-                      className="w-full text-left bg-slate-800/80 hover:bg-slate-750 border border-slate-700 hover:border-[#ff2d78]/45 rounded-xl p-3.5 flex items-center justify-between transition-all group shadow-sm hover:translate-x-0.5"
+                      className="w-full text-left bg-slate-800/60 hover:bg-slate-750 border border-slate-700/80 hover:border-[#ff2d78]/60 rounded-xl overflow-hidden transition-all group shadow-sm hover:-translate-y-0.5 flex flex-col focus:outline-none focus:ring-2 focus:ring-[#ff2d78]/45"
+                      title={`Load ${tmpl.name} template`}
                     >
-                      <div>
-                        <div className="font-bold text-slate-200 group-hover:text-[#ff2d78] transition-colors text-sm">
+                      <div className="w-full p-1.5 bg-slate-950/40 border-b border-slate-850/40 aspect-[4/3] flex items-center justify-center overflow-hidden">
+                        <TemplatePreview
+                          elements={tmpl.elements}
+                          canvasSize={canvasSize}
+                          bgColor={bgColor}
+                          bgGradient={bgGradient}
+                          bgImage={bgImage}
+                        />
+                      </div>
+                      <div className="p-2 w-full flex-grow flex flex-col justify-between bg-slate-900/30">
+                        <div className="font-bold text-slate-200 group-hover:text-[#ff2d78] transition-colors text-[10px] truncate leading-tight">
                           {tmpl.name}
                         </div>
-                        <div className="text-[10px] text-slate-400 mt-1">
-                          {tmpl.elements.length} layout elements
+                        <div className="text-[8px] text-slate-450 mt-1 uppercase tracking-wider font-semibold">
+                          {tmpl.elements.length} layers
                         </div>
                       </div>
-                      <ChevronRight className="w-4 h-4 text-slate-500 group-hover:text-[#ff2d78] transition-colors" />
                     </button>
                   ))}
                 </div>
