@@ -4,10 +4,21 @@ import { Droplets } from "lucide-react";
 
 
 export const metadata: Metadata = {
-  title: "Custom Coroplast Signs Fort Lauderdale FL | Fast Turnaround | Nano Signs",
+  title: "Custom Coroplast Signs | Nano Signs",
   description: "Design and order waterproof corrugated plastic coroplast signs in Broward County. Cheap prices & fast turnaround times in Fort Lauderdale.",
   alternates: {
     canonical: "https://nano-signs.com/custom-signs/coroplast-signs",
+  },
+  openGraph: {
+    title: "Custom Coroplast Signs | Nano Signs",
+    description: "Design and order waterproof corrugated plastic coroplast signs in Broward County. Cheap prices & fast turnaround times in Fort Lauderdale.",
+    url: "https://nano-signs.com/custom-signs/coroplast-signs",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Custom Coroplast Signs | Nano Signs",
+    description: "Design and order waterproof corrugated plastic coroplast signs in Broward County. Cheap prices & fast turnaround times in Fort Lauderdale.",
   },
 };
 

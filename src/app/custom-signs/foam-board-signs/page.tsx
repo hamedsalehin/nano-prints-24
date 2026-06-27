@@ -4,10 +4,21 @@ import { Lightbulb } from "lucide-react";
 
 
 export const metadata: Metadata = {
-  title: "Foam Board Signs Fort Lauderdale FL | Fast Turnaround | Nano Signs",
+  title: "Foam Board Signs | Nano Signs",
   description: "Lightweight and professional indoor display signs for presentations, lobbies, and events in Broward County. Fast turnaround in Fort Lauderdale.",
   alternates: {
     canonical: "https://nano-signs.com/custom-signs/foam-board-signs",
+  },
+  openGraph: {
+    title: "Foam Board Signs | Nano Signs",
+    description: "Lightweight and professional indoor display signs for presentations, lobbies, and events in Broward County. Fast turnaround in Fort Lauderdale.",
+    url: "https://nano-signs.com/custom-signs/foam-board-signs",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Foam Board Signs | Nano Signs",
+    description: "Lightweight and professional indoor display signs for presentations, lobbies, and events in Broward County. Fast turnaround in Fort Lauderdale.",
   },
 };
 

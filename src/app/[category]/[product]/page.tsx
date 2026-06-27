@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const productData = categoryData.products.find((p) => p.id === decodedProduct);
   if (!productData) return {};
   
-  const title = `${productData.name} | Fort Lauderdale FL | Nano Signs`;
+  const title = `${productData.name} | Nano Signs`;
   const description = productData.description
     ? `Design custom ${productData.name.toLowerCase()} in Broward County. ${productData.description}`
     : `Custom ${productData.name} printing in Fort Lauderdale & Oakland Park FL. Call 305-967-1005!`;

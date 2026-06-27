@@ -4,10 +4,21 @@ import { Eye } from "lucide-react";
 
 
 export const metadata: Metadata = {
-  title: "Custom Window Graphics & Decals Fort Lauderdale FL",
+  title: "Custom Window Graphics & Decals",
   description: "Design high-res window decals, perforated vinyl, & clings online. Professional storefront graphics with fast turnaround in Broward County.",
   alternates: {
     canonical: "https://nano-signs.com/custom-signs/window-signs",
+  },
+  openGraph: {
+    title: "Custom Window Graphics & Decals",
+    description: "Design high-res window decals, perforated vinyl, & clings online. Professional storefront graphics with fast turnaround in Broward County.",
+    url: "https://nano-signs.com/custom-signs/window-signs",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Custom Window Graphics & Decals",
+    description: "Design high-res window decals, perforated vinyl, & clings online. Professional storefront graphics with fast turnaround in Broward County.",
   },
 };
 

@@ -4,10 +4,21 @@ import { Sparkles } from "lucide-react";
 
 
 export const metadata: Metadata = {
-  title: "Custom Acrylic Signs Fort Lauderdale FL | Fast Turnaround | Nano Signs",
+  title: "Custom Acrylic Signs | Nano Signs",
   description: "Premium clear, colored, and frosted custom acrylic signs in Broward County. Online design and next-day local pick up in Fort Lauderdale.",
   alternates: {
     canonical: "https://nano-signs.com/custom-signs/acrylic-signs",
+  },
+  openGraph: {
+    title: "Custom Acrylic Signs | Nano Signs",
+    description: "Premium clear, colored, and frosted custom acrylic signs in Broward County. Online design and next-day local pick up in Fort Lauderdale.",
+    url: "https://nano-signs.com/custom-signs/acrylic-signs",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Custom Acrylic Signs | Nano Signs",
+    description: "Premium clear, colored, and frosted custom acrylic signs in Broward County. Online design and next-day local pick up in Fort Lauderdale.",
   },
 };
 

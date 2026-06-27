@@ -4,10 +4,21 @@ import { Home } from "lucide-react";
 
 
 export const metadata: Metadata = {
-  title: "Real Estate Sign Panels Fort Lauderdale FL | Nano Signs",
+  title: "Real Estate Sign Panels | Nano Signs",
   description: "Design custom real estate panels, riders, and frames online or in person in Broward County. High-durability property signs with fast turnaround.",
   alternates: {
     canonical: "https://nano-signs.com/custom-signs/real-estate-panels",
+  },
+  openGraph: {
+    title: "Real Estate Sign Panels | Nano Signs",
+    description: "Design custom real estate panels, riders, and frames online or in person in Broward County. High-durability property signs with fast turnaround.",
+    url: "https://nano-signs.com/custom-signs/real-estate-panels",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Real Estate Sign Panels | Nano Signs",
+    description: "Design custom real estate panels, riders, and frames online or in person in Broward County. High-durability property signs with fast turnaround.",
   },
 };
 

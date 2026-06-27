@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const categoryData = PRODUCTS_REGISTRY[decodedCategory];
   if (!categoryData) return {};
   
-  const title = `${categoryData.title} | Fort Lauderdale FL | Nano Signs`;
+  const title = `${categoryData.title} | Nano Signs`;
   const description = categoryData.description
     ? `Custom ${categoryData.title.toLowerCase()} online or in Broward County. ${categoryData.description}`
     : `High-quality custom ${categoryData.title.toLowerCase()} printing in Fort Lauderdale & Oakland Park FL. Fastest turnaround. Call 305-967-1005!`;

@@ -4,10 +4,21 @@ import { Layers } from "lucide-react";
 
 
 export const metadata: Metadata = {
-  title: "Custom Yard Signs Fort Lauderdale FL | Fast Turnaround | Nano Signs",
+  title: "Custom Yard Signs | Nano Signs",
   description: "Design custom corrugated plastic yard signs online with H-stakes. Fastest turnaround times in Broward County. Next-day shipping/local pickup.",
   alternates: {
     canonical: "https://nano-signs.com/custom-signs/yard-signs",
+  },
+  openGraph: {
+    title: "Custom Yard Signs | Nano Signs",
+    description: "Design custom corrugated plastic yard signs online with H-stakes. Fastest turnaround times in Broward County. Next-day shipping/local pickup.",
+    url: "https://nano-signs.com/custom-signs/yard-signs",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Custom Yard Signs | Nano Signs",
+    description: "Design custom corrugated plastic yard signs online with H-stakes. Fastest turnaround times in Broward County. Next-day shipping/local pickup.",
   },
 };
 

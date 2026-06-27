@@ -4,10 +4,21 @@ import { ParkingCircle } from "lucide-react";
 
 
 export const metadata: Metadata = {
-  title: "Custom Parking & Traffic Signs Fort Lauderdale FL | Nano Signs",
+  title: "Custom Parking & Traffic Signs | Nano Signs",
   description: "Regulatory, reserved, and custom parking signs in Broward County. Heavy-duty aluminum or coroplast signs with fast turnaround in Fort Lauderdale.",
   alternates: {
     canonical: "https://nano-signs.com/custom-signs/parking-signs",
+  },
+  openGraph: {
+    title: "Custom Parking & Traffic Signs | Nano Signs",
+    description: "Regulatory, reserved, and custom parking signs in Broward County. Heavy-duty aluminum or coroplast signs with fast turnaround in Fort Lauderdale.",
+    url: "https://nano-signs.com/custom-signs/parking-signs",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Custom Parking & Traffic Signs | Nano Signs",
+    description: "Regulatory, reserved, and custom parking signs in Broward County. Heavy-duty aluminum or coroplast signs with fast turnaround in Fort Lauderdale.",
   },
 };
 
