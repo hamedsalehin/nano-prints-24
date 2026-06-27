@@ -72,7 +72,10 @@ export async function POST(req: NextRequest) {
     const taxAmount = Math.round(itemsTotal * taxRate * 100) / 100;
 
     // 5. Total cost
-    const finalTotal = itemsTotal + shippingCost + taxAmount;
+    const baseTotal = itemsTotal + shippingCost + taxAmount;
+    const totalToCharge = (baseTotal + 0.30) / (1 - 0.029);
+    const stripeFee = totalToCharge - baseTotal;
+    const finalTotal = totalToCharge;
     const finalTotalCents = Math.round(finalTotal * 100);
 
     // Create Stripe PaymentIntent
@@ -86,6 +89,7 @@ export async function POST(req: NextRequest) {
         shippingCost: String(shippingCost),
         taxAmount: String(taxAmount),
         discountAmount: String(discount),
+        stripeFee: String(stripeFee),
         subtotal: String(subtotal),
         finalTotal: String(finalTotal),
         userId: json.userId || "anonymous",

@@ -75,8 +75,10 @@ export default function CheckoutPage() {
   const taxRate = isFlorida ? 0.07 : 0.0;
   const taxAmount = Math.round(itemsTotal * taxRate * 100) / 100;
 
-  const finalTotal = itemsTotal + shippingCost + taxAmount;
-
+  const baseTotal = itemsTotal + shippingCost + taxAmount;
+  const totalToCharge = (baseTotal + 0.30) / (1 - 0.029);
+  const stripeFee = totalToCharge - baseTotal;
+  const finalTotal = totalToCharge;
   // Determine if freight LTL is required for cart items
   const isFreightEligible = useMemo(() => {
     let hasFreight = false;
@@ -214,6 +216,7 @@ export default function CheckoutPage() {
               "Shipping Cost": `$${shippingCost.toFixed(2)}`,
               "Tax Paid": `$${taxAmount.toFixed(2)}`,
               "Discount Applied": `$${discount.toFixed(2)}`,
+              "Stripe Processing Fee": `$${stripeFee.toFixed(2)}`,
               "Shipping Method": selectedRateId,
             },
             shipping_name: shippingAddress.name,
@@ -671,6 +674,11 @@ export default function CheckoutPage() {
                 <div className="flex items-center justify-between">
                   <span>Estimated Sales Tax (FL)</span>
                   <span className="text-slate-700">${taxAmount.toFixed(2)}</span>
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <span>Stripe Processing Fee</span>
+                  <span className="text-slate-700">${stripeFee.toFixed(2)}</span>
                 </div>
 
                 <div className="flex items-center justify-between border-t border-slate-200/60 pt-3.5">
