@@ -521,8 +521,25 @@ export default function CheckoutPage() {
                 )}
               </div>
 
+              {subtotal < 29 && (
+                <div className="bg-amber-50 rounded-3xl p-6 md:p-8 shadow-md border border-amber-200 space-y-3">
+                  <div className="flex items-center gap-3">
+                    <AlertCircle className="w-8 h-8 text-amber-600" />
+                    <div>
+                      <h2 className="text-lg font-bold font-poppins text-amber-900">Minimum Order Not Met</h2>
+                      <p className="text-sm text-amber-800 mt-1">
+                        A minimum order of $29.00 is required to checkout. Please add ${(29 - subtotal).toFixed(2)} more to your cart.
+                      </p>
+                    </div>
+                  </div>
+                  <Link href="/" className="inline-block mt-2 px-5 py-2.5 bg-amber-600 text-white text-sm font-bold rounded-xl hover:bg-amber-700 transition-colors">
+                    Continue Shopping
+                  </Link>
+                </div>
+              )}
+
               {/* Stripe Payment Form */}
-              <div className="bg-white rounded-3xl p-6 md:p-8 shadow-md border border-gray-150 space-y-5">
+              <div className={`bg-white rounded-3xl p-6 md:p-8 shadow-md border border-gray-150 space-y-5 ${subtotal < 29 ? 'opacity-50 pointer-events-none' : ''}`}>
                 <h2 className="text-lg font-bold font-poppins text-slate-800 flex items-center gap-2 border-b pb-3">
                   <CreditCard className="w-5 h-5 text-[#ff2d78]" />
                   3. Secure Payment

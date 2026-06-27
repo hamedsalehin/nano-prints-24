@@ -228,15 +228,28 @@ export function CartSidebar() {
                 Shipping and taxes will be calculated at printing confirmation.
                 Free artwork check included!
               </p>
+              {totalCartPrice < 29 && (
+                <div className="p-3 bg-amber-50 border border-amber-200 rounded-xl flex gap-2 text-xs text-amber-800 font-semibold">
+                  <AlertCircle className="w-4 h-4 shrink-0" />
+                  <span>A minimum order of $29.00 is required to checkout. Add ${(29 - totalCartPrice).toFixed(2)} more to your cart.</span>
+                </div>
+              )}
 
               <button
                 onClick={handleCheckout}
-                className="w-full active:scale-[0.98] text-white font-extrabold py-4 rounded-xl transition-all text-sm uppercase tracking-wider shadow-md font-poppins flex items-center justify-center gap-2 hover:opacity-90"
-                style={{
-                  background:
-                    "linear-gradient(135deg, #ff2d78, #b020ff, #00e5ff)",
-                  boxShadow: "0 4px 15px rgba(255,45,120,0.2)",
-                }}
+                disabled={totalCartPrice < 29}
+                className={`w-full text-white font-extrabold py-4 rounded-xl transition-all text-sm uppercase tracking-wider shadow-md font-poppins flex items-center justify-center gap-2 ${
+                  totalCartPrice < 29 ? "opacity-50 cursor-not-allowed bg-gray-400" : "hover:opacity-90 active:scale-[0.98]"
+                }`}
+                style={
+                  totalCartPrice < 29
+                    ? {}
+                    : {
+                        background:
+                          "linear-gradient(135deg, #ff2d78, #b020ff, #00e5ff)",
+                        boxShadow: "0 4px 15px rgba(255,45,120,0.2)",
+                      }
+                }
               >
                 Proceed to Checkout
                 <ArrowRight className="w-4 h-4" />
