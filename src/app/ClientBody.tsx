@@ -7,8 +7,12 @@ import { CartSidebar } from "@/components/CartSidebar";
 import { PromotionalModal } from "@/components/PromotionalModal";
 import { ChatWidget } from "@/components/ChatWidget";
 import { GeminiChatbox } from "@/components/GeminiChatbox";
+import { usePathname } from "next/navigation";
 
 export function ClientBody({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const isDesignerPage = pathname?.includes("/design") || pathname?.includes("/PrintDesignExperience");
+
   return (
     <body className="antialiased" suppressHydrationWarning>
       <AuthProvider>
@@ -17,8 +21,12 @@ export function ClientBody({ children }: { children: React.ReactNode }) {
           <AuthModal />
           <CartSidebar />
           <PromotionalModal />
-          <ChatWidget />
-          <GeminiChatbox />
+          {!isDesignerPage && (
+            <>
+              <ChatWidget />
+              <GeminiChatbox />
+            </>
+          )}
         </CartProvider>
       </AuthProvider>
     </body>
