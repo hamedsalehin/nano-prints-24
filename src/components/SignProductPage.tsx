@@ -181,7 +181,32 @@ function ShippingCountdown() {
 }
 
 export function SignProductPage({ cfg: rawCfg }: { cfg: ProductPageConfig }) {
-  const cfg = rawCfg;
+  const cfg = useMemo(() => {
+    const updatedSelects = [...(rawCfg.selects || [])];
+    const hasTurnaround = updatedSelects.some(
+      (s) => s.label.toLowerCase().includes("turnaround")
+    );
+    if (!hasTurnaround) {
+      updatedSelects.push({
+        label: "Turnaround",
+        options: [
+          {
+            label: "Standard 4-5 business days",
+            value: "standard",
+            priceAdder: 0,
+            priceMultiplier: 1.0,
+          },
+          {
+            label: "Rush services 1-2 days",
+            value: "rush",
+            priceAdder: 0,
+            priceMultiplier: 1.5,
+          },
+        ],
+      });
+    }
+    return { ...rawCfg, selects: updatedSelects };
+  }, [rawCfg]);
 
   const [selectedSize, setSelectedSize] = useState(() => cfg.sizes[0]);
   const [activeImageIndex, setActiveImageIndex] = useState(0);

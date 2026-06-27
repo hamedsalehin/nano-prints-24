@@ -224,6 +224,17 @@ export function calculateShippingRates(
     hasFreightItem = true;
   }
 
+  // Determine if any item has rush turnaround
+  let hasRush = false;
+  let hasStandard = false;
+  for (const item of items) {
+    if (item.customOptions?.["Turnaround"] === "Rush services 1-2 days") {
+      hasRush = true;
+    } else {
+      hasStandard = true;
+    }
+  }
+
   // 1. Free Local Pickup is always available
   const rates: ShippingRate[] = [
     {
@@ -303,7 +314,7 @@ export function calculateShippingRates(
       id: "standard_ground",
       name: "Standard Courier (Ground)",
       price: standardCost,
-      deliveryEstimate: "4-5 Business Days",
+      deliveryEstimate: hasRush && !hasStandard ? "1-2 Business Days" : "4-5 Business Days",
       description: "Delivered directly to your door via UPS or FedEx Ground.",
     });
 
