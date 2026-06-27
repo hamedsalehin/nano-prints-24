@@ -14,16 +14,38 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const categoryData = PRODUCTS_REGISTRY[decodedCategory];
   if (!categoryData) return {};
   
-  const title = `${categoryData.title} Fort Lauderdale FL | Fast Turnaround | Nano Signs`;
+  const title = `${categoryData.title} | Fort Lauderdale FL | Nano Signs`;
   const description = categoryData.description
-    ? `Design & order custom ${categoryData.title.toLowerCase()} online or in person in Broward County. Fastest turnaround times. ${categoryData.description}`
-    : `High-quality custom ${categoryData.title.toLowerCase()} printing in Fort Lauderdale & Oakland Park FL. Fastest turnaround times in Broward. Call 305-967-1005!`;
+    ? `Custom ${categoryData.title.toLowerCase()} online or in Broward County. ${categoryData.description}`
+    : `High-quality custom ${categoryData.title.toLowerCase()} printing in Fort Lauderdale & Oakland Park FL. Fastest turnaround. Call 305-967-1005!`;
+
+  const ogImageUrl = categoryData.heroImage.startsWith("/") 
+    ? `https://nano-signs.com${categoryData.heroImage}`
+    : categoryData.heroImage;
 
   return {
     title,
-    description: description.slice(0, 160), // Keep description within SEO limits
+    description: description.slice(0, 155),
     alternates: {
       canonical: `https://nano-signs.com/${decodedCategory}`,
+    },
+    openGraph: {
+      title,
+      description: description.slice(0, 155),
+      url: `https://nano-signs.com/${decodedCategory}`,
+      type: "website",
+      images: [
+        {
+          url: ogImageUrl,
+          alt: categoryData.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: description.slice(0, 155),
+      images: [ogImageUrl],
     },
   };
 }

@@ -25,15 +25,37 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Premium Custom Signage, Led signs & Banners Fort Lauderdale. FL | Nano Signs",
+  title: "Premium Custom Signage, LED Signs & Banners Fort Lauderdale FL | Nano Signs",
   description:
-    "Design and order custom signs, LED signs, retractable banners, business cards and all other marketing materials online or in person. Fastest turnaround times in broward.",
+    "Design and order custom signs, LED signs, retractable banners, business cards and all other marketing materials online or in person. Fastest turnaround times in Broward.",
   icons: {
     icon: "/images/nano logo O.png",
     apple: "/images/nano logo O.png",
   },
   alternates: {
     canonical: "https://nano-signs.com",
+  },
+  openGraph: {
+    title: "Premium Custom Signage, LED Signs & Banners Fort Lauderdale FL | Nano Signs",
+    description: "Design and order custom signs, LED signs, retractable banners, business cards and all other marketing materials online or in person. Fastest turnaround times in Broward.",
+    url: "https://nano-signs.com",
+    siteName: "Nano Signs",
+    images: [
+      {
+        url: "https://nano-signs.com/images/nano%20logo%20complete.png",
+        width: 1200,
+        height: 630,
+        alt: "Nano Signs - Custom Printing & Signage",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Premium Custom Signage, LED Signs & Banners Fort Lauderdale FL | Nano Signs",
+    description: "Design and order custom signs, LED signs, retractable banners, business cards and all other marketing materials online or in person. Fastest turnaround times in Broward.",
+    images: ["https://nano-signs.com/images/nano%20logo%20complete.png"],
   },
 };
 

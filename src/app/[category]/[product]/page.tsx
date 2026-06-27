@@ -19,16 +19,39 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!categoryData) return {};
   const productData = categoryData.products.find((p) => p.id === decodedProduct);
   if (!productData) return {};
-  const title = `${productData.name} Fort Lauderdale FL | Fast Turnaround | Nano Signs`;
+  
+  const title = `${productData.name} | Fort Lauderdale FL | Nano Signs`;
   const description = productData.description
-    ? `Design custom ${productData.name.toLowerCase()} online or in person in Broward County. Fastest turnaround times. ${productData.description}`
-    : `Custom ${productData.name} design and high-quality printing in Fort Lauderdale & Oakland Park FL. Fastest turnaround times in Broward. Call 305-967-1005!`;
+    ? `Design custom ${productData.name.toLowerCase()} in Broward County. ${productData.description}`
+    : `Custom ${productData.name} printing in Fort Lauderdale & Oakland Park FL. Call 305-967-1005!`;
+
+  const ogImageUrl = productData.image.startsWith("/") 
+    ? `https://nano-signs.com${productData.image}`
+    : productData.image;
 
   return {
     title,
-    description: description.slice(0, 160),
+    description: description.slice(0, 155),
     alternates: {
       canonical: `https://nano-signs.com/${decodedCategory}/${decodedProduct}`,
+    },
+    openGraph: {
+      title,
+      description: description.slice(0, 155),
+      url: `https://nano-signs.com/${decodedCategory}/${decodedProduct}`,
+      type: "website",
+      images: [
+        {
+          url: ogImageUrl,
+          alt: productData.name,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: description.slice(0, 155),
+      images: [ogImageUrl],
     },
   };
 }
