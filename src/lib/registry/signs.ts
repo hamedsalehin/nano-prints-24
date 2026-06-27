@@ -719,10 +719,6 @@ export const customSigns: RegistryCategory = {
             { key: "Print Resolution", value: "1440 dpi" },
             { key: "Color Profile", value: "CMYK" },
             { key: "Bleed Required", value: '0.125" all sides' },
-            {
-              key: "Expected Lifespan",
-              value: "Indoors indefinitely; temporary outdoor use only",
-            },
             { key: "Turnaround", value: "Next Business Day" },
           ],
           faqs: [
@@ -1555,7 +1551,7 @@ export const customSigns: RegistryCategory = {
             },
             {
               q: "How do I mount a parking sign to a post?",
-              a: 'We offer U-Channel and square tubing post add-ons. Alternatively, pre-drilled holes allow you to mount to any standard 2' U-channel post with sign-mounting hardware.',
+              a: 'We offer U-Channel and square tubing post add-ons. Alternatively, pre-drilled holes allow you to mount to any standard 2" U-channel post with sign-mounting hardware.',
             },
             {
               q: "Can I include time restrictions on my parking sign?",
