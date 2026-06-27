@@ -52,7 +52,7 @@ Behavioral Guidelines:
     };
 
     // Make request to Gemini API
-    const model = "gemini-1.5-flash";
+    const model = "gemini-flash-latest";
     const response = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
       {

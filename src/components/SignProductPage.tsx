@@ -181,60 +181,7 @@ function ShippingCountdown() {
 }
 
 export function SignProductPage({ cfg: rawCfg }: { cfg: ProductPageConfig }) {
-  const cfg = useMemo(() => {
-    const updatedSelects = [...(rawCfg.selects || [])];
-    
-    // Check if there is already a turnaround speed option
-    const turnaroundIndex = updatedSelects.findIndex(
-      (s) => s.label.toLowerCase().includes("turnaround") || 
-             s.label.toLowerCase().includes("production speed") || 
-             s.label.toLowerCase().includes("shipping speed") || 
-             s.label.toLowerCase().includes("delivery time")
-    );
-
-    const turnaroundSelect = {
-      label: "Turnaround Time",
-      options: [
-        {
-          label: "Standard (4-5 business days)",
-          value: "standard",
-          priceAdder: 0,
-          description: "Delivered to your door in 4-5 business days.",
-        },
-        {
-          label: "Rush (1-2 business days)",
-          value: "rush",
-          priceAdder: 20.00,
-          description: "Priority printing and delivery in 1-2 business days.",
-        },
-      ],
-    };
-
-    if (turnaroundIndex !== -1) {
-      updatedSelects[turnaroundIndex] = turnaroundSelect;
-    } else {
-      updatedSelects.push(turnaroundSelect);
-    }
-
-    const updatedSpecs = (rawCfg.specs || []).map(spec => {
-      if (spec.key.toLowerCase().includes("turnaround") || 
-          spec.key.toLowerCase().includes("production") || 
-          spec.key.toLowerCase().includes("delivery")) {
-        return { key: "Turnaround", value: "4-5 business days (standard) / 1-2 business days (rush)" };
-      }
-      return spec;
-    });
-
-    if (!updatedSpecs.some(spec => spec.key === "Turnaround")) {
-      updatedSpecs.push({ key: "Turnaround", value: "4-5 business days (standard) / 1-2 business days (rush)" });
-    }
-
-    return {
-      ...rawCfg,
-      selects: updatedSelects,
-      specs: updatedSpecs,
-    };
-  }, [rawCfg]);
+  const cfg = rawCfg;
 
   const [selectedSize, setSelectedSize] = useState(() => cfg.sizes[0]);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
@@ -422,20 +369,14 @@ export function SignProductPage({ cfg: rawCfg }: { cfg: ProductPageConfig }) {
     });
 
     let discount = 1;
-    if (cfg.bulkDiscounts) {
+    if (cfg.bulkDiscounts && cfg.bulkDiscounts.length > 0) {
       const sortedDiscounts = [...cfg.bulkDiscounts].sort((a, b) => b.minQty - a.minQty);
       const matchedDiscount = sortedDiscounts.find((d) => quantity >= d.minQty);
       if (matchedDiscount) {
         discount = (100 - matchedDiscount.discountPercent) / 100;
       }
-    } else if (cfg.quantityPrices || sizeQtyPrices) {
-      discount = 1;
     } else {
-      if (quantity >= 100) discount = 0.82;
-      else if (quantity >= 50) discount = 0.87;
-      else if (quantity >= 25) discount = 0.9;
-      else if (quantity >= 10) discount = 0.94;
-      else if (quantity >= 5) discount = 0.97;
+      discount = 1; // Strictly respect chart pricing, no hidden bulk discounts unless explicitly configured
     }
 
     return price * discount * multiplier;

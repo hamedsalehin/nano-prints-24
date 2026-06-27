@@ -133,7 +133,7 @@ export const customSigns: RegistryCategory = {
               ],
             },
           ],
-          qtyDiscount: "Buy more, save more — up to 13% off!",
+          qtyDiscount: "",
           keyFeatures: [
             "Weather-resistant corrugated plastic",
             "Full-color edge-to-edge printing",
