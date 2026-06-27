@@ -56,9 +56,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-// Categories that have their own static product sub-pages (e.g. custom-signs/yard-signs/page.tsx)
+// Categories that have their own static product sub-pages
 // These must be excluded from generateStaticParams to avoid route conflicts.
-const STATIC_PRODUCT_CATEGORIES = new Set(["custom-signs"]);
+const STATIC_PRODUCT_CATEGORIES = new Set<string>();
 
 export async function generateStaticParams() {
   const paths: { category: string; product: string }[] = [];
