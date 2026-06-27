@@ -179,8 +179,7 @@ export function CategoryPageClient({
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 font-opensans">
-            {products.map((p) => (
-              <Link
+            {products.map((p) => (\n              <Link
                 key={p.id}
                 href={`/${categorySlug}/${p.id}`}
                 className="flex flex-col items-center justify-start group text-center cursor-pointer"
@@ -307,11 +306,9 @@ export function CategoryPageClient({
               {reviewQuote && (
                 <p className="text-gray-500 text-sm italic font-opensans">
                   &quot;{reviewQuote}&quot;
-                </p>
-              )}
+                </p>\n              )}
             </div>
-          </section>
-        )}
+          </section>\n        )}
       </main>
 
       <Footer />
