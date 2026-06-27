@@ -95,7 +95,7 @@ export function GeminiChatbox() {
       {/* ─── CHATBOX CONTAINER CARD ─── */}
       {isOpen && (
         <div
-          className="fixed bottom-38 right-6 z-40 w-96 max-w-[calc(100vw-2rem)] h-[480px] max-h-[calc(100vh-12rem)] bg-[#070709]/95 text-white border border-slate-800/80 rounded-2xl flex flex-col overflow-hidden shadow-2xl backdrop-blur-md animate-in slide-in-from-bottom-5 fade-in duration-300"
+          className="fixed bottom-[100px] right-6 z-50 w-96 max-w-[calc(100vw-2rem)] h-[480px] max-h-[calc(100vh-12rem)] bg-[#070709]/95 text-white border border-slate-800/80 rounded-2xl flex flex-col overflow-hidden shadow-2xl backdrop-blur-md animate-in slide-in-from-bottom-5 fade-in duration-300"
           style={{
             boxShadow:
               "0 20px 40px rgba(0,0,0,0.85), 0 0 25px rgba(0,229,255,0.06), 0 0 50px rgba(255,45,120,0.04)",
