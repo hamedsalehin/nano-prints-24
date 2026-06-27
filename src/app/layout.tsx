@@ -55,7 +55,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Premium Custom Signage, LED Signs & Banners Fort Lauderdale FL | Nano Signs",
     description: "Design and order custom signs, LED signs, retractable banners, business cards and all other marketing materials online or in person. Fastest turnaround times in Broward.",
-    images: ["https://nano-signs.com/images/nano%20logo%20complete.png"],
+    images: [
+      "https://nano-signs.com/images/nano%20logo%20complete.png",
+    ],
   },
 };
 
