@@ -1,7 +1,7 @@
 import React from "react";
 import { notFound } from "next/navigation";
 import { PRODUCTS_REGISTRY } from "@/lib/productsRegistry";
-import { CategoryPageClient } from "./CategoryPageClient";
+import { CategoryPageClient } from "@/components/CategoryPageClient";
 import { Metadata } from "next";
 
 interface PageProps {
