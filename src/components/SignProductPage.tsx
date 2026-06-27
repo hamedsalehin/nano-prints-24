@@ -180,8 +180,63 @@ function ShippingCountdown() {
   );
 }
 
-export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
-  const [selectedSize, setSelectedSize] = useState(cfg.sizes[0]);
+export function SignProductPage({ cfg: rawCfg }: { cfg: ProductPageConfig }) {
+  const cfg = useMemo(() => {
+    const updatedSelects = [...(rawCfg.selects || [])];
+    
+    // Check if there is already a turnaround speed option
+    const turnaroundIndex = updatedSelects.findIndex(
+      (s) => s.label.toLowerCase().includes("turnaround") || 
+             s.label.toLowerCase().includes("production speed") || 
+             s.label.toLowerCase().includes("shipping speed") || 
+             s.label.toLowerCase().includes("delivery time")
+    );
+
+    const turnaroundSelect = {
+      label: "Turnaround Time",
+      options: [
+        {
+          label: "Standard (4-5 business days)",
+          value: "standard",
+          priceAdder: 0,
+          description: "Delivered to your door in 4-5 business days.",
+        },
+        {
+          label: "Rush (1-2 business days)",
+          value: "rush",
+          priceAdder: 20.00,
+          description: "Priority printing and delivery in 1-2 business days.",
+        },
+      ],
+    };
+
+    if (turnaroundIndex !== -1) {
+      updatedSelects[turnaroundIndex] = turnaroundSelect;
+    } else {
+      updatedSelects.push(turnaroundSelect);
+    }
+
+    const updatedSpecs = (rawCfg.specs || []).map(spec => {
+      if (spec.key.toLowerCase().includes("turnaround") || 
+          spec.key.toLowerCase().includes("production") || 
+          spec.key.toLowerCase().includes("delivery")) {
+        return { key: "Turnaround", value: "4-5 business days (standard) / 1-2 business days (rush)" };
+      }
+      return spec;
+    });
+
+    if (!updatedSpecs.some(spec => spec.key === "Turnaround")) {
+      updatedSpecs.push({ key: "Turnaround", value: "4-5 business days (standard) / 1-2 business days (rush)" });
+    }
+
+    return {
+      ...rawCfg,
+      selects: updatedSelects,
+      specs: updatedSpecs,
+    };
+  }, [rawCfg]);
+
+  const [selectedSize, setSelectedSize] = useState(() => cfg.sizes[0]);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [userClickedThumbnail, setUserClickedThumbnail] = useState(false);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -277,6 +332,21 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
   };
 
   useEffect(() => {
+    setSelectedSize(cfg.sizes[0]);
+    
+    // Reset selects and toggles
+    const newSelects: Record<string, SelectOption> = {};
+    cfg.selects?.forEach((s) => {
+      newSelects[s.label] = s.options[0];
+    });
+    setSelectValues(newSelects);
+
+    const newToggles: Record<string, ToggleOption> = {};
+    cfg.toggleGroups?.forEach((g) => {
+      newToggles[g.label] = g.options[0];
+    });
+    setToggleValues(newToggles);
+
     setActiveImageIndex(0);
     setUserClickedThumbnail(false);
     const defaultMin = cfg.minQuantity || (cfg.quantityOptions ? cfg.quantityOptions[0] : 1);
@@ -592,17 +662,17 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
               <div className="flex gap-3 mb-8 overflow-x-auto pb-2">
                 {galleryImages.map((img, idx) => (
                   <button
-                    key={idx}
-                    onClick={() => {
-                      setActiveImageIndex(idx);
-                      setUserClickedThumbnail(true);
-                    }}
-                    className={`w-16 h-16 rounded-lg border-2 cursor-pointer p-1 bg-gray-50 transition-all ${
-                      activeIndex === idx
-                        ? "border-[#ff2d78] ring-2 ring-pink-100"
-                        : "border-gray-150 hover:border-gray-350"
-                    }`}
-                    aria-label={`View product gallery image ${idx + 1}`}
+                     key={idx}
+                     onClick={() => {
+                       setActiveImageIndex(idx);
+                       setUserClickedThumbnail(true);
+                     }}
+                     className={`w-16 h-16 rounded-lg border-2 cursor-pointer p-1 bg-gray-50 transition-all ${
+                       activeIndex === idx
+                         ? "border-[#ff2d78] ring-2 ring-pink-100"
+                         : "border-gray-150 hover:border-gray-350"
+                     }`}
+                     aria-label={`View product gallery image ${idx + 1}`}
                   >
                     <div className="relative w-full h-full">
                       <Image
@@ -870,6 +940,11 @@ export function SignProductPage({ cfg }: { cfg: ProductPageConfig }) {
                       <p className="mt-1.5 text-xs text-gray-500 flex items-center gap-1 leading-normal">
                         <Info className="w-3.5 h-3.5 text-gray-400 shrink-0" />{" "}
                         {selectValues[sel.label].description}
+                      </p>
+                    )}
+                    {sel.label === "Turnaround Time" && (
+                      <p className="mt-1.5 text-xs text-[#ff2d78] font-bold">
+                        * Contact store for same day service inquiries
                       </p>
                     )}
                   </div>

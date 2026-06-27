@@ -25,7 +25,7 @@ export function parseDimensions(sizeStr: string): { width: number; height: numbe
 
   try {
     const clean = sizeStr.replace(/\\/g, "").replace(/"/g, "").replace(/”/g, "").replace(/’/g, "'").trim();
-    // split by x, *, or by
+    // split by x, * or by
     const parts = clean.split(/x|\*|by/i).map(p => p.trim());
     if (parts.length >= 2) {
       const w = parseFloat(parts[0]);
@@ -303,7 +303,7 @@ export function calculateShippingRates(
       id: "standard_ground",
       name: "Standard Courier (Ground)",
       price: standardCost,
-      deliveryEstimate: isSouthFlorida ? "Next Business Day" : isFlorida ? "2 Business Days" : "3-5 Business Days",
+      deliveryEstimate: "4-5 Business Days",
       description: "Delivered directly to your door via UPS or FedEx Ground.",
     });
 
@@ -311,7 +311,7 @@ export function calculateShippingRates(
       id: "expedited_courier",
       name: "Expedited Courier (Express)",
       price: expeditedCost,
-      deliveryEstimate: isSouthFlorida ? "Next Day Morning" : "1-2 Business Days",
+      deliveryEstimate: "1-2 Business Days",
       description: "Prioritized express shipment for fast delivery.",
     });
   }

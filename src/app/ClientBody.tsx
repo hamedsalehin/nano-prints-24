@@ -6,6 +6,7 @@ import { AuthModal } from "@/components/AuthModal";
 import { CartSidebar } from "@/components/CartSidebar";
 import { PromotionalModal } from "@/components/PromotionalModal";
 import { ChatWidget } from "@/components/ChatWidget";
+import { GeminiChatbox } from "@/components/GeminiChatbox";
 
 export function ClientBody({ children }: { children: React.ReactNode }) {
   return (
@@ -17,9 +18,9 @@ export function ClientBody({ children }: { children: React.ReactNode }) {
           <CartSidebar />
           <PromotionalModal />
           <ChatWidget />
+          <GeminiChatbox />
         </CartProvider>
       </AuthProvider>
     </body>
   );
 }
-
