@@ -188,26 +188,8 @@ export const vehicleSigns: RegistryCategory = {
               basePrice: 18.99 
             },
           ],
-          selects: [
-            {
-              label: "Corner Style",
-              options: [
-                {
-                  label: "Rounded Corners (Aerodynamic)",
-                  value: "rounded",
-                  priceAdder: 0,
-                  description: "Prevents wind drag lifting on highway speeds.",
-                },
-                {
-                  label: "Square Corners",
-                  value: "square",
-                  priceAdder: -1.0,
-                  description: "Classic sharp-cut rectangular magnet.",
-                },
-              ],
-            },
-          ],
-          qtyDiscount: "Bulk discounts starting at 2 or more magnets",
+          selects: [],
+          qtyDiscount: "",
           keyFeatures: [
             "Premium 30mil thick magnetic sheeting",
             "Rounded corners prevent highway peel",

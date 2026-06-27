@@ -235,21 +235,9 @@ export const customSigns: RegistryCategory = {
               quantityPrices: { 100: 330, 200: 650, 300: 970 }
             },
           ],
-          selects: [
-            {
-              label: "Stand Options",
-              options: [
-                {
-                  label: "Stand Wires Included",
-                  value: "wires",
-                  priceAdder: 0,
-                  description: "Sturdy metal stand wires are included at no extra cost.",
-                },
-              ],
-            },
-          ],
+          selects: [],
           toggleGroups: [],
-          qtyDiscount: "Bulk contract pricing applied automatically",
+          qtyDiscount: "",
           keyFeatures: [
             "Professional real estate layouts",
             "Durable outdoor materials",
@@ -388,7 +376,7 @@ export const customSigns: RegistryCategory = {
             },
           ],
           toggleGroups: [],
-          qtyDiscount: "Volume pricing applied directly for 1, 10, or 20 pcs",
+          qtyDiscount: "",
           keyFeatures: [
             "Rust-proof, corrosion-resistant aluminum",
             "UV-resistant inks — won't fade for years",
@@ -527,7 +515,7 @@ export const customSigns: RegistryCategory = {
             },
           ],
           toggleGroups: [],
-          qtyDiscount: "Buy more, save more — up to 10% off!",
+          qtyDiscount: "",
           keyFeatures: [
             "Double-sided by default",
             "Portable — set up in seconds",
@@ -648,52 +636,9 @@ export const customSigns: RegistryCategory = {
                 },
               ],
             },
-            {
-              label: "Board Thickness",
-              options: [
-                {
-                  label: '3/16" (5mm) Standard',
-                  value: "3_16",
-                  priceAdder: 0,
-                  description: "Best for most display applications.",
-                },
-              ],
-            },
           ],
-          toggleGroups: [
-            {
-              label: "Mounting Backing",
-              options: [
-                { id: "none", label: "No Backing", priceAdder: 0 },
-                {
-                  id: "self_stick",
-                  label: "Self-Adhesive Back",
-                  priceAdder: 2.5,
-                  description: "Peel & stick to any flat surface.",
-                },
-                {
-                  id: "easel",
-                  label: "Easel Back",
-                  priceAdder: 1.99,
-                  description: "Stands up on any flat surface.",
-                },
-              ],
-            },
-            {
-              label: "Border / Frame",
-              options: [
-                { id: "no_border", label: "No Border", priceAdder: 0 },
-                { id: "black_border", label: "Black Border", priceAdder: 0 },
-                { id: "white_border", label: "White Border", priceAdder: 0 },
-                {
-                  id: "custom_frame",
-                  label: "Custom Color Border",
-                  priceAdder: 1,
-                },
-              ],
-            },
-          ],
-          qtyDiscount: "Buy 5+ foam boards and save up to 10%",
+          toggleGroups: [],
+          qtyDiscount: "",
           keyFeatures: [
             "Crisp, vivid full-color printing",
             "Ultra-lightweight for easy transport",
