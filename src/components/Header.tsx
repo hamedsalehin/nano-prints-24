@@ -136,12 +136,7 @@ export function Header() {
                           "Account"}
                       </span>
                       <ChevronDown
-                        className="w-4 h-4 transition-transform duration-200"
-                        style={{
-                          transform: userDropdownOpen
-                            ? "rotate(180deg)"
-                            : "none",
-                        }}
+                        className={`w-4 h-4 transition-transform duration-200 ${userDropdownOpen ? "rotate-180" : ""}`}
                       />
                     </button>
 
@@ -193,10 +188,7 @@ export function Header() {
                   <ShoppingCart className="w-5 h-5" />
                   {items.length > 0 && (
                     <span
-                      className="absolute -top-2 -right-2 text-white text-[10px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-extrabold animate-in zoom-in duration-300"
-                      style={{
-                        background: "linear-gradient(135deg, #ff2d78, #00e5ff)",
-                      }}
+                      className="absolute -top-2 -right-2 text-white text-[10px] w-4.5 h-4.5 rounded-full flex items-center justify-center font-extrabold animate-in zoom-in duration-300 bg-[linear-gradient(135deg,#ff2d78,#00e5ff)]"
                     >
                       {items.length}
                     </span>

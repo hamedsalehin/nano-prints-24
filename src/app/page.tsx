@@ -6,6 +6,7 @@ import { ExpertsSection } from "@/components/ExpertsSection";
 import { ProductsGrid } from "@/components/ProductsGrid";
 import { ValuePropositions } from "@/components/ValuePropositions";
 import { CustomerHighlights } from "@/components/CustomerHighlights";
+import { SeoContentBlock } from "@/components/SeoContentBlock";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <ProductsGrid />
       <ValuePropositions />
       <CustomerHighlights />
+      <SeoContentBlock />
       <Footer />
     </main>
   );

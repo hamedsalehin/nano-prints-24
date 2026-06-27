@@ -25,7 +25,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Custom Signs, Banners & LED Signage | Nano Signs",
+  title: "Order Custom Signs, Banners & LED Signage | Nano Signs",
   description:
     "Order custom signs, LED signage, banners & marketing materials in Fort Lauderdale FL. Fastest turnaround in Broward County.",
   icons: {
@@ -34,6 +34,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://nano-signs.com",
+    languages: {
+      "en-US": "https://nano-signs.com",
+      "x-default": "https://nano-signs.com",
+    },
   },
   openGraph: {
     title: "Custom Signs, Banners & LED Signage | Nano Signs",

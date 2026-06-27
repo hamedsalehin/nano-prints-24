@@ -89,11 +89,7 @@ export function Footer({ light = false }: { light?: boolean } = {}) {
       {/* Top gradient accent line */}
       {!light && (
         <div
-          className="h-1 w-full"
-          style={{
-            background:
-              "linear-gradient(90deg, #ff2d78 0%, #b020ff 50%, #00e5ff 100%)",
-          }}
+          className="h-1 w-full bg-[linear-gradient(90deg,#ff2d78_0%,#b020ff_50%,#00e5ff_100%)]"
         />
       )}
 
@@ -121,8 +117,7 @@ export function Footer({ light = false }: { light?: boolean } = {}) {
                 className={`flex items-center gap-2 transition-colors ${light ? "text-slate-600 hover:text-[#ff2d78]" : "text-gray-300 hover:text-[#ff2d78]"}`}
               >
                 <Phone
-                  className="w-4 h-4 flex-shrink-0"
-                  style={{ color: "#ff2d78" }}
+                  className="w-4 h-4 flex-shrink-0 text-[#ff2d78]"
                 />
                 <span>305-967-1005</span>
               </a>
@@ -131,8 +126,7 @@ export function Footer({ light = false }: { light?: boolean } = {}) {
                 className={`flex items-center gap-2 transition-colors ${light ? "text-slate-600 hover:text-[#ff2d78]" : "text-gray-300 hover:text-[#ff2d78]"}`}
               >
                 <Phone
-                  className="w-4 h-4 flex-shrink-0"
-                  style={{ color: "#ff2d78" }}
+                  className="w-4 h-4 flex-shrink-0 text-[#ff2d78]"
                 />
                 <span>305-967-9654</span>
               </a>
@@ -141,15 +135,13 @@ export function Footer({ light = false }: { light?: boolean } = {}) {
                 className={`flex items-center gap-2 transition-colors ${light ? "text-slate-600 hover:text-[#ff2d78]" : "text-gray-300 hover:text-[#00e5ff]"}`}
               >
                 <Mail
-                  className="w-4 h-4 flex-shrink-0"
-                  style={{ color: light ? "#ff2d78" : "#00e5ff" }}
+                  className={`w-4 h-4 flex-shrink-0 ${light ? "text-[#ff2d78]" : "text-[#00e5ff]"}`}
                 />
                 <span>Email Support</span>
               </a>
               <div className={`flex items-start gap-2 ${light ? "text-slate-600" : "text-gray-300"}`}>
                 <MapPin
-                  className="w-4 h-4 mt-0.5 flex-shrink-0"
-                  style={{ color: light ? "#ff2d78" : "#00e5ff" }}
+                  className={`w-4 h-4 mt-0.5 flex-shrink-0 ${light ? "text-[#ff2d78]" : "text-[#00e5ff]"}`}
                 />
                 <span>4567 Powerline Rd, Oakland Park, FL 33309</span>
               </div>
@@ -252,7 +244,7 @@ export function Footer({ light = false }: { light?: boolean } = {}) {
             src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d7160.8801455159755!2d-80.15735434976504!3d26.182359067699164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e0!4m0!4m5!1s0x88d903da421a5ec5%3A0xdd627ecbac01c685!2s4567%20Powerline%20Rd%2C%20Oakland%20Park%2C%20FL%2033309!3m2!1d26.1835062!2d-80.1554943!5e0!3m2!1sen!2sus!4v1781380571760!5m2!1sen!2sus"
             width="100%"
             height="100%"
-            style={{ border: 0 }}
+            className="border-0"
             allowFullScreen={true}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
@@ -263,8 +255,7 @@ export function Footer({ light = false }: { light?: boolean } = {}) {
 
       {/* Bottom bar */}
       <div
-        className={light ? "border-t border-slate-200" : ""}
-        style={light ? undefined : { borderTop: "1px solid rgba(255,45,120,0.2)" }}
+        className={light ? "border-t border-slate-200" : "border-t border-[rgba(255,45,120,0.2)]"}
       >
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
