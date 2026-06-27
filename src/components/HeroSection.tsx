@@ -27,7 +27,7 @@ export function HeroSection() {
 
   return (
     <section className="w-full">
-      <h1 className="sr-only">Premium Custom Signage, LED Signs &amp; Banners in Fort Lauderdale, FL — Nano Signs</h1>
+      <h1 className="sr-only">Custom Signs, Banners &amp; LED Signage in Fort Lauderdale FL — Nano Signs</h1>
       <div className="relative w-full aspect-[2164/727] overflow-hidden bg-slate-950">
         {heroImages.map((img, index) => (
           <div

@@ -46,12 +46,7 @@ const valueProps = [
 
 export function ValuePropositions() {
   return (
-    <section
-      className="py-4 md:py-6"
-      style={{
-        background: "linear-gradient(160deg, #fdf0f8 0%, #f0faff 100%)",
-      }}
-    >
+    <section className="py-4 md:py-6 bg-[linear-gradient(160deg,#fdf0f8_0%,#f0faff_100%)]">
       <div className="w-full px-6 md:px-16 lg:px-24 xl:px-32">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {valueProps.map((prop) => (
@@ -61,16 +56,15 @@ export function ValuePropositions() {
             >
               {/* Icon background — alternates pink/cyan tint */}
               <div
-                className="flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center"
-                style={{
-                  background: prop.even
-                    ? "linear-gradient(135deg, rgba(255,45,120,0.12), rgba(176,32,255,0.08))"
-                    : "linear-gradient(135deg, rgba(0,229,255,0.12), rgba(176,32,255,0.08))",
-                }}
+                className={`flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center ${
+                  prop.even
+                    ? "bg-[linear-gradient(135deg,rgba(255,45,120,0.12),rgba(176,32,255,0.08))]"
+                    : "bg-[linear-gradient(135deg,rgba(0,229,255,0.12),rgba(176,32,255,0.08))]"
+                }`}
               >
                 <img
                   src={prop.icon}
-                  alt=""
+                  alt={prop.title}
                   width={32}
                   height={32}
                   className="w-8 h-8"
@@ -87,8 +81,7 @@ export function ValuePropositions() {
                       {" "}
                       <a
                         href="#"
-                        className="font-semibold hover:underline"
-                        style={{ color: "#ff2d78" }}
+                        className="font-semibold hover:underline text-[#ff2d78]"
                         aria-label={`${prop.link} about ${prop.title}`}
                       >
                         {prop.link}

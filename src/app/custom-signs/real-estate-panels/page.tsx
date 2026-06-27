@@ -14,6 +14,15 @@ export const metadata: Metadata = {
     description: "Design custom real estate panels, riders, and frames online or in person in Broward County. High-durability property signs with fast turnaround.",
     url: "https://nano-signs.com/custom-signs/real-estate-panels",
     type: "website",
+    siteName: "Nano Signs",
+    images: [
+      {
+        url: "https://nano-signs.com/images/nano%20logo%20complete.png",
+        width: 1200,
+        height: 630,
+        alt: "Nano Signs - Custom Printing & Signage",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",

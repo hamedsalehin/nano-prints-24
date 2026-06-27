@@ -65,7 +65,7 @@ export default function ReturnPolicyPage() {
                 <span className="absolute top-4 right-4 text-xs font-black text-slate-350">STEP 01</span>
                 <h3 className="text-sm font-bold text-slate-800 mb-2">Send Email</h3>
                 <p className="text-[11px] text-slate-500 leading-relaxed font-semibold">
-                  Email us at <a href="mailto:nanosign1@gmail.com" className="underline font-bold text-indigo-600">nanosign1@gmail.com</a> with the subject line <code className="bg-slate-150 px-1 py-0.5 rounded font-mono text-slate-700">Return Request: Order #[YourOrderNo]</code>.
+                  Email us at <a href="mailto:info@nano-signs.com" className="underline font-bold text-indigo-600">support [at] nano-signs.com</a> with the subject line <code className="bg-slate-150 px-1 py-0.5 rounded font-mono text-slate-700">Return Request: Order #[YourOrderNo]</code>.
                 </p>
               </div>
 
@@ -193,7 +193,7 @@ export default function ReturnPolicyPage() {
               <ArrowLeft className="w-4 h-4" /> Back to Contact Us
             </Link>
             <a
-              href="mailto:nanosign1@gmail.com"
+              href="mailto:info@nano-signs.com"
               className="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 transition-colors text-white rounded-xl text-xs font-bold border border-white/20"
             >
               Email Support

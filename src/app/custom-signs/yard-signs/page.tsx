@@ -14,6 +14,15 @@ export const metadata: Metadata = {
     description: "Design custom corrugated plastic yard signs online with H-stakes. Fastest turnaround times in Broward County. Next-day shipping/local pickup.",
     url: "https://nano-signs.com/custom-signs/yard-signs",
     type: "website",
+    siteName: "Nano Signs",
+    images: [
+      {
+        url: "https://nano-signs.com/images/nano%20logo%20complete.png",
+        width: 1200,
+        height: 630,
+        alt: "Nano Signs - Custom Printing & Signage",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",

@@ -313,7 +313,7 @@ export default function ContactUsPage() {
                 </a>
 
                 <a
-                  href="mailto:nanosign1@gmail.com"
+                  href="mailto:info@nano-signs.com"
                   className="flex items-start gap-4 p-1 hover:bg-slate-50 rounded-xl transition-colors group"
                 >
                   <div className="w-10 h-10 rounded-lg bg-cyan-50 text-[#00e5ff] flex items-center justify-center flex-shrink-0">
@@ -324,7 +324,7 @@ export default function ContactUsPage() {
                       Email Inquiries
                     </h4>
                     <p className="text-sm font-bold text-slate-700 group-hover:text-[#00e5ff] transition-colors">
-                      nanosign1@gmail.com
+                      Send Email
                     </p>
                   </div>
                 </a>

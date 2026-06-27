@@ -14,6 +14,15 @@ export const metadata: Metadata = {
     description: "Regulatory, reserved, and custom parking signs in Broward County. Heavy-duty aluminum or coroplast signs with fast turnaround in Fort Lauderdale.",
     url: "https://nano-signs.com/custom-signs/parking-signs",
     type: "website",
+    siteName: "Nano Signs",
+    images: [
+      {
+        url: "https://nano-signs.com/images/nano%20logo%20complete.png",
+        width: 1200,
+        height: 630,
+        alt: "Nano Signs - Custom Printing & Signage",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",

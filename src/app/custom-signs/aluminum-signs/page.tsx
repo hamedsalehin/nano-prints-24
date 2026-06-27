@@ -14,6 +14,15 @@ export const metadata: Metadata = {
     description: "Heavy-duty, rust-proof custom aluminum signs in Broward County. Durable metal sign prints with fast turnaround and local pickup in Fort Lauderdale.",
     url: "https://nano-signs.com/custom-signs/aluminum-signs",
     type: "website",
+    siteName: "Nano Signs",
+    images: [
+      {
+        url: "https://nano-signs.com/images/nano%20logo%20complete.png",
+        width: 1200,
+        height: 630,
+        alt: "Nano Signs - Custom Printing & Signage",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",

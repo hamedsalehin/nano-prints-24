@@ -137,14 +137,14 @@ export function Footer({ light = false }: { light?: boolean } = {}) {
                 <span>305-967-9654</span>
               </a>
               <a
-                href="mailto:nanosign1@gmail.com"
+                href="mailto:info@nano-signs.com"
                 className={`flex items-center gap-2 transition-colors ${light ? "text-slate-600 hover:text-[#ff2d78]" : "text-gray-300 hover:text-[#00e5ff]"}`}
               >
                 <Mail
                   className="w-4 h-4 flex-shrink-0"
                   style={{ color: light ? "#ff2d78" : "#00e5ff" }}
                 />
-                <span>nanosign1@gmail.com</span>
+                <span>Email Support</span>
               </a>
               <div className={`flex items-start gap-2 ${light ? "text-slate-600" : "text-gray-300"}`}>
                 <MapPin

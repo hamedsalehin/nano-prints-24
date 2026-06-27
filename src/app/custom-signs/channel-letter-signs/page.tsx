@@ -13,6 +13,15 @@ export const metadata: Metadata = {
     description: "Premium 3D backlit and front-lit channel letter storefront signs in Broward County. Fast quotes and high-quality fabrication in Fort Lauderdale, FL.",
     url: "https://nano-signs.com/custom-signs/channel-letter-signs",
     type: "website",
+    siteName: "Nano Signs",
+    images: [
+      {
+        url: "https://nano-signs.com/images/nano%20logo%20complete.png",
+        width: 1200,
+        height: 630,
+        alt: "Nano Signs - Custom Printing & Signage",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",

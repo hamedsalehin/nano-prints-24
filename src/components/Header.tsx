@@ -57,12 +57,12 @@ export function Header() {
             <span className="hidden sm:inline">About Us</span>
           </Link>
           <a
-            href="mailto:nanosign1@gmail.com"
+            href="mailto:info@nano-signs.com"
             className="flex items-center gap-1.5 hover:text-[#ff2d78] transition-colors duration-200"
-            aria-label="Email support at nanosign1@gmail.com"
+            aria-label="Email support"
           >
             <MessageCircle className="w-4 h-4" />
-            <span className="hidden sm:inline">nanosign1@gmail.com</span>
+            <span className="hidden sm:inline">Email Us</span>
           </a>
           <Link
             href="/contact-us"

@@ -14,6 +14,15 @@ export const metadata: Metadata = {
     description: "Premium clear, colored, and frosted custom acrylic signs in Broward County. Online design and next-day local pick up in Fort Lauderdale.",
     url: "https://nano-signs.com/custom-signs/acrylic-signs",
     type: "website",
+    siteName: "Nano Signs",
+    images: [
+      {
+        url: "https://nano-signs.com/images/nano%20logo%20complete.png",
+        width: 1200,
+        height: 630,
+        alt: "Nano Signs - Custom Printing & Signage",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",

@@ -25,9 +25,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Premium Custom Signage, LED Signs & Banners Fort Lauderdale FL | Nano Signs",
+  title: "Custom Signs, Banners & LED Signage | Nano Signs",
   description:
-    "Design and order custom signs, LED signs, retractable banners, business cards and all other marketing materials online or in person. Fastest turnaround times in Broward.",
+    "Order custom signs, LED signage, banners & marketing materials in Fort Lauderdale FL. Fastest turnaround in Broward County.",
   icons: {
     icon: "/images/nano logo O.png",
     apple: "/images/nano logo O.png",
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
     canonical: "https://nano-signs.com",
   },
   openGraph: {
-    title: "Premium Custom Signage, LED Signs & Banners Fort Lauderdale FL | Nano Signs",
-    description: "Design and order custom signs, LED signs, retractable banners, business cards and all other marketing materials online or in person. Fastest turnaround times in Broward.",
+    title: "Custom Signs, Banners & LED Signage | Nano Signs",
+    description: "Order custom signs, LED signage, banners & marketing materials in Fort Lauderdale FL. Fastest turnaround in Broward County.",
     url: "https://nano-signs.com",
     siteName: "Nano Signs",
     images: [
@@ -53,8 +53,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Premium Custom Signage, LED Signs & Banners Fort Lauderdale FL | Nano Signs",
-    description: "Design and order custom signs, LED signs, retractable banners, business cards and all other marketing materials online or in person. Fastest turnaround times in Broward.",
+    title: "Custom Signs, Banners & LED Signage | Nano Signs",
+    description: "Order custom signs, LED signage, banners & marketing materials in Fort Lauderdale FL. Fastest turnaround in Broward County.",
     images: [
       "https://nano-signs.com/images/nano%20logo%20complete.png",
     ],
